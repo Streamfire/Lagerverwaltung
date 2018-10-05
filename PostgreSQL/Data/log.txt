@@ -1,0 +1,9 @@
+2018-10-05 12:02:28.656 CEST [5456] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-05 12:02:28.656 CEST [5456] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-05 12:02:28.716 CEST [1700] LOG:  database system was shut down at 2018-10-05 12:02:25 CEST
+2018-10-05 12:02:28.784 CEST [5456] LOG:  database system is ready to accept connections
+2018-10-05 12:02:33.099 CEST [5456] LOG:  received fast shutdown request
+2018-10-05 12:02:33.107 CEST [5456] LOG:  aborting any active transactions
+2018-10-05 12:02:33.120 CEST [5456] LOG:  worker process: logical replication launcher (PID 7172) exited with exit code 1
+2018-10-05 12:02:33.121 CEST [876] LOG:  shutting down
+2018-10-05 12:02:33.191 CEST [5456] LOG:  database system is shut down
