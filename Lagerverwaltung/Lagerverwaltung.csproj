@@ -44,6 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Lager.cs" />
+    <Compile Include="Data\Paket.cs" />
+    <Compile Include="Data\Regal.cs" />
+    <Compile Include="Data\Slot.cs" />
     <Compile Include="GUI\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,8 +93,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

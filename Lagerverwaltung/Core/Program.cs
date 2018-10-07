@@ -8,15 +8,23 @@ namespace Lagerverwaltung
 {
 	static class Program
 	{
+		#region public
 		/// <summary>
 		/// Der Haupteinstiegspunkt für die Anwendung.
 		/// </summary>
 		[STAThread]
 		static void Main()
 		{
+			Login login = new Login();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Login());
+			Application.Run(login);
+
+			//if(login.Adminuser==true)...
 		}
+		#endregion
+		#region private
+
+		#endregion
 	}
 }
