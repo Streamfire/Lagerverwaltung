@@ -15,9 +15,10 @@ namespace Lagerverwaltung
 		[STAThread]
 		static void Main()
 		{
-			Login login = new Login();
+			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			Login login = new Login();
 			Application.Run(login);
 
 			//if(login.Adminuser==true)...

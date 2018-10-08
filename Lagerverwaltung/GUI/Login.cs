@@ -31,14 +31,16 @@ namespace Lagerverwaltung
 
 		#region private
 		//Login Button gedrückt
-		private void button1_Click(object sender, EventArgs e)
+		private void Button1_Click(object sender, EventArgs e)
 		{
-			if(textBox1.Text==_username&&textBox2.Text==_userpass)
+			if (textBox1.Text == _username && textBox2.Text == _userpass)
 			{
 				_adminuser = true;
+				this.Hide();
 			}
 			else
 			{
+				label4.Text = "Nutzername oder Passwort falsch.";
 				_adminuser = false;
 			}
 		}
@@ -46,15 +48,21 @@ namespace Lagerverwaltung
 		/// <summary>
 		/// Enter gedrückt(nach eingabe in einer der Textboxen)
 		/// </summary>
-		private void CheckEnterKey(object sender, EventArgs e)
+		private void OnKeyDown(object sender, KeyEventArgs e)
 		{
-			if (textBox1.Text == _username && textBox2.Text == _userpass)
+			label4.Text = "";
+			if (e.KeyCode == Keys.Enter)
 			{
-				_adminuser = true;
-			}
-			else
-			{
-				_adminuser = false;
+				if (textBox1.Text == _username && textBox2.Text == _userpass)
+				{
+					_adminuser = true;
+					this.Hide();
+				}
+				else
+				{
+					label4.Text = "Nutzername oder Passwort falsch.";
+					_adminuser = false;
+				}
 			}
 		}
 
@@ -62,10 +70,15 @@ namespace Lagerverwaltung
 		private string _userpass = "admin";
 		private bool _adminuser = false;
 
-		
+
+
+
 		#endregion
 
-
-
+		private void Button2_Click(object sender, EventArgs e)
+		{
+			_adminuser = false;
+			this.Hide();
+		}
 	}
 }
