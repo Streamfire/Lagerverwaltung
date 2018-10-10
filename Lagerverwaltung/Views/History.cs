@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lagerverwaltung.GUI
+namespace Lagerverwaltung.Views
 {
 	public partial class History : Form
 	{

@@ -59,6 +59,7 @@
     <Compile Include="Core\DatabaseFactory.cs" />
     <Compile Include="Core\Interfaces\IBasic.cs" />
     <Compile Include="Core\Interfaces\IPaket.cs" />
+    <Compile Include="Core\Interfaces\ILager.cs" />
     <Compile Include="Core\Interfaces\IRegal.cs" />
     <Compile Include="Core\Interfaces\ISlot.cs" />
     <Compile Include="Core\Lager.cs" />

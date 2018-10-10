@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lagerverwaltung.Core.Interfaces
 {
-    interface IBasic //: IEquatable<IBasic>, IEnumerable<IBasic>, IEnumerator<IBasic>, IComparable<IBasic>
+    interface IBasic //: IEnumerable<IBasic>, IEnumerator<IBasic>, IComparable<IBasic>
     {
         float Height { get; set; }
         float Width { get; set; }

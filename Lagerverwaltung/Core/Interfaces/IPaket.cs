@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lagerverwaltung.Core.Interfaces
 {
-    interface IPaket
+    interface IPaket : IBasic, IEquatable<IPaket>
     {
     }
 }

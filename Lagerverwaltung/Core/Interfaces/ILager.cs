@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lagerverwaltung.Core.Interfaces
 {
-    interface IRegal : IBasic, IEquatable<IRegal>
+    interface ILager : IBasic, IEquatable<ILager>
     {
     }
 }
