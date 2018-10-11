@@ -36,7 +36,8 @@ namespace Lagerverwaltung.Views
 			if (textBox1.Text == _username && textBox2.Text == _userpass)
 			{
 				_adminuser = true;
-				this.Hide();
+				_exit = false;
+				this.Close();
 			}
 			else
 			{
@@ -56,7 +57,8 @@ namespace Lagerverwaltung.Views
 				if (textBox1.Text == _username && textBox2.Text == _userpass)
 				{
 					_adminuser = true;
-					this.Hide();
+					_exit = false;
+					this.Close();
 				}
 				else
 				{
@@ -68,17 +70,23 @@ namespace Lagerverwaltung.Views
 
 		private string _username="admin";
 		private string _userpass = "admin";
-		private bool _adminuser = false;
-
-
-
-
-		#endregion
+		private static bool _adminuser = false;
+		private bool _exit= true;
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
 			_adminuser = false;
-			this.Hide();
+			_exit = false;
+			this.Close();
 		}
+
+		private void LoginFormClosing(object sender, FormClosingEventArgs e)
+		{
+			if(_exit==true)
+			{
+				Application.Exit();
+			}
+		}
+		#endregion
 	}
 }

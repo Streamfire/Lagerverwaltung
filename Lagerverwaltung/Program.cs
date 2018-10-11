@@ -19,14 +19,17 @@ namespace Lagerverwaltung
 			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+
+			//LoginForm
 			Login login = new Login();
 			Application.Run(login);
-
-			//if(login.Adminuser==true)...
+			//Dashboard
+			Dashboard board = new Dashboard(login.Adminuser);
+			Application.Run(board);
 		}
+
 		#endregion
 		#region private
-
 		#endregion
 	}
 }
