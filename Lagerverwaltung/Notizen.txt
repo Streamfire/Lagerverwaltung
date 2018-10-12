@@ -1,0 +1,17 @@
+﻿/*
+            var test = Core.DatabaseFactory.GetFactory().GetConnection();
+            Console.WriteLine("Daten- Username: {0}, Host: {1}, Port: {2}, VersionPG: {3}, VersionServer: {4}, State: {5}",test.UserName,test.Host, test.Port, test.PostgreSqlVersion, test.ServerVersion, test.State);
+
+            using (var cmd = new Npgsql.NpgsqlCommand())
+            {
+                cmd.Connection = test;
+                cmd.CommandText = "Select * FROM \"Users\"";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader.GetString(1));
+                    }
+                } 
+            }
+            */

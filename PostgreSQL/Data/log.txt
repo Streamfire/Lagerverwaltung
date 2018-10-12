@@ -7,3 +7,23 @@
 2018-10-05 12:02:33.120 CEST [5456] LOG:  worker process: logical replication launcher (PID 7172) exited with exit code 1
 2018-10-05 12:02:33.121 CEST [876] LOG:  shutting down
 2018-10-05 12:02:33.191 CEST [5456] LOG:  database system is shut down
+2018-10-12 13:39:30.274 CEST [11112] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-12 13:39:30.274 CEST [11112] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-12 13:39:30.574 CEST [10320] LOG:  database system was shut down at 2018-10-05 12:02:33 CEST
+2018-10-12 13:39:30.768 CEST [11112] LOG:  database system is ready to accept connections
+2018-10-12 13:46:05.766 CEST [1096] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:46:21.455 CEST [8432] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:46:55.330 CEST [9524] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:48:05.068 CEST [6604] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:48:50.903 CEST [10412] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:50:36.743 CEST [1776] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:57:07.029 CEST [6328] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:57:30.954 CEST [4220] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:57:59.339 CEST [1460] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:58:28.984 CEST [8356] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-12 13:59:39.107 CEST [11112] LOG:  received fast shutdown request
+2018-10-12 13:59:39.214 CEST [11112] LOG:  aborting any active transactions
+2018-10-12 13:59:39.214 CEST [7936] FATAL:  terminating connection due to administrator command
+2018-10-12 13:59:39.229 CEST [11112] LOG:  worker process: logical replication launcher (PID 3936) exited with exit code 1
+2018-10-12 13:59:39.232 CEST [956] LOG:  shutting down
+2018-10-12 13:59:39.552 CEST [11112] LOG:  database system is shut down

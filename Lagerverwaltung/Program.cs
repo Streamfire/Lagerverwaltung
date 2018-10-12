@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lagerverwaltung.Views;
 
@@ -20,7 +17,9 @@ namespace Lagerverwaltung
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			//LoginForm
+            //Test
+
+            //LoginForm
 			Login login = new Login();
 			Application.Run(login);
 			//Dashboard
