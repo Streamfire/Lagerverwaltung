@@ -27,3 +27,24 @@
 2018-10-12 13:59:39.229 CEST [11112] LOG:  worker process: logical replication launcher (PID 3936) exited with exit code 1
 2018-10-12 13:59:39.232 CEST [956] LOG:  shutting down
 2018-10-12 13:59:39.552 CEST [11112] LOG:  database system is shut down
+2018-10-13 22:30:09.473 CEST [9068] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-13 22:30:09.474 CEST [9068] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-13 22:30:09.690 CEST [11204] LOG:  database system was shut down at 2018-10-12 13:59:39 CEST
+2018-10-13 22:30:09.867 CEST [9068] LOG:  database system is ready to accept connections
+2018-10-13 22:41:12.975 CEST [7328] LOG:  incomplete startup packet
+2018-10-13 22:42:13.495 CEST [9068] LOG:  received fast shutdown request
+2018-10-13 22:42:13.529 CEST [9068] LOG:  aborting any active transactions
+2018-10-13 22:42:13.529 CEST [6868] FATAL:  terminating connection due to administrator command
+2018-10-13 22:42:13.544 CEST [9068] LOG:  worker process: logical replication launcher (PID 7244) exited with exit code 1
+2018-10-13 22:42:13.549 CEST [2596] LOG:  shutting down
+2018-10-13 22:42:13.884 CEST [9068] LOG:  database system is shut down
+2018-10-14 18:38:38.106 CEST [9104] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-14 18:38:38.106 CEST [9104] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-14 18:38:38.388 CEST [11900] LOG:  database system was shut down at 2018-10-13 22:42:13 CEST
+2018-10-14 18:38:38.531 CEST [9104] LOG:  database system is ready to accept connections
+2018-10-14 18:39:12.368 CEST [3868] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-14 18:40:32.266 CEST [9104] LOG:  received fast shutdown request
+2018-10-14 18:40:32.299 CEST [9104] LOG:  aborting any active transactions
+2018-10-14 18:40:32.303 CEST [9104] LOG:  worker process: logical replication launcher (PID 11964) exited with exit code 1
+2018-10-14 18:40:32.318 CEST [10536] LOG:  shutting down
+2018-10-14 18:40:32.585 CEST [9104] LOG:  database system is shut down

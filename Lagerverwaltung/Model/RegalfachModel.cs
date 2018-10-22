@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerverwaltung.Core.Interfaces
+namespace Lagerverwaltung.Model
 {
-    interface IPaket : IBasic, IEquatable<IPaket>
+    static class RegalfachModel
     {
     }
 }

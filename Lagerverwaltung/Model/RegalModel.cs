@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lagerverwaltung.Model
 {
-    class GroupModel
+    static class RegalModel
     {
-        // Spätere Datenbank-Abfragen zu gruppenspezifischen Zeug
     }
 }

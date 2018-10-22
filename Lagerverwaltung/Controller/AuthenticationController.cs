@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lagerverwaltung.Controller
+﻿namespace Lagerverwaltung.Controller
 {
 
     /// <summary>
@@ -14,5 +8,15 @@ namespace Lagerverwaltung.Controller
     {
         // Nutzt bsp. den UserModel um abzufragen ob User usw vorhanden ist.
         // Dann vergleicht er das PW und je nachdem werden dann entsprechende Views geöffnet :)
+
+        static bool Login(string name, string pw)
+        {
+            return false;
+        }
+
+        static void Logout()
+        {
+            //schließe alle Forms und zeige Login-Form wieder
+        }
     }
 }

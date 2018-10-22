@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lagerverwaltung.Core.Interfaces
+namespace Lagerverwaltung.Model
 {
-    interface ISlot : IBasic, IEquatable<ISlot>
+    static class Artikel_ProduktModel
     {
     }
 }

@@ -28,17 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// Verwaltung
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 261);
-			this.Name = "Verwaltung";
-			this.Text = "Verwaltung";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerwaltungFormClosing);
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // Verwaltung
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Verwaltung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Verwaltung";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerwaltungFormClosing);
+            this.ResumeLayout(false);
 
 		}
 

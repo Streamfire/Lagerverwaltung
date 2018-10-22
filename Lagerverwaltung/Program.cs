@@ -6,7 +6,6 @@ namespace Lagerverwaltung
 {
 	static class Program
 	{
-		#region public
 		/// <summary>
 		/// Der Haupteinstiegspunkt für die Anwendung.
 		/// </summary>
@@ -18,17 +17,14 @@ namespace Lagerverwaltung
 			Application.SetCompatibleTextRenderingDefault(false);
 
             //Test
+            //Application.Exit();
 
             //LoginForm
-			Login login = new Login();
+            Login login = new Login();
 			Application.Run(login);
 			//Dashboard
 			Dashboard board = new Dashboard(login.Adminuser);
 			Application.Run(board);
 		}
-
-		#endregion
-		#region private
-		#endregion
 	}
 }

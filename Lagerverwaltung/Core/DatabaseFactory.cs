@@ -16,7 +16,7 @@ namespace Lagerverwaltung.Core
             return _factory;
         }
 
-        public NpgsqlConnection GetConnection()
+        public static NpgsqlConnection GetConnection()
         {
             if (_connection == null)
             {
@@ -36,7 +36,7 @@ namespace Lagerverwaltung.Core
             return _connection;
         }
 
-        public void CloseConnection()
+        public static void CloseConnection()
         {
             _connection.Close();
         }

@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lagerverwaltung.Model
+﻿namespace Lagerverwaltung.Model
 {
-    class UserModel
+    static class UserModel
     {
         // Spätere Datenbank-Abfragen zu userspezifischen Zeug
+        public static void HoleAlleUser()
+        {
+            // return
+        }
+
+        public static void HoleUserDurchID(int uid)
+        {
+            // return
+        }
     }
 }

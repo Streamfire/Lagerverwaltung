@@ -1,30 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Lagerverwaltung.Core.Abstract;
 using Lagerverwaltung.Core.Interfaces;
 
 namespace Lagerverwaltung.Core
 {
-    class Regal : IRegal
+    sealed class Regal : Base
     {
-        #region ctor
+        public override float Höhe { get; set; }
+        public override float Breite { get; set; }
+        public override float Länge { get; set; }
+        public float V_Wandstärke { get; set; }
+        public float H_Wandstärke { get; set; }
 
-        #endregion
-        #region public
-
-        #endregion
-        #region private
-
-        #endregion
-        public float Height { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public float Width { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public float Length { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public bool Equals(IRegal other)
+        public Regal()
         {
-            throw new NotImplementedException();
+
+        }
+
+        public override float BerechneFlaeche()
+        {
+            return base.BerechneFlaeche();
+        }
+
+        public override float BerechneVolumen()
+        {
+            return base.BerechneVolumen();
         }
     }
 }

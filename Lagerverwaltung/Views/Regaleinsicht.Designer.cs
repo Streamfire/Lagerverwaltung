@@ -28,17 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// Regaleinsicht
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 261);
-			this.Name = "Regaleinsicht";
-			this.Text = "Regaleinsicht";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegalFormClosing);
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // Regaleinsicht
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Regaleinsicht";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Regaleinsicht";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegalFormClosing);
+            this.ResumeLayout(false);
 
 		}
 

@@ -10,6 +10,21 @@
     <AssemblyName>Lagerverwaltung</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,18 +72,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AuthenticationController.cs" />
+    <Compile Include="Core\Abstract\Base.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />
-    <Compile Include="Core\Interfaces\IBasic.cs" />
-    <Compile Include="Core\Interfaces\IPaket.cs" />
-    <Compile Include="Core\Interfaces\ILager.cs" />
-    <Compile Include="Core\Interfaces\IRegal.cs" />
-    <Compile Include="Core\Interfaces\ISlot.cs" />
+    <Compile Include="Core\Interfaces\IBase.cs" />
     <Compile Include="Core\Lager.cs" />
     <Compile Include="Core\Paket.cs" />
+    <Compile Include="Core\Produkt.cs" />
     <Compile Include="Core\Regal.cs" />
-    <Compile Include="Core\Slot.cs" />
-    <Compile Include="Model\GroupModel.cs" />
+    <Compile Include="Core\Regalfach.cs" />
+    <Compile Include="Model\Artikel_ProduktModel.cs" />
+    <Compile Include="Model\HistorieModel.cs" />
+    <Compile Include="Model\PaketModel.cs" />
+    <Compile Include="Model\RechteModel.cs" />
     <Compile Include="Model\LagerModel.cs" />
+    <Compile Include="Model\RegalfachModel.cs" />
+    <Compile Include="Model\RegalModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Views\Dashboard.cs">
       <SubType>Form</SubType>
@@ -148,6 +166,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notizen.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
