@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-<<<<<<< HEAD
             this.SuspendLayout();
             // 
             // Verwaltung
@@ -41,7 +40,6 @@
             this.Text = "Verwaltung";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerwaltungFormClosing);
             this.ResumeLayout(false);
-=======
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -244,7 +242,6 @@
 			this.tabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
->>>>>>> 676a6dcf445f4153e76d7f7e45cd25419fe80c12
 
 		}
 
