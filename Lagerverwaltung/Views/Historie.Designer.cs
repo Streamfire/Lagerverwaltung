@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.SuspendLayout();
             // 
             // Historie
@@ -41,7 +40,6 @@
             this.Text = "History";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistorieFormClosing);
             this.ResumeLayout(false);
-=======
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,7 +109,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
->>>>>>> 676a6dcf445f4153e76d7f7e45cd25419fe80c12
 
         }
 

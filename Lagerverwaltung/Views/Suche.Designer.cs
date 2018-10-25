@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-<<<<<<< HEAD
             this.SuspendLayout();
             // 
             // Suche
@@ -41,7 +40,6 @@
             this.Text = "Suche";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SucheFormClosing);
             this.ResumeLayout(false);
-=======
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
@@ -75,7 +73,6 @@
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SucheFormClosing);
 			this.ResumeLayout(false);
 			this.PerformLayout();
->>>>>>> 676a6dcf445f4153e76d7f7e45cd25419fe80c12
 
 		}
 

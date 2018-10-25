@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-<<<<<<< HEAD
             this.SuspendLayout();
             // 
             // Regaleinsicht
@@ -41,7 +40,6 @@
             this.Text = "Regaleinsicht";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegalFormClosing);
             this.ResumeLayout(false);
-=======
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.B = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,7 +151,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
->>>>>>> 676a6dcf445f4153e76d7f7e45cd25419fe80c12
 
 		}
 
