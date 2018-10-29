@@ -80,6 +80,13 @@
     <Compile Include="Core\Produkt.cs" />
     <Compile Include="Core\Regal.cs" />
     <Compile Include="Core\Regalfach.cs" />
+    <Compile Include="ExpandablePanel\Accordion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExpandablePanel\OpacityEx.cs" />
+    <Compile Include="ExpandablePanel\ResizeBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Model\Artikel_ProduktModel.cs" />
     <Compile Include="Model\HistorieModel.cs" />
     <Compile Include="Model\PaketModel.cs" />
