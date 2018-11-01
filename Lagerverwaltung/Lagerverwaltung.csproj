@@ -73,9 +73,11 @@
   <ItemGroup>
     <Compile Include="Controller\AuthenticationController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
+    <Compile Include="Core\Artikeltyp.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />
     <Compile Include="Core\Interfaces\IBase.cs" />
     <Compile Include="Core\Lager.cs" />
+    <Compile Include="Core\Lagertyp.cs" />
     <Compile Include="Core\Paket.cs" />
     <Compile Include="Core\Produkt.cs" />
     <Compile Include="Core\Regal.cs" />
