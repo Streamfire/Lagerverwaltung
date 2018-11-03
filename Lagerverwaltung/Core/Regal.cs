@@ -5,7 +5,7 @@ using Lagerverwaltung.Core.Interfaces;
 
 namespace Lagerverwaltung.Core
 {
-    sealed class Regal : Base
+    sealed public class Regal : Base
     {
         private List<Regalfach> _regalfachliste;
 
@@ -23,11 +23,18 @@ namespace Lagerverwaltung.Core
         public override float Länge { get; set; }
         public float V_Wandstärke { get; set; }
         public float H_Wandstärke { get; set; }
+		public List<Regalfach> Regalfachliste { get => _regalfachliste; set => _regalfachliste = value; }
+		public string Name { get => _name;}
 
-        public Regal()
+		public Regal()
         {
-
-        }
+		_id=0;
+		_name="Regal 0";
+		_lagerId= 0;
+		_zeilen=5;
+		_spalten=6;
+		_regalfachliste = new List<Regalfach>();	
+		}
 
         public override float BerechneFlaeche()
         {

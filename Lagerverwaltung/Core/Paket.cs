@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lagerverwaltung.Core
 {
-    class Paket
+	public class Paket
     {
         private int _id;
         private String _name;

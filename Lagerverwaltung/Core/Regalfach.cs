@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lagerverwaltung.Core
 {
-    class Regalfach
+    public class Regalfach
     {
         private List<Paket> _paketliste;
 

@@ -1,7 +1,50 @@
-﻿namespace Lagerverwaltung.Views
+﻿using Lagerverwaltung.Core;
+using Opulos.Core.UI;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace Lagerverwaltung.Views
 {
-	partial class Verwaltung
+	public partial class Verwaltung
 	{
+		/// <summary>
+		/// verarbeitet die Lageliste aus dem Dash und erstellt dynamisch Tabpages, Akkordions und zusatinfo Panele
+		/// </summary>
+		/// <param name="lagerListe">die Lagerliste, übergeben vom Dashboard</param>
+		public void UpdateForm(List<Core.Lager>lagerListe)
+		{
+			foreach (Lager l in lagerListe)
+			{
+				TabPage tp = new TabPage(l.Name);
+				Accordion lagerAccordion= new Accordion();
+			
+				tp.Controls.Add(lagerAccordion);
+
+				tabControl1.TabPages.Add(tp);
+				foreach (Regal r in l.Regalliste)
+				{
+					Accordion nestedRegal = new Accordion();
+					lagerAccordion.Add(nestedRegal,"Regal");
+
+					foreach (Regalfach f in r.Regalfachliste)
+					{
+						Accordion nestedFach = new Accordion();
+						Panel infoPanel = new Panel();
+						Label name = new Label();
+						name.Text = "testname";
+						infoPanel.Controls.Add(name);
+
+						nestedFach.Controls.Add(infoPanel);
+
+
+						nestedRegal.Add(nestedFach, "Fach");
+					}
+
+				}
+			}
+		}
+
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -29,19 +72,6 @@
 		private void InitializeComponent()
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
@@ -50,118 +80,15 @@
 			this.button6 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
-			this.tabControl1.SuspendLayout();
-			this.tabPage1.SuspendLayout();
-			this.tabPage3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
 			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Location = new System.Drawing.Point(-2, 53);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(1127, 548);
 			this.tabControl1.TabIndex = 0;
-			// 
-			// tabPage1
-			// 
-			this.tabPage1.Controls.Add(this.vScrollBar1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1119, 522);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Lager Ost";
-			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// vScrollBar1
-			// 
-			this.vScrollBar1.Location = new System.Drawing.Point(1099, -4);
-			this.vScrollBar1.Name = "vScrollBar1";
-			this.vScrollBar1.Size = new System.Drawing.Size(20, 522);
-			this.vScrollBar1.TabIndex = 0;
-			// 
-			// tabPage2
-			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1119, 522);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Lager West";
-			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// tabPage3
-			// 
-			this.tabPage3.Controls.Add(this.dataGridView1);
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1119, 522);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Berlin";
-			this.tabPage3.UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column8,
-            this.Column7});
-			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(888, 522);
-			this.dataGridView1.TabIndex = 0;
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Name";
-			this.Column1.Name = "Column1";
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "ID";
-			this.Column2.Name = "Column2";
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "Menge";
-			this.Column3.Name = "Column3";
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "Lagerfach";
-			this.Column4.Name = "Column4";
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "Lagerfrist";
-			this.Column5.Name = "Column5";
-			// 
-			// Column6
-			// 
-			this.Column6.HeaderText = "Preis(Anschaffung)";
-			this.Column6.Name = "Column6";
-			// 
-			// Column8
-			// 
-			this.Column8.HeaderText = "Lieferzeit";
-			this.Column8.Name = "Column8";
-			// 
-			// Column7
-			// 
-			this.Column7.HeaderText = "Anmerkungen";
-			this.Column7.Name = "Column7";
 			// 
 			// button1
 			// 
@@ -261,10 +188,6 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Verwaltung";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerwaltungFormClosing);
-			this.tabControl1.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
-			this.tabPage3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -272,25 +195,12 @@
 		#endregion
 
 		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.VScrollBar vScrollBar1;
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button8;
 	}

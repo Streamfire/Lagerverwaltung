@@ -2,7 +2,7 @@
 
 namespace Lagerverwaltung.Core
 {
-    class Produkt
+   public class Produkt
     {
         private int _id;
         private String _name;

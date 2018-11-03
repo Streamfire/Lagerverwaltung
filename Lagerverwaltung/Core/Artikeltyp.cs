@@ -2,7 +2,7 @@
 
 namespace Lagerverwaltung.Core
 {
-    class Artikeltyp
+	public class Artikeltyp
     {
         private int _id;
         private String _name;

@@ -5,7 +5,7 @@ using Lagerverwaltung.Core.Interfaces;
 
 namespace Lagerverwaltung.Core.Abstract
 {
-    abstract class Base : IBase, IEquatable<Base>,IEnumerable<Base> //-> IEnumerator<T>, IComparable<IBasic>
+    abstract public class Base : IBase, IEquatable<Base>,IEnumerable<Base> //-> IEnumerator<T>, IComparable<IBasic>
     {
         public abstract float Höhe { get; set; }
         public abstract float Breite { get; set; }
