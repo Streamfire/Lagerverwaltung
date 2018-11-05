@@ -7,23 +7,23 @@ namespace Lagerverwaltung.Core.Abstract
 {
     abstract public class Base : IBase, IEquatable<Base>,IEnumerable<Base> //-> IEnumerator<T>, IComparable<IBasic>
     {
-        public abstract float Höhe { get; set; }
+        public abstract float Hoehe { get; set; }
         public abstract float Breite { get; set; }
-        public abstract float Länge { get; set; }
+        public abstract float Laenge { get; set; }
 
         public virtual float BerechneFlaeche()
         {
-            return Höhe * Länge;
+            return Hoehe * Laenge;
         }
 
         public virtual float BerechneVolumen()
         {
-            return Höhe * Länge * Breite;
+            return Hoehe * Laenge * Breite;
         }
 
         public bool Equals(Base other)
         {
-            return Breite == other.Breite && Länge == other.Länge && Höhe == other.Höhe;
+            return Breite == other.Breite && Laenge == other.Laenge && Hoehe == other.Hoehe;
         }
 
         public IEnumerator<Base> GetEnumerator()

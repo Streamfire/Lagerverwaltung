@@ -1,33 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
 {
-    public class Regalfach
+    public class Regalfach : Base
     {
-        private List<Paket> _paketliste;
+        public List<Paket> Paketliste { get; set; }
 
-        private int _id;
-        private String _name;
-        private int _regalId;
-        private DateTime _erstelltAm;
-        private DateTime _geaendertAm;
+        public int Id { get; set; }
+        public String Name { get; set; }
+        public int RegalId { get; set; }
+        public DateTime ErstelltAm { get; set; }
+        public DateTime GeaendertAm { get; set; }
+        public String Bemerkung { get; set; }
 
-        // TODO: eventuell an die Abstrakten Klasse anpassen (Wert wäre im Moment mit abstrakter Klasse public?)
-        private float _hoehe;
-        private float _breite;
-        private float _laenge;
+        public override float Hoehe { get; set; }
+        public override float Breite { get; set; }
+        public override float Laenge { get; set; }
 
-        public Regalfach(int id, String name, int regalId, DateTime erstelltAm, DateTime geaendertAm, float hoehe, float breite, float laenge)
+        public Regalfach(int id, String name, int regalId, DateTime erstelltAm, DateTime geaendertAm, String bemerkung, float hoehe, float breite, float laenge)
         {
-            this._id = id;
-            this._name = name;
-            this._regalId = regalId;
-            this._erstelltAm = erstelltAm;
-            this._geaendertAm = geaendertAm;
-            this._hoehe = hoehe;
-            this._breite = breite;
-            this._laenge = laenge;
+            Id = id;
+            Name = name;
+            RegalId = regalId;
+            ErstelltAm = erstelltAm;
+            GeaendertAm = geaendertAm;
+            Bemerkung = bemerkung;
+            Hoehe = hoehe;
+            Breite = breite;
+            Laenge = laenge;
         }
     }
 }

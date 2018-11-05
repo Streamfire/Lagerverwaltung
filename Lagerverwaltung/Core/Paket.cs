@@ -5,35 +5,35 @@ namespace Lagerverwaltung.Core
 {
 	public class Paket
     {
-        private int _id;
-        private String _name;
-        private int _regalfachId;
-        private int _menge;
-        private Produkt _produkt;
-        private DateTime _erstelltAm;
-        private DateTime _geaendertAm;
-        private DateTime _haltbarkeit;
-        private DateTime _lieferfrist;
+        public int Id { get; set; }
+        public String Name { get; set; }
+        public int RegalfachId { get; set; }
+        public int Menge { get; set; }
+        public Produkt Produkt { get; set; }
+        public DateTime ErstelltAm { get; set; }
+        public DateTime GeaendertAm { get; set; }
+        public DateTime Haltbarkeit { get; set; }
+        public String Anschaffungsgrund { get; set; }
 
         //Groesse-> siehe Produkt
 
         /*eventuell Daten für Paketdienst
-        private String _paketdienstName;
-        private String _paketdienstNr;
+        public String PaketdienstName { get; set; }
+        public String PaketdienstNr { get; set; }
         */
 
 
-        public Paket(int paketId, String name, int regalfachId, int menge, Produkt produkt, DateTime erstelltAm, DateTime geaendertAm, DateTime haltbarkeit, DateTime lieferfrist)
+        public Paket(int paketId, String name, int regalfachId, int menge, Produkt produkt, DateTime erstelltAm, DateTime geaendertAm, DateTime haltbarkeit, String anschaffungsgrund)
         {
-            this._regalfachId = regalfachId;
-            this._id = paketId;
-            this._name = name;
-            this._menge = menge;
-            this._produkt = produkt;
-            this._erstelltAm = erstelltAm;
-            this._geaendertAm = geaendertAm;
-            this._haltbarkeit = haltbarkeit;
-            this._lieferfrist = lieferfrist;
+            RegalfachId = regalfachId;
+            Id = paketId;
+            Name = name;
+            Menge = menge;
+            Produkt = produkt;
+            ErstelltAm = erstelltAm;
+            GeaendertAm = geaendertAm;
+            Haltbarkeit = haltbarkeit;
+            Anschaffungsgrund = anschaffungsgrund;
         }
 
     }
