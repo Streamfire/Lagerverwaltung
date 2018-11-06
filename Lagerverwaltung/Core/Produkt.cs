@@ -1,5 +1,4 @@
-﻿using System;
-using Lagerverwaltung.Core.Abstract;
+﻿using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
 {
@@ -10,8 +9,8 @@ namespace Lagerverwaltung.Core
         public string Zeichnungsnummer { get; set; }
         public float Gewicht { get; set; }
         public float Preis { get; set; }
-        public int Erstellt_Am { get; }
-        public int Geaendert_Am { get; }
+        public int ErstelltAm { get; }
+        public int GeaendertAm { get; }
         public Artikeltyp ArtikelTyp { get; set; }
         
         public override float Hoehe { get; set; }
@@ -25,8 +24,8 @@ namespace Lagerverwaltung.Core
             Zeichnungsnummer = zeichnungsnummer;
             Gewicht = gewicht;
             Preis = preis;
-            Erstellt_Am = erstellt_am;
-            Geaendert_Am = geaendert_am;
+            ErstelltAm = erstellt_am;
+            GeaendertAm = geaendert_am;
             ArtikelTyp = artikeltyp;
             Hoehe = hoehe;
             Breite = breite;

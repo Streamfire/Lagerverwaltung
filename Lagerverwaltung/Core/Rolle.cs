@@ -17,16 +17,16 @@ namespace Lagerverwaltung.Core
         public byte RollenID { get; }
         public string Name { get; set; }
         public string Rechte { get; set; }
-        public int Erstellt_Am { get; }
-        public int Zuletzt_Geaendert { get; }
+        public int ErstelltAm { get; }
+        public int ZuletztGeaendert { get; }
 
         public Rolle(byte rollen_id, string name, string rechte, int erstellt_am, int zuletzt_geaendert)
         {
             RollenID = rollen_id;
             Name = name;
             Rechte = rechte;
-            Erstellt_Am = erstellt_am;
-            Zuletzt_Geaendert = zuletzt_geaendert;
+            ErstelltAm = erstellt_am;
+            ZuletztGeaendert = zuletzt_geaendert;
         }
     }
 }

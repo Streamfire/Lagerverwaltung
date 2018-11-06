@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Lagerverwaltung.Core
+﻿namespace Lagerverwaltung.Core
 {
 	public sealed class Paket
     {
@@ -9,8 +7,8 @@ namespace Lagerverwaltung.Core
         public string Name { get; set; }
         public string Anschaffungsgrund { get; set; }
         public int Menge { get; set; }
-        public int Erstellt_Am { get; }
-        public int Geaendert_Am { get; }
+        public int ErstelltAm { get; }
+        public int GeaendertAm { get; }
 
         public Produkt Produkt { get; set; }
 
@@ -23,8 +21,8 @@ namespace Lagerverwaltung.Core
             Name = name;
             Anschaffungsgrund = anschaffungsgrund;
             Menge = menge;
-            Erstellt_Am = erstellt_am;
-            Geaendert_Am = geaendert_am;
+            ErstelltAm = erstellt_am;
+            GeaendertAm = geaendert_am;
             Produkt = produkt;
         }
 

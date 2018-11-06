@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
@@ -11,8 +10,8 @@ namespace Lagerverwaltung.Core
         public string Name { get; set; }
         public byte Zeilen { get; set; }
         public byte Spalten { get; set; }
-        public int Erstellt_Am { get; }
-        public int Geaendert_Am { get; }
+        public int ErstelltAm { get; }
+        public int GeaendertAm { get; }
 
         public float V_Wandstaerke { get; set; }
         public float H_Wandstaerke { get; set; }
@@ -29,14 +28,15 @@ namespace Lagerverwaltung.Core
             Name = name;
             Zeilen = zeilen;
             Spalten = spalten;
-            Erstellt_Am = erstellt_am;
-            Geaendert_Am = geaendert_am;
+            ErstelltAm = erstellt_am;
+            GeaendertAm = geaendert_am;
             Hoehe = hoehe;
             Breite = breite;
             Laenge = laenge;
             V_Wandstaerke = v_wandstaerke;
             H_Wandstaerke = h_wandstaerke;
-    }
+            Regalfachliste = new List<Regalfach>();
+        }
 
         public override float BerechneFlaeche()
         {

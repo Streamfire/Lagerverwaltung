@@ -29,6 +29,7 @@ namespace Lagerverwaltung.Core
             Hoehe = hoehe;
             Breite = breite;
             Laenge = laenge;
+            Paketliste = new List<Paket>();
         }
     }
 }
