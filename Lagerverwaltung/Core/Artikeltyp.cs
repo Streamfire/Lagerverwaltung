@@ -2,19 +2,19 @@
 
 namespace Lagerverwaltung.Core
 {
-	public class Artikeltyp
+	public sealed class Artikeltyp
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public DateTime ErstelltAm { get; set; }
-        public DateTime GeaendertAm { get; set; }
+        public byte ArtikeltypID { get; }
+        public string Name { get; set; }
+        public int Erstellt_Am { get; }
+        public int Geaendert_Am { get; }
 
-        public Artikeltyp(int id, String name, DateTime erstelltAm, DateTime geaendertAm)
+        public Artikeltyp(byte artikeltyp_id, string name, int erstellt_am, int geaendert_am)
         {
-            Id = id;
+            ArtikeltypID = artikeltyp_id;
             Name = name;
-            ErstelltAm = erstelltAm;
-            GeaendertAm = geaendertAm;
+            Erstellt_Am = erstellt_am;
+            Geaendert_Am = geaendert_am;
         }
     }
 }

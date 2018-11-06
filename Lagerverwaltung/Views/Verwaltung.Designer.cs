@@ -11,7 +11,7 @@ namespace Lagerverwaltung.Views
 		/// verarbeitet die Lageliste aus dem Dash und erstellt dynamisch Tabpages, Akkordions und zusatinfo Panele
 		/// </summary>
 		/// <param name="lagerListe">die Lagerliste, übergeben vom Dashboard</param>
-		public void UpdateForm(List<Core.Lager>lagerListe)
+		public void UpdateForm(List<Lager> lagerListe)
 		{
 			foreach (Lager l in lagerListe)
 			{

@@ -2,7 +2,7 @@
 
 namespace Lagerverwaltung.Core
 {
-    sealed class DatabaseFactory
+    public sealed class DatabaseFactory
     {
         private static DatabaseFactory _factory;
         private static NpgsqlConnection _connection;

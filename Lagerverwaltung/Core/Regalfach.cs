@@ -1,32 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
 {
-    public class Regalfach : Base
+    public sealed class Regalfach : Base
     {
-        public List<Paket> Paketliste { get; set; }
-
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public int RegalId { get; set; }
-        public DateTime ErstelltAm { get; set; }
-        public DateTime GeaendertAm { get; set; }
-        public String Bemerkung { get; set; }
+        public int RegalfachID { get; }
+        public byte RegalID { get; }
+        public string Name { get; set; }
+        public string Bemerkung { get; set; }
+        public int Erstellt_Am { get; }
+        public int Geaendert_Am { get; }
 
         public override float Hoehe { get; set; }
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        public Regalfach(int id, String name, int regalId, DateTime erstelltAm, DateTime geaendertAm, String bemerkung, float hoehe, float breite, float laenge)
+        public List<Paket> Paketliste { get; set; }
+    
+        public Regalfach(int regalfach_id, byte regal_id, string name, string bemerkung, int erstellt_am, int geaendert_am, float hoehe, float breite, float laenge)
         {
-            Id = id;
+            RegalfachID = regalfach_id;
+            RegalID = regal_id;
             Name = name;
-            RegalId = regalId;
-            ErstelltAm = erstelltAm;
-            GeaendertAm = geaendertAm;
             Bemerkung = bemerkung;
+            Erstellt_Am = erstellt_am;
+            Geaendert_Am = geaendert_am;
             Hoehe = hoehe;
             Breite = breite;
             Laenge = laenge;

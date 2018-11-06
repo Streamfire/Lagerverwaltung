@@ -1,39 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Lagerverwaltung.Core
 {
-	public class Paket
+	public sealed class Paket
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public int RegalfachId { get; set; }
+        public long PaketID { get; }
+        public int RegalfachID { get; }
+        public string Name { get; set; }
+        public string Anschaffungsgrund { get; set; }
         public int Menge { get; set; }
+        public int Erstellt_Am { get; }
+        public int Geaendert_Am { get; }
+
         public Produkt Produkt { get; set; }
-        public DateTime ErstelltAm { get; set; }
-        public DateTime GeaendertAm { get; set; }
-        public DateTime Haltbarkeit { get; set; }
-        public String Anschaffungsgrund { get; set; }
 
-        //Groesse-> siehe Produkt
+        // Hoehe, Breite, Laenge?
 
-        /*eventuell Daten für Paketdienst
-        public String PaketdienstName { get; set; }
-        public String PaketdienstNr { get; set; }
-        */
-
-
-        public Paket(int paketId, String name, int regalfachId, int menge, Produkt produkt, DateTime erstelltAm, DateTime geaendertAm, DateTime haltbarkeit, String anschaffungsgrund)
+        public Paket(long paket_id, int regalfach_id, string name, string anschaffungsgrund, int menge, int erstellt_am, int geaendert_am, Produkt produkt)
         {
-            RegalfachId = regalfachId;
-            Id = paketId;
+            PaketID = paket_id;
+            RegalfachID = regalfach_id;
             Name = name;
-            Menge = menge;
-            Produkt = produkt;
-            ErstelltAm = erstelltAm;
-            GeaendertAm = geaendertAm;
-            Haltbarkeit = haltbarkeit;
             Anschaffungsgrund = anschaffungsgrund;
+            Menge = menge;
+            Erstellt_Am = erstellt_am;
+            Geaendert_Am = geaendert_am;
+            Produkt = produkt;
         }
 
     }

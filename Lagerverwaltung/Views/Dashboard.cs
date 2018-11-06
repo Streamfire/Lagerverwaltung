@@ -21,25 +21,31 @@ namespace Lagerverwaltung.Views
 			Regaleinsicht = new Regaleinsicht();
 			Historie = new Historie();
 
-			//Testdaten
-			_lagerliste = new List<Lager>();
-			_lagerliste.Add(new Lager(0, "Lager 0", "draußen", "tolles Ding", new DateTime(2018, 1, 1), new DateTime(2018, 1, 1), new Lagertyp(0, "Typ 0", new DateTime(2018, 1, 1), new DateTime(2018, 1, 1))));
-			_lagerliste[0].Regalliste = new List<Regal>();
-			_lagerliste[0].Regalliste.Add(new Regal());
-			_lagerliste[0].Regalliste.Add(new Regal());
-			_lagerliste[0].Regalliste.Add(new Regal());
-			_lagerliste[0].Regalliste.Add(new Regal());
+            //Testdaten
+            _lagerliste = new List<Lager>
+            {
+                new Lager(0, "Lager 0", "draußen", "tolles Ding", 0123456789, 0123456789, new Lagertyp(0, "Typ 0", 0123456789, 0123456789))
+            };
+            _lagerliste[0].Regalliste = new List<Regal>
+            {
+                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4)
+            };
 
-			_lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(0,"test",0, new DateTime(2018, 1, 1), new DateTime(2018, 1, 1),5,6,12));
-			_lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(1, "test2", 0, new DateTime(2018, 1, 1), new DateTime(2018, 1, 1), 5, 6, 12));
+            _lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(0, 0,"test","bla", 0123456789, 0123456789, 5, 6, 12));
+			_lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(1, 0, "test2", "blub", 0123456789, 0123456789, 5, 6, 12));
 
-			_lagerliste.Add(new Lager(1, "Lager 1", "draußen", "tolles Ding", new DateTime(2018, 2, 1), new DateTime(2018, 3, 1), new Lagertyp(0, "Typ 0", new DateTime(2018, 1, 1), new DateTime(2018, 1, 1))));
-			_lagerliste[1].Regalliste = new List<Regal>();
-			_lagerliste[1].Regalliste.Add(new Regal());
-			_lagerliste[1].Regalliste.Add(new Regal());
-			_lagerliste[1].Regalliste.Add(new Regal());
+			_lagerliste.Add(new Lager(1, "Lager 1", "draußen", "tolles Ding", 0123456789, 0123456789, new Lagertyp(0, "Typ 0", 0123456789, 0123456789)));
+            _lagerliste[1].Regalliste = new List<Regal>
+            {
+                new Regal(0, 1, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 1, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 1, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4)
+            };
 
-			Verwaltung.UpdateForm(_lagerliste);
+            Verwaltung.UpdateForm(_lagerliste);
 		}
 
 		public static Historie Historie { get => _historie; set => _historie = value; }
@@ -65,7 +71,7 @@ namespace Lagerverwaltung.Views
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button1_Click(object sender, EventArgs e)
+		private void Button1_Click(object sender, EventArgs e)
 		{
 			if(Verwaltung!=null)
 			{
@@ -83,7 +89,7 @@ namespace Lagerverwaltung.Views
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button2_Click(object sender, EventArgs e)
+		private void Button2_Click(object sender, EventArgs e)
 		{
 			if (Suche != null)
 			{
@@ -101,7 +107,7 @@ namespace Lagerverwaltung.Views
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button3_Click(object sender, EventArgs e)
+		private void Button3_Click(object sender, EventArgs e)
 		{
 			if (Regaleinsicht != null)
 			{
@@ -119,7 +125,7 @@ namespace Lagerverwaltung.Views
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button4_Click(object sender, EventArgs e)
+		private void Button4_Click(object sender, EventArgs e)
 		{
 			if (Historie != null)
 			{

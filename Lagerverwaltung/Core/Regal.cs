@@ -1,46 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using Lagerverwaltung.Core.Abstract;
-using Lagerverwaltung.Core.Interfaces;
 
 namespace Lagerverwaltung.Core
 {
-    sealed public class Regal : Base
+    public sealed class Regal : Base
     {
-        public List<Regalfach> Regalfachliste { get; set; }
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public int LagerId { get; set; }
-        public int Zeilen { get; set; }
-        public int Spalten { get; set; }
-        public DateTime ErstelltAm { get; set; }
-        public DateTime GeaendertAm { get; set; }
+        public byte RegalID { get; }
+        public byte LagerID { get; }
+        public string Name { get; set; }
+        public byte Zeilen { get; set; }
+        public byte Spalten { get; set; }
+        public int Erstellt_Am { get; }
+        public int Geaendert_Am { get; }
 
+        public float V_Wandstaerke { get; set; }
+        public float H_Wandstaerke { get; set; }
         public override float Hoehe { get; set; }
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
-        public float V_Wandstaerke { get; set; }
-        public float H_Wandstaerke { get; set; }
 
-		public Regal()
+        public List<Regalfach> Regalfachliste { get; set; }
+        
+        public Regal(byte regal_id, byte lager_id, string name, byte zeilen, byte spalten, int erstellt_am, int geaendert_am, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
-		    Id=0;
-		    Name="Regal 0";
-		    LagerId= 0;
-		    Zeilen=5;
-		    Spalten=6;
-		    Regalfachliste = new List<Regalfach>();	
-		}
-
-        public Regal(int id, String name, int lagerId, int zeilen, int spalten, DateTime erstelltAm, DateTime geaendertAm, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
-        {
-            Id = id;
+            RegalID = regal_id;
+            LagerID = lager_id;
             Name = name;
-            LagerId = lagerId;
             Zeilen = zeilen;
             Spalten = spalten;
-            ErstelltAm = erstelltAm;
-            GeaendertAm = geaendertAm;
+            Erstellt_Am = erstellt_am;
+            Geaendert_Am = geaendert_am;
             Hoehe = hoehe;
             Breite = breite;
             Laenge = laenge;

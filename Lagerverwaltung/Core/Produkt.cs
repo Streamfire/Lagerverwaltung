@@ -3,32 +3,31 @@ using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
 {
-   public class Produkt : Base
+   public sealed class Produkt : Base
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public Artikeltyp ArtikelTyp { get; set; }
-        public DateTime ErstelltAm { get; set; }
-        public DateTime GeaendertAm { get; set; }
-        public String Zeichnungsnummer { get; set; }
+        public long ProduktID { get; }
+        public string Name { get; set; }
+        public string Zeichnungsnummer { get; set; }
         public float Gewicht { get; set; }
         public float Preis { get; set; }
-
-        // Groesse des Paketes wird in Artikel gespeichert, um Datenkohärenz zu vermeiden
+        public int Erstellt_Am { get; }
+        public int Geaendert_Am { get; }
+        public Artikeltyp ArtikelTyp { get; set; }
+        
         public override float Hoehe { get; set; }
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        public Produkt(int id, String name, Artikeltyp artikeltyp, DateTime erstelltAm, DateTime geaendertAm, String zeichnungsnummer, float gewicht, float preis, float hoehe, float breite, float laenge)
+        public Produkt(long produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, int erstellt_am, int geaendert_am, Artikeltyp artikeltyp, float hoehe, float breite, float laenge)
         {
-            Id = id;
+            ProduktID = produkt_id;
             Name = name;
-            ErstelltAm = erstelltAm;
-            GeaendertAm = geaendertAm;
-            ArtikelTyp = artikeltyp;
             Zeichnungsnummer = zeichnungsnummer;
             Gewicht = gewicht;
             Preis = preis;
+            Erstellt_Am = erstellt_am;
+            Geaendert_Am = geaendert_am;
+            ArtikelTyp = artikeltyp;
             Hoehe = hoehe;
             Breite = breite;
             Laenge = laenge;

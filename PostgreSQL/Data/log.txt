@@ -48,3 +48,68 @@
 2018-10-14 18:40:32.303 CEST [9104] LOG:  worker process: logical replication launcher (PID 11964) exited with exit code 1
 2018-10-14 18:40:32.318 CEST [10536] LOG:  shutting down
 2018-10-14 18:40:32.585 CEST [9104] LOG:  database system is shut down
+2018-10-25 14:56:08.950 CEST [2156] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-25 14:56:08.950 CEST [2156] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-25 14:56:09.195 CEST [2012] LOG:  database system was shut down at 2018-10-14 18:40:32 CEST
+2018-10-25 14:56:09.377 CEST [2156] LOG:  database system is ready to accept connections
+2018-10-25 15:20:38.755 CEST [2156] LOG:  received fast shutdown request
+2018-10-25 15:20:38.840 CEST [2156] LOG:  aborting any active transactions
+2018-10-25 15:20:38.840 CEST [968] FATAL:  terminating connection due to administrator command
+2018-10-25 15:20:38.853 CEST [2156] LOG:  worker process: logical replication launcher (PID 8252) exited with exit code 1
+2018-10-25 15:20:38.858 CEST [4700] LOG:  shutting down
+2018-10-25 15:20:39.073 CEST [2156] LOG:  database system is shut down
+2018-10-25 15:37:14.349 CEST [9144] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-25 15:37:14.349 CEST [9144] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-25 15:37:14.484 CEST [7772] LOG:  database system was shut down at 2018-10-25 15:20:38 CEST
+2018-10-25 15:37:14.552 CEST [9144] LOG:  database system is ready to accept connections
+2018-10-25 15:56:03.672 CEST [9144] LOG:  received fast shutdown request
+2018-10-25 15:56:03.760 CEST [9144] LOG:  aborting any active transactions
+2018-10-25 15:56:03.779 CEST [9144] LOG:  worker process: logical replication launcher (PID 9040) exited with exit code 1
+2018-10-25 15:56:03.782 CEST [1044] LOG:  shutting down
+2018-10-25 15:56:03.961 CEST [9144] LOG:  database system is shut down
+2018-10-26 12:33:33.063 CEST [2192] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-26 12:33:33.063 CEST [2192] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-26 12:33:33.532 CEST [9860] LOG:  database system was shut down at 2018-10-25 15:56:03 CEST
+2018-10-26 12:33:33.837 CEST [2192] LOG:  database system is ready to accept connections
+2018-10-26 13:06:59.768 CEST [11088] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-26 13:13:30.239 CEST [2192] LOG:  received fast shutdown request
+2018-10-26 13:13:30.612 CEST [2192] LOG:  aborting any active transactions
+2018-10-26 13:13:30.627 CEST [2192] LOG:  worker process: logical replication launcher (PID 10868) exited with exit code 1
+2018-10-26 13:13:30.628 CEST [4988] LOG:  shutting down
+2018-10-26 13:13:30.799 CEST [2192] LOG:  database system is shut down
+2018-10-27 15:43:04.878 CEST [4480] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-27 15:43:04.878 CEST [4480] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-27 15:43:05.159 CEST [4356] LOG:  database system was shut down at 2018-10-26 13:13:30 CEST
+2018-10-27 15:43:05.274 CEST [4480] LOG:  database system is ready to accept connections
+2018-10-27 15:47:32.246 CEST [7388] ERROR:  syntax error at or near "(" at character 127
+2018-10-27 15:47:32.246 CEST [7388] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte TO rechte_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rechte_id TYPE smallint (2);
+2018-10-27 15:47:54.875 CEST [7388] ERROR:  column "rechte_id" of relation "user" does not exist
+2018-10-27 15:47:54.875 CEST [7388] STATEMENT:  ALTER TABLE public."user" DROP COLUMN rechte_id;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN rechte_id smallint NOT NULL;
+2018-10-27 15:48:17.012 CEST [7388] ERROR:  column "rechte_id" of relation "user" does not exist
+2018-10-27 15:48:17.012 CEST [7388] STATEMENT:  ALTER TABLE public."user" DROP COLUMN rechte_id;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN rechte smallint NOT NULL;
+2018-10-27 15:59:30.058 CEST [7388] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-27 15:59:32.377 CEST [4480] LOG:  received fast shutdown request
+2018-10-27 15:59:32.416 CEST [4480] LOG:  aborting any active transactions
+2018-10-27 15:59:32.429 CEST [4480] LOG:  worker process: logical replication launcher (PID 4676) exited with exit code 1
+2018-10-27 15:59:32.430 CEST [10232] LOG:  shutting down
+2018-10-27 15:59:32.556 CEST [4480] LOG:  database system is shut down
+2018-10-28 16:56:51.092 CET [7948] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-28 16:56:51.092 CET [7948] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-28 16:56:51.359 CET [6164] LOG:  database system was shut down at 2018-10-27 15:59:32 CEST
+2018-10-28 16:56:51.482 CET [7948] LOG:  database system is ready to accept connections
+2018-10-28 17:11:18.298 CET [5016] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-10-28 17:11:19.919 CET [7948] LOG:  received fast shutdown request
+2018-10-28 17:11:20.094 CET [7948] LOG:  aborting any active transactions
+2018-10-28 17:11:20.120 CET [7948] LOG:  worker process: logical replication launcher (PID 9524) exited with exit code 1
+2018-10-28 17:11:20.120 CET [5576] LOG:  shutting down
+2018-10-28 17:11:21.307 CET [7948] LOG:  database system is shut down

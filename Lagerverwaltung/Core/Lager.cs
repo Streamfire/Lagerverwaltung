@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
 {
-    public class Lager
+    public sealed class Lager
     {
-		public List<Regal> Regalliste { get; set; }
-
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public String Standort { get; set; }
-        public String Beschreibung { get; set; }
-        public DateTime ErstelltAm { get; set; }
-        public DateTime GeaendertAm { get; set; }
+        public byte LagerID { get; }
+        public string Name { get; set; }
+        public string Standort { get; set; }
+        public string Beschreibung { get; set; }
+        public int Erstellt_Am { get; }
+        public int Geaendert_Am { get; }
         public Lagertyp LagerTyp { get; set; }
 
-        public Lager(int id, String name, String standort, String beschreibung, DateTime erstelltAm, DateTime geaendertAm, Lagertyp lagertyp)
+        public List<Regal> Regalliste { get; set; }
+
+        public Lager(byte lager_id, string name, string standort, string beschreibung, int erstellt_am, int geaendert_am, Lagertyp lagertyp)
         {
-            Id = id;
+            LagerID = lager_id;
             Name = name;
             Standort = standort;
             Beschreibung = beschreibung;
-            ErstelltAm = erstelltAm;
-            GeaendertAm = geaendertAm;
+            Erstellt_Am = erstellt_am;
+            Geaendert_Am = geaendert_am;
             LagerTyp = lagertyp;
         }
 	}

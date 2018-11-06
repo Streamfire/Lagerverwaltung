@@ -39,7 +39,7 @@ namespace Lagerverwaltung.Core.Abstract
 
     internal sealed class BaseEnumerator : IEnumerator<Base>
     {
-        private int _index;
+        //private int _index;
 
         internal BaseEnumerator(Base b)
         {

@@ -82,6 +82,8 @@
     <Compile Include="Core\Produkt.cs" />
     <Compile Include="Core\Regal.cs" />
     <Compile Include="Core\Regalfach.cs" />
+    <Compile Include="Core\Rolle.cs" />
+    <Compile Include="Core\User.cs" />
     <Compile Include="ExpandablePanel\Accordion.cs">
       <SubType>UserControl</SubType>
     </Compile>
