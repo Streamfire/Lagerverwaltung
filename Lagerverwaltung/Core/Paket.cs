@@ -1,6 +1,8 @@
-﻿namespace Lagerverwaltung.Core
+﻿using Lagerverwaltung.Core.Abstract;
+
+namespace Lagerverwaltung.Core
 {
-	public sealed class Paket
+	public sealed class Paket : Base
     {
         public long PaketID { get; }
         public int RegalfachID { get; }
@@ -12,7 +14,9 @@
 
         public Produkt Produkt { get; set; }
 
-        // Hoehe, Breite, Laenge?
+        public override float Hoehe { get; set; }
+        public override float Breite { get; set; }
+        public override float Laenge { get; set; }
 
         public Paket(long paket_id, int regalfach_id, string name, string anschaffungsgrund, int menge, int erstellt_am, int geaendert_am, Produkt produkt)
         {
