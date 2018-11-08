@@ -113,3 +113,335 @@
 2018-10-28 17:11:20.120 CET [7948] LOG:  worker process: logical replication launcher (PID 9524) exited with exit code 1
 2018-10-28 17:11:20.120 CET [5576] LOG:  shutting down
 2018-10-28 17:11:21.307 CET [7948] LOG:  database system is shut down
+2018-11-07 13:09:14.243 CET [7736] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-07 13:09:14.243 CET [7736] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-07 13:09:14.558 CET [8748] LOG:  database system was shut down at 2018-10-28 17:11:21 CET
+2018-11-07 13:09:14.844 CET [7736] LOG:  database system is ready to accept connections
+2018-11-07 13:12:40.698 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:12:40.698 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN username character varying(10) NOT NULL;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN password character varying(40) NOT NULL;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN salt character varying(10) NOT NULL;
+	ALTER TABLE public."user" DROP CONSTRAINT user_rechte_fk;
+2018-11-07 13:12:50.768 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:12:50.768 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN username character varying(10) NOT NULL;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN password character varying(40) NOT NULL;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN salt character varying(10) NOT NULL;
+	ALTER TABLE public."user" DROP CONSTRAINT user_rechte_fk;
+2018-11-07 13:12:59.172 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:12:59.172 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN username character varying(10) NOT NULL;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN password character varying(40) NOT NULL;
+	
+	ALTER TABLE public."user"
+	    ADD COLUMN salt character varying(10) NOT NULL;
+	ALTER TABLE public."user" DROP CONSTRAINT user_rechte_fk;
+2018-11-07 13:13:38.146 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:13:38.146 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+2018-11-07 13:13:44.378 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:13:44.378 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+2018-11-07 13:14:13.066 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:14:13.066 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+2018-11-07 13:14:21.709 CET [8492] ERROR:  syntax error at or near "(" at character 130
+2018-11-07 13:14:21.709 CET [8492] STATEMENT:  ALTER TABLE public."user"
+	    RENAME rechte_id TO rollen_id;
+	
+	ALTER TABLE public."user"
+	    ALTER COLUMN rollen_id TYPE smallint (2);
+2018-11-07 13:14:34.606 CET [8492] ERROR:  column "rollen_id" of relation "user" does not exist
+2018-11-07 13:14:34.606 CET [8492] STATEMENT:  ALTER TABLE public."user" DROP COLUMN rollen_id;
+2018-11-07 13:14:47.628 CET [8492] ERROR:  column "rollen_id" of relation "user" does not exist
+2018-11-07 13:14:47.628 CET [8492] STATEMENT:  ALTER TABLE public."user" DROP COLUMN rollen_id;
+2018-11-07 14:04:59.138 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:04:59.138 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50);
+2018-11-07 14:05:08.630 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:05:08.630 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50);
+2018-11-07 14:05:26.188 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:05:26.188 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:05:31.460 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:05:31.460 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:05:46.288 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:05:46.288 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:06:02.925 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:06:02.925 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:06:12.249 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:06:12.249 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN name TYPE character varying (25) COLLATE pg_catalog."default";
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:06:18.207 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:06:18.207 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN name TYPE character varying (25) COLLATE pg_catalog."default";
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:07:51.598 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:07:51.598 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN name TYPE character varying (25) COLLATE pg_catalog."default";
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:08:06.006 CET [8492] ERROR:  column "none" of relation "produkt" does not exist
+2018-11-07 14:08:06.006 CET [8492] STATEMENT:  ALTER TABLE public.produkt DROP COLUMN None;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN name TYPE character varying (25) COLLATE pg_catalog."default";
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN gewicht real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN preis real NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ADD COLUMN zeichnungsnummer character varying(50) NOT NULL;
+2018-11-07 14:50:31.456 CET [8492] ERROR:  syntax error at or near "(" at character 60
+2018-11-07 14:50:31.456 CET [8492] STATEMENT:  ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ADD COLUMN "v_wandstärke" real NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ADD COLUMN "h_wandstärke" real NOT NULL;
+2018-11-07 14:50:39.849 CET [8492] ERROR:  syntax error at or near "(" at character 60
+2018-11-07 14:50:39.849 CET [8492] STATEMENT:  ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ADD COLUMN "v_wandstärke" real NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ADD COLUMN "h_wandstärke" real NOT NULL;
+2018-11-07 14:51:21.756 CET [8492] ERROR:  syntax error at or near "(" at character 68
+2018-11-07 14:51:21.756 CET [8492] STATEMENT:  ALTER TABLE public.regal
+	    ALTER COLUMN "h_wandstärke" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "h_wandstärke" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "v_wandstärke" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "v_wandstärke" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" SET NOT NULL;
+2018-11-07 14:51:32.423 CET [8492] ERROR:  syntax error at or near "(" at character 60
+2018-11-07 14:51:32.423 CET [8492] STATEMENT:  ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "v_wandstärke" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "v_wandstärke" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "h_wandstärke" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "h_wandstärke" SET NOT NULL;
+2018-11-07 14:51:40.576 CET [8492] ERROR:  syntax error at or near "(" at character 60
+2018-11-07 14:51:40.576 CET [8492] STATEMENT:  ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" SET NOT NULL;
+2018-11-07 14:53:24.258 CET [7736] LOG:  received fast shutdown request
+2018-11-07 14:53:24.285 CET [7736] LOG:  aborting any active transactions
+2018-11-07 14:53:24.295 CET [8492] FATAL:  terminating connection due to administrator command
+2018-11-07 14:53:24.322 CET [7736] LOG:  worker process: logical replication launcher (PID 1288) exited with exit code 1
+2018-11-07 14:53:24.324 CET [6408] LOG:  shutting down
+2018-11-07 14:53:24.651 CET [7736] LOG:  database system is shut down
+2018-11-08 17:40:35.578 CET [9272] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-08 17:40:35.578 CET [9272] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-08 17:40:35.812 CET [5448] LOG:  database system was shut down at 2018-11-07 14:53:24 CET
+2018-11-08 17:40:35.889 CET [9272] LOG:  database system is ready to accept connections
+2018-11-08 17:51:49.568 CET [3200] LOG:  incomplete startup packet
+2018-11-08 18:25:13.288 CET [4256] ERROR:  syntax error at or near "(" at character 150
+2018-11-08 18:25:13.288 CET [4256] STATEMENT:  ALTER TABLE public.produkttyp
+	    RENAME artikeltyp_id TO produkttyp_id;
+	
+	ALTER TABLE public.produkttyp
+	    ALTER COLUMN produkttyp_id TYPE smallint (2);
+2018-11-08 18:36:58.213 CET [9272] LOG:  received fast shutdown request
+2018-11-08 18:36:58.283 CET [9272] LOG:  aborting any active transactions
+2018-11-08 18:36:58.284 CET [4256] FATAL:  terminating connection due to administrator command
+2018-11-08 18:36:58.318 CET [9272] LOG:  worker process: logical replication launcher (PID 4072) exited with exit code 1
+2018-11-08 18:36:58.320 CET [764] LOG:  shutting down
+2018-11-08 18:36:58.515 CET [9272] LOG:  database system is shut down
