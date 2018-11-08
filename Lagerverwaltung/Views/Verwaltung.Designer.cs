@@ -147,7 +147,7 @@ namespace Lagerverwaltung.Views
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(113, 46);
             this.button6.TabIndex = 6;
-            this.button6.Text = "Ware umlagern";
+            this.button6.Text = "Paket umlagern";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
@@ -167,7 +167,7 @@ namespace Lagerverwaltung.Views
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(113, 46);
             this.button8.TabIndex = 7;
-            this.button8.Text = "Lager Entfernen";
+            this.button8.Text = "Regal Entfernen";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // Verwaltung
