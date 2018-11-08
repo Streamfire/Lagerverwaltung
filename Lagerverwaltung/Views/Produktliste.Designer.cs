@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.name_a = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gewicht = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Preis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Zeichnungsnummer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,7 +43,7 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
+            this.name_a,
             this.Gewicht,
             this.Preis,
             this.Zeichnungsnummer,
@@ -58,10 +58,10 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // Name
+            // name_a
             // 
-            this.Name.Text = "Name";
-            this.Name.Width = 385;
+            this.name_a.Text = "Name";
+            this.name_a.Width = 385;
             // 
             // Gewicht
             // 
@@ -133,7 +133,7 @@
         #endregion
 
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader name_a;
         private System.Windows.Forms.ColumnHeader Gewicht;
         private System.Windows.Forms.ColumnHeader Preis;
         private System.Windows.Forms.ColumnHeader Zeichnungsnummer;
