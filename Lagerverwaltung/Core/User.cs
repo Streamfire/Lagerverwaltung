@@ -9,6 +9,8 @@
         public int ErstelltAm { get; }
         public int LetzterLogin { get; }
         public int ZuletztGeaendert { get; }
+        //password
+        //salt
 
         public User(byte user_id, byte rollen_id, string name, string username, int erstellt_am, int letzter_login, int zuletzt_geaendert)
         {
