@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewProduktliste = new System.Windows.Forms.ListView();
             this.name_a = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gewicht = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Preis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,23 +40,23 @@
             this.Produkt_hinzufuegen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewProduktliste
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewProduktliste.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.name_a,
             this.Gewicht,
             this.Preis,
             this.Zeichnungsnummer,
             this.Erstellt_Am,
             this.Zuletzt_geaendert});
-            this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(29, 29);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(949, 639);
-            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewProduktliste.LabelWrap = false;
+            this.listViewProduktliste.Location = new System.Drawing.Point(29, 29);
+            this.listViewProduktliste.Name = "listViewProduktliste";
+            this.listViewProduktliste.Size = new System.Drawing.Size(949, 639);
+            this.listViewProduktliste.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listViewProduktliste.TabIndex = 0;
+            this.listViewProduktliste.UseCompatibleStateImageBehavior = false;
+            this.listViewProduktliste.View = System.Windows.Forms.View.Details;
             // 
             // name_a
             // 
@@ -123,7 +123,7 @@
             this.Controls.Add(this.Produkt_hinzufuegen);
             this.Controls.Add(this.Auswaehlen);
             this.Controls.Add(this.Schliessen);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewProduktliste);
             this.Name = "Produktliste";
             this.Text = "Produktliste";
             this.ResumeLayout(false);
@@ -132,7 +132,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewProduktliste;
         private System.Windows.Forms.ColumnHeader name_a;
         private System.Windows.Forms.ColumnHeader Gewicht;
         private System.Windows.Forms.ColumnHeader Preis;

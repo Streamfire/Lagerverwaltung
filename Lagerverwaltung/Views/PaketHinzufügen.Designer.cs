@@ -208,7 +208,7 @@
             this.buttonProduktAuswählen.Name = "buttonProduktAuswählen";
             this.buttonProduktAuswählen.Size = new System.Drawing.Size(156, 38);
             this.buttonProduktAuswählen.TabIndex = 19;
-            this.buttonProduktAuswählen.Text = "Produkt auswählen";
+            this.buttonProduktAuswählen.Text = "Produktliste";
             this.buttonProduktAuswählen.UseVisualStyleBackColor = true;
             // 
             // labelProduktAusgewählt
