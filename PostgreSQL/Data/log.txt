@@ -543,3 +543,30 @@
 2018-11-09 14:09:12.369 CET [11372] LOG:  worker process: logical replication launcher (PID 7560) exited with exit code 1
 2018-11-09 14:09:12.370 CET [10788] LOG:  shutting down
 2018-11-09 14:09:12.640 CET [11372] LOG:  database system is shut down
+2018-11-09 17:33:51.092 CET [11644] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-09 17:33:51.092 CET [11644] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-09 17:33:51.216 CET [1140] LOG:  database system was shut down at 2018-11-09 14:09:12 CET
+2018-11-09 17:33:51.268 CET [11644] LOG:  database system is ready to accept connections
+2018-11-09 20:00:22.684 CET [10980] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:06:05.323 CET [5340] ERROR:  column "lagertyp" of relation "lager" does not exist at character 49
+2018-11-09 20:06:05.323 CET [5340] STATEMENT:  INSERT INTO lager (name, standort, beschreibung,lagertyp) VALUES ($1,$2,$3,$4)
+2018-11-09 20:06:13.604 CET [5340] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:06:26.402 CET [11856] ERROR:  column "lagertyp_id" is of type smallint but expression is of type text at character 79
+2018-11-09 20:06:26.402 CET [11856] HINT:  You will need to rewrite or cast the expression.
+2018-11-09 20:06:26.402 CET [11856] STATEMENT:  INSERT INTO lager (name, standort, beschreibung,lagertyp_id) VALUES ($1,$2,$3,$4)
+2018-11-09 20:06:31.466 CET [11856] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:06:53.296 CET [7552] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:07:14.395 CET [3360] ERROR:  insert or update on table "lager" violates foreign key constraint "lager_lagertyp_fk"
+2018-11-09 20:07:14.395 CET [3360] DETAIL:  Key (lagertyp_id)=(2) is not present in table "lagertyp".
+2018-11-09 20:07:14.395 CET [3360] STATEMENT:  INSERT INTO lager (name, standort, beschreibung,lagertyp_id) VALUES ($1,$2,$3,$4)
+2018-11-09 20:07:18.978 CET [3360] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:07:31.471 CET [2052] ERROR:  insert or update on table "lager" violates foreign key constraint "lager_lagertyp_fk"
+2018-11-09 20:07:31.471 CET [2052] DETAIL:  Key (lagertyp_id)=(2) is not present in table "lagertyp".
+2018-11-09 20:07:31.471 CET [2052] STATEMENT:  INSERT INTO lager (name, standort, beschreibung,lagertyp_id) VALUES ($1,$2,$3,$4)
+2018-11-09 20:07:36.924 CET [2052] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:28:43.360 CET [5084] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 20:28:46.645 CET [11644] LOG:  received fast shutdown request
+2018-11-09 20:28:46.730 CET [11644] LOG:  aborting any active transactions
+2018-11-09 20:28:46.743 CET [11644] LOG:  worker process: logical replication launcher (PID 4152) exited with exit code 1
+2018-11-09 20:28:46.743 CET [7732] LOG:  shutting down
+2018-11-09 20:28:46.908 CET [11644] LOG:  database system is shut down

@@ -16,7 +16,7 @@ namespace Lagerverwaltung.Core
             return _factory;
         }
 
-        public static NpgsqlConnection GetConnection()
+        public NpgsqlConnection GetConnection()
         {
             if (_connection == null)
             {

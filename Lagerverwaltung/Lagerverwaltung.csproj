@@ -91,10 +91,12 @@
     <Compile Include="ExpandablePanel\ResizeBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Model\Artikel_ProduktModel.cs" />
+    <Compile Include="Model\ProduktModel.cs" />
     <Compile Include="Model\HistorieModel.cs" />
+    <Compile Include="Model\ArtikeltypModel.cs" />
+    <Compile Include="Model\LagertypModel.cs" />
     <Compile Include="Model\PaketModel.cs" />
-    <Compile Include="Model\RechteModel.cs" />
+    <Compile Include="Model\RollenModel.cs" />
     <Compile Include="Model\LagerModel.cs" />
     <Compile Include="Model\RegalfachModel.cs" />
     <Compile Include="Model\RegalModel.cs" />

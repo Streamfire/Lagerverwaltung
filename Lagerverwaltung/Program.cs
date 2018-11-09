@@ -18,7 +18,6 @@ namespace Lagerverwaltung
 			Application.SetCompatibleTextRenderingDefault(false);
 
             //Test
-            //Application.Exit();
 
             //LoginForm
             Login login = new Login();

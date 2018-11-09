@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lagerverwaltung.Model
+﻿namespace Lagerverwaltung.Model
 {
-    static class HistorieModel
+    public static class HistorieModel
     {
-        // Methoden um die Historie aus der Datenbank zu holen
+        public static bool HoleHistorie()
+        {
+            return true;
+        }
+        // nur lesende Funktionen, da Historie durch die Datenbank Trigger später erstellt werden!
     }
 }
