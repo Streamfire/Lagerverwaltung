@@ -16,7 +16,22 @@ namespace Lagerverwaltung.Views
         {
             InitializeComponent();
         }
+        public static Produktliste Produktliste { get => _produktliste; set => _produktliste = value; }
+        private static Produktliste _produktliste = null;
 
+        private void buttonProduktAuswaehlen_Click(object sender, EventArgs e)
+        {
+            if (Produktliste != null)
+            {
+                Produktliste.ShowDialog(this);
+
+            }
+            else
+            {
+                Produktliste = new Produktliste();
+                Produktliste.ShowDialog();
+            }
+        }
         private void buttonAbbrechen_Click(object sender, EventArgs e)
         {
             this.Close();

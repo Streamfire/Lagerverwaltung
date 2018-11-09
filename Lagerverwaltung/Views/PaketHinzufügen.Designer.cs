@@ -44,7 +44,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxBreite = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.buttonProduktAuswählen = new System.Windows.Forms.Button();
+            this.buttonProduktAuswaehlen = new System.Windows.Forms.Button();
             this.labelProduktAusgewählt = new System.Windows.Forms.Label();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.dateTimePickerHaltbarkeit = new System.Windows.Forms.DateTimePicker();
@@ -201,15 +201,16 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "mm";
             // 
-            // buttonProduktAuswählen
+            // buttonProduktAuswaehlen
             // 
-            this.buttonProduktAuswählen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduktAuswählen.Location = new System.Drawing.Point(344, 230);
-            this.buttonProduktAuswählen.Name = "buttonProduktAuswählen";
-            this.buttonProduktAuswählen.Size = new System.Drawing.Size(156, 38);
-            this.buttonProduktAuswählen.TabIndex = 19;
-            this.buttonProduktAuswählen.Text = "Produktliste";
-            this.buttonProduktAuswählen.UseVisualStyleBackColor = true;
+            this.buttonProduktAuswaehlen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProduktAuswaehlen.Location = new System.Drawing.Point(344, 230);
+            this.buttonProduktAuswaehlen.Name = "buttonProduktAuswaehlen";
+            this.buttonProduktAuswaehlen.Size = new System.Drawing.Size(156, 38);
+            this.buttonProduktAuswaehlen.TabIndex = 19;
+            this.buttonProduktAuswaehlen.Text = "Produktliste";
+            this.buttonProduktAuswaehlen.UseVisualStyleBackColor = true;
+            this.buttonProduktAuswaehlen.Click += new System.EventHandler(this.buttonProduktAuswaehlen_Click);
             // 
             // labelProduktAusgewählt
             // 
@@ -259,7 +260,7 @@
             this.Controls.Add(this.dateTimePickerHaltbarkeit);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.labelProduktAusgewählt);
-            this.Controls.Add(this.buttonProduktAuswählen);
+            this.Controls.Add(this.buttonProduktAuswaehlen);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxBreite);
             this.Controls.Add(this.label10);
@@ -302,7 +303,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxBreite;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonProduktAuswählen;
+        private System.Windows.Forms.Button buttonProduktAuswaehlen;
         private System.Windows.Forms.Label labelProduktAusgewählt;
         private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.DateTimePicker dateTimePickerHaltbarkeit;

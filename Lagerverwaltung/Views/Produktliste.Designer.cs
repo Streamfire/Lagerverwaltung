@@ -90,16 +90,19 @@
             // 
             // Schliessen
             // 
-            this.Schliessen.Location = new System.Drawing.Point(859, 697);
+            this.Schliessen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Schliessen.Location = new System.Drawing.Point(858, 685);
             this.Schliessen.Name = "Schliessen";
             this.Schliessen.Size = new System.Drawing.Size(120, 35);
             this.Schliessen.TabIndex = 1;
             this.Schliessen.Text = "Schließen";
             this.Schliessen.UseVisualStyleBackColor = true;
+            this.Schliessen.Click += new System.EventHandler(this.Schliessen_Click);
             // 
             // Auswaehlen
             // 
-            this.Auswaehlen.Location = new System.Drawing.Point(711, 697);
+            this.Auswaehlen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Auswaehlen.Location = new System.Drawing.Point(708, 685);
             this.Auswaehlen.Name = "Auswaehlen";
             this.Auswaehlen.Size = new System.Drawing.Size(120, 35);
             this.Auswaehlen.TabIndex = 2;
@@ -108,9 +111,10 @@
             // 
             // Produkt_hinzufuegen
             // 
-            this.Produkt_hinzufuegen.Location = new System.Drawing.Point(29, 697);
+            this.Produkt_hinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Produkt_hinzufuegen.Location = new System.Drawing.Point(29, 685);
             this.Produkt_hinzufuegen.Name = "Produkt_hinzufuegen";
-            this.Produkt_hinzufuegen.Size = new System.Drawing.Size(120, 35);
+            this.Produkt_hinzufuegen.Size = new System.Drawing.Size(157, 35);
             this.Produkt_hinzufuegen.TabIndex = 3;
             this.Produkt_hinzufuegen.Text = "Produkt hinzufügen";
             this.Produkt_hinzufuegen.UseVisualStyleBackColor = true;
@@ -119,12 +123,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 761);
+            this.ClientSize = new System.Drawing.Size(1004, 736);
             this.Controls.Add(this.Produkt_hinzufuegen);
             this.Controls.Add(this.Auswaehlen);
             this.Controls.Add(this.Schliessen);
             this.Controls.Add(this.listViewProduktliste);
             this.Name = "Produktliste";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produktliste";
             this.ResumeLayout(false);
 
