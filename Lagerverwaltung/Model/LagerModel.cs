@@ -1,15 +1,21 @@
 ﻿using Lagerverwaltung.Core;
+using Npgsql;
 
 namespace Lagerverwaltung.Model
 {
     public static class LagerModel
     {
+        private static readonly NpgsqlConnection conn;
+
+        static LagerModel()
+        {
+            conn = DatabaseFactory.GetFactory().GetConnection();
+        }
+
         // Funktioniert, aber Exception Handling fehlt!
         public static bool ErstelleLager(string name, short lagertyp, string standort ="", string beschreibung="")
         {
-            var conn = DatabaseFactory.GetFactory().GetConnection();
-
-            using (var cmd = new Npgsql.NpgsqlCommand())
+            using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO lager (name, standort, beschreibung,lagertyp_id) VALUES (@name,@standort,@beschreibung,@lagertyp)";

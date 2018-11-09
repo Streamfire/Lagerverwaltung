@@ -1,14 +1,21 @@
 ﻿using Lagerverwaltung.Core;
+using Npgsql;
 
 namespace Lagerverwaltung.Model
 {
-    static class UserModel
+    public static class UserModel
     {
+        private static readonly NpgsqlConnection conn;
+
+        static UserModel()
+        {
+            conn = DatabaseFactory.GetFactory().GetConnection();
+        }
+
         public static bool ErstelleUser(string vorname, string nachname, string username, short rollen_id, string password, string salt)
         {
-            var conn = DatabaseFactory.GetFactory().GetConnection();
             /*
-            using (var cmd = new Npgsql.NpgsqlCommand())
+            using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "INSERT INTO artikeltyp (name) VALUES (@name)";

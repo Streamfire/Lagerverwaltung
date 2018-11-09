@@ -1,6 +1,20 @@
-﻿namespace Lagerverwaltung.Model
+﻿using Lagerverwaltung.Core;
+using Npgsql;
+
+namespace Lagerverwaltung.Model
 {
-    static class ProduktModel
+    public static class ProduktModel
     {
+        private static readonly NpgsqlConnection conn;
+
+        static ProduktModel()
+        {
+            conn = DatabaseFactory.GetFactory().GetConnection();
+        }
+
+        public static bool ErstelleProdukt()
+        {
+            return true;
+        }
     }
 }

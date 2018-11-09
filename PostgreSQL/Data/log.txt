@@ -570,3 +570,14 @@
 2018-11-09 20:28:46.743 CET [11644] LOG:  worker process: logical replication launcher (PID 4152) exited with exit code 1
 2018-11-09 20:28:46.743 CET [7732] LOG:  shutting down
 2018-11-09 20:28:46.908 CET [11644] LOG:  database system is shut down
+2018-11-09 22:53:30.090 CET [8608] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-09 22:53:30.090 CET [8608] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-09 22:53:30.196 CET [8264] LOG:  database system was shut down at 2018-11-09 20:28:46 CET
+2018-11-09 22:53:30.292 CET [8608] LOG:  database system is ready to accept connections
+2018-11-09 23:30:11.029 CET [12172] LOG:  could not receive data from client: unrecognized winsock error 10054
+2018-11-09 23:31:11.798 CET [8608] LOG:  received fast shutdown request
+2018-11-09 23:31:11.873 CET [8608] LOG:  aborting any active transactions
+2018-11-09 23:31:11.873 CET [3100] FATAL:  terminating connection due to administrator command
+2018-11-09 23:31:11.886 CET [8608] LOG:  worker process: logical replication launcher (PID 2860) exited with exit code 1
+2018-11-09 23:31:11.888 CET [928] LOG:  shutting down
+2018-11-09 23:31:12.180 CET [8608] LOG:  database system is shut down

@@ -1,6 +1,20 @@
-﻿namespace Lagerverwaltung.Model
+﻿using Lagerverwaltung.Core;
+using Npgsql;
+
+namespace Lagerverwaltung.Model
 {
-    static class RegalModel
+    public static class RegalModel
     {
+        private static readonly NpgsqlConnection conn;
+
+        static RegalModel()
+        {
+            conn = DatabaseFactory.GetFactory().GetConnection();
+        }
+
+        public static bool ErstelleRegal()
+        {
+            return true;
+        }
     }
 }
