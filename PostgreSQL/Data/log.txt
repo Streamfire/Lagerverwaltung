@@ -445,3 +445,101 @@
 2018-11-08 18:36:58.318 CET [9272] LOG:  worker process: logical replication launcher (PID 4072) exited with exit code 1
 2018-11-08 18:36:58.320 CET [764] LOG:  shutting down
 2018-11-08 18:36:58.515 CET [9272] LOG:  database system is shut down
+2018-11-09 13:55:09.165 CET [11372] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-09 13:55:09.165 CET [11372] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-09 13:55:09.323 CET [3292] LOG:  database system was shut down at 2018-11-08 18:36:58 CET
+2018-11-09 13:55:09.464 CET [11372] LOG:  database system is ready to accept connections
+2018-11-09 14:01:04.195 CET [5708] ERROR:  cannot drop sequence historie_user_id_seq because other objects depend on it
+2018-11-09 14:01:04.195 CET [5708] DETAIL:  default for table historie column user_id depends on sequence historie_user_id_seq
+2018-11-09 14:01:04.195 CET [5708] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2018-11-09 14:01:04.195 CET [5708] STATEMENT:  DROP SEQUENCE public.historie_user_id_seq;
+2018-11-09 14:01:24.225 CET [5708] ERROR:  syntax error at or near "(" at character 68
+2018-11-09 14:01:24.225 CET [5708] STATEMENT:  ALTER TABLE public.historie
+	    ALTER COLUMN user_id TYPE smallint (2);
+	ALTER TABLE public.historie
+	    ALTER COLUMN user_id DROP DEFAULT;
+2018-11-09 14:01:29.118 CET [5708] ERROR:  syntax error at or near "(" at character 68
+2018-11-09 14:01:29.118 CET [5708] STATEMENT:  ALTER TABLE public.historie
+	    ALTER COLUMN user_id TYPE smallint (2);
+	ALTER TABLE public.historie
+	    ALTER COLUMN user_id DROP DEFAULT;
+2018-11-09 14:01:41.905 CET [5708] ERROR:  syntax error at or near "(" at character 68
+2018-11-09 14:01:41.905 CET [5708] STATEMENT:  ALTER TABLE public.historie
+	    ALTER COLUMN user_id TYPE smallint (2);
+	ALTER TABLE public.historie
+	    ALTER COLUMN user_id DROP DEFAULT;
+2018-11-09 14:03:04.365 CET [5708] ERROR:  syntax error at or near "(" at character 63
+2018-11-09 14:03:04.365 CET [5708] STATEMENT:  ALTER TABLE public.produkt
+	    ALTER COLUMN gewicht TYPE real (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN gewicht SET NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN preis TYPE real (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN preis SET NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN zeichnungsnummer TYPE character varying (50) COLLATE pg_catalog."default";
+	ALTER TABLE public.produkt
+	    ALTER COLUMN zeichnungsnummer SET NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN paket_id TYPE integer (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN paket_id SET NOT NULL;
+2018-11-09 14:03:11.864 CET [5708] ERROR:  syntax error at or near "(" at character 63
+2018-11-09 14:03:11.864 CET [5708] STATEMENT:  ALTER TABLE public.produkt
+	    ALTER COLUMN gewicht TYPE real (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN gewicht SET NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN preis TYPE real (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN preis SET NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN zeichnungsnummer TYPE character varying (50) COLLATE pg_catalog."default";
+	ALTER TABLE public.produkt
+	    ALTER COLUMN zeichnungsnummer SET NOT NULL;
+	
+	ALTER TABLE public.produkt
+	    ALTER COLUMN paket_id TYPE integer (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN paket_id SET NOT NULL;
+2018-11-09 14:03:25.069 CET [5708] ERROR:  syntax error at or near "(" at character 67
+2018-11-09 14:03:25.069 CET [5708] STATEMENT:  ALTER TABLE public.produkt
+	    ALTER COLUMN paket_id TYPE integer (4);
+	ALTER TABLE public.produkt
+	    ALTER COLUMN paket_id SET NOT NULL;
+2018-11-09 14:04:38.073 CET [5708] ERROR:  syntax error at or near "(" at character 60
+2018-11-09 14:04:38.073 CET [5708] STATEMENT:  ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "höhe" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "länge" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "h_wandstärke" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "h_wandstärke" SET NOT NULL;
+	
+	ALTER TABLE public.regal
+	    ALTER COLUMN "v_wandstärke" TYPE real (4);
+	ALTER TABLE public.regal
+	    ALTER COLUMN "v_wandstärke" SET NOT NULL;
+2018-11-09 14:09:12.320 CET [11372] LOG:  received fast shutdown request
+2018-11-09 14:09:12.346 CET [11372] LOG:  aborting any active transactions
+2018-11-09 14:09:12.369 CET [11372] LOG:  worker process: logical replication launcher (PID 7560) exited with exit code 1
+2018-11-09 14:09:12.370 CET [10788] LOG:  shutting down
+2018-11-09 14:09:12.640 CET [11372] LOG:  database system is shut down
