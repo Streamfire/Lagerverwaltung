@@ -155,6 +155,7 @@
             this.buttonAbbrechen.TabIndex = 11;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
             // RegalAendern_Entfernen
             // 
@@ -174,6 +175,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegalAendern_Entfernen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegalAendern_Entfernen";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,5 +16,10 @@ namespace Lagerverwaltung.Views
         {
             InitializeComponent();
         }
+
+        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

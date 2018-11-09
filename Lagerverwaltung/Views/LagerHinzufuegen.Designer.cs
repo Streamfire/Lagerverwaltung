@@ -107,6 +107,7 @@
             this.buttonAbbrechen.TabIndex = 6;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
             // label4
             // 
@@ -162,6 +163,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LagerHinzufuegen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LagerHinzufügen";
             this.ResumeLayout(false);
             this.PerformLayout();

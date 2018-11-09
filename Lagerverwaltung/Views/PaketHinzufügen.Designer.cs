@@ -230,6 +230,7 @@
             this.buttonAbbrechen.TabIndex = 21;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
             // dateTimePickerHaltbarkeit
             // 
@@ -276,6 +277,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PaketHinzufügen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaketHinzufügen";
             this.ResumeLayout(false);
             this.PerformLayout();

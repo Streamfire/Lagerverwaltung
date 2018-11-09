@@ -160,6 +160,7 @@ namespace Lagerverwaltung.Views
             this.buttonPaketHinzufuegen.TabIndex = 1;
             this.buttonPaketHinzufuegen.Text = "Paket hinzufügen";
             this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonPaketHinzufuegen.Click += new System.EventHandler(this.buttonPaketHinzufuegen_Click);
             // 
             // buttonPaketEntfernen
             // 
@@ -190,6 +191,7 @@ namespace Lagerverwaltung.Views
             this.buttonLagerHinzufuegen.TabIndex = 4;
             this.buttonLagerHinzufuegen.Text = "Lager hinzufügen";
             this.buttonLagerHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonLagerHinzufuegen.Click += new System.EventHandler(this.buttonLagerHinzufuegen_Click);
             // 
             // buttonLagerungOptimieren
             // 
@@ -220,6 +222,7 @@ namespace Lagerverwaltung.Views
             this.buttonRegalHinzufuegen.TabIndex = 8;
             this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
             this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.buttonRegalHinzufuegen_Click);
             // 
             // buttonRegalEntfernen
             // 
@@ -230,6 +233,7 @@ namespace Lagerverwaltung.Views
             this.buttonRegalEntfernen.TabIndex = 7;
             this.buttonRegalEntfernen.Text = "Regal ändern/ entfernen";
             this.buttonRegalEntfernen.UseVisualStyleBackColor = true;
+            this.buttonRegalEntfernen.Click += new System.EventHandler(this.buttonRegalEntfernen_Click);
             // 
             // buttonZurück
             // 
@@ -240,6 +244,7 @@ namespace Lagerverwaltung.Views
             this.buttonZurück.TabIndex = 9;
             this.buttonZurück.Text = "Zurück";
             this.buttonZurück.UseVisualStyleBackColor = true;
+            this.buttonZurück.Click += new System.EventHandler(this.buttonZurück_Click);
             // 
             // Verwaltung
             // 

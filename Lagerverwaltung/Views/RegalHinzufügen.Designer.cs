@@ -114,6 +114,7 @@
             this.buttonAbbrechen.TabIndex = 7;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
             // label4
             // 
@@ -161,6 +162,7 @@
             this.Controls.Add(this.textBoxRegalName);
             this.Controls.Add(this.label1);
             this.Name = "RegalHinzufügen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegalHinzufügen";
             this.ResumeLayout(false);
             this.PerformLayout();
