@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.buttonRegalHinzufügen = new System.Windows.Forms.Button();
+            this.buttonRegalHinzufuegen = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -93,15 +93,15 @@
             this.textBox2.Size = new System.Drawing.Size(61, 24);
             this.textBox2.TabIndex = 5;
             // 
-            // buttonRegalHinzufügen
+            // buttonRegalHinzufuegen
             // 
-            this.buttonRegalHinzufügen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegalHinzufügen.Location = new System.Drawing.Point(116, 235);
-            this.buttonRegalHinzufügen.Name = "buttonRegalHinzufügen";
-            this.buttonRegalHinzufügen.Size = new System.Drawing.Size(133, 31);
-            this.buttonRegalHinzufügen.TabIndex = 6;
-            this.buttonRegalHinzufügen.Text = "Regal hinzufügen";
-            this.buttonRegalHinzufügen.UseVisualStyleBackColor = true;
+            this.buttonRegalHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegalHinzufuegen.Location = new System.Drawing.Point(116, 235);
+            this.buttonRegalHinzufuegen.Name = "buttonRegalHinzufuegen";
+            this.buttonRegalHinzufuegen.Size = new System.Drawing.Size(133, 31);
+            this.buttonRegalHinzufuegen.TabIndex = 6;
+            this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
+            this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
             // 
             // buttonAbbrechen
             // 
@@ -123,21 +123,21 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Regal hinzufügen";
             // 
-            // RegalHinzufügen
+            // RegalHinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 292);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonRegalHinzufügen);
+            this.Controls.Add(this.buttonRegalHinzufuegen);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxRegalName);
             this.Controls.Add(this.label1);
-            this.Name = "RegalHinzufügen";
+            this.Name = "RegalHinzufuegen";
             this.Text = "RegalHinzufügen";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,7 +152,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button buttonRegalHinzufügen;
+        private System.Windows.Forms.Button buttonRegalHinzufuegen;
         private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.Label label4;
     }

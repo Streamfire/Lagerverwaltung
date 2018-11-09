@@ -33,7 +33,7 @@
             this.textBoxPaketbezeichnung = new System.Windows.Forms.TextBox();
             this.textBoxAnschaffungsgrund = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonPaketHinzufügen = new System.Windows.Forms.Button();
+            this.buttonPaketHinzufuegen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxHoehe = new System.Windows.Forms.TextBox();
@@ -54,159 +54,159 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 111);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
+            this.label1.Size = new System.Drawing.Size(129, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Paketbezeichnung";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 165);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.Size = new System.Drawing.Size(134, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Anschaffungsgrund";
             // 
             // textBoxPaketbezeichnung
             // 
-            this.textBoxPaketbezeichnung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPaketbezeichnung.Location = new System.Drawing.Point(246, 105);
+            this.textBoxPaketbezeichnung.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPaketbezeichnung.Location = new System.Drawing.Point(195, 83);
             this.textBoxPaketbezeichnung.Name = "textBoxPaketbezeichnung";
-            this.textBoxPaketbezeichnung.Size = new System.Drawing.Size(274, 26);
+            this.textBoxPaketbezeichnung.Size = new System.Drawing.Size(259, 24);
             this.textBoxPaketbezeichnung.TabIndex = 2;
             // 
             // textBoxAnschaffungsgrund
             // 
-            this.textBoxAnschaffungsgrund.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnschaffungsgrund.Location = new System.Drawing.Point(246, 162);
+            this.textBoxAnschaffungsgrund.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAnschaffungsgrund.Location = new System.Drawing.Point(195, 129);
             this.textBoxAnschaffungsgrund.Name = "textBoxAnschaffungsgrund";
-            this.textBoxAnschaffungsgrund.Size = new System.Drawing.Size(274, 26);
+            this.textBoxAnschaffungsgrund.Size = new System.Drawing.Size(259, 24);
             this.textBoxAnschaffungsgrund.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 222);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.Size = new System.Drawing.Size(78, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Haltbarkeit";
             // 
-            // buttonPaketHinzufügen
+            // buttonPaketHinzufuegen
             // 
-            this.buttonPaketHinzufügen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPaketHinzufügen.Location = new System.Drawing.Point(419, 480);
-            this.buttonPaketHinzufügen.Name = "buttonPaketHinzufügen";
-            this.buttonPaketHinzufügen.Size = new System.Drawing.Size(143, 45);
-            this.buttonPaketHinzufügen.TabIndex = 6;
-            this.buttonPaketHinzufügen.Text = "Paket hinzufügen";
-            this.buttonPaketHinzufügen.UseVisualStyleBackColor = true;
+            this.buttonPaketHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPaketHinzufuegen.Location = new System.Drawing.Point(195, 343);
+            this.buttonPaketHinzufuegen.Name = "buttonPaketHinzufuegen";
+            this.buttonPaketHinzufuegen.Size = new System.Drawing.Size(130, 45);
+            this.buttonPaketHinzufuegen.TabIndex = 6;
+            this.buttonPaketHinzufuegen.Text = "Paket hinzufügen";
+            this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 280);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(29, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(55, 18);
             this.label4.TabIndex = 7;
             this.label4.Text = "Größe:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(121, 281);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(116, 233);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.Size = new System.Drawing.Size(42, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Höhe";
             // 
             // textBoxHoehe
             // 
-            this.textBoxHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHoehe.Location = new System.Drawing.Point(246, 277);
+            this.textBoxHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHoehe.Location = new System.Drawing.Point(195, 230);
             this.textBoxHoehe.Name = "textBoxHoehe";
-            this.textBoxHoehe.Size = new System.Drawing.Size(47, 26);
+            this.textBoxHoehe.Size = new System.Drawing.Size(47, 23);
             this.textBoxHoehe.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(299, 281);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(248, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 20);
+            this.label6.Size = new System.Drawing.Size(30, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "mm";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(121, 327);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(116, 268);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Länge";
             // 
             // textBoxLaenge
             // 
-            this.textBoxLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLaenge.Location = new System.Drawing.Point(246, 323);
+            this.textBoxLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLaenge.Location = new System.Drawing.Point(195, 265);
             this.textBoxLaenge.Name = "textBoxLaenge";
-            this.textBoxLaenge.Size = new System.Drawing.Size(47, 26);
+            this.textBoxLaenge.Size = new System.Drawing.Size(47, 23);
             this.textBoxLaenge.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(299, 327);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(248, 268);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 20);
+            this.label8.Size = new System.Drawing.Size(30, 17);
             this.label8.TabIndex = 14;
             this.label8.Text = "mm";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(121, 373);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(116, 305);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 20);
+            this.label10.Size = new System.Drawing.Size(45, 17);
             this.label10.TabIndex = 16;
             this.label10.Text = "Breite";
             // 
             // textBoxBreite
             // 
-            this.textBoxBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBreite.Location = new System.Drawing.Point(246, 369);
+            this.textBoxBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBreite.Location = new System.Drawing.Point(195, 302);
             this.textBoxBreite.Name = "textBoxBreite";
-            this.textBoxBreite.Size = new System.Drawing.Size(47, 26);
+            this.textBoxBreite.Size = new System.Drawing.Size(47, 23);
             this.textBoxBreite.TabIndex = 17;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(299, 373);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(248, 305);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 20);
+            this.label11.Size = new System.Drawing.Size(30, 17);
             this.label11.TabIndex = 18;
             this.label11.Text = "mm";
             // 
             // buttonProduktAuswählen
             // 
-            this.buttonProduktAuswählen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduktAuswählen.Location = new System.Drawing.Point(544, 353);
+            this.buttonProduktAuswählen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProduktAuswählen.Location = new System.Drawing.Point(344, 230);
             this.buttonProduktAuswählen.Name = "buttonProduktAuswählen";
-            this.buttonProduktAuswählen.Size = new System.Drawing.Size(189, 40);
+            this.buttonProduktAuswählen.Size = new System.Drawing.Size(156, 38);
             this.buttonProduktAuswählen.TabIndex = 19;
             this.buttonProduktAuswählen.Text = "Produkt auswählen";
             this.buttonProduktAuswählen.UseVisualStyleBackColor = true;
@@ -214,38 +214,38 @@
             // labelProduktAusgewählt
             // 
             this.labelProduktAusgewählt.AutoSize = true;
-            this.labelProduktAusgewählt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProduktAusgewählt.Location = new System.Drawing.Point(572, 313);
+            this.labelProduktAusgewählt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProduktAusgewählt.Location = new System.Drawing.Point(367, 280);
             this.labelProduktAusgewählt.Name = "labelProduktAusgewählt";
-            this.labelProduktAusgewählt.Size = new System.Drawing.Size(128, 20);
+            this.labelProduktAusgewählt.Size = new System.Drawing.Size(119, 18);
             this.labelProduktAusgewählt.TabIndex = 20;
             this.labelProduktAusgewählt.Text = "Produkt Auswahl";
             // 
             // buttonAbbrechen
             // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(590, 480);
+            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAbbrechen.Location = new System.Drawing.Point(370, 343);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(143, 45);
+            this.buttonAbbrechen.Size = new System.Drawing.Size(130, 45);
             this.buttonAbbrechen.TabIndex = 21;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerHaltbarkeit
             // 
-            this.dateTimePickerHaltbarkeit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerHaltbarkeit.Location = new System.Drawing.Point(246, 217);
+            this.dateTimePickerHaltbarkeit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerHaltbarkeit.Location = new System.Drawing.Point(195, 170);
             this.dateTimePickerHaltbarkeit.Name = "dateTimePickerHaltbarkeit";
-            this.dateTimePickerHaltbarkeit.Size = new System.Drawing.Size(274, 26);
+            this.dateTimePickerHaltbarkeit.Size = new System.Drawing.Size(259, 24);
             this.dateTimePickerHaltbarkeit.TabIndex = 22;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(28, 18);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(27, 24);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(284, 39);
+            this.label9.Size = new System.Drawing.Size(180, 26);
             this.label9.TabIndex = 23;
             this.label9.Text = "Paket hinzufügen";
             // 
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(524, 411);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePickerHaltbarkeit);
             this.Controls.Add(this.buttonAbbrechen);
@@ -269,7 +269,7 @@
             this.Controls.Add(this.textBoxHoehe);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.buttonPaketHinzufügen);
+            this.Controls.Add(this.buttonPaketHinzufuegen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxAnschaffungsgrund);
             this.Controls.Add(this.textBoxPaketbezeichnung);
@@ -289,7 +289,7 @@
         private System.Windows.Forms.TextBox textBoxPaketbezeichnung;
         private System.Windows.Forms.TextBox textBoxAnschaffungsgrund;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonPaketHinzufügen;
+        private System.Windows.Forms.Button buttonPaketHinzufuegen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxHoehe;

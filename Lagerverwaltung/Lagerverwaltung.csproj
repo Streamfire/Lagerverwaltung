@@ -111,6 +111,12 @@
     <Compile Include="Views\Historie.Designer.cs">
       <DependentUpon>Historie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LagerHinzufuegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LagerHinzufuegen.Designer.cs">
+      <DependentUpon>LagerHinzufuegen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Historie.resx">
       <DependentUpon>Historie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LagerHinzufuegen.resx">
+      <DependentUpon>LagerHinzufuegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
