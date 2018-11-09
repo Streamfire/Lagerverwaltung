@@ -28,21 +28,26 @@ namespace Lagerverwaltung.Views
             };
             _lagerliste[0].Regalliste = new List<Regal>
             {
-                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
-                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
-                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
-                new Regal(0, 0, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4)
+                new Regal(0, 0, "A", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 0, "B", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 0, "C", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 0, "D", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4)
             };
 
-            _lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(0, 0,"test","bla", 0123456789, 0123456789, 5, 6, 12));
-			_lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(1, 0, "test2", "blub", 0123456789, 0123456789, 5, 6, 12));
+            _lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(0, 0,"00","bla", 0123456789, 0123456789, 5, 6, 12));
+			_lagerliste[0].Regalliste[0].Regalfachliste.Add(new Regalfach(1, 0, "01", "blub", 0123456789, 0123456789, 5, 6, 12));
 
-			_lagerliste.Add(new Lager(1, "Lager 1", "draußen", "tolles Ding", 0123456789, 0123456789, new Lagertyp(0, "Typ 0", 0123456789, 0123456789)));
+
+			_lagerliste[0].Regalliste[0].Regalfachliste[0].Paketliste.Add(new Paket(0, 0, "Paket1", "War Notwendig", 10, 1321, 1321, 1451, new Produkt(0, "Koks", "094328", 10.0f, 1000.0f, 123, 1234, new Artikeltyp(0, "Artikel1", 213, 214), 10, 10, 20)));
+			_lagerliste[0].Regalliste[0].Regalfachliste[1].Paketliste.Add(new Paket(1, 0, "Paket2", "War Notwendiger ", 10, 1321, 1321, 1451, new Produkt(1, "Nutten", "094329", 10.0f, 1000.0f, 123, 1234, new Artikeltyp(1, "Artikel2", 213, 214), 10, 10, 20)));
+
+
+			_lagerliste.Add(new Lager(1, "Lager 1", "drinnen", "tolles Ding", 0123456789, 0123456789, new Lagertyp(0, "Typ 0", 0123456789, 0123456789)));
             _lagerliste[1].Regalliste = new List<Regal>
             {
-                new Regal(0, 1, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
-                new Regal(0, 1, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
-                new Regal(0, 1, "Test", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4)
+                new Regal(0, 1, "A", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 1, "B", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4),
+                new Regal(0, 1, "C", 5, 4, 0123456789, 0123456789, 10, 30, 10, 5, 4)
             };
 
             Verwaltung.UpdateForm(_lagerliste);

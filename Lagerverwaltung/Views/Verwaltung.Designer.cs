@@ -24,20 +24,80 @@ namespace Lagerverwaltung.Views
 				foreach (Regal r in l.Regalliste)
 				{
 					Accordion nestedRegal = new Accordion();
-					lagerAccordion.Add(nestedRegal,"Regal");
+					lagerAccordion.Add(nestedRegal,r.Name);
 
 					foreach (Regalfach f in r.Regalfachliste)
 					{
 						Accordion nestedFach = new Accordion();
 						Panel infoPanel = new Panel();
 						Label name = new Label();
-						name.Text = "testname";
-						infoPanel.Controls.Add(name);
+                        if(f.Paketliste.Count>0)
+                        {
+                            //im Fach ist ein Paketregistriert-> die restlichen Infos zum Paket anzeigen
+                            name.Text = "Inhalt: "+ f.Paketliste[0].Produkt.Name;
+
+                            Label Menge = new Label();
+							Label Breite = new Label();
+							Label Hoehe = new Label();
+							Label Laenge = new Label();
+							Label Haltbarkeit = new Label();
+							Label Erstellt = new Label();
+							Label Geaendert = new Label();
+							Label Anschaffungsgrund = new Label();
+
+							Menge.Left = 100;
+                            Menge.Text ="Menge: "+ f.Paketliste.Count;
+
+							Breite.Left = 200;
+							Breite.Text = "Breite: " + f.Paketliste[0].Produkt.Breite;
+
+							Hoehe.Left = 300;
+							Hoehe.Text = "Höhe: " + f.Paketliste[0].Produkt.Hoehe;
+
+							Laenge.Left = 400;
+							Laenge.Text = "Länge: " + f.Paketliste[0].Produkt.Laenge;
+
+							Haltbarkeit.Left = 500;
+							Haltbarkeit.Text = "Haltbarkeit: " + f.Paketliste[0].Haltbarkeit;
+
+							Erstellt.Left = 600;
+							Erstellt.Text = "Erstellt: " + f.Paketliste[0].ErstelltAm;
+
+							Geaendert.Left = 700;
+							Geaendert.Text = "Geaendert: " + f.Paketliste[0].GeaendertAm;
+
+							Anschaffungsgrund.Top = 25;
+							Anschaffungsgrund.Text = "Anschaffungsgrund: " + f.Paketliste[0].Anschaffungsgrund;
+							Anschaffungsgrund.Width = Anschaffungsgrund.Width + 400;
+
+							infoPanel.Controls.Add(name);
+                            infoPanel.Controls.Add(Menge);
+							infoPanel.Controls.Add(Breite);
+							infoPanel.Controls.Add(Hoehe);
+							infoPanel.Controls.Add(Laenge);
+							infoPanel.Controls.Add(Haltbarkeit);
+							infoPanel.Controls.Add(Erstellt);
+							infoPanel.Controls.Add(Geaendert);
+							infoPanel.Controls.Add(Anschaffungsgrund);
+
+
+
+							nestedRegal.Add(nestedFach, f.Paketliste[0].PaketBezeichnung+ " | "+f.Paketliste[0].Produkt.Name);
+						}
+                        else
+                        {
+                            name.Text = "Leer";
+                            infoPanel.Controls.Add(name);
+
+
+							nestedRegal.Add(nestedFach, f.Name);
+						}
+						
 
 						nestedFach.Controls.Add(infoPanel);
 
 
-						nestedRegal.Add(nestedFach, "Fach");
+						
 					}
 
 				}
