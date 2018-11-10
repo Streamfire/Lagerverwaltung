@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AuthenticationController.cs" />
+    <Compile Include="Controller\PaketHinzufuegenController.cs" />
+    <Compile Include="Controller\ProduktHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
     <Compile Include="Core\Artikeltyp.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />

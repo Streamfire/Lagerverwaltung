@@ -49,6 +49,7 @@
             this.Zeichnungsnummer,
             this.Erstellt_Am,
             this.Zuletzt_geaendert});
+            this.listViewProduktliste.FullRowSelect = true;
             this.listViewProduktliste.LabelWrap = false;
             this.listViewProduktliste.Location = new System.Drawing.Point(29, 29);
             this.listViewProduktliste.Name = "listViewProduktliste";
@@ -118,6 +119,7 @@
             this.Produkt_hinzufuegen.TabIndex = 3;
             this.Produkt_hinzufuegen.Text = "Produkt hinzufügen";
             this.Produkt_hinzufuegen.UseVisualStyleBackColor = true;
+            this.Produkt_hinzufuegen.Click += new System.EventHandler(this.Produkt_hinzufuegen_Click);
             // 
             // Produktliste
             // 

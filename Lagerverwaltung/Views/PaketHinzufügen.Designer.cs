@@ -106,6 +106,7 @@
             this.buttonPaketHinzufuegen.TabIndex = 6;
             this.buttonPaketHinzufuegen.Text = "Paket hinzufügen";
             this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonPaketHinzufuegen.Click += new System.EventHandler(this.ButtonPaketHinzufuegen_Click);
             // 
             // label4
             // 
@@ -210,7 +211,7 @@
             this.buttonProduktAuswaehlen.TabIndex = 19;
             this.buttonProduktAuswaehlen.Text = "Produktliste";
             this.buttonProduktAuswaehlen.UseVisualStyleBackColor = true;
-            this.buttonProduktAuswaehlen.Click += new System.EventHandler(this.buttonProduktAuswaehlen_Click);
+            this.buttonProduktAuswaehlen.Click += new System.EventHandler(this.ButtonProduktAuswaehlen_Click);
             // 
             // labelProduktAusgewählt
             // 
@@ -231,7 +232,7 @@
             this.buttonAbbrechen.TabIndex = 21;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // dateTimePickerHaltbarkeit
             // 

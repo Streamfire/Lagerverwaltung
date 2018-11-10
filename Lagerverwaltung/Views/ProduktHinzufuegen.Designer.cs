@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonProduktHinzufuegen = new System.Windows.Forms.Button();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
+            this.ButtonProduktHinzufuegen = new System.Windows.Forms.Button();
+            this.ButtonAbbrechen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,28 +40,30 @@
             this.tb_Zeichnungsnummer = new System.Windows.Forms.TextBox();
             this.tb_Gewicht = new System.Windows.Forms.TextBox();
             this.tb_Preis = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.artikeltypBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // buttonProduktHinzufuegen
+            // ButtonProduktHinzufuegen
             // 
-            this.buttonProduktHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduktHinzufuegen.Location = new System.Drawing.Point(97, 340);
-            this.buttonProduktHinzufuegen.Name = "buttonProduktHinzufuegen";
-            this.buttonProduktHinzufuegen.Size = new System.Drawing.Size(151, 35);
-            this.buttonProduktHinzufuegen.TabIndex = 0;
-            this.buttonProduktHinzufuegen.Text = "Produkt Hinzufügen";
-            this.buttonProduktHinzufuegen.UseVisualStyleBackColor = true;
+            this.ButtonProduktHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonProduktHinzufuegen.Location = new System.Drawing.Point(97, 340);
+            this.ButtonProduktHinzufuegen.Name = "ButtonProduktHinzufuegen";
+            this.ButtonProduktHinzufuegen.Size = new System.Drawing.Size(151, 35);
+            this.ButtonProduktHinzufuegen.TabIndex = 0;
+            this.ButtonProduktHinzufuegen.Text = "Produkt Hinzufügen";
+            this.ButtonProduktHinzufuegen.UseVisualStyleBackColor = true;
+            this.ButtonProduktHinzufuegen.Click += new System.EventHandler(this.ButtonProduktHinzufuegen_Click);
             // 
-            // buttonAbbrechen
+            // ButtonAbbrechen
             // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(282, 340);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(120, 35);
-            this.buttonAbbrechen.TabIndex = 1;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.ButtonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAbbrechen.Location = new System.Drawing.Point(282, 340);
+            this.ButtonAbbrechen.Name = "ButtonAbbrechen";
+            this.ButtonAbbrechen.Size = new System.Drawing.Size(120, 35);
+            this.ButtonAbbrechen.TabIndex = 1;
+            this.ButtonAbbrechen.Text = "Abbrechen";
+            this.ButtonAbbrechen.UseVisualStyleBackColor = true;
+            this.ButtonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // label1
             // 
@@ -155,21 +157,21 @@
             this.tb_Preis.Size = new System.Drawing.Size(190, 24);
             this.tb_Preis.TabIndex = 11;
             // 
-            // comboBox1
+            // artikeltypBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(212, 244);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 26);
-            this.comboBox1.TabIndex = 13;
+            this.artikeltypBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artikeltypBox.FormattingEnabled = true;
+            this.artikeltypBox.Location = new System.Drawing.Point(212, 244);
+            this.artikeltypBox.Name = "artikeltypBox";
+            this.artikeltypBox.Size = new System.Drawing.Size(190, 26);
+            this.artikeltypBox.TabIndex = 13;
             // 
             // ProduktHinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 401);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.artikeltypBox);
             this.Controls.Add(this.tb_Preis);
             this.Controls.Add(this.tb_Gewicht);
             this.Controls.Add(this.tb_Zeichnungsnummer);
@@ -180,8 +182,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonProduktHinzufuegen);
+            this.Controls.Add(this.ButtonAbbrechen);
+            this.Controls.Add(this.ButtonProduktHinzufuegen);
             this.Name = "ProduktHinzufuegen";
             this.Text = "ProduktHinzufügen";
             this.ResumeLayout(false);
@@ -191,8 +193,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonProduktHinzufuegen;
-        private System.Windows.Forms.Button buttonAbbrechen;
+        private System.Windows.Forms.Button ButtonProduktHinzufuegen;
+        private System.Windows.Forms.Button ButtonAbbrechen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -203,6 +205,6 @@
         private System.Windows.Forms.TextBox tb_Zeichnungsnummer;
         private System.Windows.Forms.TextBox tb_Gewicht;
         private System.Windows.Forms.TextBox tb_Preis;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox artikeltypBox;
     }
 }

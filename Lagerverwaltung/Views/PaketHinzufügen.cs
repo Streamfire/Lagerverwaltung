@@ -16,10 +16,9 @@ namespace Lagerverwaltung.Views
         {
             InitializeComponent();
         }
-        public static Produktliste Produktliste { get => _produktliste; set => _produktliste = value; }
-        private static Produktliste _produktliste = null;
+        public static Produktliste Produktliste { get; set; }
 
-        private void buttonProduktAuswaehlen_Click(object sender, EventArgs e)
+        private void ButtonProduktAuswaehlen_Click(object sender, EventArgs e)
         {
             if (Produktliste != null)
             {
@@ -32,9 +31,28 @@ namespace Lagerverwaltung.Views
                 Produktliste.ShowDialog();
             }
         }
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtonPaketHinzufuegen_Click(object sender, EventArgs e)
+        {
+            if(Controller.PaketHinzufuegenController.ValidateData(textBoxPaketbezeichnung.Text, textBoxAnschaffungsgrund.Text, dateTimePickerHaltbarkeit.Value, textBoxHoehe.Text, textBoxBreite.Text, textBoxLaenge.Text))
+            
+            //Validierung erfolgreich
+            {
+                //TODO:Paket der Paketliste hinzufügen
+
+
+                Close();
+            }
+
+            //Validierung nicht erfolgreich
+            else
+            {
+
+            }
         }
     }
     
