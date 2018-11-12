@@ -26,9 +26,51 @@ namespace Lagerverwaltung.Model
             }
         }
 
-        public static bool HoleArtikeltyp()
+        // return typ ändern!
+        public static bool HoleAlleArtikeltyp()
         {
-            return false;
+            return HoleAlleArtikeltyp(short.MaxValue);
+        }
+
+        // return typ ändern!
+        public static bool HoleAlleArtikeltyp(short limit)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM artikeltyp LIMIT @limit;";
+                cmd.Parameters.AddWithValue("limit", limit);
+                int result = cmd.ExecuteNonQuery();
+                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
+                return result == 0 ? false : true;
+            }
+        }
+
+        // return typ ändern!
+        public static bool HoleArtikeltyp(ushort artikeltyp_id)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM artikeltyp WHERE artikeltyp_id = @artikeltyp_id;";
+                cmd.Parameters.AddWithValue("artikeltyp_id", artikeltyp_id);
+                int result = cmd.ExecuteNonQuery();
+                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
+                return result == 0 ? false : true;
+            }
+        }
+
+        public static bool LoescheArtikeltyp(ushort artikeltyp_id)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE FROM artikeltyp WHERE artikeltyp_id = @artikeltyp_id;";
+                cmd.Parameters.AddWithValue("artikeltyp_id", artikeltyp_id);
+                int result = cmd.ExecuteNonQuery();
+                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
+                return result == 0 ? false : true;
+            }
         }
     }
 }

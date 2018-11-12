@@ -13,11 +13,13 @@ namespace Lagerverwaltung.Model
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
+        // return typ ändern!
         public static void HoleHistorie()
         {
             HoleHistorie(long.MaxValue);
         }
 
+        // return typ ändern!
         public static void HoleHistorie(long limit)
         {
             Contract.Requires(limit >= 1);
