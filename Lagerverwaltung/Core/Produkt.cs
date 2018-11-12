@@ -6,7 +6,7 @@ namespace Lagerverwaltung.Core
 {
    public sealed class Produkt : Base
     {
-        public ulong ProduktID { get; }
+        public uint ProduktID { get; }
         public string Name { get; set; }
         public string Zeichnungsnummer { get; set; }
         public float Gewicht { get; set; }
@@ -19,7 +19,7 @@ namespace Lagerverwaltung.Core
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        public Produkt(ulong produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, DateTime erstellt_am, DateTime geaendert_am, ushort artikeltyp, float hoehe, float breite, float laenge)
+        public Produkt(uint produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, DateTime erstellt_am, DateTime geaendert_am, ushort artikeltyp, float hoehe, float breite, float laenge)
         {
             Contract.Requires(produkt_id >= 1);
             Contract.Requires(name.Length <= 25);   // plus minimal Länge laut Data Dictionary später

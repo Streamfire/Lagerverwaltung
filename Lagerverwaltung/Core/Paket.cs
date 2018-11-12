@@ -6,7 +6,7 @@ namespace Lagerverwaltung.Core
 {
 	public sealed class Paket : Base
     {
-        public ulong PaketID { get; }
+        public uint PaketID { get; }
         public ushort RegalfachID { get; }
         public uint ProduktID { get; }
         public string PaketBezeichnung { get; set; }
@@ -19,7 +19,7 @@ namespace Lagerverwaltung.Core
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        public Paket(ulong paket_id, ushort regalfach_id, string paketBezeichnung, ushort menge, DateTime erstellt_am, DateTime geaendert_am, DateTime haltbarkeit, uint produkt_id, float hoehe, float breite, float laenge, string anschaffungsgrund)
+        public Paket(uint paket_id, ushort regalfach_id, string paketBezeichnung, ushort menge, DateTime erstellt_am, DateTime geaendert_am, DateTime haltbarkeit, uint produkt_id, float hoehe, float breite, float laenge, string anschaffungsgrund)
         {
             Contract.Requires(paket_id >= 1);
             Contract.Requires(regalfach_id >= 1);
