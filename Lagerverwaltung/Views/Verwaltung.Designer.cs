@@ -108,6 +108,10 @@ namespace Lagerverwaltung.Views
 			}
 		}
 
+		public int getActiveTabIndex()
+		{
+			return tabControl1.SelectedIndex;
+		}
 
 		/// <summary>
 		/// Required designer variable.
