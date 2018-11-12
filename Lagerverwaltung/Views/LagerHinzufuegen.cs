@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lagerverwaltung.Core;
 
 namespace Lagerverwaltung.Views
 {
@@ -24,7 +18,7 @@ namespace Lagerverwaltung.Views
 
 		private void buttonLagerHinzufügen_Click(object sender, EventArgs e)
 		{
-			Dashboard.LagerListe.Add(new Core.Lager(0, this.textBoxLagerName.Text, this.textBoxStandort.Text, this.textBoxBeschreibung.Text, 312, 312, new Core.Lagertyp(0, "Lagertyp", 12, 13)));
+			Dashboard.LagerListe.Add(new Lager(0, this.textBoxLagerName.Text, 312, 312, new Core.Lagertyp(0, "Lagertyp", 12, 13), this.textBoxStandort.Text, this.textBoxBeschreibung.Text));
 			Dashboard.Verwaltung.UpdateForm(Dashboard.LagerListe);
 			this.Close();
 		}

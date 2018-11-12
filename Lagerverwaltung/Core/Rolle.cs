@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 
 namespace Lagerverwaltung.Core
 {
@@ -14,14 +15,17 @@ namespace Lagerverwaltung.Core
             Ausführen = 4
         }
 
-        public byte RollenID { get; }
+        public ushort RollenID { get; }
         public string Name { get; set; }
         public string Rechte { get; set; }
-        public int ErstelltAm { get; }
-        public int ZuletztGeaendert { get; }
+        public uint ErstelltAm { get; }
+        public uint ZuletztGeaendert { get; }
 
-        public Rolle(byte rollen_id, string name, string rechte, int erstellt_am, int zuletzt_geaendert)
+        public Rolle(ushort rollen_id, string name, string rechte, uint erstellt_am, uint zuletzt_geaendert)
         {
+            Contract.Requires(rollen_id >= 1);
+            Contract.Requires(name.Length <= 10);   // plus minimal Länge laut Data Dictionary später
+            Contract.Requires(rechte.Length >= 1);  // plus minimal Länge laut Data Dictionary später
             RollenID = rollen_id;
             Name = name;
             Rechte = rechte;

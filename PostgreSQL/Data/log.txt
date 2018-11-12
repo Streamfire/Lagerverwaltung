@@ -591,3 +591,58 @@
 2018-11-12 10:17:23.795 CET [7712] LOG:  worker process: logical replication launcher (PID 9544) exited with exit code 1
 2018-11-12 10:17:23.796 CET [10820] LOG:  shutting down
 2018-11-12 10:17:23.936 CET [7712] LOG:  database system is shut down
+2018-11-12 10:21:57.870 CET [6348] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-12 10:21:57.870 CET [6348] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-12 10:21:57.996 CET [7376] LOG:  database system was shut down at 2018-11-12 10:17:23 CET
+2018-11-12 10:21:58.069 CET [6348] LOG:  database system is ready to accept connections
+2018-11-12 10:36:20.744 CET [10368] ERROR:  column "Kaufteil" does not exist at character 46
+2018-11-12 10:36:20.744 CET [10368] STATEMENT:  INSERT INTO public.artikeltyp(name)
+		VALUES ("Kaufteil");
+2018-11-12 10:36:33.655 CET [10368] ERROR:  column "Kaufteil" does not exist at character 45
+2018-11-12 10:36:33.655 CET [10368] STATEMENT:  INSERT INTO public.artikeltyp(name) VALUES ("Kaufteil");
+2018-11-12 10:36:45.691 CET [10368] ERROR:  column "id" of relation "artikeltyp" does not exist at character 31
+2018-11-12 10:36:45.691 CET [10368] STATEMENT:  INSERT INTO public.artikeltyp(id,name) VALUES ("Kaufteil");
+2018-11-12 10:37:17.460 CET [7292] ERROR:  invalid input syntax for integer: "" at character 96
+2018-11-12 10:37:17.460 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(
+		artikeltyp_id, name, "zuletzt_geändert", erstellt_am)
+		VALUES ('','Kaufteil','','');
+2018-11-12 10:37:31.304 CET [7292] ERROR:  zero-length delimited identifier at or near """" at character 96
+2018-11-12 10:37:31.304 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(
+		artikeltyp_id, name, "zuletzt_geändert", erstellt_am)
+		VALUES ("",'Kaufteil',"","");
+2018-11-12 10:37:39.645 CET [7292] ERROR:  zero-length delimited identifier at or near """" at character 96
+2018-11-12 10:37:39.645 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(
+		artikeltyp_id, name, "zuletzt_geändert", erstellt_am)
+		VALUES ("","Kaufteil","","");
+2018-11-12 10:38:04.610 CET [7292] ERROR:  column "Kaufteil" does not exist at character 46
+2018-11-12 10:38:04.610 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(name)
+		VALUES ("Kaufteil");
+2018-11-12 10:38:07.410 CET [7292] ERROR:  syntax error at or near "VALUE" at character 38
+2018-11-12 10:38:07.410 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(name)
+		VALUE ("Kaufteil");
+2018-11-12 10:38:11.942 CET [7292] ERROR:  column "Kaufteil" does not exist at character 46
+2018-11-12 10:38:11.942 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(name)
+		VALUES ("Kaufteil");
+2018-11-12 10:38:47.122 CET [7292] ERROR:  column "kaufteil" does not exist at character 45
+2018-11-12 10:38:47.122 CET [7292] STATEMENT:  INSERT INTO public.artikeltyp(name) VALUES (Kaufteil);
+2018-11-12 12:54:30.231 CET [9180] ERROR:  syntax error at or near "(" at character 59
+2018-11-12 12:54:30.231 CET [9180] STATEMENT:  ALTER TABLE public.paket
+	    ALTER COLUMN hoehe TYPE real (4);
+	ALTER TABLE public.paket
+	    ALTER COLUMN hoehe SET NOT NULL;
+	
+	ALTER TABLE public.paket
+	    ALTER COLUMN breite TYPE real (4);
+	ALTER TABLE public.paket
+	    ALTER COLUMN breite SET NOT NULL;
+	
+	ALTER TABLE public.paket
+	    ALTER COLUMN laenge TYPE real (4);
+	ALTER TABLE public.paket
+	    ALTER COLUMN laenge SET NOT NULL;
+2018-11-12 13:07:21.291 CET [6348] LOG:  received fast shutdown request
+2018-11-12 13:07:21.367 CET [6348] LOG:  aborting any active transactions
+2018-11-12 13:07:21.369 CET [9180] FATAL:  terminating connection due to administrator command
+2018-11-12 13:07:21.398 CET [6348] LOG:  worker process: logical replication launcher (PID 6964) exited with exit code 1
+2018-11-12 13:07:21.399 CET [7384] LOG:  shutting down
+2018-11-12 13:07:21.571 CET [6348] LOG:  database system is shut down

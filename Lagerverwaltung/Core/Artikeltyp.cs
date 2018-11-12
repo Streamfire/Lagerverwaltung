@@ -1,14 +1,18 @@
-﻿namespace Lagerverwaltung.Core
+﻿using System.Diagnostics.Contracts;
+
+namespace Lagerverwaltung.Core
 {
 	public sealed class Artikeltyp
     {
-        public byte ArtikeltypID { get; }
+        public ushort ArtikeltypID { get; }
         public string Name { get; set; }
-        public int ErstelltAm { get; }
-        public int GeaendertAm { get; }
+        public uint ErstelltAm { get; }
+        public uint GeaendertAm { get; }
 
-        public Artikeltyp(byte artikeltyp_id, string name, int erstellt_am, int geaendert_am)
+        public Artikeltyp(ushort artikeltyp_id, string name, uint erstellt_am, uint geaendert_am)
         {
+            Contract.Requires(artikeltyp_id >= 1);
+            Contract.Requires(name.Length <= 20);   // plus minimal Länge laut Data Dictionary später
             ArtikeltypID = artikeltyp_id;
             Name = name;
             ErstelltAm = erstellt_am;

@@ -20,13 +20,14 @@ namespace Lagerverwaltung.Views
             artikeltypBox.ValueMember = "artikeltyp_id";
             artikeltypBox.DisplayMember = "name";
 
-            _artikeltypListe = new List<Core.Artikeltyp>();
-
-            //TEST
-            _artikeltypListe.Add(new Core.Artikeltyp(0, "bla", 50, 60));
-            _artikeltypListe.Add(new Core.Artikeltyp(1, "blubb", 34, 65));
-            _artikeltypListe.Add(new Core.Artikeltyp(2, "blablubb", 16, 34));
-            _artikeltypListe.Add(new Core.Artikeltyp(3, "bliblubbbla", 67, 456));
+            _artikeltypListe = new List<Core.Artikeltyp>
+            {
+                //TEST
+                new Core.Artikeltyp(0, "bla", 50, 60),
+                new Core.Artikeltyp(1, "blubb", 34, 65),
+                new Core.Artikeltyp(2, "blablubb", 16, 34),
+                new Core.Artikeltyp(3, "bliblubbbla", 67, 456)
+            };
             //TEST
 
             //TODO:Artikeltypen aus Datenbank laden

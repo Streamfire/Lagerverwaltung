@@ -26,8 +26,8 @@ namespace Lagerverwaltung.Views
 
 		private void buttonRegalHinzufuegen_Click(object sender, EventArgs e)
 		{
-			byte zeilen = (byte)Convert.ToInt32(this.textBoxZeilen.Text);
-			byte spalten = (byte)Convert.ToInt32(this.textBoxSpalten.Text);
+			byte zeilen = Convert.ToByte(this.textBoxZeilen.Text);
+			byte spalten = Convert.ToByte(this.textBoxSpalten.Text);
 
 			Regal n = new Regal(0, 0, this.textBoxRegalName.Text,zeilen,spalten, 123, 123, 0, 0, 0, 0, 0);
 
@@ -35,7 +35,7 @@ namespace Lagerverwaltung.Views
 			{
 				for (int s = 0; s <spalten;  s++)
 				{
-					n.Regalfachliste.Add(new Regalfach(z * s + s, 0, "" + z + ";" + s, "", 12, 12, 0, 0, 0));
+					n.Regalfachliste.Add(new Regalfach((ushort)(z * s + s), 0, "" + z + ";" + s, 12, 12, 0, 0, 0, ""));
 
 				}
 			}

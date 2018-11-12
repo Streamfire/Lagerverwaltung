@@ -1,17 +1,18 @@
-﻿using Lagerverwaltung.Core.Abstract;
+﻿using System.Diagnostics.Contracts;
+using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
 {
 	public sealed class Paket : Base
     {
-        public long PaketID { get; }
-        public int RegalfachID { get; }
+        public ulong PaketID { get; }
+        public ushort RegalfachID { get; }
         public string PaketBezeichnung { get; set; }
         public string Anschaffungsgrund { get; set; }
-        public int Menge { get; set; }
-        public int ErstelltAm { get; }
-        public int GeaendertAm { get; }
-        public int Haltbarkeit { get; set; }
+        public ushort Menge { get; set; }
+        public uint ErstelltAm { get; }
+        public uint GeaendertAm { get; }
+        public uint Haltbarkeit { get; set; }
 
         public Produkt Produkt { get; set; }
 
@@ -19,17 +20,25 @@ namespace Lagerverwaltung.Core
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        public Paket(long paket_id, int regalfach_id, string paketBezeichnung, string anschaffungsgrund, int menge, int erstellt_am, int geaendert_am, int haltbarkeit, Produkt produkt)
+        public Paket(ulong paket_id, ushort regalfach_id, string paketBezeichnung, ushort menge, uint erstellt_am, uint geaendert_am, uint haltbarkeit, Produkt produkt, float hoehe, float breite, float laenge, string anschaffungsgrund)
         {
+            Contract.Requires(paket_id >= 1);
+            Contract.Requires(regalfach_id >= 1);
+            Contract.Requires(paketBezeichnung.Length <= 15);   // plus minimal Länge laut Data Dictionary später
+            Contract.Requires(menge >= 1);
+            Contract.Requires(anschaffungsgrund.Length <= 50);
+            Contract.Requires(hoehe >= 0);
+            Contract.Requires(breite >= 0);
+            Contract.Requires(laenge >= 0);
             PaketID = paket_id;
             RegalfachID = regalfach_id;
-            PaketBezeichnung = paketBezeichnung;
-            Anschaffungsgrund = anschaffungsgrund;
             Menge = menge;
+            PaketBezeichnung = paketBezeichnung;
             ErstelltAm = erstellt_am;
             GeaendertAm = geaendert_am;
             Haltbarkeit = haltbarkeit;
             Produkt = produkt;
+            Anschaffungsgrund = anschaffungsgrund;
         }
 
     }
