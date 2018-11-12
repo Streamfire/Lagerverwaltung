@@ -25,5 +25,10 @@ namespace Lagerverwaltung.Model
                 return result==0 ? false : true;
             }
         }
+
+        public static bool HoleLagertyp()
+        {
+            return false;
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Lagerverwaltung.Model
         {
             return true;
         }
+
+        public static bool HoleProdukt()
+        {
+            return false;
+        }
     }
 }

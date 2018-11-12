@@ -25,19 +25,22 @@ namespace Lagerverwaltung.Model
                 return result == 0 ? false : true;
             }
             */
-            return true;
+            return false;
         }
 
-
-        // Spätere Datenbank-Abfragen zu userspezifischen Zeug
-        public static bool HoleAlleUser()
+        public static bool HoleUser()
         {
-            return true;
+            return HoleUser(long.MaxValue);
         }
 
-        public static bool HoleUserDurchID(int uid)
+        public static bool HoleUser(long limit)
         {
-            return true;
+            return false;
+        }
+
+        public static bool HoleUser(ushort user_id)
+        {
+            return false;
         }
     }
 }

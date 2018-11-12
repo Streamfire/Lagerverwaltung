@@ -16,5 +16,11 @@ namespace Lagerverwaltung.Model
         {
             return true;
         }
+
+        // void muss natürlich zu einem Typ werden. Bin mir noch nicht sicher
+        public static void HoleRegal()
+        {
+
+        }
     }
 }
