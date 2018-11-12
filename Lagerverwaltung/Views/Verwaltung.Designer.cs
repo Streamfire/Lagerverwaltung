@@ -13,6 +13,10 @@ namespace Lagerverwaltung.Views
 		/// <param name="lagerListe">die Lagerliste, übergeben vom Dashboard</param>
 		public void UpdateForm(List<Lager> lagerListe)
 		{
+			//Reset Form
+			tabControl1.Controls.Clear();
+
+
 			foreach (Lager l in lagerListe)
 			{
 				TabPage tp = new TabPage(l.Name);

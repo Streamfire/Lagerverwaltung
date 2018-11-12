@@ -57,10 +57,10 @@ namespace Lagerverwaltung.Views
 		public static Regaleinsicht Regaleinsicht { get => _regaleinsicht; set => _regaleinsicht = value; }
 		public static Suche Suche { get => _suche; set => _suche = value; }
 		public static Verwaltung Verwaltung { get => _verwaltung; set => _verwaltung = value; }
-		
+		public static List<Lager> LagerListe { get => _lagerliste; set => _lagerliste = value; }
 
 		private bool _adminuser= false;
-		private static List<Lagerverwaltung.Core.Lager> _lagerliste;
+		private static List<Lager> _lagerliste;
 		private static Historie _historie = null;
 		private static Regaleinsicht _regaleinsicht = null;
 		private static Suche _suche = null;

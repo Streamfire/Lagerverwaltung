@@ -21,5 +21,12 @@ namespace Lagerverwaltung.Views
         {
             this.Close();
         }
-    }
+
+		private void buttonLagerHinzufügen_Click(object sender, EventArgs e)
+		{
+			Dashboard.LagerListe.Add(new Core.Lager(0, this.textBoxLagerName.Text, this.textBoxStandort.Text, this.textBoxBeschreibung.Text, 312, 312, new Core.Lagertyp(0, "Lagertyp", 12, 13)));
+			Dashboard.Verwaltung.UpdateForm(Dashboard.LagerListe);
+			this.Close();
+		}
+	}
 }
