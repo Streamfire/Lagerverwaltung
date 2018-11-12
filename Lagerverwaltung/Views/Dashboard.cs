@@ -80,12 +80,12 @@ namespace Lagerverwaltung.Views
 		{
 			if(Verwaltung!=null)
 			{
-				Verwaltung.Show();
+				Verwaltung.ShowDialog();
 			}
 			else
 			{
 				Verwaltung = new Verwaltung();
-				Verwaltung.Show();
+				Verwaltung.ShowDialog();
 			}
 		}
 
@@ -98,12 +98,12 @@ namespace Lagerverwaltung.Views
 		{
 			if (Suche != null)
 			{
-				Suche.Show();
+				Suche.ShowDialog();
 			}
 			else
 			{
 				Suche = new Suche();
-				Suche.Show();
+				Suche.ShowDialog();
 			}
 		}
 
@@ -116,12 +116,12 @@ namespace Lagerverwaltung.Views
 		{
 			if (Regaleinsicht != null)
 			{
-				Regaleinsicht.Show();
+				Regaleinsicht.ShowDialog();
 			}
 			else
 			{
 				Regaleinsicht = new Regaleinsicht();
-				Regaleinsicht.Show();
+				Regaleinsicht.ShowDialog();
 			}
 		}
 
@@ -134,12 +134,12 @@ namespace Lagerverwaltung.Views
 		{
 			if (Historie != null)
 			{
-				Historie.Show();
+				Historie.ShowDialog();
 			}
 			else
 			{
 				Historie = new Historie();
-				Historie.Show();
+				Historie.ShowDialog();
 			}
 		}
 	}

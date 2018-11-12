@@ -179,6 +179,7 @@ namespace Lagerverwaltung.Views
             this.buttonPaketEntfernen.TabIndex = 2;
             this.buttonPaketEntfernen.Text = "Paket entfernen";
             this.buttonPaketEntfernen.UseVisualStyleBackColor = true;
+            this.buttonPaketEntfernen.Click += new System.EventHandler(this.buttonPaketEntfernen_Click);
             // 
             // buttonLagerEntfernen
             // 
@@ -189,6 +190,7 @@ namespace Lagerverwaltung.Views
             this.buttonLagerEntfernen.TabIndex = 3;
             this.buttonLagerEntfernen.Text = "Lager entfernen";
             this.buttonLagerEntfernen.UseVisualStyleBackColor = true;
+            this.buttonLagerEntfernen.Click += new System.EventHandler(this.buttonLagerEntfernen_Click);
             // 
             // buttonLagerHinzufuegen
             // 

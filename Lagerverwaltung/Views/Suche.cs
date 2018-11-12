@@ -19,5 +19,10 @@ namespace Lagerverwaltung.Views
 		{
 			Dashboard.Suche = null;
 		}
-	}
+
+        private void buttonAbbrechen_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }
