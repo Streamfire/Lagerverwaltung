@@ -86,6 +86,7 @@
     <Compile Include="Core\Regalfach.cs" />
     <Compile Include="Core\Rolle.cs" />
     <Compile Include="Core\User.cs" />
+    <Compile Include="Core\Historie.cs" />
     <Compile Include="ExpandablePanel\Accordion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,9 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Notizen.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

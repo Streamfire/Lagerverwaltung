@@ -1,4 +1,5 @@
-﻿using Lagerverwaltung.Core;
+﻿using System.Collections.Generic;
+using Lagerverwaltung.Core;
 using Npgsql;
 
 namespace Lagerverwaltung.Model
@@ -30,36 +31,48 @@ namespace Lagerverwaltung.Model
         }
 
         // return typ ändern!
-        public static bool HoleAlleLager()
+        public static List<Lager> HoleAlleLager()
         {
             return HoleAlleLager(short.MaxValue);
         }
 
         // return typ ändern!
-        public static bool HoleAlleLager(short limit)
+        public static List<Lager> HoleAlleLager(short limit)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM lager LIMIT @limit;";
                 cmd.Parameters.AddWithValue("limit", limit);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    var _list = new List<Lager>();
+                    while (reader.Read())
+                    {
+                        _list.Add(new Lager((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3),(ushort)reader.GetInt16(4),reader.GetString(5),reader.GetString(6)));
+                    }
+                    return _list;
+                }
             }
         }
 
         // return typ ändern!
-        public static bool HoleLager(ushort lager_id)
+        public static Lager HoleLager(ushort lager_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM lager WHERE lager_id = @lager_id;";
                 cmd.Parameters.AddWithValue("lager_id", lager_id);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    return new Lager((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), (ushort)reader.GetInt16(4), reader.GetString(5), reader.GetString(6));
+                }
             }
         }
 

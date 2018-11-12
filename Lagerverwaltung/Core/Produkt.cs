@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System;
+using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Core
@@ -10,15 +11,15 @@ namespace Lagerverwaltung.Core
         public string Zeichnungsnummer { get; set; }
         public float Gewicht { get; set; }
         public float Preis { get; set; }
-        public uint ErstelltAm { get; }
-        public uint GeaendertAm { get; }
-        public Artikeltyp ArtikelTyp { get; set; }
+        public DateTime ErstelltAm { get; }
+        public DateTime GeaendertAm { get; }
+        public ushort ArtikelTyp { get; set; }
         
         public override float Hoehe { get; set; }
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        public Produkt(ulong produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, uint erstellt_am, uint geaendert_am, Artikeltyp artikeltyp, float hoehe, float breite, float laenge)
+        public Produkt(ulong produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, DateTime erstellt_am, DateTime geaendert_am, ushort artikeltyp, float hoehe, float breite, float laenge)
         {
             Contract.Requires(produkt_id >= 1);
             Contract.Requires(name.Length <= 25);   // plus minimal Länge laut Data Dictionary später

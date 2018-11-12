@@ -1,4 +1,6 @@
-﻿using Lagerverwaltung.Core;
+﻿using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using Lagerverwaltung.Core;
 using Npgsql;
 
 namespace Lagerverwaltung.Model
@@ -31,36 +33,49 @@ namespace Lagerverwaltung.Model
         }
 
         // return typ ändern!
-        public static bool HoleAlleUser()
+        public static List<User> HoleAlleUser()
         {
             return HoleAlleUser(short.MaxValue);
         }
 
         // return typ ändern!
-        public static bool HoleAlleUser(short limit)
+        public static List<User> HoleAlleUser(short limit)
         {
+            Contract.Requires(limit >= 1);
+
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM user LIMIT @limit;";
                 cmd.Parameters.AddWithValue("limit", limit);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    var _list = new List<User>();
+                    while (reader.Read())
+                    {
+                        _list.Add(new User((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(1),reader.GetString(2),reader.GetString(3),reader.GetString(4),reader.GetTimeStamp(5).ToDateTime(), reader.GetTimeStamp(6).ToDateTime(), reader.GetTimeStamp(7).ToDateTime()));
+                    }
+                    return _list;
+                }
             }
         }
 
-        // return typ ändern!
-        public static bool HoleUser(ushort user_id)
+        public static User HoleUser(ushort user_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM user WHERE user_id = @user_id;";
                 cmd.Parameters.AddWithValue("user_id", user_id);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    return new User((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6), reader.GetDateTime(7));
+                }
             }
         }
 

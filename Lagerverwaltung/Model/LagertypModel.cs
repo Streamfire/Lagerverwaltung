@@ -1,4 +1,5 @@
-﻿using Lagerverwaltung.Core;
+﻿using System.Collections.Generic;
+using Lagerverwaltung.Core;
 using Npgsql;
 
 namespace Lagerverwaltung.Model
@@ -26,34 +27,46 @@ namespace Lagerverwaltung.Model
             }
         }
 
-        public static bool HoleAlleLagertyp()
+        public static List<Lagertyp> HoleAlleLagertyp()
         {
             return HoleAlleLagertyp(short.MaxValue);
         }
 
-        public static bool HoleAlleLagertyp(short limit)
+        public static List<Lagertyp> HoleAlleLagertyp(short limit)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM lagertyp LIMIT @limit;";
                 cmd.Parameters.AddWithValue("limit", limit);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    var _list = new List<Lagertyp>();
+                    while (reader.Read())
+                    {
+                        _list.Add(new Lagertyp((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2),reader.GetDateTime(3)));
+                    }
+                    return _list;
+                }
             }
         }
 
-        public static bool HoleLagertyp(ushort lagertyp_id)
+        public static Lagertyp HoleLagertyp(ushort lagertyp_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM lagertyp WHERE lagertyp_id = @lagertyp_id;";
                 cmd.Parameters.AddWithValue("lagertyp_id", lagertyp_id);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    return new Lagertyp((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3));
+                }
             }
         }
 

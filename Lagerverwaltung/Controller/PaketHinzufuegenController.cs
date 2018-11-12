@@ -57,7 +57,7 @@ namespace Lagerverwaltung.Controller
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Höhe enthält das falsche Format: {0}", eingabe);
+                Console.WriteLine("Höhe enthält das falsche Format: {0}", e);
             }
 
             return true;
@@ -78,7 +78,7 @@ namespace Lagerverwaltung.Controller
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Breite enthält das falsche Format: {0}",eingabe);
+                Console.WriteLine("Breite enthält das falsche Format: {0}",e);
             }
 
             return true;
@@ -99,7 +99,7 @@ namespace Lagerverwaltung.Controller
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Länge enthält das falsche Format: {0}", eingabe);
+                Console.WriteLine("Länge enthält das falsche Format: {0}", e);
             }
 
             return true;

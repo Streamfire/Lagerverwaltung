@@ -97,7 +97,7 @@
 			this.buttonLagerHinzufügen.TabIndex = 5;
 			this.buttonLagerHinzufügen.Text = "Lager hinzufügen";
 			this.buttonLagerHinzufügen.UseVisualStyleBackColor = true;
-			this.buttonLagerHinzufügen.Click += new System.EventHandler(this.buttonLagerHinzufügen_Click);
+			this.buttonLagerHinzufügen.Click += new System.EventHandler(this.ButtonLagerHinzufügen_Click);
 			// 
 			// buttonAbbrechen
 			// 
@@ -108,7 +108,7 @@
 			this.buttonAbbrechen.TabIndex = 6;
 			this.buttonAbbrechen.Text = "Abbrechen";
 			this.buttonAbbrechen.UseVisualStyleBackColor = true;
-			this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+			this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
 			// 
 			// label4
 			// 

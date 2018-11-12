@@ -1,4 +1,5 @@
-﻿using Lagerverwaltung.Core;
+﻿using System.Collections.Generic;
+using Lagerverwaltung.Core;
 using Npgsql;
 
 namespace Lagerverwaltung.Model
@@ -26,34 +27,46 @@ namespace Lagerverwaltung.Model
             }
         }
 
-        public static bool HoleAlleRollen()
+        public static List<Rolle> HoleAlleRollen()
         {
             return HolleAlleRollen(short.MaxValue);
         }
 
-        public static bool HolleAlleRollen(short limit)
+        public static List<Rolle> HolleAlleRollen(short limit)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM rolle LIMIT @limit;";
                 cmd.Parameters.AddWithValue("limit", limit);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    var _list = new List<Rolle>();
+                    while (reader.Read())
+                    {
+                        _list.Add(new Rolle((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4)));
+                    }
+                    return _list;
+                }
             }
         }
 
-        public static bool HoleRolle(ushort rollen_id)
+        public static Rolle HoleRolle(ushort rollen_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM lagertyp WHERE rollen_id = @rollen_id;";
                 cmd.Parameters.AddWithValue("rollen_id", rollen_id);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    return new Rolle((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4));
+                }
             }
         }
 

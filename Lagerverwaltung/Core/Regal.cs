@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core.Abstract;
 
@@ -11,8 +12,8 @@ namespace Lagerverwaltung.Core
         public string Name { get; set; }
         public byte Zeilen { get; set; }
         public byte Spalten { get; set; }
-        public uint ErstelltAm { get; }
-        public uint GeaendertAm { get; }
+        public DateTime ErstelltAm { get; }
+        public DateTime GeaendertAm { get; }
 
         public float V_Wandstaerke { get; set; }
         public float H_Wandstaerke { get; set; }
@@ -22,7 +23,7 @@ namespace Lagerverwaltung.Core
 
         public List<Regalfach> Regalfachliste { get; set; }
         
-        public Regal(ushort regal_id, ushort lager_id, string name, byte zeilen, byte spalten, uint erstellt_am, uint geaendert_am, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
+        public Regal(ushort regal_id, ushort lager_id, string name, byte zeilen, byte spalten, DateTime erstellt_am, DateTime geaendert_am, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
             Contract.Requires(regal_id >= 1);
             Contract.Requires(lager_id >= 1);

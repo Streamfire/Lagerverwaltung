@@ -29,13 +29,13 @@ namespace Lagerverwaltung.Views
 			byte zeilen = Convert.ToByte(this.textBoxZeilen.Text);
 			byte spalten = Convert.ToByte(this.textBoxSpalten.Text);
 
-			Regal n = new Regal(0, 0, this.textBoxRegalName.Text,zeilen,spalten, 123, 123, 0, 0, 0, 0, 0);
+			Regal n = new Regal(0, 0, this.textBoxRegalName.Text,zeilen,spalten, new DateTime(), new DateTime(), 0, 0, 0, 0, 0);
 
 			for (int z = 0; z < zeilen; z++)
 			{
 				for (int s = 0; s <spalten;  s++)
 				{
-					n.Regalfachliste.Add(new Regalfach((ushort)(z * s + s), 0, "" + z + ";" + s, 12, 12, 0, 0, 0, ""));
+					n.Regalfachliste.Add(new Regalfach((ushort)(z * s + s), 0, "" + z + ";" + s, new DateTime(), new DateTime(), 0, 0, 0, ""));
 
 				}
 			}

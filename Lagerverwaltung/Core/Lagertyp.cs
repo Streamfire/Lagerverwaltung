@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System;
+using System.Diagnostics.Contracts;
 
 namespace Lagerverwaltung.Core
 {
@@ -6,11 +7,11 @@ namespace Lagerverwaltung.Core
     {
         public ushort LagertypID { get; }
         public string Name { get; set; }
-        public uint ErstelltAm { get; set; }
-        public uint GeaendertAm { get; set; }
+        public DateTime ErstelltAm { get; set; }
+        public DateTime GeaendertAm { get; set; }
 
 
-        public Lagertyp(ushort lagertyp_id, string name, uint erstellt_am, uint geaendert_am)
+        public Lagertyp(ushort lagertyp_id, string name, DateTime erstellt_am, DateTime geaendert_am)
         {
             Contract.Requires(lagertyp_id >= 1);
             Contract.Requires(name.Length <= 20);   // plus minimal Länge laut Data Dictionary später

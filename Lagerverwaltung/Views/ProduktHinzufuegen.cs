@@ -23,10 +23,10 @@ namespace Lagerverwaltung.Views
             _artikeltypListe = new List<Core.Artikeltyp>
             {
                 //TEST
-                new Core.Artikeltyp(0, "bla", 50, 60),
-                new Core.Artikeltyp(1, "blubb", 34, 65),
-                new Core.Artikeltyp(2, "blablubb", 16, 34),
-                new Core.Artikeltyp(3, "bliblubbbla", 67, 456)
+                new Core.Artikeltyp(0, "bla", new DateTime(), new DateTime()),
+                new Core.Artikeltyp(1, "blubb", new DateTime(), new DateTime()),
+                new Core.Artikeltyp(2, "blablubb", new DateTime(), new DateTime()),
+                new Core.Artikeltyp(3, "bliblubbbla", new DateTime(), new DateTime())
             };
             //TEST
 

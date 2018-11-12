@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System;
+using System.Diagnostics.Contracts;
 
 namespace Lagerverwaltung.Core
 {
@@ -9,11 +10,11 @@ namespace Lagerverwaltung.Core
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public string Username { get; set; }
-        public uint ErstelltAm { get; }
-        public uint LetzterLogin { get; }
-        public uint ZuletztGeaendert { get; }
+        public DateTime ErstelltAm { get; }
+        public DateTime LetzterLogin { get; }
+        public DateTime ZuletztGeaendert { get; }
 
-        public User(ushort user_id, ushort rollen_id, string vorname, string nachname, string username, uint erstellt_am, uint letzter_login, uint zuletzt_geaendert)
+        public User(ushort user_id, ushort rollen_id, string vorname, string nachname, string username, DateTime erstellt_am, DateTime letzter_login, DateTime zuletzt_geaendert)
         {
             Contract.Requires(user_id >= 1);
             Contract.Requires(rollen_id >= 1);

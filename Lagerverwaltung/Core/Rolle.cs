@@ -18,10 +18,10 @@ namespace Lagerverwaltung.Core
         public ushort RollenID { get; }
         public string Name { get; set; }
         public string Rechte { get; set; }
-        public uint ErstelltAm { get; }
-        public uint ZuletztGeaendert { get; }
+        public DateTime ErstelltAm { get; }
+        public DateTime ZuletztGeaendert { get; }
 
-        public Rolle(ushort rollen_id, string name, string rechte, uint erstellt_am, uint zuletzt_geaendert)
+        public Rolle(ushort rollen_id, string name, string rechte, DateTime erstellt_am, DateTime zuletzt_geaendert)
         {
             Contract.Requires(rollen_id >= 1);
             Contract.Requires(name.Length <= 10);   // plus minimal Länge laut Data Dictionary später

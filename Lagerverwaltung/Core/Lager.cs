@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 
 namespace Lagerverwaltung.Core
@@ -9,13 +10,13 @@ namespace Lagerverwaltung.Core
         public string Name { get; set; }
         public string Standort { get; set; }
         public string Beschreibung { get; set; }
-        public uint ErstelltAm { get; }
-        public uint GeaendertAm { get; }
-        public Lagertyp LagerTyp { get; set; }
+        public DateTime ErstelltAm { get; }
+        public DateTime GeaendertAm { get; }
+        public ushort LagerTyp { get; set; }
 
         public List<Regal> Regalliste { get; set; }
 
-        public Lager(ushort lager_id, string name, uint erstellt_am, uint geaendert_am, Lagertyp lagertyp, string standort = "", string beschreibung = "")
+        public Lager(ushort lager_id, string name, DateTime erstellt_am, DateTime geaendert_am, ushort lagertyp, string standort = "", string beschreibung = "")
         {
             Contract.Requires(lager_id >= 1);
             Contract.Requires(name.Length <= 20);   // plus minimal Länge laut Data Dictionary später

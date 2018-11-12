@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Npgsql;
 
@@ -13,14 +14,12 @@ namespace Lagerverwaltung.Model
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
-        // return typ ändern!
-        public static void HoleHistorie()
+        public static List<Historie> HoleHistorie()
         {
-            HoleHistorie(long.MaxValue);
+            return HoleHistorie(long.MaxValue);
         }
 
-        // return typ ändern!
-        public static void HoleHistorie(long limit)
+        public static List<Historie> HoleHistorie(long limit)
         {
             Contract.Requires(limit >= 1);
 
@@ -33,13 +32,31 @@ namespace Lagerverwaltung.Model
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
+                    var _list = new List<Historie>();
                     while(reader.Read())
                     {
-                        System.Console.WriteLine("Historie: {0}, {1}, {2}, {3}", reader.GetInt64(0), reader.GetInt16(1), reader.GetString(2), reader.GetTimeStamp(3));
+                        _list.Add(new Historie((ulong)reader.GetInt64(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetDateTime(3)));
                     }
+                    return _list;
                 }
             }
         }
-        // nur lesende Funktionen, da Historie durch die Datenbank Trigger später erstellt werden!
+
+        public static Historie HoleHistorie(ulong historie_id)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM historie WHERE historie_id = @historie_id;";
+                cmd.Parameters.AddWithValue("historie_id", (long)historie_id);
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    return new Historie((ulong)reader.GetInt64(0),(ushort)reader.GetInt16(1),reader.GetString(2), reader.GetDateTime(3));
+                }
+            }
+        }
     }
 }

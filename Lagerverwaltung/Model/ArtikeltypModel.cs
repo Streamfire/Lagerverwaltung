@@ -1,4 +1,5 @@
-﻿using Lagerverwaltung.Core;
+﻿using System.Collections.Generic;
+using Lagerverwaltung.Core;
 using Npgsql;
 
 namespace Lagerverwaltung.Model
@@ -27,36 +28,48 @@ namespace Lagerverwaltung.Model
         }
 
         // return typ ändern!
-        public static bool HoleAlleArtikeltyp()
+        public static List<Artikeltyp> HoleAlleArtikeltyp()
         {
             return HoleAlleArtikeltyp(short.MaxValue);
         }
 
         // return typ ändern!
-        public static bool HoleAlleArtikeltyp(short limit)
+        public static List<Artikeltyp> HoleAlleArtikeltyp(short limit)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM artikeltyp LIMIT @limit;";
                 cmd.Parameters.AddWithValue("limit", limit);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    var _list = new List<Artikeltyp>();
+                    while (reader.Read())
+                    {
+                        _list.Add(new Artikeltyp((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3)));
+                    }
+                    return _list;
+                }
             }
         }
 
         // return typ ändern!
-        public static bool HoleArtikeltyp(ushort artikeltyp_id)
+        public static Artikeltyp HoleArtikeltyp(ushort artikeltyp_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM artikeltyp WHERE artikeltyp_id = @artikeltyp_id;";
                 cmd.Parameters.AddWithValue("artikeltyp_id", artikeltyp_id);
-                int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
-                return result == 0 ? false : true;
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    return new Artikeltyp((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3));
+                }
             }
         }
 

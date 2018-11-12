@@ -38,7 +38,7 @@ namespace Lagerverwaltung.Views
                         if(f.Paketliste.Count>0)
                         {
                             //im Fach ist ein Paketregistriert-> die restlichen Infos zum Paket anzeigen
-                            name.Text = "Inhalt: "+ f.Paketliste[0].Produkt.Name;
+                            name.Text = "Inhalt: "+ f.Paketliste[0].ProduktID;
 
                             Label Menge = new Label();
 							Label Breite = new Label();
@@ -53,13 +53,13 @@ namespace Lagerverwaltung.Views
                             Menge.Text ="Menge: "+ f.Paketliste.Count;
 
 							Breite.Left = 200;
-							Breite.Text = "Breite: " + f.Paketliste[0].Produkt.Breite;
+							Breite.Text = "Breite: " + f.Paketliste[0].ProduktID;
 
 							Hoehe.Left = 300;
-							Hoehe.Text = "Höhe: " + f.Paketliste[0].Produkt.Hoehe;
+							Hoehe.Text = "Höhe: " + f.Paketliste[0].ProduktID;
 
 							Laenge.Left = 400;
-							Laenge.Text = "Länge: " + f.Paketliste[0].Produkt.Laenge;
+							Laenge.Text = "Länge: " + f.Paketliste[0].ProduktID;
 
 							Haltbarkeit.Left = 500;
 							Haltbarkeit.Text = "Haltbarkeit: " + f.Paketliste[0].Haltbarkeit;
@@ -86,7 +86,7 @@ namespace Lagerverwaltung.Views
 
 
 
-							nestedRegal.Add(nestedFach, f.Paketliste[0].PaketBezeichnung+ " | "+f.Paketliste[0].Produkt.Name);
+							nestedRegal.Add(nestedFach, f.Paketliste[0].PaketBezeichnung+ " | "+f.Paketliste[0].ProduktID);
 						}
                         else
                         {
