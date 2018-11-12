@@ -17,11 +17,6 @@ namespace Lagerverwaltung
 			Application.SetCompatibleTextRenderingDefault(false);
 
             //Test
-            var liste = Model.HistorieModel.HoleHistorie();
-            foreach(var list in liste)
-            {
-                Console.WriteLine("Historie {0}; User: {1}; Logtext: {2}; Zeitstempel: {3}",list.LogID,list.UserID,list.LogText,list.Zeitstempel);
-            }
 
             //LoginForm
             Login login = new Login();
