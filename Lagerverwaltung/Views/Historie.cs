@@ -39,5 +39,11 @@ namespace Lagerverwaltung.Views
 		{
 			Dashboard.Historie = null;
 		}
-	}
+
+        private void DataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            var s = e.Row.Index.ToString();
+            MessageBox.Show("Zeile gelöscht mit Index: " + s + " !");
+        }
+    }
 }
