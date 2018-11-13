@@ -49,6 +49,7 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Artikeltyp>();
                     while (reader.Read())
                     {
+                        // wenn feld null dann Exception!
                         _list.Add(new Artikeltyp((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3)));
                     }
                     return _list;

@@ -41,7 +41,8 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Regal>();
                     while (reader.Read())
                     {
-                        _list.Add(new Regal((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(1),reader.GetString(2),reader.GetByte(3), reader.GetByte(4), reader.GetDateTime(5),reader.GetDateTime(6),reader.GetFloat(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10), reader.GetFloat(11)));
+                        // wenn feld null dann Exception!
+                        _list.Add(new Regal((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(4),reader.GetString(1),reader.GetByte(5), reader.GetByte(6), reader.GetDateTime(2),reader.GetDateTime(3),reader.GetFloat(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10), reader.GetFloat(11)));
                     }
                     return _list;
                 }
@@ -60,7 +61,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Regal((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetByte(3), reader.GetByte(4), reader.GetDateTime(5), reader.GetDateTime(6), reader.GetFloat(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10), reader.GetFloat(11));
+                    return new Regal((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetByte(5), reader.GetByte(6), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10), reader.GetFloat(11));
                 }
             }
         }

@@ -41,7 +41,8 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Produkt>();
                     while (reader.Read())
                     {
-                        _list.Add(new Produkt((uint)reader.GetInt32(0), reader.GetString(1), reader.GetString(2),reader.GetFloat(3), reader.GetFloat(4),reader.GetDateTime(5), reader.GetDateTime(6),(ushort)reader.GetInt16(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10)));
+                        // wenn feld null dann Exception!
+                        _list.Add(new Produkt((uint)reader.GetInt32(0), reader.GetString(1), reader.GetString(6),reader.GetFloat(4), reader.GetFloat(5),reader.GetDateTime(2), reader.GetDateTime(3),(ushort)reader.GetInt16(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10)));
                     }
                     return _list;
                 }

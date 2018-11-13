@@ -36,7 +36,8 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Regalfach>();
                     while (reader.Read())
                     {
-                        _list.Add(new Regalfach((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(1),reader.GetString(2),reader.GetDateTime(3), reader.GetDateTime(4),reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7),reader.GetString(8)));
+                        // wenn feld null dann Exception!
+                        _list.Add(new Regalfach((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(4),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3),reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7),reader.GetString(8)));
                     }
                     return _list;
                 }
@@ -55,7 +56,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
+                    return new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
                 }
             }
         }

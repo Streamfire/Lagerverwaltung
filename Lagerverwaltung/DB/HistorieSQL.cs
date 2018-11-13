@@ -36,6 +36,7 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Historie>();
                     while(reader.Read())
                     {
+                        // wenn feld null dann Exception!
                         _list.Add(new Historie((ulong)reader.GetInt64(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetDateTime(3)));
                     }
                     return _list;

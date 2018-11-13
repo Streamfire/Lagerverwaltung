@@ -86,7 +86,7 @@ namespace Lagerverwaltung.Views
 
 
 
-							nestedRegal.Add(nestedFach, f.Paketliste[0].PaketBezeichnung+ " | "+f.Paketliste[0].ProduktID);
+							nestedRegal.Add(nestedFach, f.Paketliste[0].Name+ " | "+f.Paketliste[0].ProduktID);
 						}
                         else
                         {

@@ -47,7 +47,8 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Rolle>();
                     while (reader.Read())
                     {
-                        _list.Add(new Rolle((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4)));
+                        // wenn feld null dann Exception!
+                        _list.Add(new Rolle((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(4), reader.GetDateTime(2), reader.GetDateTime(3)));
                     }
                     return _list;
                 }
@@ -66,7 +67,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Rolle((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetDateTime(4));
+                    return new Rolle((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(4), reader.GetDateTime(2), reader.GetDateTime(3));
                 }
             }
         }

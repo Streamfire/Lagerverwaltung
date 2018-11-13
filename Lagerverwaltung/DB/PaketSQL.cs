@@ -41,7 +41,7 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Paket>();
                     while (reader.Read())
                     {
-                        _list.Add(new Paket((uint)reader.GetInt32(0),(ushort)reader.GetInt16(1),reader.GetString(2),(ushort)reader.GetInt16(3),reader.GetDateTime(4),reader.GetDateTime(5),reader.GetDateTime(6),(uint)reader.GetInt32(7),reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10),reader.GetString(11)));
+                        _list.Add(new Paket((uint)reader.GetInt32(0),(ushort)reader.GetInt16(4),reader.GetString(1),(ushort)reader.GetInt16(6),reader.GetDateTime(2),reader.GetDateTime(3),reader.GetDateTime(7),(uint)reader.GetInt32(5),reader.GetFloat(9), reader.GetFloat(10), reader.GetFloat(11),reader.GetString(8)));
                     }
                     return _list;
                 }
@@ -60,7 +60,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Paket((uint)reader.GetInt32(0), (ushort)reader.GetInt16(1), reader.GetString(2), (ushort)reader.GetInt16(3), reader.GetDateTime(4), reader.GetDateTime(5), reader.GetDateTime(6), (uint)reader.GetInt32(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10), reader.GetString(11));
+                    return new Paket((uint)reader.GetInt32(0), (ushort)reader.GetInt16(4), reader.GetString(1), (ushort)reader.GetInt16(6), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetDateTime(7), (uint)reader.GetInt32(5), reader.GetFloat(9), reader.GetFloat(10), reader.GetFloat(11), reader.GetString(8));
                 }
             }
         }

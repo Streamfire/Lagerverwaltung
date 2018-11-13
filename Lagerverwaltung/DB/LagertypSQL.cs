@@ -5,11 +5,11 @@ using Npgsql;
 
 namespace Lagerverwaltung.DB
 {
-    public static class LagertypHelper
+    public static class LagertypSQL
     {
         private static readonly NpgsqlConnection conn;
 
-        static LagertypHelper()
+        static LagertypSQL()
         {
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
@@ -47,6 +47,7 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Lagertyp>();
                     while (reader.Read())
                     {
+                        // wenn feld null dann Exception!
                         _list.Add(new Lagertyp((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2),reader.GetDateTime(3)));
                     }
                     return _list;

@@ -52,7 +52,8 @@ namespace Lagerverwaltung.DB
                     var _list = new List<Lager>();
                     while (reader.Read())
                     {
-                        _list.Add(new Lager((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3),(ushort)reader.GetInt16(4),reader.GetString(5),reader.GetString(6)));
+                        // wenn feld null dann Exception!
+                        _list.Add(new Lager((ushort)reader.GetInt16(0),reader.GetString(1),new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6),reader.GetString(2),reader.GetString(5)));
                     }
                     return _list;
                 }
@@ -72,7 +73,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Lager((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), (ushort)reader.GetInt16(4), reader.GetString(5), reader.GetString(6));
+                    return new Lager((ushort)reader.GetInt16(0), reader.GetString(1), new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6), reader.GetString(2), reader.GetString(5));
                 }
             }
         }
