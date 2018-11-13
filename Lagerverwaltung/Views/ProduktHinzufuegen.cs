@@ -13,6 +13,7 @@ namespace Lagerverwaltung.Views
     public partial class ProduktHinzufuegen : Form
     {
         private List<Core.Artikeltyp> _artikeltypListe;
+		private Produktliste _parent;
 
         public ProduktHinzufuegen()
         {
@@ -33,7 +34,10 @@ namespace Lagerverwaltung.Views
             }
 
             artikeltypBox.SelectedIndex = 0;
-        }
+
+			_parent = PaketHinzufuegen.Produktliste;
+
+		}
 
         private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
@@ -48,7 +52,7 @@ namespace Lagerverwaltung.Views
             {
                 //TODO:Produkt der Produktliste hinzufügen
                 Dashboard.ProduktListe.Add(new Core.Produkt(0, tb_Name.Text, tb_Zeichnungsnummer.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), new DateTime(), new DateTime(), 0,0f,0f,0f));
-
+				_parent.UpdateForm(Dashboard.ProduktListe);
                 Close();
             }
 

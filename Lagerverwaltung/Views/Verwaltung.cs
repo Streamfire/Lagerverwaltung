@@ -19,13 +19,13 @@ namespace Lagerverwaltung.Views
 			Dashboard.Verwaltung = null;
 		}
 
-        public static PaketHinzufügen PaketHinzufügen { get => _paketHinzufuegen; set => _paketHinzufuegen = value; }
+        public static PaketHinzufuegen PaketHinzufuegen { get => _paketHinzufuegen; set => _paketHinzufuegen = value; }
         public static PaketEntfernen PaketEntfernen { get => _paketEntfernen; set => _paketEntfernen = value; }
         public static RegalHinzufügen RegalHinzufügen { get => _regalHinzufuegen; set => _regalHinzufuegen = value; }
         public static RegalAendern_Entfernen RegalAendern_Entfernen { get => _regalAendernEnt; set => _regalAendernEnt = value; }
         public static LagerHinzufuegen LagerHinzufuegen { get => _lagerHinzufuegen; set => _lagerHinzufuegen = value; }
         public static LagerEntfernen LagerEntfernen { get => _lagerEntfernen; set => _lagerEntfernen = value; }
-        private static PaketHinzufügen _paketHinzufuegen = null;
+        private static PaketHinzufuegen _paketHinzufuegen = null;
         private static PaketEntfernen _paketEntfernen = null;
         private static RegalHinzufügen _regalHinzufuegen = null;
         private static RegalAendern_Entfernen _regalAendernEnt = null;
@@ -61,15 +61,15 @@ namespace Lagerverwaltung.Views
 
         private void buttonPaketHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            if (PaketHinzufügen != null)
+            if (PaketHinzufuegen != null)
             {
-                PaketHinzufügen.ShowDialog(this);
+                PaketHinzufuegen.ShowDialog(this);
 
             }
             else
             {
-                PaketHinzufügen = new PaketHinzufügen();
-                PaketHinzufügen.ShowDialog();
+                PaketHinzufuegen = new PaketHinzufuegen();
+                PaketHinzufuegen.ShowDialog();
             }
         }
         private void buttonPaketEntfernen_Click(object sender, System.EventArgs e)

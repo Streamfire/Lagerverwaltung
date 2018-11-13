@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class PaketHinzufügen : Form
+    public partial class PaketHinzufuegen : Form
     {
-        public PaketHinzufügen()
+        public PaketHinzufuegen()
         {
             InitializeComponent();
         }

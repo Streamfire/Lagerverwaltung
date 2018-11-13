@@ -1,6 +1,6 @@
 ﻿namespace Lagerverwaltung.Views
 {
-    partial class PaketHinzufügen
+    partial class PaketHinzufuegen
     {
         /// <summary>
         /// Required designer variable.

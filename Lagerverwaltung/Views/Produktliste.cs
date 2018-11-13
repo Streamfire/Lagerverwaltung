@@ -12,14 +12,14 @@ namespace Lagerverwaltung.Views
 {
     public partial class Produktliste : Form
     {
-        private List<Core.Produkt> _produktListe;
+       // private List<Core.Produkt> _produktListe;
 
         public Produktliste()
         {
             InitializeComponent();
 
-            _produktListe = Dashboard.ProduktListe;
-            /*
+
+			/*
             //TODO: Produkte aus DB oder SW-Liste laden
             _produktListe = new List<Core.Produkt>
             {
@@ -31,20 +31,27 @@ namespace Lagerverwaltung.Views
                 
             };
             */
-            foreach (Core.Produkt produkt in _produktListe)
-            {
-                listViewProduktliste.Items.Add(new ListViewItem(new string[] {
-                    produkt.Name,
-                    produkt.Gewicht.ToString(),
-                    produkt.Preis.ToString(),
-                    produkt.Zeichnungsnummer,
-                    produkt.ErstelltAm.ToString(),
-                    produkt.GeaendertAm.ToString() }));
-            }
+			UpdateForm( Dashboard.ProduktListe);
 
-            listViewProduktliste.Items[0].Focused = true;
-            listViewProduktliste.Items[0].Selected = true;
+      
         }
+		public void UpdateForm(List<Core.Produkt> _produktListe)
+		{
+			listViewProduktliste.Items.Clear();
+
+			foreach (Core.Produkt produkt in _produktListe)
+			{
+				listViewProduktliste.Items.Add(new ListViewItem(new string[] {
+					produkt.Name,
+					produkt.Gewicht.ToString(),
+					produkt.Preis.ToString(),
+					produkt.Zeichnungsnummer,
+					produkt.ErstelltAm.ToString(),
+					produkt.GeaendertAm.ToString() }));
+			}
+			listViewProduktliste.Items[0].Focused = true;
+			listViewProduktliste.Items[0].Selected = true;
+		}
 
         private void Schliessen_Click(object sender, EventArgs e)
         {
