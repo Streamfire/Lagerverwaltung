@@ -185,6 +185,7 @@
             this.Controls.Add(this.ButtonAbbrechen);
             this.Controls.Add(this.ButtonProduktHinzufuegen);
             this.Name = "ProduktHinzufuegen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProduktHinzufügen";
             this.ResumeLayout(false);
             this.PerformLayout();

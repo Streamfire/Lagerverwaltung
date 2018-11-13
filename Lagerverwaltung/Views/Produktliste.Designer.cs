@@ -38,6 +38,7 @@
             this.Schliessen = new System.Windows.Forms.Button();
             this.Auswaehlen = new System.Windows.Forms.Button();
             this.Produkt_hinzufuegen = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewProduktliste
@@ -96,7 +97,7 @@
             this.Schliessen.Name = "Schliessen";
             this.Schliessen.Size = new System.Drawing.Size(120, 35);
             this.Schliessen.TabIndex = 1;
-            this.Schliessen.Text = "Schließen";
+            this.Schliessen.Text = "Abbrechen";
             this.Schliessen.UseVisualStyleBackColor = true;
             this.Schliessen.Click += new System.EventHandler(this.Schliessen_Click);
             // 
@@ -121,11 +122,22 @@
             this.Produkt_hinzufuegen.UseVisualStyleBackColor = true;
             this.Produkt_hinzufuegen.Click += new System.EventHandler(this.Produkt_hinzufuegen_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(209, 685);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 35);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Produkt ändern";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Produktliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 736);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Produkt_hinzufuegen);
             this.Controls.Add(this.Auswaehlen);
             this.Controls.Add(this.Schliessen);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button Schliessen;
         private System.Windows.Forms.Button Auswaehlen;
         private System.Windows.Forms.Button Produkt_hinzufuegen;
+        private System.Windows.Forms.Button button1;
     }
 }
