@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
@@ -7,7 +9,25 @@ namespace Lagerverwaltung.Views
 		public Historie()
 		{
 			InitializeComponent();
+
+            var task = new Task(() => Test());
+            task.Start();
 		}
+
+        public void Test()
+        {
+            var source = new BindingSource();
+            try
+            {
+                var historie = DB.HistorieSQL.HoleHistorie();
+                source.DataSource = historie;
+                dataGridView1.DataSource = source;
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten um die Historie zu füllen!", "Hinweis", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
 
 
 		/// <summary>
