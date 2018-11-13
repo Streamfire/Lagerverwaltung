@@ -18,16 +18,19 @@ namespace Lagerverwaltung.Views
         {
             InitializeComponent();
 
+            _produktListe = Dashboard.ProduktListe;
+            /*
             //TODO: Produkte aus DB oder SW-Liste laden
             _produktListe = new List<Core.Produkt>
             {
                 //TEST
-                new Core.Produkt(0, "Eimer", "31M32", 40.2f, 40.3f, new DateTime(), new DateTime(), 0, 40, 60, 80),
-                new Core.Produkt(1, "Tisch", "T15-CH", 100.23f, 1.01f, new DateTime(), new DateTime(), 0, 1000, 2000, 500),
-                new Core.Produkt(2, "Dildo", "D-1L-D0", 1.15f, 9000, new DateTime(), new DateTime(), 0, 300, 100, 100),
-                new Core.Produkt(3, "Thermoskanne voll Mett", "N0-T4-5CH-3N-Mu-Mu", 500, 1500, new DateTime(), new DateTime(), 0, 500, 500, 500)
+                new Core.Produkt(0, "DeWalt Schrauber", "DT71572-QZ", 0.581f, 11.99f, new DateTime(), new DateTime(), 0, 400, 600, 800),
+                new Core.Produkt(1, "Scheppach Dekupiersägeblatt-Set", "6206P", 0.200f, 19.99f, new DateTime(), new DateTime(), 0, 1000, 2000, 500),
+                new Core.Produkt(2, "Erbauer T144DP Stichsägeblatt", "7153K", 0.055f, 2.19f, new DateTime(), new DateTime(), 0, 300, 100, 100),
+                new Core.Produkt(3, "Ponal SUPER 3 Holzleim", "PN 15S 120", 0.12f, 6.89f, new DateTime(), new DateTime(), 0, 500, 500, 500)
+                
             };
-
+            */
             foreach (Core.Produkt produkt in _produktListe)
             {
                 listViewProduktliste.Items.Add(new ListViewItem(new string[] {
@@ -62,6 +65,11 @@ namespace Lagerverwaltung.Views
                 ProduktHinzufuegen = new ProduktHinzufuegen();
                 ProduktHinzufuegen.ShowDialog();
             }
+
         }
+
+        
     }
+
+    
 }

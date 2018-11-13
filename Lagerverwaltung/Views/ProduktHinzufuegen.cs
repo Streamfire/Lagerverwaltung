@@ -20,14 +20,7 @@ namespace Lagerverwaltung.Views
             artikeltypBox.ValueMember = "artikeltyp_id";
             artikeltypBox.DisplayMember = "name";
 
-            _artikeltypListe = new List<Core.Artikeltyp>
-            {
-                //TEST
-                new Core.Artikeltyp(0, "bla", new DateTime(), new DateTime()),
-                new Core.Artikeltyp(1, "blubb", new DateTime(), new DateTime()),
-                new Core.Artikeltyp(2, "blablubb", new DateTime(), new DateTime()),
-                new Core.Artikeltyp(3, "bliblubbbla", new DateTime(), new DateTime())
-            };
+            _artikeltypListe = Dashboard.ArtikeltypListe;            
             //TEST
 
             //TODO:Artikeltypen aus Datenbank laden
@@ -54,7 +47,7 @@ namespace Lagerverwaltung.Views
             //Validierung erfolgreich
             {
                 //TODO:Produkt der Produktliste hinzufügen
-
+                Dashboard.ProduktListe.Add(new Core.Produkt(0, tb_Name.Text, tb_Zeichnungsnummer.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), new DateTime(), new DateTime(), 0,0f,0f,0f));
 
                 Close();
             }

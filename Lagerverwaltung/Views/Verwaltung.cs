@@ -113,7 +113,7 @@ namespace Lagerverwaltung.Views
         }
         private void buttonZurück_Click(object sender, System.EventArgs e)
         {
-            this.Close();
+            Hide();
         }
     }
 }
