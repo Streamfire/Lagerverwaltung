@@ -12,7 +12,7 @@ namespace Lagerverwaltung.Views
 {
     public partial class ProduktHinzufuegen : Form
     {
-        private List<Core.Artikeltyp> _artikeltypListe;
+        private List<Model.Artikeltyp> _artikeltypListe;
 		private Produktliste _parent;
 
         public ProduktHinzufuegen()
@@ -28,7 +28,7 @@ namespace Lagerverwaltung.Views
 
 
             //in ComboBox eintragen (eventuell auch ohne Zwischengespeicherte Liste)
-            foreach (Core.Artikeltyp artikeltyp in _artikeltypListe)
+            foreach (Model.Artikeltyp artikeltyp in _artikeltypListe)
             {
                 artikeltypBox.Items.Add(artikeltyp);
             }
@@ -51,7 +51,7 @@ namespace Lagerverwaltung.Views
             //Validierung erfolgreich
             {
                 //TODO:Produkt der Produktliste hinzufügen
-                Dashboard.ProduktListe.Add(new Core.Produkt(0, tb_Name.Text, tb_Zeichnungsnummer.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), new DateTime(), new DateTime(), 0,0f,0f,0f));
+                Dashboard.ProduktListe.Add(new Model.Produkt(0, tb_Name.Text, tb_Zeichnungsnummer.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), new DateTime(), new DateTime(), 0,0f,0f,0f));
 				_parent.UpdateForm(Dashboard.ProduktListe);
                 Close();
             }

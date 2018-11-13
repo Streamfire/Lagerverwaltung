@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Lagerverwaltung.Core;
+using Lagerverwaltung.Model;
 
 namespace Lagerverwaltung.Views
 {

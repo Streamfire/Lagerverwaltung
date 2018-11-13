@@ -35,11 +35,11 @@ namespace Lagerverwaltung.Views
 
       
         }
-		public void UpdateForm(List<Core.Produkt> _produktListe)
+		public void UpdateForm(List<Model.Produkt> _produktListe)
 		{
 			listViewProduktliste.Items.Clear();
 
-			foreach (Core.Produkt produkt in _produktListe)
+			foreach (Model.Produkt produkt in _produktListe)
 			{
 				listViewProduktliste.Items.Add(new ListViewItem(new string[] {
 					produkt.Name,

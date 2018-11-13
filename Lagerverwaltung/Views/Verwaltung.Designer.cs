@@ -1,4 +1,4 @@
-﻿using Lagerverwaltung.Core;
+﻿using Lagerverwaltung.Model;
 using Opulos.Core.UI;
 using System.Collections.Generic;
 using System.Windows.Forms;

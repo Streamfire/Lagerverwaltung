@@ -32,7 +32,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -75,18 +75,18 @@
     <Compile Include="Controller\PaketHinzufuegenController.cs" />
     <Compile Include="Controller\ProduktHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
-    <Compile Include="Core\Artikeltyp.cs" />
+    <Compile Include="Model\Artikeltyp.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />
     <Compile Include="Core\Interfaces\IBase.cs" />
-    <Compile Include="Core\Lager.cs" />
-    <Compile Include="Core\Lagertyp.cs" />
-    <Compile Include="Core\Paket.cs" />
-    <Compile Include="Core\Produkt.cs" />
-    <Compile Include="Core\Regal.cs" />
-    <Compile Include="Core\Regalfach.cs" />
-    <Compile Include="Core\Rolle.cs" />
-    <Compile Include="Core\User.cs" />
-    <Compile Include="Core\Historie.cs" />
+    <Compile Include="Model\Lager.cs" />
+    <Compile Include="Model\Lagertyp.cs" />
+    <Compile Include="Model\Paket.cs" />
+    <Compile Include="Model\Produkt.cs" />
+    <Compile Include="Model\Regal.cs" />
+    <Compile Include="Model\Regalfach.cs" />
+    <Compile Include="Model\Rolle.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Historie.cs" />
     <Compile Include="ExpandablePanel\Accordion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,16 +94,16 @@
     <Compile Include="ExpandablePanel\ResizeBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Model\ProduktModel.cs" />
-    <Compile Include="Model\HistorieModel.cs" />
-    <Compile Include="Model\ArtikeltypModel.cs" />
-    <Compile Include="Model\LagertypModel.cs" />
-    <Compile Include="Model\PaketModel.cs" />
-    <Compile Include="Model\RollenModel.cs" />
-    <Compile Include="Model\LagerModel.cs" />
-    <Compile Include="Model\RegalfachModel.cs" />
-    <Compile Include="Model\RegalModel.cs" />
-    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="DB\ProduktSQL.cs" />
+    <Compile Include="DB\HistorieSQL.cs" />
+    <Compile Include="DB\ArtikeltypSQL.cs" />
+    <Compile Include="DB\LagertypSQL.cs" />
+    <Compile Include="DB\PaketSQL.cs" />
+    <Compile Include="DB\RollenSQL.cs" />
+    <Compile Include="DB\LagerSQL.cs" />
+    <Compile Include="DB\RegalfachSQL.cs" />
+    <Compile Include="DB\RegalSQL.cs" />
+    <Compile Include="DB\UserSQL.cs" />
     <Compile Include="Views\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,11 +142,11 @@
     <Compile Include="Views\PaketEntfernen.Designer.cs">
       <DependentUpon>PaketEntfernen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PaketHinzufügen.cs">
+    <Compile Include="Views\PaketHinzufuegen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PaketHinzufügen.Designer.cs">
-      <DependentUpon>PaketHinzufügen.cs</DependentUpon>
+    <Compile Include="Views\PaketHinzufuegen.Designer.cs">
+      <DependentUpon>PaketHinzufuegen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProduktHinzufuegen.cs">
       <SubType>Form</SubType>
@@ -160,11 +160,11 @@
     <Compile Include="Views\Produktliste.Designer.cs">
       <DependentUpon>Produktliste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegalAendern,Entfernen.cs">
+    <Compile Include="Views\RegalAendern_Entfernen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\RegalAendern,Entfernen.Designer.cs">
-      <DependentUpon>RegalAendern,Entfernen.cs</DependentUpon>
+    <Compile Include="Views\RegalAendern_Entfernen.Designer.cs">
+      <DependentUpon>RegalAendern_Entfernen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Regaleinsicht.cs">
       <SubType>Form</SubType>
@@ -172,11 +172,11 @@
     <Compile Include="Views\Regaleinsicht.Designer.cs">
       <DependentUpon>Regaleinsicht.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegalHinzufügen.cs">
+    <Compile Include="Views\RegalHinzufuegen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\RegalHinzufügen.Designer.cs">
-      <DependentUpon>RegalHinzufügen.cs</DependentUpon>
+    <Compile Include="Views\RegalHinzufuegen.Designer.cs">
+      <DependentUpon>RegalHinzufuegen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Suche.cs">
       <SubType>Form</SubType>
@@ -217,8 +217,8 @@
     <EmbeddedResource Include="Views\PaketEntfernen.resx">
       <DependentUpon>PaketEntfernen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PaketHinzufügen.resx">
-      <DependentUpon>PaketHinzufügen.cs</DependentUpon>
+    <EmbeddedResource Include="Views\PaketHinzufuegen.resx">
+      <DependentUpon>PaketHinzufuegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProduktHinzufuegen.resx">
       <DependentUpon>ProduktHinzufuegen.cs</DependentUpon>
@@ -226,14 +226,14 @@
     <EmbeddedResource Include="Views\Produktliste.resx">
       <DependentUpon>Produktliste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RegalAendern,Entfernen.resx">
-      <DependentUpon>RegalAendern,Entfernen.cs</DependentUpon>
+    <EmbeddedResource Include="Views\RegalAendern_Entfernen.resx">
+      <DependentUpon>RegalAendern_Entfernen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Regaleinsicht.resx">
       <DependentUpon>Regaleinsicht.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RegalHinzufügen.resx">
-      <DependentUpon>RegalHinzufügen.cs</DependentUpon>
+    <EmbeddedResource Include="Views\RegalHinzufuegen.resx">
+      <DependentUpon>RegalHinzufuegen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Suche.resx">
       <DependentUpon>Suche.cs</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using Lagerverwaltung.Core;
+using Lagerverwaltung.Model;
 
 namespace Lagerverwaltung.Views
 {
@@ -53,20 +53,20 @@ namespace Lagerverwaltung.Views
             //TEST
             ProduktListe = new List<Produkt> {
                 
-                new Core.Produkt(0, "DeWalt Schrauber", "DT71572-QZ", 0.581f, 11.99f, new DateTime(), new DateTime(), 0, 400, 600, 800),
-                new Core.Produkt(1, "Scheppach Dekupiersägeblatt-Set", "6206P", 0.200f, 19.99f, new DateTime(), new DateTime(), 0, 1000, 2000, 500),
-                new Core.Produkt(2, "Erbauer T144DP Stichsägeblatt", "7153K", 0.055f, 2.19f, new DateTime(), new DateTime(), 0, 300, 100, 100),
-                new Core.Produkt(3, "Ponal SUPER 3 Holzleim", "PN 15S 120", 0.12f, 6.89f, new DateTime(), new DateTime(), 0, 500, 500, 500)
+                new Model.Produkt(0, "DeWalt Schrauber", "DT71572-QZ", 0.581f, 11.99f, new DateTime(), new DateTime(), 0, 400, 600, 800),
+                new Model.Produkt(1, "Scheppach Dekupiersägeblatt-Set", "6206P", 0.200f, 19.99f, new DateTime(), new DateTime(), 0, 1000, 2000, 500),
+                new Model.Produkt(2, "Erbauer T144DP Stichsägeblatt", "7153K", 0.055f, 2.19f, new DateTime(), new DateTime(), 0, 300, 100, 100),
+                new Model.Produkt(3, "Ponal SUPER 3 Holzleim", "PN 15S 120", 0.12f, 6.89f, new DateTime(), new DateTime(), 0, 500, 500, 500)
 
             };
 
             ArtikeltypListe = new List<Artikeltyp>
             {
                 //TEST
-                new Core.Artikeltyp(0, "bla", new DateTime(), new DateTime()),
-                new Core.Artikeltyp(1, "blubb", new DateTime(), new DateTime()),
-                new Core.Artikeltyp(2, "blablubb", new DateTime(), new DateTime()),
-                new Core.Artikeltyp(3, "bliblubbbla", new DateTime(), new DateTime())
+                new Model.Artikeltyp(0, "bla", new DateTime(), new DateTime()),
+                new Model.Artikeltyp(1, "blubb", new DateTime(), new DateTime()),
+                new Model.Artikeltyp(2, "blablubb", new DateTime(), new DateTime()),
+                new Model.Artikeltyp(3, "bliblubbbla", new DateTime(), new DateTime())
             };
 
 
