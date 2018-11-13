@@ -101,17 +101,19 @@ namespace Lagerverwaltung.Views
 		/// <param name="e"></param>
 		private void Button1_Click(object sender, EventArgs e)
 		{
-			if(Verwaltung!=null)
+			if (Verwaltung != null)
 			{
+
+				Verwaltung.UpdateForm(_lagerliste);
 				Verwaltung.ShowDialog();
 			}
 			else
 			{
 				Verwaltung = new Verwaltung();
+				Verwaltung.UpdateForm(_lagerliste);
 				Verwaltung.ShowDialog();
-			}
 
-            Verwaltung.UpdateForm(_lagerliste); 
+			}
 		}
 
 		/// <summary>
