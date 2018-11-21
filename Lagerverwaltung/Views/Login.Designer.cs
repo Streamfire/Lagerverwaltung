@@ -30,10 +30,10 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.guestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -45,7 +45,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(167, 24);
             this.textBox1.TabIndex = 0;
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // textBox2
             // 
@@ -55,18 +54,17 @@
             this.textBox2.Size = new System.Drawing.Size(167, 24);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
-            this.textBox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
-            // button1
+            // loginBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(229, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Location = new System.Drawing.Point(229, 152);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(84, 34);
+            this.loginBtn.TabIndex = 2;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -88,16 +86,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Passwort";
             // 
-            // button2
+            // guestBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(327, 152);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 34);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Gast";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.guestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guestBtn.Location = new System.Drawing.Point(327, 152);
+            this.guestBtn.Name = "guestBtn";
+            this.guestBtn.Size = new System.Drawing.Size(84, 34);
+            this.guestBtn.TabIndex = 5;
+            this.guestBtn.Text = "Gast";
+            this.guestBtn.UseVisualStyleBackColor = true;
+            this.guestBtn.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label3
             // 
@@ -120,21 +118,21 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 204);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.guestBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginFormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,8 +142,8 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button guestBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

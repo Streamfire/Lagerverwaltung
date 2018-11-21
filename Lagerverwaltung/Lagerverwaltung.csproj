@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Lagerverwaltung.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Npgsql, Version=4.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.0.3\lib\net45\Npgsql.dll</HintPath>
@@ -107,6 +110,12 @@
     <Compile Include="DB\RegalfachSQL.cs" />
     <Compile Include="DB\RegalSQL.cs" />
     <Compile Include="DB\UserSQL.cs" />
+    <Compile Include="Views\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +190,12 @@
     <Compile Include="Views\RegalHinzufuegen.Designer.cs">
       <DependentUpon>RegalHinzufuegen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Suche.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +208,9 @@
     <Compile Include="Views\Verwaltung.Designer.cs">
       <DependentUpon>Verwaltung.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RegalHinzufuegen.resx">
       <DependentUpon>RegalHinzufuegen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Suche.resx">
       <DependentUpon>Suche.cs</DependentUpon>

@@ -6,31 +6,17 @@ namespace Lagerverwaltung.Views
 {
 	public partial class Historie : Form
 	{
-        private List<Model.Historie> _historie = new List<Model.Historie>();
-
 		public Historie()
 		{
 			InitializeComponent();
 
-            var task = new Task(() => Test());
-            task.Start();
+            var items = Model.Historie.HoleListe;
+            var source = new BindingSource
+            {
+                DataSource = items
+            };
+            dataGridView1.DataSource = source;
 		}
-
-        public void Test()
-        {
-            var source = new BindingSource();
-            try
-            {
-                _historie = DB.HistorieSQL.HoleHistorie();
-                source.DataSource = _historie;
-                dataGridView1.DataSource = source;
-            }
-            catch (System.Exception)
-            {
-                MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten um die Historie zu füllen!", "Hinweis", MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-        }
-
 
 		/// <summary>
 		/// Wenn das Fenster geschlossen wird wird die Referenz im Dashboard auf null gesetzt.
@@ -40,17 +26,6 @@ namespace Lagerverwaltung.Views
 		private void HistorieFormClosing(object sender, FormClosingEventArgs e)
 		{
 			Dashboard.Historie = null;
-            foreach(var item in _historie)
-            {
-                var tmp = item;
-                Model.Historie.Entfernen(ref tmp);
-            }
 		}
-
-        private void DataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            var s = e.Row.Index.ToString();
-            MessageBox.Show("Zeile gelöscht mit Index: " + s + " !");
-        }
     }
 }

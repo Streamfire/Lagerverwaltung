@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Lagerverwaltung")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Softwaretechnik-Projekt mit Martin (Teamchef), Benjamin (Projektmanager), Conny (Software-Architekt), Lukas (Chefprogrammierer), Marlene (Dokumentation) und Christian (Testmanager)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Hochschule Mittweida")]
 [assembly: AssemblyProduct("Lagerverwaltung")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

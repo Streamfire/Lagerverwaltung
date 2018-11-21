@@ -11,6 +11,10 @@ namespace Lagerverwaltung.Model
         public DateTime Zeitstempel { get; }
 
         private static List<Historie> _list = new List<Historie>();
+        public static System.Collections.ObjectModel.ReadOnlyCollection<Historie> HoleListe
+        {
+            get { return _list.AsReadOnly(); }
+        }
         public static event EventHandler<EventArgs> HistorieHinzugefuegt;
         public static event EventHandler<EventArgs> HistorieEntfernt;
 

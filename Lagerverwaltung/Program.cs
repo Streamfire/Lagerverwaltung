@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using Lagerverwaltung.Views;
 
@@ -18,11 +19,19 @@ namespace Lagerverwaltung
             //Test
 
             //LoginForm
-            Login login = new Login();
-			Application.Run(login);
-			//Dashboard
-			Dashboard board = new Dashboard(login.Adminuser);
-			Application.Run(board);
-		}
+            var login = new Login();
+            var splash = new SplashScreen();
+            Thread splashThread = new Thread(new ThreadStart(() => { Application.Run(splash); }));
+            splashThread.SetApartmentState(ApartmentState.STA);
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                splashThread.Start();
+            }
+            if(splashThread.IsAlive)
+            {
+                splashThread.Join();
+                Application.Run(new Dashboard());
+            }
+        }
     }
 }

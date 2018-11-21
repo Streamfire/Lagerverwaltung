@@ -30,10 +30,10 @@ namespace Lagerverwaltung.DB
 
         public static List<Rolle> HoleAlleRollen()
         {
-            return HolleAlleRollen(short.MaxValue);
+            return HoleAlleRollen(short.MaxValue);
         }
 
-        public static List<Rolle> HolleAlleRollen(short limit)
+        public static List<Rolle> HoleAlleRollen(short limit)
         {
             using (var cmd = new NpgsqlCommand())
             {

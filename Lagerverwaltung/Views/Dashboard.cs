@@ -169,5 +169,25 @@ namespace Lagerverwaltung.Views
 				Historie.ShowDialog();
 			}
 		}
-	}
+
+        private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();
+            about.ShowDialog();
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Möchten Sie das Programm beenden?", "Programm beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void BeendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }
