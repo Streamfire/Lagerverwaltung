@@ -21,15 +21,9 @@ namespace Lagerverwaltung
             //LoginForm
             var login = new Login();
             var splash = new SplashScreen();
-            Thread splashThread = new Thread(new ThreadStart(() => { Application.Run(splash); }));
-            splashThread.SetApartmentState(ApartmentState.STA);
             if (login.ShowDialog() == DialogResult.OK)
             {
-                splashThread.Start();
-            }
-            if(splashThread.IsAlive)
-            {
-                splashThread.Join();
+                splash.ShowDialog();
                 Application.Run(new Dashboard());
             }
         }

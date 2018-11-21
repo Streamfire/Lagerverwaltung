@@ -26,11 +26,12 @@ namespace Lagerverwaltung.Views
                 DB.PaketSQL.HoleAllePakete();
                 DB.ProduktSQL.HoleAlleProdukte();
                 Thread.Sleep(1000);
-                this.Invoke((MethodInvoker)delegate{this.Close();});
+                this.Invoke((MethodInvoker)delegate { this.Close(); });
             }
             catch (System.Exception)
             {
                 MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Application.Exit();
             }
         }
 

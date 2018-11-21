@@ -61,7 +61,6 @@
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lade Daten aus Datenbank...";
-            this.TopMost = true;
             this.Shown += new System.EventHandler(this.SplashScreen_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
