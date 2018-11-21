@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core.Abstract;
 
@@ -19,6 +20,10 @@ namespace Lagerverwaltung.Model
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
+        private static List<Paket> _list = new List<Paket>();
+        public static event EventHandler<EventArgs> PaketHinzugefuegt;
+        public static event EventHandler<EventArgs> PaketEntfernt;
+
         public Paket(uint paket_id, ushort regalfach_id, string name, ushort menge, DateTime erstellt_am, DateTime geaendert_am, DateTime haltbarkeit, uint produkt_id, float hoehe, float breite, float laenge, string anschaffungsgrund)
         {
             Contract.Requires(paket_id >= 1);
@@ -38,7 +43,25 @@ namespace Lagerverwaltung.Model
             Haltbarkeit = haltbarkeit;
             ProduktID = produkt_id;
             Anschaffungsgrund = anschaffungsgrund;
+
+            Hinzufuegen(this);
         }
 
+        private void Hinzufuegen(Paket tmp)
+        {
+            _list.Add(tmp);
+            PaketHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+
+        public static bool Entfernen(ref Paket tmp)
+        {
+            if (_list.Remove(tmp))
+            {
+                PaketEntfernt?.Invoke(tmp, EventArgs.Empty);
+                tmp = null;
+                return true;
+            }
+            return false;
+        }
     }
 }

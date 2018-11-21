@@ -6,6 +6,8 @@ namespace Lagerverwaltung.Views
 {
 	public partial class Historie : Form
 	{
+        private List<Model.Historie> _historie = new List<Model.Historie>();
+
 		public Historie()
 		{
 			InitializeComponent();
@@ -19,8 +21,8 @@ namespace Lagerverwaltung.Views
             var source = new BindingSource();
             try
             {
-                var historie = DB.HistorieSQL.HoleHistorie();
-                source.DataSource = historie;
+                _historie = DB.HistorieSQL.HoleHistorie();
+                source.DataSource = _historie;
                 dataGridView1.DataSource = source;
             }
             catch (System.Exception)
@@ -38,6 +40,11 @@ namespace Lagerverwaltung.Views
 		private void HistorieFormClosing(object sender, FormClosingEventArgs e)
 		{
 			Dashboard.Historie = null;
+            foreach(var item in _historie)
+            {
+                var tmp = item;
+                Model.Historie.Entfernen(ref tmp);
+            }
 		}
 
         private void DataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)

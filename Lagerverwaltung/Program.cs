@@ -12,7 +12,6 @@ namespace Lagerverwaltung
 		[STAThread]
 		static void Main()
 		{
-			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
@@ -25,5 +24,5 @@ namespace Lagerverwaltung
 			Dashboard board = new Dashboard(login.Adminuser);
 			Application.Run(board);
 		}
-	}
+    }
 }

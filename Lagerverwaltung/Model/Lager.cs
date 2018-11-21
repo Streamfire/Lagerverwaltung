@@ -16,6 +16,10 @@ namespace Lagerverwaltung.Model
 
         public List<Regal> Regalliste { get; set; }
 
+        private static List<Lager> _list = new List<Lager>();
+        public static event EventHandler<EventArgs> LagerHinzugefuegt;
+        public static event EventHandler<EventArgs> LagerEntfernt;
+
         public Lager(ushort lager_id, string name, DateTime erstellt_am, DateTime geaendert_am, ushort lagertyp, string standort = "", string beschreibung = "")
         {
             Contract.Requires(lager_id >= 1);
@@ -30,6 +34,25 @@ namespace Lagerverwaltung.Model
             Standort = standort;
             Beschreibung = beschreibung;
             Regalliste = new List<Regal>();
+
+            Hinzufuegen(this);
         }
-	}
+
+        private void Hinzufuegen(Lager tmp)
+        {
+            _list.Add(tmp);
+            LagerHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+
+        public static bool Entfernen(ref Lager tmp)
+        {
+            if (_list.Remove(tmp))
+            {
+                LagerEntfernt?.Invoke(tmp, EventArgs.Empty);
+                tmp = null;
+                return true;
+            }
+            return false;
+        }
+    }
 }

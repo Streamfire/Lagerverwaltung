@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core.Abstract;
 
@@ -18,6 +19,10 @@ namespace Lagerverwaltung.Model
         public override float Hoehe { get; set; }
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
+
+        private static List<Produkt> _list = new List<Produkt>();
+        public static event EventHandler<EventArgs> ProduktHinzugefuegt;
+        public static event EventHandler<EventArgs> ProduktEntfernt;
 
         public Produkt(uint produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, DateTime erstellt_am, DateTime geaendert_am, ushort artikeltyp, float hoehe, float breite, float laenge)
         {
@@ -39,6 +44,25 @@ namespace Lagerverwaltung.Model
             Hoehe = hoehe;
             Breite = breite;
             Laenge = laenge;
+
+            Hinzufuegen(this);
+        }
+
+        private void Hinzufuegen(Produkt tmp)
+        {
+            _list.Add(tmp);
+            ProduktHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+
+        public static bool Entfernen(ref Produkt tmp)
+        {
+            if (_list.Remove(tmp))
+            {
+                ProduktEntfernt?.Invoke(tmp, EventArgs.Empty);
+                tmp = null;
+                return true;
+            }
+            return false;
         }
     }
 }

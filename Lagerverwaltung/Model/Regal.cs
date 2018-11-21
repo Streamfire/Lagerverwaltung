@@ -22,7 +22,11 @@ namespace Lagerverwaltung.Model
         public override float Laenge { get; set; }
 
         public List<Regalfach> Regalfachliste { get; set; }
-        
+
+        private static List<Regal> _list = new List<Regal>();
+        public static event EventHandler<EventArgs> RegalHinzugefuegt;
+        public static event EventHandler<EventArgs> RegalEntfernt;
+
         public Regal(ushort regal_id, ushort lager_id, string name, byte zeilen, byte spalten, DateTime erstellt_am, DateTime geaendert_am, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
             Contract.Requires(regal_id >= 1);
@@ -47,6 +51,8 @@ namespace Lagerverwaltung.Model
             V_Wandstaerke = v_wandstaerke;
             H_Wandstaerke = h_wandstaerke;
             Regalfachliste = new List<Regalfach>();
+
+            Hinzufuegen(this);
         }
 
         public override float BerechneFlaeche()
@@ -57,6 +63,23 @@ namespace Lagerverwaltung.Model
         public override float BerechneVolumen()
         {
             return base.BerechneVolumen();
+        }
+
+        private void Hinzufuegen(Regal tmp)
+        {
+            _list.Add(tmp);
+            RegalHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+
+        public static bool Entfernen(ref Regal tmp)
+        {
+            if (_list.Remove(tmp))
+            {
+                RegalEntfernt?.Invoke(tmp, EventArgs.Empty);
+                tmp = null;
+                return true;
+            }
+            return false;
         }
     }
 }

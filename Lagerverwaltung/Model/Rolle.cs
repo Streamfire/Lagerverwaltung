@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 
 namespace Lagerverwaltung.Model
@@ -21,6 +22,10 @@ namespace Lagerverwaltung.Model
         public DateTime ErstelltAm { get; }
         public DateTime ZuletztGeaendert { get; }
 
+        private static List<Rolle> _list = new List<Rolle>();
+        public static event EventHandler<EventArgs> RolleHinzugefuegt;
+        public static event EventHandler<EventArgs> RolleEntfernt;
+
         public Rolle(ushort rollen_id, string name, string rechte, DateTime erstellt_am, DateTime zuletzt_geaendert)
         {
             Contract.Requires(rollen_id >= 1);
@@ -31,6 +36,25 @@ namespace Lagerverwaltung.Model
             Rechte = rechte;
             ErstelltAm = erstellt_am;
             ZuletztGeaendert = zuletzt_geaendert;
+
+            Hinzufuegen(this);
+        }
+
+        private void Hinzufuegen(Rolle tmp)
+        {
+            _list.Add(tmp);
+            RolleHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+
+        public static bool Entfernen(ref Rolle tmp)
+        {
+            if (_list.Remove(tmp))
+            {
+                RolleEntfernt?.Invoke(tmp, EventArgs.Empty);
+                tmp = null;
+                return true;
+            }
+            return false;
         }
     }
 }

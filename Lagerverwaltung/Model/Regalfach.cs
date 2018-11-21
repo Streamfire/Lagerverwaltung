@@ -19,7 +19,11 @@ namespace Lagerverwaltung.Model
         public override float Laenge { get; set; }
 
         public List<Paket> Paketliste { get; set; }
-    
+
+        private static List<Regalfach> _list = new List<Regalfach>();
+        public static event EventHandler<EventArgs> RegalfachHinzugefuegt;
+        public static event EventHandler<EventArgs> RegalfachEntfernt;
+
         public Regalfach(ushort regalfach_id, ushort regal_id, string name, DateTime erstellt_am, DateTime geaendert_am, float hoehe, float breite, float laenge, string bemerkung="")
         {
             Contract.Requires(regalfach_id >= 1);
@@ -39,6 +43,25 @@ namespace Lagerverwaltung.Model
             Laenge = laenge;
             Bemerkung = bemerkung;
             Paketliste = new List<Paket>();
+
+            Hinzufuegen(this);
+        }
+
+        private void Hinzufuegen(Regalfach tmp)
+        {
+            _list.Add(tmp);
+            RegalfachHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+
+        public static bool Entfernen(ref Regalfach tmp)
+        {
+            if (_list.Remove(tmp))
+            {
+                RegalfachEntfernt?.Invoke(tmp, EventArgs.Empty);
+                tmp = null;
+                return true;
+            }
+            return false;
         }
     }
 }
