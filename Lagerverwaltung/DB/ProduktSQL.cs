@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
+﻿using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -20,12 +19,12 @@ namespace Lagerverwaltung.DB
             return true;
         }
 
-        public static List<Produkt> HoleAlleProdukte()
+        public static void HoleAlleProdukte()
         {
-            return HoleAlleProdukte(int.MaxValue);
+            HoleAlleProdukte(int.MaxValue);
         }
 
-        public static List<Produkt> HoleAlleProdukte(int limit)
+        public static void HoleAlleProdukte(int limit)
         {
             Contract.Requires(limit >= 1);
 
@@ -38,18 +37,16 @@ namespace Lagerverwaltung.DB
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
-                    var _list = new List<Produkt>();
                     while (reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        _list.Add(new Produkt((uint)reader.GetInt32(0), reader.GetString(1), reader.GetString(6),reader.GetFloat(4), reader.GetFloat(5),reader.GetDateTime(2), reader.GetDateTime(3),(ushort)reader.GetInt16(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10)));
+                        new Produkt((uint)reader.GetInt32(0), reader.GetString(1), reader.GetString(6),reader.GetFloat(4), reader.GetFloat(5),reader.GetDateTime(2), reader.GetDateTime(3),(ushort)reader.GetInt16(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10));
                     }
-                    return _list;
                 }
             }
         }
 
-        public static Produkt HoleProdukt(int produkt_id)
+        public static void HoleProdukt(int produkt_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
@@ -61,7 +58,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Produkt((uint)reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetFloat(3), reader.GetFloat(4), reader.GetDateTime(5), reader.GetDateTime(6), (ushort)reader.GetInt16(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10));
+                    new Produkt((uint)reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetFloat(3), reader.GetFloat(4), reader.GetDateTime(5), reader.GetDateTime(6), (ushort)reader.GetInt16(7), reader.GetFloat(8), reader.GetFloat(9), reader.GetFloat(10));
                 }
             }
         }
@@ -74,7 +71,6 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "DELETE FROM produkt WHERE produkt_id = @produkt_id;";
                 cmd.Parameters.AddWithValue("produkt_id", produkt_id);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }

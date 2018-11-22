@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -23,20 +23,19 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "INSERT INTO artikeltyp (name) VALUES (@name)";
                 cmd.Parameters.AddWithValue("name",name);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result==0 ? false : true;
             }
         }
 
-        // return typ ändern!
-        public static List<Artikeltyp> HoleAlleArtikeltyp()
+        public static void HoleAlleArtikeltyp()
         {
-            return HoleAlleArtikeltyp(short.MaxValue);
+            HoleAlleArtikeltyp(short.MaxValue);
         }
 
-        // return typ ändern!
-        public static List<Artikeltyp> HoleAlleArtikeltyp(short limit)
+        public static void HoleAlleArtikeltyp(short limit)
         {
+            Contract.Requires(limit >= 1);
+
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
@@ -46,19 +45,16 @@ namespace Lagerverwaltung.DB
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
-                    var _list = new List<Artikeltyp>();
                     while (reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        _list.Add(new Artikeltyp((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3)));
+                        new Artikeltyp((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3));
                     }
-                    return _list;
                 }
             }
         }
 
-        // return typ ändern!
-        public static Artikeltyp HoleArtikeltyp(ushort artikeltyp_id)
+        public static void HoleArtikeltyp(ushort artikeltyp_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
@@ -70,7 +66,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Artikeltyp((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3));
+                    new Artikeltyp((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3));
                 }
             }
         }
@@ -83,7 +79,6 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "DELETE FROM artikeltyp WHERE artikeltyp_id = @artikeltyp_id;";
                 cmd.Parameters.AddWithValue("artikeltyp_id", artikeltyp_id);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }

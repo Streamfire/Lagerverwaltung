@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
+﻿using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -28,19 +27,16 @@ namespace Lagerverwaltung.DB
                 cmd.Parameters.AddWithValue("password", password);
                 cmd.Parameters.AddWithValue("salt", salt);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }
 
-        // return typ ändern!
-        public static List<User> HoleAlleUser()
+        public static void HoleAlleUser()
         {
-            return HoleAlleUser(short.MaxValue);
+            HoleAlleUser(short.MaxValue);
         }
 
-        // return typ ändern!
-        public static List<User> HoleAlleUser(short limit)
+        public static void HoleAlleUser(short limit)
         {
             Contract.Requires(limit >= 1);
 
@@ -53,18 +49,16 @@ namespace Lagerverwaltung.DB
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
-                    var _list = new List<User>();
                     while (reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        _list.Add(new User((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(6),reader.GetString(1),reader.GetString(2),reader.GetString(7),reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5)));
+                        new User((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(6),reader.GetString(1),reader.GetString(2),reader.GetString(7),reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
                     }
-                    return _list;
                 }
             }
         }
 
-        public static User HoleUser(ushort user_id)
+        public static void HoleUser(ushort user_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
@@ -76,7 +70,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new User((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(6), reader.GetString(1), reader.GetString(2), reader.GetString(7), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
+                    new User((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(6), reader.GetString(1), reader.GetString(2), reader.GetString(7), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
                 }
             }
         }
@@ -89,7 +83,6 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "DELETE FROM user WHERE user_id = @user_id;";
                 cmd.Parameters.AddWithValue("user_id", user_id);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }

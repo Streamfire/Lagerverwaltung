@@ -22,7 +22,7 @@ namespace Lagerverwaltung.Model
         public DateTime ErstelltAm { get; }
         public DateTime ZuletztGeaendert { get; }
 
-        private static List<Rolle> _list = new List<Rolle>();
+        private static Dictionary<ushort, Rolle> _dict = new Dictionary<ushort, Rolle>();
         public static event EventHandler<EventArgs> RolleHinzugefuegt;
         public static event EventHandler<EventArgs> RolleEntfernt;
 
@@ -42,13 +42,13 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Rolle tmp)
         {
-            _list.Add(tmp);
+            _dict.Add(tmp.RollenID,tmp);
             RolleHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
 
         public static bool Entfernen(ref Rolle tmp)
         {
-            if (_list.Remove(tmp))
+            if (_dict.Remove(tmp.RollenID))
             {
                 RolleEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;

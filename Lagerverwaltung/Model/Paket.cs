@@ -20,7 +20,7 @@ namespace Lagerverwaltung.Model
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        private static List<Paket> _list = new List<Paket>();
+        private static Dictionary<uint, Paket> _dict = new Dictionary<uint, Paket>();
         public static event EventHandler<EventArgs> PaketHinzugefuegt;
         public static event EventHandler<EventArgs> PaketEntfernt;
 
@@ -49,13 +49,13 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Paket tmp)
         {
-            _list.Add(tmp);
+            _dict.Add(tmp.PaketID,tmp);
             PaketHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
 
         public static bool Entfernen(ref Paket tmp)
         {
-            if (_list.Remove(tmp))
+            if (_dict.Remove(tmp.PaketID))
             {
                 PaketEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;

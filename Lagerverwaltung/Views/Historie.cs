@@ -13,7 +13,7 @@ namespace Lagerverwaltung.Views
             var items = Model.Historie.HoleListe;
             var source = new BindingSource
             {
-                DataSource = items
+                DataSource = items.Values
             };
             dataGridView1.DataSource = source;
 		}

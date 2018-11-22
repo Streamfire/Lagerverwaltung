@@ -11,7 +11,7 @@ namespace Lagerverwaltung.Model
         public DateTime ErstelltAm { get; set; }
         public DateTime GeaendertAm { get; set; }
 
-        private static List<Lagertyp> _list = new List<Lagertyp>();
+        private static Dictionary<ushort, Lagertyp> _dict = new Dictionary<ushort, Lagertyp>();
         public static event EventHandler<EventArgs> LagertypHinzugefuegt;
         public static event EventHandler<EventArgs> LagertypEntfernt;
 
@@ -29,13 +29,13 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Lagertyp tmp)
         {
-            _list.Add(tmp);
+            _dict.Add(tmp.LagertypID,tmp);
             LagertypHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
 
         public static bool Entfernen(ref Lagertyp tmp)
         {
-            if (_list.Remove(tmp))
+            if (_dict.Remove(tmp.LagertypID))
             {
                 LagertypEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;

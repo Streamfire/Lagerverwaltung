@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
+﻿using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -15,12 +14,12 @@ namespace Lagerverwaltung.DB
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
-        public static List<Regalfach> HoleAlleRegalfach()
+        public static void HoleAlleRegalfach()
         {
-            return HoleAlleRegalfach(short.MaxValue);
+            HoleAlleRegalfach(short.MaxValue);
         }
 
-        public static List<Regalfach> HoleAlleRegalfach(short limit)
+        public static void HoleAlleRegalfach(short limit)
         {
             Contract.Requires(limit >= 1);
 
@@ -33,18 +32,16 @@ namespace Lagerverwaltung.DB
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
-                    var _list = new List<Regalfach>();
                     while (reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        _list.Add(new Regalfach((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(4),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3),reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7),reader.GetString(8)));
+                        new Regalfach((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(4),reader.GetString(1),reader.GetDateTime(2), reader.GetDateTime(3),reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7),reader.GetString(8));
                     }
-                    return _list;
                 }
             }
         }
 
-        public static Regalfach HoleRegalfach(short regalfach_id)
+        public static void HoleRegalfach(short regalfach_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
@@ -56,7 +53,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
+                    new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
                 }
             }
         }
@@ -69,7 +66,6 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "DELETE FROM regalfach WHERE regalfach_id = @regalfach_id;";
                 cmd.Parameters.AddWithValue("regalfach_id", regalfach_id);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }

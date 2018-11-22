@@ -15,7 +15,7 @@ namespace Lagerverwaltung.Model
         public DateTime LetzterLogin { get; }
         public DateTime ZuletztGeaendert { get; }
 
-        private static List<User> _list = new List<User>();
+        private static Dictionary<ushort, User> _dict = new Dictionary<ushort, User>();
         public static event EventHandler<EventArgs> UserHinzugefuegt;
         public static event EventHandler<EventArgs> UserEntfernt;
 
@@ -40,13 +40,13 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(User tmp)
         {
-            _list.Add(tmp);
+            _dict.Add(tmp.UserID,tmp);
             UserHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
 
         public static bool Entfernen(ref User tmp)
         {
-            if (_list.Remove(tmp))
+            if (_dict.Remove(tmp.UserID))
             {
                 UserEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;

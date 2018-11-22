@@ -25,12 +25,16 @@ namespace Lagerverwaltung.Views
                 DB.RegalfachSQL.HoleAlleRegalfach();
                 DB.PaketSQL.HoleAllePakete();
                 DB.ProduktSQL.HoleAlleProdukte();
-                Thread.Sleep(1000);
                 this.Invoke((MethodInvoker)delegate { this.Close(); });
             }
-            catch (System.Exception)
+            catch(System.TypeInitializationException)
             {
-                MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show(e.Message,"Ausnahmebehandlung",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 Application.Exit();
             }
         }

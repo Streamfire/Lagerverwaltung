@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -26,20 +26,19 @@ namespace Lagerverwaltung.DB
                 cmd.Parameters.AddWithValue("beschreibung", beschreibung);
                 cmd.Parameters.AddWithValue("lagertyp", lagertyp);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }
 
-        // return typ ändern!
-        public static List<Lager> HoleAlleLager()
+        public static void HoleAlleLager()
         {
-            return HoleAlleLager(short.MaxValue);
+            HoleAlleLager(short.MaxValue);
         }
 
-        // return typ ändern!
-        public static List<Lager> HoleAlleLager(short limit)
+        public static void HoleAlleLager(short limit)
         {
+            Contract.Requires(limit >= 1);
+
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
@@ -49,19 +48,16 @@ namespace Lagerverwaltung.DB
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
-                    var _list = new List<Lager>();
                     while (reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        _list.Add(new Lager((ushort)reader.GetInt16(0),reader.GetString(1),new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6),reader.GetString(2),reader.GetString(5)));
+                        new Lager((ushort)reader.GetInt16(0),reader.GetString(1),new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6),reader.GetString(2),reader.GetString(5));
                     }
-                    return _list;
                 }
             }
         }
 
-        // return typ ändern!
-        public static Lager HoleLager(ushort lager_id)
+        public static void HoleLager(ushort lager_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
@@ -73,7 +69,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Lager((ushort)reader.GetInt16(0), reader.GetString(1), new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6), reader.GetString(2), reader.GetString(5));
+                    new Lager((ushort)reader.GetInt16(0), reader.GetString(1), new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6), reader.GetString(2), reader.GetString(5));
                 }
             }
         }
@@ -86,7 +82,6 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "DELETE FROM lager WHERE lager_id = @lager_id;";
                 cmd.Parameters.AddWithValue("lager_id", lager_id);
                 int result = cmd.ExecuteNonQuery();
-                System.Console.WriteLine("Affected Rows: {0}", result.ToString()); //Testzwecken
                 return result == 0 ? false : true;
             }
         }

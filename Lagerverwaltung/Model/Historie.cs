@@ -10,13 +10,17 @@ namespace Lagerverwaltung.Model
         public string LogText { get; }
         public DateTime Zeitstempel { get; }
 
-        private static List<Historie> _list = new List<Historie>();
-        public static System.Collections.ObjectModel.ReadOnlyCollection<Historie> HoleListe
-        {
-            get { return _list.AsReadOnly(); }
-        }
+        private static Dictionary<ulong,Historie> _dict = new Dictionary<ulong,Historie>();
         public static event EventHandler<EventArgs> HistorieHinzugefuegt;
         public static event EventHandler<EventArgs> HistorieEntfernt;
+
+        public static IReadOnlyDictionary<ulong,Historie> HoleListe
+        {
+            get
+            {
+                return new System.Collections.ObjectModel.ReadOnlyDictionary<ulong,Historie>(_dict);
+            }
+        }
 
         public Historie(ulong log_id, ushort user_id, string logtext, DateTime zeitstempel)
         {
@@ -26,20 +30,22 @@ namespace Lagerverwaltung.Model
             Zeitstempel = zeitstempel;
 
             Hinzufuegen(this);
+
+            var test = _dict.Values;
         }
 
         private void Hinzufuegen(Historie tmp)
         {
             if(tmp != null)
             {
-                _list.Add(tmp);
+                _dict.Add(tmp.LogID,tmp);
                 HistorieHinzugefuegt?.Invoke(tmp, EventArgs.Empty);
             }
         }
 
         public static bool Entfernen(ref Historie tmp)
         {
-            if(_list.Remove(tmp))
+            if(_dict.Remove(tmp.LogID))
             {
                 HistorieEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;

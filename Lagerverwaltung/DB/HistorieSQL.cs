@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
+﻿using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -15,12 +14,12 @@ namespace Lagerverwaltung.DB
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
-        public static List<Historie> HoleHistorie()
+        public static void HoleHistorie()
         {
-            return HoleHistorie(long.MaxValue);
+            HoleHistorie(long.MaxValue);
         }
 
-        public static List<Historie> HoleHistorie(long limit)
+        public static void HoleHistorie(long limit)
         {
             Contract.Requires(limit >= 1);
 
@@ -33,30 +32,28 @@ namespace Lagerverwaltung.DB
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
-                    var _list = new List<Historie>();
                     while(reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        _list.Add(new Historie((ulong)reader.GetInt64(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetDateTime(3)));
+                        new Historie((ulong)reader.GetInt64(0), (ushort)reader.GetInt16(1), reader.GetString(2), reader.GetDateTime(3));
                     }
-                    return _list;
                 }
             }
         }
 
-        public static Historie HoleHistorie(ulong historie_id)
+        public static void HoleHistorie(ulong historie_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM historie WHERE historie_id = @historie_id;";
-                cmd.Parameters.AddWithValue("historie_id", (long)historie_id);
+                cmd.CommandText = "SELECT * FROM historie WHERE log_id = @log_id;";
+                cmd.Parameters.AddWithValue("log_id", (long)historie_id);
 
                 // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    return new Historie((ulong)reader.GetInt64(0),(ushort)reader.GetInt16(1),reader.GetString(2), reader.GetDateTime(3));
+                    new Historie((ulong)reader.GetInt64(0),(ushort)reader.GetInt16(1),reader.GetString(2), reader.GetDateTime(3));
                 }
             }
         }

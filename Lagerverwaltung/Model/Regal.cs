@@ -23,7 +23,7 @@ namespace Lagerverwaltung.Model
 
         public List<Regalfach> Regalfachliste { get; set; }
 
-        private static List<Regal> _list = new List<Regal>();
+        private static Dictionary<ushort, Regal> _dict = new Dictionary<ushort, Regal>();
         public static event EventHandler<EventArgs> RegalHinzugefuegt;
         public static event EventHandler<EventArgs> RegalEntfernt;
 
@@ -67,13 +67,13 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Regal tmp)
         {
-            _list.Add(tmp);
+            _dict.Add(tmp.RegalID,tmp);
             RegalHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
 
         public static bool Entfernen(ref Regal tmp)
         {
-            if (_list.Remove(tmp))
+            if (_dict.Remove(tmp.RegalID))
             {
                 RegalEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;
