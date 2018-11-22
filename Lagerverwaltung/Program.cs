@@ -23,8 +23,10 @@ namespace Lagerverwaltung
             var splash = new SplashScreen();
             if (login.ShowDialog() == DialogResult.OK)
             {
-                splash.ShowDialog();
-                Application.Run(new Dashboard());
+                if(splash.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new Dashboard());
+                }
             }
         }
     }

@@ -25,7 +25,7 @@ namespace Lagerverwaltung.Views
                 DB.RegalfachSQL.HoleAlleRegalfach();
                 DB.PaketSQL.HoleAllePakete();
                 DB.ProduktSQL.HoleAlleProdukte();
-                this.Invoke((MethodInvoker)delegate { this.Close(); });
+                this.Invoke((MethodInvoker)delegate { this.DialogResult = DialogResult.OK; this.Close(); });
             }
             catch(System.TypeInitializationException)
             {

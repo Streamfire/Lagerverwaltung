@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Lagerverwaltung.Model
 {
@@ -14,13 +15,7 @@ namespace Lagerverwaltung.Model
         public static event EventHandler<EventArgs> HistorieHinzugefuegt;
         public static event EventHandler<EventArgs> HistorieEntfernt;
 
-        public static IReadOnlyDictionary<ulong,Historie> HoleListe
-        {
-            get
-            {
-                return new System.Collections.ObjectModel.ReadOnlyDictionary<ulong,Historie>(_dict);
-            }
-        }
+        public static ReadOnlyDictionary<ulong, Historie> HoleListe => new ReadOnlyDictionary<ulong, Historie>(_dict);
 
         public Historie(ulong log_id, ushort user_id, string logtext, DateTime zeitstempel)
         {

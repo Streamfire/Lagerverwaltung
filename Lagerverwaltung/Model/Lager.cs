@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics.Contracts;
 
 namespace Lagerverwaltung.Model
@@ -20,13 +21,7 @@ namespace Lagerverwaltung.Model
         public static event EventHandler<EventArgs> LagerHinzugefuegt;
         public static event EventHandler<EventArgs> LagerEntfernt;
 
-        public static IReadOnlyDictionary<ushort, Lager> HoleListe
-        {
-            get
-            {
-                return new System.Collections.ObjectModel.ReadOnlyDictionary<ushort, Lager>(_dict);
-            }
-        }
+        public static ReadOnlyDictionary<ushort, Lager> HoleListe => new ReadOnlyDictionary<ushort, Lager>(_dict);
 
         public Lager(ushort lager_id, string name, DateTime erstellt_am, DateTime geaendert_am, ushort lagertyp, string standort = "", string beschreibung = "")
         {
