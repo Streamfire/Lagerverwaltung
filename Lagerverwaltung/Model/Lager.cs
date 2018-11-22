@@ -20,6 +20,14 @@ namespace Lagerverwaltung.Model
         public static event EventHandler<EventArgs> LagerHinzugefuegt;
         public static event EventHandler<EventArgs> LagerEntfernt;
 
+        public static IReadOnlyDictionary<ushort, Lager> HoleListe
+        {
+            get
+            {
+                return new System.Collections.ObjectModel.ReadOnlyDictionary<ushort, Lager>(_dict);
+            }
+        }
+
         public Lager(ushort lager_id, string name, DateTime erstellt_am, DateTime geaendert_am, ushort lagertyp, string standort = "", string beschreibung = "")
         {
             Contract.Requires(lager_id >= 1);

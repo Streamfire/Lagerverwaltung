@@ -27,6 +27,14 @@ namespace Lagerverwaltung.Model
         public static event EventHandler<EventArgs> RegalHinzugefuegt;
         public static event EventHandler<EventArgs> RegalEntfernt;
 
+        public static IReadOnlyDictionary<ushort, Regal> HoleListe
+        {
+            get
+            {
+                return new System.Collections.ObjectModel.ReadOnlyDictionary<ushort, Regal>(_dict);
+            }
+        }
+
         public Regal(ushort regal_id, ushort lager_id, string name, byte zeilen, byte spalten, DateTime erstellt_am, DateTime geaendert_am, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
             Contract.Requires(regal_id >= 1);

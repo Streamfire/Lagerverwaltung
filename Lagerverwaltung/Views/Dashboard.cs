@@ -50,6 +50,8 @@ namespace Lagerverwaltung.Views
                 new Regal(0, 1, "C", 5, 4, new DateTime(), new DateTime(), 10, 30, 10, 5, 4)
             };
 
+            _lagerliste.Add(new Lager(2, "Lager 2", new DateTime(), new DateTime(), 0, "Berlin", "viel besser als die Anderen"));
+
             //TEST
             ProduktListe = new List<Produkt> {
                 
