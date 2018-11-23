@@ -72,7 +72,7 @@ namespace Lagerverwaltung.Views
             };
 
 
-            Verwaltung.UpdateForm(_lagerliste);
+            Verwaltung.UpdateForm(Model.Lager.HoleListe);
 		}
 
 		public static Historie Historie { get => _historie; set => _historie = value; }
@@ -106,13 +106,13 @@ namespace Lagerverwaltung.Views
 			if (Verwaltung != null)
 			{
 
-				Verwaltung.UpdateForm(_lagerliste);
+				Verwaltung.UpdateForm(Model.Lager.HoleListe);
 				Verwaltung.ShowDialog();
 			}
 			else
 			{
 				Verwaltung = new Verwaltung();
-				Verwaltung.UpdateForm(_lagerliste);
+				Verwaltung.UpdateForm(Model.Lager.HoleListe);
 				Verwaltung.ShowDialog();
 
 			}

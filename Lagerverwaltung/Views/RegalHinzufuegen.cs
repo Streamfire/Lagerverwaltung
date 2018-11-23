@@ -45,7 +45,7 @@ namespace Lagerverwaltung.Views
 
 			Dashboard.LagerListe[Dashboard.Verwaltung.getActiveTabIndex()].Regalliste.Add(n);
 
-			Dashboard.Verwaltung.UpdateForm(Dashboard.LagerListe);
+			Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
 			this.Close();
 		}
 	}

@@ -19,7 +19,7 @@ namespace Lagerverwaltung.Views
 		private void ButtonLagerHinzufügen_Click(object sender, EventArgs e)
 		{
 			Dashboard.LagerListe.Add(new Lager(0, this.textBoxLagerName.Text, new DateTime(), new DateTime(), 0, this.textBoxStandort.Text, this.textBoxBeschreibung.Text));
-			Dashboard.Verwaltung.UpdateForm(Dashboard.LagerListe);
+			Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
 			this.Close();
 		}
 	}
