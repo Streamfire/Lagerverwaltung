@@ -62,5 +62,20 @@ namespace Lagerverwaltung.Model
         {
             _dict[lagerID].Regalliste.Add(tmp);
         }
+
+        //Zeitaufwändig (zumindest bei vielen Einträgen), daher evt. später andere Lösung finden (z.b. doppeltes Dictionary [Key: names, Value: IDs])
+        //Rückgabe Int, da bei falscher Ausgabe -1 ausgegeben wird
+        public static int GetIDByName(string lagername)
+        {   
+            foreach (KeyValuePair<ushort, Lager> entry in _dict)
+            {
+                if (entry.Value.Name == lagername)
+                {
+                    return entry.Key;
+                }
+            }
+
+            return -1; 
+        }
     }
 }

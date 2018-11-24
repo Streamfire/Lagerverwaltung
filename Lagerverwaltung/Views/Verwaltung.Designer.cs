@@ -129,10 +129,15 @@ namespace Lagerverwaltung.Views
 			return tabControl1.SelectedIndex;
 		}
 
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+        public string getActiveTabPageName()
+        {
+            return tabControl1.SelectedTab.Name;
+        }
+
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
 		/// <summary>
 		/// Clean up any resources being used.

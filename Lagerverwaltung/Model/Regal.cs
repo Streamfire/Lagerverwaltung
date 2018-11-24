@@ -86,5 +86,20 @@ namespace Lagerverwaltung.Model
             }
             return false;
         }
+
+        //Zeitaufwändig (zumindest bei vielen Einträgen), daher evt. später andere Lösung finden (z.b. doppeltes Dictionary [Key: names, Value: IDs])
+        //Rückgabe Int, da bei falscher Ausgabe -1 ausgegeben wird
+        public static int GetIDByName(string regalname)
+        {
+            foreach (KeyValuePair<ushort, Regal> entry in _dict)
+            {
+                if (entry.Value.Name == regalname)
+                {
+                    return entry.Key;
+                }
+            }
+
+            return -1;
+        }
     }
 }
