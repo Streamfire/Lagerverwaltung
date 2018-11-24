@@ -31,7 +31,7 @@ namespace Lagerverwaltung.DB
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM paket LIMIT @num;";
+                cmd.CommandText = "SELECT * FROM produkt LIMIT @num;";
                 cmd.Parameters.AddWithValue("num", limit);
 
                 // Prüfe noch auch irgendwelche Fehler etc.
@@ -51,7 +51,7 @@ namespace Lagerverwaltung.DB
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM paket WHERE produkt_id = @produkt_id;";
+                cmd.CommandText = "SELECT * FROM produkt WHERE produkt_id = @produkt_id;";
                 cmd.Parameters.AddWithValue("produkt_id", produkt_id);
 
                 // Prüfe noch auch irgendwelche Fehler etc.
