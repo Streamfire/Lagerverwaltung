@@ -7,7 +7,7 @@ namespace Lagerverwaltung.Views
 	public partial class Historie : Form
 	{
         private ReadOnlyDictionary<ulong,Model.Historie> readonly_dict;
-        private List<Model.Historie> _list = new List<Model.Historie>();
+        //private List<Model.Historie> _list = new List<Model.Historie>();
         private List<Model.Historie> _result = new List<Model.Historie>();
         private BindingSource source = new BindingSource();
 
@@ -16,11 +16,12 @@ namespace Lagerverwaltung.Views
 			InitializeComponent();
 
             readonly_dict = Model.Historie.HoleListe;
-            GenerateList();
+            //GenerateList();
             UpdateDataGridView();
 
         }
 
+        /*
         private void GenerateList()
         {
             foreach (var item in readonly_dict.Values)
@@ -28,6 +29,7 @@ namespace Lagerverwaltung.Views
                 _list.Add(item);
             }
         }
+        */
 
 		/// <summary>
 		/// Wenn das Fenster geschlossen wird wird die Referenz im Dashboard auf null gesetzt.
@@ -56,16 +58,30 @@ namespace Lagerverwaltung.Views
         {
             if(textBoxSearch.TextLength >=1)
             {
-                object expression = textBoxSearch.Text.ToLower();
-
-                if(expression is ushort || expression is ulong)
+                var expression = textBoxSearch.Text.ToLower();
+                ulong num=0;
+                _result.Clear();
+                if(ulong.TryParse(expression,out num))
                 {
-                    // findet nicht alle. kp wieso nicht
-                    _result = _list.FindAll(x => x.LogID == (ulong)expression | x.UserID == (ushort)expression);
+                    foreach(var item in readonly_dict.Values)
+                    {
+                        // Contains noch nicht ausgereift!
+                        if(item.LogID == num | item.UserID == num | item.LogText.Contains(expression))
+                        {
+                            _result.Add(item);
+                        }
+                    }
                 }
-                else if(expression is string)
+                else
                 {
-                    _result = _list.FindAll(s => s.LogText.ToLower().Contains(expression.ToString()));
+                    foreach(var item in readonly_dict.Values)
+                    {
+                        bool test = item.LogText.ToLower().Contains(expression.ToLower());
+                        if (test)
+                        {
+                            _result.Add(item);
+                        }
+                    }
                 }
                 UpdateDataGridView(_result);
             }
