@@ -54,6 +54,8 @@ namespace Lagerverwaltung.Model
             V_Wandstaerke = v_wandstaerke;
             H_Wandstaerke = h_wandstaerke;
             Regalfachliste = new List<Regalfach>();
+            Lager.RegalHinzufuegen(lager_id, this);
+
 
             Hinzufuegen(this);
         }

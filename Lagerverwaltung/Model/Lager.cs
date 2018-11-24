@@ -57,5 +57,10 @@ namespace Lagerverwaltung.Model
             }
             return false;
         }
+
+        public static void RegalHinzufuegen(ushort lagerID, Regal tmp)
+        {
+            _dict[lagerID].Regalliste.Add(tmp);
+        }
     }
 }
