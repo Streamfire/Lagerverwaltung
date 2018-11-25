@@ -75,6 +75,26 @@ namespace Lagerverwaltung.DB
             }
         }
 
+        public static string[] HoleUserPasswordData(string username)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT password, salt FROM \"user\" WHERE username = @username;";
+                cmd.Parameters.AddWithValue("username", username);
+         
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    if (!reader.HasRows)
+                        return null;
+                    string[] salt_and_pass = { reader.GetString(0), reader.GetString(1) };
+                    return salt_and_pass;
+                }
+            }
+        }
+
         public static bool LoescheUser(ushort user_id)
         {
             using (var cmd = new NpgsqlCommand())

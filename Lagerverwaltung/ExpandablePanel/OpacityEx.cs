@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 
-namespace Opulos.Core.UI {
-public static class OpacityEx {
+namespace Opulos.Core.UI
+{
+    public static class OpacityEx {
 
 	private static Hashtable ht = new Hashtable();
 	private class Data {

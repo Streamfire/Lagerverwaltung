@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
@@ -16,14 +15,23 @@ namespace Lagerverwaltung.Views
             try
             {
                 DB.HistorieSQL.HoleHistorie();
+
                 DB.ArtikeltypSQL.HoleAlleArtikeltyp();
+       
                 DB.LagertypSQL.HoleAlleLagertyp();
+          
                 DB.UserSQL.HoleAlleUser();
+             
                 DB.RollenSQL.HoleAlleRollen();
+      
                 DB.LagerSQL.HoleAlleLager();
+      
                 DB.RegalSQL.HoleAlleRegale();
+          
                 DB.RegalfachSQL.HoleAlleRegalfach();
+       
                 DB.PaketSQL.HoleAllePakete();
+            
                 DB.ProduktSQL.HoleAlleProdukte();
                 this.Invoke((MethodInvoker)delegate { this.DialogResult = DialogResult.OK; this.Close(); });
             }

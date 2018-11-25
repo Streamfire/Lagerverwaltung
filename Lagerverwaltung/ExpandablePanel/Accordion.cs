@@ -1,121 +1,121 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
 
-namespace Opulos.Core.UI {
+namespace Opulos.Core.UI
+{
 
-// Version 2015.08.18
-// -Added code to eliminate scrollbar flicker when sliding
-//  open for a nested accordion.
-// -Fixed a issue with the fill down button  not working if
-//  the control is not locked. The control is now temporarily
-//  locked, a layout is performed, and then the original lock
-//  value is restored.
-// -Fixed issue with the fill down button not scrolling the
-//  control to the ideal spot.
-// -Added Refresh() after control close animation, otherwise
-//  scrollbar artifacts would be left on the screen.
-// -Fixed Fill-All button from being enabled when it has no
-//  effect. Also, fixed problem will allocating the wrong
-//  extra space.
-// -ToolBox Open-All button is now disabled if the accordion's
-//  OpenOneOnly is true.
-// 
-// Version 2015.08.05
-// -Fixed bug when FillModeGrowOnly is true. The extra height
-//  was incorrectly being reset to zero for all controls.
-// -When ResetFillOnCollapse is true, the controls are now
-//  unlocked also. Otherwise a locked control with a fillWt > 0
-//  would appear much smaller next time it is opened.
-// -Now, resize bars do not fade-in when the mouse is over a
-//  a header checkbox.
-// -Improved open animation, especially for controls at the
-//  bottom of the screen. Before, the animation would occur
-//  below the visible region. Now the control is moved up
-//  and then the animation happens.
-// 
-// Version 2015.08.03
-// -Improved layout handling. Removed the internal FlowLayoutPanel
-//  and replaced with a custom AccordionLayoutEngine. This
-//  eliminates the problem where the horizontal scrollbar is
-//  briefly displayed when the vertical scrollbar first appears.
-// -Added an option for slide-up and slide-down animation effects
-//  when a control is opened or closed.
-// -Added an option to show a resize bar, which acts a visual cue
-//  for the user to know the control can be resized.
-// -The resize bars are set by default to fade-in and fade-out
-//  based on the proximity of the mouse pointer. Set the
-//  proximity threshold to zero to always show the resize bars.
-// -Resize bars can be moved using the up and down arrow keys.
-// -Fixed methodology to set the focus on the first control when
-//  a checkbox is opened.
-// -Support added for adhering to the added control's Minimimum
-//  and Maximum size properties.
-// 
-// Version 2015.04.05
-// -Removed unused line of code: bool hit = bounds.Contains(pt);
-// -Fixed bug when the mouse was clicked on a drag area which
-//  was on top of a scrollbar. The scrollbar consumed the mouse
-//  events and needed to have the capture released.
-// -Fixed bug. Mouse would turn into the grab cursor when it
-//  was over a grab bar that belonged to an Accordion in a
-//  background window, or when the mouse was on top of a
-//  child window that was covering the accordion.
-// 
-// Version 2015.01.16
-// -Rewrote the mouse drag behavior using IMessageFilter. In
-//  addition to cleaner code, this also fixed the mouse cursor
-//  staying as the SizeNS cursor bug.
-// -Added GrabWidth property that specifies when the mouse turns
-//  into the GrabCursor cursor.
-// -Added GrabCursor property, default value of Cursors.SizeNS.
-// -Added <summary> comments to the properties and input parameters.
-// -Fixed layout issue that happens when minimizing and restoring
-//  a window. Some of the controls would appear invisible because
-//  as the form is minimized, its height changes to zero.
-//  For more info, see the Accordion.OnSizeChanged method and the
-//  AccordionLayoutProblemForm at the bottom.
-// -Fixed the bug when the accordion font changes, the tool box's
-//  sub-menu fonts weren't updated.
-//  Before the font size would stay the same for the sub-menus.
-// -Fixed fill all from being greyed out. It was using the
-//  wrong size.
-// -Overrode the Accordion's GetPreferredSize method to return
-//  the FLP host's preferred size.
-// -Added method CheckBoxForControl(Control c) which returns the
-//  header checkbox for a given nested control, or null if the
-//  control is not found.
-// 
-// v2014.11.12
-// -Initial Release
+    // Version 2015.08.18
+    // -Added code to eliminate scrollbar flicker when sliding
+    //  open for a nested accordion.
+    // -Fixed a issue with the fill down button  not working if
+    //  the control is not locked. The control is now temporarily
+    //  locked, a layout is performed, and then the original lock
+    //  value is restored.
+    // -Fixed issue with the fill down button not scrolling the
+    //  control to the ideal spot.
+    // -Added Refresh() after control close animation, otherwise
+    //  scrollbar artifacts would be left on the screen.
+    // -Fixed Fill-All button from being enabled when it has no
+    //  effect. Also, fixed problem will allocating the wrong
+    //  extra space.
+    // -ToolBox Open-All button is now disabled if the accordion's
+    //  OpenOneOnly is true.
+    // 
+    // Version 2015.08.05
+    // -Fixed bug when FillModeGrowOnly is true. The extra height
+    //  was incorrectly being reset to zero for all controls.
+    // -When ResetFillOnCollapse is true, the controls are now
+    //  unlocked also. Otherwise a locked control with a fillWt > 0
+    //  would appear much smaller next time it is opened.
+    // -Now, resize bars do not fade-in when the mouse is over a
+    //  a header checkbox.
+    // -Improved open animation, especially for controls at the
+    //  bottom of the screen. Before, the animation would occur
+    //  below the visible region. Now the control is moved up
+    //  and then the animation happens.
+    // 
+    // Version 2015.08.03
+    // -Improved layout handling. Removed the internal FlowLayoutPanel
+    //  and replaced with a custom AccordionLayoutEngine. This
+    //  eliminates the problem where the horizontal scrollbar is
+    //  briefly displayed when the vertical scrollbar first appears.
+    // -Added an option for slide-up and slide-down animation effects
+    //  when a control is opened or closed.
+    // -Added an option to show a resize bar, which acts a visual cue
+    //  for the user to know the control can be resized.
+    // -The resize bars are set by default to fade-in and fade-out
+    //  based on the proximity of the mouse pointer. Set the
+    //  proximity threshold to zero to always show the resize bars.
+    // -Resize bars can be moved using the up and down arrow keys.
+    // -Fixed methodology to set the focus on the first control when
+    //  a checkbox is opened.
+    // -Support added for adhering to the added control's Minimimum
+    //  and Maximum size properties.
+    // 
+    // Version 2015.04.05
+    // -Removed unused line of code: bool hit = bounds.Contains(pt);
+    // -Fixed bug when the mouse was clicked on a drag area which
+    //  was on top of a scrollbar. The scrollbar consumed the mouse
+    //  events and needed to have the capture released.
+    // -Fixed bug. Mouse would turn into the grab cursor when it
+    //  was over a grab bar that belonged to an Accordion in a
+    //  background window, or when the mouse was on top of a
+    //  child window that was covering the accordion.
+    // 
+    // Version 2015.01.16
+    // -Rewrote the mouse drag behavior using IMessageFilter. In
+    //  addition to cleaner code, this also fixed the mouse cursor
+    //  staying as the SizeNS cursor bug.
+    // -Added GrabWidth property that specifies when the mouse turns
+    //  into the GrabCursor cursor.
+    // -Added GrabCursor property, default value of Cursors.SizeNS.
+    // -Added <summary> comments to the properties and input parameters.
+    // -Fixed layout issue that happens when minimizing and restoring
+    //  a window. Some of the controls would appear invisible because
+    //  as the form is minimized, its height changes to zero.
+    //  For more info, see the Accordion.OnSizeChanged method and the
+    //  AccordionLayoutProblemForm at the bottom.
+    // -Fixed the bug when the accordion font changes, the tool box's
+    //  sub-menu fonts weren't updated.
+    //  Before the font size would stay the same for the sub-menus.
+    // -Fixed fill all from being greyed out. It was using the
+    //  wrong size.
+    // -Overrode the Accordion's GetPreferredSize method to return
+    //  the FLP host's preferred size.
+    // -Added method CheckBoxForControl(Control c) which returns the
+    //  header checkbox for a given nested control, or null if the
+    //  control is not found.
+    // 
+    // v2014.11.12
+    // -Initial Release
 
-///<summary>Use the Add(Control, "Title") method to add controls to the accordion.
-///
-///<para>Brief explation of 'Extra Height': Extra height is calculated to be the difference
-///of the accordion's height and the of the sum of all heights of the accordion's contents:
-///header checkboxes, margins, paddings, and preferred size heights of added controls.
-///If the difference is less than zero then any controls that can be smaller than their
-///preferred height will decrease in height.</para>
-///
-///<para>There are two options how positive Extra Height can be allocated.</para>
-///<para>1) Allocate all the extra height to the last opened checkbox with a fill weight > 0, or</para>
-///<para>2) Allocate the extra height between the open controls based on their fill weights.</para>
-///
-///<para>The #2 option is likely better for most situations, and is the default value.
-///The boolean property 'FillLastOpened' determines which mode is used, and its default
-///value is false.</para>
-///
-///<para>Another feature of this Accordion is that it allows a control to be expanded by
-///clicking and dragging the mouse. This is especially useful when using multiline
-///textboxes. Instead of having to allocate a large number of preset visible lines,
-///the textboxes can be added to an accordion and the user can increase the height
-///of any textbox as needed by clicking and dragging in the grab area.</para>
-///</summary>
-public class Accordion : UserControl, IMessageFilter {
+    ///<summary>Use the Add(Control, "Title") method to add controls to the accordion.
+    ///
+    ///<para>Brief explation of 'Extra Height': Extra height is calculated to be the difference
+    ///of the accordion's height and the of the sum of all heights of the accordion's contents:
+    ///header checkboxes, margins, paddings, and preferred size heights of added controls.
+    ///If the difference is less than zero then any controls that can be smaller than their
+    ///preferred height will decrease in height.</para>
+    ///
+    ///<para>There are two options how positive Extra Height can be allocated.</para>
+    ///<para>1) Allocate all the extra height to the last opened checkbox with a fill weight > 0, or</para>
+    ///<para>2) Allocate the extra height between the open controls based on their fill weights.</para>
+    ///
+    ///<para>The #2 option is likely better for most situations, and is the default value.
+    ///The boolean property 'FillLastOpened' determines which mode is used, and its default
+    ///value is false.</para>
+    ///
+    ///<para>Another feature of this Accordion is that it allows a control to be expanded by
+    ///clicking and dragging the mouse. This is especially useful when using multiline
+    ///textboxes. Instead of having to allocate a large number of preset visible lines,
+    ///the textboxes can be added to an accordion and the user can increase the height
+    ///of any textbox as needed by clicking and dragging in the grab area.</para>
+    ///</summary>
+    public class Accordion : UserControl, IMessageFilter {
 
 	///<summary>The factory used to create a resize bar when a control is added to an Accordion.
 	///A resize bar acts as a visual cue for the user to know the corresponding control can be resized.</summary>

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Threading;
 using System.Windows.Forms;
 using Lagerverwaltung.Views;
 
 namespace Lagerverwaltung
 {
-	static class Program
+    static class Program
 	{
 		/// <summary>
 		/// Der Haupteinstiegspunkt für die Anwendung.

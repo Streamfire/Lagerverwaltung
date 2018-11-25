@@ -22,7 +22,7 @@ namespace Lagerverwaltung.Views
 		//Login Button gedrückt
 		private void Button1_Click(object sender, EventArgs e)
 		{
-			if (textBox1.Text == _username && textBox2.Text == _userpass)
+            if (Controller.AuthenticationController.Login(textBox1.Text, textBox2.Text)) 
 			{
 				_adminuser = true;
                 this.DialogResult = DialogResult.OK;
