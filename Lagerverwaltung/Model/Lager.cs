@@ -18,10 +18,12 @@ namespace Lagerverwaltung.Model
         public List<Regal> Regalliste { get; set; }
 
         private static Dictionary<ushort, Lager> _dict = new Dictionary<ushort, Lager>();
+        private static Dictionary<string, ushort> _nameDict = new Dictionary<string, ushort>();
         public static event EventHandler<EventArgs> LagerHinzugefuegt;
         public static event EventHandler<EventArgs> LagerEntfernt;
 
         public static ReadOnlyDictionary<ushort, Lager> HoleListe => new ReadOnlyDictionary<ushort, Lager>(_dict);
+        public static ReadOnlyDictionary<string, ushort> HoleNamensliste => new ReadOnlyDictionary<string, ushort>(_nameDict);
 
         public Lager(ushort lager_id, string name, DateTime erstellt_am, DateTime geaendert_am, ushort lagertyp, string standort = "", string beschreibung = "")
         {
@@ -43,13 +45,14 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Lager tmp)
         {
+            _nameDict.Add(tmp.Name, tmp.LagerID);
             _dict.Add(tmp.LagerID,tmp);
             LagerHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
 
         public static bool Entfernen(ref Lager tmp)
         {
-            if (_dict.Remove(tmp.LagerID))
+            if (_dict.Remove(tmp.LagerID) && _nameDict.Remove(tmp.Name))
             {
                 LagerEntfernt?.Invoke(tmp, EventArgs.Empty);
                 tmp = null;
@@ -63,6 +66,7 @@ namespace Lagerverwaltung.Model
             _dict[lagerID].Regalliste.Add(tmp);
         }
 
+        /*
         //Zeitaufwändig (zumindest bei vielen Einträgen), daher evt. später andere Lösung finden (z.b. doppeltes Dictionary [Key: names, Value: IDs])
         //Rückgabe Int, da bei falscher Ausgabe -1 ausgegeben wird
         public static int GetIDByName(string lagername)
@@ -77,5 +81,6 @@ namespace Lagerverwaltung.Model
 
             return -1; 
         }
+        */
     }
 }

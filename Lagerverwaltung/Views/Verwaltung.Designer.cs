@@ -124,11 +124,13 @@ namespace Lagerverwaltung.Views
 			return _lastClicked;
 		}
 
+        //NullPointerException bei Aufruf -> Lukas bitte fixen!
 		public int getActiveTabIndex()
 		{
 			return tabControl1.SelectedIndex;
 		}
 
+        //NullPointerException bei Aufruf -> Lukas bitte fixen!
         public string getActiveTabPageName()
         {
             return tabControl1.SelectedTab.Name;

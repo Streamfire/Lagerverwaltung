@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Collections.ObjectModel;
 using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Model
@@ -21,6 +22,7 @@ namespace Lagerverwaltung.Model
         public List<Paket> Paketliste { get; set; }
 
         private static Dictionary<ushort, Regalfach> _dict = new Dictionary<ushort, Regalfach>();
+        public static ReadOnlyDictionary<ushort, Regalfach> HoleListe => new ReadOnlyDictionary<ushort, Regalfach>(_dict);
         public static event EventHandler<EventArgs> RegalfachHinzugefuegt;
         public static event EventHandler<EventArgs> RegalfachEntfernt;
 
