@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
 using Lagerverwaltung.Core.Abstract;
 
 namespace Lagerverwaltung.Model
@@ -20,7 +21,9 @@ namespace Lagerverwaltung.Model
         public override float Breite { get; set; }
         public override float Laenge { get; set; }
 
-        private static Dictionary<uint, Produkt> _dict = new Dictionary<uint, Produkt>();
+		
+
+		private static Dictionary<uint, Produkt> _dict = new Dictionary<uint, Produkt>();
         public static event EventHandler<EventArgs> ProduktHinzugefuegt;
         public static event EventHandler<EventArgs> ProduktEntfernt;
 
@@ -47,6 +50,11 @@ namespace Lagerverwaltung.Model
 
             Hinzufuegen(this);
         }
+
+		public static List<Produkt> GetProdukts()
+		{
+			return _dict.Values.ToList();
+		}
 
         private void Hinzufuegen(Produkt tmp)
         {

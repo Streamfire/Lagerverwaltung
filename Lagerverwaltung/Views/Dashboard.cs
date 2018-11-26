@@ -10,6 +10,15 @@ namespace Lagerverwaltung.Views
 		public Dashboard()
 		{
 			InitializeComponent();
+
+			Verwaltung = new Verwaltung();
+			Suche = new Suche();
+			Regaleinsicht = new Regaleinsicht();
+			Historie = new Historie();
+
+
+			ProduktListe = Model.Produkt.GetProdukts();
+			ArtikeltypListe = Model.Artikeltyp.GetArtikeltyps();
 		}
 		public Dashboard(bool adminuser)
 		{
@@ -71,7 +80,7 @@ namespace Lagerverwaltung.Views
                 new Model.Artikeltyp(3, "bliblubbbla", new DateTime(), new DateTime())
             };
 
-
+			
             Verwaltung.UpdateForm(Model.Lager.HoleListe);
 		}
 

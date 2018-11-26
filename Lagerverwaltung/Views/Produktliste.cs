@@ -26,7 +26,7 @@ namespace Lagerverwaltung.Views
             };
             */
 			UpdateForm( Dashboard.ProduktListe);
-
+			
       
         }
 		public void UpdateForm(List<Model.Produkt> _produktListe)

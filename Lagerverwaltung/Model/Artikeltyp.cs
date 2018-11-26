@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
 
 namespace Lagerverwaltung.Model
 {
@@ -27,7 +28,12 @@ namespace Lagerverwaltung.Model
             Hinzufuegen(this);
         }
 
-        private void Hinzufuegen(Artikeltyp tmp)
+		public static List<Artikeltyp> GetArtikeltyps()
+		{
+			return _dict.Values.ToList();
+		}
+
+		private void Hinzufuegen(Artikeltyp tmp)
         {
             _dict.Add(tmp.ArtikeltypID,tmp);
             ArtikeltypHinzugefuegt?.Invoke(this, EventArgs.Empty);
