@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using System;
+using System.Windows.Forms;
 
 namespace Lagerverwaltung.Controller
 {
@@ -12,13 +13,23 @@ namespace Lagerverwaltung.Controller
         // Loads stored hash + SALT and tests if hash(pw + SALT) = stored hash
         public static bool Login(string username, string pw)
         {
-            string[] pw_and_salt = DB.UserSQL.HoleUserPasswordData(username);
-            if (pw_and_salt == null)
-                return false;
-    
-            if (!(GeneratePasswordHash(pw, pw_and_salt[1]) == pw_and_salt[0]))
-                return false;
-            return true;
+            try
+            {
+                string[] pw_and_salt = DB.UserSQL.HoleUserPasswordData(username);
+                if (pw_and_salt == null)
+                    return false;
+
+                if (!(GeneratePasswordHash(pw, pw_and_salt[1]) == pw_and_salt[0]))
+                    return false;
+                return true;
+            }
+            catch (System.TypeInitializationException)
+            {
+                MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
+            return false;
+        
         }
 
         // Change Password data of User
@@ -27,10 +38,19 @@ namespace Lagerverwaltung.Controller
             if (!Login(username, old_pw))
                 return false;
 
-            string salt = Create_Salt(10);
-            if (!DB.UserSQL.UpdateUserPassword(username, GeneratePasswordHash(new_pw, salt), salt))
-                return false;
-            return true;
+            try
+            {
+                string salt = Create_Salt(10);
+                if (!DB.UserSQL.UpdateUserPassword(username, GeneratePasswordHash(new_pw, salt), salt))
+                    return false;
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
+            return false;
         }
 
         // Creates Password String Hash from input password and SALT
