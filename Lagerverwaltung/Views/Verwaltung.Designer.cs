@@ -16,13 +16,14 @@ namespace Lagerverwaltung.Views
 		{
 			//Reset Form
 			tabControl1.Controls.Clear();
-
+			tabControl1.SelectedIndexChanged += OnChangedTab;
 
 			foreach (Lager l in lagerListe.Values)
 			{
 				TabPage tp = new TabPage(l.Name);
+			
 				_lagerAccordion = new Accordion();
-				_lagerAccordion.GotFocus += OnFocused;
+				_lagerAccordion.GotFocus += OnFocusedPanel;
 
 				tp.Controls.Add(_lagerAccordion);
 
@@ -31,13 +32,13 @@ namespace Lagerverwaltung.Views
 				{
 					Accordion nestedRegal = new Accordion();
 					nestedRegal.Name = r.Name;
-					nestedRegal.GotFocus += OnFocused;
+					nestedRegal.GotFocus += OnFocusedPanel;
 					_lagerAccordion.Add(nestedRegal, r.Name);
 
 					foreach (Regalfach f in r.Regalfachliste)
 					{
 						Accordion nestedFach = new Accordion();
-						nestedFach.GotFocus += OnFocused;
+						nestedFach.GotFocus += OnFocusedPanel;
 						nestedFach.Name = f.Name;
 
 						Panel infoPanel = new Panel();
@@ -91,8 +92,6 @@ namespace Lagerverwaltung.Views
 							infoPanel.Controls.Add(Geaendert);
 							infoPanel.Controls.Add(Anschaffungsgrund);
 
-
-
 							nestedRegal.Add(nestedFach, f.Paketliste[0].Name + " | " + f.Paketliste[0].ProduktID);
 						}
 						else
@@ -100,40 +99,48 @@ namespace Lagerverwaltung.Views
 							name.Text = "Leer";
 							infoPanel.Controls.Add(name);
 
-
 							nestedRegal.Add(nestedFach, f.Name);
 						}
-
-
 						nestedFach.Controls.Add(infoPanel);
-
-
-
 					}
-
 				}
 			}
+
+
+			_lastFocusedAccordion = _lagerAccordion;
+			_lastFocusedPage = tabControl1.TabPages[0];
 		}
 		 
-		private void OnFocused(Object sender, EventArgs e)
+		private void OnFocusedPanel(Object sender, EventArgs e)
 		{
-			_lastClicked = (Accordion) sender;
+			_lastFocusedAccordion = (Accordion) sender;
 		}
 
-
-		public Accordion getLastFocused()
+		private void OnChangedTab(Object sender, EventArgs e)
 		{
-			return _lastClicked;
+			_lastFocusedPage = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex];
 		}
 
-        //NullPointerException bei Aufruf -> Lukas bitte fixen!
+		public Accordion getLastFocusedPanel()
+		{
+			return _lastFocusedAccordion;
+		}
+
+		public TabPage getLastFocusedPage()
+		{
+			return _lastFocusedPage;
+		}
+
+		//Don't use
+		//NullPointerException bei Aufruf -> Lukas bitte fixen!
 		public int getActiveTabIndex()
 		{
 			return tabControl1.SelectedIndex;
 		}
 
-        //NullPointerException bei Aufruf -> Lukas bitte fixen!
-        public string getActiveTabPageName()
+		//Don't use
+		//NullPointerException bei Aufruf -> Lukas bitte fixen!
+		public string getActiveTabPageName()
         {
             return tabControl1.SelectedTab.Name;
         }
@@ -307,7 +314,8 @@ namespace Lagerverwaltung.Views
 		#endregion
 
 		private Accordion _lagerAccordion;
-		private static Accordion _lastClicked;
+		private static Accordion _lastFocusedAccordion;
+		private static TabPage _lastFocusedPage;
 
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.Button buttonPaketHinzufuegen;
