@@ -1,8 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using System;
-using Npgsql;
-using Lagerverwaltung.Core;
 
 namespace Lagerverwaltung.Controller
 {
@@ -11,33 +9,79 @@ namespace Lagerverwaltung.Controller
     /// </summary>
     static class AuthenticationController
     {
-        // Nutzt bsp. den UserModel um abzufragen ob User usw vorhanden ist.
-        // Dann vergleicht er das PW und je nachdem werden dann entsprechende Views geöffnet :)
-
+        // Loads stored hash + SALT and tests if hash(pw + SALT) = stored hash
         public static bool Login(string username, string pw)
         {
-            string[] pass_and_salt = DB.UserSQL.HoleUserPasswordData(username);
-            if (pass_and_salt == null)
+            string[] pw_and_salt = DB.UserSQL.HoleUserPasswordData(username);
+            if (pw_and_salt == null)
                 return false;
-           
-            Byte[] enc_pass = Encoding.UTF8.GetBytes(pw);
-            using (SHA512 sha_man = new SHA512Managed())
+    
+            if (!(GeneratePasswordHash(pw, pw_and_salt[1]) == pw_and_salt[0]))
+                return false;
+            return true;
+        }
+
+        // Change Password data of User
+        public static bool ChangePassword(string username, string old_pw, string new_pw)
+        {
+            if (!Login(username, old_pw))
+                return false;
+
+            string salt = Create_Salt(10);
+            if (!DB.UserSQL.UpdateUserPassword(username, GeneratePasswordHash(new_pw, salt), salt))
+                return false;
+            return true;
+        }
+
+        // Creates Password String Hash from input password and SALT
+        public static string GeneratePasswordHash(string password, string salt)
+        {
+            Byte[] enc_pass = Encode_2UTF(password);
+            Byte[] enc_salt = Encode_2UTF(salt);
+            Byte[] enc_hash = Hash_SHA512(ConcatByteArray(enc_pass, enc_salt));
+            return Encode_2String(enc_hash);
+        }
+
+        // Generates Base64 String of certain length
+        public static string Create_Salt(int length)
+        {
+            using (RandomNumberGenerator rng = new RNGCryptoServiceProvider())
             {
-                Byte[] enc_salt = Encoding.UTF8.GetBytes(pass_and_salt[1]);
-                int length = enc_salt.Length + enc_pass.Length;
-                byte[] pw_sum = new byte[length];
-                enc_pass.CopyTo(pw_sum, 0);
-                enc_salt.CopyTo(pw_sum, enc_pass.Length);
-                pw_sum = sha_man.ComputeHash(pw_sum);
-                if (!(BitConverter.ToString(pw_sum).Replace("-","") == pass_and_salt[0]))
-                    return false;
-                return true;
+                byte[] tokenData = new byte[length];
+                rng.GetBytes(tokenData);
+                return Convert.ToBase64String(tokenData);
             }
         }
 
-        static void Logout()
+        // Sha512 Hash Function
+        private static byte[] Hash_SHA512(byte[] stream)
         {
-            //schließe alle Forms und zeige Login-Form wieder
+            using (SHA512 sha_man = new SHA512Managed())
+            {
+                return sha_man.ComputeHash(stream);
+            }
+        }
+         
+        // Encode String into UTF8 Byte Stream
+        private static byte[] Encode_2UTF(string unencoded)
+        {
+            return Encoding.UTF8.GetBytes(unencoded);
+        }
+
+        // Converts Array of a Byte Stream into a concatenated String
+        private static string Encode_2String(byte[] stream)
+        {
+            return BitConverter.ToString(stream).Replace("-", "");
+        }
+
+        //Concatenates 2 byte arrays
+        private static byte[] ConcatByteArray(byte[] stream1, byte[] stream2)
+        {
+            int length = stream1.Length + stream2.Length;
+            Byte[] sum = new byte[length];
+            stream1.CopyTo(sum, 0);
+            stream2.CopyTo(sum, stream1.Length);
+            return sum;
         }
     }
 }

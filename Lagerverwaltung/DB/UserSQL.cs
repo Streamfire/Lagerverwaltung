@@ -75,6 +75,7 @@ namespace Lagerverwaltung.DB
             }
         }
 
+        //returned password hash + salt
         public static string[] HoleUserPasswordData(string username)
         {
             using (var cmd = new NpgsqlCommand())
@@ -83,7 +84,6 @@ namespace Lagerverwaltung.DB
                 cmd.CommandText = "SELECT password, salt FROM \"user\" WHERE username = @username;";
                 cmd.Parameters.AddWithValue("username", username);
          
-                // Prüfe noch auch irgendwelche Fehler etc.
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
@@ -95,6 +95,23 @@ namespace Lagerverwaltung.DB
             }
         }
 
+        //updated Passwort des Users
+        public static bool UpdateUserPassword(string username, string password_hash, string salt)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO user (password, salt) VALUES (@password, @salt) WHERE username = @username";
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password_hash);
+                cmd.Parameters.AddWithValue("salt", salt);
+            
+                int result = cmd.ExecuteNonQuery();
+                return result == 0 ? false : true;
+            }
+        }
+
+        //Löscht User aus DB
         public static bool LoescheUser(ushort user_id)
         {
             using (var cmd = new NpgsqlCommand())
