@@ -30,6 +30,7 @@ namespace Lagerverwaltung.Views
 				foreach (Regal r in l.Regalliste)
 				{
 					Accordion nestedRegal = new Accordion();
+					nestedRegal.Name = r.Name;
 					nestedRegal.GotFocus += OnFocused;
 					_lagerAccordion.Add(nestedRegal, r.Name);
 
@@ -37,6 +38,7 @@ namespace Lagerverwaltung.Views
 					{
 						Accordion nestedFach = new Accordion();
 						nestedFach.GotFocus += OnFocused;
+						nestedFach.Name = f.Name;
 
 						Panel infoPanel = new Panel();
 						Label name = new Label();
@@ -305,7 +307,7 @@ namespace Lagerverwaltung.Views
 		#endregion
 
 		private Accordion _lagerAccordion;
-		private Accordion _lastClicked;
+		private static Accordion _lastClicked;
 
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.Button buttonPaketHinzufuegen;
