@@ -24,5 +24,7 @@ namespace Lagerverwaltung.Views
         {
             this.Close();
         }
+
+        
     }
 }
