@@ -69,8 +69,24 @@ namespace Lagerverwaltung.Views
 
         }
 
-        
-    }
+		/// <summary>
+		/// Produkt ausgewählt
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void Auswaehlen_Click(object sender, EventArgs e)
+		{
+			lastSelected = listViewProduktliste.SelectedItems[0].Text;
+			this.Close();
+		}
+
+		string lastSelected;
+
+		public string GetSelected()
+		{
+			return lastSelected;
+		}
+	}
 
     
 }

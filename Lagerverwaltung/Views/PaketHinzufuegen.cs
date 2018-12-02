@@ -21,10 +21,18 @@ namespace Lagerverwaltung.Views
             else
             {
                 Produktliste = new Produktliste();
+				Produktliste.FormClosed += OnClose;
                 Produktliste.ShowDialog();
             }
         }
-        private void ButtonAbbrechen_Click(object sender, EventArgs e)
+
+		private void OnClose(object sender, FormClosedEventArgs e)
+		{
+			if(Produktliste.GetSelected() != string.Empty)
+			labelProduktAusgewählt.Text = Produktliste.GetSelected();
+		}
+
+		private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -35,9 +43,8 @@ namespace Lagerverwaltung.Views
             
             //Validierung erfolgreich
             {
-                //TODO:Paket der Paketliste hinzufügen
-
-
+				//TODO:Paket der Paketliste hinzufügen
+				
                 Close();
             }
 
