@@ -18,7 +18,7 @@ namespace Lagerverwaltung.Views
 
                 DB.ArtikeltypSQL.HoleAlleArtikeltyp();
        
-                DB.LagertypSQL.HoleAlleLagertyp();
+                //DB.LagertypSQL.HoleAlleLagertyp();
           
                 DB.UserSQL.HoleAlleUser();
              
