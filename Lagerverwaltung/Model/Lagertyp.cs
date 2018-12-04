@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Collections.ObjectModel;
 
 namespace Lagerverwaltung.Model
 {
@@ -12,6 +13,11 @@ namespace Lagerverwaltung.Model
         public DateTime GeaendertAm { get; set; }
 
         private static Dictionary<ushort, Lagertyp> _dict = new Dictionary<ushort, Lagertyp>();
+        private static Dictionary<string, ushort> _nameDict = new Dictionary<string, ushort>();
+
+        public static ReadOnlyDictionary<ushort, Lagertyp> HoleListe => new ReadOnlyDictionary<ushort, Lagertyp>(_dict);
+        public static ReadOnlyDictionary<string, ushort> HoleNamensliste => new ReadOnlyDictionary<string, ushort>(_nameDict);
+
         public static event EventHandler<EventArgs> LagertypHinzugefuegt;
         public static event EventHandler<EventArgs> LagertypEntfernt;
 
@@ -29,6 +35,7 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Lagertyp tmp)
         {
+            _nameDict.Add(tmp.Name, tmp.LagertypID);
             _dict.Add(tmp.LagertypID,tmp);
             LagertypHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
