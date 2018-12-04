@@ -81,6 +81,7 @@
     <Compile Include="Controller\PaketHinzufuegenController.cs" />
     <Compile Include="Controller\ProduktHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
+    <Compile Include="DB\SucheSQL.cs" />
     <Compile Include="Model\Artikeltyp.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />
     <Compile Include="Core\Interfaces\IBase.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Model\Regal.cs" />
     <Compile Include="Model\Regalfach.cs" />
     <Compile Include="Model\Rolle.cs" />
+    <Compile Include="Model\Suche.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Historie.cs" />
     <Compile Include="ExpandablePanel\Accordion.cs">
