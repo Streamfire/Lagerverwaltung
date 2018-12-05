@@ -72,6 +72,7 @@
             // 
             // comboBoxRegal
             // 
+            this.comboBoxRegal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegal.FormattingEnabled = true;
             this.comboBoxRegal.Location = new System.Drawing.Point(353, 11);
             this.comboBoxRegal.Name = "comboBoxRegal";
@@ -80,11 +81,14 @@
             // 
             // comboBoxLager
             // 
+            this.comboBoxLager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLager.FormattingEnabled = true;
             this.comboBoxLager.Location = new System.Drawing.Point(68, 11);
             this.comboBoxLager.Name = "comboBoxLager";
             this.comboBoxLager.Size = new System.Drawing.Size(194, 21);
             this.comboBoxLager.TabIndex = 4;
+            this.comboBoxLager.SelectedIndexChanged += new System.EventHandler(this.comboBoxLager_SelectedIndexChanged);
+            this.comboBoxLager.SelectedValueChanged += new System.EventHandler(this.comboBoxLager_SelectedValueChanged);
             // 
             // label2
             // 
