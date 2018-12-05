@@ -17,7 +17,7 @@ namespace Lagerverwaltung.Model
         public override float Hoehe { get; set; }
         //Produktbreite
         public override float Breite { get; set; }
-        //Produktlaeng
+        //Produktlaenge
         public override float Laenge { get; set; }
         public DateTime ProduktErstelltAm { get; set; }
         public DateTime ProduktGeaendertAm { get; set; }
