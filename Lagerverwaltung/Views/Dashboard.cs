@@ -91,6 +91,8 @@ namespace Lagerverwaltung.Views
 		public static List<Lager> LagerListe { get => _lagerliste; set => _lagerliste = value; }
         public static List<Produkt> ProduktListe { get ; set; }
         public static List<Artikeltyp> ArtikeltypListe { get; set; }
+        public static string CurrentLager { get; set; }
+        public static string CurrentRegal { get; set; }
 
 
 		private bool _adminuser= false;

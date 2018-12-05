@@ -38,7 +38,13 @@ namespace Lagerverwaltung.Views
             else
             {
                 //Lager in DB einfügen
-                DB.LagerSQL.ErstelleLager(textBoxLagerName.Text, (short)Lagertyp.HoleNamensliste[comboBoxLagertyp.Text], textBoxStandort.Text, textBoxBeschreibung.Text);
+                //TODO: Überprüfung, ob Datensatz valide ist (gleicher Name?)
+                if (DB.LagerSQL.ErstelleLager(textBoxLagerName.Text, (short)Lagertyp.HoleNamensliste[comboBoxLagertyp.Text], textBoxStandort.Text, textBoxBeschreibung.Text) == false)
+                {
+                    MessageBox.Show("Der Datensatz konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                
 
                 //TODO: Entfernen, sobald das Hauptfenster nur noch die Daten aus der DB liest 
                 new Lager((ushort)Lager.HoleListe.Count, textBoxLagerName.Text, new DateTime(), new DateTime(), 0, this.textBoxStandort.Text, this.textBoxBeschreibung.Text);
