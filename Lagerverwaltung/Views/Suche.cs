@@ -52,7 +52,7 @@ namespace Lagerverwaltung.Views
 
         private void buttonSuchen_Click(object sender, System.EventArgs e)
         {
-            Model.Suche tmp = new Model.Suche();
+            Model.Suchkriterien tmp = new Model.Suchkriterien();
 
             if (!String.IsNullOrWhiteSpace(textRegalname.Text))
                 tmp.RegalName = textRegalname.Text;

@@ -93,6 +93,7 @@
     <Compile Include="Model\Regalfach.cs" />
     <Compile Include="Model\Rolle.cs" />
     <Compile Include="Model\Suche.cs" />
+    <Compile Include="Model\Suchkriterien.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Historie.cs" />
     <Compile Include="ExpandablePanel\Accordion.cs">
