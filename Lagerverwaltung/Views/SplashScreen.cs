@@ -16,6 +16,8 @@ namespace Lagerverwaltung.Views
             {
                 DB.HistorieSQL.HoleHistorie();
 
+                DB.SucheSQL.HoleSuchergebnisse();
+
                 DB.ArtikeltypSQL.HoleAlleArtikeltyp();
        
                 //DB.LagertypSQL.HoleAlleLagertyp();

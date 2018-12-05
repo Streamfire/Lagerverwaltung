@@ -33,6 +33,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelleProduktName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleProduktID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleGewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabellePreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleZeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleHoehe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleBreite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleProduktErstelltAm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleProduktZuletztGeaendert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabellePaketName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleMenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleHaltbarkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleAnschaffungsgrund = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleRegalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleRegalfachName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelleZeile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSuchen = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.textProduktName = new System.Windows.Forms.TextBox();
@@ -72,22 +89,6 @@
             this.textBreiteVon = new System.Windows.Forms.TextBox();
             this.textLaengeVon = new System.Windows.Forms.TextBox();
             this.textBreiteBis = new System.Windows.Forms.TextBox();
-            this.tabelleProduktID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleProduktName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleGewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabellePreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleZeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleHoehe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleBreite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleLaenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleProduktErstelltAm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleProduktZuletztGeaendert = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabellePaketName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleMenge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleHaltbarkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleAnschaffungsgrund = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleRegalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabelleRegalfachName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,8 +134,8 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tabelleProduktID,
             this.tabelleProduktName,
+            this.tabelleProduktID,
             this.tabelleGewicht,
             this.tabellePreis,
             this.tabelleZeichnungsnummer,
@@ -148,11 +149,148 @@
             this.tabelleHaltbarkeit,
             this.tabelleAnschaffungsgrund,
             this.tabelleRegalName,
-            this.tabelleRegalfachName});
+            this.tabelleRegalfachName,
+            this.tabelleZeile});
             this.dataGridView1.Location = new System.Drawing.Point(18, 352);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1198, 460);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // tabelleProduktName
+            // 
+            this.tabelleProduktName.DataPropertyName = "ProduktName";
+            this.tabelleProduktName.Frozen = true;
+            this.tabelleProduktName.HeaderText = "Produktname";
+            this.tabelleProduktName.Name = "tabelleProduktName";
+            this.tabelleProduktName.ReadOnly = true;
+            this.tabelleProduktName.Width = 190;
+            // 
+            // tabelleProduktID
+            // 
+            this.tabelleProduktID.DataPropertyName = "ProduktID";
+            this.tabelleProduktID.HeaderText = "Produkt ID";
+            this.tabelleProduktID.Name = "tabelleProduktID";
+            this.tabelleProduktID.ReadOnly = true;
+            this.tabelleProduktID.Width = 90;
+            // 
+            // tabelleGewicht
+            // 
+            this.tabelleGewicht.DataPropertyName = "ProduktGewicht";
+            this.tabelleGewicht.HeaderText = "Gewicht";
+            this.tabelleGewicht.Name = "tabelleGewicht";
+            this.tabelleGewicht.ReadOnly = true;
+            this.tabelleGewicht.Width = 80;
+            // 
+            // tabellePreis
+            // 
+            this.tabellePreis.DataPropertyName = "ProduktPreis";
+            this.tabellePreis.HeaderText = "Preis";
+            this.tabellePreis.Name = "tabellePreis";
+            this.tabellePreis.ReadOnly = true;
+            this.tabellePreis.Width = 80;
+            // 
+            // tabelleZeichnungsnummer
+            // 
+            this.tabelleZeichnungsnummer.DataPropertyName = "ProduktZeichnungsnummer";
+            this.tabelleZeichnungsnummer.HeaderText = "Zeichnungsnummer";
+            this.tabelleZeichnungsnummer.Name = "tabelleZeichnungsnummer";
+            this.tabelleZeichnungsnummer.ReadOnly = true;
+            this.tabelleZeichnungsnummer.Width = 120;
+            // 
+            // tabelleHoehe
+            // 
+            this.tabelleHoehe.DataPropertyName = "Hoehe";
+            this.tabelleHoehe.HeaderText = "Höhe";
+            this.tabelleHoehe.Name = "tabelleHoehe";
+            this.tabelleHoehe.ReadOnly = true;
+            this.tabelleHoehe.Width = 60;
+            // 
+            // tabelleBreite
+            // 
+            this.tabelleBreite.DataPropertyName = "Breite";
+            this.tabelleBreite.HeaderText = "Breite";
+            this.tabelleBreite.Name = "tabelleBreite";
+            this.tabelleBreite.ReadOnly = true;
+            this.tabelleBreite.Width = 60;
+            // 
+            // tabelleLaenge
+            // 
+            this.tabelleLaenge.DataPropertyName = "Laenge";
+            this.tabelleLaenge.HeaderText = "Länge";
+            this.tabelleLaenge.Name = "tabelleLaenge";
+            this.tabelleLaenge.ReadOnly = true;
+            this.tabelleLaenge.Width = 60;
+            // 
+            // tabelleProduktErstelltAm
+            // 
+            this.tabelleProduktErstelltAm.DataPropertyName = "ProduktErstelltAm";
+            this.tabelleProduktErstelltAm.HeaderText = "Produkt erstellt am";
+            this.tabelleProduktErstelltAm.Name = "tabelleProduktErstelltAm";
+            this.tabelleProduktErstelltAm.ReadOnly = true;
+            this.tabelleProduktErstelltAm.Width = 145;
+            // 
+            // tabelleProduktZuletztGeaendert
+            // 
+            this.tabelleProduktZuletztGeaendert.DataPropertyName = "ProduktGeaendertAm";
+            this.tabelleProduktZuletztGeaendert.HeaderText = "Produkt zuletzt geändert";
+            this.tabelleProduktZuletztGeaendert.Name = "tabelleProduktZuletztGeaendert";
+            this.tabelleProduktZuletztGeaendert.ReadOnly = true;
+            this.tabelleProduktZuletztGeaendert.Width = 145;
+            // 
+            // tabellePaketName
+            // 
+            this.tabellePaketName.DataPropertyName = "PaketName";
+            this.tabellePaketName.HeaderText = "Paketname";
+            this.tabellePaketName.Name = "tabellePaketName";
+            this.tabellePaketName.ReadOnly = true;
+            this.tabellePaketName.Width = 190;
+            // 
+            // tabelleMenge
+            // 
+            this.tabelleMenge.DataPropertyName = "PaketMenge";
+            this.tabelleMenge.HeaderText = "Menge";
+            this.tabelleMenge.Name = "tabelleMenge";
+            this.tabelleMenge.ReadOnly = true;
+            this.tabelleMenge.Width = 80;
+            // 
+            // tabelleHaltbarkeit
+            // 
+            this.tabelleHaltbarkeit.DataPropertyName = "PaketHaltbarkeit";
+            this.tabelleHaltbarkeit.HeaderText = "Haltbarkeit";
+            this.tabelleHaltbarkeit.Name = "tabelleHaltbarkeit";
+            this.tabelleHaltbarkeit.ReadOnly = true;
+            this.tabelleHaltbarkeit.Width = 145;
+            // 
+            // tabelleAnschaffungsgrund
+            // 
+            this.tabelleAnschaffungsgrund.DataPropertyName = "PaketAnschaffungsgrund";
+            this.tabelleAnschaffungsgrund.HeaderText = "Anschaffungsgrund";
+            this.tabelleAnschaffungsgrund.Name = "tabelleAnschaffungsgrund";
+            this.tabelleAnschaffungsgrund.ReadOnly = true;
+            this.tabelleAnschaffungsgrund.Width = 190;
+            // 
+            // tabelleRegalName
+            // 
+            this.tabelleRegalName.DataPropertyName = "RegalName";
+            this.tabelleRegalName.HeaderText = "Regalname";
+            this.tabelleRegalName.Name = "tabelleRegalName";
+            this.tabelleRegalName.ReadOnly = true;
+            this.tabelleRegalName.Width = 120;
+            // 
+            // tabelleRegalfachName
+            // 
+            this.tabelleRegalfachName.DataPropertyName = "RegalfachName";
+            this.tabelleRegalfachName.HeaderText = "Regalfachname";
+            this.tabelleRegalfachName.Name = "tabelleRegalfachName";
+            this.tabelleRegalfachName.ReadOnly = true;
+            this.tabelleRegalfachName.Width = 120;
+            // 
+            // tabelleZeile
+            // 
+            this.tabelleZeile.DataPropertyName = "Zeile";
+            this.tabelleZeile.HeaderText = "Zeile";
+            this.tabelleZeile.Name = "tabelleZeile";
+            this.tabelleZeile.ReadOnly = true;
             // 
             // buttonSuchen
             // 
@@ -508,102 +646,6 @@
             this.textBreiteBis.Size = new System.Drawing.Size(60, 24);
             this.textBreiteBis.TabIndex = 53;
             // 
-            // tabelleProduktID
-            // 
-            this.tabelleProduktID.HeaderText = "Produkt ID";
-            this.tabelleProduktID.Name = "tabelleProduktID";
-            this.tabelleProduktID.Width = 90;
-            // 
-            // tabelleProduktName
-            // 
-            this.tabelleProduktName.HeaderText = "Produktname";
-            this.tabelleProduktName.Name = "tabelleProduktName";
-            this.tabelleProduktName.Width = 190;
-            // 
-            // tabelleGewicht
-            // 
-            this.tabelleGewicht.HeaderText = "Gewicht";
-            this.tabelleGewicht.Name = "tabelleGewicht";
-            this.tabelleGewicht.Width = 80;
-            // 
-            // tabellePreis
-            // 
-            this.tabellePreis.HeaderText = "Preis";
-            this.tabellePreis.Name = "tabellePreis";
-            this.tabellePreis.Width = 80;
-            // 
-            // tabelleZeichnungsnummer
-            // 
-            this.tabelleZeichnungsnummer.HeaderText = "Zeichnungsnummer";
-            this.tabelleZeichnungsnummer.Name = "tabelleZeichnungsnummer";
-            this.tabelleZeichnungsnummer.Width = 120;
-            // 
-            // tabelleHoehe
-            // 
-            this.tabelleHoehe.HeaderText = "Höhe";
-            this.tabelleHoehe.Name = "tabelleHoehe";
-            this.tabelleHoehe.Width = 60;
-            // 
-            // tabelleBreite
-            // 
-            this.tabelleBreite.HeaderText = "Breite";
-            this.tabelleBreite.Name = "tabelleBreite";
-            this.tabelleBreite.Width = 60;
-            // 
-            // tabelleLaenge
-            // 
-            this.tabelleLaenge.HeaderText = "Länge";
-            this.tabelleLaenge.Name = "tabelleLaenge";
-            this.tabelleLaenge.Width = 60;
-            // 
-            // tabelleProduktErstelltAm
-            // 
-            this.tabelleProduktErstelltAm.HeaderText = "Produkt erstellt am";
-            this.tabelleProduktErstelltAm.Name = "tabelleProduktErstelltAm";
-            this.tabelleProduktErstelltAm.Width = 145;
-            // 
-            // tabelleProduktZuletztGeaendert
-            // 
-            this.tabelleProduktZuletztGeaendert.HeaderText = "Produkt zuletzt geändert";
-            this.tabelleProduktZuletztGeaendert.Name = "tabelleProduktZuletztGeaendert";
-            this.tabelleProduktZuletztGeaendert.Width = 145;
-            // 
-            // tabellePaketName
-            // 
-            this.tabellePaketName.HeaderText = "Paketname";
-            this.tabellePaketName.Name = "tabellePaketName";
-            this.tabellePaketName.Width = 190;
-            // 
-            // tabelleMenge
-            // 
-            this.tabelleMenge.HeaderText = "Menge";
-            this.tabelleMenge.Name = "tabelleMenge";
-            this.tabelleMenge.Width = 80;
-            // 
-            // tabelleHaltbarkeit
-            // 
-            this.tabelleHaltbarkeit.HeaderText = "Haltbarkeit";
-            this.tabelleHaltbarkeit.Name = "tabelleHaltbarkeit";
-            this.tabelleHaltbarkeit.Width = 145;
-            // 
-            // tabelleAnschaffungsgrund
-            // 
-            this.tabelleAnschaffungsgrund.HeaderText = "Anschaffungsgrund";
-            this.tabelleAnschaffungsgrund.Name = "tabelleAnschaffungsgrund";
-            this.tabelleAnschaffungsgrund.Width = 120;
-            // 
-            // tabelleRegalName
-            // 
-            this.tabelleRegalName.HeaderText = "Regalname";
-            this.tabelleRegalName.Name = "tabelleRegalName";
-            this.tabelleRegalName.Width = 120;
-            // 
-            // tabelleRegalfachName
-            // 
-            this.tabelleRegalfachName.HeaderText = "Regalfachname";
-            this.tabelleRegalfachName.Name = "tabelleRegalfachName";
-            this.tabelleRegalfachName.Width = 120;
-            // 
             // Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -708,8 +750,8 @@
         private System.Windows.Forms.TextBox textBreiteVon;
         private System.Windows.Forms.TextBox textLaengeVon;
         private System.Windows.Forms.TextBox textBreiteBis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tabelleProduktID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleProduktName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tabelleProduktID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleGewicht;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabellePreis;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleZeichnungsnummer;
@@ -724,5 +766,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleAnschaffungsgrund;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleRegalName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleRegalfachName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tabelleZeile;
     }
 }

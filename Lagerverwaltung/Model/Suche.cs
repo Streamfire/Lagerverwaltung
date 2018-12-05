@@ -10,8 +10,8 @@ namespace Lagerverwaltung.Model
     /// </summary>
     public sealed class Suche : Base
     {
-        public uint ProduktID { get; set; }
         public string ProduktName { get; set; }
+        public uint ProduktID { get; set; }
         public float ProduktGewicht { get; set; }
         public float ProduktPreis { get; set; }
         public string ProduktZeichnungsnummer { get; set; }
@@ -19,7 +19,7 @@ namespace Lagerverwaltung.Model
         public override float Hoehe { get; set; }
         //Produktbreite
         public override float Breite { get; set; }
-        //Produktlaenge
+        //Produktlaeng
         public override float Laenge { get; set; }
         public DateTime ProduktErstelltAm { get; set; }
         public DateTime ProduktGeaendertAm { get; set; }
@@ -35,14 +35,18 @@ namespace Lagerverwaltung.Model
         public string RegalfachName { get; set; }
 
 
+        public uint Zeile { get; set; }
+
+
+        public static event EventHandler<EventArgs> SucheHinzugefuegt;
         private static Dictionary<ulong, Suche> _dict = new Dictionary<ulong, Suche>();
         public static ReadOnlyDictionary<ulong, Suche> HoleSuchergebnisse => new ReadOnlyDictionary<ulong, Suche>(_dict);
 
-        public Suche(   uint produkt_id, string produkt_name, float produkt_gewicht, float produkt_preis, string produkt_zeichnungsnummer, float hoehe, float breite, float laenge, DateTime produkt_erstellt_am, DateTime produkt_geaendert_am  ,
-                        string paket_name, ushort paket_menge, DateTime paket_haltbarkeit, string paket_anschaffungsgrund, string regal_name, string regalfach_name                                                                             )
+        public Suche(   string produkt_name, uint produkt_id, float produkt_gewicht, float produkt_preis, string produkt_zeichnungsnummer, float hoehe, float breite, float laenge, DateTime produkt_erstellt_am, DateTime produkt_geaendert_am  ,
+                        string paket_name, ushort paket_menge, DateTime paket_haltbarkeit, string paket_anschaffungsgrund, string regal_name, string regalfach_name, uint zeile                                                                  )
         {
-            ProduktID = produkt_id;
             ProduktName = produkt_name;
+            ProduktID = produkt_id;
             ProduktGewicht = produkt_gewicht;
             ProduktPreis = produkt_preis;
             ProduktZeichnungsnummer = produkt_zeichnungsnummer;
@@ -59,6 +63,26 @@ namespace Lagerverwaltung.Model
 
             RegalName = regal_name;
             RegalfachName = regalfach_name;
+
+            Zeile = zeile;
+
+
+            Hinzufuegen(this);
+
+            var test = _dict.Values;
+        }
+
+        private void Hinzufuegen(Suche tmp)
+        {
+            if (tmp != null)
+            {
+                if (!_dict.ContainsKey(Zeile))
+                {
+                    _dict.Add(tmp.Zeile, tmp);
+                    SucheHinzugefuegt?.Invoke(tmp, EventArgs.Empty);
+                }
+                
+            }
         }
     }
 }
