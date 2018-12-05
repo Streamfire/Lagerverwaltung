@@ -119,9 +119,10 @@ namespace Lagerverwaltung.Views
 
 		private void OnChangedTab(Object sender, EventArgs e)
 		{
+           
 			_lastFocusedPage = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex];
-            Dashboard.CurrentLager = _lastFocusedPage.Name;
-		}
+            Dashboard.CurrentLager = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].Text;
+        }
 
 		public Accordion getLastFocusedPanel()
 		{

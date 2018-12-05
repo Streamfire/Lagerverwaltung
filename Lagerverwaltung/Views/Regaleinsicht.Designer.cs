@@ -28,143 +28,121 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
+            this.dataGridViewRegaleinsicht = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxRegal = new System.Windows.Forms.ComboBox();
+            this.comboBoxLager = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ButtonZurueck = new System.Windows.Forms.Button();
+            this.lagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegaleinsicht)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lagerBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridViewRegaleinsicht
+            // 
+            this.dataGridViewRegaleinsicht.AllowUserToAddRows = false;
+            this.dataGridViewRegaleinsicht.AllowUserToDeleteRows = false;
+            this.dataGridViewRegaleinsicht.AllowUserToResizeColumns = false;
+            this.dataGridViewRegaleinsicht.AllowUserToResizeRows = false;
+            this.dataGridViewRegaleinsicht.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRegaleinsicht.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRegaleinsicht.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewRegaleinsicht.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewRegaleinsicht.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewRegaleinsicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRegaleinsicht.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewRegaleinsicht.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridViewRegaleinsicht.Location = new System.Drawing.Point(12, 41);
+            this.dataGridViewRegaleinsicht.Name = "dataGridViewRegaleinsicht";
+            this.dataGridViewRegaleinsicht.ShowEditingIcon = false;
+            this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(898, 405);
+            this.dataGridViewRegaleinsicht.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(292, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Regal ";
+            // 
+            // comboBoxRegal
+            // 
+            this.comboBoxRegal.FormattingEnabled = true;
+            this.comboBoxRegal.Location = new System.Drawing.Point(353, 11);
+            this.comboBoxRegal.Name = "comboBoxRegal";
+            this.comboBoxRegal.Size = new System.Drawing.Size(194, 21);
+            this.comboBoxRegal.TabIndex = 2;
+            // 
+            // comboBoxLager
+            // 
+            this.comboBoxLager.FormattingEnabled = true;
+            this.comboBoxLager.Location = new System.Drawing.Point(68, 11);
+            this.comboBoxLager.Name = "comboBoxLager";
+            this.comboBoxLager.Size = new System.Drawing.Size(194, 21);
+            this.comboBoxLager.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Lager";
+            // 
+            // ButtonZurueck
+            // 
+            this.ButtonZurueck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonZurueck.Location = new System.Drawing.Point(831, 504);
+            this.ButtonZurueck.Name = "ButtonZurueck";
+            this.ButtonZurueck.Size = new System.Drawing.Size(91, 46);
+            this.ButtonZurueck.TabIndex = 5;
+            this.ButtonZurueck.Text = "Zurück";
+            this.ButtonZurueck.UseVisualStyleBackColor = true;
+            this.ButtonZurueck.Click += new System.EventHandler(this.ButtonZurueck_Click);
+            // 
+            // lagerBindingSource
+            // 
+            this.lagerBindingSource.DataSource = typeof(Lagerverwaltung.Model.Lager);
             // 
             // Regaleinsicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(934, 562);
+            this.Controls.Add(this.ButtonZurueck);
+            this.Controls.Add(this.comboBoxLager);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBoxRegal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridViewRegaleinsicht);
             this.Name = "Regaleinsicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Regaleinsicht";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegalFormClosing);
+            this.Load += new System.EventHandler(this.Regaleinsicht_Load);
+            this.Shown += new System.EventHandler(this.Regaleinsicht_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegaleinsicht)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lagerBindingSource)).EndInit();
             this.ResumeLayout(false);
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.B = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.D = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.E = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label1 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.A,
-            this.B,
-            this.C,
-            this.D,
-            this.E});
-			this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.dataGridView1.Location = new System.Drawing.Point(12, 41);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ShowEditingIcon = false;
-			this.dataGridView1.Size = new System.Drawing.Size(894, 405);
-			this.dataGridView1.TabIndex = 0;
-			// 
-			// A
-			// 
-			this.A.HeaderText = "A";
-			this.A.Name = "A";
-			// 
-			// B
-			// 
-			this.B.HeaderText = "B";
-			this.B.Name = "B";
-			// 
-			// C
-			// 
-			this.C.HeaderText = "C";
-			this.C.Name = "C";
-			// 
-			// D
-			// 
-			this.D.HeaderText = "D";
-			this.D.Name = "D";
-			// 
-			// E
-			// 
-			this.E.HeaderText = "E";
-			this.E.Name = "E";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(594, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(112, 20);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Ansicht Regal ";
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
-            "Regalitem"});
-			this.comboBox1.Location = new System.Drawing.Point(712, 12);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(194, 21);
-			this.comboBox1.TabIndex = 2;
-			// 
-			// comboBox2
-			// 
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
-            "Regalitem"});
-			this.comboBox2.Location = new System.Drawing.Point(395, 12);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(194, 21);
-			this.comboBox2.TabIndex = 4;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(339, 12);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(50, 20);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "Lager";
-			// 
-			// Regaleinsicht
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(918, 458);
-			this.Controls.Add(this.comboBox2);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.comboBox1);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.dataGridView1);
-			this.Name = "Regaleinsicht";
-			this.Text = "Regaleinsicht";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegalFormClosing);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn A;
-		private System.Windows.Forms.DataGridViewTextBoxColumn B;
-		private System.Windows.Forms.DataGridViewTextBoxColumn C;
-		private System.Windows.Forms.DataGridViewTextBoxColumn D;
-		private System.Windows.Forms.DataGridViewTextBoxColumn E;
+		private System.Windows.Forms.DataGridView dataGridViewRegaleinsicht;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox comboBoxRegal;
+		private System.Windows.Forms.ComboBox comboBoxLager;
 		private System.Windows.Forms.Label label2;
-	}
+        private System.Windows.Forms.BindingSource lagerBindingSource;
+        private System.Windows.Forms.Button ButtonZurueck;
+    }
 }
