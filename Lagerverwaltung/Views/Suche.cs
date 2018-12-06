@@ -16,7 +16,9 @@ namespace Lagerverwaltung.Views
 
         public Suche()
 		{
-			InitializeComponent();
+            DB.SucheSQL.HoleSuchergebnisse();
+
+            InitializeComponent();
 
             dataGridView1.AutoGenerateColumns = false;
 
@@ -45,11 +47,13 @@ namespace Lagerverwaltung.Views
         /// <param name="e"></param>
         private void SucheFormClosing(object sender, FormClosingEventArgs e)
 		{
-			Dashboard.Suche = null;
+            Model.Suche._dict.Clear();
+            Dashboard.Suche = null;
 		}
 
         private void buttonAbbrechen_Click(object sender, System.EventArgs e)
         {
+            Model.Suche._dict.Clear();
             this.Hide();
         }
 
