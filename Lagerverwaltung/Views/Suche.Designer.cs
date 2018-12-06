@@ -99,6 +99,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.textMengeVon = new System.Windows.Forms.TextBox();
             this.textMengeBis = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -397,7 +398,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(763, 183);
+            this.label10.Location = new System.Drawing.Point(763, 303);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 18);
             this.label10.TabIndex = 24;
@@ -417,7 +418,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(545, 143);
+            this.label12.Location = new System.Drawing.Point(545, 223);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 18);
             this.label12.TabIndex = 26;
@@ -427,7 +428,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(483, 183);
+            this.label13.Location = new System.Drawing.Point(483, 263);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(141, 18);
             this.label13.TabIndex = 27;
@@ -437,7 +438,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(518, 263);
+            this.label14.Location = new System.Drawing.Point(518, 303);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(106, 18);
             this.label14.TabIndex = 28;
@@ -540,7 +541,7 @@
             // textErstelltVon
             // 
             this.textErstelltVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textErstelltVon.Location = new System.Drawing.Point(632, 140);
+            this.textErstelltVon.Location = new System.Drawing.Point(632, 220);
             this.textErstelltVon.Name = "textErstelltVon";
             this.textErstelltVon.Size = new System.Drawing.Size(125, 24);
             this.textErstelltVon.TabIndex = 40;
@@ -564,7 +565,7 @@
             // textErstelltBis
             // 
             this.textErstelltBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textErstelltBis.Location = new System.Drawing.Point(797, 140);
+            this.textErstelltBis.Location = new System.Drawing.Point(797, 220);
             this.textErstelltBis.Name = "textErstelltBis";
             this.textErstelltBis.Size = new System.Drawing.Size(122, 24);
             this.textErstelltBis.TabIndex = 43;
@@ -580,7 +581,7 @@
             // textHaltbarkeitBis
             // 
             this.textHaltbarkeitBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHaltbarkeitBis.Location = new System.Drawing.Point(796, 260);
+            this.textHaltbarkeitBis.Location = new System.Drawing.Point(796, 300);
             this.textHaltbarkeitBis.Name = "textHaltbarkeitBis";
             this.textHaltbarkeitBis.Size = new System.Drawing.Size(123, 24);
             this.textHaltbarkeitBis.TabIndex = 45;
@@ -588,7 +589,7 @@
             // textHaltbarkeitVon
             // 
             this.textHaltbarkeitVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHaltbarkeitVon.Location = new System.Drawing.Point(632, 260);
+            this.textHaltbarkeitVon.Location = new System.Drawing.Point(632, 300);
             this.textHaltbarkeitVon.Name = "textHaltbarkeitVon";
             this.textHaltbarkeitVon.Size = new System.Drawing.Size(125, 24);
             this.textHaltbarkeitVon.TabIndex = 46;
@@ -596,7 +597,7 @@
             // textZuletztGeaendertBis
             // 
             this.textZuletztGeaendertBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textZuletztGeaendertBis.Location = new System.Drawing.Point(797, 180);
+            this.textZuletztGeaendertBis.Location = new System.Drawing.Point(797, 260);
             this.textZuletztGeaendertBis.Name = "textZuletztGeaendertBis";
             this.textZuletztGeaendertBis.Size = new System.Drawing.Size(122, 24);
             this.textZuletztGeaendertBis.TabIndex = 47;
@@ -604,7 +605,7 @@
             // textZuletztGeaendertVon
             // 
             this.textZuletztGeaendertVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textZuletztGeaendertVon.Location = new System.Drawing.Point(632, 180);
+            this.textZuletztGeaendertVon.Location = new System.Drawing.Point(632, 260);
             this.textZuletztGeaendertVon.Name = "textZuletztGeaendertVon";
             this.textZuletztGeaendertVon.Size = new System.Drawing.Size(125, 24);
             this.textZuletztGeaendertVon.TabIndex = 48;
@@ -716,7 +717,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(543, 223);
+            this.label25.Location = new System.Drawing.Point(543, 143);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(81, 18);
             this.label25.TabIndex = 61;
@@ -735,7 +736,7 @@
             // textMengeVon
             // 
             this.textMengeVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMengeVon.Location = new System.Drawing.Point(632, 220);
+            this.textMengeVon.Location = new System.Drawing.Point(632, 140);
             this.textMengeVon.Name = "textMengeVon";
             this.textMengeVon.Size = new System.Drawing.Size(125, 24);
             this.textMengeVon.TabIndex = 63;
@@ -743,16 +744,27 @@
             // textMengeBis
             // 
             this.textMengeBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMengeBis.Location = new System.Drawing.Point(797, 220);
+            this.textMengeBis.Location = new System.Drawing.Point(797, 140);
             this.textMengeBis.Name = "textMengeBis";
             this.textMengeBis.Size = new System.Drawing.Size(122, 24);
             this.textMengeBis.TabIndex = 62;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label27.Location = new System.Drawing.Point(533, 187);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(386, 13);
+            this.label27.TabIndex = 64;
+            this.label27.Text = "Datumseingabe als TT.MM.JJJJ (T = Tag, M = Monat, J = Jahr; z.B. 11.05.1996)";
             // 
             // Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 824);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.textMengeVon);
             this.Controls.Add(this.textMengeBis);
             this.Controls.Add(this.label25);
@@ -889,5 +901,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textMengeVon;
         private System.Windows.Forms.TextBox textMengeBis;
+        private System.Windows.Forms.Label label27;
     }
 }
