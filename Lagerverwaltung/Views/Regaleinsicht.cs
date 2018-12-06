@@ -69,5 +69,18 @@ namespace Lagerverwaltung.Views
 
             UpdateComboboxRegal();
         }
+
+        private void comboBoxLager_SelectedValueChanged(object sender, System.EventArgs e)
+        {
+           // comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
+           // comboBoxRegal.SelectedIndex = 0;
+
+        }
+
+        private void comboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
+            if (((Model.Lager)comboBoxLager.SelectedItem).Regalliste.Count == 0) comboBoxRegal.Text = "";
+        }
     }
 }
