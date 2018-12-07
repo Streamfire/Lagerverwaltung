@@ -52,10 +52,12 @@
             this.dataGridViewRegaleinsicht.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewRegaleinsicht.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridViewRegaleinsicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRegaleinsicht.ColumnHeadersVisible = false;
             this.dataGridViewRegaleinsicht.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewRegaleinsicht.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewRegaleinsicht.Location = new System.Drawing.Point(12, 41);
             this.dataGridViewRegaleinsicht.Name = "dataGridViewRegaleinsicht";
+            this.dataGridViewRegaleinsicht.RowHeadersVisible = false;
             this.dataGridViewRegaleinsicht.ShowEditingIcon = false;
             this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(898, 405);
             this.dataGridViewRegaleinsicht.TabIndex = 0;
@@ -87,8 +89,7 @@
             this.comboBoxLager.Name = "comboBoxLager";
             this.comboBoxLager.Size = new System.Drawing.Size(194, 21);
             this.comboBoxLager.TabIndex = 4;
-            this.comboBoxLager.SelectedIndexChanged += new System.EventHandler(this.comboBoxLager_SelectedIndexChanged);
-            this.comboBoxLager.SelectedValueChanged += new System.EventHandler(this.comboBoxLager_SelectedValueChanged);
+            this.comboBoxLager.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLager_SelectedIndexChanged);
             // 
             // label2
             // 

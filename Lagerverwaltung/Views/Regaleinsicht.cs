@@ -1,9 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Lagerverwaltung.Views
 {
 	public partial class Regaleinsicht : Form
 	{
+        private Dictionary<int , List<Model.Regalfach>> _regalfachMap;
+
 		public Regaleinsicht()
 		{
 			InitializeComponent();
@@ -35,6 +39,9 @@ namespace Lagerverwaltung.Views
 
             comboBoxLager.DataSource = new BindingSource(Model.Lager.HoleListe.Values, null);
 
+            //Grid vorbereiten
+            
+
         }
 
         private void UpdateComboboxRegal()
@@ -46,11 +53,9 @@ namespace Lagerverwaltung.Views
             //Eventuell Fehler, falls das ausgewählte Regal nicht in dem Lager enthalten ist
             if ((currentRegal = Dashboard.CurrentRegal) != null) comboBoxRegal.SelectedValue = Model.Regal.HoleNamensliste[currentRegal];
             else comboBoxRegal.SelectedIndex = 0;
-        }
 
-        private void UpdateGridView()
-        {
-            
+            //Grid anpassen
+            UpdateGridView();
         }
 
         private void ButtonZurueck_Click(object sender, System.EventArgs e)
@@ -70,17 +75,62 @@ namespace Lagerverwaltung.Views
             UpdateComboboxRegal();
         }
 
-        private void comboBoxLager_SelectedValueChanged(object sender, System.EventArgs e)
+        private void ComboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-           // comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
-           // comboBoxRegal.SelectedIndex = 0;
+            comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
+           // if (((Model.Lager)comboBoxLager.SelectedItem).Regalliste.Count == 0) comboBoxRegal.Text = "";
+
+            UpdateGridView();
+        }
+
+        private void UpdateGridView()
+        {
+            InitRegalfachMap();
+
 
         }
 
-        private void comboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-            comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
-            if (((Model.Lager)comboBoxLager.SelectedItem).Regalliste.Count == 0) comboBoxRegal.Text = "";
+        /// <summary>
+        /// Erstellt eine Map mit den Zeilen als 
+        /// </summary>
+        private void InitRegalfachMap() {
+            _regalfachMap = new Dictionary<int, List<Model.Regalfach>>();
+
+            //Zeilen und Spalten vorbereiten
+            for (int i = 1; i <= Model.Regal.HoleListe[Model.Regal.HoleNamensliste[comboBoxRegal.Text]].Zeilen; i++)
+            {
+                //_regalfachMap.Add(i, new List<Model.Regalfach>();
+            }
+
+            //Regalfächer einordnen
+            foreach (Model.Regalfach regalfach in Model.Regal.HoleListe[Model.Regal.HoleNamensliste[comboBoxRegal.Text]].Regalfachliste)
+            {
+                int[] pos = ParseRegalfachname(regalfach.Name);
+                _regalfachMap[pos[0]].Insert(pos[1], regalfach);
+            }
+        }
+
+        /// <summary>
+        /// Gibt die Zeile und Spalte eines Regalfachs in Abhängigkeit des Namens zurück
+        /// </summary>
+        /// <param name="regalfachname">Name des zu interpretierenden Regalfachs</param>
+        /// <returns>Array mit int[0] = Zeile, int[1] = Spalte, sofern im Namen richtig initialisiert</returns>
+        private int[] ParseRegalfachname(string regalfachname) {
+            int[] erg = new int[2];
+            string[] val = regalfachname.Split('-');
+
+            try
+            {
+                erg[0] = Convert.ToInt32(val[1]);
+                erg[1] = Convert.ToInt32(val[2]);
+            }
+            //Fehler in Name von Regalfach -> Falsches Format
+            catch
+            {
+                MessageBox.Show("Ungültiger Name des Regalfachs", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return erg;
         }
     }
 }
