@@ -36,6 +36,7 @@
             this.guestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonPasswortAendern = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -116,12 +117,24 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 7;
             // 
+            // buttonPasswortAendern
+            // 
+            this.buttonPasswortAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPasswortAendern.Location = new System.Drawing.Point(62, 152);
+            this.buttonPasswortAendern.Name = "buttonPasswortAendern";
+            this.buttonPasswortAendern.Size = new System.Drawing.Size(152, 34);
+            this.buttonPasswortAendern.TabIndex = 8;
+            this.buttonPasswortAendern.Text = "Passwort ändern";
+            this.buttonPasswortAendern.UseVisualStyleBackColor = true;
+            this.buttonPasswortAendern.Click += new System.EventHandler(this.buttonPasswortAendern_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 204);
+            this.ClientSize = new System.Drawing.Size(427, 199);
+            this.Controls.Add(this.buttonPasswortAendern);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guestBtn);
@@ -148,6 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonPasswortAendern;
     }
 }
 

@@ -163,6 +163,12 @@
     <Compile Include="Views\PaketHinzufuegen.Designer.cs">
       <DependentUpon>PaketHinzufuegen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PasswortAendern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PasswortAendern.Designer.cs">
+      <DependentUpon>PasswortAendern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProduktHinzufuegen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PaketHinzufuegen.resx">
       <DependentUpon>PaketHinzufuegen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PasswortAendern.resx">
+      <DependentUpon>PasswortAendern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProduktHinzufuegen.resx">
       <DependentUpon>ProduktHinzufuegen.cs</DependentUpon>

@@ -301,5 +301,10 @@ namespace Lagerverwaltung.Views
                 UpdateDataGridView();
             }
         }
+
+        private void Suche_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
