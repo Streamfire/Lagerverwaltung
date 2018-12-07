@@ -34,7 +34,7 @@
             this.textBoxAltesPasswort = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxNeuesPasswort = new System.Windows.Forms.TextBox();
-            this.buttonWeiter = new System.Windows.Forms.Button();
+            this.buttonOkay = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -93,15 +93,15 @@
             this.textBoxNeuesPasswort.Size = new System.Drawing.Size(216, 24);
             this.textBoxNeuesPasswort.TabIndex = 5;
             // 
-            // buttonWeiter
+            // buttonOkay
             // 
-            this.buttonWeiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWeiter.Location = new System.Drawing.Point(191, 239);
-            this.buttonWeiter.Name = "buttonWeiter";
-            this.buttonWeiter.Size = new System.Drawing.Size(97, 34);
-            this.buttonWeiter.TabIndex = 6;
-            this.buttonWeiter.Text = "Okay";
-            this.buttonWeiter.UseVisualStyleBackColor = true;
+            this.buttonOkay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOkay.Location = new System.Drawing.Point(191, 239);
+            this.buttonOkay.Name = "buttonOkay";
+            this.buttonOkay.Size = new System.Drawing.Size(97, 34);
+            this.buttonOkay.TabIndex = 6;
+            this.buttonOkay.Text = "Okay";
+            this.buttonOkay.UseVisualStyleBackColor = true;
             // 
             // buttonAbbrechen
             // 
@@ -131,7 +131,7 @@
             this.ClientSize = new System.Drawing.Size(416, 287);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonWeiter);
+            this.Controls.Add(this.buttonOkay);
             this.Controls.Add(this.textBoxNeuesPasswort);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxAltesPasswort);
@@ -154,7 +154,7 @@
         private System.Windows.Forms.TextBox textBoxAltesPasswort;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxNeuesPasswort;
-        private System.Windows.Forms.Button buttonWeiter;
+        private System.Windows.Forms.Button buttonOkay;
         private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.Label label4;
     }
