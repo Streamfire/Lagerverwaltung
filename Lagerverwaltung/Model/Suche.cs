@@ -39,7 +39,7 @@ namespace Lagerverwaltung.Model
         public static event EventHandler<EventArgs> SucheHinzugefuegt;
 
         //private
-        public static Dictionary<ulong, Suche> _dict = new Dictionary<ulong, Suche>();
+        private static Dictionary<ulong, Suche> _dict = new Dictionary<ulong, Suche>();
 
 
         public static ReadOnlyDictionary<ulong, Suche> HoleSuchergebnisse => new ReadOnlyDictionary<ulong, Suche>(_dict);
@@ -88,6 +88,10 @@ namespace Lagerverwaltung.Model
                 }
                 
             }
+        }
+        public static void ClearDictionary()
+        {
+            _dict.Clear();
         }
     }
 }

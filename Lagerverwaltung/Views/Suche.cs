@@ -47,13 +47,15 @@ namespace Lagerverwaltung.Views
         /// <param name="e"></param>
         private void SucheFormClosing(object sender, FormClosingEventArgs e)
 		{
-            Model.Suche._dict.Clear();
+            //Model.Suche._dict.Clear();
+            Model.Suche.ClearDictionary();
             Dashboard.Suche = null;
 		}
 
         private void buttonAbbrechen_Click(object sender, System.EventArgs e)
         {
-            Model.Suche._dict.Clear();
+            //Model.Suche._dict.Clear();
+            Model.Suche.ClearDictionary();
             this.Hide();
         }
 
@@ -275,7 +277,8 @@ namespace Lagerverwaltung.Views
 
             if (change > 0)
             {
-                Model.Suche._dict.Clear();
+                //Model.Suche._dict.Clear();
+                Model.Suche.ClearDictionary();
                 DB.SucheSQL.HoleSuchergebnisse( tmp.RegalName, tmp.RegalfachName, tmp.ProduktName, tmp.ProduktID, tmp.ProduktZeichnungsnummer, tmp.PaketName, tmp.PaketAnschaffungsgrund, tmp.ProduktGewicht, tmp.ProduktGewicht2,
                                                 tmp.ProduktPreis, tmp.ProduktPreis2, tmp.ProduktErstelltAm, tmp.ProduktErstelltAm2, tmp.ProduktGeaendertAm, tmp.ProduktGeaendertAm2, tmp.PaketMenge, tmp.PaketMenge2            ,
                                                 tmp.PaketHaltbarkeit, tmp.PaketHaltbarkeit2, tmp.Hoehe, tmp.Hoehe2, tmp.Laenge, tmp.Laenge2, tmp.Breite, tmp.Breite2, changed, change                                           );
@@ -288,7 +291,8 @@ namespace Lagerverwaltung.Views
             {
                 var obj = new object();
 
-                Model.Suche._dict.Clear();
+                //Model.Suche._dict.Clear();
+                Model.Suche.ClearDictionary();
 
                 DB.SucheSQL.HoleSuchergebnisse();
 
