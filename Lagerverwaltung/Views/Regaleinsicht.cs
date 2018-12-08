@@ -39,8 +39,6 @@ namespace Lagerverwaltung.Views
 
 
             comboBoxLager.DataSource = new BindingSource(Model.Lager.HoleListe.Values, null);
-
-            //Grid vorbereiten
             
 
         }
@@ -53,10 +51,8 @@ namespace Lagerverwaltung.Views
 
             //Eventuell Fehler, falls das ausgewählte Regal nicht in dem Lager enthalten ist
             if ((currentRegal = Dashboard.CurrentRegal) != null) comboBoxRegal.SelectedValue = Model.Regal.HoleNamensliste[currentRegal];
-            else comboBoxRegal.SelectedIndex = 0;
-
-            //Grid anpassen
-            UpdateGridView();
+            else if (comboBoxRegal.Items.Count != 0) comboBoxRegal.SelectedIndex = 0;
+            else comboBoxRegal.SelectedIndex = -1;
         }
 
         private void ButtonZurueck_Click(object sender, System.EventArgs e)
@@ -66,21 +62,30 @@ namespace Lagerverwaltung.Views
 
         private void Regaleinsicht_Shown(object sender, System.EventArgs e)
         {
-
+            
             //Auswahl Lager 1, Regal 1 oder bei Auswahl in Lagerverwaltung -> Auswahl des bereits ausgewählten Regals
             string currentLager;
 
             if ((currentLager = Dashboard.CurrentLager) != null) comboBoxLager.SelectedValue = Model.Lager.HoleNamensliste[currentLager];
-            else comboBoxLager.SelectedIndex = 0;
+            else if (comboBoxLager.Items.Count != 0) comboBoxLager.SelectedIndex = 0;
+            else comboBoxLager.SelectedIndex = -1;
 
             UpdateComboboxRegal();
+            
         }
 
         private void ComboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
-           if (((Model.Lager)comboBoxLager.SelectedItem).Regalliste.Count == 0) comboBoxRegal.Text = "";
+            if (comboBoxRegal.Items.Count <= 0)
+            {
+                dataGridViewRegaleinsicht.Rows.Clear();
+                dataGridViewRegaleinsicht.Columns.Clear();
+            }
+        }
 
+        private void ComboBoxRegal_SelectedIndexChanged(object sender, EventArgs e)
+        {
             UpdateGridView();
         }
 
@@ -94,33 +99,37 @@ namespace Lagerverwaltung.Views
 
 
                 //Standartaussehen für die einzelnen Cells im DGV
-                DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
-                cellStyle.BackColor = Color.LightGreen;
+                DataGridViewCellStyle cellStyle = new DataGridViewCellStyle
+                {
+                    BackColor = Color.LightGreen
+                };
+
 
                 //Spalten einfügen
-                //for (int i = 0; i < ((Model.Regal)comboBoxRegal.SelectedItem).Spalten; i++)
-                //{
                 dataGridViewRegaleinsicht.ColumnCount = ((Model.Regal)comboBoxRegal.SelectedItem).Spalten;
-                //}
+
+                for (int i = 0; i < ((Model.Regal)comboBoxRegal.SelectedItem).Spalten; i++)
+                {
+                    dataGridViewRegaleinsicht.Columns[i].Width =100;
+                }
 
 
                 //Zeilen erstellen
+                dataGridViewRegaleinsicht.RowCount = ((Model.Regal)comboBoxRegal.SelectedItem).Zeilen;
+
                 for (int i = ((Model.Regal)comboBoxRegal.SelectedItem).Zeilen; i >= 1; i--)
                 {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.DefaultCellStyle = cellStyle;
 
+                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - i].DefaultCellStyle = cellStyle;
+                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - i].Height = 100;
+                    
                     //Text in Zellen schreiben (z.B. Name des Fachs + eingelagertes Produkt usw.)
                     int z = 0;
                     foreach (Model.Regalfach regalfach in _regalfachMap[i])
                     {
-                        row.Cells[z].Value = ("Fach [{0},{1}}", z, i);
+                        dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - i].Cells[z].Value = String.Format("Fach [{0},{1}}", z, i);
                         z++;
                     }
-
-
-                    //Zeile zu DGV hinzufügen
-                    dataGridViewRegaleinsicht.Rows.Add(row);
 
                 }
 
@@ -172,5 +181,7 @@ namespace Lagerverwaltung.Views
 
             return erg;
         }
+
+
     }
 }

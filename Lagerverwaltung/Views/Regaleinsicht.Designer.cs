@@ -46,10 +46,10 @@
             this.dataGridViewRegaleinsicht.AllowUserToDeleteRows = false;
             this.dataGridViewRegaleinsicht.AllowUserToResizeColumns = false;
             this.dataGridViewRegaleinsicht.AllowUserToResizeRows = false;
-            this.dataGridViewRegaleinsicht.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewRegaleinsicht.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRegaleinsicht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewRegaleinsicht.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewRegaleinsicht.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewRegaleinsicht.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridViewRegaleinsicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRegaleinsicht.ColumnHeadersVisible = false;
@@ -59,7 +59,7 @@
             this.dataGridViewRegaleinsicht.Name = "dataGridViewRegaleinsicht";
             this.dataGridViewRegaleinsicht.RowHeadersVisible = false;
             this.dataGridViewRegaleinsicht.ShowEditingIcon = false;
-            this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(898, 405);
+            this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(898, 434);
             this.dataGridViewRegaleinsicht.TabIndex = 0;
             // 
             // label1
@@ -80,6 +80,7 @@
             this.comboBoxRegal.Name = "comboBoxRegal";
             this.comboBoxRegal.Size = new System.Drawing.Size(194, 21);
             this.comboBoxRegal.TabIndex = 2;
+            this.comboBoxRegal.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegal_SelectedIndexChanged);
             // 
             // comboBoxLager
             // 
@@ -103,6 +104,7 @@
             // 
             // ButtonZurueck
             // 
+            this.ButtonZurueck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonZurueck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonZurueck.Location = new System.Drawing.Point(831, 504);
             this.ButtonZurueck.Name = "ButtonZurueck";
