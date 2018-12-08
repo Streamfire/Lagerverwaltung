@@ -43,6 +43,11 @@ namespace Lagerverwaltung.Views
                 {
                     MessageBox.Show("Der Datensatz konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+				else
+				{
+					DB.LagerSQL.HoleLager(textBoxLagerName.Text);
+					Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+				}
 
                 
 

@@ -74,7 +74,24 @@ namespace Lagerverwaltung.DB
             }
         }
 
-        public static bool LoescheLager(ushort lager_id)
+		public static void HoleLager(string lager_name)
+		{
+			using (var cmd = new NpgsqlCommand())
+			{
+				cmd.Connection = conn;
+				cmd.CommandText = "SELECT * FROM lager WHERE name = @lager_name;";
+				cmd.Parameters.AddWithValue("lager_name", lager_name);
+
+				// Prüfe noch auch irgendwelche Fehler etc.
+				using (var reader = cmd.ExecuteReader())
+				{
+					reader.Read();
+					new Lager((ushort)reader.GetInt16(0), reader.GetString(1), new System.DateTime(3), new System.DateTime(4), (ushort)reader.GetInt16(6), reader.GetString(2), reader.GetString(5));
+				}
+			}
+		}
+
+		public static bool LoescheLager(ushort lager_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
