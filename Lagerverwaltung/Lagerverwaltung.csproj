@@ -80,6 +80,7 @@
     <Compile Include="Controller\AuthenticationController.cs" />
     <Compile Include="Controller\PaketHinzufuegenController.cs" />
     <Compile Include="Controller\ProduktHinzufuegenController.cs" />
+    <Compile Include="Controller\RegalHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
     <Compile Include="DB\SucheSQL.cs" />
     <Compile Include="Model\Artikeltyp.cs" />

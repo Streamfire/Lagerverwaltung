@@ -21,33 +21,74 @@ namespace Lagerverwaltung.Views
             this.Close();
         }
 
-		private void buttonRegalHinzufuegen_Click(object sender, EventArgs e)
+		private void ButtonRegalHinzufuegen_Click(object sender, EventArgs e)
 		{
-			byte zeilen = Convert.ToByte(this.textBoxZeilen.Text);
-			byte spalten = Convert.ToByte(this.textBoxSpalten.Text);
-            int aktuelleAnzahlFaecher = Regalfach.HoleListe.Values.Count;
-            Lager ausgewaehltesLager = (Lager)comboBoxAuswahlLager.SelectedItem;
+            if (Controller.RegalHinzufuegenController.ValidateData(textBoxRegalName.Text, textBoxZeilen.Text, textBoxSpalten.Text, textBoxRegalHoehe.Text, textBoxRegalBreite.Text,
+                                                                    textBoxRegalLaenge.Text, textBoxRegalfachHoehe.Text, textBoxRegalfachBreite.Text, textBoxRegalfachLaenge.Text,
+                                                                    textBoxWandStaerkeH.Text, textBoxWandStaerkeV.Text))
+            //Validierung erfolgreich
+            {
+                short spalten = Convert.ToInt16(textBoxSpalten.Text);
+                short zeilen = Convert.ToInt16(textBoxZeilen.Text);
+                string regalname = textBoxRegalName.Text;
+
+                if (DB.RegalSQL.ErstelleRegal(regalname,
+                                             (short)((Lager)comboBoxAuswahlLager.SelectedItem).LagerID,
+                                             spalten,
+                                             zeilen,
+                                             Convert.ToSingle(textBoxRegalHoehe.Text),
+                                             Convert.ToSingle(textBoxRegalBreite.Text),
+                                             Convert.ToSingle(textBoxRegalLaenge.Text),
+                                             Convert.ToSingle(textBoxWandStaerkeH.Text),
+                                             Convert.ToSingle(textBoxWandStaerkeV.Text)))
+
+                //Datensatz wurde erfolgreich in die DB gespeichert
+                {
+                    short regalID = DB.RegalSQL.HoleRegalID(regalname);
+
+                    //Regalfächer hinzufügen
+                    for (int z = 1; z <= zeilen; z++)
+                    {
+                        for (int s = 1; s <= spalten; s++)
+                        {
+                            //Name des Regalfachs: Regalname - Spalte - Zeile
+                            if (DB.RegalfachSQL.ErstelleRegalfach(String.Format("{0}-{1}-{2}", regalname, s, z),
+                                                                 regalID,
+                                                                 null,
+                                                                 Convert.ToSingle(textBoxRegalfachHoehe.Text),
+                                                                 Convert.ToSingle(textBoxRegalfachBreite.Text),
+                                                                 Convert.ToSingle(textBoxRegalfachLaenge.Text)) == false)
+                            {
+                                MessageBox.Show("Der Datensatz für das Regalfach konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+
+                }//END IF DB erfolgreich
+
+                //Datensatz konnte nicht gespeichert werden
+                else
+                {
+                    MessageBox.Show("Der Datensatz für das Regal konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                this.Close();
+            }
+
+            //Validierung fehlgeschlagen
+            else
+            {
+                MessageBox.Show("Die eingegebenen Daten sind nicht korrekt!", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
 
-            Regal n = new Regal((ushort)(Regal.HoleListe.Count + 1), ausgewaehltesLager.LagerID, this.textBoxRegalName.Text,zeilen,spalten, new DateTime(), new DateTime(), 0, 0, 0, 0, 0);
-
-			for (int z = 0; z < zeilen; z++)
-			{
-				for (int s = 0; s < spalten;  s++)
-				{
-                    //Falls in der DB die IDs mit 0 beginnen, die + 1 für die Berechnung der IDs entfernen
-					n.Regalfachliste.Add(new Regalfach((ushort)((zeilen * z) + s + aktuelleAnzahlFaecher + 1), n.RegalID, "" + z + ";" + s, new DateTime(), new DateTime(), 0, 0, 0, ""));
-
-				}
-			}
-
-
-			
-
-			//Dashboard.LagerListe[Dashboard.Verwaltung.getActiveTabIndex()].Regalliste.Add(n);
-
-			Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+			//Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
 			this.Close();
 		}
-	}
+
+        private void RegalHinzufügen_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

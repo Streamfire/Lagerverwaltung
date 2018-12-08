@@ -128,7 +128,7 @@
             this.buttonRegalHinzufuegen.TabIndex = 6;
             this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
             this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
-            this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.buttonRegalHinzufuegen_Click);
+            this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.ButtonRegalHinzufuegen_Click);
             // 
             // buttonAbbrechen
             // 
@@ -184,7 +184,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(88, 241);
+            this.label7.Location = new System.Drawing.Point(87, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 18);
             this.label7.TabIndex = 12;
@@ -194,7 +194,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(87, 283);
+            this.label8.Location = new System.Drawing.Point(87, 244);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 18);
             this.label8.TabIndex = 13;
@@ -214,7 +214,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(331, 286);
+            this.label10.Location = new System.Drawing.Point(330, 244);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 18);
             this.label10.TabIndex = 15;
@@ -224,7 +224,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(332, 241);
+            this.label11.Location = new System.Drawing.Point(331, 286);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 18);
             this.label11.TabIndex = 16;
@@ -233,7 +233,7 @@
             // textBoxRegalBreite
             // 
             this.textBoxRegalBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalBreite.Location = new System.Drawing.Point(179, 280);
+            this.textBoxRegalBreite.Location = new System.Drawing.Point(179, 241);
             this.textBoxRegalBreite.Name = "textBoxRegalBreite";
             this.textBoxRegalBreite.Size = new System.Drawing.Size(66, 24);
             this.textBoxRegalBreite.TabIndex = 17;
@@ -241,7 +241,7 @@
             // textBoxRegalLaenge
             // 
             this.textBoxRegalLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalLaenge.Location = new System.Drawing.Point(179, 238);
+            this.textBoxRegalLaenge.Location = new System.Drawing.Point(178, 283);
             this.textBoxRegalLaenge.Name = "textBoxRegalLaenge";
             this.textBoxRegalLaenge.Size = new System.Drawing.Size(66, 24);
             this.textBoxRegalLaenge.TabIndex = 18;
@@ -265,7 +265,7 @@
             // textBoxRegalfachBreite
             // 
             this.textBoxRegalfachBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalfachBreite.Location = new System.Drawing.Point(451, 280);
+            this.textBoxRegalfachBreite.Location = new System.Drawing.Point(450, 240);
             this.textBoxRegalfachBreite.Name = "textBoxRegalfachBreite";
             this.textBoxRegalfachBreite.Size = new System.Drawing.Size(66, 24);
             this.textBoxRegalfachBreite.TabIndex = 21;
@@ -273,7 +273,7 @@
             // textBoxRegalfachLaenge
             // 
             this.textBoxRegalfachLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalfachLaenge.Location = new System.Drawing.Point(451, 238);
+            this.textBoxRegalfachLaenge.Location = new System.Drawing.Point(450, 283);
             this.textBoxRegalfachLaenge.Name = "textBoxRegalfachLaenge";
             this.textBoxRegalfachLaenge.Size = new System.Drawing.Size(66, 24);
             this.textBoxRegalfachLaenge.TabIndex = 23;
@@ -292,7 +292,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(523, 241);
+            this.label13.Location = new System.Drawing.Point(522, 286);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 18);
             this.label13.TabIndex = 25;
@@ -302,7 +302,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(251, 283);
+            this.label14.Location = new System.Drawing.Point(251, 244);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 18);
             this.label14.TabIndex = 26;
@@ -312,7 +312,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(251, 241);
+            this.label15.Location = new System.Drawing.Point(250, 286);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 18);
             this.label15.TabIndex = 27;
@@ -332,7 +332,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(523, 283);
+            this.label17.Location = new System.Drawing.Point(522, 241);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 18);
             this.label17.TabIndex = 29;
@@ -437,6 +437,7 @@
             this.Name = "RegalHinzufügen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegalHinzufügen";
+            this.Load += new System.EventHandler(this.RegalHinzufügen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

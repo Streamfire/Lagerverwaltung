@@ -14,9 +14,40 @@ namespace Lagerverwaltung.DB
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
-        public static bool ErstelleRegal()
+        public static bool ErstelleRegal(string name, short lagerID, short zeilen, short spalten, float hoehe, float breite, float laenge, float wandH, float wandV)
         {
-            return true;
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO regal (name, lager_id, zeilen, spalten, höhe, breite, länge, v_wandstärke, h_wandstärke) VALUES (@name,@lagerID,@zeilen,@spalten,@hoehe,@breite,@laenge,@wandV,@wandH);";
+                cmd.Parameters.AddWithValue("name", name);
+                cmd.Parameters.AddWithValue("lagerID", lagerID);
+                cmd.Parameters.AddWithValue("zeilen", zeilen);
+                cmd.Parameters.AddWithValue("spalten", spalten);
+                cmd.Parameters.AddWithValue("hoehe", hoehe);
+                cmd.Parameters.AddWithValue("breite", breite);
+                cmd.Parameters.AddWithValue("laenge", laenge);
+                cmd.Parameters.AddWithValue("wandV", wandV);
+                cmd.Parameters.AddWithValue("wandH", wandH);
+                int result = cmd.ExecuteNonQuery();
+                return result == 0 ? false : true;
+            }
+        }
+
+        //NOTLÖSUNG
+        //TODO: Mit RETURNING arbeiten
+        public static short HoleRegalID(string regalname)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT regal_id FROM regal ORDER BY regal_id DESC LIMIT 1;";
+                var reader = cmd.ExecuteReader();
+                reader.Read();
+                short id = reader.GetInt16(0);
+                return id;
+            }
+
         }
 
         public static void HoleAlleRegale()
