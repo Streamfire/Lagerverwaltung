@@ -15,7 +15,9 @@ namespace Lagerverwaltung.Views
 			InitializeComponent();
 		}
         public static PasswortAendern PasswortAendern { get => _passwortAendern; set => _passwortAendern = value; }
+        public static NutzerHinzufuegen NutzerHinzufuegen { get => _nutzerHinzufuegen; set => _nutzerHinzufuegen = value; }
         private static PasswortAendern _passwortAendern = null;
+        private static NutzerHinzufuegen _nutzerHinzufuegen = null;
         /// <summary>
         /// Get Methode um zu bestimmen ob der Nutzer beim Login richtig lag.
         /// </summary>
@@ -55,6 +57,20 @@ namespace Lagerverwaltung.Views
             {
                 PasswortAendern = new PasswortAendern();
                 PasswortAendern.ShowDialog();
+            }
+        }
+
+        private void buttonNutzerHinzufuegen_Click(object sender, EventArgs e)
+        {
+            if (NutzerHinzufuegen != null)
+            {
+                NutzerHinzufuegen.ShowDialog(this);
+
+            }
+            else
+            {
+                NutzerHinzufuegen = new NutzerHinzufuegen();
+                NutzerHinzufuegen.ShowDialog();
             }
         }
     }

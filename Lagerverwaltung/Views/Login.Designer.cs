@@ -37,31 +37,32 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonPasswortAendern = new System.Windows.Forms.Button();
+            this.buttonNutzerHinzufuegen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(146, 62);
+            this.textBox1.Location = new System.Drawing.Point(122, 57);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 24);
+            this.textBox1.Size = new System.Drawing.Size(250, 24);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(146, 93);
+            this.textBox2.Location = new System.Drawing.Point(122, 96);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 24);
+            this.textBox2.Size = new System.Drawing.Size(250, 24);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
             // 
             // loginBtn
             // 
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.Location = new System.Drawing.Point(229, 152);
+            this.loginBtn.Location = new System.Drawing.Point(234, 148);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(84, 34);
+            this.loginBtn.Size = new System.Drawing.Size(99, 34);
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
@@ -73,26 +74,26 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Nutzername";
+            this.label1.Text = "Nutzername:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 91);
+            this.label2.Location = new System.Drawing.Point(25, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 18);
+            this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Passwort";
+            this.label2.Text = "Passwort:";
             // 
             // guestBtn
             // 
             this.guestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestBtn.Location = new System.Drawing.Point(327, 152);
+            this.guestBtn.Location = new System.Drawing.Point(354, 148);
             this.guestBtn.Name = "guestBtn";
-            this.guestBtn.Size = new System.Drawing.Size(84, 34);
+            this.guestBtn.Size = new System.Drawing.Size(99, 34);
             this.guestBtn.TabIndex = 5;
             this.guestBtn.Text = "Gast";
             this.guestBtn.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@
             // buttonPasswortAendern
             // 
             this.buttonPasswortAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPasswortAendern.Location = new System.Drawing.Point(62, 152);
+            this.buttonPasswortAendern.Location = new System.Drawing.Point(301, 204);
             this.buttonPasswortAendern.Name = "buttonPasswortAendern";
             this.buttonPasswortAendern.Size = new System.Drawing.Size(152, 34);
             this.buttonPasswortAendern.TabIndex = 8;
@@ -128,12 +129,24 @@
             this.buttonPasswortAendern.UseVisualStyleBackColor = true;
             this.buttonPasswortAendern.Click += new System.EventHandler(this.buttonPasswortAendern_Click);
             // 
+            // buttonNutzerHinzufuegen
+            // 
+            this.buttonNutzerHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNutzerHinzufuegen.Location = new System.Drawing.Point(122, 204);
+            this.buttonNutzerHinzufuegen.Name = "buttonNutzerHinzufuegen";
+            this.buttonNutzerHinzufuegen.Size = new System.Drawing.Size(152, 34);
+            this.buttonNutzerHinzufuegen.TabIndex = 9;
+            this.buttonNutzerHinzufuegen.Text = "Nutzer hinzufügen";
+            this.buttonNutzerHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonNutzerHinzufuegen.Click += new System.EventHandler(this.buttonNutzerHinzufuegen_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 199);
+            this.ClientSize = new System.Drawing.Size(475, 263);
+            this.Controls.Add(this.buttonNutzerHinzufuegen);
             this.Controls.Add(this.buttonPasswortAendern);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -162,6 +175,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonPasswortAendern;
+        private System.Windows.Forms.Button buttonNutzerHinzufuegen;
     }
 }
 

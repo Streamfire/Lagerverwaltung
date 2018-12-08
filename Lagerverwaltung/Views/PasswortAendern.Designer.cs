@@ -96,7 +96,7 @@
             // buttonOkay
             // 
             this.buttonOkay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOkay.Location = new System.Drawing.Point(191, 239);
+            this.buttonOkay.Location = new System.Drawing.Point(177, 229);
             this.buttonOkay.Name = "buttonOkay";
             this.buttonOkay.Size = new System.Drawing.Size(97, 34);
             this.buttonOkay.TabIndex = 6;
@@ -106,7 +106,7 @@
             // buttonAbbrechen
             // 
             this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(307, 239);
+            this.buttonAbbrechen.Location = new System.Drawing.Point(296, 229);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(97, 34);
             this.buttonAbbrechen.TabIndex = 7;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 287);
+            this.ClientSize = new System.Drawing.Size(415, 284);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.buttonOkay);
