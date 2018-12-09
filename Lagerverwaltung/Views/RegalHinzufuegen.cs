@@ -54,6 +54,7 @@ namespace Lagerverwaltung.Views
                             //Name des Regalfachs: Regalname - Spalte - Zeile
                             if (DB.RegalfachSQL.ErstelleRegalfach(String.Format("{0}-{1}-{2}", regalname, s, z),
                                                                  (short)regalID,
+                                                                 "",
                                                                  Convert.ToSingle(textBoxRegalfachHoehe.Text),
                                                                  Convert.ToSingle(textBoxRegalfachBreite.Text),
                                                                  Convert.ToSingle(textBoxRegalfachLaenge.Text)) == false)
