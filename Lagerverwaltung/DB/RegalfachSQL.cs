@@ -14,15 +14,14 @@ namespace Lagerverwaltung.DB
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
-        public static bool ErstelleRegalfach(string name, short regalID, string bemerkung, float hoehe, float breite, float laenge)
+        public static bool ErstelleRegalfach(string name, short regalID, float hoehe, float breite, float laenge)
         {
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO regalfach (name, regal_id, bemerkung, hoehe, breite, laenge) VALUES (@name,@regalID,@bemerkung,@hoehe,@breite,@laenge)";
+                cmd.CommandText = "INSERT INTO regalfach (name, regal_id, hoehe, breite, laenge) VALUES (@name,@regalID,@hoehe,@breite,@laenge)";
                 cmd.Parameters.AddWithValue("name", name);
                 cmd.Parameters.AddWithValue("regalID", regalID);
-                cmd.Parameters.AddWithValue("bemerkung", bemerkung);
                 cmd.Parameters.AddWithValue("hoehe", hoehe);
                 cmd.Parameters.AddWithValue("breite", breite);
                 cmd.Parameters.AddWithValue("laenge", laenge);

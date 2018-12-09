@@ -31,8 +31,9 @@ namespace Lagerverwaltung.Views
                 short spalten = Convert.ToInt16(textBoxSpalten.Text);
                 short zeilen = Convert.ToInt16(textBoxZeilen.Text);
                 string regalname = textBoxRegalName.Text;
+                int regalID;
 
-                if (DB.RegalSQL.ErstelleRegal(regalname,
+                if ((regalID = DB.RegalSQL.ErstelleRegal(regalname,
                                              (short)((Lager)comboBoxAuswahlLager.SelectedItem).LagerID,
                                              spalten,
                                              zeilen,
@@ -40,11 +41,10 @@ namespace Lagerverwaltung.Views
                                              Convert.ToSingle(textBoxRegalBreite.Text),
                                              Convert.ToSingle(textBoxRegalLaenge.Text),
                                              Convert.ToSingle(textBoxWandStaerkeH.Text),
-                                             Convert.ToSingle(textBoxWandStaerkeV.Text)))
+                                             Convert.ToSingle(textBoxWandStaerkeV.Text))) > 0)
 
                 //Datensatz wurde erfolgreich in die DB gespeichert
                 {
-                    short regalID = DB.RegalSQL.HoleRegalID(regalname);
 
                     //Regalfächer hinzufügen
                     for (int z = 1; z <= zeilen; z++)
@@ -53,8 +53,7 @@ namespace Lagerverwaltung.Views
                         {
                             //Name des Regalfachs: Regalname - Spalte - Zeile
                             if (DB.RegalfachSQL.ErstelleRegalfach(String.Format("{0}-{1}-{2}", regalname, s, z),
-                                                                 regalID,
-                                                                 null,
+                                                                 (short)regalID,
                                                                  Convert.ToSingle(textBoxRegalfachHoehe.Text),
                                                                  Convert.ToSingle(textBoxRegalfachBreite.Text),
                                                                  Convert.ToSingle(textBoxRegalfachLaenge.Text)) == false)
