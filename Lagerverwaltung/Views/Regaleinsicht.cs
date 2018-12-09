@@ -50,7 +50,7 @@ namespace Lagerverwaltung.Views
             string currentRegal;
 
             //Eventuell Fehler, falls das ausgewählte Regal nicht in dem Lager enthalten ist
-            if ((currentRegal = Dashboard.CurrentRegal) != null) comboBoxRegal.SelectedValue = Model.Regal.HoleNamensliste[currentRegal];
+            if ((currentRegal = Dashboard.CurrentRegal) != null) comboBoxRegal.SelectedValue = (ushort)(Model.Regal.GetIDByName(currentRegal));
             else if (comboBoxRegal.Items.Count != 0) comboBoxRegal.SelectedIndex = 0;
             else comboBoxRegal.SelectedIndex = -1;
         }
