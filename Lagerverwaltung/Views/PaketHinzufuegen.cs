@@ -44,7 +44,8 @@ namespace Lagerverwaltung.Views
             //Validierung erfolgreich
             {
 				//TODO:Paket der Paketliste hinzufügen
-				
+
+				DB.PaketSQL.ErstellePaket(textBoxPaketbezeichnung.Text,(uint)Views.Dashboard.Verwaltung.getLastFocusedPanel().Tag,Model.Produkt.GetProdukt(labelProduktAusgewählt.Text).ProduktID, Convert.ToInt32(AnzahlBox.Text), dateTimePickerHaltbarkeit.Value, textBoxAnschaffungsgrund.Text, Convert.ToInt32(textBoxHoehe.Text), Convert.ToInt32(textBoxBreite), Convert.ToInt32(textBoxLaenge));
                 Close();
             }
 

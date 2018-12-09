@@ -60,6 +60,7 @@
 			this.listViewProduktliste.TabIndex = 0;
 			this.listViewProduktliste.UseCompatibleStateImageBehavior = false;
 			this.listViewProduktliste.View = System.Windows.Forms.View.Details;
+			this.listViewProduktliste.SelectedIndexChanged += new System.EventHandler(this.listViewProduktliste_SelectedIndexChanged);
 			// 
 			// name_a
 			// 

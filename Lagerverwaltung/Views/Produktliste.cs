@@ -86,6 +86,11 @@ namespace Lagerverwaltung.Views
 		{
 			return lastSelected;
 		}
+
+		private void listViewProduktliste_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 
     

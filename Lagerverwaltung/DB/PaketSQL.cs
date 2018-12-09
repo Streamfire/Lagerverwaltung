@@ -14,9 +14,44 @@ namespace Lagerverwaltung.DB
             conn = DatabaseFactory.GetFactory().GetConnection();
         }
 
-        public static bool ErstellePaket()
-        {
-            return true;
+		public static bool ErstellePaket(string name, uint regalfach, uint produkt, int menge, System.DateTime haltbar_bis, string anschafungsgrund, int hoehe, int breite, int laenge)
+		{
+			var regfach = RegalfachSQL.HoleRegalfach(System.Convert.ToInt16(regalfach));
+			if (regfach.Paketliste.Count == 0)
+			{ //Fach is leer also kann ich das einfach buchen
+				using (var cmd = new NpgsqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = "INSERT INTO paket (name, erstellt_am,zuletzt_geändert,regalfach_id,produkt_id,menge,haltbarkeit,anschaffungsgrund,hoehe,breite,laenge) VALUES (@name, @erstellt_am,@zuletzt_geändert,@regalfach_id,@produkt_id,@menge,@haltbarkeit,@anschaffungsgrund,@hoehe,@breite,@laenge)";
+					cmd.Parameters.AddWithValue("name", name);
+					cmd.Parameters.AddWithValue("erstellt_am", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+					cmd.Parameters.AddWithValue("zuletzt_geändert", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+					cmd.Parameters.AddWithValue("regalfach_id", regalfach);
+					cmd.Parameters.AddWithValue("produkt_id", produkt);
+					cmd.Parameters.AddWithValue("menge", menge);
+					cmd.Parameters.AddWithValue("haltbarkeit", haltbar_bis.ToString("yyyy-MM-dd HH:mm:ss"));
+					cmd.Parameters.AddWithValue("anschaffungsgrund", anschafungsgrund);
+					cmd.Parameters.AddWithValue("hoehe", hoehe);
+					cmd.Parameters.AddWithValue("breite", breite);
+					cmd.Parameters.AddWithValue("laenge", laenge);
+
+
+					PaketSQL.HoleAllePakete();
+
+
+					DB.LagerSQL.HoleLager(Views.Dashboard.Verwaltung.getActiveTabPageName());
+					Views.Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+
+					int result = cmd.ExecuteNonQuery();
+					return result == 0 ? false : true;
+				}
+				
+
+			}
+			else
+			{//Fach ist mit anderem Produkt besetzt -> ich kanns nicht buchen
+				return false;
+			}
         }
 
         public static void HoleAllePakete()

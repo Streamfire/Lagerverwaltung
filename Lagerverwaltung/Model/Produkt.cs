@@ -56,7 +56,20 @@ namespace Lagerverwaltung.Model
 			return _dict.Values.ToList();
 		}
 
-        private void Hinzufuegen(Produkt tmp)
+		public static Produkt GetProdukt(string name)
+		{
+			foreach (Produkt produkt in _dict.Values)
+			{
+				if(produkt.Name==name)
+				{
+					return produkt;
+				}
+			}
+			return null;
+		}
+
+
+		private void Hinzufuegen(Produkt tmp)
         {
             _dict.Add(tmp.ProduktID,tmp);
             ProduktHinzugefuegt?.Invoke(this, EventArgs.Empty);

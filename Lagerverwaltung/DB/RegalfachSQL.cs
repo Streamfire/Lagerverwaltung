@@ -58,7 +58,7 @@ namespace Lagerverwaltung.DB
             }
         }
 
-        public static void HoleRegalfach(short regalfach_id)
+        public static Regalfach HoleRegalfach(short regalfach_id)
         {
             using (var cmd = new NpgsqlCommand())
             {
@@ -70,7 +70,8 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
+                    var ret =new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
+					return ret;
                 }
             }
         }

@@ -32,6 +32,7 @@ namespace Lagerverwaltung.Views
 				{
 					Accordion nestedRegal = new Accordion();
 					nestedRegal.Name = r.Name;
+					nestedRegal.Tag = r.RegalID;
 					nestedRegal.GotFocus += OnFocusedPanel;
 					_lagerAccordion.Add(nestedRegal, r.Name);
 
@@ -40,6 +41,7 @@ namespace Lagerverwaltung.Views
 						Accordion nestedFach = new Accordion();
 						nestedFach.GotFocus += OnFocusedPanel;
 						nestedFach.Name = f.Name;
+						nestedFach.Tag = f.RegalfachID;
 
 						Panel infoPanel = new Panel();
 						Label name = new Label();
