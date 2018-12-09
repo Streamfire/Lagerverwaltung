@@ -117,18 +117,18 @@ namespace Lagerverwaltung.Views
                 //Zeilen erstellen
                 dataGridViewRegaleinsicht.RowCount = ((Model.Regal)comboBoxRegal.SelectedItem).Zeilen;
 
-                for (int i = ((Model.Regal)comboBoxRegal.SelectedItem).Zeilen; i >= 1; i--)
+                for (int z = ((Model.Regal)comboBoxRegal.SelectedItem).Zeilen; z >= 1; z--)
                 {
 
-                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - i].DefaultCellStyle = cellStyle;
-                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - i].Height = 100;
+                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].DefaultCellStyle = cellStyle;
+                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Height = 100;
                     
                     //Text in Zellen schreiben (z.B. Name des Fachs + eingelagertes Produkt usw.)
-                    int z = 0;
-                    foreach (Model.Regalfach regalfach in _regalfachMap[i])
+                    int s = 0;
+                    foreach (Model.Regalfach regalfach in _regalfachMap[z])
                     {
-                        dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - i].Cells[z].Value = String.Format("Fach [{0},{1}}", z, i);
-                        z++;
+                        dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Value = String.Format("Fach [{0},{1}]", s, z);
+                        s++;
                     }
 
                 }
@@ -143,16 +143,23 @@ namespace Lagerverwaltung.Views
             _regalfachMap = new Dictionary<int, List<Model.Regalfach>>();
 
             //Zeilen und Spalten vorbereiten
+            //Key = Zeilen, Values = Liste mit Spalten
             for (int i = 1; i <= ((Model.Regal)comboBoxRegal.SelectedItem).Zeilen; i++)
             {
-                _regalfachMap.Add(i, new List<Model.Regalfach>());
+                _regalfachMap.Add(i, new List<Model.Regalfach>(((Model.Regal)comboBoxRegal.SelectedItem).Spalten));
+
+                for (int j = 0; j < ((Model.Regal)comboBoxRegal.SelectedItem).Spalten; j++)
+                {
+                    _regalfachMap[i].Add(null);
+                }
             }
 
             //Regalfächer einordnen
             foreach (Model.Regalfach regalfach in ((Model.Regal)comboBoxRegal.SelectedItem).Regalfachliste)
             {
                 int[] pos = ParseRegalfachname(regalfach.Name);
-                _regalfachMap[pos[0]].Insert(pos[1], regalfach);
+                List<Model.Regalfach> list = _regalfachMap[pos[0]];
+                list[pos[1] - 1] = regalfach;
             }
         }
 

@@ -91,6 +91,11 @@ namespace Lagerverwaltung.Model
             return false;
         }
 
+        public static void RegalfachHinzufuegen(ushort regalID, Regalfach tmp)
+        {
+            _dict[regalID].Regalfachliste.Add(tmp);
+        }
+
         public static int GetIDByName(string regalname)
         {
             foreach (KeyValuePair<ushort, Regal> entry in _dict)

@@ -45,6 +45,7 @@ namespace Lagerverwaltung.Model
             Laenge = laenge;
             Bemerkung = bemerkung;
             Paketliste = new List<Paket>();
+            Regal.RegalfachHinzufuegen(regal_id,this);
 
             Hinzufuegen(this);
         }
