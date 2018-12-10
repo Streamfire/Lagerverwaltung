@@ -47,25 +47,33 @@ namespace Lagerverwaltung.Views
         /// <param name="e"></param>
         private void SucheFormClosing(object sender, FormClosingEventArgs e)
 		{
-            //Model.Suche._dict.Clear();
+            this.Dispose();
             Model.Suche.ClearDictionary();
             Dashboard.Suche = null;
 		}
 
         private void buttonAbbrechen_Click(object sender, System.EventArgs e)
         {
-            //Model.Suche._dict.Clear();
+            this.Dispose();
             Model.Suche.ClearDictionary();
             this.Hide();
         }
 
         private void buttonSuchen_Click(object sender, System.EventArgs e)
         {
+            // Protokolliert genau welche Textboxen geändert wurden
             bool[] changed = new bool[25];
+            // Zählt die Anzahl der geänderten Textboxen
             int change = 0;
 
             Model.Suchkriterien tmp = new Model.Suchkriterien();
 
+            /* 
+             * Try um alle Abfragen der Textboxen, anstatt nur um die kritischen Abfragen, 
+             * damit verhindert wird, dass trotzdem gesucht wird, 
+             * auch wenn die Textbox dann geleert wird und ohne diese die Suchabfrage durchgeführt wird, 
+             * weil das warscheinlich nur zur Verwirrung des Benutzers führt 
+             */
             try
             {
                 if (!String.IsNullOrWhiteSpace(textRegalname.Text))
@@ -277,7 +285,6 @@ namespace Lagerverwaltung.Views
 
             if (change > 0)
             {
-                //Model.Suche._dict.Clear();
                 Model.Suche.ClearDictionary();
                 DB.SucheSQL.HoleSuchergebnisse( tmp.RegalName, tmp.RegalfachName, tmp.ProduktName, tmp.ProduktID, tmp.ProduktZeichnungsnummer, tmp.PaketName, tmp.PaketAnschaffungsgrund, tmp.ProduktGewicht, tmp.ProduktGewicht2,
                                                 tmp.ProduktPreis, tmp.ProduktPreis2, tmp.ProduktErstelltAm, tmp.ProduktErstelltAm2, tmp.ProduktGeaendertAm, tmp.ProduktGeaendertAm2, tmp.PaketMenge, tmp.PaketMenge2            ,
@@ -289,9 +296,6 @@ namespace Lagerverwaltung.Views
             }
             else
             {
-                var obj = new object();
-
-                //Model.Suche._dict.Clear();
                 Model.Suche.ClearDictionary();
 
                 DB.SucheSQL.HoleSuchergebnisse();
@@ -300,11 +304,6 @@ namespace Lagerverwaltung.Views
 
                 UpdateDataGridView();
             }
-        }
-
-        private void Suche_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

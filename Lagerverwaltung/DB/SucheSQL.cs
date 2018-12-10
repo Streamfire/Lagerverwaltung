@@ -70,11 +70,11 @@ namespace Lagerverwaltung.DB
                 {
                     if (change > 1)
                     {
-                        cmd.CommandText += "p.regalname = '" + regal_name + "' AND ";
+                        cmd.CommandText += "p.regalname like '%" + regal_name + "%' AND ";
                     }
                     else
                     {
-                        cmd.CommandText += "p.regalname = '" + regal_name + "' ;";
+                        cmd.CommandText += "p.regalname like '%" + regal_name + "%' ;";
                     }
                     change--;
                 }
@@ -83,11 +83,11 @@ namespace Lagerverwaltung.DB
                 {
                     if (change > 1)
                     {
-                        cmd.CommandText += "p.regalfachname = '" + regalfach_name + "' AND ";
+                        cmd.CommandText += "p.regalfachname like '%" + regalfach_name + "%' AND ";
                     }
                     else
                     {
-                        cmd.CommandText += "p.regalfachname = '" + regalfach_name + "' ;";
+                        cmd.CommandText += "p.regalfachname like '%" + regalfach_name + "%' ;";
                     }
                     change--;
                 }
@@ -96,11 +96,11 @@ namespace Lagerverwaltung.DB
                 {
                     if (change > 1)
                     {
-                        cmd.CommandText += "pr.name = '" + produkt_name + "' AND ";
+                        cmd.CommandText += "pr.name like '%" + produkt_name + "%' AND ";
                     }
                     else
                     {
-                        cmd.CommandText += "pr.name = '" + produkt_name + "' ;";
+                        cmd.CommandText += "pr.name like '%" + produkt_name + "%' ;";
                     }
                     change--;
                 }
@@ -122,11 +122,11 @@ namespace Lagerverwaltung.DB
                 {
                     if (change > 1)
                     {
-                        cmd.CommandText += "pr.zeichnungsnummer = '" + produkt_zeichnungsnummer + "' AND ";
+                        cmd.CommandText += "pr.zeichnungsnummer like '%" + produkt_zeichnungsnummer + "%' AND ";
                     }
                     else
                     {
-                        cmd.CommandText += "pr.zeichnungsnummer = '" + produkt_zeichnungsnummer + "' ;";
+                        cmd.CommandText += "pr.zeichnungsnummer like '%" + produkt_zeichnungsnummer + "%' ;";
                     }
                     change--;
                 }
@@ -135,11 +135,11 @@ namespace Lagerverwaltung.DB
                 {
                     if (change > 1)
                     {
-                        cmd.CommandText += "p.paketname = '" + paket_name + "' AND ";
+                        cmd.CommandText += "p.paketname like '%" + paket_name + "%' AND ";
                     }
                     else
                     {
-                        cmd.CommandText += "p.paketname = '" + paket_name + "' ;";
+                        cmd.CommandText += "p.paketname like '%" + paket_name + "%' ;";
                     }
                     change--;
                 }
@@ -148,11 +148,11 @@ namespace Lagerverwaltung.DB
                 {
                     if (change > 1)
                     {
-                        cmd.CommandText += "p.anschaffungsgrund = '" + paket_anschaffungsgrund + "' AND ";
+                        cmd.CommandText += "p.anschaffungsgrund like '%" + paket_anschaffungsgrund + "%' AND ";
                     }
                     else
                     {
-                        cmd.CommandText += "p.anschaffungsgrund = '" + paket_anschaffungsgrund + "' ;";
+                        cmd.CommandText += "p.anschaffungsgrund like '%" + paket_anschaffungsgrund + "%' ;";
                     }
                     change--;
                 }
