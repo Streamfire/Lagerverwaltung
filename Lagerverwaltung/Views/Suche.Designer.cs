@@ -823,7 +823,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suche";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SucheFormClosing);
-            this.Load += new System.EventHandler(this.Suche_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

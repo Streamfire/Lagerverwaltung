@@ -21,5 +21,10 @@ namespace Lagerverwaltung.Views
         {
             this.Close();
         }
+
+        private void buttonNutzerAnlegen_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

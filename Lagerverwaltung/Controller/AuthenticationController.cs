@@ -67,9 +67,19 @@ namespace Lagerverwaltung.Controller
         {
             using (RandomNumberGenerator rng = new RNGCryptoServiceProvider())
             {
-                byte[] tokenData = new byte[length];
+                byte[] tokenData = new byte[100];
                 rng.GetBytes(tokenData);
-                return Convert.ToBase64String(tokenData);
+                return Convert.ToBase64String(tokenData, 0, length).Substring(0, length);
+            }
+        }
+
+        public static string Create_Salt(int length, int length_byte)
+        {
+            using (RandomNumberGenerator rng = new RNGCryptoServiceProvider())
+            {
+                byte[] tokenData = new byte[length_byte];
+                rng.GetBytes(tokenData);
+                return Convert.ToBase64String(tokenData, 0, length).Substring(0, length);
             }
         }
 
