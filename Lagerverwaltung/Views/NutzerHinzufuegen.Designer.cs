@@ -92,6 +92,7 @@
             this.buttonNutzerAnlegen.TabIndex = 5;
             this.buttonNutzerAnlegen.Text = "Nutzer anlegen";
             this.buttonNutzerAnlegen.UseVisualStyleBackColor = true;
+            this.buttonNutzerAnlegen.Click += new System.EventHandler(this.buttonNutzerAnlegen_Click);
             // 
             // buttonAbbrechen
             // 

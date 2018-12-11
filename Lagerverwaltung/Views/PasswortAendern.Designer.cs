@@ -102,6 +102,7 @@
             this.buttonOkay.TabIndex = 6;
             this.buttonOkay.Text = "Okay";
             this.buttonOkay.UseVisualStyleBackColor = true;
+            this.buttonOkay.Click += new System.EventHandler(this.buttonOkay_Click);
             // 
             // buttonAbbrechen
             // 
