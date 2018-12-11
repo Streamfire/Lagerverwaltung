@@ -39,13 +39,13 @@ namespace Lagerverwaltung.Views
 
         private void ButtonPaketHinzufuegen_Click(object sender, EventArgs e)
         {
-            if(Controller.PaketHinzufuegenController.ValidateData(textBoxPaketbezeichnung.Text, textBoxAnschaffungsgrund.Text, dateTimePickerHaltbarkeit.Value, textBoxHoehe.Text, textBoxBreite.Text, textBoxLaenge.Text))
-            
+           if(Controller.PaketHinzufuegenController.ValidateData(textBoxPaketbezeichnung.Text, textBoxAnschaffungsgrund.Text, dateTimePickerHaltbarkeit.Value, textBoxHoehe.Text, textBoxBreite.Text, textBoxLaenge.Text))
             //Validierung erfolgreich
             {
 				//TODO:Paket der Paketliste hinzufügen
+				var a = (ushort)Views.Dashboard.Verwaltung.getLastFocusedPanel().Tag;
 
-				DB.PaketSQL.ErstellePaket(textBoxPaketbezeichnung.Text,(uint)Views.Dashboard.Verwaltung.getLastFocusedPanel().Tag,Model.Produkt.GetProdukt(labelProduktAusgewählt.Text).ProduktID, Convert.ToInt32(AnzahlBox.Text), dateTimePickerHaltbarkeit.Value, textBoxAnschaffungsgrund.Text, Convert.ToInt32(textBoxHoehe.Text), Convert.ToInt32(textBoxBreite), Convert.ToInt32(textBoxLaenge));
+				DB.PaketSQL.ErstellePaket(textBoxPaketbezeichnung.Text,a,Model.Produkt.GetProdukt(labelProduktAusgewählt.Text).ProduktID, Convert.ToInt32(AnzahlBox.Text), dateTimePickerHaltbarkeit.Value, textBoxAnschaffungsgrund.Text, Convert.ToInt32(textBoxHoehe.Text), Convert.ToInt32(textBoxBreite.Text), Convert.ToInt32(textBoxLaenge.Text));
                 Close();
             }
 

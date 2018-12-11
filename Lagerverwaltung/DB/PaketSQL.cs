@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System;
+using System.Diagnostics.Contracts;
 using Lagerverwaltung.Core;
 using Lagerverwaltung.Model;
 using Npgsql;
@@ -17,8 +18,8 @@ namespace Lagerverwaltung.DB
 		public static bool ErstellePaket(string name, uint regalfach, uint produkt, int menge, System.DateTime haltbar_bis, string anschafungsgrund, int hoehe, int breite, int laenge)
 		{
 			var regfach = RegalfachSQL.HoleRegalfach(System.Convert.ToInt16(regalfach));
-			if (regfach.Paketliste.Count == 0)
-			{ //Fach is leer also kann ich das einfach buchen
+			if (regfach.Paketliste.Count == 0||regfach.Paketliste[0].ProduktID==produkt)
+			{ //Fach is leer also kann ich das einfach buchen ODER Produkt im Fach ist dasselbe wie im neuen Paket
 				using (var cmd = new NpgsqlCommand())
 				{
 					cmd.Connection = conn;
@@ -40,6 +41,7 @@ namespace Lagerverwaltung.DB
 
 
 					DB.LagerSQL.HoleLager(Views.Dashboard.Verwaltung.getActiveTabPageName());
+					DB.PaketSQL.HoleLetztesPaket();
 					Views.Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
 
 					int result = cmd.ExecuteNonQuery();
@@ -54,7 +56,19 @@ namespace Lagerverwaltung.DB
 			}
         }
 
-        public static void HoleAllePakete()
+		private static void HoleLetztesPaket()
+		{
+			using (var cmd = new NpgsqlCommand())
+			{
+				cmd.CommandText = "SELECT MAX(paket_id) FROM paket";
+
+				int result = cmd.ExecuteNonQuery();
+
+				HolePaket(result);
+			}
+		}
+
+		public static void HoleAllePakete()
         {
             HoleAllePakete(int.MaxValue);
         }
