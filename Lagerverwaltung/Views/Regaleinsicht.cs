@@ -39,7 +39,6 @@ namespace Lagerverwaltung.Views
 
 
             comboBoxLager.DataSource = new BindingSource(Model.Lager.HoleListe.Values, null);
-            
 
         }
 
@@ -101,7 +100,13 @@ namespace Lagerverwaltung.Views
                 //Standartaussehen für die einzelnen Cells im DGV
                 DataGridViewCellStyle cellStyle = new DataGridViewCellStyle
                 {
-                    BackColor = Color.LightGreen
+                    BackColor = Color.LightGreen,
+                    Alignment = DataGridViewContentAlignment.TopLeft,
+                    WrapMode = DataGridViewTriState.True,
+                    SelectionBackColor = Color.FromArgb(0),
+                    SelectionForeColor = Color.Black
+
+
                 };
 
 
@@ -110,7 +115,7 @@ namespace Lagerverwaltung.Views
 
                 for (int i = 0; i < ((Model.Regal)comboBoxRegal.SelectedItem).Spalten; i++)
                 {
-                    dataGridViewRegaleinsicht.Columns[i].Width =100;
+                    dataGridViewRegaleinsicht.Columns[i].Width =150;
                 }
 
 
@@ -121,19 +126,37 @@ namespace Lagerverwaltung.Views
                 {
 
                     dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].DefaultCellStyle = cellStyle;
-                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Height = 100;
+                    dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Height = 150;
                     
                     //Text in Zellen schreiben (z.B. Name des Fachs + eingelagertes Produkt usw.)
                     int s = 0;
                     foreach (Model.Regalfach regalfach in _regalfachMap[z])
                     {
-                        dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Value = String.Format("Fach [{0},{1}]", s, z);
+                        string Ausgabe = "";
+                        Ausgabe += string.Format("Fach [{0},{1}] \n", s + 1, z);
+                        if (regalfach != null && regalfach.Paketliste.Count > 0)
+                        {
+                            Ausgabe += "Paketmenge: " + regalfach.Paketliste.Count + "\n";
+                            Ausgabe += "Produkt: " + Model.Produkt.HoleListe[regalfach.Paketliste[0].PaketID].Name + "\n";
+                            Ausgabe += "Stückzahl je Paket: " + regalfach.Paketliste[0].Menge + "\n";
+
+                            dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
+
+
+                        }
+
+
+                        dataGridViewRegaleinsicht.Rows[((Model.Regal)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Value = Ausgabe; 
                         s++;
+
+                        //if (regalfach.)
                     }
 
                 }
 
             } //END IF (kein Regal)
+
+            dataGridViewRegaleinsicht.ClearSelection();
         }
 
         /// <summary>
@@ -189,6 +212,20 @@ namespace Lagerverwaltung.Views
             return erg;
         }
 
+        private void dataGridViewRegaleinsicht_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //eventuell für später, falls Teile splitten und umlagern in der Regaleinsicht implementiert werden soll
+            /*
+            DataGridViewAdvancedBorderStyle borderStyle = dataGridViewRegaleinsicht.AdvancedCellBorderStyle;
+            borderStyle.Top = DataGridViewAdvancedCellBorderStyle.OutsetDouble;
+            borderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.OutsetDouble;
+            borderStyle.Left = DataGridViewAdvancedCellBorderStyle.OutsetDouble;
 
+
+
+            ((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex].AdjustCellBorderStyle(borderStyle, dataGridViewRegaleinsicht.AdvancedCellBorderStyle, false, false, false, false);
+
+            */
+        }
     }
 }

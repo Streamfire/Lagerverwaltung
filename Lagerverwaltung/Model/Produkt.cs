@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Lagerverwaltung.Core.Abstract;
 
@@ -26,6 +27,8 @@ namespace Lagerverwaltung.Model
 		private static Dictionary<uint, Produkt> _dict = new Dictionary<uint, Produkt>();
         public static event EventHandler<EventArgs> ProduktHinzugefuegt;
         public static event EventHandler<EventArgs> ProduktEntfernt;
+
+        public static ReadOnlyDictionary<uint, Produkt> HoleListe => new ReadOnlyDictionary<uint, Produkt>(_dict);
 
         public Produkt(uint produkt_id, string name, string zeichnungsnummer, float gewicht, float preis, DateTime erstellt_am, DateTime geaendert_am, ushort artikeltyp, float hoehe, float breite, float laenge)
         {

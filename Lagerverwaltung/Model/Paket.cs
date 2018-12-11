@@ -43,6 +43,7 @@ namespace Lagerverwaltung.Model
             Haltbarkeit = haltbarkeit;
             ProduktID = produkt_id;
             Anschaffungsgrund = anschaffungsgrund;
+            Regalfach.PaketHinzufuegen(regalfach_id, this);
 
             Hinzufuegen(this);
         }
