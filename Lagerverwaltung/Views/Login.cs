@@ -6,8 +6,6 @@ namespace Lagerverwaltung.Views
    
     public partial class Login : Form
 	{
-        private string _username = "admin";
-        private string _userpass = "admin";
         private static bool _adminuser = false;
 
         public Login()
@@ -46,12 +44,11 @@ namespace Lagerverwaltung.Views
 			this.Close();
 		}
 
-        private void buttonPasswortAendern_Click(object sender, EventArgs e)
+        private void ButtonPasswortAendern_Click(object sender, EventArgs e)
         {
             if (PasswortAendern != null)
             {
                 PasswortAendern.ShowDialog(this);
-
             }
             else
             {

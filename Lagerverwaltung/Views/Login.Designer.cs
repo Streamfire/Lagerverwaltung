@@ -115,7 +115,7 @@
             this.buttonPasswortAendern.TabIndex = 8;
             this.buttonPasswortAendern.Text = "Passwort ändern";
             this.buttonPasswortAendern.UseVisualStyleBackColor = true;
-            this.buttonPasswortAendern.Click += new System.EventHandler(this.buttonPasswortAendern_Click);
+            this.buttonPasswortAendern.Click += new System.EventHandler(this.ButtonPasswortAendern_Click);
             // 
             // buttonLogin
             // 
