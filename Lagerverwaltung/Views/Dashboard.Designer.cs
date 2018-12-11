@@ -38,6 +38,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nutzerHinzufügenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +48,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
             this.bearbeitenToolStripMenuItem,
+            this.loginToolStripMenuItem,
             this.hilfeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -64,7 +67,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.BeendenToolStripMenuItem_Click);
             // 
@@ -133,6 +136,21 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nutzerHinzufügenToolStripMenuItem});
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // nutzerHinzufügenToolStripMenuItem
+            // 
+            this.nutzerHinzufügenToolStripMenuItem.Name = "nutzerHinzufügenToolStripMenuItem";
+            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nutzerHinzufügenToolStripMenuItem.Text = "Nutzer hinzufügen";
+            this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.nutzerHinzufügenToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,5 +185,7 @@
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nutzerHinzufügenToolStripMenuItem;
     }
 }

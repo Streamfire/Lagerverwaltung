@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 86);
+            this.label1.Location = new System.Drawing.Point(21, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // textBoxNutzername
             // 
             this.textBoxNutzername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNutzername.Location = new System.Drawing.Point(177, 83);
+            this.textBoxNutzername.Location = new System.Drawing.Point(158, 65);
             this.textBoxNutzername.Name = "textBoxNutzername";
             this.textBoxNutzername.Size = new System.Drawing.Size(216, 24);
             this.textBoxNutzername.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 131);
+            this.label2.Location = new System.Drawing.Point(21, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 2;
@@ -70,7 +70,7 @@
             // textBoxAltesPasswort
             // 
             this.textBoxAltesPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAltesPasswort.Location = new System.Drawing.Point(177, 128);
+            this.textBoxAltesPasswort.Location = new System.Drawing.Point(158, 107);
             this.textBoxAltesPasswort.Name = "textBoxAltesPasswort";
             this.textBoxAltesPasswort.Size = new System.Drawing.Size(216, 24);
             this.textBoxAltesPasswort.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 177);
+            this.label3.Location = new System.Drawing.Point(21, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 18);
             this.label3.TabIndex = 4;
@@ -88,7 +88,7 @@
             // textBoxNeuesPasswort
             // 
             this.textBoxNeuesPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNeuesPasswort.Location = new System.Drawing.Point(177, 174);
+            this.textBoxNeuesPasswort.Location = new System.Drawing.Point(158, 151);
             this.textBoxNeuesPasswort.Name = "textBoxNeuesPasswort";
             this.textBoxNeuesPasswort.Size = new System.Drawing.Size(216, 24);
             this.textBoxNeuesPasswort.TabIndex = 5;
@@ -96,7 +96,7 @@
             // buttonOkay
             // 
             this.buttonOkay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOkay.Location = new System.Drawing.Point(177, 229);
+            this.buttonOkay.Location = new System.Drawing.Point(158, 207);
             this.buttonOkay.Name = "buttonOkay";
             this.buttonOkay.Size = new System.Drawing.Size(97, 34);
             this.buttonOkay.TabIndex = 6;
@@ -107,7 +107,7 @@
             // buttonAbbrechen
             // 
             this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(296, 229);
+            this.buttonAbbrechen.Location = new System.Drawing.Point(277, 207);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(97, 34);
             this.buttonAbbrechen.TabIndex = 7;
@@ -119,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 30);
+            this.label4.Location = new System.Drawing.Point(28, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 26);
             this.label4.TabIndex = 8;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 284);
+            this.ClientSize = new System.Drawing.Size(389, 262);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.buttonOkay);

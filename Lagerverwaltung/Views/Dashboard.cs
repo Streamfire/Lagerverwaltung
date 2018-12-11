@@ -88,7 +88,8 @@ namespace Lagerverwaltung.Views
 		public static Regaleinsicht Regaleinsicht { get => _regaleinsicht; set => _regaleinsicht = value; }
 		public static Suche Suche { get => _suche; set => _suche = value; }
 		public static Verwaltung Verwaltung { get => _verwaltung; set => _verwaltung = value; }
-		public static List<Lager> LagerListe { get => _lagerliste; set => _lagerliste = value; }
+        public static NutzerHinzufuegen NutzerHinzufuegen { get => _nutzerHinzufuegen; set => _nutzerHinzufuegen = value; }
+        public static List<Lager> LagerListe { get => _lagerliste; set => _lagerliste = value; }
         public static List<Produkt> ProduktListe { get ; set; }
         public static List<Artikeltyp> ArtikeltypListe { get; set; }
         public static string CurrentLager { get; set; }
@@ -101,8 +102,9 @@ namespace Lagerverwaltung.Views
 		private static Regaleinsicht _regaleinsicht = null;
 		private static Suche _suche = null;
 		private static Verwaltung _verwaltung=null;
+        private static NutzerHinzufuegen _nutzerHinzufuegen = null;
 
-		private void DashFormClosing(object sender, FormClosingEventArgs e)
+        private void DashFormClosing(object sender, FormClosingEventArgs e)
 		{
 			Application.Exit();
 		}
@@ -201,6 +203,20 @@ namespace Lagerverwaltung.Views
         private void BeendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void nutzerHinzufügenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NutzerHinzufuegen != null)
+            {
+                NutzerHinzufuegen.ShowDialog(this);
+
+            }
+            else
+            {
+                NutzerHinzufuegen = new NutzerHinzufuegen();
+                NutzerHinzufuegen.ShowDialog();
+            }
         }
     }
 }

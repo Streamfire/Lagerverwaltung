@@ -30,14 +30,13 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.loginBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonPasswortAendern = new System.Windows.Forms.Button();
-            this.buttonNutzerHinzufuegen = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -56,17 +55,6 @@
             this.textBox2.Size = new System.Drawing.Size(250, 24);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.Location = new System.Drawing.Point(234, 148);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(99, 34);
-            this.loginBtn.TabIndex = 2;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -91,7 +79,7 @@
             // guestBtn
             // 
             this.guestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestBtn.Location = new System.Drawing.Point(354, 148);
+            this.guestBtn.Location = new System.Drawing.Point(319, 137);
             this.guestBtn.Name = "guestBtn";
             this.guestBtn.Size = new System.Drawing.Size(99, 34);
             this.guestBtn.TabIndex = 5;
@@ -121,7 +109,7 @@
             // buttonPasswortAendern
             // 
             this.buttonPasswortAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPasswortAendern.Location = new System.Drawing.Point(301, 204);
+            this.buttonPasswortAendern.Location = new System.Drawing.Point(28, 137);
             this.buttonPasswortAendern.Name = "buttonPasswortAendern";
             this.buttonPasswortAendern.Size = new System.Drawing.Size(152, 34);
             this.buttonPasswortAendern.TabIndex = 8;
@@ -129,31 +117,29 @@
             this.buttonPasswortAendern.UseVisualStyleBackColor = true;
             this.buttonPasswortAendern.Click += new System.EventHandler(this.buttonPasswortAendern_Click);
             // 
-            // buttonNutzerHinzufuegen
+            // buttonLogin
             // 
-            this.buttonNutzerHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNutzerHinzufuegen.Location = new System.Drawing.Point(122, 204);
-            this.buttonNutzerHinzufuegen.Name = "buttonNutzerHinzufuegen";
-            this.buttonNutzerHinzufuegen.Size = new System.Drawing.Size(152, 34);
-            this.buttonNutzerHinzufuegen.TabIndex = 9;
-            this.buttonNutzerHinzufuegen.Text = "Nutzer hinzufügen";
-            this.buttonNutzerHinzufuegen.UseVisualStyleBackColor = true;
-            this.buttonNutzerHinzufuegen.Click += new System.EventHandler(this.buttonNutzerHinzufuegen_Click);
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Location = new System.Drawing.Point(214, 137);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(99, 34);
+            this.buttonLogin.TabIndex = 10;
+            this.buttonLogin.Text = "Login";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Login
             // 
-            this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 263);
-            this.Controls.Add(this.buttonNutzerHinzufuegen);
+            this.ClientSize = new System.Drawing.Size(430, 184);
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonPasswortAendern);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guestBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Login";
@@ -168,14 +154,13 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Button guestBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonPasswortAendern;
-        private System.Windows.Forms.Button buttonNutzerHinzufuegen;
+        private System.Windows.Forms.Button buttonLogin;
     }
 }
 
