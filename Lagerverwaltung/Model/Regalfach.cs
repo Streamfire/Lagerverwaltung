@@ -45,6 +45,7 @@ namespace Lagerverwaltung.Model
             Laenge = laenge;
             Bemerkung = bemerkung;
             Paketliste = new List<Paket>();
+            Regal.RegalfachHinzufuegen(regal_id,this);
 
             Hinzufuegen(this);
         }
@@ -53,6 +54,10 @@ namespace Lagerverwaltung.Model
         {
             _dict.Add(tmp.RegalfachID,tmp);
             RegalfachHinzugefuegt?.Invoke(this, EventArgs.Empty);
+        }
+        public static void PaketHinzufuegen(ushort regalfachID, Paket tmp)
+        {
+            _dict[regalfachID].Paketliste.Add(tmp);
         }
 
         public static bool Entfernen(ref Regalfach tmp)

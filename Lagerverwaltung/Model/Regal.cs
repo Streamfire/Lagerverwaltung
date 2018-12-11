@@ -25,13 +25,13 @@ namespace Lagerverwaltung.Model
         public List<Regalfach> Regalfachliste { get; set; }
 
         private static Dictionary<ushort, Regal> _dict = new Dictionary<ushort, Regal>();
-        private static Dictionary<string, ushort> _nameDict = new Dictionary<string, ushort>();
+        //private static Dictionary<string, ushort> _nameDict = new Dictionary<string, ushort>();
 
         public static event EventHandler<EventArgs> RegalHinzugefuegt;
         public static event EventHandler<EventArgs> RegalEntfernt;
 
         public static ReadOnlyDictionary<ushort, Regal> HoleListe => new ReadOnlyDictionary<ushort, Regal>(_dict);
-        public static ReadOnlyDictionary<string, ushort> HoleNamensliste => new ReadOnlyDictionary<string, ushort>(_nameDict);
+        //public static ReadOnlyDictionary<string, ushort> HoleNamensliste => new ReadOnlyDictionary<string, ushort>(_nameDict);
 
         public Regal(ushort regal_id, ushort lager_id, string name, byte zeilen, byte spalten, DateTime erstellt_am, DateTime geaendert_am, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
@@ -75,7 +75,7 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Regal tmp)
         {
-            _nameDict.Add(tmp.Name, tmp.RegalID);
+            //_nameDict.Add(tmp.Name, tmp.RegalID);
             _dict.Add(tmp.RegalID,tmp);
             RegalHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
@@ -89,6 +89,24 @@ namespace Lagerverwaltung.Model
                 return true;
             }
             return false;
+        }
+
+        public static void RegalfachHinzufuegen(ushort regalID, Regalfach tmp)
+        {
+            _dict[regalID].Regalfachliste.Add(tmp);
+        }
+
+        public static int GetIDByName(string regalname)
+        {
+            foreach (KeyValuePair<ushort, Regal> entry in _dict)
+            {
+                if (entry.Value.Name.Equals(regalname))
+                {
+                    return entry.Key;
+                }
+            }
+
+            return -1;
         }
     }
 }

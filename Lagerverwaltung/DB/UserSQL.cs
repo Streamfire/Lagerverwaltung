@@ -101,7 +101,7 @@ namespace Lagerverwaltung.DB
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO user (password, salt) VALUES (@password, @salt) WHERE username = @username";
+                cmd.CommandText = "UPDATE \"user\" SET password = @password, salt = @salt WHERE username = @username;";
                 cmd.Parameters.AddWithValue("username", username);
                 cmd.Parameters.AddWithValue("password", password_hash);
                 cmd.Parameters.AddWithValue("salt", salt);

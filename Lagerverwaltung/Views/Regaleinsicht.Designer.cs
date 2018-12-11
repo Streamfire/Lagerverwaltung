@@ -56,11 +56,14 @@
             this.dataGridViewRegaleinsicht.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewRegaleinsicht.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewRegaleinsicht.Location = new System.Drawing.Point(12, 41);
+            this.dataGridViewRegaleinsicht.MultiSelect = false;
             this.dataGridViewRegaleinsicht.Name = "dataGridViewRegaleinsicht";
+            this.dataGridViewRegaleinsicht.ReadOnly = true;
             this.dataGridViewRegaleinsicht.RowHeadersVisible = false;
             this.dataGridViewRegaleinsicht.ShowEditingIcon = false;
             this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(898, 434);
             this.dataGridViewRegaleinsicht.TabIndex = 0;
+            this.dataGridViewRegaleinsicht.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRegaleinsicht_CellMouseClick);
             // 
             // label1
             // 

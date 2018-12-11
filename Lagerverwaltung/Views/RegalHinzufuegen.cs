@@ -64,6 +64,13 @@ namespace Lagerverwaltung.Views
                         }
                     }
 
+                    //NL für Anzeige der Regale
+                    DB.RegalSQL.HoleRegal(regalID);
+                    DB.RegalfachSQL.HoleLastXRegalfach(zeilen * spalten);
+                    Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+
+
+
                 }//END IF DB erfolgreich
 
                 //Datensatz konnte nicht gespeichert werden
