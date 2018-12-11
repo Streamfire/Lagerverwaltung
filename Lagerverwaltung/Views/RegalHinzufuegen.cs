@@ -66,8 +66,8 @@ namespace Lagerverwaltung.Views
 
                     //NL für Anzeige der Regale
                     DB.RegalSQL.HoleRegal(regalID);
+                    DB.RegalfachSQL.HoleLastXRegalfach(zeilen * spalten);
                     Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
-
 
 
 

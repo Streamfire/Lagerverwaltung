@@ -75,6 +75,26 @@ namespace Lagerverwaltung.DB
             }
         }
 
+        public static void HoleLastXRegalfach(int anzahl)
+        {
+            using (var cmd = new NpgsqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM regalfach ORDER BY erstellt_am DESC LIMIT @limit;";
+                cmd.Parameters.AddWithValue("limit", anzahl);
+
+                // Prüfe noch auch irgendwelche Fehler etc.
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // wenn feld null dann Exception!
+                        new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(6), reader.GetFloat(8), reader.GetFloat(7), reader.GetString(5));
+                    }
+                }
+            }
+        }
+
         public static bool LoescheRegalfach(int regalfach_id)
         {
             using (var cmd = new NpgsqlCommand())
