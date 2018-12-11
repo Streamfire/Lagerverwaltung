@@ -70,7 +70,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    var ret =new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetString(8));
+					var ret=new Regalfach((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(4), reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(3), reader.GetFloat(6), reader.GetFloat(8), reader.GetFloat(7), reader.GetString(5));
 					return ret;
                 }
             }

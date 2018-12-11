@@ -50,6 +50,10 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Paket tmp)
         {
+			if (_dict.ContainsKey(tmp.PaketID))
+			{
+				_dict.Remove(tmp.PaketID);
+			}
             _dict.Add(tmp.PaketID,tmp);
             PaketHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
