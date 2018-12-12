@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Lagerverwaltung.Core.Abstract;
-using System.Globalization;
+﻿using Lagerverwaltung.Core.Abstract;
 
-namespace Lagerverwaltung.Model
+namespace Lagerverwaltung.Core
 {
     public sealed class Suchkriterien : Base
     {

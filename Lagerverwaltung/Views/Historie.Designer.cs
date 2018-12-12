@@ -68,7 +68,7 @@
             this.Name = "Historie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "History";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistorieFormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Historie_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

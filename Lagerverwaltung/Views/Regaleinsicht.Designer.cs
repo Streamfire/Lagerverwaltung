@@ -63,7 +63,7 @@
             this.dataGridViewRegaleinsicht.ShowEditingIcon = false;
             this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(898, 434);
             this.dataGridViewRegaleinsicht.TabIndex = 0;
-            this.dataGridViewRegaleinsicht.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRegaleinsicht_CellMouseClick);
+            this.dataGridViewRegaleinsicht.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewRegaleinsicht_CellMouseClick);
             // 
             // label1
             // 
@@ -135,7 +135,6 @@
             this.Name = "Regaleinsicht";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Regaleinsicht";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegalFormClosing);
             this.Load += new System.EventHandler(this.Regaleinsicht_Load);
             this.Shown += new System.EventHandler(this.Regaleinsicht_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegaleinsicht)).EndInit();

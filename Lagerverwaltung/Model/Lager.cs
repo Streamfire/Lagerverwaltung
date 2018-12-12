@@ -66,6 +66,11 @@ namespace Lagerverwaltung.Model
             _dict[lagerID].Regalliste.Add(tmp);
         }
 
+        public static void Reset()
+        {
+            _dict.Clear();
+            _nameDict.Clear();
+        }
 
     }
 }

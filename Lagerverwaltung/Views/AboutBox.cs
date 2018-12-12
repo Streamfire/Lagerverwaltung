@@ -96,5 +96,10 @@ namespace Lagerverwaltung.Views
             }
         }
         #endregion
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

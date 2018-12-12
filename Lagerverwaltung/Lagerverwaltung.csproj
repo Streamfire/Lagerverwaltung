@@ -31,7 +31,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -63,6 +63,12 @@
     <Reference Include="Npgsql, Version=4.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.0.4\lib\net451\Npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="QueryBuilder, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.1.1.3\lib\net45\QueryBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlKata.Execution, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.Execution.1.1.3\lib\net451\SqlKata.Execution.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -90,21 +96,40 @@
     <Compile Include="Controller\ProduktHinzufuegenController.cs" />
     <Compile Include="Controller\RegalHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
+    <Compile Include="DB\HistorieSQL.cs" />
+    <Compile Include="DB\SqlStatements.cs" />
+    <Compile Include="DB\SqlStatements.Historie.cs" />
+    <Compile Include="DB\SqlStatements.Lager.cs" />
+    <Compile Include="DB\SqlStatements.Lagertyp.cs" />
+    <Compile Include="DB\SqlStatements.Paket.cs" />
+    <Compile Include="DB\SqlStatements.Produkt.cs" />
+    <Compile Include="DB\SqlStatements.Regal.cs" />
+    <Compile Include="DB\SqlStatements.Regalfach.cs" />
+    <Compile Include="DB\SqlStatements.Rollen.cs" />
+    <Compile Include="DB\SqlStatements.Suche.cs" />
+    <Compile Include="DB\SqlStatements.User.cs" />
     <Compile Include="DB\SucheSQL.cs" />
     <Compile Include="Model\Artikeltyp.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />
     <Compile Include="Core\Interfaces\IBase.cs" />
+    <Compile Include="Model\ArtikeltypModel.cs" />
+    <Compile Include="Model\Historie.cs" />
+    <Compile Include="Model\HistorieModel.cs" />
     <Compile Include="Model\Lager.cs" />
+    <Compile Include="Model\LagerModel.cs" />
     <Compile Include="Model\Lagertyp.cs" />
+    <Compile Include="Model\LagertypModel.cs" />
     <Compile Include="Model\Paket.cs" />
+    <Compile Include="Model\PaketModel.cs" />
     <Compile Include="Model\Produkt.cs" />
+    <Compile Include="Model\ProduktModel.cs" />
     <Compile Include="Model\Regal.cs" />
     <Compile Include="Model\Regalfach.cs" />
-    <Compile Include="Model\Rolle.cs" />
-    <Compile Include="Model\Suche.cs" />
-    <Compile Include="Model\Suchkriterien.cs" />
+    <Compile Include="Model\RegalfachModel.cs" />
+    <Compile Include="Model\RegalModel.cs" />
+    <Compile Include="Core\Suche.cs" />
+    <Compile Include="Core\Suchkriterien.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Historie.cs" />
     <Compile Include="ExpandablePanel\Accordion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,15 +138,14 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DB\ProduktSQL.cs" />
-    <Compile Include="DB\HistorieSQL.cs" />
     <Compile Include="DB\ArtikeltypSQL.cs" />
     <Compile Include="DB\LagertypSQL.cs" />
     <Compile Include="DB\PaketSQL.cs" />
-    <Compile Include="DB\RollenSQL.cs" />
     <Compile Include="DB\LagerSQL.cs" />
     <Compile Include="DB\RegalfachSQL.cs" />
     <Compile Include="DB\RegalSQL.cs" />
     <Compile Include="DB\UserSQL.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Views\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,12 +238,6 @@
     <Compile Include="Views\RegalHinzufuegen.Designer.cs">
       <DependentUpon>RegalHinzufuegen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Suche.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,9 +304,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RegalHinzufuegen.resx">
       <DependentUpon>RegalHinzufuegen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Suche.resx">
       <DependentUpon>Suche.cs</DependentUpon>

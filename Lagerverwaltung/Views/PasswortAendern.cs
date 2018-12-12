@@ -18,12 +18,12 @@ namespace Lagerverwaltung.Views
             
         }
 
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void buttonOkay_Click(object sender, EventArgs e)
+        private void ButtonOkay_Click(object sender, EventArgs e)
         {
             if (Lagerverwaltung.Controller.AuthenticationController.Login(textBoxNutzername.Text, textBoxAltesPasswort.Text))
             {
@@ -38,7 +38,7 @@ namespace Lagerverwaltung.Views
                     MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
                 }
-                this.Close();
+                Close();
             }
             else
                 MessageBox.Show("Der Nutzername oder das Passwort sind ungültig!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);

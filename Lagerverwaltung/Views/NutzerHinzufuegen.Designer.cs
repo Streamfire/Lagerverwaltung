@@ -92,7 +92,7 @@
             this.buttonNutzerAnlegen.TabIndex = 5;
             this.buttonNutzerAnlegen.Text = "Nutzer anlegen";
             this.buttonNutzerAnlegen.UseVisualStyleBackColor = true;
-            this.buttonNutzerAnlegen.Click += new System.EventHandler(this.buttonNutzerAnlegen_Click);
+            this.buttonNutzerAnlegen.Click += new System.EventHandler(this.ButtonNutzerAnlegen_Click);
             // 
             // buttonAbbrechen
             // 
@@ -103,7 +103,7 @@
             this.buttonAbbrechen.TabIndex = 6;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // NutzerHinzufuegen
             // 

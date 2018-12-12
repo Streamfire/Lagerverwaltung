@@ -19,6 +19,11 @@ namespace Lagerverwaltung.Model
         public static event EventHandler<EventArgs> UserHinzugefuegt;
         public static event EventHandler<EventArgs> UserEntfernt;
 
+        public User()
+        {
+
+        }
+
         public User(ushort user_id, ushort rollen_id, string vorname, string nachname, string username, DateTime erstellt_am, DateTime letzter_login, DateTime zuletzt_geaendert)
         {
             Contract.Requires(user_id >= 1);

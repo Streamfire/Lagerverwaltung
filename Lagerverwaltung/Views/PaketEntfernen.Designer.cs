@@ -73,6 +73,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Entfernen";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // buttonAbbrechen
             // 
@@ -83,7 +84,7 @@
             this.buttonAbbrechen.TabIndex = 4;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // PaketEntfernen
             // 

@@ -7,39 +7,16 @@ namespace Lagerverwaltung.Views
 	public partial class Historie : Form
 	{
         private ReadOnlyDictionary<ulong,Model.Historie> readonly_dict;
-        //private List<Model.Historie> _list = new List<Model.Historie>();
         private List<Model.Historie> _result = new List<Model.Historie>();
         private BindingSource source = new BindingSource();
 
 		public Historie()
 		{
 			InitializeComponent();
-
+            DB.SqlStatements.HoleHistorie();
             readonly_dict = Model.Historie.HoleListe;
-            //GenerateList();
             UpdateDataGridView();
-
         }
-
-        /*
-        private void GenerateList()
-        {
-            foreach (var item in readonly_dict.Values)
-            {
-                _list.Add(item);
-            }
-        }
-        */
-
-		/// <summary>
-		/// Wenn das Fenster geschlossen wird wird die Referenz im Dashboard auf null gesetzt.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void HistorieFormClosing(object sender, FormClosingEventArgs e)
-		{
-			Dashboard.Historie = null;
-		}
 
         private void UpdateDataGridView(List<Model.Historie> list = null)
         {
@@ -59,9 +36,8 @@ namespace Lagerverwaltung.Views
             if(textBoxSearch.TextLength >=1)
             {
                 var expression = textBoxSearch.Text.ToLower();
-                ulong num=0;
                 _result.Clear();
-                if(ulong.TryParse(expression,out num))
+                if (ulong.TryParse(expression,out ulong num))
                 {
                     foreach(var item in readonly_dict.Values)
                     {
@@ -89,6 +65,11 @@ namespace Lagerverwaltung.Views
             {
                 UpdateDataGridView();
             }
+        }
+
+        private void Historie_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Model.Historie.Reset();
         }
     }
 }

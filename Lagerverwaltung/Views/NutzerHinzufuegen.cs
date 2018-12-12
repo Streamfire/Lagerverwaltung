@@ -17,14 +17,14 @@ namespace Lagerverwaltung.Views
             InitializeComponent();
         }
 
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void buttonNutzerAnlegen_Click(object sender, EventArgs e)
+        private void ButtonNutzerAnlegen_Click(object sender, EventArgs e)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

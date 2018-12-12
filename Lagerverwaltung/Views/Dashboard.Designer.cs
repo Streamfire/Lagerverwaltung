@@ -149,7 +149,7 @@
             this.nutzerHinzufügenToolStripMenuItem.Name = "nutzerHinzufügenToolStripMenuItem";
             this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nutzerHinzufügenToolStripMenuItem.Text = "Nutzer hinzufügen";
-            this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.nutzerHinzufügenToolStripMenuItem_Click);
+            this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.NutzerHinzufügenToolStripMenuItem_Click);
             // 
             // Dashboard
             // 

@@ -13,7 +13,7 @@ namespace Lagerverwaltung.Views
             InitializeComponent();
 
 
-			/*
+            /*
             //TODO: Produkte aus DB oder SW-Liste laden
             _produktListe = new List<Core.Produkt>
             {
@@ -25,15 +25,17 @@ namespace Lagerverwaltung.Views
                 
             };
             */
-			UpdateForm( Dashboard.ProduktListe);
+
+			UpdateForm();
 			
       
         }
-		public void UpdateForm(List<Model.Produkt> _produktListe)
+		public void UpdateForm()
 		{
 			listViewProduktliste.Items.Clear();
+            var test = Model.Produkt.GetProdukts();
 
-			foreach (Model.Produkt produkt in _produktListe)
+			foreach (Model.Produkt produkt in test)
 			{
 				listViewProduktliste.Items.Add(new ListViewItem(new string[] {
 					produkt.Name,
@@ -43,29 +45,21 @@ namespace Lagerverwaltung.Views
 					produkt.ErstelltAm.ToString(),
 					produkt.GeaendertAm.ToString() }));
 			}
-			listViewProduktliste.Items[0].Focused = true;
-			listViewProduktliste.Items[0].Selected = true;
+            if(listViewProduktliste.Items.Count>0)
+            {
+                listViewProduktliste.Items[0].Focused = true;
+                listViewProduktliste.Items[0].Selected = true;
+            }
 		}
 
         private void Schliessen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
-
-        public static ProduktHinzufuegen ProduktHinzufuegen { get; set; }
 
     private void Produkt_hinzufuegen_Click(object sender, EventArgs e)
         {
-            if (ProduktHinzufuegen != null)
-            {
-                ProduktHinzufuegen.ShowDialog(this);
-
-            }
-            else
-            {
-                ProduktHinzufuegen = new ProduktHinzufuegen();
-                ProduktHinzufuegen.ShowDialog();
-            }
+            new ProduktHinzufuegen().ShowDialog();
 
         }
 
@@ -77,7 +71,7 @@ namespace Lagerverwaltung.Views
 		private void Auswaehlen_Click(object sender, EventArgs e)
 		{
 			lastSelected = listViewProduktliste.SelectedItems[0].Text;
-			this.Close();
+			Close();
 		}
 
 		string lastSelected;
@@ -87,11 +81,16 @@ namespace Lagerverwaltung.Views
 			return lastSelected;
 		}
 
-		private void listViewProduktliste_SelectedIndexChanged(object sender, EventArgs e)
+		private void ListViewProduktliste_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
+            //throw new NotImplementedException();
 		}
-	}
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     
 }

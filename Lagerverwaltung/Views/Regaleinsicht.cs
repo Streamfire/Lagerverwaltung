@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
@@ -13,16 +14,6 @@ namespace Lagerverwaltung.Views
 		{
 			InitializeComponent();
         }
-
-        /// <summary>
-        /// Wenn das Fenster geschlossen wird wird die Referenz im Dashboard auf null gesetzt.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RegalFormClosing(object sender, FormClosingEventArgs e)
-		{
-			Dashboard.Regaleinsicht = null;
-		}
 
         private void Regaleinsicht_Load(object sender, System.EventArgs e)
         {
@@ -37,14 +28,18 @@ namespace Lagerverwaltung.Views
             //DB Daten laden
 
 
-
-            comboBoxLager.DataSource = new BindingSource(Model.Lager.HoleListe.Values, null);
+            DB.LagerSQL.HoleAlleLager(); // testweise!
+            DB.RegalSQL.HoleAlleRegale(); // testweise!
+            comboBoxLager.DataSource = new BindingSource().DataSource = Model.Lager.HoleListe.Values.ToList();
 
         }
 
         private void UpdateComboboxRegal()
         {
-            comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
+            if(comboBoxLager.Items.Count>0)
+            {
+                comboBoxRegal.DataSource = new BindingSource().DataSource = ((Model.Lager)comboBoxLager.SelectedItem).Regalliste.ToList();
+            }
 
             string currentRegal;
 
@@ -75,12 +70,13 @@ namespace Lagerverwaltung.Views
 
         private void ComboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            comboBoxRegal.DataSource = new BindingSource(((Model.Lager)comboBoxLager.SelectedItem).Regalliste, null);
+            
             if (comboBoxRegal.Items.Count <= 0)
             {
                 dataGridViewRegaleinsicht.Rows.Clear();
                 dataGridViewRegaleinsicht.Columns.Clear();
             }
+            comboBoxRegal.DataSource = new BindingSource().DataSource = ((Model.Lager)comboBoxLager.SelectedItem).Regalliste.ToList();
         }
 
         private void ComboBoxRegal_SelectedIndexChanged(object sender, EventArgs e)
@@ -212,7 +208,7 @@ namespace Lagerverwaltung.Views
             return erg;
         }
 
-        private void dataGridViewRegaleinsicht_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewRegaleinsicht_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //eventuell für später, falls Teile splitten und umlagern in der Regaleinsicht implementiert werden soll
             /*

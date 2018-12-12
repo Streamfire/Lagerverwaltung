@@ -139,7 +139,7 @@
             this.buttonAbbrechen.TabIndex = 7;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // label4
             // 

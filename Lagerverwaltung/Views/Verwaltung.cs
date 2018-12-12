@@ -1,119 +1,68 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-	public partial class Verwaltung : Form
+    public partial class Verwaltung : Form
 	{
 		public Verwaltung()
 		{
-			InitializeComponent();
+            InitializeComponent();
+
+            // Muss unbedingt geändert werden!
+            DB.LagerSQL.HoleAlleLager();
+            DB.RegalSQL.HoleAlleRegale();
+            DB.RegalfachSQL.HoleAlleRegalfach();
+            DB.PaketSQL.HoleAllePakete();
+            DB.ProduktSQL.HoleAlleProdukte();
+
+            UpdateForm(Model.Lager.HoleListe);
 		}
 
-		/// <summary>
-		/// Wenn das Fenster geschlossen wird wird die Referenz im Dashboard auf null gesetzt.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void VerwaltungFormClosing(object sender, FormClosingEventArgs e)
-		{
-			Dashboard.Verwaltung = null;
-		}
-
-        public static PaketHinzufuegen PaketHinzufuegen { get => _paketHinzufuegen; set => _paketHinzufuegen = value; }
-        public static PaketEntfernen PaketEntfernen { get => _paketEntfernen; set => _paketEntfernen = value; }
-        public static RegalHinzufügen RegalHinzufügen { get => _regalHinzufuegen; set => _regalHinzufuegen = value; }
-        public static RegalAendern_Entfernen RegalAendern_Entfernen { get => _regalAendernEnt; set => _regalAendernEnt = value; }
-        public static LagerHinzufuegen LagerHinzufuegen { get => _lagerHinzufuegen; set => _lagerHinzufuegen = value; }
-        public static LagerEntfernen LagerEntfernen { get => _lagerEntfernen; set => _lagerEntfernen = value; }
-        private static PaketHinzufuegen _paketHinzufuegen = null;
-        private static PaketEntfernen _paketEntfernen = null;
-        private static RegalHinzufügen _regalHinzufuegen = null;
-        private static RegalAendern_Entfernen _regalAendernEnt = null;
-        private static LagerHinzufuegen _lagerHinzufuegen = null;
-        private static LagerEntfernen _lagerEntfernen = null;
-        private void buttonRegalHinzufuegen_Click(object sender, System.EventArgs e)
+        private void ButtonRegalHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            if (RegalHinzufügen != null)
-            {
-                RegalHinzufügen.ShowDialog(this);
-
-            }
-            else
-            {
-                RegalHinzufügen = new RegalHinzufügen();
-                RegalHinzufügen.ShowDialog();
-            }
+            new RegalHinzufügen().ShowDialog();
         }
 
-        private void buttonLagerHinzufuegen_Click(object sender, System.EventArgs e)
+        private void ButtonLagerHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            if (LagerHinzufuegen != null)
-            {
-                LagerHinzufuegen.ShowDialog(this);
-
-            }
-            else
-            {
-                LagerHinzufuegen = new LagerHinzufuegen();
-                LagerHinzufuegen.ShowDialog();
-            }
+            new LagerHinzufuegen().ShowDialog();
         }
 
-        private void buttonPaketHinzufuegen_Click(object sender, System.EventArgs e)
+        private void ButtonPaketHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            if (PaketHinzufuegen != null)
-            {
-                PaketHinzufuegen.ShowDialog(this);
-
-            }
-            else
-            {
-                PaketHinzufuegen = new PaketHinzufuegen();
-                PaketHinzufuegen.ShowDialog();
-            }
+            new PaketHinzufuegen().ShowDialog();
         }
-        private void buttonPaketEntfernen_Click(object sender, System.EventArgs e)
+        private void ButtonPaketEntfernen_Click(object sender, System.EventArgs e)
         {
-            if (PaketEntfernen != null)
-            {
-                PaketEntfernen.ShowDialog(this);
-
-            }
-            else
-            {
-                PaketEntfernen = new PaketEntfernen();
-                PaketEntfernen.ShowDialog();
-            }
+            new PaketEntfernen().ShowDialog();
         }
-        private void buttonRegalEntfernen_Click(object sender, System.EventArgs e)
+        private void ButtonRegalEntfernen_Click(object sender, System.EventArgs e)
         {
-            if (RegalAendern_Entfernen != null)
-            {
-                RegalAendern_Entfernen.ShowDialog(this);
-
-            }
-            else
-            {
-                RegalAendern_Entfernen = new RegalAendern_Entfernen();
-                RegalAendern_Entfernen.ShowDialog();
-            }
+            new RegalAendern_Entfernen().ShowDialog();
         }
-        private void buttonLagerEntfernen_Click(object sender, System.EventArgs e)
+        private void ButtonLagerEntfernen_Click(object sender, System.EventArgs e)
         {
-            if (LagerEntfernen != null)
-            {
-                LagerEntfernen.ShowDialog(this);
-
-            }
-            else
-            {
-                LagerEntfernen = new LagerEntfernen();
-                LagerEntfernen.ShowDialog();
-            }
+            new LagerEntfernen().ShowDialog();
         }
-        private void buttonZurück_Click(object sender, System.EventArgs e)
+        private void ButtonZurück_Click(object sender, System.EventArgs e)
         {
-            Hide();
+            Model.Lager.Reset();
+            Model.Regal.Reset();
+            Model.Regalfach.Reset();
+            Model.Paket.Reset();
+            Model.Produkt.Reset();
+            Close();
+        }
+
+        private void ButtonPaketUmlagern_Click(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ButtonLagerungOptimieren_Click(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

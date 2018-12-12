@@ -135,6 +135,7 @@
             this.buttonÄndern.TabIndex = 9;
             this.buttonÄndern.Text = "Ändern";
             this.buttonÄndern.UseVisualStyleBackColor = true;
+            this.buttonÄndern.Click += new System.EventHandler(this.ButtonAendern_Click);
             // 
             // buttonEntfernen
             // 
@@ -145,6 +146,7 @@
             this.buttonEntfernen.TabIndex = 10;
             this.buttonEntfernen.Text = "Entfernen";
             this.buttonEntfernen.UseVisualStyleBackColor = true;
+            this.buttonEntfernen.Click += new System.EventHandler(this.ButtonEntfernen_Click);
             // 
             // buttonAbbrechen
             // 
@@ -155,7 +157,7 @@
             this.buttonAbbrechen.TabIndex = 11;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // RegalAendern_Entfernen
             // 

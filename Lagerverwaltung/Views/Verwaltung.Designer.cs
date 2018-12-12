@@ -1,18 +1,22 @@
-﻿using Lagerverwaltung.Model;
-using Opulos.Core.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Lagerverwaltung.Model;
+using Opulos.Core.UI;
 
 namespace Lagerverwaltung.Views
 {
-	public partial class Verwaltung
+    public partial class Verwaltung
 	{
-		/// <summary>
-		/// verarbeitet die Lageliste aus dem Dash und erstellt dynamisch Tabpages, Akkordions und zusatinfo Panele
-		/// </summary>
-		/// <param name="lagerListe">die Lagerliste, übergeben vom Dashboard</param>
-		public void UpdateForm(IReadOnlyDictionary<ushort,Model.Lager> lagerListe)
+        private Accordion _lagerAccordion;
+        private static Accordion _lastFocusedAccordion;
+        private static TabPage _lastFocusedPage;
+
+        /// <summary>
+        /// verarbeitet die Lageliste aus dem Dash und erstellt dynamisch Tabpages, Akkordions und zusatinfo Panele
+        /// </summary>
+        /// <param name="lagerListe">die Lagerliste, übergeben vom Dashboard</param>
+        public void UpdateForm(IReadOnlyDictionary<ushort,Model.Lager> lagerListe)
 		{
 			//Reset Form
 			tabControl1.Controls.Clear();
@@ -110,7 +114,14 @@ namespace Lagerverwaltung.Views
 
 
 			_lastFocusedAccordion = _lagerAccordion;
-			_lastFocusedPage = tabControl1.TabPages[0];
+            if(tabControl1.TabPages.Count > 0)
+            {
+                _lastFocusedPage = tabControl1.TabPages[0];
+            }
+            else
+            {
+                _lastFocusedPage = null;
+            }
 		}
 		 
 		private void OnFocusedPanel(Object sender, EventArgs e)
@@ -188,151 +199,148 @@ namespace Lagerverwaltung.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.buttonPaketHinzufuegen = new System.Windows.Forms.Button();
-			this.buttonPaketEntfernen = new System.Windows.Forms.Button();
-			this.buttonLagerEntfernen = new System.Windows.Forms.Button();
-			this.buttonLagerHinzufuegen = new System.Windows.Forms.Button();
-			this.buttonLagerungOptimieren = new System.Windows.Forms.Button();
-			this.buttonPaketUmlagern = new System.Windows.Forms.Button();
-			this.buttonRegalHinzufuegen = new System.Windows.Forms.Button();
-			this.buttonRegalEntfernen = new System.Windows.Forms.Button();
-			this.buttonZurück = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Location = new System.Drawing.Point(-2, 53);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1127, 548);
-			this.tabControl1.TabIndex = 0;
-			// 
-			// buttonPaketHinzufuegen
-			// 
-			this.buttonPaketHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonPaketHinzufuegen.Location = new System.Drawing.Point(2, 1);
-			this.buttonPaketHinzufuegen.Name = "buttonPaketHinzufuegen";
-			this.buttonPaketHinzufuegen.Size = new System.Drawing.Size(110, 46);
-			this.buttonPaketHinzufuegen.TabIndex = 1;
-			this.buttonPaketHinzufuegen.Text = "Paket hinzufügen";
-			this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
-			this.buttonPaketHinzufuegen.Click += new System.EventHandler(this.buttonPaketHinzufuegen_Click);
-			// 
-			// buttonPaketEntfernen
-			// 
-			this.buttonPaketEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonPaketEntfernen.Location = new System.Drawing.Point(118, 1);
-			this.buttonPaketEntfernen.Name = "buttonPaketEntfernen";
-			this.buttonPaketEntfernen.Size = new System.Drawing.Size(113, 46);
-			this.buttonPaketEntfernen.TabIndex = 2;
-			this.buttonPaketEntfernen.Text = "Paket entfernen";
-			this.buttonPaketEntfernen.UseVisualStyleBackColor = true;
-			this.buttonPaketEntfernen.Click += new System.EventHandler(this.buttonPaketEntfernen_Click);
-			// 
-			// buttonLagerEntfernen
-			// 
-			this.buttonLagerEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonLagerEntfernen.Location = new System.Drawing.Point(897, 1);
-			this.buttonLagerEntfernen.Name = "buttonLagerEntfernen";
-			this.buttonLagerEntfernen.Size = new System.Drawing.Size(113, 46);
-			this.buttonLagerEntfernen.TabIndex = 3;
-			this.buttonLagerEntfernen.Text = "Lager entfernen";
-			this.buttonLagerEntfernen.UseVisualStyleBackColor = true;
-			this.buttonLagerEntfernen.Click += new System.EventHandler(this.buttonLagerEntfernen_Click);
-			// 
-			// buttonLagerHinzufuegen
-			// 
-			this.buttonLagerHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonLagerHinzufuegen.Location = new System.Drawing.Point(778, 1);
-			this.buttonLagerHinzufuegen.Name = "buttonLagerHinzufuegen";
-			this.buttonLagerHinzufuegen.Size = new System.Drawing.Size(113, 46);
-			this.buttonLagerHinzufuegen.TabIndex = 4;
-			this.buttonLagerHinzufuegen.Text = "Lager hinzufügen";
-			this.buttonLagerHinzufuegen.UseVisualStyleBackColor = true;
-			this.buttonLagerHinzufuegen.Click += new System.EventHandler(this.buttonLagerHinzufuegen_Click);
-			// 
-			// buttonLagerungOptimieren
-			// 
-			this.buttonLagerungOptimieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonLagerungOptimieren.Location = new System.Drawing.Point(659, 1);
-			this.buttonLagerungOptimieren.Name = "buttonLagerungOptimieren";
-			this.buttonLagerungOptimieren.Size = new System.Drawing.Size(113, 46);
-			this.buttonLagerungOptimieren.TabIndex = 5;
-			this.buttonLagerungOptimieren.Text = "Lagerung optimieren";
-			this.buttonLagerungOptimieren.UseVisualStyleBackColor = true;
-			// 
-			// buttonPaketUmlagern
-			// 
-			this.buttonPaketUmlagern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonPaketUmlagern.Location = new System.Drawing.Point(237, 1);
-			this.buttonPaketUmlagern.Name = "buttonPaketUmlagern";
-			this.buttonPaketUmlagern.Size = new System.Drawing.Size(113, 46);
-			this.buttonPaketUmlagern.TabIndex = 6;
-			this.buttonPaketUmlagern.Text = "Paket umlagern";
-			this.buttonPaketUmlagern.UseVisualStyleBackColor = true;
-			// 
-			// buttonRegalHinzufuegen
-			// 
-			this.buttonRegalHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonRegalHinzufuegen.Location = new System.Drawing.Point(393, 1);
-			this.buttonRegalHinzufuegen.Name = "buttonRegalHinzufuegen";
-			this.buttonRegalHinzufuegen.Size = new System.Drawing.Size(113, 46);
-			this.buttonRegalHinzufuegen.TabIndex = 8;
-			this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
-			this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
-			this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.buttonRegalHinzufuegen_Click);
-			// 
-			// buttonRegalEntfernen
-			// 
-			this.buttonRegalEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonRegalEntfernen.Location = new System.Drawing.Point(512, 1);
-			this.buttonRegalEntfernen.Name = "buttonRegalEntfernen";
-			this.buttonRegalEntfernen.Size = new System.Drawing.Size(113, 46);
-			this.buttonRegalEntfernen.TabIndex = 7;
-			this.buttonRegalEntfernen.Text = "Regal ändern/ entfernen";
-			this.buttonRegalEntfernen.UseVisualStyleBackColor = true;
-			this.buttonRegalEntfernen.Click += new System.EventHandler(this.buttonRegalEntfernen_Click);
-			// 
-			// buttonZurück
-			// 
-			this.buttonZurück.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonZurück.Location = new System.Drawing.Point(1034, 1);
-			this.buttonZurück.Name = "buttonZurück";
-			this.buttonZurück.Size = new System.Drawing.Size(91, 46);
-			this.buttonZurück.TabIndex = 9;
-			this.buttonZurück.Text = "Zurück";
-			this.buttonZurück.UseVisualStyleBackColor = true;
-			this.buttonZurück.Click += new System.EventHandler(this.buttonZurück_Click);
-			// 
-			// Verwaltung
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1127, 602);
-			this.Controls.Add(this.buttonZurück);
-			this.Controls.Add(this.buttonRegalHinzufuegen);
-			this.Controls.Add(this.buttonRegalEntfernen);
-			this.Controls.Add(this.buttonPaketUmlagern);
-			this.Controls.Add(this.buttonLagerungOptimieren);
-			this.Controls.Add(this.buttonLagerHinzufuegen);
-			this.Controls.Add(this.buttonLagerEntfernen);
-			this.Controls.Add(this.buttonPaketEntfernen);
-			this.Controls.Add(this.buttonPaketHinzufuegen);
-			this.Controls.Add(this.tabControl1);
-			this.Name = "Verwaltung";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Verwaltung";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerwaltungFormClosing);
-			this.ResumeLayout(false);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.buttonPaketHinzufuegen = new System.Windows.Forms.Button();
+            this.buttonPaketEntfernen = new System.Windows.Forms.Button();
+            this.buttonLagerEntfernen = new System.Windows.Forms.Button();
+            this.buttonLagerHinzufuegen = new System.Windows.Forms.Button();
+            this.buttonLagerungOptimieren = new System.Windows.Forms.Button();
+            this.buttonPaketUmlagern = new System.Windows.Forms.Button();
+            this.buttonRegalHinzufuegen = new System.Windows.Forms.Button();
+            this.buttonRegalEntfernen = new System.Windows.Forms.Button();
+            this.buttonZurück = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Location = new System.Drawing.Point(-2, 53);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1127, 548);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // buttonPaketHinzufuegen
+            // 
+            this.buttonPaketHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPaketHinzufuegen.Location = new System.Drawing.Point(2, 1);
+            this.buttonPaketHinzufuegen.Name = "buttonPaketHinzufuegen";
+            this.buttonPaketHinzufuegen.Size = new System.Drawing.Size(110, 46);
+            this.buttonPaketHinzufuegen.TabIndex = 1;
+            this.buttonPaketHinzufuegen.Text = "Paket hinzufügen";
+            this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonPaketHinzufuegen.Click += new System.EventHandler(this.ButtonPaketHinzufuegen_Click);
+            // 
+            // buttonPaketEntfernen
+            // 
+            this.buttonPaketEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPaketEntfernen.Location = new System.Drawing.Point(118, 1);
+            this.buttonPaketEntfernen.Name = "buttonPaketEntfernen";
+            this.buttonPaketEntfernen.Size = new System.Drawing.Size(113, 46);
+            this.buttonPaketEntfernen.TabIndex = 2;
+            this.buttonPaketEntfernen.Text = "Paket entfernen";
+            this.buttonPaketEntfernen.UseVisualStyleBackColor = true;
+            this.buttonPaketEntfernen.Click += new System.EventHandler(this.ButtonPaketEntfernen_Click);
+            // 
+            // buttonLagerEntfernen
+            // 
+            this.buttonLagerEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLagerEntfernen.Location = new System.Drawing.Point(897, 1);
+            this.buttonLagerEntfernen.Name = "buttonLagerEntfernen";
+            this.buttonLagerEntfernen.Size = new System.Drawing.Size(113, 46);
+            this.buttonLagerEntfernen.TabIndex = 3;
+            this.buttonLagerEntfernen.Text = "Lager entfernen";
+            this.buttonLagerEntfernen.UseVisualStyleBackColor = true;
+            this.buttonLagerEntfernen.Click += new System.EventHandler(this.ButtonLagerEntfernen_Click);
+            // 
+            // buttonLagerHinzufuegen
+            // 
+            this.buttonLagerHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLagerHinzufuegen.Location = new System.Drawing.Point(778, 1);
+            this.buttonLagerHinzufuegen.Name = "buttonLagerHinzufuegen";
+            this.buttonLagerHinzufuegen.Size = new System.Drawing.Size(113, 46);
+            this.buttonLagerHinzufuegen.TabIndex = 4;
+            this.buttonLagerHinzufuegen.Text = "Lager hinzufügen";
+            this.buttonLagerHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonLagerHinzufuegen.Click += new System.EventHandler(this.ButtonLagerHinzufuegen_Click);
+            // 
+            // buttonLagerungOptimieren
+            // 
+            this.buttonLagerungOptimieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLagerungOptimieren.Location = new System.Drawing.Point(659, 1);
+            this.buttonLagerungOptimieren.Name = "buttonLagerungOptimieren";
+            this.buttonLagerungOptimieren.Size = new System.Drawing.Size(113, 46);
+            this.buttonLagerungOptimieren.TabIndex = 5;
+            this.buttonLagerungOptimieren.Text = "Lagerung optimieren";
+            this.buttonLagerungOptimieren.UseVisualStyleBackColor = true;
+            this.buttonLagerungOptimieren.Click += new System.EventHandler(this.ButtonLagerungOptimieren_Click);
+            // 
+            // buttonPaketUmlagern
+            // 
+            this.buttonPaketUmlagern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPaketUmlagern.Location = new System.Drawing.Point(237, 1);
+            this.buttonPaketUmlagern.Name = "buttonPaketUmlagern";
+            this.buttonPaketUmlagern.Size = new System.Drawing.Size(113, 46);
+            this.buttonPaketUmlagern.TabIndex = 6;
+            this.buttonPaketUmlagern.Text = "Paket umlagern";
+            this.buttonPaketUmlagern.UseVisualStyleBackColor = true;
+            this.buttonPaketUmlagern.Click += new System.EventHandler(this.ButtonPaketUmlagern_Click);
+            // 
+            // buttonRegalHinzufuegen
+            // 
+            this.buttonRegalHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegalHinzufuegen.Location = new System.Drawing.Point(393, 1);
+            this.buttonRegalHinzufuegen.Name = "buttonRegalHinzufuegen";
+            this.buttonRegalHinzufuegen.Size = new System.Drawing.Size(113, 46);
+            this.buttonRegalHinzufuegen.TabIndex = 8;
+            this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
+            this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
+            this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.ButtonRegalHinzufuegen_Click);
+            // 
+            // buttonRegalEntfernen
+            // 
+            this.buttonRegalEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegalEntfernen.Location = new System.Drawing.Point(512, 1);
+            this.buttonRegalEntfernen.Name = "buttonRegalEntfernen";
+            this.buttonRegalEntfernen.Size = new System.Drawing.Size(113, 46);
+            this.buttonRegalEntfernen.TabIndex = 7;
+            this.buttonRegalEntfernen.Text = "Regal ändern/ entfernen";
+            this.buttonRegalEntfernen.UseVisualStyleBackColor = true;
+            this.buttonRegalEntfernen.Click += new System.EventHandler(this.ButtonRegalEntfernen_Click);
+            // 
+            // buttonZurück
+            // 
+            this.buttonZurück.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZurück.Location = new System.Drawing.Point(1034, 1);
+            this.buttonZurück.Name = "buttonZurück";
+            this.buttonZurück.Size = new System.Drawing.Size(91, 46);
+            this.buttonZurück.TabIndex = 9;
+            this.buttonZurück.Text = "Zurück";
+            this.buttonZurück.UseVisualStyleBackColor = true;
+            this.buttonZurück.Click += new System.EventHandler(this.ButtonZurück_Click);
+            // 
+            // Verwaltung
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1127, 602);
+            this.Controls.Add(this.buttonZurück);
+            this.Controls.Add(this.buttonRegalHinzufuegen);
+            this.Controls.Add(this.buttonRegalEntfernen);
+            this.Controls.Add(this.buttonPaketUmlagern);
+            this.Controls.Add(this.buttonLagerungOptimieren);
+            this.Controls.Add(this.buttonLagerHinzufuegen);
+            this.Controls.Add(this.buttonLagerEntfernen);
+            this.Controls.Add(this.buttonPaketEntfernen);
+            this.Controls.Add(this.buttonPaketHinzufuegen);
+            this.Controls.Add(this.tabControl1);
+            this.Name = "Verwaltung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Verwaltung";
+            this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private Accordion _lagerAccordion;
-		private static Accordion _lastFocusedAccordion;
-		private static TabPage _lastFocusedPage;
 
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.Button buttonPaketHinzufuegen;

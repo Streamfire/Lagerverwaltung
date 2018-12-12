@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Lagerverwaltung.Core.Abstract;
-using System.Globalization;
 
-namespace Lagerverwaltung.Model
+namespace Lagerverwaltung.Core
 {
     public sealed class Suche : Base
     {

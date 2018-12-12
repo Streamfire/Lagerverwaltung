@@ -176,7 +176,7 @@
             this.buttonSuchen.TabIndex = 15;
             this.buttonSuchen.Text = "Suchen";
             this.buttonSuchen.UseVisualStyleBackColor = true;
-            this.buttonSuchen.Click += new System.EventHandler(this.buttonSuchen_Click);
+            this.buttonSuchen.Click += new System.EventHandler(this.ButtonSuchen_Click);
             // 
             // buttonAbbrechen
             // 
@@ -187,7 +187,7 @@
             this.buttonAbbrechen.TabIndex = 16;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // textProduktname
             // 

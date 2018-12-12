@@ -25,7 +25,7 @@ namespace Lagerverwaltung.Views
 
         private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
 		private void ButtonLagerHinzufügen_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace Lagerverwaltung.Views
 
 
                 //Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
-                this.Close();
+                Close();
             }
 		}
 

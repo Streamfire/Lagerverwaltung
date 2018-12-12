@@ -10,6 +10,11 @@ namespace Lagerverwaltung.Controller
     /// </summary>
     static class AuthenticationController
     {
+        /// <summary>
+        /// Get Methode um zu bestimmen ob der Nutzer beim Login richtig lag.
+        /// </summary>
+        public static bool Adminuser { get; set; }
+
         // Loads stored hash + SALT and tests if hash(pw + SALT) = stored hash
         public static bool Login(string username, string pw)
         {

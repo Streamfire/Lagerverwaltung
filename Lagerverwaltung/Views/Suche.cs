@@ -8,9 +8,9 @@ namespace Lagerverwaltung.Views
 {
 	public partial class Suche : Form
 	{
-        private ReadOnlyDictionary<ulong, Model.Suche> readonly_dict;
+        private ReadOnlyDictionary<ulong, Core.Suche> readonly_dict;
        
-        private List<Model.Suche> _result = new List<Model.Suche>();
+        private List<Core.Suche> _result = new List<Core.Suche>();
 
         private BindingSource source = new BindingSource();
 
@@ -22,7 +22,7 @@ namespace Lagerverwaltung.Views
 
             dataGridView1.AutoGenerateColumns = false;
 
-            readonly_dict = Model.Suche.HoleSuchergebnisse;
+            readonly_dict = Core.Suche.HoleSuchergebnisse;
 
             UpdateDataGridView();
 
@@ -47,26 +47,25 @@ namespace Lagerverwaltung.Views
         /// <param name="e"></param>
         private void SucheFormClosing(object sender, FormClosingEventArgs e)
 		{
-            this.Dispose();
-            Model.Suche.ClearDictionary();
-            Dashboard.Suche = null;
+            Dispose();
+            Core.Suche.ClearDictionary();
 		}
 
-        private void buttonAbbrechen_Click(object sender, System.EventArgs e)
+        private void ButtonAbbrechen_Click(object sender, System.EventArgs e)
         {
-            this.Dispose();
-            Model.Suche.ClearDictionary();
-            this.Hide();
+            Dispose();
+            Core.Suche.ClearDictionary();
+            Hide();
         }
 
-        private void buttonSuchen_Click(object sender, System.EventArgs e)
+        private void ButtonSuchen_Click(object sender, System.EventArgs e)
         {
             // Protokolliert genau welche Textboxen geändert wurden
             bool[] changed = new bool[25];
             // Zählt die Anzahl der geänderten Textboxen
             int change = 0;
 
-            Model.Suchkriterien tmp = new Model.Suchkriterien();
+            Core.Suchkriterien tmp = new Core.Suchkriterien();
 
             /* 
              * Try um alle Abfragen der Textboxen, anstatt nur um die kritischen Abfragen, 
@@ -285,22 +284,22 @@ namespace Lagerverwaltung.Views
 
             if (change > 0)
             {
-                Model.Suche.ClearDictionary();
+                Core.Suche.ClearDictionary();
                 DB.SucheSQL.HoleSuchergebnisse( tmp.RegalName, tmp.RegalfachName, tmp.ProduktName, tmp.ProduktID, tmp.ProduktZeichnungsnummer, tmp.PaketName, tmp.PaketAnschaffungsgrund, tmp.ProduktGewicht, tmp.ProduktGewicht2,
                                                 tmp.ProduktPreis, tmp.ProduktPreis2, tmp.ProduktErstelltAm, tmp.ProduktErstelltAm2, tmp.ProduktGeaendertAm, tmp.ProduktGeaendertAm2, tmp.PaketMenge, tmp.PaketMenge2            ,
                                                 tmp.PaketHaltbarkeit, tmp.PaketHaltbarkeit2, tmp.Hoehe, tmp.Hoehe2, tmp.Laenge, tmp.Laenge2, tmp.Breite, tmp.Breite2, changed, change                                           );
       
-                readonly_dict = Model.Suche.HoleSuchergebnisse;
+                readonly_dict = Core.Suche.HoleSuchergebnisse;
 
                 UpdateDataGridView();
             }
             else
             {
-                Model.Suche.ClearDictionary();
+                Core.Suche.ClearDictionary();
 
                 DB.SucheSQL.HoleSuchergebnisse();
 
-                readonly_dict = Model.Suche.HoleSuchergebnisse;
+                readonly_dict = Core.Suche.HoleSuchergebnisse;
 
                 UpdateDataGridView();
             }

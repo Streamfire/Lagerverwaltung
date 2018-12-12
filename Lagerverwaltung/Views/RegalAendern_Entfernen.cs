@@ -10,9 +10,19 @@ namespace Lagerverwaltung.Views
             InitializeComponent();
         }
 
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void ButtonAendern_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ButtonEntfernen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

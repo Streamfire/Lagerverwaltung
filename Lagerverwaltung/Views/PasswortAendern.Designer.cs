@@ -102,7 +102,7 @@
             this.buttonOkay.TabIndex = 6;
             this.buttonOkay.Text = "Okay";
             this.buttonOkay.UseVisualStyleBackColor = true;
-            this.buttonOkay.Click += new System.EventHandler(this.buttonOkay_Click);
+            this.buttonOkay.Click += new System.EventHandler(this.ButtonOkay_Click);
             // 
             // buttonAbbrechen
             // 
@@ -113,7 +113,7 @@
             this.buttonAbbrechen.TabIndex = 7;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // label4
             // 

@@ -16,9 +16,9 @@ namespace Lagerverwaltung.Views
 
         }
 
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
 		private void ButtonRegalHinzufuegen_Click(object sender, EventArgs e)
@@ -78,8 +78,6 @@ namespace Lagerverwaltung.Views
                 {
                     MessageBox.Show("Der Datensatz für das Regal konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                this.Close();
             }
 
             //Validierung fehlgeschlagen
@@ -90,7 +88,7 @@ namespace Lagerverwaltung.Views
 
 
 			//Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
-			this.Close();
+			Close();
 		}
 
         private void RegalHinzufügen_Load(object sender, EventArgs e)

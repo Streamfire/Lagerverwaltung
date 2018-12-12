@@ -108,5 +108,10 @@ namespace Lagerverwaltung.Model
 
             return -1;
         }
+
+        public static void Reset()
+        {
+            _dict.Clear();
+        }
     }
 }

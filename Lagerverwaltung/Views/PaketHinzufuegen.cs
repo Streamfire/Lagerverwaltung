@@ -34,7 +34,7 @@ namespace Lagerverwaltung.Views
 
 		private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ButtonPaketHinzufuegen_Click(object sender, EventArgs e)
