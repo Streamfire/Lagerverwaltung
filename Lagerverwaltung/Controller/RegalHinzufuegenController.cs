@@ -44,6 +44,9 @@ namespace Lagerverwaltung.Controller
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
 
+            //Keine Bindestriche dürfen enthalten sein
+            if (eingabe.Contains('-')) return false;
+
             return true;
         }
 
@@ -51,6 +54,15 @@ namespace Lagerverwaltung.Controller
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
+
+            try
+            {
+                if (Convert.ToInt16(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Zeilen enthält das falsche Format: {0}", e);
+            }
 
             return true;
         }
@@ -60,6 +72,15 @@ namespace Lagerverwaltung.Controller
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
 
+            try
+            {
+                if (Convert.ToInt16(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Spalten enthält das falsche Format: {0}", e);
+            }
+
             return true;
         }
 
@@ -67,6 +88,15 @@ namespace Lagerverwaltung.Controller
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
+
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Regalhöhe enthält das falsche Format: {0}", e);
+            }
 
             return true;
         }
@@ -76,6 +106,15 @@ namespace Lagerverwaltung.Controller
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
 
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Regalbreite enthält das falsche Format: {0}", e);
+            }
+
             return true;
         }
 
@@ -83,6 +122,15 @@ namespace Lagerverwaltung.Controller
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
+
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Regallänge enthält das falsche Format: {0}", e);
+            }
 
             return true;
         }
@@ -92,6 +140,15 @@ namespace Lagerverwaltung.Controller
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
 
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Regalfachhöhe enthält das falsche Format: {0}", e);
+            }
+
             return true;
         }
 
@@ -99,6 +156,15 @@ namespace Lagerverwaltung.Controller
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
+
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Regalfachbreite enthält das falsche Format: {0}", e);
+            }
 
             return true;
         }
@@ -108,6 +174,15 @@ namespace Lagerverwaltung.Controller
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
 
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Regalfachlänge enthält das falsche Format: {0}", e);
+            }
+
             return true;
         }
 
@@ -116,6 +191,15 @@ namespace Lagerverwaltung.Controller
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
 
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Horizontale Wandstärke enthält das falsche Format: {0}", e);
+            }
+
             return true;
         }
 
@@ -123,6 +207,15 @@ namespace Lagerverwaltung.Controller
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
+
+            try
+            {
+                if (Convert.ToSingle(eingabe) <= 0) return false;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Vertikale Wandstärke enthält das falsche Format: {0}", e);
+            }
 
             return true;
         }

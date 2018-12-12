@@ -85,7 +85,7 @@ namespace Lagerverwaltung.Views
             //Validierung fehlgeschlagen
             else
             {
-                MessageBox.Show("Die eingegebenen Daten sind nicht korrekt!", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bitte Überprüfen sie das eingegebene Format der Daten", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 

@@ -52,14 +52,7 @@ namespace Lagerverwaltung.Model
 
         private void Hinzufuegen(Regalfach tmp)
         {
-			if(_dict.ContainsKey(tmp.RegalfachID))
-			{
-				_dict.Remove(tmp.RegalfachID);
-			}
-			
-				_dict.Add(tmp.RegalfachID, tmp);
-			
-            
+			_dict.Add(tmp.RegalfachID, tmp);	        
             RegalfachHinzugefuegt?.Invoke(this, EventArgs.Empty);
         }
         public static void PaketHinzufuegen(ushort regalfachID, Paket tmp)
