@@ -28,7 +28,6 @@ namespace Lagerverwaltung.Core
                 }
                 catch (System.Exception)
                 {
-
                     throw;
                 }
 

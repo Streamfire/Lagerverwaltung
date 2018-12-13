@@ -98,6 +98,7 @@
     <Compile Include="Core\Abstract\Base.cs" />
     <Compile Include="DB\HistorieSQL.cs" />
     <Compile Include="DB\SqlStatements.cs" />
+    <Compile Include="DB\SqlStatements.Artikeltyp.cs" />
     <Compile Include="DB\SqlStatements.Historie.cs" />
     <Compile Include="DB\SqlStatements.Lager.cs" />
     <Compile Include="DB\SqlStatements.Lagertyp.cs" />
@@ -105,7 +106,6 @@
     <Compile Include="DB\SqlStatements.Produkt.cs" />
     <Compile Include="DB\SqlStatements.Regal.cs" />
     <Compile Include="DB\SqlStatements.Regalfach.cs" />
-    <Compile Include="DB\SqlStatements.Rollen.cs" />
     <Compile Include="DB\SqlStatements.Suche.cs" />
     <Compile Include="DB\SqlStatements.User.cs" />
     <Compile Include="DB\SucheSQL.cs" />
