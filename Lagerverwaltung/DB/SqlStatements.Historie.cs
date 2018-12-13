@@ -24,5 +24,16 @@ namespace Lagerverwaltung.DB
             }
             return query.Get<HistorieModel>().ToDictionary(row => row.Log_ID, row => row);
         }
+
+        public static void SchreibeHistorieEintrag(string logtext, long user_id=1)
+        {
+            System.Diagnostics.Contracts.Contract.Requires(!string.IsNullOrEmpty(logtext));
+            var zeitstempel = System.DateTime.Now;
+            if(user_id > 0)
+            {
+                // hole Vorname Nachname (username) für Log davor -> Max Mustermann (mmuster): bla bla
+            }
+            queryfactory.Query("historie").Insert(new { user_id, logtext, zeitstempel });
+        }
     }
 }

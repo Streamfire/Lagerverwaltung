@@ -97,17 +97,37 @@
     <Compile Include="Controller\RegalHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
     <Compile Include="DB\HistorieSQL.cs" />
+    <Compile Include="DB\SqlStatements.Artikeltyp.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\SqlStatements.cs" />
-    <Compile Include="DB\SqlStatements.Artikeltyp.cs" />
-    <Compile Include="DB\SqlStatements.Historie.cs" />
-    <Compile Include="DB\SqlStatements.Lager.cs" />
-    <Compile Include="DB\SqlStatements.Lagertyp.cs" />
-    <Compile Include="DB\SqlStatements.Paket.cs" />
-    <Compile Include="DB\SqlStatements.Produkt.cs" />
-    <Compile Include="DB\SqlStatements.Regal.cs" />
-    <Compile Include="DB\SqlStatements.Regalfach.cs" />
-    <Compile Include="DB\SqlStatements.Suche.cs" />
-    <Compile Include="DB\SqlStatements.User.cs" />
+    <Compile Include="DB\SqlStatements.Historie.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Lager.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Lagertyp.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Paket.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Produkt.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Regal.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Regalfach.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.Suche.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SqlStatements.User.cs">
+      <DependentUpon>SqlStatements.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\SucheSQL.cs" />
     <Compile Include="Model\Artikeltyp.cs" />
     <Compile Include="Core\DatabaseFactory.cs" />

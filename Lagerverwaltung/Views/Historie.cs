@@ -13,7 +13,7 @@ namespace Lagerverwaltung.Views
 		public Historie()
 		{
 			InitializeComponent();
-            DB.SqlStatements.HoleHistorie();
+            DB.HistorieSQL.HoleHistorie();
             readonly_dict = Model.Historie.HoleListe;
             UpdateDataGridView();
         }
