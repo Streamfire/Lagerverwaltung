@@ -9,27 +9,39 @@ namespace Lagerverwaltung.Views
         {
             InitializeComponent();
         }
-        public static Produktliste Produktliste { get; set; }
+
+        public static string Auswahl { get; set; }
+        public static Produktliste Produktliste { get; set; } // entfernen und Abhängigkeiten ändern
 
         private void ButtonProduktAuswaehlen_Click(object sender, EventArgs e)
         {
-            if (Produktliste != null)
+            /* Wenn Abhängigkeiten entfernt - bitte das freischalten und das andere darunter entfernen :)
+            using (var produktliste = new Produktliste())
             {
-                Produktliste.ShowDialog(this);
+                produktliste.FormClosed += OnClose;
+                produktliste.ShowDialog();
+            }
+            */
+            
+                if (Produktliste != null)
+                {
+                    Produktliste.ShowDialog(this);
 
-            }
-            else
-            {
-                Produktliste = new Produktliste();
-				Produktliste.FormClosed += OnClose;
-                Produktliste.ShowDialog();
-            }
+                }
+                else
+                {
+                    Produktliste = new Produktliste();
+                    Produktliste.FormClosed += OnClose;
+                    Produktliste.ShowDialog();
+                }
         }
 
 		private void OnClose(object sender, FormClosedEventArgs e)
 		{
-			if(Produktliste.GetSelected() != string.Empty)
-			labelProduktAusgewählt.Text = Produktliste.GetSelected();
+            if(Auswahl.Length != 0)
+            {
+                labelProduktAusgewählt.Text = Auswahl;
+            }
 		}
 
 		private void ButtonAbbrechen_Click(object sender, EventArgs e)

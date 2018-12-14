@@ -32,27 +32,42 @@ namespace Lagerverwaltung.Views
 		private void Button1_Click(object sender, EventArgs e)
 		{
             // Getter & Setter entfernen, aber noch zu tief in den anderen Klassen verankert!
-            new Verwaltung().ShowDialog();
+            using (var verwaltung = new Verwaltung())
+            {
+                verwaltung.ShowDialog();
+            }
 		}
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
-            new Suche().ShowDialog();
+            using (var suche = new Suche())
+            {
+                suche.ShowDialog();
+            }
 		}
 
 		private void Button3_Click(object sender, EventArgs e)
 		{
-            new Regaleinsicht().ShowDialog();
+            using (var regaleinsicht = new Regaleinsicht())
+            {
+                regaleinsicht.ShowDialog();
+            }
         }
 
 		private void Button4_Click(object sender, EventArgs e)
 		{
-            new Historie().ShowDialog();
+            using (var historie = new Historie())
+            {
+                historie.ShowDialog();
+            }
 		}
 
         private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AboutBox().ShowDialog();
+            using (var aboutbox = new AboutBox())
+            {
+                aboutbox.ShowDialog();
+            }
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -71,7 +86,10 @@ namespace Lagerverwaltung.Views
 
         private void NutzerHinzufügenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new NutzerHinzufuegen().ShowDialog();
+            using (var nutzerhinzufuegen = new NutzerHinzufuegen())
+            {
+                nutzerhinzufuegen.ShowDialog();
+            }
         }
     }
 }

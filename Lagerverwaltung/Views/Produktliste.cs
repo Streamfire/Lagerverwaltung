@@ -59,8 +59,10 @@ namespace Lagerverwaltung.Views
 
     private void Produkt_hinzufuegen_Click(object sender, EventArgs e)
         {
-            new ProduktHinzufuegen().ShowDialog();
-
+            using (var produkthinzufuegen = new ProduktHinzufuegen())
+            {
+                produkthinzufuegen.ShowDialog();
+            }
         }
 
 		/// <summary>
@@ -70,15 +72,8 @@ namespace Lagerverwaltung.Views
 		/// <param name="e"></param>
 		private void Auswaehlen_Click(object sender, EventArgs e)
 		{
-			lastSelected = listViewProduktliste.SelectedItems[0].Text;
+            PaketHinzufuegen.Auswahl = listViewProduktliste.SelectedItems[0].Text;
 			Close();
-		}
-
-		string lastSelected;
-
-		public string GetSelected()
-		{
-			return lastSelected;
 		}
 
 		private void ListViewProduktliste_SelectedIndexChanged(object sender, EventArgs e)

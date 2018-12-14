@@ -15,10 +15,12 @@ namespace Lagerverwaltung
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-            var login = new Login();
-            if (login.ShowDialog() == DialogResult.OK)
+            using (var login = new Login())
             {
-                Application.Run(new Dashboard(Controller.AuthenticationController.Adminuser));
+                if (login.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new Dashboard(Controller.AuthenticationController.Adminuser));
+                }
             }
         }
     }

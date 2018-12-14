@@ -37,7 +37,10 @@ namespace Lagerverwaltung.Views
 
         private void ButtonPasswortAendern_Click(object sender, EventArgs e)
         {
-            new PasswortAendern().ShowDialog();
+            using (var passwortaendern = new PasswortAendern())
+            {
+                passwortaendern.ShowDialog();
+            }
         }
 
        

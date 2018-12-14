@@ -21,29 +21,47 @@ namespace Lagerverwaltung.Views
 
         private void ButtonRegalHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            new RegalHinzufügen().ShowDialog();
+            using (var regalhinzufuegen = new RegalHinzufügen())
+            {
+                regalhinzufuegen.ShowDialog();
+            }
         }
 
         private void ButtonLagerHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            new LagerHinzufuegen().ShowDialog();
+            using (var lagerhinzufuegen = new LagerHinzufuegen())
+            {
+                lagerhinzufuegen.ShowDialog();
+            }
         }
 
         private void ButtonPaketHinzufuegen_Click(object sender, System.EventArgs e)
         {
-            new PaketHinzufuegen().ShowDialog();
+            using (var pakethinzufuegen = new PaketHinzufuegen())
+            {
+                pakethinzufuegen.ShowDialog();
+            }
         }
         private void ButtonPaketEntfernen_Click(object sender, System.EventArgs e)
         {
-            new PaketEntfernen().ShowDialog();
+            using (var paketentfernen = new PaketEntfernen())
+            {
+                paketentfernen.ShowDialog();
+            }
         }
         private void ButtonRegalEntfernen_Click(object sender, System.EventArgs e)
         {
-            new RegalAendern_Entfernen().ShowDialog();
+            using (var regalaendern = new RegalAendern_Entfernen())
+            {
+                regalaendern.ShowDialog();
+            }
         }
         private void ButtonLagerEntfernen_Click(object sender, System.EventArgs e)
         {
-            new LagerEntfernen().ShowDialog();
+            using (var lagerentfernen = new LagerEntfernen())
+            {
+                lagerentfernen.ShowDialog();
+            }
         }
         private void ButtonZurück_Click(object sender, System.EventArgs e)
         {
