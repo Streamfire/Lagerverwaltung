@@ -1,13 +1,14 @@
 ﻿using Lagerverwaltung.Model;
+using SqlKata.Execution;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Linq;
-using SqlKata.Execution;
 
 namespace Lagerverwaltung.Views
 {
-	public partial class Historie : Form
+    public partial class Historie : Form
 	{
         private PaginationResult<HistorieModel> paging;
 
@@ -15,12 +16,18 @@ namespace Lagerverwaltung.Views
         private List<HistorieModel> _result = new List<HistorieModel>();
         private BindingSource source;
 
-		public Historie()
+        public Historie()
 		{
 			InitializeComponent();
+            DB.SqlStatements.DatabaseChanged += DataChanged;
             textBoxSearch.Enabled = false;
             textBoxSearch.Text = "Suche deaktiviert, da Probleme wenn TextChanged-Event zu schnell kommt!";
             LadeDatenAsync();
+        }
+
+        private void DataChanged(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
         }
 
         public async void LadeDatenAsync()
@@ -38,76 +45,31 @@ namespace Lagerverwaltung.Views
                 return;
             }
 
-            source = new BindingSource();
-            source.DataSource = _dict.Values;
-            /*
-            if (list==null)
-            {
-                source.DataSource = _dict.Values;
-            }
-            else
-            {
-                source.DataSource = list;
-            }
-            */
+            source = new BindingSource{ DataSource = _dict.Values };
             dataGridView1.DataSource = source;
-            if (!paging.HasNext)
-            {
-                button1.Enabled = false;
-            }
-            else
+
+            if(paging.HasNext)
             {
                 paging = paging.Next();
                 foreach (var p in paging.List)
                 {
                     _dict.Add(p.Log_ID, p);
                 }
+                button1.Enabled = true;
             }
             label1.Hide();
         }
 
-        // muss eindeutig optimiert werden!
-        private void TextBoxSearch_TextChanged(object sender, System.EventArgs e)
-        {
-            /*
-            if(textBoxSearch.TextLength >=1)
-            {
-                var expression = textBoxSearch.Text.ToLower();
-                _result.Clear();
-                if (long.TryParse(expression,out long num))
-                {
-                    foreach(var item in _dict.Values)
-                    {
-                        // Contains noch nicht ausgereift!
-                        if(item.Log_ID == num | item.User_ID == num | item.LogText.Contains(expression))
-                        {
-                            _result.Add(item);
-                        }
-                    }
-                }
-                else
-                {
-                    foreach(var item in _dict.Values)
-                    {
-                        bool test = item.LogText.ToLower().Contains(expression.ToLower());
-                        if (test)
-                        {
-                            _result.Add(item);
-                        }
-                    }
-                }
-                //UpdateDataGridView(_result);
-            }
-            else
-            {
-                //UpdateDataGridView();
-            }
-            */
-        }
-
         private void Button1_Click(object sender, System.EventArgs e)
         {
+            button1.Enabled = false;
             UpdateDataGridView();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+            LadeDatenAsync();
         }
     }
 }
