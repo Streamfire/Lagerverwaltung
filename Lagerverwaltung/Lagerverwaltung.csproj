@@ -96,7 +96,6 @@
     <Compile Include="Controller\ProduktHinzufuegenController.cs" />
     <Compile Include="Controller\RegalHinzufuegenController.cs" />
     <Compile Include="Core\Abstract\Base.cs" />
-    <Compile Include="DB\HistorieSQL.cs" />
     <Compile Include="DB\SqlStatements.Artikeltyp.cs">
       <DependentUpon>SqlStatements.cs</DependentUpon>
     </Compile>

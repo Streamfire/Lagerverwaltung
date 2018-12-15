@@ -1,48 +1,85 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using Lagerverwaltung.Model;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
+using SqlKata.Execution;
 
 namespace Lagerverwaltung.Views
 {
 	public partial class Historie : Form
 	{
-        private ReadOnlyDictionary<ulong,Model.Historie> readonly_dict;
-        private List<Model.Historie> _result = new List<Model.Historie>();
-        private BindingSource source = new BindingSource();
+        private PaginationResult<HistorieModel> paging;
+
+        private Dictionary<long, HistorieModel> _dict;
+        private List<HistorieModel> _result = new List<HistorieModel>();
+        private BindingSource source;
 
 		public Historie()
 		{
 			InitializeComponent();
-            DB.HistorieSQL.HoleHistorie();
-            readonly_dict = Model.Historie.HoleListe;
+            textBoxSearch.Enabled = false;
+            textBoxSearch.Text = "Suche deaktiviert, da Probleme wenn TextChanged-Event zu schnell kommt!";
+            LadeDatenAsync();
+        }
+
+        public async void LadeDatenAsync()
+        {
+            paging = await Task.Run(() => DB.SqlStatements.HoleHistorieSeite());
+            _dict = paging.List.ToDictionary(row=>row.Log_ID,row=>row);
             UpdateDataGridView();
         }
 
-        private void UpdateDataGridView(List<Model.Historie> list = null)
+        private void UpdateDataGridView()//List<HistorieModel> list = null)
         {
-            if(list==null)
+            if(_dict.Count == 0)
             {
-                source.DataSource = readonly_dict.Values;
+                label1.Text = "Keine Daten vorhanden!";
+                return;
+            }
+
+            source = new BindingSource();
+            source.DataSource = _dict.Values;
+            /*
+            if (list==null)
+            {
+                source.DataSource = _dict.Values;
             }
             else
             {
                 source.DataSource = list;
             }
+            */
             dataGridView1.DataSource = source;
+            if (!paging.HasNext)
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                paging = paging.Next();
+                foreach (var p in paging.List)
+                {
+                    _dict.Add(p.Log_ID, p);
+                }
+            }
+            label1.Hide();
         }
 
+        // muss eindeutig optimiert werden!
         private void TextBoxSearch_TextChanged(object sender, System.EventArgs e)
         {
+            /*
             if(textBoxSearch.TextLength >=1)
             {
                 var expression = textBoxSearch.Text.ToLower();
                 _result.Clear();
-                if (ulong.TryParse(expression,out ulong num))
+                if (long.TryParse(expression,out long num))
                 {
-                    foreach(var item in readonly_dict.Values)
+                    foreach(var item in _dict.Values)
                     {
                         // Contains noch nicht ausgereift!
-                        if(item.LogID == num | item.UserID == num | item.LogText.Contains(expression))
+                        if(item.Log_ID == num | item.User_ID == num | item.LogText.Contains(expression))
                         {
                             _result.Add(item);
                         }
@@ -50,7 +87,7 @@ namespace Lagerverwaltung.Views
                 }
                 else
                 {
-                    foreach(var item in readonly_dict.Values)
+                    foreach(var item in _dict.Values)
                     {
                         bool test = item.LogText.ToLower().Contains(expression.ToLower());
                         if (test)
@@ -59,17 +96,18 @@ namespace Lagerverwaltung.Views
                         }
                     }
                 }
-                UpdateDataGridView(_result);
+                //UpdateDataGridView(_result);
             }
             else
             {
-                UpdateDataGridView();
+                //UpdateDataGridView();
             }
+            */
         }
 
-        private void Historie_FormClosing(object sender, FormClosingEventArgs e)
+        private void Button1_Click(object sender, System.EventArgs e)
         {
-            Model.Historie.Reset();
+            UpdateDataGridView();
         }
     }
 }
