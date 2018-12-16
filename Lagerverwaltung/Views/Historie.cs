@@ -27,7 +27,11 @@ namespace Lagerverwaltung.Views
 
         private void DataChanged(object sender, EventArgs e)
         {
-            button2.Enabled = true;
+            var type = (DB.SqlStatements.ModeltypEnum)sender;
+            if(type==DB.SqlStatements.ModeltypEnum.HistorieModel)
+            {
+                button2.Enabled = true;
+            }
         }
 
         public async void LadeDatenAsync()
@@ -70,6 +74,12 @@ namespace Lagerverwaltung.Views
         {
             button2.Enabled = false;
             LadeDatenAsync();
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            // lade erneut, aber nur mich
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Lagerverwaltung.Model;
 using SqlKata.Execution;
@@ -23,6 +24,25 @@ namespace Lagerverwaltung.DB
                 query.Limit(limit);
             }
             return query.Get<ArtikeltypModel>().ToDictionary(row => row.Artikeltyp_ID, row => row);
+        }
+
+        public static void ErstelleArtikeltyp(string name)
+        {
+            var query = queryfactory.Query("artikeltyp").Insert(new { name });
+            OnDatabaseChanged(ModeltypEnum.ArtikeltypModel);
+        }
+
+        public static void LoescheArtikeltyp(long artikeltyp_id)
+        {
+            var query = queryfactory.Query("artikeltyp").Where("artikeltyp_id", artikeltyp_id).Delete();
+            OnDatabaseChanged(ModeltypEnum.ArtikeltypModel);
+        }
+
+        public static void UpdateArtikeltyp(long artikeltyp_id, string name)
+        {
+            var zuletzt_geändert = DateTime.Now;
+            var query = queryfactory.Query("artikeltyp").Where("artikeltyp_id", artikeltyp_id).Update(new { name, zuletzt_geändert });
+            OnDatabaseChanged(ModeltypEnum.ArtikeltypModel);
         }
     }
 }

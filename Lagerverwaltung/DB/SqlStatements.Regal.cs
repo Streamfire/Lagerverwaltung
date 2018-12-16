@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Lagerverwaltung.Model;
 using SqlKata.Execution;
@@ -7,7 +8,7 @@ namespace Lagerverwaltung.DB
 {
     static partial class SqlStatements
     {
-        public static Dictionary<long,RegalModel> HoleRegal(long regal_id=-1, long lager_id=-1, int limit=-1)
+        public static Dictionary<long,RegalModel> HoleRegal(long regal_id=-1, long lager_id=-1, string name="", int limit=-1)
         {
             var query = queryfactory.Query("regal").OrderBy("regal_id");
             if (regal_id > 0)
@@ -18,11 +19,31 @@ namespace Lagerverwaltung.DB
             {
                 query.Where("lager_id", lager_id);
             }
+            if(name.Length != 0)
+            {
+                query.Where("name", name);
+            }
             if (limit > 0)
             {
                 query.Limit(limit);
             }
             return query.Get<RegalModel>().ToDictionary(row => row.Regal_ID, row => row);
+        }
+
+        public static void ErstelleRegal()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void LoescheRegal(long regal_id)
+        {
+            var query = queryfactory.Query("regal").Where("regal_id", regal_id).Delete();
+            OnDatabaseChanged(ModeltypEnum.RegalModel);
+        }
+
+        public static void UpdateRegal()
+        {
+            throw new NotImplementedException();
         }
     }
 }

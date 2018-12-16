@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Lagerverwaltung.Model;
 using SqlKata.Execution;
@@ -23,6 +24,22 @@ namespace Lagerverwaltung.DB
                 query.Limit(limit);
             }
             return query.Get<LagerModel>().ToDictionary(row => row.Lager_ID, row => row);
+        }
+
+        public static void ErstelleLager()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void LoescheLager(long lager_id)
+        {
+            var query = queryfactory.Query("lager").Where("lager_id", lager_id).Delete();
+            OnDatabaseChanged(ModeltypEnum.LagerModel);
+        }
+
+        public static void UpdateLager()
+        {
+            throw new NotImplementedException();
         }
     }
 }

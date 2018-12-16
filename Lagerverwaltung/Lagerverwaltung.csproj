@@ -157,7 +157,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DB\ProduktSQL.cs" />
-    <Compile Include="DB\ArtikeltypSQL.cs" />
     <Compile Include="DB\LagertypSQL.cs" />
     <Compile Include="DB\PaketSQL.cs" />
     <Compile Include="DB\LagerSQL.cs" />
