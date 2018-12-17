@@ -11,9 +11,9 @@ namespace Lagerverwaltung.Model
         public long Lager_ID { get; }
         public short Zeilen { get; }
         public short Spalten { get; }
-        public float Höhe { get; }
+        public float Hoehe { get; }
         public float Breite { get; }
-        public float Länge { get; }
+        public float Laenge { get; }
         public float V_Wandstaerke { get; }
         public float H_Wandstaerke { get; }
     }
