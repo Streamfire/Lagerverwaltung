@@ -31,7 +31,7 @@ namespace Lagerverwaltung.DB
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geändert, "  +
+                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geaendert, "  +
                                     "p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, row_number() over (order by pr.name desc) as Zeile from produkt pr " +
                                     "join(select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname from paket p "                                                                          +
                                     "join (select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname from regalfach rf "                                                                                                      +
@@ -60,7 +60,7 @@ namespace Lagerverwaltung.DB
                 
 
                 cmd.Connection = conn;
-                cmd.CommandText = "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geändert, " +
+                cmd.CommandText = "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geaendert, " +
                     "p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, row_number() over (order by pr.name desc) as Zeile from produkt pr " +
                     "join(select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname from paket p " +
                     "join (select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname from regalfach rf " +
@@ -288,11 +288,11 @@ namespace Lagerverwaltung.DB
                     {
                         if (change > 1)
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') AND ";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') AND ";
                         }
                         else
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') ;";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') ;";
                         }
                         change--;
                     }
@@ -300,11 +300,11 @@ namespace Lagerverwaltung.DB
                     {
                         if (change > 1)
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
                         }
                         else
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
                         }
                         change--;
                     }
@@ -312,11 +312,11 @@ namespace Lagerverwaltung.DB
                     {
                         if (change > 2)
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
                         }
                         else
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
                         }
                         change = change - 2;
                     }

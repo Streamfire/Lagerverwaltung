@@ -40,7 +40,7 @@ namespace Lagerverwaltung.DB
 
         public static void UpdateLager(long lager_id, string name="", string standort="", string beschreibung="", long? lagertyp_id=null)
         {
-            var zuletzt_geändert = DateTime.Now;
+            var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("lager").Where("lager_id", lager_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
 
@@ -62,7 +62,7 @@ namespace Lagerverwaltung.DB
             }
             if (_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.LagerModel);
             }

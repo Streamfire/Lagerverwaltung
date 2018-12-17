@@ -7,7 +7,7 @@ namespace Lagerverwaltung.Model
         public long Paket_ID { get; }
         public string Name { get; }
         public DateTime Erstellt_Am { get; }
-        public DateTime Zuletzt_Geändert { get; }
+        public DateTime Zuletzt_Geaendert { get; }
         public long Regalfach_ID { get; }
         public long Produkt_ID { get; }
         public short Menge { get; }

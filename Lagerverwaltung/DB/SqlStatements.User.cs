@@ -40,7 +40,7 @@ namespace Lagerverwaltung.DB
 
         public static void UpdateUser(long user_id, string vorname ="", string nachname="", string username="", string password="", string salt="", DateTime? letzter_login=null)
         {
-            var zuletzt_geändert = DateTime.Now;
+            var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("user").Where("user_id", user_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
 
@@ -67,7 +67,7 @@ namespace Lagerverwaltung.DB
             }
             if(_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.UserModel);
             }

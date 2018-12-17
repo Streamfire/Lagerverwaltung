@@ -27,10 +27,10 @@ namespace Lagerverwaltung.DB
 				using (var cmd = new NpgsqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = "INSERT INTO paket (name, erstellt_am,zuletzt_geändert,regalfach_id,produkt_id,menge,haltbarkeit,anschaffungsgrund,hoehe,breite,laenge) VALUES (@name, @erstellt_am,@zuletzt_geändert,@regalfach_id,@produkt_id,@menge,@haltbarkeit,@anschaffungsgrund,@hoehe,@breite,@laenge)";
+					cmd.CommandText = "INSERT INTO paket (name, erstellt_am,zuletzt_geaendert,regalfach_id,produkt_id,menge,haltbarkeit,anschaffungsgrund,hoehe,breite,laenge) VALUES (@name, @erstellt_am,@zuletzt_geaendert,@regalfach_id,@produkt_id,@menge,@haltbarkeit,@anschaffungsgrund,@hoehe,@breite,@laenge)";
 					cmd.Parameters.AddWithValue("name", name);
 					cmd.Parameters.AddWithValue("erstellt_am", System.DateTime.Now);//.ToString("yyyy-MM-dd HH:mm:ss"));
-					cmd.Parameters.AddWithValue("zuletzt_geändert", System.DateTime.Now);//.ToString("yyyy-MM-dd HH:mm:ss"));
+					cmd.Parameters.AddWithValue("zuletzt_geaendert", System.DateTime.Now);//.ToString("yyyy-MM-dd HH:mm:ss"));
 					cmd.Parameters.AddWithValue("regalfach_id", regfachID);
 					cmd.Parameters.AddWithValue("produkt_id", produktID);
 					cmd.Parameters.AddWithValue("menge", menge);

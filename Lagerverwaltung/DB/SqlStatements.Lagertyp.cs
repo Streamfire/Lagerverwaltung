@@ -40,8 +40,8 @@ namespace Lagerverwaltung.DB
 
         public static void UpdateLagertyp(long lagertyp_id, string name)
         {
-            var zuletzt_geändert = DateTime.Now;
-            var query = queryfactory.Query("lagertyp").Where("lagertyp_id", lagertyp_id).Update(new { name, zuletzt_geändert });
+            var zuletzt_geaendert = DateTime.Now;
+            var query = queryfactory.Query("lagertyp").Where("lagertyp_id", lagertyp_id).Update(new { name, zuletzt_geaendert });
             OnDatabaseChanged(ModeltypEnum.LagertypModel);
         }
     }

@@ -9,8 +9,7 @@ namespace Lagerverwaltung.Model
         public string Nachname { get; }
         public DateTime Erstellt_Am { get; }
         public DateTime Letzter_Login { get; }
-        public DateTime Zuletzt_Geändert { get; }
-        //public long Rollen_ID { get; }
+        public DateTime Zuletzt_Geaendert { get; }
         public string Username { get; }
         public string Password { get; }
         public string Salt { get; }

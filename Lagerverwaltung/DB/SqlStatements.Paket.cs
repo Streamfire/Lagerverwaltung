@@ -26,7 +26,7 @@ namespace Lagerverwaltung.DB
 
         public static void UpdatePaket(long paket_id, string name="", long? regalfach_id=null, long? produkt_id=null, short? menge=null, DateTime? haltbarkeit=null, string anschaffungsgrund="", float? hoehe=null, float? breite=null, float? laenge=null)
         {
-            var zuletzt_geändert = DateTime.Now;
+            var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("paket").Where("paket_id", paket_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
 
@@ -68,7 +68,7 @@ namespace Lagerverwaltung.DB
             }
             if (_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.PaketModel);
             }

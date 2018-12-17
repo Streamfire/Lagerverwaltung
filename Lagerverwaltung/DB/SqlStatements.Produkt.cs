@@ -26,7 +26,7 @@ namespace Lagerverwaltung.DB
 
         public static void UpdateProdukt(long produkt_id, string name="", float? gewicht=null, float? preis=null, string zeichnungsnummer="", long? artikeltyp_id=null, long? paket_id=null)
         {
-            var zuletzt_geändert = DateTime.Now;
+            var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("produkt").Where("produkt_id", produkt_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
 
@@ -56,7 +56,7 @@ namespace Lagerverwaltung.DB
             }
             if (_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.ProduktModel);
             }

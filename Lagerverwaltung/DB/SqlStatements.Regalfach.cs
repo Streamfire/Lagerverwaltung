@@ -26,7 +26,7 @@ namespace Lagerverwaltung.DB
 
         public static void UpdateRegalfach(long regalfach_id, string name="", long? regal_id=null, string bemerkung="", float? hoehe=null, float? breite=null, float? laenge=null)
         {
-            var zuletzt_geändert = DateTime.Now;
+            var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("regalfach").Where("regalfach_id", regalfach_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
 
@@ -56,7 +56,7 @@ namespace Lagerverwaltung.DB
             }
             if (_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.RegalfachModel);
             }

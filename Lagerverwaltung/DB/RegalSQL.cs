@@ -19,7 +19,7 @@ namespace Lagerverwaltung.DB
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO regal (name, lager_id, zeilen, spalten, höhe, breite, länge, v_wandstärke, h_wandstärke) VALUES (@name,@lagerID,@zeilen,@spalten,@hoehe,@breite,@laenge,@wandV,@wandH) RETURNING regal_id;";
+                cmd.CommandText = "INSERT INTO regal (name, lager_id, zeilen, spalten, höhe, breite, länge, v_wandstaerke, h_wandstaerke) VALUES (@name,@lagerID,@zeilen,@spalten,@hoehe,@breite,@laenge,@wandV,@wandH) RETURNING regal_id;";
 
                 cmd.Parameters.AddWithValue("name", name);
                 cmd.Parameters.AddWithValue("lagerID", lagerID);
