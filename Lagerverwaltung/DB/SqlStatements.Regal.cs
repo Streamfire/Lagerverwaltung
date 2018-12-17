@@ -30,9 +30,10 @@ namespace Lagerverwaltung.DB
             return query.Get<RegalModel>().ToDictionary(row => row.Regal_ID, row => row);
         }
 
-        public static void ErstelleRegal()
+        public static void ErstelleRegal(string name, long lager_id, short zeilen, short spalten, float hoehe, float breite, float laenge, float v_wandstärke, float h_wandstärke)
         {
-            throw new NotImplementedException();
+            var query = queryfactory.Query("regal").Insert(new { name, lager_id, zeilen, spalten, hoehe, breite, laenge, v_wandstärke, h_wandstärke });
+            OnDatabaseChanged(ModeltypEnum.LagerModel);
         }
 
         public static void LoescheRegal(long regal_id)
@@ -41,9 +42,54 @@ namespace Lagerverwaltung.DB
             OnDatabaseChanged(ModeltypEnum.RegalModel);
         }
 
-        public static void UpdateRegal()
+        public static void UpdateRegal(long regal_id, string name="", long? lager_id=null, short? zeilen=null, short? spalten=null, float? hoehe=null, float? breite=null, float? laenge=null, float? v_wandstärke=null, float? h_wandstärke=null)
         {
-            throw new NotImplementedException();
+            var zuletzt_geändert = DateTime.Now;
+            var query = queryfactory.Query("regal").Where("regal_id", regal_id);
+            Dictionary<string, object> _dict = new Dictionary<string, object>();
+
+            if (name.Length != 0)
+            {
+                _dict.Add("name", name);
+            }
+            if(lager_id != null)
+            {
+                _dict.Add("lager_id", lager_id);
+            }
+            if (zeilen != null)
+            {
+                _dict.Add("zeilen", zeilen);
+            }
+            if (spalten != null)
+            {
+                _dict.Add("spalten", spalten);
+            }
+            if (hoehe != null)
+            {
+                _dict.Add("hoehe", hoehe);
+            }
+            if (breite != null)
+            {
+                _dict.Add("breite", breite);
+            }
+            if (laenge != null)
+            {
+                _dict.Add("laenge", laenge);
+            }
+            if (v_wandstärke != null)
+            {
+                _dict.Add("v_wandstärke", v_wandstärke);
+            }
+            if (h_wandstärke != null)
+            {
+                _dict.Add("h_wandstärke", h_wandstärke);
+            }
+            if (_dict.Count != 0)
+            {
+                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                query.Update(_dict);
+                OnDatabaseChanged(ModeltypEnum.RegalModel);
+            }
         }
     }
 }

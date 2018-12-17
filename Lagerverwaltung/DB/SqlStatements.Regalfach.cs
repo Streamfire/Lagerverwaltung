@@ -12,9 +12,10 @@ namespace Lagerverwaltung.DB
             throw new NotImplementedException();
         }
 
-        public static void ErstelleRegalfach()
+        public static void ErstelleRegalfach(string name, long regal_id, string bemerkung, float hoehe, float breite, float laenge)
         {
-            throw new NotImplementedException();
+            var query = queryfactory.Query("regalfach").Insert(new { name, regal_id, bemerkung, hoehe, breite, laenge });
+            OnDatabaseChanged(ModeltypEnum.RegalfachModel);
         }
 
         public static void LoescheRegalfach(long regalfach_id)
@@ -23,9 +24,42 @@ namespace Lagerverwaltung.DB
             OnDatabaseChanged(ModeltypEnum.RegalfachModel);
         }
 
-        public static void UpdateRegalfach()
+        public static void UpdateRegalfach(long regalfach_id, string name="", long? regal_id=null, string bemerkung="", float? hoehe=null, float? breite=null, float? laenge=null)
         {
-            throw new NotImplementedException();
+            var zuletzt_geändert = DateTime.Now;
+            var query = queryfactory.Query("regalfach").Where("regalfach_id", regalfach_id);
+            Dictionary<string, object> _dict = new Dictionary<string, object>();
+
+            if (name.Length != 0)
+            {
+                _dict.Add("name", name);
+            }
+            if (regal_id != null)
+            {
+                _dict.Add("regal_id", regal_id);
+            }
+            if (bemerkung.Length != 0)
+            {
+                _dict.Add("bemerkung", bemerkung);
+            }
+            if (hoehe != null)
+            {
+                _dict.Add("hoehe", hoehe);
+            }
+            if (breite != null)
+            {
+                _dict.Add("breite", breite);
+            }
+            if (laenge != null)
+            {
+                _dict.Add("laenge", laenge);
+            }
+            if (_dict.Count != 0)
+            {
+                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                query.Update(_dict);
+                OnDatabaseChanged(ModeltypEnum.RegalfachModel);
+            }
         }
     }
 }

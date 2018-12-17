@@ -26,9 +26,10 @@ namespace Lagerverwaltung.DB
             return query.Get<LagerModel>().ToDictionary(row => row.Lager_ID, row => row);
         }
 
-        public static void ErstelleLager()
+        public static void ErstelleLager(string name, string standort, string beschreibung, long lagertyp_id)
         {
-            throw new NotImplementedException();
+            var query = queryfactory.Query("lager").Insert(new { name, standort, beschreibung, lagertyp_id });
+            OnDatabaseChanged(ModeltypEnum.LagerModel);
         }
 
         public static void LoescheLager(long lager_id)
@@ -37,9 +38,34 @@ namespace Lagerverwaltung.DB
             OnDatabaseChanged(ModeltypEnum.LagerModel);
         }
 
-        public static void UpdateLager()
+        public static void UpdateLager(long lager_id, string name="", string standort="", string beschreibung="", long? lagertyp_id=null)
         {
-            throw new NotImplementedException();
+            var zuletzt_geändert = DateTime.Now;
+            var query = queryfactory.Query("lager").Where("lager_id", lager_id);
+            Dictionary<string, object> _dict = new Dictionary<string, object>();
+
+            if(name.Length != 0)
+            {
+                _dict.Add("name", name);
+            }
+            if (standort.Length != 0)
+            {
+                _dict.Add("standort", standort);
+            }
+            if (beschreibung.Length != 0)
+            {
+                _dict.Add("beschreibung", beschreibung);
+            }
+            if (lagertyp_id != null)
+            {
+                _dict.Add("lagertyp_id", lagertyp_id);
+            }
+            if (_dict.Count != 0)
+            {
+                _dict.Add("zuletzt_geändert", zuletzt_geändert);
+                query.Update(_dict);
+                OnDatabaseChanged(ModeltypEnum.LagerModel);
+            }
         }
     }
 }
