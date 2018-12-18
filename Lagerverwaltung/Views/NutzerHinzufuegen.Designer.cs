@@ -42,8 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.show_cleartext = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +101,7 @@
             this.buttonNutzerAnlegen.TabIndex = 5;
             this.buttonNutzerAnlegen.Text = "Nutzer anlegen";
             this.buttonNutzerAnlegen.UseVisualStyleBackColor = true;
-            this.buttonNutzerAnlegen.Click += new System.EventHandler(this.buttonNutzerAnlegen_Click);
+            this.buttonNutzerAnlegen.Click += new System.EventHandler(this.ButtonNutzerAnlegen_Click);
             // 
             // buttonAbbrechen
             // 
@@ -179,33 +178,23 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Nachname:";
             // 
-            // show_cleartext
+            // checkBox1
             // 
-            this.show_cleartext.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.show_cleartext.Location = new System.Drawing.Point(33, 356);
-            this.show_cleartext.Name = "show_cleartext";
-            this.show_cleartext.Size = new System.Drawing.Size(64, 34);
-            this.show_cleartext.TabIndex = 15;
-            this.show_cleartext.UseVisualStyleBackColor = true;
-            this.show_cleartext.Click += new System.EventHandler(this.show_cleartext_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label8.Location = new System.Drawing.Point(21, 392);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Klartext anzeigen";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(148, 325);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(107, 17);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Klartext anzeigen";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // NutzerHinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 414);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.show_cleartext);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -245,7 +234,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button show_cleartext;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

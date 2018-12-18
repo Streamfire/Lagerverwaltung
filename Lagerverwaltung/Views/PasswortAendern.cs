@@ -48,11 +48,11 @@ namespace Lagerverwaltung.Views
                 MessageBox.Show("Der Nutzername oder das Passwort sind ungültig!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void show_cleartext_Click_1(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             textBoxAltesPasswort.UseSystemPasswordChar = !textBoxAltesPasswort.UseSystemPasswordChar;
             textBoxNeuesPasswort.UseSystemPasswordChar = !textBoxNeuesPasswort.UseSystemPasswordChar;
-            textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar = !textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar; 
+            textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar = !textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar;
         }
     }
 }

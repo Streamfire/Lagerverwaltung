@@ -21,12 +21,12 @@ namespace Lagerverwaltung.Views
             Close();
         }
 
-        private void buttonNutzerAnlegen_Click(object sender, EventArgs e)
+        private void ButtonNutzerAnlegen_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void show_cleartext_Click(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPasswort.UseSystemPasswordChar = !textBoxPasswort.UseSystemPasswordChar;
             textBoxPasswortBestaetigen.UseSystemPasswordChar = !textBoxPasswortBestaetigen.UseSystemPasswordChar;
