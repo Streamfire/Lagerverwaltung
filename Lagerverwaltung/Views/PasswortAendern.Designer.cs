@@ -37,6 +37,10 @@
             this.buttonOkay = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBoxNeuesPasswortBestaetigen = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.show_cleartext = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -74,6 +78,7 @@
             this.textBoxAltesPasswort.Name = "textBoxAltesPasswort";
             this.textBoxAltesPasswort.Size = new System.Drawing.Size(216, 24);
             this.textBoxAltesPasswort.TabIndex = 3;
+            this.textBoxAltesPasswort.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -92,14 +97,15 @@
             this.textBoxNeuesPasswort.Name = "textBoxNeuesPasswort";
             this.textBoxNeuesPasswort.Size = new System.Drawing.Size(216, 24);
             this.textBoxNeuesPasswort.TabIndex = 5;
+            this.textBoxNeuesPasswort.UseSystemPasswordChar = true;
             // 
             // buttonOkay
             // 
             this.buttonOkay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOkay.Location = new System.Drawing.Point(158, 207);
+            this.buttonOkay.Location = new System.Drawing.Point(158, 252);
             this.buttonOkay.Name = "buttonOkay";
             this.buttonOkay.Size = new System.Drawing.Size(97, 34);
-            this.buttonOkay.TabIndex = 6;
+            this.buttonOkay.TabIndex = 7;
             this.buttonOkay.Text = "Okay";
             this.buttonOkay.UseVisualStyleBackColor = true;
             this.buttonOkay.Click += new System.EventHandler(this.ButtonOkay_Click);
@@ -107,10 +113,10 @@
             // buttonAbbrechen
             // 
             this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(277, 207);
+            this.buttonAbbrechen.Location = new System.Drawing.Point(277, 252);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(97, 34);
-            this.buttonAbbrechen.TabIndex = 7;
+            this.buttonAbbrechen.TabIndex = 8;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
             this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
@@ -122,14 +128,57 @@
             this.label4.Location = new System.Drawing.Point(28, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 26);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 9;
             this.label4.Text = "Passwort ändern";
+            // 
+            // textBoxNeuesPasswortBestaetigen
+            // 
+            this.textBoxNeuesPasswortBestaetigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNeuesPasswortBestaetigen.Location = new System.Drawing.Point(158, 208);
+            this.textBoxNeuesPasswortBestaetigen.Name = "textBoxNeuesPasswortBestaetigen";
+            this.textBoxNeuesPasswortBestaetigen.Size = new System.Drawing.Size(216, 24);
+            this.textBoxNeuesPasswortBestaetigen.TabIndex = 6;
+            this.textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 36);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Neues Passwort\r\nBestätigen:\r\n";
+            // 
+            // show_cleartext
+            // 
+            this.show_cleartext.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_cleartext.Location = new System.Drawing.Point(36, 252);
+            this.show_cleartext.Name = "show_cleartext";
+            this.show_cleartext.Size = new System.Drawing.Size(64, 34);
+            this.show_cleartext.TabIndex = 7;
+            this.show_cleartext.UseVisualStyleBackColor = true;
+            this.show_cleartext.Click += new System.EventHandler(this.show_cleartext_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label6.Location = new System.Drawing.Point(26, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Klartext anzeigen";
             // 
             // PasswortAendern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 262);
+            this.ClientSize = new System.Drawing.Size(389, 310);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.show_cleartext);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxNeuesPasswortBestaetigen);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.buttonOkay);
@@ -158,5 +207,9 @@
         private System.Windows.Forms.Button buttonOkay;
         private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxNeuesPasswortBestaetigen;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button show_cleartext;
+        private System.Windows.Forms.Label label6;
     }
 }

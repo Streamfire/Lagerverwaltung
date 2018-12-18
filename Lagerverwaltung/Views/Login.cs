@@ -43,6 +43,9 @@ namespace Lagerverwaltung.Views
             }
         }
 
-       
+        private void show_cleartext_Click(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = !textBox2.UseSystemPasswordChar;
+        }
     }
 }

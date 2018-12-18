@@ -16,15 +16,20 @@ namespace Lagerverwaltung.Views
         {
             InitializeComponent();
         }
-
         private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void ButtonNutzerAnlegen_Click(object sender, EventArgs e)
+        private void buttonNutzerAnlegen_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void show_cleartext_Click(object sender, EventArgs e)
+        {
+            textBoxPasswort.UseSystemPasswordChar = !textBoxPasswort.UseSystemPasswordChar;
+            textBoxPasswortBestaetigen.UseSystemPasswordChar = !textBoxPasswortBestaetigen.UseSystemPasswordChar;
         }
     }
 }

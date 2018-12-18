@@ -25,7 +25,11 @@ namespace Lagerverwaltung.Views
 
         private void ButtonOkay_Click(object sender, EventArgs e)
         {
-            if (Lagerverwaltung.Controller.AuthenticationController.Login(textBoxNutzername.Text, textBoxAltesPasswort.Text))
+            if(textBoxNeuesPasswort.Text != textBoxNeuesPasswortBestaetigen.Text)
+            {
+                MessageBox.Show("Passwörter stimmen nicht überein!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (Lagerverwaltung.Controller.AuthenticationController.Login(textBoxNutzername.Text, textBoxAltesPasswort.Text))         
             {
                 try
                 {
@@ -42,8 +46,13 @@ namespace Lagerverwaltung.Views
             }
             else
                 MessageBox.Show("Der Nutzername oder das Passwort sind ungültig!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
         }
 
+        private void show_cleartext_Click_1(object sender, EventArgs e)
+        {
+            textBoxAltesPasswort.UseSystemPasswordChar = !textBoxAltesPasswort.UseSystemPasswordChar;
+            textBoxNeuesPasswort.UseSystemPasswordChar = !textBoxNeuesPasswort.UseSystemPasswordChar;
+            textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar = !textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar; 
+        }
     }
 }

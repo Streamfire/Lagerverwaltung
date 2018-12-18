@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonPasswortAendern = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.show_cleartext = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -79,10 +81,10 @@
             // guestBtn
             // 
             this.guestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestBtn.Location = new System.Drawing.Point(319, 137);
+            this.guestBtn.Location = new System.Drawing.Point(264, 147);
             this.guestBtn.Name = "guestBtn";
-            this.guestBtn.Size = new System.Drawing.Size(99, 34);
-            this.guestBtn.TabIndex = 5;
+            this.guestBtn.Size = new System.Drawing.Size(76, 34);
+            this.guestBtn.TabIndex = 4;
             this.guestBtn.Text = "Gast";
             this.guestBtn.UseVisualStyleBackColor = true;
             this.guestBtn.Click += new System.EventHandler(this.Button2_Click);
@@ -111,10 +113,10 @@
             // buttonPasswortAendern
             // 
             this.buttonPasswortAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPasswortAendern.Location = new System.Drawing.Point(28, 137);
+            this.buttonPasswortAendern.Location = new System.Drawing.Point(128, 147);
             this.buttonPasswortAendern.Name = "buttonPasswortAendern";
-            this.buttonPasswortAendern.Size = new System.Drawing.Size(152, 34);
-            this.buttonPasswortAendern.TabIndex = 8;
+            this.buttonPasswortAendern.Size = new System.Drawing.Size(130, 34);
+            this.buttonPasswortAendern.TabIndex = 3;
             this.buttonPasswortAendern.Text = "Passwort ändern";
             this.buttonPasswortAendern.UseVisualStyleBackColor = true;
             this.buttonPasswortAendern.Click += new System.EventHandler(this.ButtonPasswortAendern_Click);
@@ -122,19 +124,41 @@
             // buttonLogin
             // 
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(214, 137);
+            this.buttonLogin.Location = new System.Drawing.Point(346, 147);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(99, 34);
-            this.buttonLogin.TabIndex = 10;
+            this.buttonLogin.Size = new System.Drawing.Size(72, 34);
+            this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // show_cleartext
+            // 
+            this.show_cleartext.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_cleartext.Location = new System.Drawing.Point(36, 147);
+            this.show_cleartext.Name = "show_cleartext";
+            this.show_cleartext.Size = new System.Drawing.Size(64, 34);
+            this.show_cleartext.TabIndex = 2;
+            this.show_cleartext.UseVisualStyleBackColor = true;
+            this.show_cleartext.Click += new System.EventHandler(this.show_cleartext_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label6.Location = new System.Drawing.Point(25, 184);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Klartext anzeigen";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 184);
+            this.ClientSize = new System.Drawing.Size(430, 203);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.show_cleartext);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonPasswortAendern);
             this.Controls.Add(this.label4);
@@ -161,8 +185,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonPasswortAendern;
+        private System.Windows.Forms.Button show_cleartext;
         private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button buttonPasswortAendern;
+        private System.Windows.Forms.Label label6;
     }
 }
 
