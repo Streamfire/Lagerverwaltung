@@ -10,8 +10,8 @@ namespace Lagerverwaltung.Views
         public static Verwaltung Verwaltung { get; set; }
         public static List<Produkt> ProduktListe { get; set; }
         public static List<Artikeltyp> ArtikeltypListe { get; set; }
-        public static string CurrentLager { get; set; }
-        public static string CurrentRegal { get; set; }
+        public static long CurrentLagerID { get; set; } = -1;
+        public static long CurrentRegalID { get; set; } = -1;
 
         private bool _adminuser = false;
 

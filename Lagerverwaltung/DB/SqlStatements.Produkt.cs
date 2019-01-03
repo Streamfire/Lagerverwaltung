@@ -1,15 +1,29 @@
 ﻿using Lagerverwaltung.Model;
 using SqlKata.Execution;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Lagerverwaltung.DB
 {
     static partial class SqlStatements
     {
-        public static Dictionary<long,ProduktModel> HoleProdukt()
+        public static Dictionary<long, ProduktModel> HoleProdukt(long produkt_id = -1, string name = "", int limit = -1)
         {
-            throw new NotImplementedException();
+            var query = queryfactory.Query("produkt").OrderBy("produkt_id");
+            if (produkt_id > 0)
+            {
+                query.Where("produkt_id", produkt_id);
+            }
+            if (name.Length != 0)
+            {
+                query.Where("name", name);
+            }
+            if (limit > 0)
+            {
+                query.Limit(limit);
+            }
+            return query.Get<ProduktModel>().ToDictionary(row => row.Produkt_ID, row => row);
         }
 
         public static void ErstelleProdukt(string name, float gewicht, float preis, string zeichnungsnummer, long artikeltyp_id, long paket_id)
@@ -24,7 +38,7 @@ namespace Lagerverwaltung.DB
             OnDatabaseChanged(ModeltypEnum.ProduktModel);
         }
 
-        public static void UpdateProdukt(long produkt_id, string name="", float? gewicht=null, float? preis=null, string zeichnungsnummer="", long? artikeltyp_id=null, long? paket_id=null)
+        public static void UpdateProdukt(long produkt_id, string name="", float? gewicht=null, float? preis=null, string zeichnungsnummer="", long? artikeltyp_id=null)
         {
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("produkt").Where("produkt_id", produkt_id);
@@ -49,10 +63,6 @@ namespace Lagerverwaltung.DB
             if (artikeltyp_id != null)
             {
                 _dict.Add("artikeltyp_id", artikeltyp_id);
-            }
-            if (paket_id != null)
-            {
-                _dict.Add("paket_id", paket_id);
             }
             if (_dict.Count != 0)
             {

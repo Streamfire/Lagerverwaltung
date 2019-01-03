@@ -126,26 +126,34 @@ namespace Lagerverwaltung.Views
 		 
 		private void OnFocusedPanel(Object sender, EventArgs e)
 		{
+            //TODO: bitte ändern
+            //TODO: Zuletzt ausgewähltes Element kann durch die SQLStatements nur noch mit der ID gespeichert werden
+            /*
 			_lastFocusedAccordion = (Accordion) sender;
-            Dashboard.CurrentRegal = _lastFocusedAccordion.Name;
-		}
+            Dashboard.CurrentRegalID = _lastFocusedAccordion.Name;
+            */
+        }
 
-		private void OnChangedTab(Object sender, EventArgs e)
+        private void OnChangedTab(Object sender, EventArgs e)
 		{
+            //TODO: bitte ändern
+            //TODO: Zuletzt ausgewähltes Element kann durch die SQLStatements nur noch mit der ID gespeichert werden
+            /*
           if(((TabControl)sender).SelectedIndex!=-1)
 			{
 				_lastFocusedPage = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex];
-				Dashboard.CurrentLager = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].Text;
+				Dashboard.CurrentLagerID = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].Text;
 			}
 			else if (((TabControl)sender).TabPages.Count>0)
 			{
 				_lastFocusedPage = ((TabControl)sender).TabPages[0];
-				Dashboard.CurrentLager = ((TabControl)sender).TabPages[0].Text;
+				Dashboard.CurrentLagerID = ((TabControl)sender).TabPages[0].Text;
 			}
 			else
 			{
 
 			}
+            */
 			
         }
 

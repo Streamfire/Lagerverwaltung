@@ -1,15 +1,33 @@
 ﻿using Lagerverwaltung.Model;
 using SqlKata.Execution;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Lagerverwaltung.DB
 {
     static partial class SqlStatements
     {
-        public static Dictionary<long, RegalfachModel> HoleRegalfach()
+        public static Dictionary<long, RegalfachModel> HoleRegalfach(long regalfach_id = -1, long regal_id =-1, string name="", int limit=-1)
         {
-            throw new NotImplementedException();
+            var query = queryfactory.Query("regalfach").OrderBy("regalfach_id");
+            if (regalfach_id > 0)
+            {
+                query.Where("regalfach_id", regalfach_id);
+            }
+            if (regal_id > 0)
+            {
+                query.Where("regal_id", regal_id);
+            }
+            if (name.Length != 0)
+            {
+                query.Where("name", name);
+            }
+            if (limit > 0)
+            {
+                query.Limit(limit);
+            }
+            return query.Get<RegalfachModel>().ToDictionary(row => row.Regalfach_ID, row => row);
         }
 
         public static void ErstelleRegalfach(string name, long regal_id, string bemerkung, float hoehe, float breite, float laenge)

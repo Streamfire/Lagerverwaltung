@@ -1,15 +1,33 @@
 ﻿using Lagerverwaltung.Model;
 using SqlKata.Execution;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Lagerverwaltung.DB
 {
     static partial class SqlStatements
     {
-        public static Dictionary<long, PaketModel> HolePaket()
+        public static Dictionary<long, PaketModel> HolePaket(long paket_id = -1, long regalfach_id = -1, string name = "", int limit=-1)
         {
-            throw new NotImplementedException();
+            var query = queryfactory.Query("paket").OrderBy("paket_id");
+            if (paket_id > 0)
+            {
+                query.Where("paket_id", paket_id);
+            }
+            if (regalfach_id > 0)
+            {
+                query.Where("regalfach_id", regalfach_id);
+            }
+            if (name.Length != 0)
+            {
+                query.Where("name", name);
+            }
+            if (limit > 0)
+            {
+                query.Limit(limit);
+            }
+            return query.Get<PaketModel>().ToDictionary(row => row.Paket_ID, row => row);
         }
 
         public static void ErstellePaket(string name, long regalfach_id, long produkt_id, short menge, DateTime haltbarkeit, string anschaffungsgrund, float hoehe, float breite, float laenge)
