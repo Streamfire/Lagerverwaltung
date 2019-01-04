@@ -4,8 +4,6 @@ namespace Lagerverwaltung.Core
 {
     public sealed class Suchkriterien : Base
     {
-        public string LagerName { get; set; }
-
         public string ProduktName { get; set; }
         public uint ProduktID { get; set; }
         public float ProduktGewicht { get; set; }
@@ -82,8 +80,6 @@ namespace Lagerverwaltung.Core
             PaketMenge2 = 0;
             //PaketHaltbarkeit2 = DateTime.ParseExact("01.01.1970", "dd.MM.yyyy", CultureInfo.InvariantCulture);
             PaketHaltbarkeit2 = "01.01.1970";
-
-            LagerName = "";
         }
     }
 }

@@ -31,37 +31,28 @@ namespace Lagerverwaltung.DB
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                /*
-                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geändert, "  +
+                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geaendert, "  +
                                     "p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, row_number() over (order by pr.name desc) as Zeile from produkt pr " +
                                     "join(select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname from paket p "                                                                          +
                                     "join (select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname from regalfach rf "                                                                                                      +
                                     "join (select rg.name, rg.regal_id from regal rg) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id limit @num;";
-                                    */
-
-                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, " +
-                                    "pr.erstellt_am, pr.zuletzt_geändert, p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, p.lagername, row_number() OVER(ORDER BY pr.name DESC) as ID from produkt pr " +
-                                    "join (select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname, rf.lagername from paket p " +
-                                    "join(select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname, rg.lagername from regalfach rf " +
-                                    "join (select rg.lager_id, rg.name, rg.regal_id, lg.name as lagername from regal rg " + 
-                                    "join (select lg.lager_id, lg.name from lager lg) as lg on rg.lager_id = lg.lager_id) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id limit @num;";
                 cmd.Parameters.AddWithValue("num", limit);
 
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        new Suche(reader.GetString(0), (uint)reader.GetInt32(1), reader.GetFloat(2), reader.GetFloat(3), reader.GetString(4), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetDateTime(8), reader.GetDateTime(9), reader.GetString(10), (ushort)reader.GetInt16(11), reader.GetDateTime(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), (uint)reader.GetInt64(17));
+                        new Suche(reader.GetString(0), (uint)reader.GetInt32(1), reader.GetFloat(2), reader.GetFloat(3), reader.GetString(4), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetDateTime(8), reader.GetDateTime(9), reader.GetString(10), (ushort)reader.GetInt16(11), reader.GetDateTime(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), (uint)reader.GetInt64(16));
                     }
                 }
             }
         }
 
-        public static void HoleSuchergebnisse(  string lager_name, string regal_name, string regalfach_name, string produkt_name, uint produkt_id, string produkt_zeichnungsnummer  ,
-                                                string paket_name, string paket_anschaffungsgrund, float produkt_gewicht, float produkt_gewicht2, float produkt_preis               ,
-                                                float produkt_preis2, string produkt_erstellt_am, string produkt_erstellt_am2, string produkt_geaendert_am                          ,
-                                                string produkt_geaendert_am2, ushort paket_menge, ushort paket_menge2, string paket_haltbarkeit, string paket_haltbarkeit2          ,
-                                                float hoehe, float hoehe2, float laenge, float laenge2, float breite, float breite2, bool[] changed, int change                     )
+        public static void HoleSuchergebnisse(string regal_name, string regalfach_name, string produkt_name, uint produkt_id, string produkt_zeichnungsnummer,
+                                        string paket_name, string paket_anschaffungsgrund, float produkt_gewicht, float produkt_gewicht2, float produkt_preis,
+                                        float produkt_preis2, string produkt_erstellt_am, string produkt_erstellt_am2, string produkt_geaendert_am,
+                                        string produkt_geaendert_am2, ushort paket_menge, ushort paket_menge2, string paket_haltbarkeit, string paket_haltbarkeit2,
+                                        float hoehe, float hoehe2, float laenge, float laenge2, float breite, float breite2, bool[] changed, int change)
         {
 
             using (var cmd = new NpgsqlCommand())
@@ -69,29 +60,13 @@ namespace Lagerverwaltung.DB
                 
 
                 cmd.Connection = conn;
-                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, " +
-                                    "pr.erstellt_am, pr.zuletzt_geändert, p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, p.lagername, row_number() OVER(ORDER BY pr.name DESC) as ID from produkt pr " +
-                                    "join (select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname, rf.lagername from paket p " +
-                                    "join(select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname, rg.lagername from regalfach rf " +
-                                    "join (select rg.lager_id, rg.name, rg.regal_id, lg.name as lagername from regal rg " +
-                                    "join (select lg.lager_id, lg.name from lager lg) as lg on rg.lager_id = lg.lager_id) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id where ";
-
-
+                cmd.CommandText = "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geaendert, " +
+                    "p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, row_number() over (order by pr.name desc) as Zeile from produkt pr " +
+                    "join(select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname from paket p " +
+                    "join (select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname from regalfach rf " +
+                    "join (select rg.name, rg.regal_id from regal rg) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id where ";
 
                 if (changed[0] == true)
-                {
-                    if (change > 1)
-                    {
-                        cmd.CommandText += "p.lagername like '%" + lager_name + "%' AND ";
-                    }
-                    else
-                    {
-                        cmd.CommandText += "p.lagername like '%" + lager_name + "%' ;";
-                    }
-                    change--;
-                }
-
-                if (changed[1] == true)
                 {
                     if (change > 1)
                     {
@@ -104,7 +79,7 @@ namespace Lagerverwaltung.DB
                     change--;
                 }
 
-                if (changed[2] == true)
+                if (changed[1] == true)
                 {
                     if (change > 1)
                     {
@@ -117,7 +92,7 @@ namespace Lagerverwaltung.DB
                     change--;
                 }
 
-                if (changed[3] == true)
+                if (changed[2] == true)
                 {
                     if (change > 1)
                     {
@@ -130,7 +105,7 @@ namespace Lagerverwaltung.DB
                     change--;
                 }
 
-                if (changed[4] == true)
+                if (changed[3] == true)
                 {
                     if (change > 1)
                     {
@@ -143,7 +118,7 @@ namespace Lagerverwaltung.DB
                     change--;
                 }
 
-                if (changed[5] == true)
+                if (changed[4] == true)
                 {
                     if (change > 1)
                     {
@@ -156,7 +131,7 @@ namespace Lagerverwaltung.DB
                     change--;
                 }
 
-                if (changed[6] == true)
+                if (changed[5] == true)
                 {
                     if (change > 1)
                     {
@@ -169,7 +144,7 @@ namespace Lagerverwaltung.DB
                     change--;
                 }
 
-                if (changed[7] == true)
+                if (changed[6] == true)
                 {
                     if (change > 1)
                     {
@@ -184,9 +159,9 @@ namespace Lagerverwaltung.DB
 
 
 
-                if (changed[8] != false || changed[9] != false)
+                if (changed[7] != false || changed[8] != false)
                 {
-                    if (changed[8] == true && changed[9] == false)
+                    if (changed[7] == true && changed[8] == false)
                     {
                         if (change > 1)
                         {
@@ -198,7 +173,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[8] == false && changed[9] == true)
+                    else if (changed[7] == false && changed[8] == true)
                     {
                         if (change > 1)
                         {
@@ -225,9 +200,9 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[10] != false || changed[11] != false)
+                if (changed[9] != false || changed[10] != false)
                 {
-                    if (changed[10] == true && changed[11] == false)
+                    if (changed[9] == true && changed[10] == false)
                     {
                         if (change > 1)
                         {
@@ -239,7 +214,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[10] == false && changed[11] == true)
+                    else if (changed[9] == false && changed[10] == true)
                     {
                         if (change > 1)
                         {
@@ -266,9 +241,9 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[12] != false || changed[13] != false)
+                if (changed[11] != false || changed[12] != false)
                 {
-                    if (changed[12] == true && changed[13] == false)
+                    if (changed[11] == true && changed[12] == false)
                     {
                         if (change > 1)
                         {
@@ -280,7 +255,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[12] == false && changed[13] == true)
+                    else if (changed[11] == false && changed[12] == true)
                     {
                         if (change > 1)
                         {
@@ -307,29 +282,29 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[14] != false || changed[15] != false)
+                if (changed[13] != false || changed[14] != false)
                 {
-                    if (changed[14] == true && changed[15] == false)
+                    if (changed[13] == true && changed[14] == false)
                     {
                         if (change > 1)
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') AND ";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') AND ";
                         }
                         else
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') ;";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('31.12.2100', 'dd.MM.yyyy') ;";
                         }
                         change--;
                     }
-                    else if (changed[14] == false && changed[15] == true)
+                    else if (changed[13] == false && changed[14] == true)
                     {
                         if (change > 1)
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
                         }
                         else
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('01.01.1970', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
                         }
                         change--;
                     }
@@ -337,11 +312,11 @@ namespace Lagerverwaltung.DB
                     {
                         if (change > 2)
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') AND ";
                         }
                         else
                         {
-                            cmd.CommandText += "pr.zuletzt_geändert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
+                            cmd.CommandText += "pr.zuletzt_geaendert BETWEEN to_timestamp('" + produkt_geaendert_am + "', 'dd.MM.yyyy') AND to_timestamp('" + produkt_geaendert_am2 + "', 'dd.MM.yyyy') ;";
                         }
                         change = change - 2;
                     }
@@ -349,9 +324,9 @@ namespace Lagerverwaltung.DB
 
 
 
-                if (changed[16] != false || changed[17] != false)
+                if (changed[15] != false || changed[16] != false)
                 {
-                    if (changed[16] == true && changed[17] == false)
+                    if (changed[15] == true && changed[16] == false)
                     {
                         if (change > 1)
                         {
@@ -363,7 +338,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[16] == false && changed[17] == true)
+                    else if (changed[15] == false && changed[16] == true)
                     {
                         if (change > 1)
                         {
@@ -390,9 +365,9 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[18] != false || changed[19] != false)
+                if (changed[17] != false || changed[18] != false)
                 {
-                    if (changed[18] == true && changed[19] == false)
+                    if (changed[17] == true && changed[18] == false)
                     {
                         if (change > 1)
                         {
@@ -404,7 +379,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[18] == false && changed[19] == true)
+                    else if (changed[17] == false && changed[18] == true)
                     {
                         if (change > 1)
                         {
@@ -431,9 +406,9 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[20] != false || changed[21] != false)
+                if (changed[19] != false || changed[20] != false)
                 {
-                    if (changed[20] == true && changed[21] == false)
+                    if (changed[19] == true && changed[20] == false)
                     {
                         if (change > 1)
                         {
@@ -445,7 +420,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[20] == false && changed[21] == true)
+                    else if (changed[19] == false && changed[20] == true)
                     {
                         if (change > 1)
                         {
@@ -472,9 +447,9 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[22] != false || changed[23] != false)
+                if (changed[21] != false || changed[22] != false)
                 {
-                    if (changed[22] == true && changed[23] == false)
+                    if (changed[21] == true && changed[22] == false)
                     {
                         if (change > 1)
                         {
@@ -486,7 +461,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[22] == false && changed[23] == true)
+                    else if (changed[21] == false && changed[22] == true)
                     {
                         if (change > 1)
                         {
@@ -513,9 +488,9 @@ namespace Lagerverwaltung.DB
                 }
 
 
-                if (changed[24] != false || changed[25] != false)
+                if (changed[23] != false || changed[24] != false)
                 {
-                    if (changed[24] == true && changed[25] == false)
+                    if (changed[23] == true && changed[24] == false)
                     {
                         if (change > 1)
                         {
@@ -527,7 +502,7 @@ namespace Lagerverwaltung.DB
                         }
                         change--;
                     }
-                    else if (changed[24] == false && changed[25] == true)
+                    else if (changed[23] == false && changed[24] == true)
                     {
                         if (change > 1)
                         {
@@ -560,7 +535,7 @@ namespace Lagerverwaltung.DB
 
                         while (reader.Read())
                         {
-                            new Suche(reader.GetString(0), (uint)reader.GetInt32(1), reader.GetFloat(2), reader.GetFloat(3), reader.GetString(4), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetDateTime(8), reader.GetDateTime(9), reader.GetString(10), (ushort)reader.GetInt16(11), reader.GetDateTime(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), (uint)reader.GetInt64(17));
+                            new Suche(reader.GetString(0), (uint)reader.GetInt32(1), reader.GetFloat(2), reader.GetFloat(3), reader.GetString(4), reader.GetFloat(5), reader.GetFloat(6), reader.GetFloat(7), reader.GetDateTime(8), reader.GetDateTime(9), reader.GetString(10), (ushort)reader.GetInt16(11), reader.GetDateTime(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), (uint)reader.GetInt64(16));
                         }
                     }
                 }
