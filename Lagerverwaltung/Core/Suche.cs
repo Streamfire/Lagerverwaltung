@@ -7,6 +7,8 @@ namespace Lagerverwaltung.Core
 {
     public sealed class Suche : Base
     {
+        public string LagerName { get; set; }
+
         public string ProduktName { get; set; }
         public uint ProduktID { get; set; }
         public float ProduktGewicht { get; set; }
@@ -45,8 +47,8 @@ namespace Lagerverwaltung.Core
 
         //public static Dictionary<ulong, Suche> HoleSuchergebnisse => new Dictionary<ulong, Suche>(_dict);
 
-        public Suche(   string produkt_name, uint produkt_id, float produkt_gewicht, float produkt_preis, string produkt_zeichnungsnummer, float hoehe, float breite, float laenge, DateTime produkt_erstellt_am, DateTime produkt_geaendert_am  ,
-                        string paket_name, ushort paket_menge, DateTime paket_haltbarkeit, string paket_anschaffungsgrund, string regal_name, string regalfach_name, uint zeile                                                                  )
+        public Suche(   string produkt_name, uint produkt_id, float produkt_gewicht, float produkt_preis, string produkt_zeichnungsnummer, float hoehe, float breite, float laenge, DateTime produkt_erstellt_am                    ,
+                        DateTime produkt_geaendert_am, string paket_name, ushort paket_menge, DateTime paket_haltbarkeit, string paket_anschaffungsgrund, string regal_name, string regalfach_name, string lager_name, uint zeile   )
         {
             ProduktName = produkt_name;
             ProduktID = produkt_id;
@@ -66,6 +68,8 @@ namespace Lagerverwaltung.Core
 
             RegalName = regal_name;
             RegalfachName = regalfach_name;
+
+            LagerName = lager_name;
 
             Zeile = zeile;
 

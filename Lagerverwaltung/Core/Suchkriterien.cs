@@ -4,6 +4,8 @@ namespace Lagerverwaltung.Core
 {
     public sealed class Suchkriterien : Base
     {
+        public string LagerName { get; set; }
+
         public string ProduktName { get; set; }
         public uint ProduktID { get; set; }
         public float ProduktGewicht { get; set; }
@@ -65,6 +67,8 @@ namespace Lagerverwaltung.Core
 
             RegalName = "";
             RegalfachName = "";
+
+            LagerName = "";
 
             Zeile = 0;
 
