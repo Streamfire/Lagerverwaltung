@@ -32,14 +32,16 @@
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nutzerHinzufügenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nutzerHinzufügenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lagertypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.artikeltypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,9 +75,27 @@
             // 
             // bearbeitenToolStripMenuItem
             // 
+            this.bearbeitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lagertypToolStripMenuItem,
+            this.artikeltypToolStripMenuItem});
             this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
             this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nutzerHinzufügenToolStripMenuItem});
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // nutzerHinzufügenToolStripMenuItem
+            // 
+            this.nutzerHinzufügenToolStripMenuItem.Name = "nutzerHinzufügenToolStripMenuItem";
+            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.nutzerHinzufügenToolStripMenuItem.Text = "Nutzer hinzufügen";
+            this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.NutzerHinzufügenToolStripMenuItem_Click);
             // 
             // hilfeToolStripMenuItem
             // 
@@ -88,7 +108,7 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.InfoToolStripMenuItem_Click);
             // 
@@ -136,20 +156,18 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // loginToolStripMenuItem
+            // lagertypToolStripMenuItem
             // 
-            this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nutzerHinzufügenToolStripMenuItem});
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "Login";
+            this.lagertypToolStripMenuItem.Name = "lagertypToolStripMenuItem";
+            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lagertypToolStripMenuItem.Text = "Lagertyp";
+            
             // 
-            // nutzerHinzufügenToolStripMenuItem
+            // artikeltypToolStripMenuItem
             // 
-            this.nutzerHinzufügenToolStripMenuItem.Name = "nutzerHinzufügenToolStripMenuItem";
-            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nutzerHinzufügenToolStripMenuItem.Text = "Nutzer hinzufügen";
-            this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.NutzerHinzufügenToolStripMenuItem_Click);
+            this.artikeltypToolStripMenuItem.Name = "artikeltypToolStripMenuItem";
+            this.artikeltypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.artikeltypToolStripMenuItem.Text = "Artikeltyp";
             // 
             // Dashboard
             // 
@@ -187,5 +205,7 @@
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nutzerHinzufügenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lagertypToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem artikeltypToolStripMenuItem;
     }
 }

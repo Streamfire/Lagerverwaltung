@@ -234,7 +234,7 @@ namespace Lagerverwaltung.Views
             this.buttonPaketHinzufuegen.Name = "buttonPaketHinzufuegen";
             this.buttonPaketHinzufuegen.Size = new System.Drawing.Size(110, 46);
             this.buttonPaketHinzufuegen.TabIndex = 1;
-            this.buttonPaketHinzufuegen.Text = "Paket hinzufügen";
+            this.buttonPaketHinzufuegen.Text = "Paket einlagern";
             this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
             this.buttonPaketHinzufuegen.Click += new System.EventHandler(this.ButtonPaketHinzufuegen_Click);
             // 
@@ -245,7 +245,7 @@ namespace Lagerverwaltung.Views
             this.buttonPaketEntfernen.Name = "buttonPaketEntfernen";
             this.buttonPaketEntfernen.Size = new System.Drawing.Size(113, 46);
             this.buttonPaketEntfernen.TabIndex = 2;
-            this.buttonPaketEntfernen.Text = "Paket entfernen";
+            this.buttonPaketEntfernen.Text = "Paket auslagern";
             this.buttonPaketEntfernen.UseVisualStyleBackColor = true;
             this.buttonPaketEntfernen.Click += new System.EventHandler(this.ButtonPaketEntfernen_Click);
             // 

@@ -142,7 +142,7 @@
             // textBoxPasswortBestaetigen
             // 
             this.textBoxPasswortBestaetigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasswortBestaetigen.Location = new System.Drawing.Point(148, 295);
+            this.textBoxPasswortBestaetigen.Location = new System.Drawing.Point(148, 283);
             this.textBoxPasswortBestaetigen.Name = "textBoxPasswortBestaetigen";
             this.textBoxPasswortBestaetigen.Size = new System.Drawing.Size(237, 24);
             this.textBoxPasswortBestaetigen.TabIndex = 11;
@@ -152,7 +152,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 283);
+            this.label5.Location = new System.Drawing.Point(61, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 36);
             this.label5.TabIndex = 12;
