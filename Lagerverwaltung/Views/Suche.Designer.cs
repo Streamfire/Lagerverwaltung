@@ -83,6 +83,8 @@
             this.textMengeVon = new System.Windows.Forms.TextBox();
             this.textMengeBis = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.buttonZurücksetzen = new System.Windows.Forms.Button();
+            this.tabelleLagerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleRegalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleRegalfachName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleProduktName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,13 +102,15 @@
             this.tabelleHaltbarkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleAnschaffungsgrund = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleZeile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textLagerName = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textZeichnungsnummer
             // 
             this.textZeichnungsnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textZeichnungsnummer.Location = new System.Drawing.Point(172, 220);
+            this.textZeichnungsnummer.Location = new System.Drawing.Point(172, 260);
             this.textZeichnungsnummer.Name = "textZeichnungsnummer";
             this.textZeichnungsnummer.Size = new System.Drawing.Size(305, 24);
             this.textZeichnungsnummer.TabIndex = 1;
@@ -125,7 +129,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 263);
+            this.label2.Location = new System.Drawing.Point(15, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 18);
             this.label2.TabIndex = 3;
@@ -135,7 +139,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 143);
+            this.label3.Location = new System.Drawing.Point(15, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 18);
             this.label3.TabIndex = 4;
@@ -145,6 +149,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabelleLagerName,
             this.tabelleRegalName,
             this.tabelleRegalfachName,
             this.tabelleProduktName,
@@ -162,7 +167,7 @@
             this.tabelleHaltbarkeit,
             this.tabelleAnschaffungsgrund,
             this.tabelleZeile});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 339);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 388);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1211, 473);
             this.dataGridView1.TabIndex = 10;
@@ -192,7 +197,7 @@
             // textProduktname
             // 
             this.textProduktname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProduktname.Location = new System.Drawing.Point(172, 140);
+            this.textProduktname.Location = new System.Drawing.Point(172, 180);
             this.textProduktname.Name = "textProduktname";
             this.textProduktname.Size = new System.Drawing.Size(305, 24);
             this.textProduktname.TabIndex = 17;
@@ -201,7 +206,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 223);
+            this.label4.Location = new System.Drawing.Point(15, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 18);
             this.label4.TabIndex = 18;
@@ -211,7 +216,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 303);
+            this.label5.Location = new System.Drawing.Point(15, 343);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 18);
             this.label5.TabIndex = 19;
@@ -380,7 +385,7 @@
             // textPaketname
             // 
             this.textPaketname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPaketname.Location = new System.Drawing.Point(172, 260);
+            this.textPaketname.Location = new System.Drawing.Point(172, 300);
             this.textPaketname.Name = "textPaketname";
             this.textPaketname.Size = new System.Drawing.Size(305, 24);
             this.textPaketname.TabIndex = 36;
@@ -516,7 +521,7 @@
             // textAnschaffungsgrund
             // 
             this.textAnschaffungsgrund.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textAnschaffungsgrund.Location = new System.Drawing.Point(172, 300);
+            this.textAnschaffungsgrund.Location = new System.Drawing.Point(172, 340);
             this.textAnschaffungsgrund.Multiline = true;
             this.textAnschaffungsgrund.Name = "textAnschaffungsgrund";
             this.textAnschaffungsgrund.Size = new System.Drawing.Size(305, 24);
@@ -526,7 +531,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(15, 63);
+            this.label22.Location = new System.Drawing.Point(15, 103);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(87, 18);
             this.label22.TabIndex = 54;
@@ -536,7 +541,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(15, 103);
+            this.label23.Location = new System.Drawing.Point(15, 143);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(115, 18);
             this.label23.TabIndex = 55;
@@ -545,7 +550,7 @@
             // textRegalname
             // 
             this.textRegalname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRegalname.Location = new System.Drawing.Point(172, 60);
+            this.textRegalname.Location = new System.Drawing.Point(172, 100);
             this.textRegalname.Name = "textRegalname";
             this.textRegalname.Size = new System.Drawing.Size(305, 24);
             this.textRegalname.TabIndex = 56;
@@ -553,7 +558,7 @@
             // textRegalfachname
             // 
             this.textRegalfachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRegalfachname.Location = new System.Drawing.Point(172, 100);
+            this.textRegalfachname.Location = new System.Drawing.Point(172, 140);
             this.textRegalfachname.Name = "textRegalfachname";
             this.textRegalfachname.Size = new System.Drawing.Size(305, 24);
             this.textRegalfachname.TabIndex = 57;
@@ -562,7 +567,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(15, 183);
+            this.label24.Location = new System.Drawing.Point(15, 223);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(82, 18);
             this.label24.TabIndex = 58;
@@ -571,7 +576,7 @@
             // textProduktID
             // 
             this.textProduktID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProduktID.Location = new System.Drawing.Point(172, 180);
+            this.textProduktID.Location = new System.Drawing.Point(172, 220);
             this.textProduktID.Name = "textProduktID";
             this.textProduktID.Size = new System.Drawing.Size(305, 24);
             this.textProduktID.TabIndex = 59;
@@ -622,6 +627,25 @@
             this.label27.TabIndex = 64;
             this.label27.Text = "Datumseingabe als TT.MM.JJJJ (T = Tag, M = Monat, J = Jahr; z.B. 11.05.1996)";
             // 
+            // buttonZurücksetzen
+            // 
+            this.buttonZurücksetzen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZurücksetzen.Location = new System.Drawing.Point(943, 278);
+            this.buttonZurücksetzen.Name = "buttonZurücksetzen";
+            this.buttonZurücksetzen.Size = new System.Drawing.Size(125, 46);
+            this.buttonZurücksetzen.TabIndex = 65;
+            this.buttonZurücksetzen.Text = "Zurücksetzen";
+            this.buttonZurücksetzen.UseVisualStyleBackColor = true;
+            this.buttonZurücksetzen.Click += new System.EventHandler(this.buttonZurücksetzen_Click);
+            // 
+            // tabelleLagerName
+            // 
+            this.tabelleLagerName.DataPropertyName = "LagerName";
+            this.tabelleLagerName.Frozen = true;
+            this.tabelleLagerName.HeaderText = "Lager";
+            this.tabelleLagerName.Name = "tabelleLagerName";
+            this.tabelleLagerName.ReadOnly = true;
+            // 
             // tabelleRegalName
             // 
             this.tabelleRegalName.DataPropertyName = "RegalName";
@@ -634,7 +658,6 @@
             // tabelleRegalfachName
             // 
             this.tabelleRegalfachName.DataPropertyName = "RegalfachName";
-            this.tabelleRegalfachName.Frozen = true;
             this.tabelleRegalfachName.HeaderText = "Regalfachname";
             this.tabelleRegalfachName.Name = "tabelleRegalfachName";
             this.tabelleRegalfachName.ReadOnly = true;
@@ -759,11 +782,32 @@
             this.tabelleZeile.Name = "tabelleZeile";
             this.tabelleZeile.ReadOnly = true;
             // 
+            // textLagerName
+            // 
+            this.textLagerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLagerName.Location = new System.Drawing.Point(172, 60);
+            this.textLagerName.Name = "textLagerName";
+            this.textLagerName.Size = new System.Drawing.Size(305, 24);
+            this.textLagerName.TabIndex = 66;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(15, 63);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(49, 18);
+            this.label28.TabIndex = 67;
+            this.label28.Text = "Lager:";
+            // 
             // Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 824);
+            this.ClientSize = new System.Drawing.Size(1235, 873);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.textLagerName);
+            this.Controls.Add(this.buttonZurücksetzen);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.textMengeVon);
             this.Controls.Add(this.textMengeBis);
@@ -885,6 +929,8 @@
         private System.Windows.Forms.TextBox textMengeVon;
         private System.Windows.Forms.TextBox textMengeBis;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button buttonZurücksetzen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tabelleLagerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleRegalName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleRegalfachName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleProduktName;
@@ -902,5 +948,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleHaltbarkeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleAnschaffungsgrund;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleZeile;
+        private System.Windows.Forms.TextBox textLagerName;
+        private System.Windows.Forms.Label label28;
     }
 }
