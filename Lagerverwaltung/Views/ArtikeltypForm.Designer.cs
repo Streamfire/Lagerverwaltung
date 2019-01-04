@@ -1,6 +1,6 @@
 ﻿namespace Lagerverwaltung.Views
 {
-    partial class Artikeltyp
+    partial class ArtikeltypForm
     {
         /// <summary>
         /// Required designer variable.

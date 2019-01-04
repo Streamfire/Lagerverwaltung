@@ -170,11 +170,11 @@
     <Compile Include="Views\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Artikeltyp.cs">
+    <Compile Include="Views\ArtikeltypForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Artikeltyp.Designer.cs">
-      <DependentUpon>Artikeltyp.cs</DependentUpon>
+    <Compile Include="Views\ArtikeltypForm.Designer.cs">
+      <DependentUpon>ArtikeltypForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard.cs">
       <SubType>Form</SubType>
@@ -200,11 +200,11 @@
     <Compile Include="Views\LagerHinzufuegen.Designer.cs">
       <DependentUpon>LagerHinzufuegen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Lagertyp.cs">
+    <Compile Include="Views\LagertypForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Lagertyp.Designer.cs">
-      <DependentUpon>Lagertyp.cs</DependentUpon>
+    <Compile Include="Views\LagertypForm.Designer.cs">
+      <DependentUpon>LagertypForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
@@ -283,8 +283,8 @@
     <EmbeddedResource Include="Views\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Artikeltyp.resx">
-      <DependentUpon>Artikeltyp.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ArtikeltypForm.resx">
+      <DependentUpon>ArtikeltypForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -298,8 +298,8 @@
     <EmbeddedResource Include="Views\LagerHinzufuegen.resx">
       <DependentUpon>LagerHinzufuegen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Lagertyp.resx">
-      <DependentUpon>Lagertyp.cs</DependentUpon>
+    <EmbeddedResource Include="Views\LagertypForm.resx">
+      <DependentUpon>LagertypForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

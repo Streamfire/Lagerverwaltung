@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class Lagertyp : Form
+    public partial class LagertypForm : Form
     {
-        public Lagertyp()
+        public LagertypForm()
         {
             InitializeComponent();
         }
