@@ -73,6 +73,9 @@ namespace Lagerverwaltung.Views
 		private void Auswaehlen_Click(object sender, EventArgs e)
 		{
             PaketHinzufuegen.Auswahl = listViewProduktliste.SelectedItems[0].Text;
+
+            //TODO: ProduktID muss in PaketHinzufügen Form übergeben werden
+            //PaketHinzufuegen.ProduktID = ???
 			Close();
 		}
 

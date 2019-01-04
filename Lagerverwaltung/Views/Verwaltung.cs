@@ -23,6 +23,7 @@ namespace Lagerverwaltung.Views
         {
             using (var regalhinzufuegen = new RegalHinzufügen())
             {
+                regalhinzufuegen.Owner = this;
                 regalhinzufuegen.ShowDialog();
             }
         }
@@ -31,6 +32,7 @@ namespace Lagerverwaltung.Views
         {
             using (var lagerhinzufuegen = new LagerHinzufuegen())
             {
+                lagerhinzufuegen.Owner = this;
                 lagerhinzufuegen.ShowDialog();
             }
         }
@@ -39,6 +41,7 @@ namespace Lagerverwaltung.Views
         {
             using (var pakethinzufuegen = new PaketHinzufuegen())
             {
+                pakethinzufuegen.Owner = this;
                 pakethinzufuegen.ShowDialog();
             }
         }
@@ -46,6 +49,7 @@ namespace Lagerverwaltung.Views
         {
             using (var paketentfernen = new PaketEntfernen())
             {
+                paketentfernen.Owner = this;
                 paketentfernen.ShowDialog();
             }
         }
@@ -53,6 +57,7 @@ namespace Lagerverwaltung.Views
         {
             using (var regalaendern = new RegalAendern_Entfernen())
             {
+                regalaendern.Owner = this;
                 regalaendern.ShowDialog();
             }
         }
@@ -60,6 +65,7 @@ namespace Lagerverwaltung.Views
         {
             using (var lagerentfernen = new LagerEntfernen())
             {
+                lagerentfernen.Owner = this;
                 lagerentfernen.ShowDialog();
             }
         }

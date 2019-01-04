@@ -15,15 +15,30 @@ namespace Lagerverwaltung.Views
         private Dictionary<long, Model.PaketModel> _dictPaket;
         private Dictionary<long, Model.ProduktModel> _dictProdukt;
 
+        private Dictionary<string, long> _regalfachIDMap;
+
         public Regaleinsicht()
 		{
 			InitializeComponent();
             DB.SqlStatements.DatabaseChanged += DataChanged;
+
         }
 
         private void DataChanged(object sender, EventArgs e)
         {
+            ButtonAktualisieren.Enabled = true;
+            ButtonHinzufuegen.Enabled = false;
+            ButtonEntfernen.Enabled = false;
+            comboBoxLager.Enabled = false;
+            comboBoxRegal.Enabled = false;
 
+            dataGridViewRegaleinsicht.Rows.Clear();
+            dataGridViewRegaleinsicht.Columns.Clear();
+
+            comboBoxLager.SelectedIndex = -1;
+            comboBoxRegal.SelectedIndex = -1;
+
+            labelAktualisieren.Visible = true;
         }
 
         private void Regaleinsicht_Load(object sender, System.EventArgs e)
@@ -38,9 +53,6 @@ namespace Lagerverwaltung.Views
 
             //DB Daten laden
             _dictLager = DB.SqlStatements.HoleLager();
-
-            //DB.LagerSQL.HoleAlleLager(); // testweise!
-            //DB.RegalSQL.HoleAlleRegale(); // testweise!
 
             if (_dictLager.Values.Count > 0)
             comboBoxLager.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
@@ -106,6 +118,7 @@ namespace Lagerverwaltung.Views
         private void UpdateGridView()
         {
             dataGridViewRegaleinsicht.Rows.Clear();
+            _regalfachIDMap = new Dictionary<string, long>();
 
             if (((Model.RegalModel)comboBoxRegal.SelectedItem) != null)
             {
@@ -118,8 +131,8 @@ namespace Lagerverwaltung.Views
                     BackColor = Color.LightGreen,
                     Alignment = DataGridViewContentAlignment.TopLeft,
                     WrapMode = DataGridViewTriState.True,
-                    SelectionBackColor = Color.FromArgb(0),
-                    SelectionForeColor = Color.Black
+                    //SelectionBackColor = Color.FromArgb(0),
+                    //SelectionForeColor = Color.Black
 
 
                 };
@@ -148,9 +161,13 @@ namespace Lagerverwaltung.Views
                     int s = 0;
                     foreach (Model.RegalfachModel regalfach in _regalfachMap[z])
                     {
-                        if(regalfach != null)
-                        _dictPaket = DB.SqlStatements.HolePaket(-1, regalfach.Regalfach_ID,"",-1);
+                        if (regalfach != null)
+                        {
+                            //Eintragen der IDs eines Regalfachs mit der entsprechenden Zellenposition als Key
+                            _regalfachIDMap.Add((((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z).ToString() + "-" +  s , regalfach.Regalfach_ID);
 
+                            _dictPaket = DB.SqlStatements.HolePaket(-1, regalfach.Regalfach_ID, "", -1);
+                        }
                         string Ausgabe = "";
                         Ausgabe += string.Format("Fach [{0},{1}] \n", s + 1, z);
                         if (regalfach != null && _dictPaket != null  && _dictPaket.Keys.Count > 0) 
@@ -159,7 +176,7 @@ namespace Lagerverwaltung.Views
 
                             Ausgabe += "Paketmenge: " + _dictPaket.Keys.Count + "\n";
                             Ausgabe += "Produkt: " + _dictProdukt.Values.First().Name + "\n";
-                            Ausgabe += "Stückzahl je Paket: " + _dictPaket.Values.First().Menge + "\n";
+                            Ausgabe += "Menge: " + _dictPaket.Values.First().Menge + "\n";
 
                             dataGridViewRegaleinsicht.Rows[((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
                         }
@@ -203,7 +220,6 @@ namespace Lagerverwaltung.Views
                 int[] pos = ParseRegalfachname(regalfach.Name);
                 List<Model.RegalfachModel> list = _regalfachMap[pos[0]];
                 list[pos[1] - 1] = regalfach;
-                //TEST EVENTUELL LIST IN MAP ZURÜCK SPEICHERN ENTFERNEN >>>>>>> TESTEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }
         }
 
@@ -233,20 +249,49 @@ namespace Lagerverwaltung.Views
             return erg;
         }
 
-        private void DataGridViewRegaleinsicht_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ButtonAktualisieren_Click(object sender, EventArgs e)
         {
-            //eventuell für später, falls Teile splitten und umlagern in der Regaleinsicht implementiert werden soll
-            /*
-            DataGridViewAdvancedBorderStyle borderStyle = dataGridViewRegaleinsicht.AdvancedCellBorderStyle;
-            borderStyle.Top = DataGridViewAdvancedCellBorderStyle.OutsetDouble;
-            borderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.OutsetDouble;
-            borderStyle.Left = DataGridViewAdvancedCellBorderStyle.OutsetDouble;
+            ButtonAktualisieren.Enabled = false;
+            ButtonHinzufuegen.Enabled = true;
+            ButtonEntfernen.Enabled = true;
+            comboBoxLager.Enabled = true;
+            comboBoxRegal.Enabled = true;
 
 
+            labelAktualisieren.Visible = false;
 
-            ((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex].AdjustCellBorderStyle(borderStyle, dataGridViewRegaleinsicht.AdvancedCellBorderStyle, false, false, false, false);
+            _dictLager = DB.SqlStatements.HoleLager();
 
-            */
+            if (_dictLager.Values.Count > 0)
+            {
+                comboBoxLager.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
+                comboBoxLager.SelectedIndex = 0;
+            }
+            else
+                comboBoxLager.SelectedIndex = -1;
+
+            UpdateComboboxRegal();
+
+        }
+
+        private void ButtonHinzufuegen_Click(object sender, EventArgs e)
+        {
+            using (var pakethinzufuegen = new PaketHinzufuegen())
+            {
+                string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();
+
+                pakethinzufuegen.Owner = this;
+                if (_regalfachIDMap.ContainsKey(key))
+                {
+                    pakethinzufuegen.RegalfachID = _regalfachIDMap[key];
+                    pakethinzufuegen.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
         }
     }
 }
