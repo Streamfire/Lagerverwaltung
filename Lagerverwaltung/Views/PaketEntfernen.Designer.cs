@@ -67,7 +67,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(96, 149);
+            this.button1.Location = new System.Drawing.Point(90, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 35);
             this.button1.TabIndex = 3;
@@ -78,7 +78,7 @@
             // buttonAbbrechen
             // 
             this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(217, 149);
+            this.buttonAbbrechen.Location = new System.Drawing.Point(217, 140);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(97, 35);
             this.buttonAbbrechen.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 212);
+            this.ClientSize = new System.Drawing.Size(337, 203);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxPaketEntfernen);
