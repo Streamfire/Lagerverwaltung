@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
     public partial class Produktliste : Form
     {
-       // private List<Core.Produkt> _produktListe;
+        // private List<Core.Produkt> _produktListe;
+
+        private BindingSource source = new BindingSource();
 
         public Produktliste()
         {
             InitializeComponent();
 
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
 
             /*
             //TODO: Produkte aus DB oder SW-Liste laden
@@ -26,18 +32,21 @@ namespace Lagerverwaltung.Views
             };
             */
 
-			UpdateForm();
+            UpdateForm();
 			
       
         }
 		public void UpdateForm()
-		{
+        {
+            dataGridView1.DataSource = Model.Produkt.GetProdukts();
+
+            /*
 			listViewProduktliste.Items.Clear();
             var test = Model.Produkt.GetProdukts();
 
 			foreach (Model.Produkt produkt in test)
 			{
-				listViewProduktliste.Items.Add(new ListViewItem(new string[] {
+				dataGridView1.Items.Add(new ListViewItem(new string[] {
 					produkt.Name,
 					produkt.Gewicht.ToString(),
 					produkt.Preis.ToString(),
@@ -49,15 +58,15 @@ namespace Lagerverwaltung.Views
             {
                 listViewProduktliste.Items[0].Focused = true;
                 listViewProduktliste.Items[0].Selected = true;
-            }
-		}
+            }*/
+        }
 
         private void Schliessen_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-    private void Produkt_hinzufuegen_Click(object sender, EventArgs e)
+        private void Produkt_hinzufuegen_Click(object sender, EventArgs e)
         {
             using (var produkthinzufuegen = new ProduktHinzufuegen())
             {
@@ -72,11 +81,16 @@ namespace Lagerverwaltung.Views
 		/// <param name="e"></param>
 		private void Auswaehlen_Click(object sender, EventArgs e)
 		{
-            PaketHinzufuegen.Auswahl = listViewProduktliste.SelectedItems[0].Text;
+            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+            string a = Convert.ToString(selectedRow.Cells["name"].Value);
+
+            PaketHinzufuegen.Auswahl = a;
 
             //TODO: ProduktID muss in PaketHinzufügen Form übergeben werden
-            //PaketHinzufuegen.ProduktID = ???
-			Close();
+            PaketHinzufuegen.ProduktID = Convert.ToInt64(selectedRow.Cells["ProduktID"].Value);
+
+            Close();
 		}
 
 		private void ListViewProduktliste_SelectedIndexChanged(object sender, EventArgs e)

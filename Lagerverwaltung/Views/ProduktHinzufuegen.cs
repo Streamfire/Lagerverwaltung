@@ -6,7 +6,7 @@ namespace Lagerverwaltung.Views
 {
     public partial class ProduktHinzufuegen : Form
     {
-        private List<Model.Artikeltyp> _artikeltypListe;
+        private List<Model.ArtikeltypModel> _artikeltypListe;
 		private Produktliste _parent;
 
         public ProduktHinzufuegen()
@@ -15,17 +15,20 @@ namespace Lagerverwaltung.Views
             artikeltypBox.ValueMember = "artikeltyp_id";
             artikeltypBox.DisplayMember = "name";
 
-            _artikeltypListe = Dashboard.ArtikeltypListe;            
+            _artikeltypListe = DB.SqlStatements.HoleAlleArtikeltypen();
+                
+                //Dashboard.ArtikeltypListe;            
             //TEST
 
             //TODO:Artikeltypen aus Datenbank laden
 
 
             //in ComboBox eintragen (eventuell auch ohne Zwischengespeicherte Liste)
-            foreach (Model.Artikeltyp artikeltyp in _artikeltypListe)
+            foreach (Model.ArtikeltypModel artikeltyp in _artikeltypListe)
             {
                 artikeltypBox.Items.Add(artikeltyp);
             }
+
 
             artikeltypBox.SelectedIndex = 0;
 

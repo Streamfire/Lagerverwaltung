@@ -28,69 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewProduktliste = new System.Windows.Forms.ListView();
-            this.name_a = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Gewicht = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Preis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Zeichnungsnummer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Erstellt_Am = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Zuletzt_geaendert = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Schliessen = new System.Windows.Forms.Button();
             this.Auswaehlen = new System.Windows.Forms.Button();
             this.Produkt_hinzufuegen = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.erstellt_am = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zuletzt_geaendert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listViewProduktliste
-            // 
-            this.listViewProduktliste.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.name_a,
-            this.Gewicht,
-            this.Preis,
-            this.Zeichnungsnummer,
-            this.Erstellt_Am,
-            this.Zuletzt_geaendert});
-            this.listViewProduktliste.FullRowSelect = true;
-            this.listViewProduktliste.LabelWrap = false;
-            this.listViewProduktliste.Location = new System.Drawing.Point(29, 29);
-            this.listViewProduktliste.MultiSelect = false;
-            this.listViewProduktliste.Name = "listViewProduktliste";
-            this.listViewProduktliste.Size = new System.Drawing.Size(949, 639);
-            this.listViewProduktliste.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listViewProduktliste.TabIndex = 0;
-            this.listViewProduktliste.UseCompatibleStateImageBehavior = false;
-            this.listViewProduktliste.View = System.Windows.Forms.View.Details;
-            this.listViewProduktliste.SelectedIndexChanged += new System.EventHandler(this.ListViewProduktliste_SelectedIndexChanged);
-            // 
-            // name_a
-            // 
-            this.name_a.Text = "Name";
-            this.name_a.Width = 385;
-            // 
-            // Gewicht
-            // 
-            this.Gewicht.Text = "Gewicht (kg)";
-            this.Gewicht.Width = 100;
-            // 
-            // Preis
-            // 
-            this.Preis.Text = "Preis (Euro)";
-            this.Preis.Width = 100;
-            // 
-            // Zeichnungsnummer
-            // 
-            this.Zeichnungsnummer.Text = "Zeichnungsnummer";
-            this.Zeichnungsnummer.Width = 160;
-            // 
-            // Erstellt_Am
-            // 
-            this.Erstellt_Am.Text = "Erstellt am";
-            this.Erstellt_Am.Width = 100;
-            // 
-            // Zuletzt_geaendert
-            // 
-            this.Zuletzt_geaendert.Text = "Zuletzt geändert";
-            this.Zuletzt_geaendert.Width = 100;
             // 
             // Schliessen
             // 
@@ -136,35 +86,98 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.gewicht,
+            this.preis,
+            this.zeichnungsnummer,
+            this.erstellt_am,
+            this.zuletzt_geaendert});
+            this.dataGridView1.Location = new System.Drawing.Point(29, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(949, 637);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Produktname";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 240;
+            // 
+            // gewicht
+            // 
+            this.gewicht.DataPropertyName = "Gewicht";
+            this.gewicht.HeaderText = "Gewicht";
+            this.gewicht.Name = "gewicht";
+            this.gewicht.ReadOnly = true;
+            this.gewicht.Width = 93;
+            // 
+            // preis
+            // 
+            this.preis.DataPropertyName = "Preis";
+            this.preis.HeaderText = "Preis";
+            this.preis.Name = "preis";
+            this.preis.ReadOnly = true;
+            this.preis.Width = 93;
+            // 
+            // zeichnungsnummer
+            // 
+            this.zeichnungsnummer.DataPropertyName = "Zeichnungsnummer";
+            this.zeichnungsnummer.HeaderText = "Zeichnungsnummer";
+            this.zeichnungsnummer.Name = "zeichnungsnummer";
+            this.zeichnungsnummer.ReadOnly = true;
+            this.zeichnungsnummer.Width = 180;
+            // 
+            // erstellt_am
+            // 
+            this.erstellt_am.DataPropertyName = "ErstelltAm";
+            this.erstellt_am.HeaderText = "Erstellt am";
+            this.erstellt_am.Name = "erstellt_am";
+            this.erstellt_am.ReadOnly = true;
+            this.erstellt_am.Width = 150;
+            // 
+            // zuletzt_geaendert
+            // 
+            this.zuletzt_geaendert.DataPropertyName = "GeaendertAm";
+            this.zuletzt_geaendert.HeaderText = "Zuletzt geändert";
+            this.zuletzt_geaendert.Name = "zuletzt_geaendert";
+            this.zuletzt_geaendert.ReadOnly = true;
+            this.zuletzt_geaendert.Width = 150;
+            // 
             // Produktliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 736);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Produkt_hinzufuegen);
             this.Controls.Add(this.Auswaehlen);
             this.Controls.Add(this.Schliessen);
-            this.Controls.Add(this.listViewProduktliste);
             this.Name = "Produktliste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produktliste";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listViewProduktliste;
-        private System.Windows.Forms.ColumnHeader name_a;
-        private System.Windows.Forms.ColumnHeader Gewicht;
-        private System.Windows.Forms.ColumnHeader Preis;
-        private System.Windows.Forms.ColumnHeader Zeichnungsnummer;
-        private System.Windows.Forms.ColumnHeader Erstellt_Am;
-        private System.Windows.Forms.ColumnHeader Zuletzt_geaendert;
         private System.Windows.Forms.Button Schliessen;
         private System.Windows.Forms.Button Auswaehlen;
         private System.Windows.Forms.Button Produkt_hinzufuegen;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gewicht;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zeichnungsnummer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn erstellt_am;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zuletzt_geaendert;
     }
 }

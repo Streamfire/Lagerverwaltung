@@ -23,7 +23,8 @@ namespace Lagerverwaltung.Views
             InitializeComponent();
 
             dataGridView1.AutoGenerateColumns = false;
-
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
             typeof(DataGridView).InvokeMember(
             "DoubleBuffered",
             BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
@@ -32,6 +33,8 @@ namespace Lagerverwaltung.Views
             new object[] { true });
 
             readonly_dict = Core.Suche.HoleSuchergebnisse;
+
+            dataGridView1.ClearSelection();
 
             UpdateDataGridView();
 
@@ -682,6 +685,18 @@ namespace Lagerverwaltung.Views
             readonly_dict = Core.Suche.HoleSuchergebnisse;
 
             UpdateDataGridView();
+        }
+
+        private void checkKompakt_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkKompakt.Checked == true)
+            {
+                this.Size = new Size(1270, 450);
+            }
+            else
+            {
+                this.Size = new Size(1270, 840);
+            }
         }
     }
 }
