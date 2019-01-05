@@ -315,6 +315,8 @@ namespace Lagerverwaltung.Views
 
         private void ButtonEntfernen_Click(object sender, EventArgs e)
         {
+            
+
             using (var paketentfernen = new PaketEntfernen())
             {
                 string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();

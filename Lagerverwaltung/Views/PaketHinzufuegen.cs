@@ -10,8 +10,8 @@ namespace Lagerverwaltung.Views
             InitializeComponent();
         }
 
-        public static string Auswahl { get; set; }
-        public static long ProduktID { get; set; } = 1;
+        public static string Auswahl { get; set; } = "";
+        public static long ProduktID { get; set; } = -1;
         public static Produktliste Produktliste { get; set; } // entfernen und Abhängigkeiten ändern
         public long RegalfachID { get; set; } = -1;
 
@@ -23,7 +23,7 @@ namespace Lagerverwaltung.Views
                 produktliste.ShowDialog();
             }
         }
-
+        
 		private void OnClose(object sender, FormClosedEventArgs e)
 		{
             if(Auswahl.Length != 0)
@@ -31,7 +31,7 @@ namespace Lagerverwaltung.Views
                 labelProduktAusgewählt.Text = Auswahl;
             }
 		}
-
+        
 		private void ButtonAbbrechen_Click(object sender, EventArgs e)
         {
             Close();

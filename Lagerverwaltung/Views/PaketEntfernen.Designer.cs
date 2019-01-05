@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxPaketEntfernen = new System.Windows.Forms.ComboBox();
+            this.ComboBoxPaketEntfernen = new System.Windows.Forms.ComboBox();
             this.ButtonAuslagern = new System.Windows.Forms.Button();
             this.ButtonAbbrechen = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,14 +59,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Paket:";
             // 
-            // comboBoxPaketEntfernen
+            // ComboBoxPaketEntfernen
             // 
-            this.comboBoxPaketEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxPaketEntfernen.FormattingEnabled = true;
-            this.comboBoxPaketEntfernen.Location = new System.Drawing.Point(116, 85);
-            this.comboBoxPaketEntfernen.Name = "comboBoxPaketEntfernen";
-            this.comboBoxPaketEntfernen.Size = new System.Drawing.Size(198, 26);
-            this.comboBoxPaketEntfernen.TabIndex = 2;
+            this.ComboBoxPaketEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxPaketEntfernen.FormattingEnabled = true;
+            this.ComboBoxPaketEntfernen.Location = new System.Drawing.Point(116, 85);
+            this.ComboBoxPaketEntfernen.Name = "ComboBoxPaketEntfernen";
+            this.ComboBoxPaketEntfernen.Size = new System.Drawing.Size(198, 26);
+            this.ComboBoxPaketEntfernen.TabIndex = 2;
+            this.ComboBoxPaketEntfernen.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPaketEntfernen_SelectedIndexChanged);
             // 
             // ButtonAuslagern
             // 
@@ -143,7 +144,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ButtonAbbrechen);
             this.Controls.Add(this.ButtonAuslagern);
-            this.Controls.Add(this.comboBoxPaketEntfernen);
+            this.Controls.Add(this.ComboBoxPaketEntfernen);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -160,7 +161,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxPaketEntfernen;
+        private System.Windows.Forms.ComboBox ComboBoxPaketEntfernen;
         private System.Windows.Forms.Button ButtonAuslagern;
         private System.Windows.Forms.Button ButtonAbbrechen;
         private System.Windows.Forms.Label label3;

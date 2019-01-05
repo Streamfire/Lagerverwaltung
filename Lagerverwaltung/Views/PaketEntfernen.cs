@@ -20,12 +20,20 @@ namespace Lagerverwaltung.Views
                 _dictPaket =  DB.SqlStatements.HolePaket(-1, RegalfachID, "", -1);
 
                 //Pakete in Combobox eintragen
-                comboBoxPaketEntfernen.ValueMember = "Paket_ID";
-                comboBoxPaketEntfernen.DisplayMember = "Name";
+                ComboBoxPaketEntfernen.ValueMember = "Paket_ID";
+                ComboBoxPaketEntfernen.DisplayMember = "Name";
 
-                comboBoxPaketEntfernen.DataSource = new BindingSource().DataSource = _dictPaket.Values.ToArray();
+                ComboBoxPaketEntfernen.DataSource = new BindingSource().DataSource = _dictPaket.Values.ToArray();
+
+                if(_dictPaket.Count > 0)
+                    ComboBoxPaketEntfernen.SelectedIndex = 0;
             }
+        }
 
+        private void ComboBoxPaketEntfernen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            LabelMenge.Text = _dictPaket[(long)ComboBoxPaketEntfernen.SelectedValue].Menge.ToString();
         }
 
         private void DataChanged(object sender, EventArgs e)
@@ -42,5 +50,6 @@ namespace Lagerverwaltung.Views
         {
 
         }
+
     }
 }
