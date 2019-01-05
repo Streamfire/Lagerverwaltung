@@ -25,6 +25,19 @@ namespace Lagerverwaltung.DB
             }
             return query.Get<ProduktModel>().ToDictionary(row => row.Produkt_ID, row => row);
         }
+        /*
+        public static Dictionary<long, ProduktModel> HoleAlleProdukte()
+        {
+            var query = queryfactory.Query("produkt").Select("produkt_id", "name", "erstellt_am", "zuletzt_geändert", "gewicht", "preis", "zeichnungsnummer");
+
+            return query.Get<ProduktModel>().ToDictionary(row => row.Produkt_ID, row => row);
+        }*/
+        public static List<ProduktModel> HoleAlleProdukte()
+        {
+            var query = queryfactory.Query("produkt").Select("produkt_id", "name", "gewicht", "preis", "zeichnungsnummer");
+
+            return query.Get<ProduktModel>().ToList();
+        }
 
         public static void ErstelleProdukt(string name, float gewicht, float preis, string zeichnungsnummer, long artikeltyp_id, long paket_id)
         {

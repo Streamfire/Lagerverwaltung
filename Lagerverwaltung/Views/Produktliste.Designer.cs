@@ -33,19 +33,18 @@
             this.Produkt_hinzufuegen = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.produkt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.erstellt_am = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zuletzt_geaendert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Schliessen
             // 
             this.Schliessen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Schliessen.Location = new System.Drawing.Point(858, 685);
+            this.Schliessen.Location = new System.Drawing.Point(599, 685);
             this.Schliessen.Name = "Schliessen";
             this.Schliessen.Size = new System.Drawing.Size(120, 35);
             this.Schliessen.TabIndex = 1;
@@ -56,7 +55,7 @@
             // Auswaehlen
             // 
             this.Auswaehlen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Auswaehlen.Location = new System.Drawing.Point(708, 685);
+            this.Auswaehlen.Location = new System.Drawing.Point(449, 685);
             this.Auswaehlen.Name = "Auswaehlen";
             this.Auswaehlen.Size = new System.Drawing.Size(120, 35);
             this.Auswaehlen.TabIndex = 2;
@@ -88,18 +87,28 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.produkt_id,
             this.name,
             this.gewicht,
             this.preis,
-            this.zeichnungsnummer,
-            this.erstellt_am,
-            this.zuletzt_geaendert});
+            this.zeichnungsnummer});
             this.dataGridView1.Location = new System.Drawing.Point(29, 23);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(949, 637);
+            this.dataGridView1.Size = new System.Drawing.Size(690, 637);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // produkt_id
+            // 
+            this.produkt_id.DataPropertyName = "Produkt_ID";
+            this.produkt_id.HeaderText = "ID";
+            this.produkt_id.Name = "produkt_id";
+            this.produkt_id.ReadOnly = true;
+            this.produkt_id.Width = 60;
             // 
             // name
             // 
@@ -131,29 +140,13 @@
             this.zeichnungsnummer.HeaderText = "Zeichnungsnummer";
             this.zeichnungsnummer.Name = "zeichnungsnummer";
             this.zeichnungsnummer.ReadOnly = true;
-            this.zeichnungsnummer.Width = 180;
-            // 
-            // erstellt_am
-            // 
-            this.erstellt_am.DataPropertyName = "ErstelltAm";
-            this.erstellt_am.HeaderText = "Erstellt am";
-            this.erstellt_am.Name = "erstellt_am";
-            this.erstellt_am.ReadOnly = true;
-            this.erstellt_am.Width = 150;
-            // 
-            // zuletzt_geaendert
-            // 
-            this.zuletzt_geaendert.DataPropertyName = "GeaendertAm";
-            this.zuletzt_geaendert.HeaderText = "Zuletzt geändert";
-            this.zuletzt_geaendert.Name = "zuletzt_geaendert";
-            this.zuletzt_geaendert.ReadOnly = true;
-            this.zuletzt_geaendert.Width = 150;
+            this.zeichnungsnummer.Width = 160;
             // 
             // Produktliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 736);
+            this.ClientSize = new System.Drawing.Size(748, 736);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Produkt_hinzufuegen);
@@ -173,11 +166,10 @@
         private System.Windows.Forms.Button Produkt_hinzufuegen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produkt_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gewicht;
         private System.Windows.Forms.DataGridViewTextBoxColumn preis;
         private System.Windows.Forms.DataGridViewTextBoxColumn zeichnungsnummer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn erstellt_am;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zuletzt_geaendert;
     }
 }

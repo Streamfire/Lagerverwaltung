@@ -7,7 +7,8 @@ namespace Lagerverwaltung.Views
 {
     public partial class Produktliste : Form
     {
-        // private List<Core.Produkt> _produktListe;
+        //private Dictionary<long, Model.ProduktModel> _dictProdukt;
+        private List<Model.ProduktModel> _dictProdukt;
 
         private BindingSource source = new BindingSource();
 
@@ -18,6 +19,8 @@ namespace Lagerverwaltung.Views
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
+
+            _dictProdukt = DB.SqlStatements.HoleAlleProdukte();
 
             /*
             //TODO: Produkte aus DB oder SW-Liste laden
@@ -38,7 +41,8 @@ namespace Lagerverwaltung.Views
         }
 		public void UpdateForm()
         {
-            dataGridView1.DataSource = Model.Produkt.GetProdukts();
+            //dataGridView1.DataSource = Model.Produkt.GetProdukts();
+            dataGridView1.DataSource = _dictProdukt;
 
             /*
 			listViewProduktliste.Items.Clear();
@@ -88,7 +92,7 @@ namespace Lagerverwaltung.Views
             PaketHinzufuegen.Auswahl = a;
 
             //TODO: ProduktID muss in PaketHinzufügen Form übergeben werden
-            PaketHinzufuegen.ProduktID = Convert.ToInt64(selectedRow.Cells["ProduktID"].Value);
+            PaketHinzufuegen.ProduktID = Convert.ToInt64(selectedRow.Cells["produkt_id"].Value);
 
             Close();
 		}
