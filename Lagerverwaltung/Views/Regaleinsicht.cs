@@ -26,19 +26,31 @@ namespace Lagerverwaltung.Views
 
         private void DataChanged(object sender, EventArgs e)
         {
-            ButtonAktualisieren.Enabled = true;
-            ButtonHinzufuegen.Enabled = false;
-            ButtonEntfernen.Enabled = false;
-            comboBoxLager.Enabled = false;
-            comboBoxRegal.Enabled = false;
+            var type = (DB.SqlStatements.ModeltypEnum)sender;
 
-            dataGridViewRegaleinsicht.Rows.Clear();
-            dataGridViewRegaleinsicht.Columns.Clear();
+            //Eventuell später noch genauer definieren
+            if (type == DB.SqlStatements.ModeltypEnum.LagerModel || type == DB.SqlStatements.ModeltypEnum.RegalModel)
+            {
+                ButtonAktualisieren.Enabled = true;
+                ButtonHinzufuegen.Enabled = false;
+                ButtonEntfernen.Enabled = false;
+                comboBoxLager.Enabled = false;
+                comboBoxRegal.Enabled = false;
 
-            comboBoxLager.SelectedIndex = -1;
-            comboBoxRegal.SelectedIndex = -1;
+                dataGridViewRegaleinsicht.Rows.Clear();
+                dataGridViewRegaleinsicht.Columns.Clear();
 
-            labelAktualisieren.Visible = true;
+                comboBoxLager.SelectedIndex = -1;
+                comboBoxRegal.SelectedIndex = -1;
+
+                labelAktualisieren.Visible = true;
+            }
+            else
+            {
+                UpdateGridView();
+            }
+
+
         }
 
         private void Regaleinsicht_Load(object sender, System.EventArgs e)
@@ -87,7 +99,7 @@ namespace Lagerverwaltung.Views
 
         private void ButtonZurueck_Click(object sender, System.EventArgs e)
         {
-            //TODO: Dicts entfernen
+            //evt. Fix für Speicherleck 
 
             Close();
         }
@@ -178,7 +190,12 @@ namespace Lagerverwaltung.Views
 
                             Ausgabe += "Paketmenge: " + _dictPaket.Keys.Count + "\n";
                             Ausgabe += "Produkt: " + _dictProdukt.Values.First().Name + "\n";
-                            Ausgabe += "Menge: " + _dictPaket.Values.First().Menge + "\n";
+
+                            int gesamt = 0;
+                            foreach (Model.PaketModel paket in _dictPaket.Values)
+                                gesamt += paket.Menge; 
+
+                            Ausgabe += "Gesamtmenge: " + gesamt + "\n";
 
                             dataGridViewRegaleinsicht.Rows[((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
                         }
@@ -287,6 +304,26 @@ namespace Lagerverwaltung.Views
                 {
                     pakethinzufuegen.RegalfachID = _regalfachIDMap[key];
                     pakethinzufuegen.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
+
+        private void ButtonEntfernen_Click(object sender, EventArgs e)
+        {
+            using (var paketentfernen = new PaketEntfernen())
+            {
+                string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();
+
+                paketentfernen.Owner = this;
+                if (_regalfachIDMap.ContainsKey(key))
+                {
+                    paketentfernen.RegalfachID = _regalfachIDMap[key];
+                    paketentfernen.ShowDialog();
                 }
                 else
                 {

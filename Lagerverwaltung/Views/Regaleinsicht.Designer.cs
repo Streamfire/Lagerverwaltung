@@ -154,6 +154,7 @@
             this.ButtonEntfernen.TabIndex = 8;
             this.ButtonEntfernen.Text = "Paket Auslagern";
             this.ButtonEntfernen.UseVisualStyleBackColor = true;
+            this.ButtonEntfernen.Click += new System.EventHandler(this.ButtonEntfernen_Click);
             // 
             // labelAktualisieren
             // 

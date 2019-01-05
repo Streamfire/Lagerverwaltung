@@ -17,25 +17,11 @@ namespace Lagerverwaltung.Views
 
         private void ButtonProduktAuswaehlen_Click(object sender, EventArgs e)
         {
-            /* Wenn Abhängigkeiten entfernt - bitte das freischalten und das andere darunter entfernen :)
             using (var produktliste = new Produktliste())
             {
                 produktliste.FormClosed += OnClose;
                 produktliste.ShowDialog();
             }
-            */
-            
-                if (Produktliste != null)
-                {
-                    Produktliste.ShowDialog(this);
-
-                }
-                else
-                {
-                    Produktliste = new Produktliste();
-                    Produktliste.FormClosed += OnClose;
-                    Produktliste.ShowDialog();
-                }
         }
 
 		private void OnClose(object sender, FormClosedEventArgs e)
@@ -68,10 +54,7 @@ namespace Lagerverwaltung.Views
                 {
 
                     DB.SqlStatements.ErstellePaket(textBoxPaketbezeichnung.Text, RegalfachID, ProduktID, Convert.ToInt16(AnzahlBox.Text), dateTimePickerHaltbarkeit.Value, textBoxAnschaffungsgrund.Text, Convert.ToInt32(textBoxHoehe.Text), Convert.ToInt32(textBoxBreite.Text), Convert.ToInt32(textBoxLaenge.Text));
-
-                    MessageBox.Show("RegalfachID: " + RegalfachID, "TEST", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                    Close();
                 }
                 else if (Owner.GetType().Equals(typeof(Verwaltung)))
                 {
