@@ -94,11 +94,13 @@ namespace Lagerverwaltung.Views
 
         private void ComboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            _dictRegal = DB.SqlStatements.HoleRegal(-1, (long)comboBoxLager.SelectedValue, "", -1);
-            comboBoxRegal.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
+            if (comboBoxLager.SelectedIndex >= 0)
+            {
+                _dictRegal = DB.SqlStatements.HoleRegal(-1, (long)comboBoxLager.SelectedValue, "", -1);
+                comboBoxRegal.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
+            }
 
-
-            if (comboBoxRegal.Items.Count <= 0)
+            if (comboBoxRegal.Items.Count <= 0 || comboBoxLager.SelectedIndex < 0)
             {
                 dataGridViewRegaleinsicht.Rows.Clear();
                 dataGridViewRegaleinsicht.Columns.Clear();
