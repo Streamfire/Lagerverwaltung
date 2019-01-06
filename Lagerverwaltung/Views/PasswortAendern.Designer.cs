@@ -124,7 +124,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 19);
+            this.label4.Location = new System.Drawing.Point(22, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 26);
             this.label4.TabIndex = 9;
@@ -133,7 +133,7 @@
             // textBoxNeuesPasswortBestaetigen
             // 
             this.textBoxNeuesPasswortBestaetigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNeuesPasswortBestaetigen.Location = new System.Drawing.Point(158, 208);
+            this.textBoxNeuesPasswortBestaetigen.Location = new System.Drawing.Point(158, 196);
             this.textBoxNeuesPasswortBestaetigen.Name = "textBoxNeuesPasswortBestaetigen";
             this.textBoxNeuesPasswortBestaetigen.Size = new System.Drawing.Size(216, 24);
             this.textBoxNeuesPasswortBestaetigen.TabIndex = 6;
@@ -143,16 +143,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 196);
+            this.label5.Location = new System.Drawing.Point(24, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 36);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Neues Passwort\r\nBestätigen:\r\n";
+            this.label5.Text = "Neues Passwort\r\nbestätigen:\r\n";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(158, 238);
+            this.checkBox1.Location = new System.Drawing.Point(158, 226);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(107, 17);
             this.checkBox1.TabIndex = 14;

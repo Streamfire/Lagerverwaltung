@@ -43,7 +43,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(122, 57);
+            this.textBox1.Location = new System.Drawing.Point(124, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 24);
             this.textBox1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(122, 96);
+            this.textBox2.Location = new System.Drawing.Point(122, 99);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(250, 24);
             this.textBox2.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 60);
+            this.label1.Location = new System.Drawing.Point(25, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 99);
+            this.label2.Location = new System.Drawing.Point(25, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 4;
@@ -80,7 +80,7 @@
             // guestBtn
             // 
             this.guestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestBtn.Location = new System.Drawing.Point(264, 147);
+            this.guestBtn.Location = new System.Drawing.Point(264, 157);
             this.guestBtn.Name = "guestBtn";
             this.guestBtn.Size = new System.Drawing.Size(76, 34);
             this.guestBtn.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(25, 121);
+            this.label4.Location = new System.Drawing.Point(25, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 7;
@@ -112,7 +112,7 @@
             // buttonPasswortAendern
             // 
             this.buttonPasswortAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPasswortAendern.Location = new System.Drawing.Point(128, 147);
+            this.buttonPasswortAendern.Location = new System.Drawing.Point(122, 157);
             this.buttonPasswortAendern.Name = "buttonPasswortAendern";
             this.buttonPasswortAendern.Size = new System.Drawing.Size(130, 34);
             this.buttonPasswortAendern.TabIndex = 3;
@@ -123,7 +123,7 @@
             // buttonLogin
             // 
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(346, 147);
+            this.buttonLogin.Location = new System.Drawing.Point(346, 157);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(72, 34);
             this.buttonLogin.TabIndex = 5;
@@ -134,7 +134,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(122, 126);
+            this.checkBox1.Location = new System.Drawing.Point(122, 134);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(107, 17);
             this.checkBox1.TabIndex = 15;
