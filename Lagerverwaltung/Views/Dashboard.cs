@@ -15,6 +15,11 @@ namespace Lagerverwaltung.Views
 
         private bool _adminuser = false;
 
+        Form suche = null;
+        Form verwaltung = null;
+        Form historie = null;
+        Form regaleinsicht = null;
+
         public Dashboard(bool adminuser)
 		{
 			InitializeComponent();
@@ -31,36 +36,77 @@ namespace Lagerverwaltung.Views
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
+            if (verwaltung == null || verwaltung.IsDisposed == true)
+            {
+                verwaltung = new Verwaltung();
+                verwaltung.Show();
+            }
+            else
+            {
+
+            }
             // Getter & Setter entfernen, aber noch zu tief in den anderen Klassen verankert!
+            /*
             using (var verwaltung = new Verwaltung())
             {
                 verwaltung.ShowDialog();
-            }
-		}
+            }*/
+
+        }
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
+            if (suche == null ||suche.IsDisposed == true)
+            {
+                suche = new Suche();
+                suche.Show();
+            }
+            else
+            {
+                
+            }
+            /*
             using (var suche = new Suche())
             {
                 suche.ShowDialog();
-            }
+            }*/
 		}
 
 		private void Button3_Click(object sender, EventArgs e)
 		{
+            if (regaleinsicht == null || regaleinsicht.IsDisposed == true)
+            {
+                regaleinsicht = new Regaleinsicht();
+                regaleinsicht.Show();
+            }
+            else
+            {
+
+            }
+            /*
             using (var regaleinsicht = new Regaleinsicht())
             {
                 regaleinsicht.ShowDialog();
-            }
+            }*/
         }
 
 		private void Button4_Click(object sender, EventArgs e)
 		{
+            if (historie == null || historie.IsDisposed == true)
+            {
+                historie = new Historie();
+                historie.Show();
+            }
+            else
+            {
+
+            }
+            /*
             using (var historie = new Historie())
             {
                 historie.ShowDialog();
-            }
-		}
+            }*/
+        }
 
         private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
         {

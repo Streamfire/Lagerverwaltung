@@ -16,6 +16,8 @@ namespace Lagerverwaltung.Views
 
         private BindingSource source = new BindingSource();
 
+        Form produktlisteSuche = null;
+
         public Suche()
 		{
             DB.SucheSQL.HoleSuchergebnisse();
@@ -36,8 +38,9 @@ namespace Lagerverwaltung.Views
 
             dataGridView1.ClearSelection();
 
-            UpdateDataGridView();
+            DB.SqlStatements.DatabaseChanged += DataChanged;
 
+            UpdateDataGridView();
         }
         private void UpdateDataGridView(List<Model.Historie> list = null)
         {
@@ -50,6 +53,11 @@ namespace Lagerverwaltung.Views
                 source.DataSource = list;
             }
             dataGridView1.DataSource = source;
+        }
+
+        private void DataChanged(object sender, EventArgs e)
+        {
+            UpdateDataGridView();
         }
 
         /// <summary>
@@ -67,7 +75,8 @@ namespace Lagerverwaltung.Views
         {
             Dispose();
             Core.Suche.ClearDictionary();
-            Hide();
+            Close();
+            //Hide();
         }
 
         private void ButtonSuchen_Click(object sender, System.EventArgs e)
@@ -125,7 +134,8 @@ namespace Lagerverwaltung.Views
             {
                 if (!String.IsNullOrWhiteSpace(textProduktID.Text))
                 {
-                    tmp.ProduktID = Convert.ToUInt32(textProduktID.Text);
+                    //tmp.ProduktID = Convert.ToUInt32(textProduktID.Text);
+                    tmp.ProduktID = Convert.ToInt64(textProduktID.Text);
                     textProduktID.BackColor = Color.White;
                     changed[4] = true;
                     change++;
@@ -689,7 +699,7 @@ namespace Lagerverwaltung.Views
 
         private void checkKompakt_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkKompakt.Checked == true)
+            if (checkKompakt.Checked == true)
             {
                 this.Size = new Size(1270, 450);
             }
@@ -697,6 +707,12 @@ namespace Lagerverwaltung.Views
             {
                 this.Size = new Size(1270, 840);
             }
+        }
+
+        private void buttonProduktliste_Click(object sender, EventArgs e)
+        {
+            produktlisteSuche = new ProduktlisteSuche();
+            produktlisteSuche.Show();
         }
     }
 }

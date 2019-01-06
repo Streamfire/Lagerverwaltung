@@ -10,7 +10,8 @@ namespace Lagerverwaltung.Core
         public string LagerName { get; set; }
 
         public string ProduktName { get; set; }
-        public uint ProduktID { get; set; }
+        //public uint ProduktID { get; set; }
+        public long ProduktID { get; set; }
         public float ProduktGewicht { get; set; }
         public float ProduktPreis { get; set; }
         public string ProduktZeichnungsnummer { get; set; }

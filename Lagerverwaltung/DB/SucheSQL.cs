@@ -32,18 +32,19 @@ namespace Lagerverwaltung.DB
             {
                 cmd.Connection = conn;
                 /*
-                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, pr.erstellt_am, pr.zuletzt_geändert, "  +
-                                    "p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, row_number() over (order by pr.name desc) as Zeile from produkt pr " +
-                                    "join(select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname from paket p "                                                                          +
-                                    "join (select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname from regalfach rf "                                                                                                      +
-                                    "join (select rg.name, rg.regal_id from regal rg) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id limit @num;";
-                                    */
-
                 cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, " +
                                     "pr.erstellt_am, pr.zuletzt_geändert, p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, p.lagername, row_number() OVER(ORDER BY pr.name DESC) as ID from produkt pr " +
                                     "join (select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname, rf.lagername from paket p " +
                                     "join(select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname, rg.lagername from regalfach rf " +
                                     "join (select rg.lager_id, rg.name, rg.regal_id, lg.name as lagername from regal rg " + 
+                                    "join (select lg.lager_id, lg.name from lager lg) as lg on rg.lager_id = lg.lager_id) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id limit @num;";
+                */
+
+                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, " +
+                                    "pr.erstellt_am, pr.zuletzt_geaendert, p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, p.lagername, row_number() OVER(ORDER BY pr.name DESC) as ID from produkt pr " +
+                                    "join (select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname, rf.lagername from paket p " +
+                                    "join(select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname, rg.lagername from regalfach rf " +
+                                    "join (select rg.lager_id, rg.name, rg.regal_id, lg.name as lagername from regal rg " +
                                     "join (select lg.lager_id, lg.name from lager lg) as lg on rg.lager_id = lg.lager_id) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id limit @num;";
                 cmd.Parameters.AddWithValue("num", limit);
 
@@ -57,7 +58,7 @@ namespace Lagerverwaltung.DB
             }
         }
 
-        public static void HoleSuchergebnisse(  string lager_name, string regal_name, string regalfach_name, string produkt_name, uint produkt_id, string produkt_zeichnungsnummer  ,
+        public static void HoleSuchergebnisse(  string lager_name, string regal_name, string regalfach_name, string produkt_name, /*uint produkt_id*/ long produkt_id, string produkt_zeichnungsnummer  ,
                                                 string paket_name, string paket_anschaffungsgrund, float produkt_gewicht, float produkt_gewicht2, float produkt_preis               ,
                                                 float produkt_preis2, string produkt_erstellt_am, string produkt_erstellt_am2, string produkt_geaendert_am                          ,
                                                 string produkt_geaendert_am2, ushort paket_menge, ushort paket_menge2, string paket_haltbarkeit, string paket_haltbarkeit2          ,
@@ -69,8 +70,17 @@ namespace Lagerverwaltung.DB
                 
 
                 cmd.Connection = conn;
+                /*
                 cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, " +
                                     "pr.erstellt_am, pr.zuletzt_geändert, p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, p.lagername, row_number() OVER(ORDER BY pr.name DESC) as ID from produkt pr " +
+                                    "join (select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname, rf.lagername from paket p " +
+                                    "join(select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname, rg.lagername from regalfach rf " +
+                                    "join (select rg.lager_id, rg.name, rg.regal_id, lg.name as lagername from regal rg " +
+                                    "join (select lg.lager_id, lg.name from lager lg) as lg on rg.lager_id = lg.lager_id) as rg on rf.regal_id = rg.regal_id) as rf on p.regalfach_id = rf.regalfach_id) as p on pr.produkt_id = p.produkt_id where ";
+                */
+
+                cmd.CommandText =   "select pr.name as produktname, pr.produkt_id, pr.gewicht, pr.preis, pr.zeichnungsnummer, pr.hoehe as produkthoehe, pr.breite as produktbreite, pr.laenge as produktlaenge, " +
+                                    "pr.erstellt_am, pr.zuletzt_geaendert, p.paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, p.regalname, p.regalfachname, p.lagername, row_number() OVER(ORDER BY pr.name DESC) as ID from produkt pr " +
                                     "join (select p.produkt_id, p.name as paketname, p.menge, p.haltbarkeit, p.anschaffungsgrund, rf.regalname, rf.regalfachname, rf.lagername from paket p " +
                                     "join(select rf.regalfach_id, rf.regal_id, rf.name as regalfachname, rg.name as regalname, rg.lagername from regalfach rf " +
                                     "join (select rg.lager_id, rg.name, rg.regal_id, lg.name as lagername from regal rg " +

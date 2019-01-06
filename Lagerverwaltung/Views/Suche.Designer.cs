@@ -105,6 +105,7 @@
             this.textLagerName = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.checkKompakt = new System.Windows.Forms.CheckBox();
+            this.buttonProduktliste = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -806,7 +807,7 @@
             // checkKompakt
             // 
             this.checkKompakt.AutoSize = true;
-            this.checkKompakt.Location = new System.Drawing.Point(943, 237);
+            this.checkKompakt.Location = new System.Drawing.Point(943, 346);
             this.checkKompakt.Name = "checkKompakt";
             this.checkKompakt.Size = new System.Drawing.Size(112, 17);
             this.checkKompakt.TabIndex = 30;
@@ -814,12 +815,24 @@
             this.checkKompakt.UseVisualStyleBackColor = true;
             this.checkKompakt.CheckedChanged += new System.EventHandler(this.checkKompakt_CheckedChanged);
             // 
+            // buttonProduktliste
+            // 
+            this.buttonProduktliste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProduktliste.Location = new System.Drawing.Point(943, 209);
+            this.buttonProduktliste.Name = "buttonProduktliste";
+            this.buttonProduktliste.Size = new System.Drawing.Size(125, 46);
+            this.buttonProduktliste.TabIndex = 59;
+            this.buttonProduktliste.Text = "Produktliste";
+            this.buttonProduktliste.UseVisualStyleBackColor = true;
+            this.buttonProduktliste.Click += new System.EventHandler(this.buttonProduktliste_Click);
+            // 
             // Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1254, 801);
+            this.Controls.Add(this.buttonProduktliste);
             this.Controls.Add(this.checkKompakt);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.textLagerName);
@@ -969,5 +982,6 @@
         private System.Windows.Forms.TextBox textLagerName;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckBox checkKompakt;
+        private System.Windows.Forms.Button buttonProduktliste;
     }
 }

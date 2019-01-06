@@ -37,7 +37,7 @@ namespace Lagerverwaltung.Views
             artikeltypBox.DataSource = _artikeltypDict.Values.ToArray();
 
 
-            artikeltypBox.SelectedIndex = 0;
+            //artikeltypBox.SelectedIndex = 0;
 
 		}
 

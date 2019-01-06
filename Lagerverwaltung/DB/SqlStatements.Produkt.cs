@@ -66,7 +66,7 @@ namespace Lagerverwaltung.DB
             }
             if (_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geändert", zuletzt_geaendert);
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.ProduktModel);
             }
