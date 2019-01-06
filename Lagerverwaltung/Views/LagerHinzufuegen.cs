@@ -1,26 +1,30 @@
 ﻿using System;
 using System.Windows.Forms;
 using Lagerverwaltung.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
     public partial class LagerHinzufuegen : Form
     {
+        private Dictionary<long, Model.LagertypModel> _lagertypDict;
+
+        private BindingSource source = new BindingSource();
+
         public LagerHinzufuegen()
         {
             InitializeComponent();
 
             //DB Daten laden
-            DB.LagertypSQL.HoleAlleLagertyp();
+
+            _lagertypDict = DB.SqlStatements.HoleLagertyp();
 
             //Form formatieren
-            comboBoxLagertyp.ValueMember = "LagertypID";
+            comboBoxLagertyp.ValueMember = "Lagertyp_ID";
             comboBoxLagertyp.DisplayMember = "Name";
 
-            comboBoxLagertyp.DataSource = new BindingSource(Lagertyp.HoleListe.Values,null);
-
-            comboBoxLagertyp.SelectedItem = 0;
-            
+            comboBoxLagertyp.DataSource = _lagertypDict.Values.ToArray();
         }
 
         private void ButtonAbbrechen_Click(object sender, EventArgs e)
@@ -37,26 +41,7 @@ namespace Lagerverwaltung.Views
             }
             else
             {
-                //Lager in DB einfügen
-                //TODO: Überprüfung, ob Datensatz valide ist (gleicher Name?)
-                if (DB.LagerSQL.ErstelleLager(textBoxLagerName.Text,(short)((Lagertyp)comboBoxLagertyp.SelectedItem).LagertypID, textBoxStandort.Text, textBoxBeschreibung.Text) == false)
-                {
-                    MessageBox.Show("Der Datensatz konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-				else
-				{
-					DB.LagerSQL.HoleLager(textBoxLagerName.Text);
-					Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
-				}
-
-                
-
-                //TODO: Entfernen, sobald das Hauptfenster nur noch die Daten aus der DB liest 
-                //new Lager((ushort)Lager.HoleListe.Count, textBoxLagerName.Text, new DateTime(), new DateTime(), 0, this.textBoxStandort.Text, this.textBoxBeschreibung.Text);
-                //END TODO
-
-
-                //Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+                DB.SqlStatements.ErstelleLager(textBoxLagerName.Text, comboBoxLagertyp.SelectedText, textBoxBeschreibung.Text, Convert.ToInt64(comboBoxLagertyp.SelectedValue));
                 Close();
             }
 		}

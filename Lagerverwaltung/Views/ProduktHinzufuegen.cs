@@ -9,8 +9,6 @@ namespace Lagerverwaltung.Views
     {
         private Dictionary<long, Model.ArtikeltypModel> _artikeltypDict;
 
-        private BindingSource source = new BindingSource();
-
         public ProduktHinzufuegen()
         {
             InitializeComponent();
