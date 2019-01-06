@@ -88,5 +88,10 @@ namespace Lagerverwaltung.Views
         {
             throw new NotImplementedException();
         }
-    }
+
+		private void checkKompakt_CheckedChanged(object sender, EventArgs e)
+		{
+			UpdateForm(Model.Lager.HoleListe);
+		}
+	}
 }
