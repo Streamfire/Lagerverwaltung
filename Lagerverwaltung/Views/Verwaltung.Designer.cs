@@ -22,8 +22,16 @@ namespace Lagerverwaltung.Views
 			tabControl1.Controls.Clear();
 			tabControl1.SelectedIndexChanged += OnChangedTab;
 
+			//expand wenn checkbox
+			if (checkKompakt.Checked == true)
+			{
+				Opulos.Core.UI.Accordion.OpenOnAdd = true;
 
-		
+			}
+			else
+			{
+				Opulos.Core.UI.Accordion.OpenOnAdd = false;
+			}
 
 			foreach (Lager l in lagerListe.Values)
 			{
@@ -40,6 +48,7 @@ namespace Lagerverwaltung.Views
 					Accordion nestedRegal = new Accordion();
 					nestedRegal.Name = r.Name;
 					nestedRegal.Tag = r.RegalID;
+					
 					nestedRegal.GotFocus += OnFocusedPanel;
 					_lagerAccordion.Add(nestedRegal, r.Name);
 
@@ -112,7 +121,6 @@ namespace Lagerverwaltung.Views
 						}
 						nestedFach.Controls.Add(infoPanel);
 					}
-					
 				}
 			}
 
@@ -127,7 +135,7 @@ namespace Lagerverwaltung.Views
                 _lastFocusedPage = null;
             }
 
-		
+			
 
 
 		}
