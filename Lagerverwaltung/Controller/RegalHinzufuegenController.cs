@@ -39,6 +39,21 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
+        public static bool ValidateGroesse(short zeilen, short spalten, float regalH, float regalB, float regalL, float fachH, float fachB, float fachL, float wandH, float wandV)
+        {
+            //mind. Anzahl Spalten/Zeilen -1 an Trennwänden
+            //Zeilen bzw. Höhe
+            if (((zeilen * fachH) + ((zeilen - 1) * wandH)) > regalH) return false;
+
+            //Spalten bzw. Breite
+            if (((spalten * fachB) + ((spalten - 1) * wandV)) > regalB) return false;
+
+            //Fachlänge darf nicht größer als Regallänge sein; kleiner ist durch eventuelle Rückwand möglich
+            if (fachL > regalL) return false;
+
+            return true;
+        }
+
         private static bool ValidateRegalname(string eingabe)
         {
             //Validierung auf Leeren String

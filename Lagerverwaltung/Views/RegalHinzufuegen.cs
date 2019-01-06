@@ -48,63 +48,75 @@ namespace Lagerverwaltung.Views
                                                                     textBoxWandStaerkeH.Text, textBoxWandStaerkeV.Text))
             //Validierung erfolgreich
             {
+                long regalID;
+                string regalname = textBoxRegalName.Text;
                 short spalten = Convert.ToInt16(textBoxSpalten.Text);
                 short zeilen = Convert.ToInt16(textBoxZeilen.Text);
-                string regalname = textBoxRegalName.Text;
-                long regalID;
+                float regalH = Convert.ToSingle(textBoxRegalHoehe.Text);
+                float regalB = Convert.ToSingle(textBoxRegalBreite.Text);
+                float regalL = Convert.ToSingle(textBoxRegalLaenge.Text);
+                float wandH = Convert.ToSingle(textBoxWandStaerkeH.Text);
+                float wandV = Convert.ToSingle(textBoxWandStaerkeV.Text);
+                float fachH = Convert.ToSingle(textBoxRegalfachHoehe.Text);
+                float fachB = Convert.ToSingle(textBoxRegalfachBreite.Text);
+                float fachL = Convert.ToSingle(textBoxRegalfachLaenge.Text);
 
-                if ((regalID = DB.SqlStatements.ErstelleRegal(regalname,
-                                                            ((LagerModel)comboBoxAuswahlLager.SelectedItem).Lager_ID,
-                                                            spalten,
-                                                            zeilen,
-                                                            Convert.ToSingle(textBoxRegalHoehe.Text),
-                                                            Convert.ToSingle(textBoxRegalBreite.Text),
-                                                            Convert.ToSingle(textBoxRegalLaenge.Text),
-                                                            Convert.ToSingle(textBoxWandStaerkeH.Text),
-                                                            Convert.ToSingle(textBoxWandStaerkeV.Text))) > 0)
 
-                //Datensatz wurde erfolgreich in die DB gespeichert
+
+                if (Controller.RegalHinzufuegenController.ValidateGroesse(zeilen, spalten, regalH, regalB, regalL, fachH, fachB, fachL, wandH, wandV))
                 {
+                    regalID = DB.SqlStatements.ErstelleRegal(regalname, ((LagerModel)comboBoxAuswahlLager.SelectedItem).Lager_ID, zeilen, spalten, regalH, regalB, regalL, wandH, wandV);
 
-                    //Regalfächer hinzufügen
-                    for (int z = 1; z <= zeilen; z++)
+                    if(regalID > 0)
+                    //Datensatz wurde erfolgreich in die DB gespeichert
                     {
-                        for (int s = 1; s <= spalten; s++)
+
+                        //Regalfächer hinzufügen
+                        for (int z = 1; z <= zeilen; z++)
                         {
-                            //Name des Regalfachs: Regalname - Spalte - Zeile
-                            DB.SqlStatements.ErstelleRegalfach( String.Format("{0}-{1}-{2}", regalname, s, z),
-                                                                regalID,
-                                                                "",
-                                                                Convert.ToSingle(textBoxRegalfachHoehe.Text),
-                                                                Convert.ToSingle(textBoxRegalfachBreite.Text),
-                                                                Convert.ToSingle(textBoxRegalfachLaenge.Text));
+                            for (int s = 1; s <= spalten; s++)
+                            {
+                                //Name des Regalfachs: Regalname - Spalte - Zeile
+                                DB.SqlStatements.ErstelleRegalfach(String.Format("{0}-{1}-{2}", regalname, z, s),
+                                                                    regalID,
+                                                                    "",
+                                                                    Convert.ToSingle(textBoxRegalfachHoehe.Text),
+                                                                    Convert.ToSingle(textBoxRegalfachBreite.Text),
+                                                                    Convert.ToSingle(textBoxRegalfachLaenge.Text));
+                            }
                         }
+
+                        //NL für Anzeige der Regale
+                        //TODO: Bei Anpassung der Verwaltung an die SQLStatements anpassen bzw. entfernen
+                        DB.RegalSQL.HoleRegal((int)regalID);
+                        DB.RegalfachSQL.HoleLastXRegalfach(zeilen * spalten);
+
+                        //Dringend Verwaltung mit SQL Statements ergänzen, sonst kann die Verwaltung nicht aktualisiert werden
+                        //Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+
+                        Close();
+
+                    }//END IF DB erfolgreich
+
+                    //Datensatz konnte nicht gespeichert werden
+                    else
+                    {
+                        MessageBox.Show("Der Datensatz für das Regal konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    //NL für Anzeige der Regale
-                    //TODO: Bei Anpassung der Verwaltung an die SQLStatements anpassen bzw. entfernen
-                    DB.RegalSQL.HoleRegal((int)regalID);
-                    DB.RegalfachSQL.HoleLastXRegalfach(zeilen * spalten);
-                    Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
-
-
-
-                }//END IF DB erfolgreich
-
-                //Datensatz konnte nicht gespeichert werden
+                } //END IF Validate Größe 
                 else
                 {
-                    MessageBox.Show("Der Datensatz für das Regal konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Die Größen der angegebenen Fächer und Wandstärken überschreiten die Gesamtgröße des Regals.", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
             }
 
             //Validierung fehlgeschlagen
             else
             {
-                MessageBox.Show("Bitte Überprüfen sie das eingegebene Format der Daten", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bitte Überprüfen sie das eingegebene Format der Daten.", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-			Close();
 		}
     }
 }

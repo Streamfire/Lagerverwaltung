@@ -32,10 +32,14 @@ namespace Lagerverwaltung.DB
 
         public static long ErstelleRegal(string name, long lager_id, short zeilen, short spalten, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
-            var query = queryfactory.Query("regal").InsertGetId<long>(new { name, lager_id, zeilen, spalten, hoehe, breite, laenge, v_wandstaerke, h_wandstaerke });
+            var query = queryfactory.Query("regal").Insert(new { name, lager_id, zeilen, spalten, hoehe, breite, laenge, v_wandstaerke, h_wandstaerke });
+
+            //Da InsertGetId<> nix zurückgibt: 
+            var queryID = queryfactory.Query("regal").OrderByDesc("erstellt_am").Limit(1);
+
             OnDatabaseChanged(ModeltypEnum.LagerModel);
 
-            return query;
+            return queryID.Get<RegalModel>().First().Regal_ID;
         }
 
         public static void LoescheRegal(long regal_id)
