@@ -250,6 +250,12 @@
     <Compile Include="Views\ProduktHinzufuegen.Designer.cs">
       <DependentUpon>ProduktHinzufuegen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProduktlisteSuche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProduktlisteSuche.Designer.cs">
+      <DependentUpon>ProduktlisteSuche.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Produktliste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProduktHinzufuegen.resx">
       <DependentUpon>ProduktHinzufuegen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProduktlisteSuche.resx">
+      <DependentUpon>ProduktlisteSuche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produktliste.resx">
       <DependentUpon>Produktliste.cs</DependentUpon>
