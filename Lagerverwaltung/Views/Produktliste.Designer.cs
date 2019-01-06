@@ -103,7 +103,6 @@
             this.zeichnungsnummer});
             this.dataGridView1.Location = new System.Drawing.Point(29, 23);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(690, 637);
             this.dataGridView1.TabIndex = 5;
             // 

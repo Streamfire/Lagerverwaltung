@@ -45,7 +45,14 @@ namespace Lagerverwaltung.Views
             //dataGridView1.DataSource = Model.Produkt.GetProdukts();
             dataGridView1.DataSource = _dictProdukt.Values.ToArray();
 
+            dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
+            
+
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
             /*
 			listViewProduktliste.Items.Clear();
             var test = Model.Produkt.GetProdukts();
