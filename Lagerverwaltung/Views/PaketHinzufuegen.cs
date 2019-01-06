@@ -46,6 +46,11 @@ namespace Lagerverwaltung.Views
                 return;
             }
 
+            if(ProduktID < 0)
+            {
+                MessageBox.Show("Bitte wählen Sie ein Produkt aus!" + RegalfachID, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             if (Controller.PaketHinzufuegenController.ValidateData(textBoxPaketbezeichnung.Text, textBoxAnschaffungsgrund.Text, dateTimePickerHaltbarkeit.Value, textBoxHoehe.Text, textBoxBreite.Text, textBoxLaenge.Text))
             //Validierung erfolgreich
             {

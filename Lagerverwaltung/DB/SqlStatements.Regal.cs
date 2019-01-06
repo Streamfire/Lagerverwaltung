@@ -30,10 +30,12 @@ namespace Lagerverwaltung.DB
             return query.Get<RegalModel>().ToDictionary(row => row.Regal_ID, row => row);
         }
 
-        public static void ErstelleRegal(string name, long lager_id, short zeilen, short spalten, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
+        public static long ErstelleRegal(string name, long lager_id, short zeilen, short spalten, float hoehe, float breite, float laenge, float v_wandstaerke, float h_wandstaerke)
         {
-            var query = queryfactory.Query("regal").Insert(new { name, lager_id, zeilen, spalten, hoehe, breite, laenge, v_wandstaerke, h_wandstaerke });
+            var query = queryfactory.Query("regal").InsertGetId<long>(new { name, lager_id, zeilen, spalten, hoehe, breite, laenge, v_wandstaerke, h_wandstaerke });
             OnDatabaseChanged(ModeltypEnum.LagerModel);
+
+            return query;
         }
 
         public static void LoescheRegal(long regal_id)

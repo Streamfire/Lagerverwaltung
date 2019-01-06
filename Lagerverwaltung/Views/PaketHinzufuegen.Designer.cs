@@ -224,6 +224,7 @@
             this.labelProduktAusgewählt.Size = new System.Drawing.Size(189, 41);
             this.labelProduktAusgewählt.TabIndex = 20;
             this.labelProduktAusgewählt.Text = "[kein Produkt ausgewählt...]";
+            this.labelProduktAusgewählt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAbbrechen
             // 
