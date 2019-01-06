@@ -341,7 +341,7 @@ namespace Opulos.Core.UI
 	public bool ShowToolMenuOnRightClick { get; set; }
 
 	///<summary>Specifies if the controls are in the open state when added. The default value is false.</summary>
-	public bool OpenOnAdd { get; set; }
+	public static bool OpenOnAdd { get; set; }
 
 	///<summary>Insets put padding between the checkboxes and the edge of the accordion control. If you are using an ErrorProvider,
 	///and setting an error message on a header checkbox, then the Insets should be 15 on the side where the error icon is shown.
