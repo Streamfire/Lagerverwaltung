@@ -43,6 +43,7 @@
             // 
             // Schliessen
             // 
+            this.Schliessen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Schliessen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Schliessen.Location = new System.Drawing.Point(599, 685);
             this.Schliessen.Name = "Schliessen";
@@ -54,6 +55,7 @@
             // 
             // Auswaehlen
             // 
+            this.Auswaehlen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Auswaehlen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Auswaehlen.Location = new System.Drawing.Point(449, 685);
             this.Auswaehlen.Name = "Auswaehlen";
@@ -65,6 +67,7 @@
             // 
             // Produkt_hinzufuegen
             // 
+            this.Produkt_hinzufuegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Produkt_hinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Produkt_hinzufuegen.Location = new System.Drawing.Point(29, 685);
             this.Produkt_hinzufuegen.Name = "Produkt_hinzufuegen";
@@ -76,6 +79,7 @@
             // 
             // Produkt_aendern
             // 
+            this.Produkt_aendern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Produkt_aendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Produkt_aendern.Location = new System.Drawing.Point(209, 685);
             this.Produkt_aendern.Name = "Produkt_aendern";
@@ -153,7 +157,6 @@
             this.Controls.Add(this.Produkt_hinzufuegen);
             this.Controls.Add(this.Auswaehlen);
             this.Controls.Add(this.Schliessen);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Produktliste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produktliste";

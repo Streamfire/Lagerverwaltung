@@ -315,24 +315,27 @@ namespace Lagerverwaltung.Views
 
         private void ButtonEntfernen_Click(object sender, EventArgs e)
         {
-            
+            string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();
 
-            using (var paketentfernen = new PaketEntfernen())
+            if (_regalfachIDMap.ContainsKey(key))
             {
-                string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();
-
-                paketentfernen.Owner = this;
-                if (_regalfachIDMap.ContainsKey(key))
+                if (dataGridViewRegaleinsicht.CurrentCell.Style.BackColor == Color.LightPink)
                 {
-                    paketentfernen.RegalfachID = _regalfachIDMap[key];
-                    paketentfernen.ShowDialog();
+                    using (var paketentfernen = new PaketEntfernen())
+                    {
+                        paketentfernen.Owner = this;
+                        paketentfernen.RegalfachID = _regalfachIDMap[key];
+                        paketentfernen.ShowDialog();
+
+                    
+
+                    }
                 }
                 else
-                {
-                    MessageBox.Show("Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
+                    MessageBox.Show("Das ausgewählte Regalfach besitzt keine Pakete", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                MessageBox.Show("Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
