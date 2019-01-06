@@ -152,6 +152,7 @@
             this.Name = "PaketEntfernen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaketEntfernen";
+            this.Load += new System.EventHandler(this.PaketEntfernen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
