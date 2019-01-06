@@ -12,5 +12,8 @@ namespace Lagerverwaltung.Model
         public float Preis { get; }
         public string Zeichnungsnummer { get; }
         public long Artikeltyp_ID { get; }
+        public float Hoehe { get; }
+        public float Laenge { get; }
+        public float Breite { get;  }
     }
 }

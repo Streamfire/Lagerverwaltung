@@ -26,13 +26,6 @@ namespace Lagerverwaltung.DB
             return query.Get<ArtikeltypModel>().ToDictionary(row => row.Artikeltyp_ID, row => row);
         }
 
-        public static List<ArtikeltypModel> HoleAlleArtikeltypen()
-        {
-            var query = queryfactory.Query("artikeltyp").Select("name");
-
-            return query.Get<ArtikeltypModel>().ToList();
-        }
-
         public static void ErstelleArtikeltyp(string name)
         {
             var query = queryfactory.Query("artikeltyp").Insert(new { name });

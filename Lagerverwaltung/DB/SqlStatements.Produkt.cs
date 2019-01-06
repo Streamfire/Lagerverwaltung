@@ -25,23 +25,10 @@ namespace Lagerverwaltung.DB
             }
             return query.Get<ProduktModel>().ToDictionary(row => row.Produkt_ID, row => row);
         }
-        /*
-        public static Dictionary<long, ProduktModel> HoleAlleProdukte()
-        {
-            var query = queryfactory.Query("produkt").Select("produkt_id", "name", "erstellt_am", "zuletzt_geändert", "gewicht", "preis", "zeichnungsnummer");
 
-            return query.Get<ProduktModel>().ToDictionary(row => row.Produkt_ID, row => row);
-        }*/
-        public static List<ProduktModel> HoleAlleProdukte()
+        public static void ErstelleProdukt(string name, float gewicht, float preis, string zeichnungsnummer, long artikeltyp_id, float hoehe, float breite, float laenge)
         {
-            var query = queryfactory.Query("produkt").Select("produkt_id", "name", "gewicht", "preis", "zeichnungsnummer");
-
-            return query.Get<ProduktModel>().ToList();
-        }
-
-        public static void ErstelleProdukt(string name, float gewicht, float preis, string zeichnungsnummer, long artikeltyp_id, long paket_id)
-        {
-            var query = queryfactory.Query("produkt").Insert(new { name, gewicht, preis, zeichnungsnummer, artikeltyp_id, paket_id });
+            var query = queryfactory.Query("produkt").Insert(new { name, gewicht, preis, zeichnungsnummer, artikeltyp_id, hoehe, breite, laenge });
             OnDatabaseChanged(ModeltypEnum.ProduktModel);
         }
 
@@ -51,7 +38,7 @@ namespace Lagerverwaltung.DB
             OnDatabaseChanged(ModeltypEnum.ProduktModel);
         }
 
-        public static void UpdateProdukt(long produkt_id, string name="", float? gewicht=null, float? preis=null, string zeichnungsnummer="", long? artikeltyp_id=null)
+        public static void UpdateProdukt(long produkt_id, string name="", float? gewicht=null, float? preis=null, string zeichnungsnummer="", long? artikeltyp_id=null, float? hoehe=null, float? breite=null, float? laenge=null)
         {
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("produkt").Where("produkt_id", produkt_id);
@@ -79,9 +66,21 @@ namespace Lagerverwaltung.DB
             }
             if (_dict.Count != 0)
             {
-                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
+                _dict.Add("zuletzt_geändert", zuletzt_geaendert);
                 query.Update(_dict);
                 OnDatabaseChanged(ModeltypEnum.ProduktModel);
+            }
+            if (hoehe != null)
+            {
+                _dict.Add("hoehe", hoehe);
+            }
+            if (breite != null)
+            {
+                _dict.Add("breite", breite);
+            }
+            if (laenge != null)
+            {
+                _dict.Add("laenge", laenge);
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Lagerverwaltung.Views
 {
-    partial class ProduktHinzufuegen
+    partial class ProduktAendern
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonProduktHinzufuegen = new System.Windows.Forms.Button();
+            this.ButtonProduktAendern = new System.Windows.Forms.Button();
             this.ButtonAbbrechen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,16 +49,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ButtonProduktHinzufuegen
+            // ButtonProduktAendern
             // 
-            this.ButtonProduktHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonProduktHinzufuegen.Location = new System.Drawing.Point(97, 458);
-            this.ButtonProduktHinzufuegen.Name = "ButtonProduktHinzufuegen";
-            this.ButtonProduktHinzufuegen.Size = new System.Drawing.Size(151, 35);
-            this.ButtonProduktHinzufuegen.TabIndex = 0;
-            this.ButtonProduktHinzufuegen.Text = "Produkt Hinzufügen";
-            this.ButtonProduktHinzufuegen.UseVisualStyleBackColor = true;
-            this.ButtonProduktHinzufuegen.Click += new System.EventHandler(this.ButtonProduktHinzufuegen_Click);
+            this.ButtonProduktAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonProduktAendern.Location = new System.Drawing.Point(97, 458);
+            this.ButtonProduktAendern.Name = "ButtonProduktAendern";
+            this.ButtonProduktAendern.Size = new System.Drawing.Size(151, 35);
+            this.ButtonProduktAendern.TabIndex = 0;
+            this.ButtonProduktAendern.Text = "Produkt Ändern";
+            this.ButtonProduktAendern.UseVisualStyleBackColor = true;
+            this.ButtonProduktAendern.Click += new System.EventHandler(this.ButtonProduktAendern_Click);
             // 
             // ButtonAbbrechen
             // 
@@ -77,9 +77,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.Size = new System.Drawing.Size(159, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Produkt hinzufügen";
+            this.label1.Text = "Produkt ändern";
             // 
             // label2
             // 
@@ -226,7 +226,7 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Länge:";
             // 
-            // ProduktHinzufuegen
+            // ProduktAendern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,10 +249,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonAbbrechen);
-            this.Controls.Add(this.ButtonProduktHinzufuegen);
-            this.Name = "ProduktHinzufuegen";
+            this.Controls.Add(this.ButtonProduktAendern);
+            this.Name = "ProduktAendern";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produkt Hinzufügen";
+            this.Text = "Produkt Ändern";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button ButtonProduktHinzufuegen;
+        private System.Windows.Forms.Button ButtonProduktAendern;
         private System.Windows.Forms.Button ButtonAbbrechen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

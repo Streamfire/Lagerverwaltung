@@ -238,6 +238,12 @@
     <Compile Include="Views\PasswortAendern.Designer.cs">
       <DependentUpon>PasswortAendern.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProduktAendern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProduktAendern.Designer.cs">
+      <DependentUpon>ProduktAendern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProduktHinzufuegen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PasswortAendern.resx">
       <DependentUpon>PasswortAendern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProduktAendern.resx">
+      <DependentUpon>ProduktAendern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProduktHinzufuegen.resx">
       <DependentUpon>ProduktHinzufuegen.cs</DependentUpon>
