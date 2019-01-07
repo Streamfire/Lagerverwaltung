@@ -43,6 +43,7 @@
             // 
             // ZurueckButton
             // 
+            this.ZurueckButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ZurueckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ZurueckButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.ZurueckButton.Location = new System.Drawing.Point(652, 456);
@@ -55,15 +56,29 @@
             // 
             // RegaleinsichtGrid
             // 
+            this.RegaleinsichtGrid.AllowUserToAddRows = false;
+            this.RegaleinsichtGrid.AllowUserToDeleteRows = false;
+            this.RegaleinsichtGrid.AllowUserToResizeColumns = false;
+            this.RegaleinsichtGrid.AllowUserToResizeRows = false;
+            this.RegaleinsichtGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RegaleinsichtGrid.BackgroundColor = System.Drawing.Color.White;
             this.RegaleinsichtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RegaleinsichtGrid.ColumnHeadersVisible = false;
+            this.RegaleinsichtGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegaleinsichtGrid.Location = new System.Drawing.Point(23, 104);
             this.RegaleinsichtGrid.Name = "RegaleinsichtGrid";
+            this.RegaleinsichtGrid.RowHeadersVisible = false;
+            this.RegaleinsichtGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.RegaleinsichtGrid.Size = new System.Drawing.Size(704, 346);
             this.RegaleinsichtGrid.TabIndex = 12;
             // 
             // LadeDatenLabel
             // 
+            this.LadeDatenLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LadeDatenLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LadeDatenLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.LadeDatenLabel.Location = new System.Drawing.Point(23, 104);
@@ -104,6 +119,7 @@
             this.LagerCombobox.Size = new System.Drawing.Size(150, 29);
             this.LagerCombobox.TabIndex = 16;
             this.LagerCombobox.UseSelectable = true;
+            this.LagerCombobox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLager_SelectedIndexChanged);
             // 
             // RegalCombobox
             // 
@@ -115,6 +131,7 @@
             this.RegalCombobox.Size = new System.Drawing.Size(150, 29);
             this.RegalCombobox.TabIndex = 17;
             this.RegalCombobox.UseSelectable = true;
+            this.RegalCombobox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegal_SelectedIndexChanged);
             // 
             // AktualisierenButton
             // 
@@ -129,6 +146,7 @@
             // 
             // PaketeinlagernButton
             // 
+            this.PaketeinlagernButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PaketeinlagernButton.Location = new System.Drawing.Point(23, 453);
             this.PaketeinlagernButton.Name = "PaketeinlagernButton";
             this.PaketeinlagernButton.Size = new System.Drawing.Size(98, 23);
@@ -139,6 +157,7 @@
             // 
             // PaketauslagernButton
             // 
+            this.PaketauslagernButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PaketauslagernButton.Location = new System.Drawing.Point(127, 453);
             this.PaketauslagernButton.Name = "PaketauslagernButton";
             this.PaketauslagernButton.Size = new System.Drawing.Size(98, 23);

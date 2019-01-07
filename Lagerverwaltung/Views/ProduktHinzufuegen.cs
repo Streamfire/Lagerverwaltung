@@ -8,6 +8,7 @@ namespace Lagerverwaltung.Views
     public partial class ProduktHinzufuegen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.ArtikeltypModel> _artikeltypDict;
+        public Form Besitzer { get; set; }
 
         public ProduktHinzufuegen()
         {
@@ -51,7 +52,7 @@ namespace Lagerverwaltung.Views
             {
                 DB.SqlStatements.ErstelleProdukt(tb_Name.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), tb_Zeichnungsnummer.Text, Convert.ToInt64(artikeltypBox.SelectedValue), Convert.ToSingle(tb_Hoehe.Text), Convert.ToSingle(tb_Breite.Text), Convert.ToSingle(tb_Laenge.Text));
 
-                ((Produktliste) Owner).UpdateForm();
+                ((Produktliste) Besitzer).UpdateForm();
 
                 Close();
             }
