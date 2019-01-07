@@ -8,9 +8,6 @@ namespace Lagerverwaltung.Views
     public partial class LagerEntfernen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.LagerModel> _lagerDict;
-        private Dictionary<long, Model.RegalModel> _regalDict;
-        private Dictionary<long, Model.RegalfachModel> _regalfachDict;
-        private Dictionary<long, Model.PaketModel> _paketDict;
 
         private static long[] regalKeys;
         private static long[][] regalfachKeys;
