@@ -63,7 +63,7 @@ namespace Lagerverwaltung.Controller
         {
             Byte[] enc_pass = Encode_2UTF(password);
             Byte[] enc_salt = Encode_2UTF(salt);
-            Byte[] enc_hash = Hash_SHA512(ConcatByteArray(enc_pass, enc_salt));
+            Byte[] enc_hash = Hash_SHA1(ConcatByteArray(enc_pass, enc_salt));
             return Encode_2String(enc_hash);
         }
 
@@ -89,9 +89,9 @@ namespace Lagerverwaltung.Controller
         }
 
         // Sha512 Hash Function
-        private static byte[] Hash_SHA512(byte[] stream)
+        private static byte[] Hash_SHA1(byte[] stream)
         {
-            using (SHA512 sha_man = new SHA512Managed())
+            using (SHA1 sha_man = new SHA1Managed())
             {
                 return sha_man.ComputeHash(stream);
             }

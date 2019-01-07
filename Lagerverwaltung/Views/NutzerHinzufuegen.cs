@@ -53,7 +53,16 @@ namespace Lagerverwaltung.Views
             string salt = Controller.AuthenticationController.Create_Salt(10);
             string newpw = Controller.AuthenticationController.GeneratePasswordHash(password,salt);
 
-            DB.SqlStatements.ErstelleUser(vorname,nachname,username,newpw,salt);
+            try
+            {
+                DB.SqlStatements.ErstelleUser(vorname, nachname, username, newpw, salt);
+                MetroFramework.MetroMessageBox.Show(this,"Neuen Nutzer erfolgreich angelegt","Erfolgreich!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

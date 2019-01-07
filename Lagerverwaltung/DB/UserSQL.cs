@@ -52,7 +52,7 @@ namespace Lagerverwaltung.DB
                     while (reader.Read())
                     {
                         // wenn feld null dann Exception!
-                        new User((ushort)reader.GetInt16(0),(ushort)reader.GetInt16(6),reader.GetString(1),reader.GetString(2),reader.GetString(7),reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
+                        new User((ushort)reader.GetInt16(0),reader.GetString(1),reader.GetString(2),reader.GetString(7),reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
                     }
                 }
             }
@@ -70,7 +70,7 @@ namespace Lagerverwaltung.DB
                 using (var reader = cmd.ExecuteReader())
                 {
                     reader.Read();
-                    new User((ushort)reader.GetInt16(0), (ushort)reader.GetInt16(6), reader.GetString(1), reader.GetString(2), reader.GetString(7), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
+                    new User((ushort)reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetString(7), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetDateTime(5));
                 }
             }
         }
