@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class ProduktAendern : Form
+    public partial class ProduktAendern : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.ArtikeltypModel> _artikeltypDict;
 
