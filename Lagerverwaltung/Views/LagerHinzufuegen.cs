@@ -34,10 +34,9 @@ namespace Lagerverwaltung.Views
 
 		private void LagerHinzufuegenButton_Click(object sender, EventArgs e)
 		{
-
             if (LagerTextbox.Text.Equals("") || StandortTextbox.Text.Equals(""))
             {
-                MessageBox.Show("Nicht alle benötigten Felder wurden ausgeführt!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this, "Nicht alle benötigten Felder wurden ausgeführt!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

@@ -27,7 +27,7 @@ namespace Lagerverwaltung.Views
         {
             if(NewPasswordTextbox.Text != ConfirmNewTextbox.Text)
             {
-                MessageBox.Show("Passwörter stimmen nicht überein!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this, "Passwörter stimmen nicht überein!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information, 125);
             }
             else if (Lagerverwaltung.Controller.AuthenticationController.Login(NutzernameTextbox.Text, OldPasswordTextbox.Text))         
             {
@@ -39,13 +39,13 @@ namespace Lagerverwaltung.Views
                 }
                 catch
                 {
-                    MessageBox.Show("Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this,"Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
                 }
                 Close();
             }
             else
-                MessageBox.Show("Der Nutzername oder das Passwort sind ungültig!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this,"Der Nutzername oder das Passwort sind ungültig!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ShowPasswordCheckbox_CheckedChanged(object sender, EventArgs e)

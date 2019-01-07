@@ -30,7 +30,7 @@ namespace Lagerverwaltung.Views
             }
             else
             {
-                MessageBox.Show("Bitte erstellen Sie zuerst ein Lager, bevor sie ein Regal hinzufügen!", "Kein Lager gefunden!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this,"Bitte erstellen Sie zuerst ein Lager, bevor sie ein Regal hinzufügen!", "Kein Lager gefunden!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
                 return;
             }
@@ -101,13 +101,13 @@ namespace Lagerverwaltung.Views
                     //Datensatz konnte nicht gespeichert werden
                     else
                     {
-                        MessageBox.Show("Der Datensatz für das Regal konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MetroFramework.MetroMessageBox.Show(this,"Der Datensatz für das Regal konnte nicht hinzugefügt werden", "Datenbankfehler", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 } //END IF Validate Größe 
                 else
                 {
-                    MessageBox.Show("Die Größen der angegebenen Fächer und Wandstärken überschreiten die Gesamtgröße des Regals.", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this,"Die Größen der angegebenen Fächer und Wandstärken überschreiten die Gesamtgröße des Regals.", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -115,7 +115,7 @@ namespace Lagerverwaltung.Views
             //Validierung fehlgeschlagen
             else
             {
-                MessageBox.Show("Bitte Überprüfen sie das eingegebene Format der Daten.", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this,"Bitte Überprüfen sie das eingegebene Format der Daten.", "Fehler beim Hinzufügen des Regals", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 		}
     }

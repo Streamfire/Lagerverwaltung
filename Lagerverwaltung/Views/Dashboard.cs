@@ -118,8 +118,8 @@ namespace Lagerverwaltung.Views
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Möchten Sie das Programm beenden?", "Programm beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog != DialogResult.Yes)
+            DialogResult result = MetroFramework.MetroMessageBox.Show(this, "Möchten Sie das Programm beenden?", "Programm schließen", MessageBoxButtons.YesNo,MessageBoxIcon.Information,150);
+            if (result != DialogResult.Yes)
             {
                 e.Cancel = true;
             }
