@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace Lagerverwaltung.Views
 {
    
-    public partial class Login : Form
+    public partial class Login : MetroFramework.Forms.MetroForm
 	{
         public Login()
 		{
@@ -12,9 +12,9 @@ namespace Lagerverwaltung.Views
 		}
 
 		//Login Button gedrückt
-		private void Button1_Click(object sender, EventArgs e)
+		private void LoginButton_Click(object sender, EventArgs e)
 		{
-            if (Controller.AuthenticationController.Login(textBox1.Text, textBox2.Text)) 
+            if (Controller.AuthenticationController.Login(UsernameTextbox.Text, PasswordTextbox.Text)) 
 			{
                 Controller.AuthenticationController.Adminuser = true;
                 DialogResult = DialogResult.OK;
@@ -22,20 +22,20 @@ namespace Lagerverwaltung.Views
 			}
 			else
 			{
-				label4.Text = "Nutzername oder Passwort falsch.";
-                label4.Visible = true;
+				ErrorLabel.Text = "Nutzername oder Passwort falsch.";
+                ErrorLabel.Visible = true;
                 Controller.AuthenticationController.Adminuser = false;
             }
 		}
 
-		private void Button2_Click(object sender, EventArgs e)
+		private void GastButton_Click(object sender, EventArgs e)
 		{
             Controller.AuthenticationController.Adminuser = false;
             DialogResult = DialogResult.OK;
 			Close();
 		}
 
-        private void ButtonPasswortAendern_Click(object sender, EventArgs e)
+        private void PasswortAendernButton_Click(object sender, EventArgs e)
         {
             using (var passwortaendern = new PasswortAendern())
             {
@@ -43,9 +43,10 @@ namespace Lagerverwaltung.Views
             }
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void ShowPasswordCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            textBox2.UseSystemPasswordChar = !textBox2.UseSystemPasswordChar;
+            PasswordTextbox.UseSystemPasswordChar = !PasswordTextbox.UseSystemPasswordChar;
+            PasswordTextbox.PasswordChar = char.MinValue; // kleiner Bugfix
         }
     }
 }

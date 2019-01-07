@@ -28,155 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guestBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonPasswortAendern = new System.Windows.Forms.Button();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.components = new System.ComponentModel.Container();
+            this.NoteLabel = new MetroFramework.Controls.MetroLabel();
+            this.ShowPasswordCheckbox = new MetroFramework.Controls.MetroCheckBox();
+            this.ErrorLabel = new MetroFramework.Controls.MetroLabel();
+            this.UsernameTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.PasswordTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.LoginButton = new MetroFramework.Controls.MetroButton();
+            this.GastButton = new MetroFramework.Controls.MetroButton();
+            this.PasswortAendernButton = new MetroFramework.Controls.MetroButton();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NoteLabel
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(124, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 24);
-            this.textBox1.TabIndex = 0;
+            this.NoteLabel.AutoSize = true;
+            this.NoteLabel.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.NoteLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.NoteLabel.Location = new System.Drawing.Point(20, 180);
+            this.NoteLabel.Name = "NoteLabel";
+            this.NoteLabel.Size = new System.Drawing.Size(357, 15);
+            this.NoteLabel.TabIndex = 16;
+            this.NoteLabel.Text = "Bitte Nutzername und Passwort eingeben, oder als Gast fortfahren.";
             // 
-            // textBox2
+            // ShowPasswordCheckbox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(122, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 24);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.ShowPasswordCheckbox.AutoSize = true;
+            this.ShowPasswordCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowPasswordCheckbox.Location = new System.Drawing.Point(23, 120);
+            this.ShowPasswordCheckbox.Name = "ShowPasswordCheckbox";
+            this.ShowPasswordCheckbox.Size = new System.Drawing.Size(112, 15);
+            this.ShowPasswordCheckbox.TabIndex = 19;
+            this.ShowPasswordCheckbox.Text = "Klartext anzeigen";
+            this.ShowPasswordCheckbox.UseSelectable = true;
+            this.ShowPasswordCheckbox.CheckedChanged += new System.EventHandler(this.ShowPasswordCheckbox_CheckedChanged);
             // 
-            // label1
+            // ErrorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nutzername:";
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.ErrorLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLabel.Location = new System.Drawing.Point(23, 136);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(27, 15);
+            this.ErrorLabel.TabIndex = 20;
+            this.ErrorLabel.Text = "null";
+            this.ErrorLabel.UseCustomForeColor = true;
+            this.ErrorLabel.Visible = false;
             // 
-            // label2
+            // UsernameTextbox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Passwort:";
             // 
-            // guestBtn
             // 
-            this.guestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestBtn.Location = new System.Drawing.Point(264, 157);
-            this.guestBtn.Name = "guestBtn";
-            this.guestBtn.Size = new System.Drawing.Size(76, 34);
-            this.guestBtn.TabIndex = 4;
-            this.guestBtn.Text = "Gast";
-            this.guestBtn.UseVisualStyleBackColor = true;
-            this.guestBtn.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // label3
+            this.UsernameTextbox.CustomButton.Image = null;
+            this.UsernameTextbox.CustomButton.Location = new System.Drawing.Point(318, 2);
+            this.UsernameTextbox.CustomButton.Name = "";
+            this.UsernameTextbox.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.UsernameTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.UsernameTextbox.CustomButton.TabIndex = 1;
+            this.UsernameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.UsernameTextbox.CustomButton.UseSelectable = true;
+            this.UsernameTextbox.CustomButton.Visible = false;
+            this.UsernameTextbox.Lines = new string[0];
+            this.UsernameTextbox.Location = new System.Drawing.Point(23, 60);
+            this.UsernameTextbox.MaxLength = 32767;
+            this.UsernameTextbox.Name = "UsernameTextbox";
+            this.UsernameTextbox.PasswordChar = '\0';
+            this.UsernameTextbox.WaterMark = "Nutzername";
+            this.UsernameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.UsernameTextbox.SelectedText = "";
+            this.UsernameTextbox.SelectionLength = 0;
+            this.UsernameTextbox.SelectionStart = 0;
+            this.UsernameTextbox.ShortcutsEnabled = true;
+            this.UsernameTextbox.Size = new System.Drawing.Size(340, 24);
+            this.UsernameTextbox.TabIndex = 21;
+            this.UsernameTextbox.UseSelectable = true;
+            this.UsernameTextbox.WaterMark = "Nutzername";
+            this.UsernameTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.UsernameTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(399, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Bitte Nutzername und Passwort eingeben, oder als Gast fortfahren.";
+            // PasswordTextbox
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(25, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "null-String";
-            this.label4.Visible = false;
             // 
-            // buttonPasswortAendern
             // 
-            this.buttonPasswortAendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPasswortAendern.Location = new System.Drawing.Point(122, 157);
-            this.buttonPasswortAendern.Name = "buttonPasswortAendern";
-            this.buttonPasswortAendern.Size = new System.Drawing.Size(130, 34);
-            this.buttonPasswortAendern.TabIndex = 3;
-            this.buttonPasswortAendern.Text = "Passwort ändern";
-            this.buttonPasswortAendern.UseVisualStyleBackColor = true;
-            this.buttonPasswortAendern.Click += new System.EventHandler(this.ButtonPasswortAendern_Click);
+            this.PasswordTextbox.CustomButton.Image = null;
+            this.PasswordTextbox.CustomButton.Location = new System.Drawing.Point(318, 2);
+            this.PasswordTextbox.CustomButton.Name = "";
+            this.PasswordTextbox.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.PasswordTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PasswordTextbox.CustomButton.TabIndex = 1;
+            this.PasswordTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PasswordTextbox.CustomButton.UseSelectable = true;
+            this.PasswordTextbox.CustomButton.Visible = false;
+            this.PasswordTextbox.Lines = new string[0];
+            this.PasswordTextbox.Location = new System.Drawing.Point(23, 90);
+            this.PasswordTextbox.MaxLength = 32767;
+            this.PasswordTextbox.Name = "PasswordTextbox";
+            this.PasswordTextbox.PasswordChar = '●';
+            this.PasswordTextbox.WaterMark = "Passwort";
+            this.PasswordTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PasswordTextbox.SelectedText = "";
+            this.PasswordTextbox.SelectionLength = 0;
+            this.PasswordTextbox.SelectionStart = 0;
+            this.PasswordTextbox.ShortcutsEnabled = true;
+            this.PasswordTextbox.Size = new System.Drawing.Size(340, 24);
+            this.PasswordTextbox.TabIndex = 22;
+            this.PasswordTextbox.UseSelectable = true;
+            this.PasswordTextbox.UseSystemPasswordChar = true;
+            this.PasswordTextbox.WaterMark = "Passwort";
+            this.PasswordTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.PasswordTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // buttonLogin
+            // LoginButton
             // 
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(346, 157);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(72, 34);
-            this.buttonLogin.TabIndex = 5;
-            this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.Button1_Click);
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.Location = new System.Drawing.Point(207, 154);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.TabIndex = 23;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.UseSelectable = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
-            // checkBox1
+            // GastButton
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(122, 134);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(107, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Klartext anzeigen";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            this.GastButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GastButton.Location = new System.Drawing.Point(288, 154);
+            this.GastButton.Name = "GastButton";
+            this.GastButton.Size = new System.Drawing.Size(75, 23);
+            this.GastButton.TabIndex = 24;
+            this.GastButton.Text = "Gast";
+            this.GastButton.UseSelectable = true;
+            this.GastButton.Click += new System.EventHandler(this.GastButton_Click);
+            // 
+            // PasswortAendernButton
+            // 
+            this.PasswortAendernButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PasswortAendernButton.Location = new System.Drawing.Point(23, 154);
+            this.PasswortAendernButton.Name = "PasswortAendernButton";
+            this.PasswortAendernButton.Size = new System.Drawing.Size(100, 23);
+            this.PasswortAendernButton.TabIndex = 25;
+            this.PasswortAendernButton.Text = "Passwort ändern";
+            this.PasswortAendernButton.UseSelectable = true;
+            this.PasswortAendernButton.Click += new System.EventHandler(this.PasswortAendernButton_Click);
+            // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = this;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 203);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.buttonPasswortAendern);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.guestBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.Controls.Add(this.PasswortAendernButton);
+            this.Controls.Add(this.GastButton);
+            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.PasswordTextbox);
+            this.Controls.Add(this.UsernameTextbox);
+            this.Controls.Add(this.ErrorLabel);
+            this.Controls.Add(this.ShowPasswordCheckbox);
+            this.Controls.Add(this.NoteLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Login";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button guestBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button buttonPasswortAendern;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private MetroFramework.Controls.MetroLabel NoteLabel;
+        private MetroFramework.Controls.MetroCheckBox ShowPasswordCheckbox;
+        private MetroFramework.Controls.MetroLabel ErrorLabel;
+        private MetroFramework.Controls.MetroTextBox UsernameTextbox;
+        private MetroFramework.Controls.MetroTextBox PasswordTextbox;
+        private MetroFramework.Controls.MetroButton LoginButton;
+        private MetroFramework.Controls.MetroButton GastButton;
+        private MetroFramework.Controls.MetroButton PasswortAendernButton;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
 
