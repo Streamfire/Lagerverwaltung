@@ -10,26 +10,29 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class NutzerHinzufuegen : Form
+    public partial class NutzerHinzufuegen : MetroFramework.Forms.MetroForm
     {
         public NutzerHinzufuegen()
         {
             InitializeComponent();
         }
-        private void ButtonAbbrechen_Click(object sender, EventArgs e)
+
+        private void AbortButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void ButtonNutzerAnlegen_Click(object sender, EventArgs e)
+        private void ShowPasswordCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            PasswordTextbox.UseSystemPasswordChar = !PasswordTextbox.UseSystemPasswordChar;
+            PasswordTextbox.PasswordChar = char.MinValue;
+            ConfirmPasswordTextbox.UseSystemPasswordChar = !ConfirmPasswordTextbox.UseSystemPasswordChar;
+            ConfirmPasswordTextbox.PasswordChar = char.MinValue;
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void NewUserButton_Click(object sender, EventArgs e)
         {
-            textBoxPasswort.UseSystemPasswordChar = !textBoxPasswort.UseSystemPasswordChar;
-            textBoxPasswortBestaetigen.UseSystemPasswordChar = !textBoxPasswortBestaetigen.UseSystemPasswordChar;
+            throw new NotImplementedException();
         }
     }
 }
