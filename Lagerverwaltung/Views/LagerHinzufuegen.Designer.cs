@@ -28,163 +28,184 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLagerName = new System.Windows.Forms.TextBox();
-            this.textBoxBeschreibung = new System.Windows.Forms.TextBox();
-            this.buttonLagerHinzufügen = new System.Windows.Forms.Button();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxStandort = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxLagertyp = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.LagerTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.StandortTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.LagertypCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.BeschreibungTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.LagerHinzufuegenButton = new MetroFramework.Controls.MetroButton();
+            this.AbbrechenButton = new MetroFramework.Controls.MetroButton();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LagerTextbox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lager hinzufügen";
             // 
-            // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Lagername";
             // 
-            // label3
+            this.LagerTextbox.CustomButton.Image = null;
+            this.LagerTextbox.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.LagerTextbox.CustomButton.Name = "";
+            this.LagerTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.LagerTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.LagerTextbox.CustomButton.TabIndex = 1;
+            this.LagerTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.LagerTextbox.CustomButton.UseSelectable = true;
+            this.LagerTextbox.CustomButton.Visible = false;
+            this.LagerTextbox.Lines = new string[0];
+            this.LagerTextbox.Location = new System.Drawing.Point(27, 73);
+            this.LagerTextbox.MaxLength = 32767;
+            this.LagerTextbox.Name = "LagerTextbox";
+            this.LagerTextbox.PasswordChar = '\0';
+            this.LagerTextbox.WaterMark = "Lagername";
+            this.LagerTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.LagerTextbox.SelectedText = "";
+            this.LagerTextbox.SelectionLength = 0;
+            this.LagerTextbox.SelectionStart = 0;
+            this.LagerTextbox.ShortcutsEnabled = true;
+            this.LagerTextbox.Size = new System.Drawing.Size(250, 23);
+            this.LagerTextbox.TabIndex = 11;
+            this.LagerTextbox.UseSelectable = true;
+            this.LagerTextbox.WaterMark = "Lagername";
+            this.LagerTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.LagerTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 221);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Beschreibung";
+            // StandortTextbox
             // 
-            // textBoxLagerName
             // 
-            this.textBoxLagerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLagerName.Location = new System.Drawing.Point(150, 85);
-            this.textBoxLagerName.Name = "textBoxLagerName";
-            this.textBoxLagerName.Size = new System.Drawing.Size(224, 24);
-            this.textBoxLagerName.TabIndex = 3;
             // 
-            // textBoxBeschreibung
             // 
-            this.textBoxBeschreibung.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBeschreibung.Location = new System.Drawing.Point(150, 221);
-            this.textBoxBeschreibung.Multiline = true;
-            this.textBoxBeschreibung.Name = "textBoxBeschreibung";
-            this.textBoxBeschreibung.Size = new System.Drawing.Size(224, 91);
-            this.textBoxBeschreibung.TabIndex = 4;
+            this.StandortTextbox.CustomButton.Image = null;
+            this.StandortTextbox.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.StandortTextbox.CustomButton.Name = "";
+            this.StandortTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.StandortTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.StandortTextbox.CustomButton.TabIndex = 1;
+            this.StandortTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.StandortTextbox.CustomButton.UseSelectable = true;
+            this.StandortTextbox.CustomButton.Visible = false;
+            this.StandortTextbox.Lines = new string[0];
+            this.StandortTextbox.Location = new System.Drawing.Point(27, 102);
+            this.StandortTextbox.MaxLength = 32767;
+            this.StandortTextbox.Name = "StandortTextbox";
+            this.StandortTextbox.PasswordChar = '\0';
+            this.StandortTextbox.WaterMark = "Standort";
+            this.StandortTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.StandortTextbox.SelectedText = "";
+            this.StandortTextbox.SelectionLength = 0;
+            this.StandortTextbox.SelectionStart = 0;
+            this.StandortTextbox.ShortcutsEnabled = true;
+            this.StandortTextbox.Size = new System.Drawing.Size(250, 23);
+            this.StandortTextbox.TabIndex = 12;
+            this.StandortTextbox.UseSelectable = true;
+            this.StandortTextbox.WaterMark = "Standort";
+            this.StandortTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StandortTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // buttonLagerHinzufügen
+            // LagertypCombobox
             // 
-            this.buttonLagerHinzufügen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLagerHinzufügen.Location = new System.Drawing.Point(134, 343);
-            this.buttonLagerHinzufügen.Name = "buttonLagerHinzufügen";
-            this.buttonLagerHinzufügen.Size = new System.Drawing.Size(134, 38);
-            this.buttonLagerHinzufügen.TabIndex = 5;
-            this.buttonLagerHinzufügen.Text = "Lager hinzufügen";
-            this.buttonLagerHinzufügen.UseVisualStyleBackColor = true;
-            this.buttonLagerHinzufügen.Click += new System.EventHandler(this.ButtonLagerHinzufügen_Click);
+            this.LagertypCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagertypCombobox.FormattingEnabled = true;
+            this.LagertypCombobox.ItemHeight = 23;
+            this.LagertypCombobox.Location = new System.Drawing.Point(27, 131);
+            this.LagertypCombobox.Name = "LagertypCombobox";
+            this.LagertypCombobox.Size = new System.Drawing.Size(250, 29);
+            this.LagertypCombobox.TabIndex = 13;
+            this.LagertypCombobox.UseSelectable = true;
             // 
-            // buttonAbbrechen
+            // BeschreibungTextbox
             // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(298, 344);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(95, 37);
-            this.buttonAbbrechen.TabIndex = 6;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Standort";
             // 
-            // textBoxStandort
+            this.BeschreibungTextbox.CustomButton.Image = null;
+            this.BeschreibungTextbox.CustomButton.Location = new System.Drawing.Point(152, 2);
+            this.BeschreibungTextbox.CustomButton.Name = "";
+            this.BeschreibungTextbox.CustomButton.Size = new System.Drawing.Size(95, 95);
+            this.BeschreibungTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.BeschreibungTextbox.CustomButton.TabIndex = 1;
+            this.BeschreibungTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BeschreibungTextbox.CustomButton.UseSelectable = true;
+            this.BeschreibungTextbox.CustomButton.Visible = false;
+            this.BeschreibungTextbox.Lines = new string[0];
+            this.BeschreibungTextbox.Location = new System.Drawing.Point(27, 166);
+            this.BeschreibungTextbox.MaxLength = 32767;
+            this.BeschreibungTextbox.Multiline = true;
+            this.BeschreibungTextbox.Name = "BeschreibungTextbox";
+            this.BeschreibungTextbox.PasswordChar = '\0';
+            this.BeschreibungTextbox.WaterMark = "Beschreibung";
+            this.BeschreibungTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.BeschreibungTextbox.SelectedText = "";
+            this.BeschreibungTextbox.SelectionLength = 0;
+            this.BeschreibungTextbox.SelectionStart = 0;
+            this.BeschreibungTextbox.ShortcutsEnabled = true;
+            this.BeschreibungTextbox.Size = new System.Drawing.Size(250, 100);
+            this.BeschreibungTextbox.TabIndex = 14;
+            this.BeschreibungTextbox.UseSelectable = true;
+            this.BeschreibungTextbox.WaterMark = "Beschreibung";
+            this.BeschreibungTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.BeschreibungTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.textBoxStandort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStandort.Location = new System.Drawing.Point(150, 127);
-            this.textBoxStandort.Name = "textBoxStandort";
-            this.textBoxStandort.Size = new System.Drawing.Size(224, 24);
-            this.textBoxStandort.TabIndex = 8;
+            // LagerHinzufuegenButton
             // 
-            // label5
+            this.LagerHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagerHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.LagerHinzufuegenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.LagerHinzufuegenButton.Location = new System.Drawing.Point(27, 272);
+            this.LagerHinzufuegenButton.Name = "LagerHinzufuegenButton";
+            this.LagerHinzufuegenButton.Size = new System.Drawing.Size(110, 30);
+            this.LagerHinzufuegenButton.TabIndex = 15;
+            this.LagerHinzufuegenButton.Text = "Lager hinzufügen";
+            this.LagerHinzufuegenButton.UseSelectable = true;
+            this.LagerHinzufuegenButton.Click += new System.EventHandler(this.LagerHinzufuegenButton_Click);
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 176);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Lagertyp";
+            // AbbrechenButton
             // 
-            // comboBoxLagertyp
+            this.AbbrechenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AbbrechenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.AbbrechenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.AbbrechenButton.Location = new System.Drawing.Point(202, 272);
+            this.AbbrechenButton.Name = "AbbrechenButton";
+            this.AbbrechenButton.Size = new System.Drawing.Size(75, 30);
+            this.AbbrechenButton.TabIndex = 16;
+            this.AbbrechenButton.Text = "Abbrechen";
+            this.AbbrechenButton.UseSelectable = true;
+            this.AbbrechenButton.Click += new System.EventHandler(this.AbbrechenButton_Click);
             // 
-            this.comboBoxLagertyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLagertyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxLagertyp.FormattingEnabled = true;
-            this.comboBoxLagertyp.Location = new System.Drawing.Point(150, 173);
-            this.comboBoxLagertyp.Name = "comboBoxLagertyp";
-            this.comboBoxLagertyp.Size = new System.Drawing.Size(224, 26);
-            this.comboBoxLagertyp.TabIndex = 10;
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = null;
             // 
             // LagerHinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 401);
-            this.Controls.Add(this.comboBoxLagertyp);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxStandort);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonLagerHinzufügen);
-            this.Controls.Add(this.textBoxBeschreibung);
-            this.Controls.Add(this.textBoxLagerName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(300, 325);
+            this.Controls.Add(this.AbbrechenButton);
+            this.Controls.Add(this.LagerHinzufuegenButton);
+            this.Controls.Add(this.BeschreibungTextbox);
+            this.Controls.Add(this.LagertypCombobox);
+            this.Controls.Add(this.StandortTextbox);
+            this.Controls.Add(this.LagerTextbox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LagerHinzufuegen";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LagerHinzufügen";
-            this.Load += new System.EventHandler(this.LagerHinzufuegen_Load);
+            this.Resizable = false;
+            this.Text = "Lager hinzufügen";
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxLagerName;
-        private System.Windows.Forms.TextBox textBoxBeschreibung;
-        private System.Windows.Forms.Button buttonLagerHinzufügen;
-        private System.Windows.Forms.Button buttonAbbrechen;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxStandort;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxLagertyp;
+        private MetroFramework.Controls.MetroTextBox LagerTextbox;
+        private MetroFramework.Controls.MetroTextBox StandortTextbox;
+        private MetroFramework.Controls.MetroComboBox LagertypCombobox;
+        private MetroFramework.Controls.MetroTextBox BeschreibungTextbox;
+        private MetroFramework.Controls.MetroButton LagerHinzufuegenButton;
+        private MetroFramework.Controls.MetroButton AbbrechenButton;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
