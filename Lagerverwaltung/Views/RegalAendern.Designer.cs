@@ -1,6 +1,6 @@
 ﻿namespace Lagerverwaltung.Views
 {
-    partial class RegalAendern_Entfernen
+    partial class RegalAendern
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.RegalLabel = new MetroFramework.Controls.MetroLabel();
             this.LagerLabel = new MetroFramework.Controls.MetroLabel();
-            this.ZeilenLabel = new MetroFramework.Controls.MetroLabel();
-            this.SpaltenLabel = new MetroFramework.Controls.MetroLabel();
+            this.NameLabel = new MetroFramework.Controls.MetroLabel();
             this.AendernButton = new MetroFramework.Controls.MetroButton();
             this.EntfernenButton = new MetroFramework.Controls.MetroButton();
             this.AbbrechenButton = new MetroFramework.Controls.MetroButton();
             this.LagerCombobox = new MetroFramework.Controls.MetroComboBox();
             this.RegalCombobox = new MetroFramework.Controls.MetroComboBox();
-            this.SpalteTextbox = new MetroFramework.Controls.MetroTextBox();
-            this.ZeilenTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.NameTextbox = new MetroFramework.Controls.MetroTextBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -58,27 +56,18 @@
             this.LagerLabel.AutoSize = true;
             this.LagerLabel.Location = new System.Drawing.Point(23, 72);
             this.LagerLabel.Name = "LagerLabel";
-            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
+            this.LagerLabel.Size = new System.Drawing.Size(45, 19);
             this.LagerLabel.TabIndex = 13;
             this.LagerLabel.Text = "Lager:";
             // 
-            // ZeilenLabel
+            // NameLabel
             // 
-            this.ZeilenLabel.AutoSize = true;
-            this.ZeilenLabel.Location = new System.Drawing.Point(77, 142);
-            this.ZeilenLabel.Name = "ZeilenLabel";
-            this.ZeilenLabel.Size = new System.Drawing.Size(47, 19);
-            this.ZeilenLabel.TabIndex = 14;
-            this.ZeilenLabel.Text = "Zeilen:";
-            // 
-            // SpaltenLabel
-            // 
-            this.SpaltenLabel.AutoSize = true;
-            this.SpaltenLabel.Location = new System.Drawing.Point(69, 171);
-            this.SpaltenLabel.Name = "SpaltenLabel";
-            this.SpaltenLabel.Size = new System.Drawing.Size(55, 19);
-            this.SpaltenLabel.TabIndex = 15;
-            this.SpaltenLabel.Text = "Spalten:";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(23, 144);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(118, 19);
+            this.NameLabel.TabIndex = 14;
+            this.NameLabel.Text = "Neuer Regalname:";
             // 
             // AendernButton
             // 
@@ -123,6 +112,7 @@
             this.LagerCombobox.Size = new System.Drawing.Size(252, 29);
             this.LagerCombobox.TabIndex = 19;
             this.LagerCombobox.UseSelectable = true;
+            this.LagerCombobox.SelectedIndexChanged += new System.EventHandler(this.LagerCombobox_SelectedIndexChanged);
             // 
             // RegalCombobox
             // 
@@ -135,65 +125,35 @@
             this.RegalCombobox.TabIndex = 20;
             this.RegalCombobox.UseSelectable = true;
             // 
-            // SpalteTextbox
+            // NameTextbox
             // 
             // 
             // 
             // 
-            this.SpalteTextbox.CustomButton.Image = null;
-            this.SpalteTextbox.CustomButton.Location = new System.Drawing.Point(28, 1);
-            this.SpalteTextbox.CustomButton.Name = "";
-            this.SpalteTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.SpalteTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SpalteTextbox.CustomButton.TabIndex = 1;
-            this.SpalteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SpalteTextbox.CustomButton.UseSelectable = true;
-            this.SpalteTextbox.CustomButton.Visible = false;
-            this.SpalteTextbox.Lines = new string[0];
-            this.SpalteTextbox.Location = new System.Drawing.Point(130, 171);
-            this.SpalteTextbox.MaxLength = 32767;
-            this.SpalteTextbox.Name = "SpalteTextbox";
-            this.SpalteTextbox.PasswordChar = '\0';
-            this.SpalteTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SpalteTextbox.SelectedText = "";
-            this.SpalteTextbox.SelectionLength = 0;
-            this.SpalteTextbox.SelectionStart = 0;
-            this.SpalteTextbox.ShortcutsEnabled = true;
-            this.SpalteTextbox.Size = new System.Drawing.Size(50, 23);
-            this.SpalteTextbox.TabIndex = 21;
-            this.SpalteTextbox.UseSelectable = true;
-            this.SpalteTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SpalteTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // ZeilenTextbox
-            // 
-            // 
-            // 
-            // 
-            this.ZeilenTextbox.CustomButton.Image = null;
-            this.ZeilenTextbox.CustomButton.Location = new System.Drawing.Point(28, 1);
-            this.ZeilenTextbox.CustomButton.Name = "";
-            this.ZeilenTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.ZeilenTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ZeilenTextbox.CustomButton.TabIndex = 1;
-            this.ZeilenTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ZeilenTextbox.CustomButton.UseSelectable = true;
-            this.ZeilenTextbox.CustomButton.Visible = false;
-            this.ZeilenTextbox.Lines = new string[0];
-            this.ZeilenTextbox.Location = new System.Drawing.Point(130, 142);
-            this.ZeilenTextbox.MaxLength = 32767;
-            this.ZeilenTextbox.Name = "ZeilenTextbox";
-            this.ZeilenTextbox.PasswordChar = '\0';
-            this.ZeilenTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ZeilenTextbox.SelectedText = "";
-            this.ZeilenTextbox.SelectionLength = 0;
-            this.ZeilenTextbox.SelectionStart = 0;
-            this.ZeilenTextbox.ShortcutsEnabled = true;
-            this.ZeilenTextbox.Size = new System.Drawing.Size(50, 23);
-            this.ZeilenTextbox.TabIndex = 22;
-            this.ZeilenTextbox.UseSelectable = true;
-            this.ZeilenTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ZeilenTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.NameTextbox.CustomButton.Image = null;
+            this.NameTextbox.CustomButton.Location = new System.Drawing.Point(198, 1);
+            this.NameTextbox.CustomButton.Name = "";
+            this.NameTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.NameTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.NameTextbox.CustomButton.TabIndex = 1;
+            this.NameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.NameTextbox.CustomButton.UseSelectable = true;
+            this.NameTextbox.CustomButton.Visible = false;
+            this.NameTextbox.Lines = new string[0];
+            this.NameTextbox.Location = new System.Drawing.Point(147, 144);
+            this.NameTextbox.MaxLength = 15;
+            this.NameTextbox.Name = "NameTextbox";
+            this.NameTextbox.PasswordChar = '\0';
+            this.NameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.NameTextbox.SelectedText = "";
+            this.NameTextbox.SelectionLength = 0;
+            this.NameTextbox.SelectionStart = 0;
+            this.NameTextbox.ShortcutsEnabled = true;
+            this.NameTextbox.Size = new System.Drawing.Size(180, 23);
+            this.NameTextbox.TabIndex = 22;
+            this.NameTextbox.UseSelectable = true;
+            this.NameTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.NameTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroStyleManager1
             // 
@@ -204,15 +164,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 250);
-            this.Controls.Add(this.ZeilenTextbox);
-            this.Controls.Add(this.SpalteTextbox);
+            this.Controls.Add(this.NameTextbox);
             this.Controls.Add(this.RegalCombobox);
             this.Controls.Add(this.LagerCombobox);
             this.Controls.Add(this.AbbrechenButton);
             this.Controls.Add(this.EntfernenButton);
             this.Controls.Add(this.AendernButton);
-            this.Controls.Add(this.SpaltenLabel);
-            this.Controls.Add(this.ZeilenLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.LagerLabel);
             this.Controls.Add(this.RegalLabel);
             this.MinimizeBox = false;
@@ -220,6 +178,7 @@
             this.Name = "RegalAendern_Entfernen";
             this.Resizable = false;
             this.Text = "Regal ändern oder entfernen";
+            this.Load += new System.EventHandler(this.RegalAendern_Entfernen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,15 +189,13 @@
 
         private MetroFramework.Controls.MetroLabel RegalLabel;
         private MetroFramework.Controls.MetroLabel LagerLabel;
-        private MetroFramework.Controls.MetroLabel ZeilenLabel;
-        private MetroFramework.Controls.MetroLabel SpaltenLabel;
+        private MetroFramework.Controls.MetroLabel NameLabel;
         private MetroFramework.Controls.MetroButton AendernButton;
         private MetroFramework.Controls.MetroButton EntfernenButton;
         private MetroFramework.Controls.MetroButton AbbrechenButton;
         private MetroFramework.Controls.MetroComboBox LagerCombobox;
         private MetroFramework.Controls.MetroComboBox RegalCombobox;
-        private MetroFramework.Controls.MetroTextBox SpalteTextbox;
-        private MetroFramework.Controls.MetroTextBox ZeilenTextbox;
+        private MetroFramework.Controls.MetroTextBox NameTextbox;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }

@@ -91,7 +91,7 @@ namespace Lagerverwaltung.Views
 
         private void RegalAnpassenButton_Click(object sender, EventArgs e)
         {
-            using (var regalaendern = new RegalAendern_Entfernen())
+            using (var regalaendern = new RegalAendern())
             {
                 regalaendern.Owner = this;
                 regalaendern.ShowDialog();

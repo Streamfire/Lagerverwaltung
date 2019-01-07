@@ -271,11 +271,11 @@
     <Compile Include="Views\Produktliste.Designer.cs">
       <DependentUpon>Produktliste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegalAendern_Entfernen.cs">
+    <Compile Include="Views\RegalAendern.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\RegalAendern_Entfernen.Designer.cs">
-      <DependentUpon>RegalAendern_Entfernen.cs</DependentUpon>
+    <Compile Include="Views\RegalAendern.Designer.cs">
+      <DependentUpon>RegalAendern.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Regaleinsicht.cs">
       <SubType>Form</SubType>
@@ -359,8 +359,8 @@
     <EmbeddedResource Include="Views\Produktliste.resx">
       <DependentUpon>Produktliste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RegalAendern_Entfernen.resx">
-      <DependentUpon>RegalAendern_Entfernen.cs</DependentUpon>
+    <EmbeddedResource Include="Views\RegalAendern.resx">
+      <DependentUpon>RegalAendern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Regaleinsicht.resx">
       <DependentUpon>Regaleinsicht.cs</DependentUpon>
