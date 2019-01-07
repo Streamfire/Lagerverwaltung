@@ -124,6 +124,7 @@
             this.RegalCombobox.Size = new System.Drawing.Size(252, 29);
             this.RegalCombobox.TabIndex = 20;
             this.RegalCombobox.UseSelectable = true;
+            this.RegalCombobox.SelectedIndexChanged += new System.EventHandler(this.RegalCombobox_SelectedIndexChanged);
             // 
             // NameTextbox
             // 
@@ -131,7 +132,7 @@
             // 
             // 
             this.NameTextbox.CustomButton.Image = null;
-            this.NameTextbox.CustomButton.Location = new System.Drawing.Point(198, 1);
+            this.NameTextbox.CustomButton.Location = new System.Drawing.Point(158, 1);
             this.NameTextbox.CustomButton.Name = "";
             this.NameTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.NameTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -159,7 +160,7 @@
             // 
             this.metroStyleManager1.Owner = this;
             // 
-            // RegalAendern_Entfernen
+            // RegalAendern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,7 +176,7 @@
             this.Controls.Add(this.RegalLabel);
             this.MinimizeBox = false;
             this.Movable = false;
-            this.Name = "RegalAendern_Entfernen";
+            this.Name = "RegalAendern";
             this.Resizable = false;
             this.Text = "Regal ändern oder entfernen";
             this.Load += new System.EventHandler(this.RegalAendern_Entfernen_Load);
