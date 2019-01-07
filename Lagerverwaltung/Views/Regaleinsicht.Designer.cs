@@ -28,192 +28,158 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            this.dataGridViewRegaleinsicht = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxRegal = new System.Windows.Forms.ComboBox();
-            this.comboBoxLager = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ButtonZurueck = new System.Windows.Forms.Button();
-            this.ButtonAktualisieren = new System.Windows.Forms.Button();
-            this.ButtonHinzufuegen = new System.Windows.Forms.Button();
-            this.ButtonEntfernen = new System.Windows.Forms.Button();
-            this.labelAktualisieren = new System.Windows.Forms.Label();
-            this.lagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegaleinsicht)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lagerBindingSource)).BeginInit();
+            this.ZurueckButton = new MetroFramework.Controls.MetroButton();
+            this.RegaleinsichtGrid = new System.Windows.Forms.DataGridView();
+            this.LadeDatenLabel = new System.Windows.Forms.Label();
+            this.LagerLabel = new MetroFramework.Controls.MetroLabel();
+            this.RegalLabel = new MetroFramework.Controls.MetroLabel();
+            this.LagerCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.RegalCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.AktualisierenButton = new MetroFramework.Controls.MetroButton();
+            this.PaketeinlagernButton = new MetroFramework.Controls.MetroButton();
+            this.PaketauslagernButton = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.RegaleinsichtGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewRegaleinsicht
+            // ZurueckButton
             // 
-            this.dataGridViewRegaleinsicht.AllowUserToAddRows = false;
-            this.dataGridViewRegaleinsicht.AllowUserToDeleteRows = false;
-            this.dataGridViewRegaleinsicht.AllowUserToResizeColumns = false;
-            this.dataGridViewRegaleinsicht.AllowUserToResizeRows = false;
-            this.dataGridViewRegaleinsicht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewRegaleinsicht.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewRegaleinsicht.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridViewRegaleinsicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRegaleinsicht.ColumnHeadersVisible = false;
-            this.dataGridViewRegaleinsicht.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridViewRegaleinsicht.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridViewRegaleinsicht.Location = new System.Drawing.Point(12, 41);
-            this.dataGridViewRegaleinsicht.MultiSelect = false;
-            this.dataGridViewRegaleinsicht.Name = "dataGridViewRegaleinsicht";
-            this.dataGridViewRegaleinsicht.ReadOnly = true;
-            this.dataGridViewRegaleinsicht.RowHeadersVisible = false;
-            this.dataGridViewRegaleinsicht.ShowEditingIcon = false;
-            this.dataGridViewRegaleinsicht.Size = new System.Drawing.Size(970, 450);
-            this.dataGridViewRegaleinsicht.TabIndex = 0;
+            this.ZurueckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZurueckButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.ZurueckButton.Location = new System.Drawing.Point(652, 456);
+            this.ZurueckButton.Name = "ZurueckButton";
+            this.ZurueckButton.Size = new System.Drawing.Size(75, 30);
+            this.ZurueckButton.TabIndex = 11;
+            this.ZurueckButton.Text = "Zurück";
+            this.ZurueckButton.UseSelectable = true;
+            this.ZurueckButton.Click += new System.EventHandler(this.ZurueckButton_Click);
             // 
-            // label1
+            // RegaleinsichtGrid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(284, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Regal ";
+            this.RegaleinsichtGrid.BackgroundColor = System.Drawing.Color.White;
+            this.RegaleinsichtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RegaleinsichtGrid.Location = new System.Drawing.Point(23, 104);
+            this.RegaleinsichtGrid.Name = "RegaleinsichtGrid";
+            this.RegaleinsichtGrid.Size = new System.Drawing.Size(704, 346);
+            this.RegaleinsichtGrid.TabIndex = 12;
             // 
-            // comboBoxRegal
+            // LadeDatenLabel
             // 
-            this.comboBoxRegal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRegal.FormattingEnabled = true;
-            this.comboBoxRegal.Location = new System.Drawing.Point(345, 9);
-            this.comboBoxRegal.Name = "comboBoxRegal";
-            this.comboBoxRegal.Size = new System.Drawing.Size(194, 21);
-            this.comboBoxRegal.TabIndex = 2;
-            this.comboBoxRegal.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRegal_SelectedIndexChanged);
+            this.LadeDatenLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.LadeDatenLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LadeDatenLabel.Location = new System.Drawing.Point(23, 104);
+            this.LadeDatenLabel.Name = "LadeDatenLabel";
+            this.LadeDatenLabel.Size = new System.Drawing.Size(704, 346);
+            this.LadeDatenLabel.TabIndex = 13;
+            this.LadeDatenLabel.Text = "Lade Daten...";
+            this.LadeDatenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBoxLager
+            // LagerLabel
             // 
-            this.comboBoxLager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLager.FormattingEnabled = true;
-            this.comboBoxLager.Location = new System.Drawing.Point(68, 9);
-            this.comboBoxLager.Name = "comboBoxLager";
-            this.comboBoxLager.Size = new System.Drawing.Size(194, 21);
-            this.comboBoxLager.TabIndex = 4;
-            this.comboBoxLager.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLager_SelectedIndexChanged);
+            this.LagerLabel.AutoSize = true;
+            this.LagerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LagerLabel.Location = new System.Drawing.Point(23, 73);
+            this.LagerLabel.Name = "LagerLabel";
+            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
+            this.LagerLabel.TabIndex = 14;
+            this.LagerLabel.Text = "Lager:";
             // 
-            // label2
+            // RegalLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Lager";
+            this.RegalLabel.AutoSize = true;
+            this.RegalLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.RegalLabel.Location = new System.Drawing.Point(231, 73);
+            this.RegalLabel.Name = "RegalLabel";
+            this.RegalLabel.Size = new System.Drawing.Size(45, 19);
+            this.RegalLabel.TabIndex = 15;
+            this.RegalLabel.Text = "Regal:";
             // 
-            // ButtonZurueck
+            // LagerCombobox
             // 
-            this.ButtonZurueck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonZurueck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonZurueck.Location = new System.Drawing.Point(893, 506);
-            this.ButtonZurueck.Name = "ButtonZurueck";
-            this.ButtonZurueck.Size = new System.Drawing.Size(91, 46);
-            this.ButtonZurueck.TabIndex = 5;
-            this.ButtonZurueck.Text = "Zurück";
-            this.ButtonZurueck.UseVisualStyleBackColor = true;
-            this.ButtonZurueck.Click += new System.EventHandler(this.ButtonZurueck_Click);
+            this.LagerCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagerCombobox.FormattingEnabled = true;
+            this.LagerCombobox.ItemHeight = 23;
+            this.LagerCombobox.Location = new System.Drawing.Point(75, 69);
+            this.LagerCombobox.Name = "LagerCombobox";
+            this.LagerCombobox.Size = new System.Drawing.Size(150, 29);
+            this.LagerCombobox.TabIndex = 16;
+            this.LagerCombobox.UseSelectable = true;
             // 
-            // ButtonAktualisieren
+            // RegalCombobox
             // 
-            this.ButtonAktualisieren.Enabled = false;
-            this.ButtonAktualisieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.ButtonAktualisieren.Location = new System.Drawing.Point(565, 5);
-            this.ButtonAktualisieren.Name = "ButtonAktualisieren";
-            this.ButtonAktualisieren.Size = new System.Drawing.Size(100, 28);
-            this.ButtonAktualisieren.TabIndex = 6;
-            this.ButtonAktualisieren.Text = "Aktualisieren";
-            this.ButtonAktualisieren.UseVisualStyleBackColor = true;
-            this.ButtonAktualisieren.Click += new System.EventHandler(this.ButtonAktualisieren_Click);
+            this.RegalCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegalCombobox.FormattingEnabled = true;
+            this.RegalCombobox.ItemHeight = 23;
+            this.RegalCombobox.Location = new System.Drawing.Point(282, 69);
+            this.RegalCombobox.Name = "RegalCombobox";
+            this.RegalCombobox.Size = new System.Drawing.Size(150, 29);
+            this.RegalCombobox.TabIndex = 17;
+            this.RegalCombobox.UseSelectable = true;
             // 
-            // ButtonHinzufuegen
+            // AktualisierenButton
             // 
-            this.ButtonHinzufuegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.ButtonHinzufuegen.Location = new System.Drawing.Point(12, 506);
-            this.ButtonHinzufuegen.Name = "ButtonHinzufuegen";
-            this.ButtonHinzufuegen.Size = new System.Drawing.Size(132, 46);
-            this.ButtonHinzufuegen.TabIndex = 7;
-            this.ButtonHinzufuegen.Text = "Paket Einlagern";
-            this.ButtonHinzufuegen.UseVisualStyleBackColor = true;
-            this.ButtonHinzufuegen.Click += new System.EventHandler(this.ButtonHinzufuegen_Click);
+            this.AktualisierenButton.Location = new System.Drawing.Point(438, 73);
+            this.AktualisierenButton.Name = "AktualisierenButton";
+            this.AktualisierenButton.Size = new System.Drawing.Size(75, 23);
+            this.AktualisierenButton.TabIndex = 18;
+            this.AktualisierenButton.Text = "Aktualisieren";
+            this.AktualisierenButton.UseSelectable = true;
+            this.AktualisierenButton.Click += new System.EventHandler(this.AktualisierenButton_Click);
             // 
-            // ButtonEntfernen
+            // PaketeinlagernButton
             // 
-            this.ButtonEntfernen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.ButtonEntfernen.Location = new System.Drawing.Point(160, 506);
-            this.ButtonEntfernen.Name = "ButtonEntfernen";
-            this.ButtonEntfernen.Size = new System.Drawing.Size(132, 46);
-            this.ButtonEntfernen.TabIndex = 8;
-            this.ButtonEntfernen.Text = "Paket Auslagern";
-            this.ButtonEntfernen.UseVisualStyleBackColor = true;
-            this.ButtonEntfernen.Click += new System.EventHandler(this.ButtonEntfernen_Click);
+            this.PaketeinlagernButton.Location = new System.Drawing.Point(23, 453);
+            this.PaketeinlagernButton.Name = "PaketeinlagernButton";
+            this.PaketeinlagernButton.Size = new System.Drawing.Size(98, 23);
+            this.PaketeinlagernButton.TabIndex = 19;
+            this.PaketeinlagernButton.Text = "Paket einlagern";
+            this.PaketeinlagernButton.UseSelectable = true;
+            this.PaketeinlagernButton.Click += new System.EventHandler(this.PaketeinlagernButton_Click);
             // 
-            // labelAktualisieren
+            // PaketauslagernButton
             // 
-            this.labelAktualisieren.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAktualisieren.AutoSize = true;
-            this.labelAktualisieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAktualisieren.ForeColor = System.Drawing.Color.Red;
-            this.labelAktualisieren.Location = new System.Drawing.Point(242, 256);
-            this.labelAktualisieren.Name = "labelAktualisieren";
-            this.labelAktualisieren.Size = new System.Drawing.Size(564, 20);
-            this.labelAktualisieren.TabIndex = 9;
-            this.labelAktualisieren.Text = "Es wurden Daten in der Datenbank geändert. Bitte aktualisieren Sie die Daten!";
-            this.labelAktualisieren.Visible = false;
-            // 
-            // lagerBindingSource
-            // 
-            this.lagerBindingSource.DataSource = typeof(Lagerverwaltung.Model.Lager);
+            this.PaketauslagernButton.Location = new System.Drawing.Point(127, 453);
+            this.PaketauslagernButton.Name = "PaketauslagernButton";
+            this.PaketauslagernButton.Size = new System.Drawing.Size(98, 23);
+            this.PaketauslagernButton.TabIndex = 20;
+            this.PaketauslagernButton.Text = "Paket auslagern";
+            this.PaketauslagernButton.UseSelectable = true;
+            this.PaketauslagernButton.Click += new System.EventHandler(this.PaketauslagernButton_Click);
             // 
             // Regaleinsicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 563);
-            this.Controls.Add(this.labelAktualisieren);
-            this.Controls.Add(this.ButtonEntfernen);
-            this.Controls.Add(this.ButtonHinzufuegen);
-            this.Controls.Add(this.ButtonAktualisieren);
-            this.Controls.Add(this.ButtonZurueck);
-            this.Controls.Add(this.comboBoxLager);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxRegal);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewRegaleinsicht);
+            this.ClientSize = new System.Drawing.Size(753, 500);
+            this.Controls.Add(this.PaketauslagernButton);
+            this.Controls.Add(this.PaketeinlagernButton);
+            this.Controls.Add(this.AktualisierenButton);
+            this.Controls.Add(this.RegalCombobox);
+            this.Controls.Add(this.LagerCombobox);
+            this.Controls.Add(this.RegalLabel);
+            this.Controls.Add(this.LagerLabel);
+            this.Controls.Add(this.LadeDatenLabel);
+            this.Controls.Add(this.RegaleinsichtGrid);
+            this.Controls.Add(this.ZurueckButton);
             this.Name = "Regaleinsicht";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Regaleinsicht";
             this.Load += new System.EventHandler(this.Regaleinsicht_Load);
             this.Shown += new System.EventHandler(this.Regaleinsicht_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegaleinsicht)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lagerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegaleinsichtGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.DataGridView dataGridViewRegaleinsicht;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBoxRegal;
-		private System.Windows.Forms.ComboBox comboBoxLager;
-		private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource lagerBindingSource;
-        private System.Windows.Forms.Button ButtonZurueck;
-        private System.Windows.Forms.Button ButtonAktualisieren;
-        private System.Windows.Forms.Button ButtonHinzufuegen;
-        private System.Windows.Forms.Button ButtonEntfernen;
-        private System.Windows.Forms.Label labelAktualisieren;
+        private MetroFramework.Controls.MetroButton ZurueckButton;
+        private System.Windows.Forms.DataGridView RegaleinsichtGrid;
+        private System.Windows.Forms.Label LadeDatenLabel;
+        private MetroFramework.Controls.MetroLabel LagerLabel;
+        private MetroFramework.Controls.MetroLabel RegalLabel;
+        private MetroFramework.Controls.MetroComboBox LagerCombobox;
+        private MetroFramework.Controls.MetroComboBox RegalCombobox;
+        private MetroFramework.Controls.MetroButton AktualisierenButton;
+        private MetroFramework.Controls.MetroButton PaketeinlagernButton;
+        private MetroFramework.Controls.MetroButton PaketauslagernButton;
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
-	public partial class Regaleinsicht : Form
+	public partial class Regaleinsicht : MetroFramework.Forms.MetroForm
 	{
         private Dictionary<int , List<Model.RegalfachModel>> _regalfachMap;
         private Dictionary<long, Model.LagerModel> _dictLager;
@@ -31,19 +31,19 @@ namespace Lagerverwaltung.Views
             //Eventuell später noch genauer definieren
             if (type == DB.SqlStatements.ModeltypEnum.LagerModel || type == DB.SqlStatements.ModeltypEnum.RegalModel)
             {
-                ButtonAktualisieren.Enabled = true;
-                ButtonHinzufuegen.Enabled = false;
-                ButtonEntfernen.Enabled = false;
-                comboBoxLager.Enabled = false;
-                comboBoxRegal.Enabled = false;
+                AktualisierenButton.Enabled = true;
+                PaketeinlagernButton.Enabled = false;
+                PaketauslagernButton.Enabled = false;
+                LagerCombobox.Enabled = false;
+                RegalCombobox.Enabled = false;
 
-                dataGridViewRegaleinsicht.Rows.Clear();
-                dataGridViewRegaleinsicht.Columns.Clear();
+                RegaleinsichtGrid.Rows.Clear();
+                RegaleinsichtGrid.Columns.Clear();
 
-                comboBoxLager.SelectedIndex = -1;
-                comboBoxRegal.SelectedIndex = -1;
+                LagerCombobox.SelectedIndex = -1;
+                RegalCombobox.SelectedIndex = -1;
 
-                labelAktualisieren.Visible = true;
+                LadeDatenLabel.Visible = true;
             }
             else
             {
@@ -57,17 +57,17 @@ namespace Lagerverwaltung.Views
         {
             //Daten initialisieren
 
-            comboBoxLager.ValueMember = "Lager_ID";
-            comboBoxLager.DisplayMember = "Name";
+            LagerCombobox.ValueMember = "Lager_ID";
+            LagerCombobox.DisplayMember = "Name";
 
-            comboBoxRegal.ValueMember = "Regal_ID";
-            comboBoxRegal.DisplayMember = "Name";
+            RegalCombobox.ValueMember = "Regal_ID";
+            RegalCombobox.DisplayMember = "Name";
 
             //DB Daten laden
             _dictLager = DB.SqlStatements.HoleLager();
 
             if (_dictLager.Values.Count > 0)
-            comboBoxLager.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
+                LagerCombobox.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
 
         }
 
@@ -75,9 +75,9 @@ namespace Lagerverwaltung.Views
         {
 
             //Auswahl Lager 1, Regal 1 oder bei Auswahl in Lagerverwaltung -> Auswahl des bereits ausgewählten Regals
-            if (Dashboard.CurrentLagerID > 0) comboBoxLager.SelectedValue = Dashboard.CurrentLagerID;
-            else if (comboBoxLager.Items.Count > 0) comboBoxLager.SelectedIndex = 0;
-            else comboBoxLager.SelectedIndex = -1;
+            if (Dashboard.CurrentLagerID > 0) LagerCombobox.SelectedValue = Dashboard.CurrentLagerID;
+            else if (LagerCombobox.Items.Count > 0) LagerCombobox.SelectedIndex = 0;
+            else LagerCombobox.SelectedIndex = -1;
 
             UpdateComboboxRegal();
 
@@ -85,42 +85,35 @@ namespace Lagerverwaltung.Views
 
         private void UpdateComboboxRegal()
         {
-            if(comboBoxLager.Items.Count>0)
+            if(LagerCombobox.Items.Count>0)
             {
-                _dictRegal = DB.SqlStatements.HoleRegal(-1, (long)comboBoxLager.SelectedValue,"",-1);
-                comboBoxRegal.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
+                _dictRegal = DB.SqlStatements.HoleRegal(-1, (long)LagerCombobox.SelectedValue,"",-1);
+                RegalCombobox.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
             }
 
             //Auf ausgewähltes Regal prüfen
-            if ((Dashboard.CurrentRegalID > 0) && _dictRegal.ContainsKey(Dashboard.CurrentRegalID) && (_dictRegal[Dashboard.CurrentRegalID].Lager_ID == (long)comboBoxLager.SelectedValue)) comboBoxRegal.SelectedValue = Dashboard.CurrentRegalID;
-            else if (comboBoxRegal.Items.Count > 0) comboBoxRegal.SelectedIndex = 0;
-            else comboBoxRegal.SelectedIndex = -1;
-        }
-
-        private void ButtonZurueck_Click(object sender, System.EventArgs e)
-        {
-            //evt. Fix für Speicherleck 
-
-            Close();
+            if ((Dashboard.CurrentRegalID > 0) && _dictRegal.ContainsKey(Dashboard.CurrentRegalID) && (_dictRegal[Dashboard.CurrentRegalID].Lager_ID == (long)LagerCombobox.SelectedValue)) RegalCombobox.SelectedValue = Dashboard.CurrentRegalID;
+            else if (RegalCombobox.Items.Count > 0) RegalCombobox.SelectedIndex = 0;
+            else RegalCombobox.SelectedIndex = -1;
         }
 
         private void ComboBoxLager_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            if (comboBoxLager.SelectedIndex >= 0)
+            if (LagerCombobox.SelectedIndex >= 0)
             {
-                _dictRegal = DB.SqlStatements.HoleRegal(-1, (long)comboBoxLager.SelectedValue, "", -1);
-                comboBoxRegal.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
+                _dictRegal = DB.SqlStatements.HoleRegal(-1, (long)LagerCombobox.SelectedValue, "", -1);
+                RegalCombobox.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
             }
 
-            if (comboBoxRegal.Items.Count <= 0 || comboBoxLager.SelectedIndex < 0)
+            if (RegalCombobox.Items.Count <= 0 || LagerCombobox.SelectedIndex < 0)
             {
-                dataGridViewRegaleinsicht.Rows.Clear();
-                dataGridViewRegaleinsicht.Columns.Clear();
+                RegaleinsichtGrid.Rows.Clear();
+                RegaleinsichtGrid.Columns.Clear();
 
-                comboBoxRegal.SelectedIndex = -1;
+                RegalCombobox.SelectedIndex = -1;
             }
             else
-                comboBoxRegal.SelectedIndex = 0;
+                RegalCombobox.SelectedIndex = 0;
 
         }
 
@@ -131,10 +124,10 @@ namespace Lagerverwaltung.Views
 
         private void UpdateGridView()
         {
-            dataGridViewRegaleinsicht.Rows.Clear();
+            RegaleinsichtGrid.Rows.Clear();
             _regalfachIDMap = new Dictionary<string, long>();
 
-            if (((Model.RegalModel)comboBoxRegal.SelectedItem) != null)
+            if (((Model.RegalModel)RegalCombobox.SelectedItem) != null)
             {
                 InitRegalfachMap();
 
@@ -153,22 +146,22 @@ namespace Lagerverwaltung.Views
 
 
                 //Spalten einfügen
-                dataGridViewRegaleinsicht.ColumnCount = ((Model.RegalModel)comboBoxRegal.SelectedItem).Spalten;
+                RegaleinsichtGrid.ColumnCount = ((Model.RegalModel)RegalCombobox.SelectedItem).Spalten;
 
-                for (int i = 0; i < ((Model.RegalModel)comboBoxRegal.SelectedItem).Spalten; i++)
+                for (int i = 0; i < ((Model.RegalModel)RegalCombobox.SelectedItem).Spalten; i++)
                 {
-                    dataGridViewRegaleinsicht.Columns[i].Width =150;
+                    RegaleinsichtGrid.Columns[i].Width =150;
                 }
 
 
                 //Zeilen erstellen
-                dataGridViewRegaleinsicht.RowCount = ((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen;
+                RegaleinsichtGrid.RowCount = ((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen;
 
-                for (int z = ((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen; z >= 1; z--)
+                for (int z = ((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen; z >= 1; z--)
                 {
 
-                    dataGridViewRegaleinsicht.Rows[((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z].DefaultCellStyle = cellStyle;
-                    dataGridViewRegaleinsicht.Rows[((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z].Height = 150;
+                    RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].DefaultCellStyle = cellStyle;
+                    RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Height = 150;
 
                     //Text in Zellen schreiben (z.B. Name des Fachs + eingelagertes Produkt usw.)
 
@@ -178,7 +171,7 @@ namespace Lagerverwaltung.Views
                         if (regalfach != null)
                         {
                             //Eintragen der IDs eines Regalfachs mit der entsprechenden Zellenposition als Key
-                            _regalfachIDMap.Add((((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z).ToString() + "-" +  s , regalfach.Regalfach_ID);
+                            _regalfachIDMap.Add((((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z).ToString() + "-" +  s , regalfach.Regalfach_ID);
 
                             _dictPaket = DB.SqlStatements.HolePaket(-1, regalfach.Regalfach_ID, "", -1);
                         }
@@ -197,10 +190,10 @@ namespace Lagerverwaltung.Views
 
                             Ausgabe += "Gesamtmenge: " + gesamt + "\n";
 
-                            dataGridViewRegaleinsicht.Rows[((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
+                            RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
                         }
 
-                        dataGridViewRegaleinsicht.Rows[((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen - z].Cells[s].Value = Ausgabe; 
+                        RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Value = Ausgabe; 
                         s++;
 
                         //if (regalfach.)
@@ -210,7 +203,7 @@ namespace Lagerverwaltung.Views
 
             } //END IF (kein Regal)
 
-            dataGridViewRegaleinsicht.ClearSelection();
+            RegaleinsichtGrid.ClearSelection();
         }
 
         /// <summary>
@@ -221,18 +214,18 @@ namespace Lagerverwaltung.Views
 
             //Zeilen und Spalten vorbereiten
             //Key = Zeilen, Values = Liste mit Spalten
-            for (int i = 1; i <= ((Model.RegalModel)comboBoxRegal.SelectedItem).Zeilen; i++)
+            for (int i = 1; i <= ((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen; i++)
             {
-                _regalfachMap.Add(i, new List<Model.RegalfachModel>(((Model.RegalModel)comboBoxRegal.SelectedItem).Spalten));
+                _regalfachMap.Add(i, new List<Model.RegalfachModel>(((Model.RegalModel)RegalCombobox.SelectedItem).Spalten));
 
-                for (int j = 0; j < ((Model.RegalModel)comboBoxRegal.SelectedItem).Spalten; j++)
+                for (int j = 0; j < ((Model.RegalModel)RegalCombobox.SelectedItem).Spalten; j++)
                 {
                     _regalfachMap[i].Add(null);
                 }
             }
 
             //Regalfächer einordnen
-            _dictRegalfach = DB.SqlStatements.HoleRegalfach(-1, (long)comboBoxRegal.SelectedValue,"",-1);
+            _dictRegalfach = DB.SqlStatements.HoleRegalfach(-1, (long)RegalCombobox.SelectedValue,"",-1);
 
             foreach (Model.RegalfachModel regalfach in _dictRegalfach.Values)
             {
@@ -262,42 +255,22 @@ namespace Lagerverwaltung.Views
             //Fehler in Name von Regalfach -> Falsches Format
             catch
             {
-                MessageBox.Show("Ungültiger Name des Regalfachs", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroFramework.MetroMessageBox.Show(this,"Ungültiger Name des Regalfachs", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return erg;
         }
 
-        private void ButtonAktualisieren_Click(object sender, EventArgs e)
+        private void ZurueckButton_Click(object sender, EventArgs e)
         {
-            ButtonAktualisieren.Enabled = false;
-            ButtonHinzufuegen.Enabled = true;
-            ButtonEntfernen.Enabled = true;
-            comboBoxLager.Enabled = true;
-            comboBoxRegal.Enabled = true;
-
-
-            labelAktualisieren.Visible = false;
-
-            _dictLager = DB.SqlStatements.HoleLager();
-
-            if (_dictLager.Values.Count > 0)
-            {
-                comboBoxLager.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
-                comboBoxLager.SelectedIndex = 0;
-            }
-            else
-                comboBoxLager.SelectedIndex = -1;
-
-            UpdateComboboxRegal();
-
+            Close();
         }
 
-        private void ButtonHinzufuegen_Click(object sender, EventArgs e)
+        private void PaketeinlagernButton_Click(object sender, EventArgs e)
         {
             using (var pakethinzufuegen = new PaketHinzufuegen())
             {
-                string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();
+                string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
 
                 pakethinzufuegen.Owner = this;
                 if (_regalfachIDMap.ContainsKey(key))
@@ -307,35 +280,54 @@ namespace Lagerverwaltung.Views
                 }
                 else
                 {
-                    MessageBox.Show("Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this,"Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
         }
 
-        private void ButtonEntfernen_Click(object sender, EventArgs e)
+        private void PaketauslagernButton_Click(object sender, EventArgs e)
         {
-            string key = dataGridViewRegaleinsicht.CurrentCell.RowIndex.ToString() + "-" + dataGridViewRegaleinsicht.CurrentCell.ColumnIndex.ToString();
+            string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
 
             if (_regalfachIDMap.ContainsKey(key))
             {
-                if (dataGridViewRegaleinsicht.CurrentCell.Style.BackColor == Color.LightPink)
+                if (RegaleinsichtGrid.CurrentCell.Style.BackColor == Color.LightPink)
                 {
                     using (var paketentfernen = new PaketEntfernen())
                     {
                         paketentfernen.Owner = this;
                         paketentfernen.RegalfachID = _regalfachIDMap[key];
                         paketentfernen.ShowDialog();
-
-                    
-
                     }
                 }
                 else
-                    MessageBox.Show("Das ausgewählte Regalfach besitzt keine Pakete", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this,"Das ausgewählte Regalfach besitzt keine Pakete", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this,"Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AktualisierenButton_Click(object sender, EventArgs e)
+        {
+            AktualisierenButton.Enabled = false;
+            PaketeinlagernButton.Enabled = true;
+            PaketauslagernButton.Enabled = true;
+            LagerCombobox.Enabled = true;
+            RegalCombobox.Enabled = true;
+
+            LadeDatenLabel.Visible = false;
+
+            _dictLager = DB.SqlStatements.HoleLager();
+
+            if (_dictLager.Values.Count > 0)
+            {
+                LagerCombobox.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
+                LagerCombobox.SelectedIndex = 0;
+            }
+            else
+                LagerCombobox.SelectedIndex = -1;
+
+            UpdateComboboxRegal();
         }
     }
 }

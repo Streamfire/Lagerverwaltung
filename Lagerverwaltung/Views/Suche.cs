@@ -631,7 +631,7 @@ namespace Lagerverwaltung.Views
             }
         }
 
-        private void buttonZurücksetzen_Click(object sender, EventArgs e)
+        private void ButtonZurücksetzen_Click(object sender, EventArgs e)
         {
             textLagerName.Text = string.Empty;
             textLagerName.BackColor = Color.White;
@@ -697,7 +697,7 @@ namespace Lagerverwaltung.Views
             UpdateDataGridView();
         }
 
-        private void checkKompakt_CheckedChanged(object sender, EventArgs e)
+        private void CheckKompakt_CheckedChanged(object sender, EventArgs e)
         {
             if (checkKompakt.Checked == true)
             {
@@ -709,7 +709,7 @@ namespace Lagerverwaltung.Views
             }
         }
 
-        private void buttonProduktliste_Click(object sender, EventArgs e)
+        private void ButtonProduktliste_Click(object sender, EventArgs e)
         {
             produktlisteSuche = new ProduktlisteSuche();
             produktlisteSuche.Show();

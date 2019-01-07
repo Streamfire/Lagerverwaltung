@@ -341,7 +341,7 @@ namespace Lagerverwaltung.Views
 			this.checkKompakt.TabIndex = 10;
 			this.checkKompakt.Text = "force Expand";
 			this.checkKompakt.UseVisualStyleBackColor = true;
-			this.checkKompakt.CheckedChanged += new System.EventHandler(this.checkKompakt_CheckedChanged);
+			this.checkKompakt.CheckedChanged += new System.EventHandler(this.CheckKompakt_CheckedChanged);
 			// 
 			// Verwaltung
 			// 
