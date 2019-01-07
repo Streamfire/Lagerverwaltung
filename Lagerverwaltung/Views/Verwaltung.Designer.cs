@@ -19,11 +19,11 @@ namespace Lagerverwaltung.Views
         public void UpdateForm(IReadOnlyDictionary<ushort,Model.Lager> lagerListe)
 		{
 			//Reset Form
-			tabControl1.Controls.Clear();
-			tabControl1.SelectedIndexChanged += OnChangedTab;
+			VerwaltungTabcontrol.Controls.Clear();
+            VerwaltungTabcontrol.SelectedIndexChanged += OnChangedTab;
 
 			//expand wenn checkbox
-			if (checkKompakt.Checked == true)
+			if (ForceCheckbox.Checked == true)
 			{
 				Opulos.Core.UI.Accordion.OpenOnAdd = true;
 
@@ -42,7 +42,7 @@ namespace Lagerverwaltung.Views
 
 				tp.Controls.Add(_lagerAccordion);
 
-				tabControl1.TabPages.Add(tp);
+                VerwaltungTabcontrol.TabPages.Add(tp);
 				foreach (Regal r in l.Regalliste)
 				{
 					Accordion nestedRegal = new Accordion();
@@ -126,9 +126,9 @@ namespace Lagerverwaltung.Views
 
 
 			_lastFocusedAccordion = _lagerAccordion;
-            if(tabControl1.TabPages.Count > 0)
+            if(VerwaltungTabcontrol.TabPages.Count > 0)
             {
-                _lastFocusedPage = tabControl1.TabPages[0];
+                _lastFocusedPage = VerwaltungTabcontrol.TabPages[0];
             }
             else
             {
@@ -187,14 +187,14 @@ namespace Lagerverwaltung.Views
 		//NullPointerException bei Aufruf -> Lukas bitte fixen!
 		public int getActiveTabIndex()
 		{
-			return tabControl1.SelectedIndex;
+			return VerwaltungTabcontrol.SelectedIndex;
 		}
 
 		//Don't use
 		//NullPointerException bei Aufruf -> Lukas bitte fixen!
 		public string getActiveTabPageName()
         {
-            return tabControl1.SelectedTab.Name;
+            return VerwaltungTabcontrol.SelectedTab.Name;
         }
 
         /// <summary>
@@ -223,160 +223,183 @@ namespace Lagerverwaltung.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.buttonPaketHinzufuegen = new System.Windows.Forms.Button();
-			this.buttonPaketEntfernen = new System.Windows.Forms.Button();
-			this.buttonLagerEntfernen = new System.Windows.Forms.Button();
-			this.buttonLagerHinzufuegen = new System.Windows.Forms.Button();
-			this.buttonPaketUmlagern = new System.Windows.Forms.Button();
-			this.buttonRegalHinzufuegen = new System.Windows.Forms.Button();
-			this.buttonRegalEntfernen = new System.Windows.Forms.Button();
-			this.buttonZurück = new System.Windows.Forms.Button();
-			this.checkKompakt = new System.Windows.Forms.CheckBox();
-			this.SuspendLayout();
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Location = new System.Drawing.Point(-1, 53);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1127, 548);
-			this.tabControl1.TabIndex = 0;
-			// 
-			// buttonPaketHinzufuegen
-			// 
-			this.buttonPaketHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonPaketHinzufuegen.Location = new System.Drawing.Point(2, 1);
-			this.buttonPaketHinzufuegen.Name = "buttonPaketHinzufuegen";
-			this.buttonPaketHinzufuegen.Size = new System.Drawing.Size(110, 46);
-			this.buttonPaketHinzufuegen.TabIndex = 1;
-			this.buttonPaketHinzufuegen.Text = "Paket einlagern";
-			this.buttonPaketHinzufuegen.UseVisualStyleBackColor = true;
-			this.buttonPaketHinzufuegen.Click += new System.EventHandler(this.ButtonPaketHinzufuegen_Click);
-			// 
-			// buttonPaketEntfernen
-			// 
-			this.buttonPaketEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonPaketEntfernen.Location = new System.Drawing.Point(118, 1);
-			this.buttonPaketEntfernen.Name = "buttonPaketEntfernen";
-			this.buttonPaketEntfernen.Size = new System.Drawing.Size(113, 46);
-			this.buttonPaketEntfernen.TabIndex = 2;
-			this.buttonPaketEntfernen.Text = "Paket auslagern";
-			this.buttonPaketEntfernen.UseVisualStyleBackColor = true;
-			this.buttonPaketEntfernen.Click += new System.EventHandler(this.ButtonPaketEntfernen_Click);
-			// 
-			// buttonLagerEntfernen
-			// 
-			this.buttonLagerEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonLagerEntfernen.Location = new System.Drawing.Point(780, 1);
-			this.buttonLagerEntfernen.Name = "buttonLagerEntfernen";
-			this.buttonLagerEntfernen.Size = new System.Drawing.Size(113, 46);
-			this.buttonLagerEntfernen.TabIndex = 3;
-			this.buttonLagerEntfernen.Text = "Lager entfernen";
-			this.buttonLagerEntfernen.UseVisualStyleBackColor = true;
-			this.buttonLagerEntfernen.Click += new System.EventHandler(this.ButtonLagerEntfernen_Click);
-			// 
-			// buttonLagerHinzufuegen
-			// 
-			this.buttonLagerHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonLagerHinzufuegen.Location = new System.Drawing.Point(661, 1);
-			this.buttonLagerHinzufuegen.Name = "buttonLagerHinzufuegen";
-			this.buttonLagerHinzufuegen.Size = new System.Drawing.Size(113, 46);
-			this.buttonLagerHinzufuegen.TabIndex = 4;
-			this.buttonLagerHinzufuegen.Text = "Lager hinzufügen";
-			this.buttonLagerHinzufuegen.UseVisualStyleBackColor = true;
-			this.buttonLagerHinzufuegen.Click += new System.EventHandler(this.ButtonLagerHinzufuegen_Click);
-			// 
-			// buttonPaketUmlagern
-			// 
-			this.buttonPaketUmlagern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonPaketUmlagern.Location = new System.Drawing.Point(237, 1);
-			this.buttonPaketUmlagern.Name = "buttonPaketUmlagern";
-			this.buttonPaketUmlagern.Size = new System.Drawing.Size(113, 46);
-			this.buttonPaketUmlagern.TabIndex = 6;
-			this.buttonPaketUmlagern.Text = "Paket umlagern";
-			this.buttonPaketUmlagern.UseVisualStyleBackColor = true;
-			this.buttonPaketUmlagern.Click += new System.EventHandler(this.ButtonPaketUmlagern_Click);
-			// 
-			// buttonRegalHinzufuegen
-			// 
-			this.buttonRegalHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonRegalHinzufuegen.Location = new System.Drawing.Point(393, 1);
-			this.buttonRegalHinzufuegen.Name = "buttonRegalHinzufuegen";
-			this.buttonRegalHinzufuegen.Size = new System.Drawing.Size(113, 46);
-			this.buttonRegalHinzufuegen.TabIndex = 8;
-			this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
-			this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
-			this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.ButtonRegalHinzufuegen_Click);
-			// 
-			// buttonRegalEntfernen
-			// 
-			this.buttonRegalEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonRegalEntfernen.Location = new System.Drawing.Point(512, 1);
-			this.buttonRegalEntfernen.Name = "buttonRegalEntfernen";
-			this.buttonRegalEntfernen.Size = new System.Drawing.Size(113, 46);
-			this.buttonRegalEntfernen.TabIndex = 7;
-			this.buttonRegalEntfernen.Text = "Regal ändern/ entfernen";
-			this.buttonRegalEntfernen.UseVisualStyleBackColor = true;
-			this.buttonRegalEntfernen.Click += new System.EventHandler(this.ButtonRegalEntfernen_Click);
-			// 
-			// buttonZurück
-			// 
-			this.buttonZurück.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonZurück.Location = new System.Drawing.Point(1034, 1);
-			this.buttonZurück.Name = "buttonZurück";
-			this.buttonZurück.Size = new System.Drawing.Size(91, 46);
-			this.buttonZurück.TabIndex = 9;
-			this.buttonZurück.Text = "Zurück";
-			this.buttonZurück.UseVisualStyleBackColor = true;
-			this.buttonZurück.Click += new System.EventHandler(this.ButtonZurück_Click);
-			// 
-			// checkKompakt
-			// 
-			this.checkKompakt.AutoSize = true;
-			this.checkKompakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkKompakt.Location = new System.Drawing.Point(906, 13);
-			this.checkKompakt.Name = "checkKompakt";
-			this.checkKompakt.Size = new System.Drawing.Size(122, 24);
-			this.checkKompakt.TabIndex = 10;
-			this.checkKompakt.Text = "force Expand";
-			this.checkKompakt.UseVisualStyleBackColor = true;
-			this.checkKompakt.CheckedChanged += new System.EventHandler(this.CheckKompakt_CheckedChanged);
-			// 
-			// Verwaltung
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1127, 602);
-			this.Controls.Add(this.checkKompakt);
-			this.Controls.Add(this.buttonZurück);
-			this.Controls.Add(this.buttonRegalHinzufuegen);
-			this.Controls.Add(this.buttonRegalEntfernen);
-			this.Controls.Add(this.buttonPaketUmlagern);
-			this.Controls.Add(this.buttonLagerHinzufuegen);
-			this.Controls.Add(this.buttonLagerEntfernen);
-			this.Controls.Add(this.buttonPaketEntfernen);
-			this.Controls.Add(this.buttonPaketHinzufuegen);
-			this.Controls.Add(this.tabControl1);
-			this.Name = "Verwaltung";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Verwaltung";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.VerwaltungTabcontrol = new MetroFramework.Controls.MetroTabControl();
+            this.LagerEntfernen = new MetroFramework.Controls.MetroButton();
+            this.LagerHinzufuegenButton = new MetroFramework.Controls.MetroButton();
+            this.LagerOptimierenButton = new MetroFramework.Controls.MetroButton();
+            this.RegalAnpassenButton = new MetroFramework.Controls.MetroButton();
+            this.RegalHinzufuegenButton = new MetroFramework.Controls.MetroButton();
+            this.PaketUmlagernButton = new MetroFramework.Controls.MetroButton();
+            this.PaketEntfernenButton = new MetroFramework.Controls.MetroButton();
+            this.PaketHinzufuegenButton = new MetroFramework.Controls.MetroButton();
+            this.ZurueckButton = new MetroFramework.Controls.MetroButton();
+            this.ForceCheckbox = new MetroFramework.Controls.MetroCheckBox();
+            this.SuspendLayout();
+            // 
+            // VerwaltungTabcontrol
+            // 
+            this.VerwaltungTabcontrol.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.VerwaltungTabcontrol.Location = new System.Drawing.Point(32, 99);
+            this.VerwaltungTabcontrol.Name = "VerwaltungTabcontrol";
+            this.VerwaltungTabcontrol.Size = new System.Drawing.Size(1095, 442);
+            this.VerwaltungTabcontrol.TabIndex = 11;
+            this.VerwaltungTabcontrol.UseSelectable = true;
+            // 
+            // LagerEntfernen
+            // 
+            this.LagerEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagerEntfernen.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.LagerEntfernen.Location = new System.Drawing.Point(884, 63);
+            this.LagerEntfernen.Name = "LagerEntfernen";
+            this.LagerEntfernen.Size = new System.Drawing.Size(106, 30);
+            this.LagerEntfernen.TabIndex = 27;
+            this.LagerEntfernen.Text = "Lager entfernen";
+            this.LagerEntfernen.UseSelectable = true;
+            this.LagerEntfernen.Click += new System.EventHandler(this.LagerEntfernen_Click);
+            // 
+            // LagerHinzufuegenButton
+            // 
+            this.LagerHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagerHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.LagerHinzufuegenButton.Location = new System.Drawing.Point(762, 63);
+            this.LagerHinzufuegenButton.Name = "LagerHinzufuegenButton";
+            this.LagerHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
+            this.LagerHinzufuegenButton.TabIndex = 26;
+            this.LagerHinzufuegenButton.Text = "Lager hinzufügen";
+            this.LagerHinzufuegenButton.UseSelectable = true;
+            this.LagerHinzufuegenButton.Click += new System.EventHandler(this.LagerHinzufuegenButton_Click);
+            // 
+            // LagerOptimierenButton
+            // 
+            this.LagerOptimierenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagerOptimierenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.LagerOptimierenButton.Location = new System.Drawing.Point(642, 63);
+            this.LagerOptimierenButton.Name = "LagerOptimierenButton";
+            this.LagerOptimierenButton.Size = new System.Drawing.Size(114, 30);
+            this.LagerOptimierenButton.TabIndex = 25;
+            this.LagerOptimierenButton.Text = "Lager optimieren";
+            this.LagerOptimierenButton.UseSelectable = true;
+            this.LagerOptimierenButton.Click += new System.EventHandler(this.LagerOptimierenButton_Click);
+            // 
+            // RegalAnpassenButton
+            // 
+            this.RegalAnpassenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegalAnpassenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.RegalAnpassenButton.Location = new System.Drawing.Point(490, 63);
+            this.RegalAnpassenButton.Name = "RegalAnpassenButton";
+            this.RegalAnpassenButton.Size = new System.Drawing.Size(146, 30);
+            this.RegalAnpassenButton.TabIndex = 24;
+            this.RegalAnpassenButton.Text = "Regal ändern/ löschen";
+            this.RegalAnpassenButton.UseSelectable = true;
+            this.RegalAnpassenButton.Click += new System.EventHandler(this.RegalAnpassenButton_Click);
+            // 
+            // RegalHinzufuegenButton
+            // 
+            this.RegalHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegalHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.RegalHinzufuegenButton.Location = new System.Drawing.Point(368, 63);
+            this.RegalHinzufuegenButton.Name = "RegalHinzufuegenButton";
+            this.RegalHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
+            this.RegalHinzufuegenButton.TabIndex = 23;
+            this.RegalHinzufuegenButton.Text = "Regal hinzufügen";
+            this.RegalHinzufuegenButton.UseSelectable = true;
+            this.RegalHinzufuegenButton.Click += new System.EventHandler(this.RegalHinzufuegenButton_Click);
+            // 
+            // PaketUmlagernButton
+            // 
+            this.PaketUmlagernButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PaketUmlagernButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.PaketUmlagernButton.Location = new System.Drawing.Point(257, 63);
+            this.PaketUmlagernButton.Name = "PaketUmlagernButton";
+            this.PaketUmlagernButton.Size = new System.Drawing.Size(105, 30);
+            this.PaketUmlagernButton.TabIndex = 22;
+            this.PaketUmlagernButton.Text = "Paket umlagern";
+            this.PaketUmlagernButton.UseSelectable = true;
+            this.PaketUmlagernButton.Click += new System.EventHandler(this.PaketUmlagernButton_Click);
+            // 
+            // PaketEntfernenButton
+            // 
+            this.PaketEntfernenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PaketEntfernenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.PaketEntfernenButton.Location = new System.Drawing.Point(145, 63);
+            this.PaketEntfernenButton.Name = "PaketEntfernenButton";
+            this.PaketEntfernenButton.Size = new System.Drawing.Size(106, 30);
+            this.PaketEntfernenButton.TabIndex = 21;
+            this.PaketEntfernenButton.Text = "Paket entfernen";
+            this.PaketEntfernenButton.UseSelectable = true;
+            this.PaketEntfernenButton.Click += new System.EventHandler(this.PaketEntfernenButton_Click);
+            // 
+            // PaketHinzufuegenButton
+            // 
+            this.PaketHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PaketHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.PaketHinzufuegenButton.Location = new System.Drawing.Point(23, 63);
+            this.PaketHinzufuegenButton.Name = "PaketHinzufuegenButton";
+            this.PaketHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
+            this.PaketHinzufuegenButton.TabIndex = 20;
+            this.PaketHinzufuegenButton.Text = "Paket hinzufügen";
+            this.PaketHinzufuegenButton.UseSelectable = true;
+            this.PaketHinzufuegenButton.Click += new System.EventHandler(this.PaketHinzufuegenButton_Click);
+            // 
+            // ZurueckButton
+            // 
+            this.ZurueckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZurueckButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.ZurueckButton.Location = new System.Drawing.Point(1077, 547);
+            this.ZurueckButton.Name = "ZurueckButton";
+            this.ZurueckButton.Size = new System.Drawing.Size(50, 30);
+            this.ZurueckButton.TabIndex = 28;
+            this.ZurueckButton.Text = "Zurück";
+            this.ZurueckButton.UseSelectable = true;
+            this.ZurueckButton.Click += new System.EventHandler(this.ZurueckButton_Click);
+            // 
+            // ForceCheckbox
+            // 
+            this.ForceCheckbox.AutoSize = true;
+            this.ForceCheckbox.Location = new System.Drawing.Point(996, 78);
+            this.ForceCheckbox.Name = "ForceCheckbox";
+            this.ForceCheckbox.Size = new System.Drawing.Size(93, 15);
+            this.ForceCheckbox.TabIndex = 29;
+            this.ForceCheckbox.Text = "Force Expand";
+            this.ForceCheckbox.UseSelectable = true;
+            this.ForceCheckbox.CheckedChanged += new System.EventHandler(this.ForceCheckbox_CheckedChanged);
+            // 
+            // Verwaltung
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1150, 600);
+            this.Controls.Add(this.ForceCheckbox);
+            this.Controls.Add(this.ZurueckButton);
+            this.Controls.Add(this.LagerEntfernen);
+            this.Controls.Add(this.LagerHinzufuegenButton);
+            this.Controls.Add(this.LagerOptimierenButton);
+            this.Controls.Add(this.RegalAnpassenButton);
+            this.Controls.Add(this.RegalHinzufuegenButton);
+            this.Controls.Add(this.PaketUmlagernButton);
+            this.Controls.Add(this.PaketEntfernenButton);
+            this.Controls.Add(this.PaketHinzufuegenButton);
+            this.Controls.Add(this.VerwaltungTabcontrol);
+            this.Name = "Verwaltung";
+            this.Text = "Verwaltung";
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.Button buttonPaketHinzufuegen;
-		private System.Windows.Forms.Button buttonPaketEntfernen;
-		private System.Windows.Forms.Button buttonLagerEntfernen;
-		private System.Windows.Forms.Button buttonLagerHinzufuegen;
-		private System.Windows.Forms.Button buttonPaketUmlagern;
-		private System.Windows.Forms.Button buttonRegalHinzufuegen;
-		private System.Windows.Forms.Button buttonRegalEntfernen;
-		private Button buttonZurück;
-		private CheckBox checkKompakt;
-	}
+        private MetroFramework.Controls.MetroTabControl VerwaltungTabcontrol;
+        private MetroFramework.Controls.MetroButton LagerEntfernen;
+        private MetroFramework.Controls.MetroButton LagerHinzufuegenButton;
+        private MetroFramework.Controls.MetroButton LagerOptimierenButton;
+        private MetroFramework.Controls.MetroButton RegalAnpassenButton;
+        private MetroFramework.Controls.MetroButton RegalHinzufuegenButton;
+        private MetroFramework.Controls.MetroButton PaketUmlagernButton;
+        private MetroFramework.Controls.MetroButton PaketEntfernenButton;
+        private MetroFramework.Controls.MetroButton PaketHinzufuegenButton;
+        private MetroFramework.Controls.MetroButton ZurueckButton;
+        private MetroFramework.Controls.MetroCheckBox ForceCheckbox;
+    }
 }

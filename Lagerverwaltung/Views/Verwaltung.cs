@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class Verwaltung : Form
+    public partial class Verwaltung : MetroFramework.Forms.MetroForm
 	{
 		public Verwaltung()
 		{
@@ -19,7 +19,30 @@ namespace Lagerverwaltung.Views
             UpdateForm(Model.Lager.HoleListe);
 		}
 
-        private void ButtonRegalHinzufuegen_Click(object sender, System.EventArgs e)
+        private void PaketHinzufuegenButton_Click(object sender, EventArgs e)
+        {
+            using (var pakethinzufuegen = new PaketHinzufuegen())
+            {
+                pakethinzufuegen.Owner = this;
+                pakethinzufuegen.ShowDialog();
+            }
+        }
+
+        private void PaketEntfernenButton_Click(object sender, EventArgs e)
+        {
+            using (var paketentfernen = new PaketEntfernen())
+            {
+                paketentfernen.Owner = this;
+                paketentfernen.ShowDialog();
+            }
+        }
+
+        private void PaketUmlagernButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RegalHinzufuegenButton_Click(object sender, EventArgs e)
         {
             using (var regalhinzufuegen = new RegalHinzufügen())
             {
@@ -28,7 +51,12 @@ namespace Lagerverwaltung.Views
             }
         }
 
-        private void ButtonLagerHinzufuegen_Click(object sender, System.EventArgs e)
+        private void LagerOptimierenButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LagerHinzufuegenButton_Click(object sender, EventArgs e)
         {
             using (var lagerhinzufuegen = new LagerHinzufuegen())
             {
@@ -37,31 +65,7 @@ namespace Lagerverwaltung.Views
             }
         }
 
-        private void ButtonPaketHinzufuegen_Click(object sender, System.EventArgs e)
-        {
-            using (var pakethinzufuegen = new PaketHinzufuegen())
-            {
-                pakethinzufuegen.Owner = this;
-                pakethinzufuegen.ShowDialog();
-            }
-        }
-        private void ButtonPaketEntfernen_Click(object sender, System.EventArgs e)
-        {
-            using (var paketentfernen = new PaketEntfernen())
-            {
-                paketentfernen.Owner = this;
-                paketentfernen.ShowDialog();
-            }
-        }
-        private void ButtonRegalEntfernen_Click(object sender, System.EventArgs e)
-        {
-            using (var regalaendern = new RegalAendern_Entfernen())
-            {
-                regalaendern.Owner = this;
-                regalaendern.ShowDialog();
-            }
-        }
-        private void ButtonLagerEntfernen_Click(object sender, System.EventArgs e)
+        private void LagerEntfernen_Click(object sender, EventArgs e)
         {
             using (var lagerentfernen = new LagerEntfernen())
             {
@@ -69,7 +73,13 @@ namespace Lagerverwaltung.Views
                 lagerentfernen.ShowDialog();
             }
         }
-        private void ButtonZurück_Click(object sender, System.EventArgs e)
+
+        private void ForceCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateForm(Model.Lager.HoleListe);
+        }
+
+        private void ZurueckButton_Click(object sender, EventArgs e)
         {
             Model.Lager.Reset();
             Model.Regal.Reset();
@@ -79,19 +89,13 @@ namespace Lagerverwaltung.Views
             Close();
         }
 
-        private void ButtonPaketUmlagern_Click(object sender, System.EventArgs e)
+        private void RegalAnpassenButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            using (var regalaendern = new RegalAendern_Entfernen())
+            {
+                regalaendern.Owner = this;
+                regalaendern.ShowDialog();
+            }
         }
-
-        private void ButtonLagerungOptimieren_Click(object sender, System.EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-		private void CheckKompakt_CheckedChanged(object sender, EventArgs e)
-		{
-			UpdateForm(Model.Lager.HoleListe);
-		}
-	}
+    }
 }
