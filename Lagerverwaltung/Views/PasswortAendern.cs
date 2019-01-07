@@ -42,6 +42,7 @@ namespace Lagerverwaltung.Views
                     MetroFramework.MetroMessageBox.Show(this,"Bitte vorher die PostgreSQL Datenbank starten!", "Keine Verbindung!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
                 }
+                MetroFramework.MetroMessageBox.Show(this, "Das Passwort wurde erfolgreich geändert!", "Passwort geändert!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             else

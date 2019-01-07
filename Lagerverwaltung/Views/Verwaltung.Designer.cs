@@ -251,7 +251,7 @@ namespace Lagerverwaltung.Views
             // 
             this.LagerEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LagerEntfernen.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.LagerEntfernen.Location = new System.Drawing.Point(884, 63);
+            this.LagerEntfernen.Location = new System.Drawing.Point(899, 63);
             this.LagerEntfernen.Name = "LagerEntfernen";
             this.LagerEntfernen.Size = new System.Drawing.Size(106, 30);
             this.LagerEntfernen.TabIndex = 27;
@@ -263,7 +263,7 @@ namespace Lagerverwaltung.Views
             // 
             this.LagerHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LagerHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.LagerHinzufuegenButton.Location = new System.Drawing.Point(762, 63);
+            this.LagerHinzufuegenButton.Location = new System.Drawing.Point(777, 63);
             this.LagerHinzufuegenButton.Name = "LagerHinzufuegenButton";
             this.LagerHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
             this.LagerHinzufuegenButton.TabIndex = 26;
@@ -275,7 +275,7 @@ namespace Lagerverwaltung.Views
             // 
             this.LagerOptimierenButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LagerOptimierenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.LagerOptimierenButton.Location = new System.Drawing.Point(642, 63);
+            this.LagerOptimierenButton.Location = new System.Drawing.Point(657, 63);
             this.LagerOptimierenButton.Name = "LagerOptimierenButton";
             this.LagerOptimierenButton.Size = new System.Drawing.Size(114, 30);
             this.LagerOptimierenButton.TabIndex = 25;
@@ -289,9 +289,9 @@ namespace Lagerverwaltung.Views
             this.RegalAnpassenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.RegalAnpassenButton.Location = new System.Drawing.Point(490, 63);
             this.RegalAnpassenButton.Name = "RegalAnpassenButton";
-            this.RegalAnpassenButton.Size = new System.Drawing.Size(146, 30);
+            this.RegalAnpassenButton.Size = new System.Drawing.Size(161, 30);
             this.RegalAnpassenButton.TabIndex = 24;
-            this.RegalAnpassenButton.Text = "Regal ändern/ löschen";
+            this.RegalAnpassenButton.Text = "Regal ändern/ entfernen";
             this.RegalAnpassenButton.UseSelectable = true;
             this.RegalAnpassenButton.Click += new System.EventHandler(this.RegalAnpassenButton_Click);
             // 
@@ -327,7 +327,7 @@ namespace Lagerverwaltung.Views
             this.PaketEntfernenButton.Name = "PaketEntfernenButton";
             this.PaketEntfernenButton.Size = new System.Drawing.Size(106, 30);
             this.PaketEntfernenButton.TabIndex = 21;
-            this.PaketEntfernenButton.Text = "Paket entfernen";
+            this.PaketEntfernenButton.Text = "Paket auslagern";
             this.PaketEntfernenButton.UseSelectable = true;
             this.PaketEntfernenButton.Click += new System.EventHandler(this.PaketEntfernenButton_Click);
             // 
@@ -339,7 +339,7 @@ namespace Lagerverwaltung.Views
             this.PaketHinzufuegenButton.Name = "PaketHinzufuegenButton";
             this.PaketHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
             this.PaketHinzufuegenButton.TabIndex = 20;
-            this.PaketHinzufuegenButton.Text = "Paket hinzufügen";
+            this.PaketHinzufuegenButton.Text = "Paket einlagern";
             this.PaketHinzufuegenButton.UseSelectable = true;
             this.PaketHinzufuegenButton.Click += new System.EventHandler(this.PaketHinzufuegenButton_Click);
             // 
@@ -358,7 +358,7 @@ namespace Lagerverwaltung.Views
             // ForceCheckbox
             // 
             this.ForceCheckbox.AutoSize = true;
-            this.ForceCheckbox.Location = new System.Drawing.Point(996, 78);
+            this.ForceCheckbox.Location = new System.Drawing.Point(1011, 78);
             this.ForceCheckbox.Name = "ForceCheckbox";
             this.ForceCheckbox.Size = new System.Drawing.Size(93, 15);
             this.ForceCheckbox.TabIndex = 29;
