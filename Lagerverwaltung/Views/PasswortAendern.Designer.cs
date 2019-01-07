@@ -28,176 +28,217 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNutzername = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxAltesPasswort = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxNeuesPasswort = new System.Windows.Forms.TextBox();
-            this.buttonOkay = new System.Windows.Forms.Button();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxNeuesPasswortBestaetigen = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.components = new System.ComponentModel.Container();
+            this.NutzernameTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.OldPasswordTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.NewPasswordTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.ConfirmNewTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.ShowPasswordCheckbox = new MetroFramework.Controls.MetroCheckBox();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.SaveButton = new MetroFramework.Controls.MetroButton();
+            this.AbortButton = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // NutzernameTextbox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nutzername:";
             // 
-            // textBoxNutzername
             // 
-            this.textBoxNutzername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNutzername.Location = new System.Drawing.Point(158, 65);
-            this.textBoxNutzername.Name = "textBoxNutzername";
-            this.textBoxNutzername.Size = new System.Drawing.Size(216, 24);
-            this.textBoxNutzername.TabIndex = 1;
             // 
-            // label2
+            this.NutzernameTextbox.CustomButton.Image = null;
+            this.NutzernameTextbox.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.NutzernameTextbox.CustomButton.Name = "";
+            this.NutzernameTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.NutzernameTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.NutzernameTextbox.CustomButton.TabIndex = 1;
+            this.NutzernameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.NutzernameTextbox.CustomButton.UseSelectable = true;
+            this.NutzernameTextbox.CustomButton.Visible = false;
+            this.NutzernameTextbox.Lines = new string[0];
+            this.NutzernameTextbox.Location = new System.Drawing.Point(23, 63);
+            this.NutzernameTextbox.MaxLength = 32767;
+            this.NutzernameTextbox.Name = "NutzernameTextbox";
+            this.NutzernameTextbox.PasswordChar = '\0';
+            this.NutzernameTextbox.WaterMark = "Nutzername";
+            this.NutzernameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.NutzernameTextbox.SelectedText = "";
+            this.NutzernameTextbox.SelectionLength = 0;
+            this.NutzernameTextbox.SelectionStart = 0;
+            this.NutzernameTextbox.ShortcutsEnabled = true;
+            this.NutzernameTextbox.Size = new System.Drawing.Size(250, 23);
+            this.NutzernameTextbox.TabIndex = 19;
+            this.NutzernameTextbox.UseSelectable = true;
+            this.NutzernameTextbox.WaterMark = "Nutzername";
+            this.NutzernameTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.NutzernameTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Altes Passwort:";
+            // OldPasswordTextbox
             // 
-            // textBoxAltesPasswort
             // 
-            this.textBoxAltesPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAltesPasswort.Location = new System.Drawing.Point(158, 107);
-            this.textBoxAltesPasswort.Name = "textBoxAltesPasswort";
-            this.textBoxAltesPasswort.Size = new System.Drawing.Size(216, 24);
-            this.textBoxAltesPasswort.TabIndex = 3;
-            this.textBoxAltesPasswort.UseSystemPasswordChar = true;
             // 
-            // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Neues Passwort:";
+            this.OldPasswordTextbox.CustomButton.Image = null;
+            this.OldPasswordTextbox.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.OldPasswordTextbox.CustomButton.Name = "";
+            this.OldPasswordTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.OldPasswordTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.OldPasswordTextbox.CustomButton.TabIndex = 1;
+            this.OldPasswordTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.OldPasswordTextbox.CustomButton.UseSelectable = true;
+            this.OldPasswordTextbox.CustomButton.Visible = false;
+            this.OldPasswordTextbox.Lines = new string[0];
+            this.OldPasswordTextbox.Location = new System.Drawing.Point(23, 92);
+            this.OldPasswordTextbox.MaxLength = 32767;
+            this.OldPasswordTextbox.Name = "OldPasswordTextbox";
+            this.OldPasswordTextbox.PasswordChar = '●';
+            this.OldPasswordTextbox.WaterMark = "Altes Passwort";
+            this.OldPasswordTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.OldPasswordTextbox.SelectedText = "";
+            this.OldPasswordTextbox.SelectionLength = 0;
+            this.OldPasswordTextbox.SelectionStart = 0;
+            this.OldPasswordTextbox.ShortcutsEnabled = true;
+            this.OldPasswordTextbox.Size = new System.Drawing.Size(250, 23);
+            this.OldPasswordTextbox.TabIndex = 20;
+            this.OldPasswordTextbox.UseSelectable = true;
+            this.OldPasswordTextbox.UseSystemPasswordChar = true;
+            this.OldPasswordTextbox.WaterMark = "Altes Passwort";
+            this.OldPasswordTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.OldPasswordTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // textBoxNeuesPasswort
+            // NewPasswordTextbox
             // 
-            this.textBoxNeuesPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNeuesPasswort.Location = new System.Drawing.Point(158, 151);
-            this.textBoxNeuesPasswort.Name = "textBoxNeuesPasswort";
-            this.textBoxNeuesPasswort.Size = new System.Drawing.Size(216, 24);
-            this.textBoxNeuesPasswort.TabIndex = 5;
-            this.textBoxNeuesPasswort.UseSystemPasswordChar = true;
             // 
-            // buttonOkay
             // 
-            this.buttonOkay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOkay.Location = new System.Drawing.Point(158, 264);
-            this.buttonOkay.Name = "buttonOkay";
-            this.buttonOkay.Size = new System.Drawing.Size(97, 34);
-            this.buttonOkay.TabIndex = 7;
-            this.buttonOkay.Text = "Okay";
-            this.buttonOkay.UseVisualStyleBackColor = true;
-            this.buttonOkay.Click += new System.EventHandler(this.ButtonOkay_Click);
             // 
-            // buttonAbbrechen
+            this.NewPasswordTextbox.CustomButton.Image = null;
+            this.NewPasswordTextbox.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.NewPasswordTextbox.CustomButton.Name = "";
+            this.NewPasswordTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.NewPasswordTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.NewPasswordTextbox.CustomButton.TabIndex = 1;
+            this.NewPasswordTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.NewPasswordTextbox.CustomButton.UseSelectable = true;
+            this.NewPasswordTextbox.CustomButton.Visible = false;
+            this.NewPasswordTextbox.Lines = new string[0];
+            this.NewPasswordTextbox.Location = new System.Drawing.Point(23, 121);
+            this.NewPasswordTextbox.MaxLength = 32767;
+            this.NewPasswordTextbox.Name = "NewPasswordTextbox";
+            this.NewPasswordTextbox.PasswordChar = '●';
+            this.NewPasswordTextbox.WaterMark = "Neues Passwort";
+            this.NewPasswordTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.NewPasswordTextbox.SelectedText = "";
+            this.NewPasswordTextbox.SelectionLength = 0;
+            this.NewPasswordTextbox.SelectionStart = 0;
+            this.NewPasswordTextbox.ShortcutsEnabled = true;
+            this.NewPasswordTextbox.Size = new System.Drawing.Size(250, 23);
+            this.NewPasswordTextbox.TabIndex = 21;
+            this.NewPasswordTextbox.UseSelectable = true;
+            this.NewPasswordTextbox.UseSystemPasswordChar = true;
+            this.NewPasswordTextbox.WaterMark = "Neues Passwort";
+            this.NewPasswordTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.NewPasswordTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(280, 264);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(97, 34);
-            this.buttonAbbrechen.TabIndex = 8;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
+            // ConfirmNewTextbox
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 26);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Passwort ändern";
             // 
-            // textBoxNeuesPasswortBestaetigen
             // 
-            this.textBoxNeuesPasswortBestaetigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNeuesPasswortBestaetigen.Location = new System.Drawing.Point(158, 196);
-            this.textBoxNeuesPasswortBestaetigen.Name = "textBoxNeuesPasswortBestaetigen";
-            this.textBoxNeuesPasswortBestaetigen.Size = new System.Drawing.Size(216, 24);
-            this.textBoxNeuesPasswortBestaetigen.TabIndex = 6;
-            this.textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar = true;
+            this.ConfirmNewTextbox.CustomButton.Image = null;
+            this.ConfirmNewTextbox.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.ConfirmNewTextbox.CustomButton.Name = "";
+            this.ConfirmNewTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ConfirmNewTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ConfirmNewTextbox.CustomButton.TabIndex = 1;
+            this.ConfirmNewTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ConfirmNewTextbox.CustomButton.UseSelectable = true;
+            this.ConfirmNewTextbox.CustomButton.Visible = false;
+            this.ConfirmNewTextbox.Lines = new string[0];
+            this.ConfirmNewTextbox.Location = new System.Drawing.Point(23, 151);
+            this.ConfirmNewTextbox.MaxLength = 32767;
+            this.ConfirmNewTextbox.Name = "ConfirmNewTextbox";
+            this.ConfirmNewTextbox.PasswordChar = '●';
+            this.ConfirmNewTextbox.WaterMark = "Neues Passwort wiederholen";
+            this.ConfirmNewTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ConfirmNewTextbox.SelectedText = "";
+            this.ConfirmNewTextbox.SelectionLength = 0;
+            this.ConfirmNewTextbox.SelectionStart = 0;
+            this.ConfirmNewTextbox.ShortcutsEnabled = true;
+            this.ConfirmNewTextbox.Size = new System.Drawing.Size(250, 23);
+            this.ConfirmNewTextbox.TabIndex = 22;
+            this.ConfirmNewTextbox.UseSelectable = true;
+            this.ConfirmNewTextbox.UseSystemPasswordChar = true;
+            this.ConfirmNewTextbox.WaterMark = "Neues Passwort wiederholen";
+            this.ConfirmNewTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ConfirmNewTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label5
+            // ShowPasswordCheckbox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 196);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 36);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Neues Passwort\r\nbestätigen:\r\n";
+            this.ShowPasswordCheckbox.AutoSize = true;
+            this.ShowPasswordCheckbox.Location = new System.Drawing.Point(23, 180);
+            this.ShowPasswordCheckbox.Name = "ShowPasswordCheckbox";
+            this.ShowPasswordCheckbox.Size = new System.Drawing.Size(112, 15);
+            this.ShowPasswordCheckbox.TabIndex = 23;
+            this.ShowPasswordCheckbox.Text = "Klartext anzeigen";
+            this.ShowPasswordCheckbox.UseSelectable = true;
+            this.ShowPasswordCheckbox.CheckedChanged += new System.EventHandler(this.ShowPasswordCheckbox_CheckedChanged);
             // 
-            // checkBox1
+            // metroStyleManager1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(158, 226);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(107, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Klartext anzeigen";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            this.metroStyleManager1.Owner = this;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveButton.Location = new System.Drawing.Point(23, 204);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 24;
+            this.SaveButton.Text = "Speichern";
+            this.SaveButton.UseSelectable = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // AbortButton
+            // 
+            this.AbortButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AbortButton.Location = new System.Drawing.Point(198, 204);
+            this.AbortButton.Name = "AbortButton";
+            this.AbortButton.Size = new System.Drawing.Size(75, 23);
+            this.AbortButton.TabIndex = 25;
+            this.AbortButton.Text = "Abbrechen";
+            this.AbortButton.UseSelectable = true;
+            this.AbortButton.Click += new System.EventHandler(this.AbortButton_Click);
             // 
             // PasswortAendern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 310);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxNeuesPasswortBestaetigen);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonOkay);
-            this.Controls.Add(this.textBoxNeuesPasswort);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxAltesPasswort);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxNutzername);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(300, 250);
+            this.Controls.Add(this.AbortButton);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.ShowPasswordCheckbox);
+            this.Controls.Add(this.ConfirmNewTextbox);
+            this.Controls.Add(this.NewPasswordTextbox);
+            this.Controls.Add(this.OldPasswordTextbox);
+            this.Controls.Add(this.NutzernameTextbox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PasswortAendern";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PasswortAendern";
+            this.Resizable = false;
+            this.Text = "Passwort ändern";
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNutzername;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxAltesPasswort;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxNeuesPasswort;
-        private System.Windows.Forms.Button buttonOkay;
-        private System.Windows.Forms.Button buttonAbbrechen;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxNeuesPasswortBestaetigen;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private MetroFramework.Controls.MetroTextBox NutzernameTextbox;
+        private MetroFramework.Controls.MetroTextBox OldPasswordTextbox;
+        private MetroFramework.Controls.MetroTextBox NewPasswordTextbox;
+        private MetroFramework.Controls.MetroTextBox ConfirmNewTextbox;
+        private MetroFramework.Controls.MetroCheckBox ShowPasswordCheckbox;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private MetroFramework.Controls.MetroButton AbortButton;
+        private MetroFramework.Controls.MetroButton SaveButton;
     }
 }

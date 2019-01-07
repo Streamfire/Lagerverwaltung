@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class PasswortAendern : Form
+    public partial class PasswortAendern : MetroFramework.Forms.MetroForm
     {
         public PasswortAendern()
         {
@@ -18,24 +18,24 @@ namespace Lagerverwaltung.Views
             
         }
 
-        private void ButtonAbbrechen_Click(object sender, EventArgs e)
+        private void AbortButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void ButtonOkay_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            if(textBoxNeuesPasswort.Text != textBoxNeuesPasswortBestaetigen.Text)
+            if(NewPasswordTextbox.Text != ConfirmNewTextbox.Text)
             {
                 MessageBox.Show("Passwörter stimmen nicht überein!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (Lagerverwaltung.Controller.AuthenticationController.Login(textBoxNutzername.Text, textBoxAltesPasswort.Text))         
+            else if (Lagerverwaltung.Controller.AuthenticationController.Login(NutzernameTextbox.Text, OldPasswordTextbox.Text))         
             {
                 try
                 {
                     //Erstellung Salt + Passwordhash und update in Database
                     string temp_salt = Lagerverwaltung.Controller.AuthenticationController.Create_Salt(10);
-                    DB.UserSQL.UpdateUserPassword(textBoxNutzername.Text, Lagerverwaltung.Controller.AuthenticationController.GeneratePasswordHash(textBoxNeuesPasswort.Text, temp_salt), temp_salt);
+                    DB.UserSQL.UpdateUserPassword(NutzernameTextbox.Text, Lagerverwaltung.Controller.AuthenticationController.GeneratePasswordHash(NewPasswordTextbox.Text, temp_salt), temp_salt);
                 }
                 catch
                 {
@@ -48,11 +48,14 @@ namespace Lagerverwaltung.Views
                 MessageBox.Show("Der Nutzername oder das Passwort sind ungültig!", "Passwortänderung fehlgeschlagen!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void ShowPasswordCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            textBoxAltesPasswort.UseSystemPasswordChar = !textBoxAltesPasswort.UseSystemPasswordChar;
-            textBoxNeuesPasswort.UseSystemPasswordChar = !textBoxNeuesPasswort.UseSystemPasswordChar;
-            textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar = !textBoxNeuesPasswortBestaetigen.UseSystemPasswordChar;
+            OldPasswordTextbox.UseSystemPasswordChar = !OldPasswordTextbox.UseSystemPasswordChar;
+            OldPasswordTextbox.PasswordChar = char.MinValue;
+            NewPasswordTextbox.UseSystemPasswordChar = !NewPasswordTextbox.UseSystemPasswordChar;
+            NewPasswordTextbox.PasswordChar = char.MinValue;
+            ConfirmNewTextbox.UseSystemPasswordChar = !ConfirmNewTextbox.UseSystemPasswordChar;
+            ConfirmNewTextbox.PasswordChar = char.MinValue;
         }
     }
 }
