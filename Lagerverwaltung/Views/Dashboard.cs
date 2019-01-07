@@ -138,5 +138,20 @@ namespace Lagerverwaltung.Views
             }
         }
 
+        private void LagertypToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var lagertyp = new LagertypForm())
+            {
+                lagertyp.ShowDialog();
+            }
+        }
+
+        private void RegaltypToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var regaltyp = new ArtikeltypForm())
+            {
+                regaltyp.ShowDialog();
+            }
+        }
     }
 }
