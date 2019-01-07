@@ -1,6 +1,6 @@
 ﻿namespace Lagerverwaltung.Views
 {
-    partial class RegalHinzufügen
+    partial class RegalHinzufuegen
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,8 @@
             this.LagerLabel = new MetroFramework.Controls.MetroLabel();
             this.LagerCombobox = new MetroFramework.Controls.MetroComboBox();
             this.GroupBox = new System.Windows.Forms.GroupBox();
+            this.StaerkeV = new MetroFramework.Controls.MetroTextBox();
+            this.StaerkeH = new MetroFramework.Controls.MetroTextBox();
             this.BezeichnungTextbox = new MetroFramework.Controls.MetroTextBox();
             this.ZeilenTextbox = new MetroFramework.Controls.MetroTextBox();
             this.SpaltenTextbox = new MetroFramework.Controls.MetroTextBox();
@@ -43,8 +45,6 @@
             this.FachhoeheTextbox = new MetroFramework.Controls.MetroTextBox();
             this.FachbreiteTextbox = new MetroFramework.Controls.MetroTextBox();
             this.FachlaengeTextbox = new MetroFramework.Controls.MetroTextBox();
-            this.StaerkeH = new MetroFramework.Controls.MetroTextBox();
-            this.StaerkeV = new MetroFramework.Controls.MetroTextBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
@@ -55,7 +55,7 @@
             this.LagerLabel.AutoSize = true;
             this.LagerLabel.Location = new System.Drawing.Point(18, 83);
             this.LagerLabel.Name = "LagerLabel";
-            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
+            this.LagerLabel.Size = new System.Drawing.Size(45, 19);
             this.LagerLabel.TabIndex = 36;
             this.LagerLabel.Text = "Lager:";
             // 
@@ -80,6 +80,70 @@
             this.GroupBox.TabStop = false;
             this.GroupBox.Text = "Wandstärke festlegen";
             // 
+            // StaerkeV
+            // 
+            // 
+            // 
+            // 
+            this.StaerkeV.CustomButton.Image = null;
+            this.StaerkeV.CustomButton.Location = new System.Drawing.Point(141, 1);
+            this.StaerkeV.CustomButton.Name = "";
+            this.StaerkeV.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.StaerkeV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.StaerkeV.CustomButton.TabIndex = 1;
+            this.StaerkeV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.StaerkeV.CustomButton.UseSelectable = true;
+            this.StaerkeV.CustomButton.Visible = false;
+            this.StaerkeV.Lines = new string[0];
+            this.StaerkeV.Location = new System.Drawing.Point(6, 19);
+            this.StaerkeV.MaxLength = 32767;
+            this.StaerkeV.Name = "StaerkeV";
+            this.StaerkeV.PasswordChar = '\0';
+            this.StaerkeV.PromptText = "Wandstärke horizontal (cm)";
+            this.StaerkeV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.StaerkeV.SelectedText = "";
+            this.StaerkeV.SelectionLength = 0;
+            this.StaerkeV.SelectionStart = 0;
+            this.StaerkeV.ShortcutsEnabled = true;
+            this.StaerkeV.Size = new System.Drawing.Size(163, 23);
+            this.StaerkeV.TabIndex = 51;
+            this.StaerkeV.UseSelectable = true;
+            this.StaerkeV.WaterMark = "Wandstärke horizontal (cm)";
+            this.StaerkeV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StaerkeV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // StaerkeH
+            // 
+            // 
+            // 
+            // 
+            this.StaerkeH.CustomButton.Image = null;
+            this.StaerkeH.CustomButton.Location = new System.Drawing.Point(141, 1);
+            this.StaerkeH.CustomButton.Name = "";
+            this.StaerkeH.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.StaerkeH.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.StaerkeH.CustomButton.TabIndex = 1;
+            this.StaerkeH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.StaerkeH.CustomButton.UseSelectable = true;
+            this.StaerkeH.CustomButton.Visible = false;
+            this.StaerkeH.Lines = new string[0];
+            this.StaerkeH.Location = new System.Drawing.Point(6, 48);
+            this.StaerkeH.MaxLength = 32767;
+            this.StaerkeH.Name = "StaerkeH";
+            this.StaerkeH.PasswordChar = '\0';
+            this.StaerkeH.PromptText = "Wandstärke vertikal (cm)";
+            this.StaerkeH.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.StaerkeH.SelectedText = "";
+            this.StaerkeH.SelectionLength = 0;
+            this.StaerkeH.SelectionStart = 0;
+            this.StaerkeH.ShortcutsEnabled = true;
+            this.StaerkeH.Size = new System.Drawing.Size(163, 23);
+            this.StaerkeH.TabIndex = 50;
+            this.StaerkeH.UseSelectable = true;
+            this.StaerkeH.WaterMark = "Wandstärke vertikal (cm)";
+            this.StaerkeH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StaerkeH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // BezeichnungTextbox
             // 
             // 
@@ -99,7 +163,7 @@
             this.BezeichnungTextbox.MaxLength = 32767;
             this.BezeichnungTextbox.Name = "BezeichnungTextbox";
             this.BezeichnungTextbox.PasswordChar = '\0';
-            this.BezeichnungTextbox.WaterMark = "Regalbezeichnung";
+            this.BezeichnungTextbox.PromptText = "Regalbezeichnung";
             this.BezeichnungTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.BezeichnungTextbox.SelectedText = "";
             this.BezeichnungTextbox.SelectionLength = 0;
@@ -131,7 +195,7 @@
             this.ZeilenTextbox.MaxLength = 32767;
             this.ZeilenTextbox.Name = "ZeilenTextbox";
             this.ZeilenTextbox.PasswordChar = '\0';
-            this.ZeilenTextbox.WaterMark = "Zeilen";
+            this.ZeilenTextbox.PromptText = "Zeilen";
             this.ZeilenTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ZeilenTextbox.SelectedText = "";
             this.ZeilenTextbox.SelectionLength = 0;
@@ -163,7 +227,7 @@
             this.SpaltenTextbox.MaxLength = 32767;
             this.SpaltenTextbox.Name = "SpaltenTextbox";
             this.SpaltenTextbox.PasswordChar = '\0';
-            this.SpaltenTextbox.WaterMark = "Spalten";
+            this.SpaltenTextbox.PromptText = "Spalten";
             this.SpaltenTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.SpaltenTextbox.SelectedText = "";
             this.SpaltenTextbox.SelectionLength = 0;
@@ -219,7 +283,7 @@
             this.RegalhoeheTextbox.MaxLength = 32767;
             this.RegalhoeheTextbox.Name = "RegalhoeheTextbox";
             this.RegalhoeheTextbox.PasswordChar = '\0';
-            this.RegalhoeheTextbox.WaterMark = "Regalhöhe (cm)";
+            this.RegalhoeheTextbox.PromptText = "Regalhöhe (cm)";
             this.RegalhoeheTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.RegalhoeheTextbox.SelectedText = "";
             this.RegalhoeheTextbox.SelectionLength = 0;
@@ -251,7 +315,7 @@
             this.RegalbreiteTextbox.MaxLength = 32767;
             this.RegalbreiteTextbox.Name = "RegalbreiteTextbox";
             this.RegalbreiteTextbox.PasswordChar = '\0';
-            this.RegalbreiteTextbox.WaterMark = "Regalbreite (cm)";
+            this.RegalbreiteTextbox.PromptText = "Regalbreite (cm)";
             this.RegalbreiteTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.RegalbreiteTextbox.SelectedText = "";
             this.RegalbreiteTextbox.SelectionLength = 0;
@@ -283,7 +347,7 @@
             this.RegallaengeTextbox.MaxLength = 32767;
             this.RegallaengeTextbox.Name = "RegallaengeTextbox";
             this.RegallaengeTextbox.PasswordChar = '\0';
-            this.RegallaengeTextbox.WaterMark = "Regallänge (cm)";
+            this.RegallaengeTextbox.PromptText = "Regallänge (cm)";
             this.RegallaengeTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.RegallaengeTextbox.SelectedText = "";
             this.RegallaengeTextbox.SelectionLength = 0;
@@ -315,7 +379,7 @@
             this.FachhoeheTextbox.MaxLength = 32767;
             this.FachhoeheTextbox.Name = "FachhoeheTextbox";
             this.FachhoeheTextbox.PasswordChar = '\0';
-            this.FachhoeheTextbox.WaterMark = "Regalfachhöhe (cm)";
+            this.FachhoeheTextbox.PromptText = "Regalfachhöhe (cm)";
             this.FachhoeheTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.FachhoeheTextbox.SelectedText = "";
             this.FachhoeheTextbox.SelectionLength = 0;
@@ -347,7 +411,7 @@
             this.FachbreiteTextbox.MaxLength = 32767;
             this.FachbreiteTextbox.Name = "FachbreiteTextbox";
             this.FachbreiteTextbox.PasswordChar = '\0';
-            this.FachbreiteTextbox.WaterMark = "Regalfachbreite (cm)";
+            this.FachbreiteTextbox.PromptText = "Regalfachbreite (cm)";
             this.FachbreiteTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.FachbreiteTextbox.SelectedText = "";
             this.FachbreiteTextbox.SelectionLength = 0;
@@ -379,7 +443,7 @@
             this.FachlaengeTextbox.MaxLength = 32767;
             this.FachlaengeTextbox.Name = "FachlaengeTextbox";
             this.FachlaengeTextbox.PasswordChar = '\0';
-            this.FachlaengeTextbox.WaterMark = "Regalfachlänge (cm)";
+            this.FachlaengeTextbox.PromptText = "Regalfachlänge (cm)";
             this.FachlaengeTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.FachlaengeTextbox.SelectedText = "";
             this.FachlaengeTextbox.SelectionLength = 0;
@@ -392,75 +456,11 @@
             this.FachlaengeTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.FachlaengeTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // StaerkeH
-            // 
-            // 
-            // 
-            // 
-            this.StaerkeH.CustomButton.Image = null;
-            this.StaerkeH.CustomButton.Location = new System.Drawing.Point(141, 1);
-            this.StaerkeH.CustomButton.Name = "";
-            this.StaerkeH.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.StaerkeH.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.StaerkeH.CustomButton.TabIndex = 1;
-            this.StaerkeH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.StaerkeH.CustomButton.UseSelectable = true;
-            this.StaerkeH.CustomButton.Visible = false;
-            this.StaerkeH.Lines = new string[0];
-            this.StaerkeH.Location = new System.Drawing.Point(6, 48);
-            this.StaerkeH.MaxLength = 32767;
-            this.StaerkeH.Name = "StaerkeH";
-            this.StaerkeH.PasswordChar = '\0';
-            this.StaerkeH.WaterMark = "Wandstärke vertikal (cm)";
-            this.StaerkeH.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.StaerkeH.SelectedText = "";
-            this.StaerkeH.SelectionLength = 0;
-            this.StaerkeH.SelectionStart = 0;
-            this.StaerkeH.ShortcutsEnabled = true;
-            this.StaerkeH.Size = new System.Drawing.Size(163, 23);
-            this.StaerkeH.TabIndex = 50;
-            this.StaerkeH.UseSelectable = true;
-            this.StaerkeH.WaterMark = "Wandstärke vertikal (cm)";
-            this.StaerkeH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.StaerkeH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // StaerkeV
-            // 
-            // 
-            // 
-            // 
-            this.StaerkeV.CustomButton.Image = null;
-            this.StaerkeV.CustomButton.Location = new System.Drawing.Point(141, 1);
-            this.StaerkeV.CustomButton.Name = "";
-            this.StaerkeV.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.StaerkeV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.StaerkeV.CustomButton.TabIndex = 1;
-            this.StaerkeV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.StaerkeV.CustomButton.UseSelectable = true;
-            this.StaerkeV.CustomButton.Visible = false;
-            this.StaerkeV.Lines = new string[0];
-            this.StaerkeV.Location = new System.Drawing.Point(6, 19);
-            this.StaerkeV.MaxLength = 32767;
-            this.StaerkeV.Name = "StaerkeV";
-            this.StaerkeV.PasswordChar = '\0';
-            this.StaerkeV.WaterMark = "Wandstärke horizontal (cm)";
-            this.StaerkeV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.StaerkeV.SelectedText = "";
-            this.StaerkeV.SelectionLength = 0;
-            this.StaerkeV.SelectionStart = 0;
-            this.StaerkeV.ShortcutsEnabled = true;
-            this.StaerkeV.Size = new System.Drawing.Size(163, 23);
-            this.StaerkeV.TabIndex = 51;
-            this.StaerkeV.UseSelectable = true;
-            this.StaerkeV.WaterMark = "Wandstärke horizontal (cm)";
-            this.StaerkeV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.StaerkeV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = this;
             // 
-            // RegalHinzufügen
+            // RegalHinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -481,9 +481,10 @@
             this.Controls.Add(this.LagerLabel);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RegalHinzufügen";
+            this.Name = "RegalHinzufuegen";
             this.Resizable = false;
             this.Text = "Regal hinzufügen";
+            this.Load += new System.EventHandler(this.RegalHinzufuegen_Load);
             this.GroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);

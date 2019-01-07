@@ -70,8 +70,9 @@
             this.LadeDatenLabel.Name = "LadeDatenLabel";
             this.LadeDatenLabel.Size = new System.Drawing.Size(704, 346);
             this.LadeDatenLabel.TabIndex = 13;
-            this.LadeDatenLabel.Text = "Lade Daten...";
+            this.LadeDatenLabel.Text = "Es wurden Daten in der Datenbank geändert. Bitte aktualisieren Sie die Daten!";
             this.LadeDatenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LadeDatenLabel.Visible = false;
             // 
             // LagerLabel
             // 
@@ -117,6 +118,7 @@
             // 
             // AktualisierenButton
             // 
+            this.AktualisierenButton.Enabled = false;
             this.AktualisierenButton.Location = new System.Drawing.Point(438, 73);
             this.AktualisierenButton.Name = "AktualisierenButton";
             this.AktualisierenButton.Size = new System.Drawing.Size(75, 23);

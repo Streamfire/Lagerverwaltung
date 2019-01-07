@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class RegalHinzufügen : MetroFramework.Forms.MetroForm
+    public partial class RegalHinzufuegen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.LagerModel> _dictLager;
 
-        public RegalHinzufügen()
+        public RegalHinzufuegen()
         {
             InitializeComponent();
         }
 
-        private void RegalHinzufügen_Load(object sender, EventArgs e)
+        private void RegalHinzufuegen_Load(object sender, EventArgs e)
         {
             //TODO: Später in der Verwaltung schon kontrollieren, ob überhaupt ein Lager existiert
 

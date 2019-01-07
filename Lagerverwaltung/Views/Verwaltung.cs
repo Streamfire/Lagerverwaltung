@@ -44,7 +44,7 @@ namespace Lagerverwaltung.Views
 
         private void RegalHinzufuegenButton_Click(object sender, EventArgs e)
         {
-            using (var regalhinzufuegen = new RegalHinzufügen())
+            using (var regalhinzufuegen = new RegalHinzufuegen())
             {
                 regalhinzufuegen.Owner = this;
                 regalhinzufuegen.ShowDialog();
