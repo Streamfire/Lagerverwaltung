@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class PaketEntfernen : Form
+    public partial class PaketEntfernen : MetroFramework.Forms.MetroForm
     {
         public long RegalfachID { get; set; } = -1;
         private Dictionary<long, Model.PaketModel> _dictPaket;
