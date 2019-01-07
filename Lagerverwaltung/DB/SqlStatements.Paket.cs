@@ -33,17 +33,23 @@ namespace Lagerverwaltung.DB
         public static void ErstellePaket(string name, long regalfach_id, long produkt_id, short menge, DateTime haltbarkeit, string anschaffungsgrund, float hoehe, float breite, float laenge)
         {
             var query = queryfactory.Query("paket").Insert(new { name, regalfach_id, produkt_id, menge, haltbarkeit, anschaffungsgrund, hoehe, breite, laenge });
+            SchreibeHistorieEintrag($"Neues Paket: {name} erstellt!");
             OnDatabaseChanged(ModeltypEnum.PaketModel);
         }
 
         public static void LoeschePaket(long paket_id)
         {
+            var paket = HolePaket(paket_id);
+
             var query = queryfactory.Query("paket").Where("paket_id", paket_id).Delete();
+            SchreibeHistorieEintrag($"Paket ({paket_id}): {paket[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.PaketModel);
         }
 
         public static void UpdatePaket(long paket_id, string name="", long? regalfach_id=null, long? produkt_id=null, short? menge=null, DateTime? haltbarkeit=null, string anschaffungsgrund="", float? hoehe=null, float? breite=null, float? laenge=null)
         {
+            var paket = HolePaket(paket_id);
+
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("paket").Where("paket_id", paket_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
@@ -88,6 +94,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
+                SchreibeHistorieEintrag($"Paket ({paket_id}): {paket[0].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.PaketModel);
             }
         }

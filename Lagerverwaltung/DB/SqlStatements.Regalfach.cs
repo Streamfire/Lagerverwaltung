@@ -33,17 +33,23 @@ namespace Lagerverwaltung.DB
         public static void ErstelleRegalfach(string name, long regal_id, string bemerkung, float hoehe, float breite, float laenge)
         {
             var query = queryfactory.Query("regalfach").Insert(new { name, regal_id, bemerkung, hoehe, breite, laenge });
+            SchreibeHistorieEintrag($"Neues Regalfach: {name} erstellt!");
             OnDatabaseChanged(ModeltypEnum.RegalfachModel);
         }
 
         public static void LoescheRegalfach(long regalfach_id)
         {
+            var regalfach = HoleRegalfach(regalfach_id);
+
             var query = queryfactory.Query("regalfach").Where("regalfach_id", regalfach_id).Delete();
+            SchreibeHistorieEintrag($"Regalfach ({regalfach_id}): {regalfach[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.RegalfachModel);
         }
 
         public static void UpdateRegalfach(long regalfach_id, string name="", long? regal_id=null, string bemerkung="", float? hoehe=null, float? breite=null, float? laenge=null)
         {
+            var regalfach = HoleRegalfach(regalfach_id);
+
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("regalfach").Where("regalfach_id", regalfach_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
@@ -76,6 +82,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
+                SchreibeHistorieEintrag($"Regalfach ({regalfach_id}): {regalfach[0].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.RegalfachModel);
             }
         }

@@ -29,17 +29,23 @@ namespace Lagerverwaltung.DB
         public static void ErstelleUser(string vorname, string nachname, string username, string password, string salt)
         {
             var query = queryfactory.Query("user").Insert(new { vorname, nachname, username, password, salt });
+            SchreibeHistorieEintrag($"Neuen User: {username} erstellt");
             OnDatabaseChanged(ModeltypEnum.UserModel);
         }
 
         public static void LoescheUser(long user_id)
         {
+            var user = HoleUser(user_id);
+
             var query = queryfactory.Query("user").Where("user_id", user_id).Delete();
+            SchreibeHistorieEintrag($"User ({user_id}): {user[0].Username} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.UserModel);
         }
 
         public static void UpdateUser(long user_id, string vorname ="", string nachname="", string username="", string password="", string salt="", DateTime? letzter_login=null)
         {
+            var user = HoleUser(user_id);
+
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("user").Where("user_id", user_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
@@ -69,6 +75,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
+                SchreibeHistorieEintrag($"User ({user_id}): {user[0].Username} geändert!");
                 OnDatabaseChanged(ModeltypEnum.UserModel);
             }
         }

@@ -36,7 +36,7 @@ namespace Lagerverwaltung.DB
 
             //Da InsertGetId<> nix zurückgibt: 
             var queryID = queryfactory.Query("regal").OrderByDesc("erstellt_am").Limit(1);
-
+            SchreibeHistorieEintrag($"Neues Regal: {name} erstellt!");
             OnDatabaseChanged(ModeltypEnum.LagerModel);
 
             return queryID.Get<RegalModel>().First().Regal_ID;
@@ -44,12 +44,17 @@ namespace Lagerverwaltung.DB
 
         public static void LoescheRegal(long regal_id)
         {
+            var regal = HoleRegal(regal_id);
+
             var query = queryfactory.Query("regal").Where("regal_id", regal_id).Delete();
+            SchreibeHistorieEintrag($"Regal ({regal_id}): {regal[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.RegalModel);
         }
 
         public static void UpdateRegal(long regal_id, string name="", long? lager_id=null, short? zeilen=null, short? spalten=null, float? hoehe=null, float? breite=null, float? laenge=null, float? v_wandstaerke=null, float? h_wandstaerke=null)
         {
+            var regal = HoleRegal(regal_id);
+
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("regal").Where("regal_id", regal_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
@@ -94,6 +99,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
+                SchreibeHistorieEintrag($"Regal ({regal_id}): {regal[0].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.RegalModel);
             }
         }

@@ -29,17 +29,23 @@ namespace Lagerverwaltung.DB
         public static void ErstelleProdukt(string name, float gewicht, float preis, string zeichnungsnummer, long artikeltyp_id, float hoehe, float breite, float laenge)
         {
             var query = queryfactory.Query("produkt").Insert(new { name, gewicht, preis, zeichnungsnummer, artikeltyp_id, hoehe, breite, laenge });
+            SchreibeHistorieEintrag($"Neues Produkt: {name} erstellt!");
             OnDatabaseChanged(ModeltypEnum.ProduktModel);
         }
 
         public static void LoescheProdukt(long produkt_id)
         {
+            var produkt = HoleProdukt(produkt_id);
+
             var query = queryfactory.Query("produkt").Where("produkt_id", produkt_id).Delete();
+            SchreibeHistorieEintrag($"Produkt ({produkt_id}): {produkt[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.ProduktModel);
         }
 
         public static void UpdateProdukt(long produkt_id, string name="", float? gewicht=null, float? preis=null, string zeichnungsnummer="", long? artikeltyp_id=null, float? hoehe=null, float? breite=null, float? laenge=null)
         {
+            var produkt = HoleProdukt(produkt_id);
+
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("produkt").Where("produkt_id", produkt_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
@@ -64,12 +70,6 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("artikeltyp_id", artikeltyp_id);
             }
-            if (_dict.Count != 0)
-            {
-                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
-                query.Update(_dict);
-                OnDatabaseChanged(ModeltypEnum.ProduktModel);
-            }
             if (hoehe != null)
             {
                 _dict.Add("hoehe", hoehe);
@@ -81,6 +81,13 @@ namespace Lagerverwaltung.DB
             if (laenge != null)
             {
                 _dict.Add("laenge", laenge);
+            }
+            if (_dict.Count != 0)
+            {
+                _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
+                query.Update(_dict);
+                SchreibeHistorieEintrag($"Produkt ({produkt_id}): {produkt[0].Name} geändert!");
+                OnDatabaseChanged(ModeltypEnum.ProduktModel);
             }
         }
     }

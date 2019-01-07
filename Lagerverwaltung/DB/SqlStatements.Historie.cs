@@ -31,7 +31,7 @@ namespace Lagerverwaltung.DB
             return query.Paginate<HistorieModel>(1,25);
         }
 
-        public static void SchreibeHistorieEintrag(string logtext, long user_id)
+        public static void SchreibeHistorieEintrag(string logtext, long user_id=1)
         {
             var zeitstempel = System.DateTime.Now;
             queryfactory.Query("historie").Insert(new { user_id, logtext, zeitstempel });

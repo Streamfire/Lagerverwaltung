@@ -29,17 +29,23 @@ namespace Lagerverwaltung.DB
         public static void ErstelleLager(string name, string standort, string beschreibung, long lagertyp_id)
         {
             var query = queryfactory.Query("lager").Insert(new { name, standort, beschreibung, lagertyp_id });
+            SchreibeHistorieEintrag($"Neues Lager: {name} erstellt!");
             OnDatabaseChanged(ModeltypEnum.LagerModel);
         }
 
         public static void LoescheLager(long lager_id)
         {
+            var lager = HoleLager(lager_id);
+
             var query = queryfactory.Query("lager").Where("lager_id", lager_id).Delete();
+            SchreibeHistorieEintrag($"Lager ({lager_id}): {lager[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.LagerModel);
         }
 
         public static void UpdateLager(long lager_id, string name="", string standort="", string beschreibung="", long? lagertyp_id=null)
         {
+            var lager = HoleLager(lager_id);
+
             var zuletzt_geaendert = DateTime.Now;
             var query = queryfactory.Query("lager").Where("lager_id", lager_id);
             Dictionary<string, object> _dict = new Dictionary<string, object>();
@@ -64,6 +70,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
+                SchreibeHistorieEintrag($"Lager ({lager_id}): {lager[0].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.LagerModel);
             }
         }
