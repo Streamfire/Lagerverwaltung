@@ -325,7 +325,7 @@
             this.Controls.Add(this.GrundTextbox);
             this.Controls.Add(this.BezeichungTextbox);
             this.Name = "PaketHinzufuegen";
-            this.Text = "Paket hinzufügen";
+            this.Text = "Paket einlagern";
             this.ResumeLayout(false);
             this.PerformLayout();
 

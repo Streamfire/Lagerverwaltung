@@ -133,7 +133,7 @@
             this.MaximizeBox = false;
             this.Name = "PaketEntfernen";
             this.Resizable = false;
-            this.Text = "PaketEntfernen";
+            this.Text = "Paket auslagern";
             this.Load += new System.EventHandler(this.PaketEntfernen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
