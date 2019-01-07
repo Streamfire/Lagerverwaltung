@@ -83,7 +83,7 @@ namespace Lagerverwaltung.Views
         {
             using (var produkthinzufuegen = new ProduktHinzufuegen())
             {
-                produkthinzufuegen.Owner = this;
+                produkthinzufuegen.Besitzer = this;
                 produkthinzufuegen.ShowDialog();
             }
         }
@@ -123,7 +123,7 @@ namespace Lagerverwaltung.Views
 
             using (var produktaendern = new ProduktAendern())
             {
-                produktaendern.Owner = this;
+                produktaendern.Besitzer = this;
                 produktaendern.ShowDialog();
             }
         }

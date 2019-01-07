@@ -272,7 +272,7 @@ namespace Lagerverwaltung.Views
             {
                 string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
 
-                pakethinzufuegen.Owner = this;
+                pakethinzufuegen.Besitzer = this;
                 if (_regalfachIDMap.ContainsKey(key))
                 {
                     pakethinzufuegen.RegalfachID = _regalfachIDMap[key];

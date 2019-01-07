@@ -12,6 +12,7 @@ namespace Lagerverwaltung.Views
 
         public static string Auswahl { get; set; } = "";
         public static long ProduktID { get; set; } = -1;
+        public Form Besitzer { get; set; }
         public static Produktliste Produktliste { get; set; } // entfernen und Abhängigkeiten ändern
         public long RegalfachID { get; set; } = -1;
 
@@ -33,13 +34,13 @@ namespace Lagerverwaltung.Views
             //Validierung erfolgreich
             {
 
-                if (Owner.GetType().Equals(typeof(Regaleinsicht)))
+                if (Besitzer.GetType().Equals(typeof(Regaleinsicht)))
                 {
 
                     DB.SqlStatements.ErstellePaket(BezeichungTextbox.Text, RegalfachID, ProduktID, Convert.ToInt16(AnzahlTextbox.Text), HaltbarkeitDatetime.Value, GrundTextbox.Text, Convert.ToInt32(HoeheTextbox.Text), Convert.ToInt32(BreiteTextbox.Text), Convert.ToInt32(LaengeTextbox.Text));
                     Close();
                 }
-                else if (Owner.GetType().Equals(typeof(Verwaltung)))
+                else if (Besitzer.GetType().Equals(typeof(Verwaltung)))
                 {
                     var a = (ushort)Views.Dashboard.Verwaltung.getLastFocusedPanel().Tag;
 
