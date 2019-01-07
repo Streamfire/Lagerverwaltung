@@ -28,150 +28,191 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxErsEntfBearLager = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxLagerName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLagerID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePickerErstelltLager = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePickerGeaendertLager = new System.Windows.Forms.DateTimePicker();
+            this.metroComboBoxLagertyp = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBoxLagername = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBoxLagerID = new MetroFramework.Controls.MetroTextBox();
+            this.metroDateTimeErstelltAm = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTimeGeaendertAm = new MetroFramework.Controls.MetroDateTime();
+            this.metroButtonAbbrechen = new MetroFramework.Controls.MetroButton();
+            this.metroButtonOkay = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // label1
+            // metroComboBoxLagertyp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lagertyp";
+            this.metroComboBoxLagertyp.DropDownWidth = 206;
+            this.metroComboBoxLagertyp.FormattingEnabled = true;
+            this.metroComboBoxLagertyp.ItemHeight = 23;
+            this.metroComboBoxLagertyp.Location = new System.Drawing.Point(147, 27);
+            this.metroComboBoxLagertyp.Name = "metroComboBoxLagertyp";
+            this.metroComboBoxLagertyp.Size = new System.Drawing.Size(247, 29);
+            this.metroComboBoxLagertyp.TabIndex = 21;
+            this.metroComboBoxLagertyp.UseSelectable = true;
             // 
-            // comboBoxErsEntfBearLager
+            // metroLabel1
             // 
-            this.comboBoxErsEntfBearLager.FormattingEnabled = true;
-            this.comboBoxErsEntfBearLager.Location = new System.Drawing.Point(160, 30);
-            this.comboBoxErsEntfBearLager.Name = "comboBoxErsEntfBearLager";
-            this.comboBoxErsEntfBearLager.Size = new System.Drawing.Size(181, 21);
-            this.comboBoxErsEntfBearLager.TabIndex = 1;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(38, 96);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel1.TabIndex = 22;
+            this.metroLabel1.Text = "Lagername:";
             // 
-            // label2
+            // metroLabel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Lagername:";
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(38, 138);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel2.TabIndex = 23;
+            this.metroLabel2.Text = "Lager ID:";
             // 
-            // textBoxLagerName
+            // metroLabel3
             // 
-            this.textBoxLagerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLagerName.Location = new System.Drawing.Point(136, 90);
-            this.textBoxLagerName.Name = "textBoxLagerName";
-            this.textBoxLagerName.Size = new System.Drawing.Size(247, 24);
-            this.textBoxLagerName.TabIndex = 3;
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(38, 182);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel3.TabIndex = 24;
+            this.metroLabel3.Text = "Erstellt am:";
             // 
-            // button1
+            // metroLabel4
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(136, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Okay";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(38, 228);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel4.TabIndex = 25;
+            this.metroLabel4.Text = "Geändert am:";
             // 
-            // button2
+            // metroTextBoxLagername
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(290, 259);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Abbrechen";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Lager ID:";
             // 
-            // textBoxLagerID
+            this.metroTextBoxLagername.CustomButton.Image = null;
+            this.metroTextBoxLagername.CustomButton.Location = new System.Drawing.Point(223, 1);
+            this.metroTextBoxLagername.CustomButton.Name = "";
+            this.metroTextBoxLagername.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.metroTextBoxLagername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxLagername.CustomButton.TabIndex = 1;
+            this.metroTextBoxLagername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxLagername.CustomButton.UseSelectable = true;
+            this.metroTextBoxLagername.CustomButton.Visible = false;
+            this.metroTextBoxLagername.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBoxLagername.Lines = new string[0];
+            this.metroTextBoxLagername.Location = new System.Drawing.Point(147, 90);
+            this.metroTextBoxLagername.MaxLength = 32767;
+            this.metroTextBoxLagername.Multiline = true;
+            this.metroTextBoxLagername.Name = "metroTextBoxLagername";
+            this.metroTextBoxLagername.PasswordChar = '\0';
+            this.metroTextBoxLagername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxLagername.SelectedText = "";
+            this.metroTextBoxLagername.SelectionLength = 0;
+            this.metroTextBoxLagername.SelectionStart = 0;
+            this.metroTextBoxLagername.ShortcutsEnabled = true;
+            this.metroTextBoxLagername.Size = new System.Drawing.Size(247, 25);
+            this.metroTextBoxLagername.TabIndex = 26;
+            this.metroTextBoxLagername.UseSelectable = true;
+            this.metroTextBoxLagername.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxLagername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.textBoxLagerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLagerID.Location = new System.Drawing.Point(136, 125);
-            this.textBoxLagerID.Name = "textBoxLagerID";
-            this.textBoxLagerID.Size = new System.Drawing.Size(247, 24);
-            this.textBoxLagerID.TabIndex = 7;
+            // metroTextBoxLagerID
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Erstellt am:";
             // 
-            // dateTimePickerErstelltLager
             // 
-            this.dateTimePickerErstelltLager.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerErstelltLager.Location = new System.Drawing.Point(136, 159);
-            this.dateTimePickerErstelltLager.Name = "dateTimePickerErstelltLager";
-            this.dateTimePickerErstelltLager.Size = new System.Drawing.Size(247, 24);
-            this.dateTimePickerErstelltLager.TabIndex = 9;
+            this.metroTextBoxLagerID.CustomButton.Image = null;
+            this.metroTextBoxLagerID.CustomButton.Location = new System.Drawing.Point(223, 1);
+            this.metroTextBoxLagerID.CustomButton.Name = "";
+            this.metroTextBoxLagerID.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.metroTextBoxLagerID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxLagerID.CustomButton.TabIndex = 1;
+            this.metroTextBoxLagerID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxLagerID.CustomButton.UseSelectable = true;
+            this.metroTextBoxLagerID.CustomButton.Visible = false;
+            this.metroTextBoxLagerID.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBoxLagerID.Lines = new string[0];
+            this.metroTextBoxLagerID.Location = new System.Drawing.Point(147, 132);
+            this.metroTextBoxLagerID.MaxLength = 32767;
+            this.metroTextBoxLagerID.Multiline = true;
+            this.metroTextBoxLagerID.Name = "metroTextBoxLagerID";
+            this.metroTextBoxLagerID.PasswordChar = '\0';
+            this.metroTextBoxLagerID.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxLagerID.SelectedText = "";
+            this.metroTextBoxLagerID.SelectionLength = 0;
+            this.metroTextBoxLagerID.SelectionStart = 0;
+            this.metroTextBoxLagerID.ShortcutsEnabled = true;
+            this.metroTextBoxLagerID.Size = new System.Drawing.Size(247, 25);
+            this.metroTextBoxLagerID.TabIndex = 27;
+            this.metroTextBoxLagerID.UseSelectable = true;
+            this.metroTextBoxLagerID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxLagerID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label5
+            // metroDateTimeErstelltAm
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 18);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Geändert am:";
+            this.metroDateTimeErstelltAm.Location = new System.Drawing.Point(147, 172);
+            this.metroDateTimeErstelltAm.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeErstelltAm.Name = "metroDateTimeErstelltAm";
+            this.metroDateTimeErstelltAm.Size = new System.Drawing.Size(247, 29);
+            this.metroDateTimeErstelltAm.TabIndex = 28;
+            this.metroDateTimeErstelltAm.Value = new System.DateTime(2019, 1, 8, 0, 0, 0, 0);
             // 
-            // dateTimePickerGeaendertLager
+            // metroDateTimeGeaendertAm
             // 
-            this.dateTimePickerGeaendertLager.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerGeaendertLager.Location = new System.Drawing.Point(136, 196);
-            this.dateTimePickerGeaendertLager.Name = "dateTimePickerGeaendertLager";
-            this.dateTimePickerGeaendertLager.Size = new System.Drawing.Size(247, 24);
-            this.dateTimePickerGeaendertLager.TabIndex = 11;
+            this.metroDateTimeGeaendertAm.Location = new System.Drawing.Point(147, 218);
+            this.metroDateTimeGeaendertAm.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimeGeaendertAm.Name = "metroDateTimeGeaendertAm";
+            this.metroDateTimeGeaendertAm.Size = new System.Drawing.Size(247, 29);
+            this.metroDateTimeGeaendertAm.TabIndex = 29;
+            this.metroDateTimeGeaendertAm.Value = new System.DateTime(2019, 1, 8, 0, 0, 0, 0);
             // 
-            // Lagertyp
+            // metroButtonAbbrechen
+            // 
+            this.metroButtonAbbrechen.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButtonAbbrechen.Location = new System.Drawing.Point(302, 277);
+            this.metroButtonAbbrechen.Name = "metroButtonAbbrechen";
+            this.metroButtonAbbrechen.Size = new System.Drawing.Size(92, 36);
+            this.metroButtonAbbrechen.TabIndex = 30;
+            this.metroButtonAbbrechen.Text = "Abbrechen";
+            this.metroButtonAbbrechen.UseSelectable = true;
+            this.metroButtonAbbrechen.Click += new System.EventHandler(this.metroButtonAbbrechen_Click);
+            // 
+            // metroButtonOkay
+            // 
+            this.metroButtonOkay.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButtonOkay.Location = new System.Drawing.Point(147, 277);
+            this.metroButtonOkay.Name = "metroButtonOkay";
+            this.metroButtonOkay.Size = new System.Drawing.Size(92, 36);
+            this.metroButtonOkay.TabIndex = 31;
+            this.metroButtonOkay.Text = "Okay";
+            this.metroButtonOkay.UseSelectable = true;
+            this.metroButtonOkay.Click += new System.EventHandler(this.metroButtonOkay_Click);
+            // 
+            // LagertypForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 322);
-            this.Controls.Add(this.dateTimePickerGeaendertLager);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePickerErstelltLager);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxLagerID);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBoxLagerName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxErsEntfBearLager);
-            this.Controls.Add(this.label1);
-            this.Name = "Lagertyp";
+            this.ClientSize = new System.Drawing.Size(419, 338);
+            this.Controls.Add(this.metroButtonOkay);
+            this.Controls.Add(this.metroButtonAbbrechen);
+            this.Controls.Add(this.metroDateTimeGeaendertAm);
+            this.Controls.Add(this.metroDateTimeErstelltAm);
+            this.Controls.Add(this.metroTextBoxLagerID);
+            this.Controls.Add(this.metroTextBoxLagername);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.metroComboBoxLagertyp);
+            this.Name = "LagertypForm";
             this.Text = "Lagertyp";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,18 +220,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxErsEntfBearLager;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxLagerName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxLagerID;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePickerErstelltLager;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePickerGeaendertLager;
+        private MetroFramework.Controls.MetroComboBox metroComboBoxLagertyp;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxLagername;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxLagerID;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeErstelltAm;
+        private MetroFramework.Controls.MetroDateTime metroDateTimeGeaendertAm;
+        private MetroFramework.Controls.MetroButton metroButtonAbbrechen;
+        private MetroFramework.Controls.MetroButton metroButtonOkay;
     }
 }

@@ -46,7 +46,7 @@
             this.NoteLabel.AutoSize = true;
             this.NoteLabel.FontSize = MetroFramework.MetroLabelSize.Small;
             this.NoteLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.NoteLabel.Location = new System.Drawing.Point(20, 180);
+            this.NoteLabel.Location = new System.Drawing.Point(23, 53);
             this.NoteLabel.Name = "NoteLabel";
             this.NoteLabel.Size = new System.Drawing.Size(357, 15);
             this.NoteLabel.TabIndex = 16;
@@ -56,7 +56,7 @@
             // 
             this.ShowPasswordCheckbox.AutoSize = true;
             this.ShowPasswordCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ShowPasswordCheckbox.Location = new System.Drawing.Point(23, 120);
+            this.ShowPasswordCheckbox.Location = new System.Drawing.Point(23, 139);
             this.ShowPasswordCheckbox.Name = "ShowPasswordCheckbox";
             this.ShowPasswordCheckbox.Size = new System.Drawing.Size(112, 15);
             this.ShowPasswordCheckbox.TabIndex = 19;
@@ -70,7 +70,7 @@
             this.ErrorLabel.FontSize = MetroFramework.MetroLabelSize.Small;
             this.ErrorLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(23, 136);
+            this.ErrorLabel.Location = new System.Drawing.Point(23, 157);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(27, 15);
             this.ErrorLabel.TabIndex = 20;
@@ -93,11 +93,11 @@
             this.UsernameTextbox.CustomButton.UseSelectable = true;
             this.UsernameTextbox.CustomButton.Visible = false;
             this.UsernameTextbox.Lines = new string[0];
-            this.UsernameTextbox.Location = new System.Drawing.Point(23, 60);
+            this.UsernameTextbox.Location = new System.Drawing.Point(22, 79);
             this.UsernameTextbox.MaxLength = 32767;
             this.UsernameTextbox.Name = "UsernameTextbox";
             this.UsernameTextbox.PasswordChar = '\0';
-            this.UsernameTextbox.WaterMark = "Nutzername";
+            this.UsernameTextbox.PromptText = "Nutzername";
             this.UsernameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.UsernameTextbox.SelectedText = "";
             this.UsernameTextbox.SelectionLength = 0;
@@ -125,11 +125,11 @@
             this.PasswordTextbox.CustomButton.UseSelectable = true;
             this.PasswordTextbox.CustomButton.Visible = false;
             this.PasswordTextbox.Lines = new string[0];
-            this.PasswordTextbox.Location = new System.Drawing.Point(23, 90);
+            this.PasswordTextbox.Location = new System.Drawing.Point(23, 109);
             this.PasswordTextbox.MaxLength = 32767;
             this.PasswordTextbox.Name = "PasswordTextbox";
             this.PasswordTextbox.PasswordChar = '●';
-            this.PasswordTextbox.WaterMark = "Passwort";
+            this.PasswordTextbox.PromptText = "Passwort";
             this.PasswordTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordTextbox.SelectedText = "";
             this.PasswordTextbox.SelectionLength = 0;
@@ -146,7 +146,7 @@
             // LoginButton
             // 
             this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.Location = new System.Drawing.Point(207, 154);
+            this.LoginButton.Location = new System.Drawing.Point(207, 175);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 23;
@@ -157,7 +157,7 @@
             // GastButton
             // 
             this.GastButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GastButton.Location = new System.Drawing.Point(288, 154);
+            this.GastButton.Location = new System.Drawing.Point(288, 175);
             this.GastButton.Name = "GastButton";
             this.GastButton.Size = new System.Drawing.Size(75, 23);
             this.GastButton.TabIndex = 24;
@@ -168,7 +168,7 @@
             // PasswortAendernButton
             // 
             this.PasswortAendernButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PasswortAendernButton.Location = new System.Drawing.Point(23, 154);
+            this.PasswortAendernButton.Location = new System.Drawing.Point(23, 175);
             this.PasswortAendernButton.Name = "PasswortAendernButton";
             this.PasswortAendernButton.Size = new System.Drawing.Size(100, 23);
             this.PasswortAendernButton.TabIndex = 25;
@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.ClientSize = new System.Drawing.Size(387, 215);
             this.Controls.Add(this.PasswortAendernButton);
             this.Controls.Add(this.GastButton);
             this.Controls.Add(this.LoginButton);

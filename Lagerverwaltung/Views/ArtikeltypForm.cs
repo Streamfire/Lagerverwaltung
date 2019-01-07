@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class ArtikeltypForm : Form
+    public partial class ArtikeltypForm : MetroFramework.Forms.MetroForm
     {
         public ArtikeltypForm()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void metroButtonAbbrechen_Click(object sender, EventArgs e)
         {
             Close();
         }
