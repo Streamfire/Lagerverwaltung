@@ -5,7 +5,7 @@ using Lagerverwaltung.Model;
 
 namespace Lagerverwaltung.Views
 {
-	public partial class Dashboard : Form
+	public partial class Dashboard : MetroFramework.Forms.MetroForm
 	{
         public static Verwaltung Verwaltung { get; set; }
         public static List<Produkt> ProduktListe { get; set; }
@@ -34,7 +34,7 @@ namespace Lagerverwaltung.Views
 			Application.Exit();
 		}
 
-		private void Button1_Click(object sender, EventArgs e)
+		private void VerwaltungKachel_Click(object sender, EventArgs e)
 		{
             if (verwaltung == null || verwaltung.IsDisposed == true)
             {
@@ -54,7 +54,7 @@ namespace Lagerverwaltung.Views
 
         }
 
-		private void Button2_Click(object sender, EventArgs e)
+		private void SucheKachel_Click(object sender, EventArgs e)
 		{
             if (suche == null ||suche.IsDisposed == true)
             {
@@ -72,7 +72,7 @@ namespace Lagerverwaltung.Views
             }*/
 		}
 
-		private void Button3_Click(object sender, EventArgs e)
+		private void RegaleinsichtKachel_Click(object sender, EventArgs e)
 		{
             if (regaleinsicht == null || regaleinsicht.IsDisposed == true)
             {
@@ -90,7 +90,7 @@ namespace Lagerverwaltung.Views
             }*/
         }
 
-		private void Button4_Click(object sender, EventArgs e)
+		private void HistorieKachel_Click(object sender, EventArgs e)
 		{
             if (historie == null || historie.IsDisposed == true)
             {
