@@ -32,14 +32,20 @@ namespace Lagerverwaltung.Views
 
 		private void LagerHinzufuegenButton_Click(object sender, EventArgs e)
 		{
-            if (LagerTextbox.Text.Equals("") || StandortTextbox.Text.Equals(""))
-            {
-                MetroFramework.MetroMessageBox.Show(this, "Nicht alle benötigten Felder wurden ausgeführt!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (LagertypCombobox.SelectedItem != null){
+                if (LagerTextbox.Text.Equals("") || StandortTextbox.Text.Equals(""))
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Nicht alle benötigten Felder wurden ausgeführt!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    DB.SqlStatements.ErstelleLager(LagerTextbox.Text, LagertypCombobox.SelectedText, BeschreibungTextbox.Text, Convert.ToInt64(LagertypCombobox.SelectedValue));
+                    Close();
+                }
             }
             else
             {
-                DB.SqlStatements.ErstelleLager(LagerTextbox.Text, LagertypCombobox.SelectedText, BeschreibungTextbox.Text, Convert.ToInt64(LagertypCombobox.SelectedValue));
-                Close();
+                MetroFramework.MetroMessageBox.Show(this, "Es wurde kein Lagertyp ausgewählt!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 		}
     }
