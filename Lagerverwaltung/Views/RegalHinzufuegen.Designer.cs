@@ -28,457 +28,486 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxRegalName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxZeilen = new System.Windows.Forms.TextBox();
-            this.textBoxSpalten = new System.Windows.Forms.TextBox();
-            this.buttonRegalHinzufuegen = new System.Windows.Forms.Button();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxAuswahlLager = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxRegalBreite = new System.Windows.Forms.TextBox();
-            this.textBoxRegalLaenge = new System.Windows.Forms.TextBox();
-            this.textBoxRegalHoehe = new System.Windows.Forms.TextBox();
-            this.textBoxRegalfachHoehe = new System.Windows.Forms.TextBox();
-            this.textBoxRegalfachBreite = new System.Windows.Forms.TextBox();
-            this.textBoxRegalfachLaenge = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxWandStaerkeH = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxWandStaerkeV = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.LagerLabel = new MetroFramework.Controls.MetroLabel();
+            this.LagerCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.GroupBox = new System.Windows.Forms.GroupBox();
+            this.BezeichnungTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.ZeilenTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.SpaltenTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.HinzufuegenButton = new MetroFramework.Controls.MetroButton();
+            this.AbbrechenButton = new MetroFramework.Controls.MetroButton();
+            this.RegalhoeheTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.RegalbreiteTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.RegallaengeTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.FachhoeheTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.FachbreiteTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.FachlaengeTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.StaerkeH = new MetroFramework.Controls.MetroTextBox();
+            this.StaerkeV = new MetroFramework.Controls.MetroTextBox();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Regalbezeichnung:";
-            // 
-            // textBoxRegalName
-            // 
-            this.textBoxRegalName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalName.Location = new System.Drawing.Point(179, 115);
-            this.textBoxRegalName.Name = "textBoxRegalName";
-            this.textBoxRegalName.Size = new System.Drawing.Size(438, 24);
-            this.textBoxRegalName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(122, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Zeilen:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(384, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Spalten:";
-            // 
-            // textBoxZeilen
-            // 
-            this.textBoxZeilen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZeilen.Location = new System.Drawing.Point(179, 156);
-            this.textBoxZeilen.Name = "textBoxZeilen";
-            this.textBoxZeilen.Size = new System.Drawing.Size(66, 24);
-            this.textBoxZeilen.TabIndex = 4;
-            // 
-            // textBoxSpalten
-            // 
-            this.textBoxSpalten.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSpalten.Location = new System.Drawing.Point(451, 156);
-            this.textBoxSpalten.Name = "textBoxSpalten";
-            this.textBoxSpalten.Size = new System.Drawing.Size(66, 24);
-            this.textBoxSpalten.TabIndex = 5;
-            // 
-            // buttonRegalHinzufuegen
-            // 
-            this.buttonRegalHinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegalHinzufuegen.Location = new System.Drawing.Point(311, 391);
-            this.buttonRegalHinzufuegen.Name = "buttonRegalHinzufuegen";
-            this.buttonRegalHinzufuegen.Size = new System.Drawing.Size(134, 37);
-            this.buttonRegalHinzufuegen.TabIndex = 6;
-            this.buttonRegalHinzufuegen.Text = "Regal hinzufügen";
-            this.buttonRegalHinzufuegen.UseVisualStyleBackColor = true;
-            this.buttonRegalHinzufuegen.Click += new System.EventHandler(this.ButtonRegalHinzufuegen_Click);
-            // 
-            // buttonAbbrechen
-            // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(483, 391);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(134, 37);
-            this.buttonAbbrechen.TabIndex = 7;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 26);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Regal hinzufügen";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(124, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Lager:";
-            // 
-            // comboBoxAuswahlLager
-            // 
-            this.comboBoxAuswahlLager.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAuswahlLager.FormattingEnabled = true;
-            this.comboBoxAuswahlLager.Location = new System.Drawing.Point(179, 74);
-            this.comboBoxAuswahlLager.Name = "comboBoxAuswahlLager";
-            this.comboBoxAuswahlLager.Size = new System.Drawing.Size(438, 26);
-            this.comboBoxAuswahlLager.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(90, 200);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 18);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Regalhöhe:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(87, 286);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 18);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Regallänge:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(87, 244);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 18);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Regalbreite:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(334, 200);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 18);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Regalfachhöhe:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(330, 244);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 18);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Regalfachbreite:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(331, 286);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 18);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Regalfachlänge:";
-            // 
-            // textBoxRegalBreite
-            // 
-            this.textBoxRegalBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalBreite.Location = new System.Drawing.Point(179, 241);
-            this.textBoxRegalBreite.Name = "textBoxRegalBreite";
-            this.textBoxRegalBreite.Size = new System.Drawing.Size(66, 24);
-            this.textBoxRegalBreite.TabIndex = 17;
-            // 
-            // textBoxRegalLaenge
-            // 
-            this.textBoxRegalLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalLaenge.Location = new System.Drawing.Point(178, 283);
-            this.textBoxRegalLaenge.Name = "textBoxRegalLaenge";
-            this.textBoxRegalLaenge.Size = new System.Drawing.Size(66, 24);
-            this.textBoxRegalLaenge.TabIndex = 18;
-            // 
-            // textBoxRegalHoehe
-            // 
-            this.textBoxRegalHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalHoehe.Location = new System.Drawing.Point(179, 197);
-            this.textBoxRegalHoehe.Name = "textBoxRegalHoehe";
-            this.textBoxRegalHoehe.Size = new System.Drawing.Size(66, 24);
-            this.textBoxRegalHoehe.TabIndex = 19;
-            // 
-            // textBoxRegalfachHoehe
-            // 
-            this.textBoxRegalfachHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalfachHoehe.Location = new System.Drawing.Point(451, 197);
-            this.textBoxRegalfachHoehe.Name = "textBoxRegalfachHoehe";
-            this.textBoxRegalfachHoehe.Size = new System.Drawing.Size(66, 24);
-            this.textBoxRegalfachHoehe.TabIndex = 20;
-            // 
-            // textBoxRegalfachBreite
-            // 
-            this.textBoxRegalfachBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalfachBreite.Location = new System.Drawing.Point(450, 240);
-            this.textBoxRegalfachBreite.Name = "textBoxRegalfachBreite";
-            this.textBoxRegalfachBreite.Size = new System.Drawing.Size(66, 24);
-            this.textBoxRegalfachBreite.TabIndex = 21;
-            // 
-            // textBoxRegalfachLaenge
-            // 
-            this.textBoxRegalfachLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegalfachLaenge.Location = new System.Drawing.Point(450, 283);
-            this.textBoxRegalfachLaenge.Name = "textBoxRegalfachLaenge";
-            this.textBoxRegalfachLaenge.Size = new System.Drawing.Size(66, 24);
-            this.textBoxRegalfachLaenge.TabIndex = 23;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(523, 200);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 18);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "cm";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(522, 286);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 18);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "cm";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(251, 244);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 18);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "cm";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(250, 286);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 18);
-            this.label15.TabIndex = 27;
-            this.label15.Text = "cm";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(251, 200);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 18);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "cm";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(522, 241);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 18);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "cm";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 331);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(161, 18);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Wandstärke horizontal:";
-            // 
-            // textBoxWandStaerkeH
-            // 
-            this.textBoxWandStaerkeH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxWandStaerkeH.Location = new System.Drawing.Point(179, 328);
-            this.textBoxWandStaerkeH.Name = "textBoxWandStaerkeH";
-            this.textBoxWandStaerkeH.Size = new System.Drawing.Size(66, 24);
-            this.textBoxWandStaerkeH.TabIndex = 31;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(251, 331);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(29, 18);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "cm";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(303, 331);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(142, 18);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "Wandstärke vertikal:";
-            // 
-            // textBoxWandStaerkeV
-            // 
-            this.textBoxWandStaerkeV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxWandStaerkeV.Location = new System.Drawing.Point(451, 328);
-            this.textBoxWandStaerkeV.Name = "textBoxWandStaerkeV";
-            this.textBoxWandStaerkeV.Size = new System.Drawing.Size(66, 24);
-            this.textBoxWandStaerkeV.TabIndex = 34;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(523, 331);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(29, 18);
-            this.label21.TabIndex = 35;
-            this.label21.Text = "cm";
+            // LagerLabel
+            // 
+            this.LagerLabel.AutoSize = true;
+            this.LagerLabel.Location = new System.Drawing.Point(18, 83);
+            this.LagerLabel.Name = "LagerLabel";
+            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
+            this.LagerLabel.TabIndex = 36;
+            this.LagerLabel.Text = "Lager:";
+            // 
+            // LagerCombobox
+            // 
+            this.LagerCombobox.FormattingEnabled = true;
+            this.LagerCombobox.ItemHeight = 23;
+            this.LagerCombobox.Location = new System.Drawing.Point(70, 83);
+            this.LagerCombobox.Name = "LagerCombobox";
+            this.LagerCombobox.Size = new System.Drawing.Size(175, 29);
+            this.LagerCombobox.TabIndex = 37;
+            this.LagerCombobox.UseSelectable = true;
+            // 
+            // GroupBox
+            // 
+            this.GroupBox.Controls.Add(this.StaerkeV);
+            this.GroupBox.Controls.Add(this.StaerkeH);
+            this.GroupBox.Location = new System.Drawing.Point(70, 173);
+            this.GroupBox.Name = "GroupBox";
+            this.GroupBox.Size = new System.Drawing.Size(175, 79);
+            this.GroupBox.TabIndex = 38;
+            this.GroupBox.TabStop = false;
+            this.GroupBox.Text = "Wandstärke festlegen";
+            // 
+            // BezeichnungTextbox
+            // 
+            // 
+            // 
+            // 
+            this.BezeichnungTextbox.CustomButton.Image = null;
+            this.BezeichnungTextbox.CustomButton.Location = new System.Drawing.Point(153, 1);
+            this.BezeichnungTextbox.CustomButton.Name = "";
+            this.BezeichnungTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.BezeichnungTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.BezeichnungTextbox.CustomButton.TabIndex = 1;
+            this.BezeichnungTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BezeichnungTextbox.CustomButton.UseSelectable = true;
+            this.BezeichnungTextbox.CustomButton.Visible = false;
+            this.BezeichnungTextbox.Lines = new string[0];
+            this.BezeichnungTextbox.Location = new System.Drawing.Point(70, 118);
+            this.BezeichnungTextbox.MaxLength = 32767;
+            this.BezeichnungTextbox.Name = "BezeichnungTextbox";
+            this.BezeichnungTextbox.PasswordChar = '\0';
+            this.BezeichnungTextbox.WaterMark = "Regalbezeichnung";
+            this.BezeichnungTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.BezeichnungTextbox.SelectedText = "";
+            this.BezeichnungTextbox.SelectionLength = 0;
+            this.BezeichnungTextbox.SelectionStart = 0;
+            this.BezeichnungTextbox.ShortcutsEnabled = true;
+            this.BezeichnungTextbox.Size = new System.Drawing.Size(175, 23);
+            this.BezeichnungTextbox.TabIndex = 39;
+            this.BezeichnungTextbox.UseSelectable = true;
+            this.BezeichnungTextbox.WaterMark = "Regalbezeichnung";
+            this.BezeichnungTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.BezeichnungTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // ZeilenTextbox
+            // 
+            // 
+            // 
+            // 
+            this.ZeilenTextbox.CustomButton.Image = null;
+            this.ZeilenTextbox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.ZeilenTextbox.CustomButton.Name = "";
+            this.ZeilenTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ZeilenTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ZeilenTextbox.CustomButton.TabIndex = 1;
+            this.ZeilenTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ZeilenTextbox.CustomButton.UseSelectable = true;
+            this.ZeilenTextbox.CustomButton.Visible = false;
+            this.ZeilenTextbox.Lines = new string[0];
+            this.ZeilenTextbox.Location = new System.Drawing.Point(170, 144);
+            this.ZeilenTextbox.MaxLength = 32767;
+            this.ZeilenTextbox.Name = "ZeilenTextbox";
+            this.ZeilenTextbox.PasswordChar = '\0';
+            this.ZeilenTextbox.WaterMark = "Zeilen";
+            this.ZeilenTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ZeilenTextbox.SelectedText = "";
+            this.ZeilenTextbox.SelectionLength = 0;
+            this.ZeilenTextbox.SelectionStart = 0;
+            this.ZeilenTextbox.ShortcutsEnabled = true;
+            this.ZeilenTextbox.Size = new System.Drawing.Size(75, 23);
+            this.ZeilenTextbox.TabIndex = 40;
+            this.ZeilenTextbox.UseSelectable = true;
+            this.ZeilenTextbox.WaterMark = "Zeilen";
+            this.ZeilenTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ZeilenTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // SpaltenTextbox
+            // 
+            // 
+            // 
+            // 
+            this.SpaltenTextbox.CustomButton.Image = null;
+            this.SpaltenTextbox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.SpaltenTextbox.CustomButton.Name = "";
+            this.SpaltenTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SpaltenTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SpaltenTextbox.CustomButton.TabIndex = 1;
+            this.SpaltenTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SpaltenTextbox.CustomButton.UseSelectable = true;
+            this.SpaltenTextbox.CustomButton.Visible = false;
+            this.SpaltenTextbox.Lines = new string[0];
+            this.SpaltenTextbox.Location = new System.Drawing.Point(70, 144);
+            this.SpaltenTextbox.MaxLength = 32767;
+            this.SpaltenTextbox.Name = "SpaltenTextbox";
+            this.SpaltenTextbox.PasswordChar = '\0';
+            this.SpaltenTextbox.WaterMark = "Spalten";
+            this.SpaltenTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SpaltenTextbox.SelectedText = "";
+            this.SpaltenTextbox.SelectionLength = 0;
+            this.SpaltenTextbox.SelectionStart = 0;
+            this.SpaltenTextbox.ShortcutsEnabled = true;
+            this.SpaltenTextbox.Size = new System.Drawing.Size(75, 23);
+            this.SpaltenTextbox.TabIndex = 41;
+            this.SpaltenTextbox.UseSelectable = true;
+            this.SpaltenTextbox.WaterMark = "Spalten";
+            this.SpaltenTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SpaltenTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // HinzufuegenButton
+            // 
+            this.HinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.HinzufuegenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.HinzufuegenButton.Location = new System.Drawing.Point(251, 185);
+            this.HinzufuegenButton.Name = "HinzufuegenButton";
+            this.HinzufuegenButton.Size = new System.Drawing.Size(226, 30);
+            this.HinzufuegenButton.TabIndex = 42;
+            this.HinzufuegenButton.Text = "Regal hinzufügen";
+            this.HinzufuegenButton.UseSelectable = true;
+            this.HinzufuegenButton.Click += new System.EventHandler(this.HinzufuegenButton_Click);
+            // 
+            // AbbrechenButton
+            // 
+            this.AbbrechenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.AbbrechenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.AbbrechenButton.Location = new System.Drawing.Point(251, 222);
+            this.AbbrechenButton.Name = "AbbrechenButton";
+            this.AbbrechenButton.Size = new System.Drawing.Size(226, 30);
+            this.AbbrechenButton.TabIndex = 43;
+            this.AbbrechenButton.Text = "Abbrechen";
+            this.AbbrechenButton.UseSelectable = true;
+            this.AbbrechenButton.Click += new System.EventHandler(this.AbbrechenButton_Click);
+            // 
+            // RegalhoeheTextbox
+            // 
+            // 
+            // 
+            // 
+            this.RegalhoeheTextbox.CustomButton.Image = null;
+            this.RegalhoeheTextbox.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.RegalhoeheTextbox.CustomButton.Name = "";
+            this.RegalhoeheTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.RegalhoeheTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.RegalhoeheTextbox.CustomButton.TabIndex = 1;
+            this.RegalhoeheTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.RegalhoeheTextbox.CustomButton.UseSelectable = true;
+            this.RegalhoeheTextbox.CustomButton.Visible = false;
+            this.RegalhoeheTextbox.Lines = new string[0];
+            this.RegalhoeheTextbox.Location = new System.Drawing.Point(251, 86);
+            this.RegalhoeheTextbox.MaxLength = 32767;
+            this.RegalhoeheTextbox.Name = "RegalhoeheTextbox";
+            this.RegalhoeheTextbox.PasswordChar = '\0';
+            this.RegalhoeheTextbox.WaterMark = "Regalhöhe (cm)";
+            this.RegalhoeheTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RegalhoeheTextbox.SelectedText = "";
+            this.RegalhoeheTextbox.SelectionLength = 0;
+            this.RegalhoeheTextbox.SelectionStart = 0;
+            this.RegalhoeheTextbox.ShortcutsEnabled = true;
+            this.RegalhoeheTextbox.Size = new System.Drawing.Size(100, 23);
+            this.RegalhoeheTextbox.TabIndex = 44;
+            this.RegalhoeheTextbox.UseSelectable = true;
+            this.RegalhoeheTextbox.WaterMark = "Regalhöhe (cm)";
+            this.RegalhoeheTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.RegalhoeheTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // RegalbreiteTextbox
+            // 
+            // 
+            // 
+            // 
+            this.RegalbreiteTextbox.CustomButton.Image = null;
+            this.RegalbreiteTextbox.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.RegalbreiteTextbox.CustomButton.Name = "";
+            this.RegalbreiteTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.RegalbreiteTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.RegalbreiteTextbox.CustomButton.TabIndex = 1;
+            this.RegalbreiteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.RegalbreiteTextbox.CustomButton.UseSelectable = true;
+            this.RegalbreiteTextbox.CustomButton.Visible = false;
+            this.RegalbreiteTextbox.Lines = new string[0];
+            this.RegalbreiteTextbox.Location = new System.Drawing.Point(251, 115);
+            this.RegalbreiteTextbox.MaxLength = 32767;
+            this.RegalbreiteTextbox.Name = "RegalbreiteTextbox";
+            this.RegalbreiteTextbox.PasswordChar = '\0';
+            this.RegalbreiteTextbox.WaterMark = "Regalbreite (cm)";
+            this.RegalbreiteTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RegalbreiteTextbox.SelectedText = "";
+            this.RegalbreiteTextbox.SelectionLength = 0;
+            this.RegalbreiteTextbox.SelectionStart = 0;
+            this.RegalbreiteTextbox.ShortcutsEnabled = true;
+            this.RegalbreiteTextbox.Size = new System.Drawing.Size(100, 23);
+            this.RegalbreiteTextbox.TabIndex = 45;
+            this.RegalbreiteTextbox.UseSelectable = true;
+            this.RegalbreiteTextbox.WaterMark = "Regalbreite (cm)";
+            this.RegalbreiteTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.RegalbreiteTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // RegallaengeTextbox
+            // 
+            // 
+            // 
+            // 
+            this.RegallaengeTextbox.CustomButton.Image = null;
+            this.RegallaengeTextbox.CustomButton.Location = new System.Drawing.Point(78, 1);
+            this.RegallaengeTextbox.CustomButton.Name = "";
+            this.RegallaengeTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.RegallaengeTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.RegallaengeTextbox.CustomButton.TabIndex = 1;
+            this.RegallaengeTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.RegallaengeTextbox.CustomButton.UseSelectable = true;
+            this.RegallaengeTextbox.CustomButton.Visible = false;
+            this.RegallaengeTextbox.Lines = new string[0];
+            this.RegallaengeTextbox.Location = new System.Drawing.Point(251, 144);
+            this.RegallaengeTextbox.MaxLength = 32767;
+            this.RegallaengeTextbox.Name = "RegallaengeTextbox";
+            this.RegallaengeTextbox.PasswordChar = '\0';
+            this.RegallaengeTextbox.WaterMark = "Regallänge (cm)";
+            this.RegallaengeTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RegallaengeTextbox.SelectedText = "";
+            this.RegallaengeTextbox.SelectionLength = 0;
+            this.RegallaengeTextbox.SelectionStart = 0;
+            this.RegallaengeTextbox.ShortcutsEnabled = true;
+            this.RegallaengeTextbox.Size = new System.Drawing.Size(100, 23);
+            this.RegallaengeTextbox.TabIndex = 46;
+            this.RegallaengeTextbox.UseSelectable = true;
+            this.RegallaengeTextbox.WaterMark = "Regallänge (cm)";
+            this.RegallaengeTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.RegallaengeTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // FachhoeheTextbox
+            // 
+            // 
+            // 
+            // 
+            this.FachhoeheTextbox.CustomButton.Image = null;
+            this.FachhoeheTextbox.CustomButton.Location = new System.Drawing.Point(98, 1);
+            this.FachhoeheTextbox.CustomButton.Name = "";
+            this.FachhoeheTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.FachhoeheTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.FachhoeheTextbox.CustomButton.TabIndex = 1;
+            this.FachhoeheTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.FachhoeheTextbox.CustomButton.UseSelectable = true;
+            this.FachhoeheTextbox.CustomButton.Visible = false;
+            this.FachhoeheTextbox.Lines = new string[0];
+            this.FachhoeheTextbox.Location = new System.Drawing.Point(357, 86);
+            this.FachhoeheTextbox.MaxLength = 32767;
+            this.FachhoeheTextbox.Name = "FachhoeheTextbox";
+            this.FachhoeheTextbox.PasswordChar = '\0';
+            this.FachhoeheTextbox.WaterMark = "Regalfachhöhe (cm)";
+            this.FachhoeheTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.FachhoeheTextbox.SelectedText = "";
+            this.FachhoeheTextbox.SelectionLength = 0;
+            this.FachhoeheTextbox.SelectionStart = 0;
+            this.FachhoeheTextbox.ShortcutsEnabled = true;
+            this.FachhoeheTextbox.Size = new System.Drawing.Size(120, 23);
+            this.FachhoeheTextbox.TabIndex = 47;
+            this.FachhoeheTextbox.UseSelectable = true;
+            this.FachhoeheTextbox.WaterMark = "Regalfachhöhe (cm)";
+            this.FachhoeheTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.FachhoeheTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // FachbreiteTextbox
+            // 
+            // 
+            // 
+            // 
+            this.FachbreiteTextbox.CustomButton.Image = null;
+            this.FachbreiteTextbox.CustomButton.Location = new System.Drawing.Point(98, 1);
+            this.FachbreiteTextbox.CustomButton.Name = "";
+            this.FachbreiteTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.FachbreiteTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.FachbreiteTextbox.CustomButton.TabIndex = 1;
+            this.FachbreiteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.FachbreiteTextbox.CustomButton.UseSelectable = true;
+            this.FachbreiteTextbox.CustomButton.Visible = false;
+            this.FachbreiteTextbox.Lines = new string[0];
+            this.FachbreiteTextbox.Location = new System.Drawing.Point(357, 115);
+            this.FachbreiteTextbox.MaxLength = 32767;
+            this.FachbreiteTextbox.Name = "FachbreiteTextbox";
+            this.FachbreiteTextbox.PasswordChar = '\0';
+            this.FachbreiteTextbox.WaterMark = "Regalfachbreite (cm)";
+            this.FachbreiteTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.FachbreiteTextbox.SelectedText = "";
+            this.FachbreiteTextbox.SelectionLength = 0;
+            this.FachbreiteTextbox.SelectionStart = 0;
+            this.FachbreiteTextbox.ShortcutsEnabled = true;
+            this.FachbreiteTextbox.Size = new System.Drawing.Size(120, 23);
+            this.FachbreiteTextbox.TabIndex = 48;
+            this.FachbreiteTextbox.UseSelectable = true;
+            this.FachbreiteTextbox.WaterMark = "Regalfachbreite (cm)";
+            this.FachbreiteTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.FachbreiteTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // FachlaengeTextbox
+            // 
+            // 
+            // 
+            // 
+            this.FachlaengeTextbox.CustomButton.Image = null;
+            this.FachlaengeTextbox.CustomButton.Location = new System.Drawing.Point(98, 1);
+            this.FachlaengeTextbox.CustomButton.Name = "";
+            this.FachlaengeTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.FachlaengeTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.FachlaengeTextbox.CustomButton.TabIndex = 1;
+            this.FachlaengeTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.FachlaengeTextbox.CustomButton.UseSelectable = true;
+            this.FachlaengeTextbox.CustomButton.Visible = false;
+            this.FachlaengeTextbox.Lines = new string[0];
+            this.FachlaengeTextbox.Location = new System.Drawing.Point(357, 144);
+            this.FachlaengeTextbox.MaxLength = 32767;
+            this.FachlaengeTextbox.Name = "FachlaengeTextbox";
+            this.FachlaengeTextbox.PasswordChar = '\0';
+            this.FachlaengeTextbox.WaterMark = "Regalfachlänge (cm)";
+            this.FachlaengeTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.FachlaengeTextbox.SelectedText = "";
+            this.FachlaengeTextbox.SelectionLength = 0;
+            this.FachlaengeTextbox.SelectionStart = 0;
+            this.FachlaengeTextbox.ShortcutsEnabled = true;
+            this.FachlaengeTextbox.Size = new System.Drawing.Size(120, 23);
+            this.FachlaengeTextbox.TabIndex = 49;
+            this.FachlaengeTextbox.UseSelectable = true;
+            this.FachlaengeTextbox.WaterMark = "Regalfachlänge (cm)";
+            this.FachlaengeTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.FachlaengeTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // StaerkeH
+            // 
+            // 
+            // 
+            // 
+            this.StaerkeH.CustomButton.Image = null;
+            this.StaerkeH.CustomButton.Location = new System.Drawing.Point(141, 1);
+            this.StaerkeH.CustomButton.Name = "";
+            this.StaerkeH.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.StaerkeH.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.StaerkeH.CustomButton.TabIndex = 1;
+            this.StaerkeH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.StaerkeH.CustomButton.UseSelectable = true;
+            this.StaerkeH.CustomButton.Visible = false;
+            this.StaerkeH.Lines = new string[0];
+            this.StaerkeH.Location = new System.Drawing.Point(6, 48);
+            this.StaerkeH.MaxLength = 32767;
+            this.StaerkeH.Name = "StaerkeH";
+            this.StaerkeH.PasswordChar = '\0';
+            this.StaerkeH.WaterMark = "Wandstärke vertikal (cm)";
+            this.StaerkeH.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.StaerkeH.SelectedText = "";
+            this.StaerkeH.SelectionLength = 0;
+            this.StaerkeH.SelectionStart = 0;
+            this.StaerkeH.ShortcutsEnabled = true;
+            this.StaerkeH.Size = new System.Drawing.Size(163, 23);
+            this.StaerkeH.TabIndex = 50;
+            this.StaerkeH.UseSelectable = true;
+            this.StaerkeH.WaterMark = "Wandstärke vertikal (cm)";
+            this.StaerkeH.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StaerkeH.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // StaerkeV
+            // 
+            // 
+            // 
+            // 
+            this.StaerkeV.CustomButton.Image = null;
+            this.StaerkeV.CustomButton.Location = new System.Drawing.Point(141, 1);
+            this.StaerkeV.CustomButton.Name = "";
+            this.StaerkeV.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.StaerkeV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.StaerkeV.CustomButton.TabIndex = 1;
+            this.StaerkeV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.StaerkeV.CustomButton.UseSelectable = true;
+            this.StaerkeV.CustomButton.Visible = false;
+            this.StaerkeV.Lines = new string[0];
+            this.StaerkeV.Location = new System.Drawing.Point(6, 19);
+            this.StaerkeV.MaxLength = 32767;
+            this.StaerkeV.Name = "StaerkeV";
+            this.StaerkeV.PasswordChar = '\0';
+            this.StaerkeV.WaterMark = "Wandstärke horizontal (cm)";
+            this.StaerkeV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.StaerkeV.SelectedText = "";
+            this.StaerkeV.SelectionLength = 0;
+            this.StaerkeV.SelectionStart = 0;
+            this.StaerkeV.ShortcutsEnabled = true;
+            this.StaerkeV.Size = new System.Drawing.Size(163, 23);
+            this.StaerkeV.TabIndex = 51;
+            this.StaerkeV.UseSelectable = true;
+            this.StaerkeV.WaterMark = "Wandstärke horizontal (cm)";
+            this.StaerkeV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StaerkeV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = this;
             // 
             // RegalHinzufügen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 446);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBoxWandStaerkeV);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBoxWandStaerkeH);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBoxRegalfachLaenge);
-            this.Controls.Add(this.textBoxRegalfachBreite);
-            this.Controls.Add(this.textBoxRegalfachHoehe);
-            this.Controls.Add(this.textBoxRegalHoehe);
-            this.Controls.Add(this.textBoxRegalLaenge);
-            this.Controls.Add(this.textBoxRegalBreite);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBoxAuswahlLager);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonRegalHinzufuegen);
-            this.Controls.Add(this.textBoxSpalten);
-            this.Controls.Add(this.textBoxZeilen);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxRegalName);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(500, 275);
+            this.Controls.Add(this.FachlaengeTextbox);
+            this.Controls.Add(this.FachbreiteTextbox);
+            this.Controls.Add(this.FachhoeheTextbox);
+            this.Controls.Add(this.RegallaengeTextbox);
+            this.Controls.Add(this.RegalbreiteTextbox);
+            this.Controls.Add(this.RegalhoeheTextbox);
+            this.Controls.Add(this.AbbrechenButton);
+            this.Controls.Add(this.HinzufuegenButton);
+            this.Controls.Add(this.SpaltenTextbox);
+            this.Controls.Add(this.ZeilenTextbox);
+            this.Controls.Add(this.BezeichnungTextbox);
+            this.Controls.Add(this.GroupBox);
+            this.Controls.Add(this.LagerCombobox);
+            this.Controls.Add(this.LagerLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegalHinzufügen";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegalHinzufügen";
-            this.Load += new System.EventHandler(this.RegalHinzufügen_Load);
+            this.Resizable = false;
+            this.Text = "Regal hinzufügen";
+            this.GroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxRegalName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxZeilen;
-        private System.Windows.Forms.TextBox textBoxSpalten;
-        private System.Windows.Forms.Button buttonRegalHinzufuegen;
-        private System.Windows.Forms.Button buttonAbbrechen;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxAuswahlLager;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxRegalBreite;
-        private System.Windows.Forms.TextBox textBoxRegalLaenge;
-        private System.Windows.Forms.TextBox textBoxRegalHoehe;
-        private System.Windows.Forms.TextBox textBoxRegalfachHoehe;
-        private System.Windows.Forms.TextBox textBoxRegalfachBreite;
-        private System.Windows.Forms.TextBox textBoxRegalfachLaenge;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxWandStaerkeH;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxWandStaerkeV;
-        private System.Windows.Forms.Label label21;
+        private MetroFramework.Controls.MetroLabel LagerLabel;
+        private MetroFramework.Controls.MetroComboBox LagerCombobox;
+        private System.Windows.Forms.GroupBox GroupBox;
+        private MetroFramework.Controls.MetroTextBox BezeichnungTextbox;
+        private MetroFramework.Controls.MetroTextBox ZeilenTextbox;
+        private MetroFramework.Controls.MetroTextBox SpaltenTextbox;
+        private MetroFramework.Controls.MetroButton HinzufuegenButton;
+        private MetroFramework.Controls.MetroButton AbbrechenButton;
+        private MetroFramework.Controls.MetroTextBox StaerkeV;
+        private MetroFramework.Controls.MetroTextBox StaerkeH;
+        private MetroFramework.Controls.MetroTextBox RegalhoeheTextbox;
+        private MetroFramework.Controls.MetroTextBox RegalbreiteTextbox;
+        private MetroFramework.Controls.MetroTextBox RegallaengeTextbox;
+        private MetroFramework.Controls.MetroTextBox FachhoeheTextbox;
+        private MetroFramework.Controls.MetroTextBox FachbreiteTextbox;
+        private MetroFramework.Controls.MetroTextBox FachlaengeTextbox;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }

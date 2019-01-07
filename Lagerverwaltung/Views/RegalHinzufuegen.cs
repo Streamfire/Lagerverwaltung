@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class RegalHinzufügen : Form
+    public partial class RegalHinzufügen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.LagerModel> _dictLager;
 
@@ -19,14 +19,14 @@ namespace Lagerverwaltung.Views
         {
             //TODO: Später in der Verwaltung schon kontrollieren, ob überhaupt ein Lager existiert
 
-            comboBoxAuswahlLager.ValueMember = "Lager_ID";
-            comboBoxAuswahlLager.DisplayMember = "Name";
+            LagerCombobox.ValueMember = "Lager_ID";
+            LagerCombobox.DisplayMember = "Name";
 
             _dictLager = DB.SqlStatements.HoleLager();
 
             if (_dictLager.Values.Count > 0)
             {
-                comboBoxAuswahlLager.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
+                LagerCombobox.DataSource = new BindingSource().DataSource = _dictLager.Values.ToArray();
             }
             else
             {
@@ -36,36 +36,36 @@ namespace Lagerverwaltung.Views
             }
         }
 
-        private void ButtonAbbrechen_Click(object sender, EventArgs e)
+        private void AbbrechenButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-		private void ButtonRegalHinzufuegen_Click(object sender, EventArgs e)
+		private void HinzufuegenButton_Click(object sender, EventArgs e)
 		{
-            if (Controller.RegalHinzufuegenController.ValidateData(textBoxRegalName.Text, textBoxZeilen.Text, textBoxSpalten.Text, textBoxRegalHoehe.Text, textBoxRegalBreite.Text,
-                                                                    textBoxRegalLaenge.Text, textBoxRegalfachHoehe.Text, textBoxRegalfachBreite.Text, textBoxRegalfachLaenge.Text,
-                                                                    textBoxWandStaerkeH.Text, textBoxWandStaerkeV.Text))
+            if (Controller.RegalHinzufuegenController.ValidateData(BezeichnungTextbox.Text, ZeilenTextbox.Text, SpaltenTextbox.Text, RegalhoeheTextbox.Text, RegalbreiteTextbox.Text,
+                                                                    RegallaengeTextbox.Text, FachhoeheTextbox.Text, FachbreiteTextbox.Text, FachlaengeTextbox.Text,
+                                                                    StaerkeH.Text, StaerkeV.Text))
             //Validierung erfolgreich
             {
                 long regalID;
-                string regalname = textBoxRegalName.Text;
-                short spalten = Convert.ToInt16(textBoxSpalten.Text);
-                short zeilen = Convert.ToInt16(textBoxZeilen.Text);
-                float regalH = Convert.ToSingle(textBoxRegalHoehe.Text);
-                float regalB = Convert.ToSingle(textBoxRegalBreite.Text);
-                float regalL = Convert.ToSingle(textBoxRegalLaenge.Text);
-                float wandH = Convert.ToSingle(textBoxWandStaerkeH.Text);
-                float wandV = Convert.ToSingle(textBoxWandStaerkeV.Text);
-                float fachH = Convert.ToSingle(textBoxRegalfachHoehe.Text);
-                float fachB = Convert.ToSingle(textBoxRegalfachBreite.Text);
-                float fachL = Convert.ToSingle(textBoxRegalfachLaenge.Text);
+                string regalname = BezeichnungTextbox.Text;
+                short spalten = Convert.ToInt16(SpaltenTextbox.Text);
+                short zeilen = Convert.ToInt16(ZeilenTextbox.Text);
+                float regalH = Convert.ToSingle(RegalhoeheTextbox.Text);
+                float regalB = Convert.ToSingle(RegalbreiteTextbox.Text);
+                float regalL = Convert.ToSingle(RegallaengeTextbox.Text);
+                float wandH = Convert.ToSingle(StaerkeH.Text);
+                float wandV = Convert.ToSingle(StaerkeV.Text);
+                float fachH = Convert.ToSingle(FachhoeheTextbox.Text);
+                float fachB = Convert.ToSingle(FachbreiteTextbox.Text);
+                float fachL = Convert.ToSingle(FachlaengeTextbox.Text);
 
 
 
                 if (Controller.RegalHinzufuegenController.ValidateGroesse(zeilen, spalten, regalH, regalB, regalL, fachH, fachB, fachL, wandH, wandV))
                 {
-                    regalID = DB.SqlStatements.ErstelleRegal(regalname, ((LagerModel)comboBoxAuswahlLager.SelectedItem).Lager_ID, zeilen, spalten, regalH, regalB, regalL, wandH, wandV);
+                    regalID = DB.SqlStatements.ErstelleRegal(regalname, ((LagerModel)LagerCombobox.SelectedItem).Lager_ID, zeilen, spalten, regalH, regalB, regalL, wandH, wandV);
 
                     if(regalID > 0)
                     //Datensatz wurde erfolgreich in die DB gespeichert
@@ -80,9 +80,9 @@ namespace Lagerverwaltung.Views
                                 DB.SqlStatements.ErstelleRegalfach(String.Format("{0}-{1}-{2}", regalname, z, s),
                                                                     regalID,
                                                                     "",
-                                                                    Convert.ToSingle(textBoxRegalfachHoehe.Text),
-                                                                    Convert.ToSingle(textBoxRegalfachBreite.Text),
-                                                                    Convert.ToSingle(textBoxRegalfachLaenge.Text));
+                                                                    Convert.ToSingle(FachhoeheTextbox.Text),
+                                                                    Convert.ToSingle(FachbreiteTextbox.Text),
+                                                                    Convert.ToSingle(FachlaengeTextbox.Text));
                             }
                         }
 
