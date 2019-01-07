@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    partial class AboutBox : Form
+    partial class AboutBox : MetroFramework.Forms.MetroForm
     {
         public AboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("Info über {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.ProductLabel.Text = AssemblyProduct;
+            this.VersionLabel.Text = String.Format("Version {0}", AssemblyVersion);
+            this.CopyrightLabel.Text = AssemblyCopyright;
+            this.CompanynameLabel.Text = AssemblyCompany;
+            this.DescriptionTextbox.Text = AssemblyDescription;
         }
 
         #region Assemblyattributaccessoren
