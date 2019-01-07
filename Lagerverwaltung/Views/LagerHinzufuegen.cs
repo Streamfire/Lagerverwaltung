@@ -10,8 +10,6 @@ namespace Lagerverwaltung.Views
     {
         private Dictionary<long, Model.LagertypModel> _lagertypDict;
 
-        private BindingSource source = new BindingSource();
-
         public LagerHinzufuegen()
         {
             InitializeComponent();

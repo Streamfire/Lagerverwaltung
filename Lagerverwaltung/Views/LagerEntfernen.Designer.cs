@@ -64,7 +64,7 @@
             this.HinzufuegenButton.Name = "HinzufuegenButton";
             this.HinzufuegenButton.Size = new System.Drawing.Size(75, 23);
             this.HinzufuegenButton.TabIndex = 2;
-            this.HinzufuegenButton.Text = "Hinzufügen";
+            this.HinzufuegenButton.Text = "Entfernen";
             this.HinzufuegenButton.UseSelectable = true;
             this.HinzufuegenButton.Click += new System.EventHandler(this.HinzufuegenButton_Click);
             // 
