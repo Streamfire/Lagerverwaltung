@@ -9,6 +9,17 @@ namespace Lagerverwaltung.Views
 		{
             InitializeComponent();
 
+            PaketHinzufuegenButton.Visible = false;
+            PaketEntfernenButton.Visible = false;
+            PaketUmlagernButton.Visible = false;
+            LagerOptimierenButton.Visible = false;
+
+
+            LagerHinzufuegenButton.Location = RegalHinzufuegenButton.Location;
+            LagerEntfernen.Location = RegalAnpassenButton.Location;
+            RegalHinzufuegenButton.Location = PaketHinzufuegenButton.Location;
+            RegalAnpassenButton.Location = PaketEntfernenButton.Location;
+
             // Muss unbedingt geändert werden!
             DB.LagerSQL.HoleAlleLager();
             DB.RegalSQL.HoleAlleRegale();
@@ -21,25 +32,27 @@ namespace Lagerverwaltung.Views
 
         private void PaketHinzufuegenButton_Click(object sender, EventArgs e)
         {
+            /*
             using (var pakethinzufuegen = new PaketHinzufuegen())
             {
                 pakethinzufuegen.Owner = this;
                 pakethinzufuegen.ShowDialog();
-            }
+            }*/
         }
 
         private void PaketEntfernenButton_Click(object sender, EventArgs e)
         {
+            /*
             using (var paketentfernen = new PaketEntfernen())
             {
                 paketentfernen.Owner = this;
                 paketentfernen.ShowDialog();
-            }
+            }*/
         }
 
         private void PaketUmlagernButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void RegalHinzufuegenButton_Click(object sender, EventArgs e)
@@ -53,7 +66,7 @@ namespace Lagerverwaltung.Views
 
         private void LagerOptimierenButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void LagerHinzufuegenButton_Click(object sender, EventArgs e)
