@@ -32,7 +32,28 @@ namespace Lagerverwaltung.Views
 
         private void NewUserButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string vorname = VornameTextbox.Text;
+            string nachname = NachnameTextbox.Text;
+            string username = UsernameTextbox.Text;
+            string password = PasswordTextbox.Text;
+            string confirmpw = ConfirmPasswordTextbox.Text;
+
+            if(string.IsNullOrWhiteSpace(vorname) || string.IsNullOrWhiteSpace(nachname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmpw))
+            {
+                MetroFramework.MetroMessageBox.Show(this,"Bitte alle Felder ausfüllen","Ungültige Eingaben!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(password != confirmpw)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Passwörter ungleich!", "Ungültige Eingaben!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string salt = Controller.AuthenticationController.Create_Salt(10);
+            string newpw = Controller.AuthenticationController.GeneratePasswordHash(password,salt);
+
+            DB.SqlStatements.ErstelleUser(vorname,nachname,username,newpw,salt);
         }
     }
 }

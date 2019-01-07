@@ -28,7 +28,7 @@ namespace Lagerverwaltung.DB
 
         public static void ErstelleUser(string vorname, string nachname, string username, string password, string salt)
         {
-            var query = queryfactory.Query("user").Insert(new { vorname, nachname, username, password, salt });
+            var query = queryfactory.Query("user").Insert(new { vorname, nachname, username, rollen_id=-1, password, salt });
             OnDatabaseChanged(ModeltypEnum.UserModel);
         }
 
