@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class ProduktHinzufuegen : Form
+    public partial class ProduktHinzufuegen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.ArtikeltypModel> _artikeltypDict;
 
