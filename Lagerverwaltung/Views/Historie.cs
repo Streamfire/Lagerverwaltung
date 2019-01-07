@@ -8,8 +8,8 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class Historie : Form
-	{
+    public partial class Historie : MetroFramework.Forms.MetroForm
+    {
         private PaginationResult<HistorieModel> paging;
 
         private Dictionary<long, HistorieModel> _dict;
@@ -17,66 +17,72 @@ namespace Lagerverwaltung.Views
         private BindingSource source;
 
         public Historie()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
             DB.SqlStatements.DatabaseChanged += DataChanged;
-            textBoxSearch.Enabled = false;
-            textBoxSearch.Text = "Suche deaktiviert, da Probleme wenn TextChanged-Event zu schnell kommt!";
+            SucheTextBox.Enabled = false;
+            SucheTextBox.Text = "Suche deaktiviert, da Probleme wenn TextChanged-Event zu schnell kommt!";
             LadeDatenAsync();
+        }
+
+        private void SchließenButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void DataChanged(object sender, EventArgs e)
         {
             var type = (DB.SqlStatements.ModeltypEnum)sender;
-            if(type==DB.SqlStatements.ModeltypEnum.HistorieModel)
+            if (type == DB.SqlStatements.ModeltypEnum.HistorieModel)
             {
-                button2.Enabled = true;
+                AktualisierenButton.Enabled = true;
             }
         }
 
-        public async void LadeDatenAsync()
+        private async void LadeDatenAsync()
         {
             paging = await Task.Run(() => DB.SqlStatements.HoleHistorieSeite());
-            _dict = paging.List.ToDictionary(row=>row.Log_ID,row=>row);
+            _dict = paging.List.ToDictionary(row => row.Log_ID, row => row);
             UpdateDataGridView();
         }
 
         private void UpdateDataGridView()//List<HistorieModel> list = null)
         {
-            if(_dict.Count == 0)
+            if (_dict.Count == 0)
             {
-                label1.Text = "Keine Daten vorhanden!";
+                LadeDatenLabel.Text = "Keine Daten vorhanden!";
+                LadeDatenProgressspinner.Hide();
                 return;
             }
 
-            source = new BindingSource{ DataSource = _dict.Values };
-            dataGridView1.DataSource = source;
+            source = new BindingSource { DataSource = _dict.Values };
+            HistorieGrid.DataSource = source;
 
-            if(paging.HasNext)
+            if (paging.HasNext)
             {
                 paging = paging.Next();
                 foreach (var p in paging.List)
                 {
                     _dict.Add(p.Log_ID, p);
                 }
-                button1.Enabled = true;
+                LademehrButton.Enabled = true;
             }
-            label1.Hide();
+            PanelHelper.Hide();
         }
 
-        private void Button1_Click(object sender, System.EventArgs e)
+        private void AktualisierenButton_Click(object sender, EventArgs e)
         {
-            button1.Enabled = false;
-            UpdateDataGridView();
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            button2.Enabled = false;
+            AktualisierenButton.Enabled = false;
             LadeDatenAsync();
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void LademehrButton_Click(object sender, EventArgs e)
+        {
+            LademehrButton.Enabled = false;
+            UpdateDataGridView();
+        }
+
+        private void CustomCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             // lade erneut, aber nur mich
             throw new NotImplementedException();
