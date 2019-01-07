@@ -28,157 +28,199 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxRegal = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxLager = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxZeilen = new System.Windows.Forms.TextBox();
-            this.textBoxSpalten = new System.Windows.Forms.TextBox();
-            this.buttonÄndern = new System.Windows.Forms.Button();
-            this.buttonEntfernen = new System.Windows.Forms.Button();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.RegalLabel = new MetroFramework.Controls.MetroLabel();
+            this.LagerLabel = new MetroFramework.Controls.MetroLabel();
+            this.ZeilenLabel = new MetroFramework.Controls.MetroLabel();
+            this.SpaltenLabel = new MetroFramework.Controls.MetroLabel();
+            this.AendernButton = new MetroFramework.Controls.MetroButton();
+            this.EntfernenButton = new MetroFramework.Controls.MetroButton();
+            this.AbbrechenButton = new MetroFramework.Controls.MetroButton();
+            this.LagerCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.RegalCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.SpalteTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.ZeilenTextbox = new MetroFramework.Controls.MetroTextBox();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // RegalLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Regal ändern oder entfernen";
+            this.RegalLabel.AutoSize = true;
+            this.RegalLabel.Location = new System.Drawing.Point(24, 107);
+            this.RegalLabel.Name = "RegalLabel";
+            this.RegalLabel.Size = new System.Drawing.Size(45, 19);
+            this.RegalLabel.TabIndex = 12;
+            this.RegalLabel.Text = "Regal:";
             // 
-            // label2
+            // LagerLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Regal:";
+            this.LagerLabel.AutoSize = true;
+            this.LagerLabel.Location = new System.Drawing.Point(23, 72);
+            this.LagerLabel.Name = "LagerLabel";
+            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
+            this.LagerLabel.TabIndex = 13;
+            this.LagerLabel.Text = "Lager:";
             // 
-            // comboBoxRegal
+            // ZeilenLabel
             // 
-            this.comboBoxRegal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxRegal.FormattingEnabled = true;
-            this.comboBoxRegal.Location = new System.Drawing.Point(113, 78);
-            this.comboBoxRegal.Name = "comboBoxRegal";
-            this.comboBoxRegal.Size = new System.Drawing.Size(236, 26);
-            this.comboBoxRegal.TabIndex = 2;
+            this.ZeilenLabel.AutoSize = true;
+            this.ZeilenLabel.Location = new System.Drawing.Point(77, 142);
+            this.ZeilenLabel.Name = "ZeilenLabel";
+            this.ZeilenLabel.Size = new System.Drawing.Size(47, 19);
+            this.ZeilenLabel.TabIndex = 14;
+            this.ZeilenLabel.Text = "Zeilen:";
             // 
-            // label3
+            // SpaltenLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Lager:";
+            this.SpaltenLabel.AutoSize = true;
+            this.SpaltenLabel.Location = new System.Drawing.Point(69, 171);
+            this.SpaltenLabel.Name = "SpaltenLabel";
+            this.SpaltenLabel.Size = new System.Drawing.Size(55, 19);
+            this.SpaltenLabel.TabIndex = 15;
+            this.SpaltenLabel.Text = "Spalten:";
             // 
-            // comboBoxLager
+            // AendernButton
             // 
-            this.comboBoxLager.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxLager.FormattingEnabled = true;
-            this.comboBoxLager.Location = new System.Drawing.Point(113, 121);
-            this.comboBoxLager.Name = "comboBoxLager";
-            this.comboBoxLager.Size = new System.Drawing.Size(236, 26);
-            this.comboBoxLager.TabIndex = 4;
+            this.AendernButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AendernButton.Location = new System.Drawing.Point(90, 204);
+            this.AendernButton.Name = "AendernButton";
+            this.AendernButton.Size = new System.Drawing.Size(75, 23);
+            this.AendernButton.TabIndex = 16;
+            this.AendernButton.Text = "Ändern";
+            this.AendernButton.UseSelectable = true;
+            this.AendernButton.Click += new System.EventHandler(this.AendernButton_Click);
             // 
-            // label4
+            // EntfernenButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Zeilen:";
+            this.EntfernenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EntfernenButton.Location = new System.Drawing.Point(171, 204);
+            this.EntfernenButton.Name = "EntfernenButton";
+            this.EntfernenButton.Size = new System.Drawing.Size(75, 23);
+            this.EntfernenButton.TabIndex = 17;
+            this.EntfernenButton.Text = "Entfernen";
+            this.EntfernenButton.UseSelectable = true;
+            this.EntfernenButton.Click += new System.EventHandler(this.EntfernenButton_Click);
             // 
-            // label5
+            // AbbrechenButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 203);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 18);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Spalten:";
+            this.AbbrechenButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AbbrechenButton.Location = new System.Drawing.Point(252, 204);
+            this.AbbrechenButton.Name = "AbbrechenButton";
+            this.AbbrechenButton.Size = new System.Drawing.Size(75, 23);
+            this.AbbrechenButton.TabIndex = 18;
+            this.AbbrechenButton.Text = "Abbrechen";
+            this.AbbrechenButton.UseSelectable = true;
+            this.AbbrechenButton.Click += new System.EventHandler(this.AbbrechenButton_Click);
             // 
-            // textBoxZeilen
+            // LagerCombobox
             // 
-            this.textBoxZeilen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZeilen.Location = new System.Drawing.Point(113, 163);
-            this.textBoxZeilen.Name = "textBoxZeilen";
-            this.textBoxZeilen.Size = new System.Drawing.Size(61, 24);
-            this.textBoxZeilen.TabIndex = 7;
+            this.LagerCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LagerCombobox.FormattingEnabled = true;
+            this.LagerCombobox.ItemHeight = 23;
+            this.LagerCombobox.Location = new System.Drawing.Point(75, 72);
+            this.LagerCombobox.Name = "LagerCombobox";
+            this.LagerCombobox.Size = new System.Drawing.Size(252, 29);
+            this.LagerCombobox.TabIndex = 19;
+            this.LagerCombobox.UseSelectable = true;
             // 
-            // textBoxSpalten
+            // RegalCombobox
             // 
-            this.textBoxSpalten.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSpalten.Location = new System.Drawing.Point(113, 200);
-            this.textBoxSpalten.Name = "textBoxSpalten";
-            this.textBoxSpalten.Size = new System.Drawing.Size(61, 24);
-            this.textBoxSpalten.TabIndex = 8;
+            this.RegalCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegalCombobox.FormattingEnabled = true;
+            this.RegalCombobox.ItemHeight = 23;
+            this.RegalCombobox.Location = new System.Drawing.Point(75, 107);
+            this.RegalCombobox.Name = "RegalCombobox";
+            this.RegalCombobox.Size = new System.Drawing.Size(252, 29);
+            this.RegalCombobox.TabIndex = 20;
+            this.RegalCombobox.UseSelectable = true;
             // 
-            // buttonÄndern
+            // SpalteTextbox
             // 
-            this.buttonÄndern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonÄndern.Location = new System.Drawing.Point(97, 261);
-            this.buttonÄndern.Name = "buttonÄndern";
-            this.buttonÄndern.Size = new System.Drawing.Size(96, 35);
-            this.buttonÄndern.TabIndex = 9;
-            this.buttonÄndern.Text = "Ändern";
-            this.buttonÄndern.UseVisualStyleBackColor = true;
-            this.buttonÄndern.Click += new System.EventHandler(this.ButtonAendern_Click);
             // 
-            // buttonEntfernen
             // 
-            this.buttonEntfernen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntfernen.Location = new System.Drawing.Point(209, 261);
-            this.buttonEntfernen.Name = "buttonEntfernen";
-            this.buttonEntfernen.Size = new System.Drawing.Size(96, 35);
-            this.buttonEntfernen.TabIndex = 10;
-            this.buttonEntfernen.Text = "Entfernen";
-            this.buttonEntfernen.UseVisualStyleBackColor = true;
-            this.buttonEntfernen.Click += new System.EventHandler(this.ButtonEntfernen_Click);
             // 
-            // buttonAbbrechen
+            this.SpalteTextbox.CustomButton.Image = null;
+            this.SpalteTextbox.CustomButton.Location = new System.Drawing.Point(28, 1);
+            this.SpalteTextbox.CustomButton.Name = "";
+            this.SpalteTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SpalteTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SpalteTextbox.CustomButton.TabIndex = 1;
+            this.SpalteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SpalteTextbox.CustomButton.UseSelectable = true;
+            this.SpalteTextbox.CustomButton.Visible = false;
+            this.SpalteTextbox.Lines = new string[0];
+            this.SpalteTextbox.Location = new System.Drawing.Point(130, 171);
+            this.SpalteTextbox.MaxLength = 32767;
+            this.SpalteTextbox.Name = "SpalteTextbox";
+            this.SpalteTextbox.PasswordChar = '\0';
+            this.SpalteTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SpalteTextbox.SelectedText = "";
+            this.SpalteTextbox.SelectionLength = 0;
+            this.SpalteTextbox.SelectionStart = 0;
+            this.SpalteTextbox.ShortcutsEnabled = true;
+            this.SpalteTextbox.Size = new System.Drawing.Size(50, 23);
+            this.SpalteTextbox.TabIndex = 21;
+            this.SpalteTextbox.UseSelectable = true;
+            this.SpalteTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SpalteTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(322, 261);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(96, 35);
-            this.buttonAbbrechen.TabIndex = 11;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
+            // ZeilenTextbox
+            // 
+            // 
+            // 
+            // 
+            this.ZeilenTextbox.CustomButton.Image = null;
+            this.ZeilenTextbox.CustomButton.Location = new System.Drawing.Point(28, 1);
+            this.ZeilenTextbox.CustomButton.Name = "";
+            this.ZeilenTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ZeilenTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ZeilenTextbox.CustomButton.TabIndex = 1;
+            this.ZeilenTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ZeilenTextbox.CustomButton.UseSelectable = true;
+            this.ZeilenTextbox.CustomButton.Visible = false;
+            this.ZeilenTextbox.Lines = new string[0];
+            this.ZeilenTextbox.Location = new System.Drawing.Point(130, 142);
+            this.ZeilenTextbox.MaxLength = 32767;
+            this.ZeilenTextbox.Name = "ZeilenTextbox";
+            this.ZeilenTextbox.PasswordChar = '\0';
+            this.ZeilenTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ZeilenTextbox.SelectedText = "";
+            this.ZeilenTextbox.SelectionLength = 0;
+            this.ZeilenTextbox.SelectionStart = 0;
+            this.ZeilenTextbox.ShortcutsEnabled = true;
+            this.ZeilenTextbox.Size = new System.Drawing.Size(50, 23);
+            this.ZeilenTextbox.TabIndex = 22;
+            this.ZeilenTextbox.UseSelectable = true;
+            this.ZeilenTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ZeilenTextbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = this;
             // 
             // RegalAendern_Entfernen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 326);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonEntfernen);
-            this.Controls.Add(this.buttonÄndern);
-            this.Controls.Add(this.textBoxSpalten);
-            this.Controls.Add(this.textBoxZeilen);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBoxLager);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBoxRegal);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(350, 250);
+            this.Controls.Add(this.ZeilenTextbox);
+            this.Controls.Add(this.SpalteTextbox);
+            this.Controls.Add(this.RegalCombobox);
+            this.Controls.Add(this.LagerCombobox);
+            this.Controls.Add(this.AbbrechenButton);
+            this.Controls.Add(this.EntfernenButton);
+            this.Controls.Add(this.AendernButton);
+            this.Controls.Add(this.SpaltenLabel);
+            this.Controls.Add(this.ZeilenLabel);
+            this.Controls.Add(this.LagerLabel);
+            this.Controls.Add(this.RegalLabel);
+            this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "RegalAendern_Entfernen";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegalAendern_Entfernen";
+            this.Resizable = false;
+            this.Text = "Regal ändern oder entfernen";
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,17 +228,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxRegal;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxLager;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxZeilen;
-        private System.Windows.Forms.TextBox textBoxSpalten;
-        private System.Windows.Forms.Button buttonÄndern;
-        private System.Windows.Forms.Button buttonEntfernen;
-        private System.Windows.Forms.Button buttonAbbrechen;
+        private MetroFramework.Controls.MetroLabel RegalLabel;
+        private MetroFramework.Controls.MetroLabel LagerLabel;
+        private MetroFramework.Controls.MetroLabel ZeilenLabel;
+        private MetroFramework.Controls.MetroLabel SpaltenLabel;
+        private MetroFramework.Controls.MetroButton AendernButton;
+        private MetroFramework.Controls.MetroButton EntfernenButton;
+        private MetroFramework.Controls.MetroButton AbbrechenButton;
+        private MetroFramework.Controls.MetroComboBox LagerCombobox;
+        private MetroFramework.Controls.MetroComboBox RegalCombobox;
+        private MetroFramework.Controls.MetroTextBox SpalteTextbox;
+        private MetroFramework.Controls.MetroTextBox ZeilenTextbox;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
