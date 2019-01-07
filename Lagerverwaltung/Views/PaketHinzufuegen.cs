@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class PaketHinzufuegen : Form
+    public partial class PaketHinzufuegen : MetroFramework.Forms.MetroForm
     {
         public PaketHinzufuegen()
         {
@@ -15,7 +15,56 @@ namespace Lagerverwaltung.Views
         public static Produktliste Produktliste { get; set; } // entfernen und Abhängigkeiten ändern
         public long RegalfachID { get; set; } = -1;
 
-        private void ButtonProduktAuswaehlen_Click(object sender, EventArgs e)
+        private void PaketHinzufuegenButton_Click(object sender, EventArgs e)
+        {
+            if (RegalfachID <= 0)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Es konnte keine Regalfach-ID gefunden werden!" + RegalfachID, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
+
+            if (ProduktID < 0)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Bitte wählen Sie ein Produkt aus!" + RegalfachID, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            if (Controller.PaketHinzufuegenController.ValidateData(BezeichungTextbox.Text, GrundTextbox.Text, HaltbarkeitDatetime.Value, HoeheTextbox.Text, BreiteTextbox.Text, LaengeTextbox.Text))
+            //Validierung erfolgreich
+            {
+
+                if (Owner.GetType().Equals(typeof(Regaleinsicht)))
+                {
+
+                    DB.SqlStatements.ErstellePaket(BezeichungTextbox.Text, RegalfachID, ProduktID, Convert.ToInt16(AnzahlTextbox.Text), HaltbarkeitDatetime.Value, GrundTextbox.Text, Convert.ToInt32(HoeheTextbox.Text), Convert.ToInt32(BreiteTextbox.Text), Convert.ToInt32(LaengeTextbox.Text));
+                    Close();
+                }
+                else if (Owner.GetType().Equals(typeof(Verwaltung)))
+                {
+                    var a = (ushort)Views.Dashboard.Verwaltung.getLastFocusedPanel().Tag;
+
+                    DB.PaketSQL.ErstellePaket(BezeichungTextbox.Text, a, Model.Produkt.GetProdukt(AuswahlLabel.Text).ProduktID, Convert.ToInt32(AnzahlTextbox.Text), HaltbarkeitDatetime.Value, GrundTextbox.Text, Convert.ToInt32(HoeheTextbox.Text), Convert.ToInt32(BreiteTextbox.Text), Convert.ToInt32(LaengeTextbox.Text));
+                    Close();
+                }
+                else
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Es konnte kein Hauptfenster gefunden werden. Bitte starten Sie das Programm erneut", "Fehler im Hauptfenster", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            //Validierung nicht erfolgreich
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Bitte Überprüfen sie das eingegebene Format der Daten", "Fehler beim Hinzufügen des Paketes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void AbbrechenButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void ProduktlisteButton_Click(object sender, EventArgs e)
         {
             using (var produktliste = new Produktliste())
             {
@@ -23,64 +72,13 @@ namespace Lagerverwaltung.Views
                 produktliste.ShowDialog();
             }
         }
-        
-		private void OnClose(object sender, FormClosedEventArgs e)
-		{
-            if(Auswahl.Length != 0)
-            {
-                labelProduktAusgewählt.Text = Auswahl;
-            }
-		}
-        
-		private void ButtonAbbrechen_Click(object sender, EventArgs e)
+
+        private void OnClose(object sender, FormClosedEventArgs e)
         {
-            Close();
-        }
-
-        private void ButtonPaketHinzufuegen_Click(object sender, EventArgs e)
-        {
-            if (RegalfachID <= 0)
+            if (Auswahl.Length != 0)
             {
-                MessageBox.Show("Es konnte keine Regalfach-ID gefunden werden!" + RegalfachID, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
-                return;
+                AuswahlLabel.Text = Auswahl;
             }
-
-            if(ProduktID < 0)
-            {
-                MessageBox.Show("Bitte wählen Sie ein Produkt aus!" + RegalfachID, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            if (Controller.PaketHinzufuegenController.ValidateData(textBoxPaketbezeichnung.Text, textBoxAnschaffungsgrund.Text, dateTimePickerHaltbarkeit.Value, textBoxHoehe.Text, textBoxBreite.Text, textBoxLaenge.Text))
-            //Validierung erfolgreich
-            {
-
-                if (Owner.GetType().Equals(typeof(Regaleinsicht)))
-                {
-
-                    DB.SqlStatements.ErstellePaket(textBoxPaketbezeichnung.Text, RegalfachID, ProduktID, Convert.ToInt16(AnzahlBox.Text), dateTimePickerHaltbarkeit.Value, textBoxAnschaffungsgrund.Text, Convert.ToInt32(textBoxHoehe.Text), Convert.ToInt32(textBoxBreite.Text), Convert.ToInt32(textBoxLaenge.Text));
-                    Close();
-                }
-                else if (Owner.GetType().Equals(typeof(Verwaltung)))
-                {
-                    var a = (ushort)Views.Dashboard.Verwaltung.getLastFocusedPanel().Tag;
-
-                    DB.PaketSQL.ErstellePaket(textBoxPaketbezeichnung.Text, a, Model.Produkt.GetProdukt(labelProduktAusgewählt.Text).ProduktID, Convert.ToInt32(AnzahlBox.Text), dateTimePickerHaltbarkeit.Value, textBoxAnschaffungsgrund.Text, Convert.ToInt32(textBoxHoehe.Text), Convert.ToInt32(textBoxBreite.Text), Convert.ToInt32(textBoxLaenge.Text));
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Es konnte kein Hauptfenster gefunden werden. Bitte starten Sie das Programm erneut", "Fehler im Hauptfenster", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            //Validierung nicht erfolgreich
-            else
-            {
-                MessageBox.Show("Bitte Überprüfen sie das eingegebene Format der Daten", "Fehler beim Hinzufügen des Paketes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
         }
     }
-    
 }
