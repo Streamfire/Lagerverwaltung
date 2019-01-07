@@ -784,7 +784,7 @@
             this.buttonZurücksetzen.TabIndex = 29;
             this.buttonZurücksetzen.Text = "Zurücksetzen";
             this.buttonZurücksetzen.UseVisualStyleBackColor = true;
-            this.buttonZurücksetzen.Click += new System.EventHandler(this.buttonZurücksetzen_Click);
+            this.buttonZurücksetzen.Click += new System.EventHandler(this.ButtonZurücksetzen_Click);
             // 
             // textLagerName
             // 
@@ -813,7 +813,7 @@
             this.checkKompakt.TabIndex = 30;
             this.checkKompakt.Text = "Kompakte Ansicht";
             this.checkKompakt.UseVisualStyleBackColor = true;
-            this.checkKompakt.CheckedChanged += new System.EventHandler(this.checkKompakt_CheckedChanged);
+            this.checkKompakt.CheckedChanged += new System.EventHandler(this.CheckKompakt_CheckedChanged);
             // 
             // buttonProduktliste
             // 
@@ -824,7 +824,7 @@
             this.buttonProduktliste.TabIndex = 59;
             this.buttonProduktliste.Text = "Produktliste";
             this.buttonProduktliste.UseVisualStyleBackColor = true;
-            this.buttonProduktliste.Click += new System.EventHandler(this.buttonProduktliste_Click);
+            this.buttonProduktliste.Click += new System.EventHandler(this.ButtonProduktliste_Click);
             // 
             // Suche
             // 
