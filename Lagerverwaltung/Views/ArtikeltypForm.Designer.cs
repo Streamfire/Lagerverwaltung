@@ -97,9 +97,9 @@
             // 
             // 
             this.metroTextBoxLagername.CustomButton.Image = null;
-            this.metroTextBoxLagername.CustomButton.Location = new System.Drawing.Point(226, 1);
+            this.metroTextBoxLagername.CustomButton.Location = new System.Drawing.Point(223, 1);
             this.metroTextBoxLagername.CustomButton.Name = "";
-            this.metroTextBoxLagername.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxLagername.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBoxLagername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxLagername.CustomButton.TabIndex = 1;
             this.metroTextBoxLagername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -128,9 +128,9 @@
             // 
             // 
             this.metroTextBoxArtikelID.CustomButton.Image = null;
-            this.metroTextBoxArtikelID.CustomButton.Location = new System.Drawing.Point(226, 1);
+            this.metroTextBoxArtikelID.CustomButton.Location = new System.Drawing.Point(223, 1);
             this.metroTextBoxArtikelID.CustomButton.Name = "";
-            this.metroTextBoxArtikelID.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxArtikelID.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBoxArtikelID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxArtikelID.CustomButton.TabIndex = 1;
             this.metroTextBoxArtikelID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -180,6 +180,7 @@
             this.metroButtonOkay.TabIndex = 21;
             this.metroButtonOkay.Text = "Okay";
             this.metroButtonOkay.UseSelectable = true;
+            this.metroButtonOkay.Click += new System.EventHandler(this.MetroButtonOkay_Click);
             // 
             // metroButtonAbbrechen
             // 
@@ -190,7 +191,7 @@
             this.metroButtonAbbrechen.TabIndex = 22;
             this.metroButtonAbbrechen.Text = "Abbrechen";
             this.metroButtonAbbrechen.UseSelectable = true;
-            this.metroButtonAbbrechen.Click += new System.EventHandler(this.metroButtonAbbrechen_Click);
+            this.metroButtonAbbrechen.Click += new System.EventHandler(this.MetroButtonAbbrechen_Click);
             // 
             // ArtikeltypForm
             // 

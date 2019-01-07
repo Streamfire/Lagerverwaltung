@@ -17,12 +17,12 @@ namespace Lagerverwaltung.Views
             InitializeComponent();
         }
 
-        private void metroButtonOkay_Click(object sender, EventArgs e)
+        private void MetroButtonOkay_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void metroButtonAbbrechen_Click(object sender, EventArgs e)
+        private void MetroButtonAbbrechen_Click(object sender, EventArgs e)
         {
             Close();
         

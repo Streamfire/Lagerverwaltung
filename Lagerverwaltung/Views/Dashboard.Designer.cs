@@ -33,6 +33,8 @@
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lagertypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regaltypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nutzerHinzufügenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,8 +44,6 @@
             this.RegaleinsichtKachel = new MetroFramework.Controls.MetroTile();
             this.HistorieKachel = new MetroFramework.Controls.MetroTile();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.lagertypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.regaltypToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.BeendenToolStripMenuItem_Click);
             // 
@@ -86,6 +86,20 @@
             this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
             // 
+            // lagertypToolStripMenuItem
+            // 
+            this.lagertypToolStripMenuItem.Name = "lagertypToolStripMenuItem";
+            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lagertypToolStripMenuItem.Text = "Lagertyp verwalten";
+            this.lagertypToolStripMenuItem.Click += new System.EventHandler(this.LagertypToolStripMenuItem_Click);
+            // 
+            // regaltypToolStripMenuItem
+            // 
+            this.regaltypToolStripMenuItem.Name = "regaltypToolStripMenuItem";
+            this.regaltypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.regaltypToolStripMenuItem.Text = "Regaltyp verwalten";
+            this.regaltypToolStripMenuItem.Click += new System.EventHandler(this.RegaltypToolStripMenuItem_Click);
+            // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -97,7 +111,7 @@
             // nutzerHinzufügenToolStripMenuItem
             // 
             this.nutzerHinzufügenToolStripMenuItem.Name = "nutzerHinzufügenToolStripMenuItem";
-            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.nutzerHinzufügenToolStripMenuItem.Text = "Nutzer hinzufügen";
             this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.NutzerHinzufügenToolStripMenuItem_Click);
             // 
@@ -112,7 +126,7 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.InfoToolStripMenuItem_Click);
             // 
@@ -179,18 +193,6 @@
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = this;
-            // 
-            // lagertypToolStripMenuItem
-            // 
-            this.lagertypToolStripMenuItem.Name = "lagertypToolStripMenuItem";
-            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lagertypToolStripMenuItem.Text = "Lagertyp";
-            // 
-            // regaltypToolStripMenuItem
-            // 
-            this.regaltypToolStripMenuItem.Name = "regaltypToolStripMenuItem";
-            this.regaltypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.regaltypToolStripMenuItem.Text = "Regaltyp";
             // 
             // Dashboard
             // 

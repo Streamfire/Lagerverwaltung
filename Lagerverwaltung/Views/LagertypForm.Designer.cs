@@ -183,7 +183,7 @@
             this.metroButtonAbbrechen.TabIndex = 30;
             this.metroButtonAbbrechen.Text = "Abbrechen";
             this.metroButtonAbbrechen.UseSelectable = true;
-            this.metroButtonAbbrechen.Click += new System.EventHandler(this.metroButtonAbbrechen_Click);
+            this.metroButtonAbbrechen.Click += new System.EventHandler(this.MetroButtonAbbrechen_Click);
             // 
             // metroButtonOkay
             // 
@@ -194,7 +194,7 @@
             this.metroButtonOkay.TabIndex = 31;
             this.metroButtonOkay.Text = "Okay";
             this.metroButtonOkay.UseSelectable = true;
-            this.metroButtonOkay.Click += new System.EventHandler(this.metroButtonOkay_Click);
+            this.metroButtonOkay.Click += new System.EventHandler(this.MetroButtonOkay_Click);
             // 
             // LagertypForm
             // 
