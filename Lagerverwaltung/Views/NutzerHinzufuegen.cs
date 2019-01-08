@@ -38,12 +38,6 @@ namespace Lagerverwaltung.Views
             string password = PasswordTextbox.Text;
             string confirmpw = ConfirmPasswordTextbox.Text;
 
-            if (!Controller.AuthenticationController.Adminuser)
-            {
-                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(vorname) || string.IsNullOrWhiteSpace(nachname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmpw))
             {
                 MetroFramework.MetroMessageBox.Show(this,"Bitte alle Felder ausfüllen","Ungültige Eingaben!",MessageBoxButtons.OK,MessageBoxIcon.Warning);

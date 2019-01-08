@@ -161,6 +161,11 @@ namespace Lagerverwaltung.Views
 
         private void NutzerHinzufügenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!Controller.AuthenticationController.Adminuser)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             using (var nutzerhinzufuegen = new NutzerHinzufuegen())
             {
                 nutzerhinzufuegen.ShowDialog();
