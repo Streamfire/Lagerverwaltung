@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LadeDatenLabel = new MetroFramework.Controls.MetroLabel();
             this.CustomCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.AktualisierenButton = new MetroFramework.Controls.MetroButton();
@@ -49,8 +50,8 @@
             // 
             // LadeDatenLabel
             // 
-            this.LadeDatenLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.LadeDatenLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LadeDatenLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LadeDatenLabel.Location = new System.Drawing.Point(0, 0);
@@ -115,7 +116,7 @@
             this.SucheTextBox.MaxLength = 32767;
             this.SucheTextBox.Name = "SucheTextBox";
             this.SucheTextBox.PasswordChar = '\0';
-            this.SucheTextBox.WaterMark = "Suche";
+            this.SucheTextBox.PromptText = "Suche";
             this.SucheTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.SucheTextBox.SelectedText = "";
             this.SucheTextBox.SelectionLength = 0;
@@ -130,11 +131,15 @@
             // 
             // HistorieGrid
             // 
+            this.HistorieGrid.AllowUserToAddRows = false;
+            this.HistorieGrid.AllowUserToDeleteRows = false;
+            this.HistorieGrid.AllowUserToOrderColumns = true;
             this.HistorieGrid.AllowUserToResizeRows = false;
-            this.HistorieGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.HistorieGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.HistorieGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.HistorieGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.HistorieGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.HistorieGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.HistorieGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.HistorieGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -162,15 +167,19 @@
             this.HistorieGrid.Location = new System.Drawing.Point(23, 121);
             this.HistorieGrid.Name = "HistorieGrid";
             this.HistorieGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.HistorieGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.HistorieGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            this.HistorieGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.HistorieGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.HistorieGrid.Size = new System.Drawing.Size(654, 289);
             this.HistorieGrid.TabIndex = 12;
@@ -181,8 +190,8 @@
             // 
             // PanelHelper
             // 
-            this.PanelHelper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.PanelHelper.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelHelper.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PanelHelper.Controls.Add(this.LadeDatenProgressspinner);
@@ -220,12 +229,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.PanelHelper);
             this.Controls.Add(this.SchließenButton);
             this.Controls.Add(this.SucheTextBox);
             this.Controls.Add(this.LademehrButton);
             this.Controls.Add(this.AktualisierenButton);
             this.Controls.Add(this.CustomCheckbox);
-            this.Controls.Add(this.PanelHelper);
             this.Controls.Add(this.HistorieGrid);
             this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "Historie";

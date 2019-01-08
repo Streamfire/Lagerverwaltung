@@ -61,6 +61,7 @@ namespace Lagerverwaltung.Views
 
             source = new BindingSource { DataSource = _dict.Values };
             HistorieGrid.DataSource = source;
+            HistorieGrid.ColumnHeadersDefaultCellStyle.Padding = new Padding(5);
 
             if (paging.HasNext)
             {
