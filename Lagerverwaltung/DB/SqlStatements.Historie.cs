@@ -9,7 +9,7 @@ namespace Lagerverwaltung.DB
     {
         public static Dictionary<long, HistorieModel> HoleHistorie(long log_id = -1, long user_id = -1, int limit = -1)
         {
-            var query = queryfactory.Query("historie").OrderBy("log_id");
+            var query = queryfactory.Query("historie").OrderByDesc("log_id");
             if (log_id > 0)
             {
                 query.Where("log_id", log_id);
@@ -27,7 +27,7 @@ namespace Lagerverwaltung.DB
 
         public static PaginationResult<HistorieModel> HoleHistorieSeite()
         {
-            var query = queryfactory.Query("historie").OrderBy("log_id");
+            var query = queryfactory.Query("historie").OrderByDesc("log_id");
             return query.Paginate<HistorieModel>(1,25);
         }
 
