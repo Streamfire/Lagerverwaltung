@@ -128,7 +128,7 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.InfoToolStripMenuItem_Click);
             // 
@@ -201,9 +201,9 @@
             this.UserLoggedInLabel.BackColor = System.Drawing.SystemColors.Control;
             this.UserLoggedInLabel.FontSize = MetroFramework.MetroLabelSize.Small;
             this.UserLoggedInLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.UserLoggedInLabel.Location = new System.Drawing.Point(230, 60);
+            this.UserLoggedInLabel.Location = new System.Drawing.Point(247, 60);
             this.UserLoggedInLabel.Name = "UserLoggedInLabel";
-            this.UserLoggedInLabel.Size = new System.Drawing.Size(200, 24);
+            this.UserLoggedInLabel.Size = new System.Drawing.Size(183, 24);
             this.UserLoggedInLabel.TabIndex = 9;
             this.UserLoggedInLabel.Text = "null";
             this.UserLoggedInLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
