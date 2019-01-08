@@ -50,6 +50,8 @@ namespace Lagerverwaltung.Views
             {
                 long regalID;
                 string regalname = BezeichnungTextbox.Text;
+
+                /*
                 short spalten = Convert.ToInt16(SpaltenTextbox.Text);
                 short zeilen = Convert.ToInt16(ZeilenTextbox.Text);
                 float regalH = Convert.ToSingle(RegalhoeheTextbox.Text);
@@ -60,10 +62,62 @@ namespace Lagerverwaltung.Views
                 float fachH = Convert.ToSingle(FachhoeheTextbox.Text);
                 float fachB = Convert.ToSingle(FachbreiteTextbox.Text);
                 float fachL = Convert.ToSingle(FachlaengeTextbox.Text);
+                */
 
 
 
-                if (Controller.RegalHinzufuegenController.ValidateGroesse(zeilen, spalten, regalH, regalB, regalL, fachH, fachB, fachL, wandH, wandV))
+                /*
+                 * @Martin 
+                 * Hab hier das mal mit try-catch noch gemacht, weil eine FormatException auftritt, wenn man Sonderzeichen eingibt, das ist nur für die Präsi jetzt, kannst du also dann ändern. 
+                 * Es treten übrigens komischerweise auch OverflowExceptions auf, wenn die Werte zu groß sind, obwohl das ja glaube ich das ValidateData machen sollte.
+                 * Außerdem musste ich die Variablen vor dem try-catch deklarieren, weil dann der Compiler rumgemeckert hat, da die ja gleich darunter evtl., falls das try-catch fehlschlägt, nie deklariert werden
+                 * -Benjamin
+                 */
+
+                //Die Variable verhindert, dass sich das Fenster bei falscher Eingabe schließt. Hab die weiter unten verwendet, bei dem close()
+                bool success = true;
+
+                short spalten = 0;
+                short zeilen = 0;
+                float regalH = 0;
+                float regalB = 0;
+                float regalL = 0;
+                float wandH = 0;
+                float wandV = 0;
+                float fachH = 0;
+                float fachB = 0;
+                float fachL = 0;
+
+                try
+                {
+                    spalten = Convert.ToInt16(SpaltenTextbox.Text);
+                    zeilen = Convert.ToInt16(ZeilenTextbox.Text);
+                    regalH = Convert.ToSingle(RegalhoeheTextbox.Text);
+                    regalB = Convert.ToSingle(RegalbreiteTextbox.Text);
+                    regalL = Convert.ToSingle(RegallaengeTextbox.Text);
+                    wandH = Convert.ToSingle(StaerkeH.Text);
+                    wandV = Convert.ToSingle(StaerkeV.Text);
+                    fachH = Convert.ToSingle(FachhoeheTextbox.Text);
+                    fachB = Convert.ToSingle(FachbreiteTextbox.Text);
+                    fachL = Convert.ToSingle(FachlaengeTextbox.Text);
+                }
+                catch (FormatException)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Falsches Eingabeformat! Bitte geben sie bei den Maßen und Anzahl der Spalten/Zahlen nur Ziffern ein!", "Regal nicht erstellt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    success = false;
+                }
+                catch (OverflowException)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Eingabe zu großer Zahlen! Bitte geben sie bei der Anzahl der Spalten/Zahlen nur Zahlen ein bis 32767 und bei den Maßen nur bis 340282300000000000000000000000000000000 ein!", "Regal nicht erstellt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    success = false;
+                }
+
+                /* Hier endet was ich in diesem Block verändert habe
+                 * Das Original ist über diesem Block in einem Kommentar
+                 */
+
+
+                if (Controller.RegalHinzufuegenController.ValidateGroesse(zeilen, spalten, regalH, regalB, regalL, fachH, fachB, fachL, wandH, wandV) /*Hab nur das folgende noch eingefügt ->*/ && success == true)
                 {
                     regalID = DB.SqlStatements.ErstelleRegal(regalname, ((LagerModel)LagerCombobox.SelectedItem).Lager_ID, zeilen, spalten, regalH, regalB, regalL, wandH, wandV);
 
@@ -94,7 +148,17 @@ namespace Lagerverwaltung.Views
                         //Dringend Verwaltung mit SQL Statements ergänzen, sonst kann die Verwaltung nicht aktualisiert werden
                         //Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
 
-                        Close();
+
+
+                        //Das ist was vorher hier stand
+                        //Close();
+
+                        if (success == true)
+                        {
+                            Close();
+                        }
+
+
 
                     }//END IF DB erfolgreich
 

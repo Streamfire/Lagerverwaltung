@@ -86,7 +86,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
-                SchreibeHistorieEintrag($"Produkt ({produkt_id}): {produkt[0].Name} geändert!");
+                //SchreibeHistorieEintrag($"Produkt ({produkt_id}): {produkt[0].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.ProduktModel);
             }
         }

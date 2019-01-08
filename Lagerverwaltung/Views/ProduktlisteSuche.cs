@@ -23,12 +23,13 @@ namespace Lagerverwaltung.Views
 
             DB.SqlStatements.DatabaseChanged += DataChanged;
 
+            _dictProdukt = DB.SqlStatements.HoleProdukt();
+
             UpdateForm();
 
         }
 		public void UpdateForm()
         {
-            _dictProdukt = DB.SqlStatements.HoleProdukt();
             dataGridView1.DataSource = _dictProdukt.Values.ToArray();
         }
 
@@ -41,6 +42,20 @@ namespace Lagerverwaltung.Views
         {
             Dispose();
             Close();
+        }
+
+        private void buttonSuchen_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(textBoxProdukt.Text))
+            {
+                _dictProdukt = DB.SqlStatements.HoleProdukt(-1, textBoxProdukt.Text);
+                UpdateForm();
+            }
+            else
+            {
+                _dictProdukt = DB.SqlStatements.HoleProdukt();
+                UpdateForm();
+            }
         }
     }
 }

@@ -47,6 +47,32 @@ namespace Lagerverwaltung.Views
 
         private void ButtonProduktHinzufuegen_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(tb_Name.Text) || tb_Name.Text.Length > 25)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Produktname überschreitet die zulässige Länge von 25 Zeichen!", "Fehler beim Hinzufügen des Produkts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    DB.SqlStatements.ErstelleProdukt(tb_Name.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), tb_Zeichnungsnummer.Text, Convert.ToInt64(artikeltypBox.SelectedValue), Convert.ToSingle(tb_Hoehe.Text), Convert.ToSingle(tb_Breite.Text), Convert.ToSingle(tb_Laenge.Text));
+
+                    ((Produktliste)Besitzer).UpdateForm();
+
+                    Close();
+                }
+                catch(FormatException)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Falsches Eingabeformat! Bitte geben sie bei Gewicht, Preis, Höhe, Breite und Länge nur Ziffern ein!", "Fehler beim Hinzufügen des Produkts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (OverflowException)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Eingabe zu großer Zahl! Bitte geben sie bei Gewicht, Preis, Höhe, Breite und Länge nur Zahlen bis 340282300000000000000000000000000000000 ein!", "Fehler beim Hinzufügen des Produkts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+
+            /*
             if (Controller.ProduktHinzufuegenController.ValidateData(tb_Name.Text, tb_Zeichnungsnummer.Text, tb_Gewicht.Text, tb_Preis.Text, tb_Hoehe.Text, tb_Breite.Text, tb_Laenge.Text))
             
             {
@@ -61,7 +87,7 @@ namespace Lagerverwaltung.Views
             else
             {
 
-            }
+            }*/
         }
     }
 }

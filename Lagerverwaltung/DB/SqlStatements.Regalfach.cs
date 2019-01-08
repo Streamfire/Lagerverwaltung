@@ -42,7 +42,7 @@ namespace Lagerverwaltung.DB
             var regalfach = HoleRegalfach(regalfach_id);
 
             var query = queryfactory.Query("regalfach").Where("regalfach_id", regalfach_id).Delete();
-            SchreibeHistorieEintrag($"Regalfach ({regalfach_id}): {regalfach[0].Name} gelöscht!");
+            //SchreibeHistorieEintrag($"Regalfach ({regalfach_id}): {regalfach[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.RegalfachModel);
         }
 

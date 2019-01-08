@@ -42,7 +42,7 @@ namespace Lagerverwaltung.DB
             var paket = HolePaket(paket_id);
 
             var query = queryfactory.Query("paket").Where("paket_id", paket_id).Delete();
-            SchreibeHistorieEintrag($"Paket ({paket_id}): {paket[0].Name} gelöscht!");
+            //SchreibeHistorieEintrag($"Paket ({paket_id}): {paket[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.PaketModel);
         }
 

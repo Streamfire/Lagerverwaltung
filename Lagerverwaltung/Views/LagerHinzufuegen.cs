@@ -33,9 +33,10 @@ namespace Lagerverwaltung.Views
 		private void LagerHinzufuegenButton_Click(object sender, EventArgs e)
 		{
             if (LagertypCombobox.SelectedItem != null){
-                if (LagerTextbox.Text.Equals("") || StandortTextbox.Text.Equals(""))
+
+                if (String.IsNullOrWhiteSpace(LagerTextbox.Text) || LagerTextbox.Text.Length > 20 || String.IsNullOrWhiteSpace(StandortTextbox.Text) || StandortTextbox.Text.Length > 20 || BeschreibungTextbox.Text.Length > 50)
                 {
-                    MetroFramework.MetroMessageBox.Show(this, "Nicht alle benötigten Felder wurden ausgeführt!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this, "Nicht alle benötigten Felder wurden ausgeführt oder Eingaben sind zu lang (Name, Standort: 20 Zeichen, Beschreibung: 50)!", "Fehler beim Hinzufügen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

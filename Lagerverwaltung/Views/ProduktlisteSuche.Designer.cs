@@ -35,8 +35,10 @@
             this.gewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxProdukt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonSuchen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,16 +111,6 @@
             this.zeichnungsnummer.ReadOnly = true;
             this.zeichnungsnummer.Width = 160;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 697);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(517, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Hinweis: Die Produktliste in der Suche dient dazu alle nicht einem Paket zugeordn" +
-    "eten Produkte einzusehen";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -129,13 +121,44 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Produktliste";
             // 
+            // textBoxProdukt
+            // 
+            this.textBoxProdukt.Location = new System.Drawing.Point(117, 694);
+            this.textBoxProdukt.Name = "textBoxProdukt";
+            this.textBoxProdukt.Size = new System.Drawing.Size(260, 20);
+            this.textBoxProdukt.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label1.Location = new System.Drawing.Point(26, 693);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Produkt:";
+            // 
+            // buttonSuchen
+            // 
+            this.buttonSuchen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSuchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuchen.Location = new System.Drawing.Point(408, 685);
+            this.buttonSuchen.Name = "buttonSuchen";
+            this.buttonSuchen.Size = new System.Drawing.Size(120, 35);
+            this.buttonSuchen.TabIndex = 10;
+            this.buttonSuchen.Text = "Suchen";
+            this.buttonSuchen.UseVisualStyleBackColor = true;
+            this.buttonSuchen.Click += new System.EventHandler(this.buttonSuchen_Click);
+            // 
             // ProduktlisteSuche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 736);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonSuchen);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxProdukt);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Schliessen);
             this.Name = "ProduktlisteSuche";
@@ -155,7 +178,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gewicht;
         private System.Windows.Forms.DataGridViewTextBoxColumn preis;
         private System.Windows.Forms.DataGridViewTextBoxColumn zeichnungsnummer;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxProdukt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonSuchen;
     }
 }

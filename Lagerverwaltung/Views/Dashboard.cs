@@ -36,13 +36,23 @@ namespace Lagerverwaltung.Views
 
 		private void VerwaltungKachel_Click(object sender, EventArgs e)
 		{
-            if (verwaltung == null || verwaltung.IsDisposed == true)
+
+            if (!Controller.AuthenticationController.Adminuser)
             {
-                verwaltung = new Verwaltung();
-                verwaltung.Show();
+                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
+                if (verwaltung == null || verwaltung.IsDisposed == true)
+                {
+                    verwaltung = new Verwaltung();
+                    verwaltung.Show();
+                }
+                else
+                {
+                    
+                }
 
             }
             // Getter & Setter entfernen, aber noch zu tief in den anderen Klassen verankert!
@@ -74,15 +84,25 @@ namespace Lagerverwaltung.Views
 
 		private void RegaleinsichtKachel_Click(object sender, EventArgs e)
 		{
-            if (regaleinsicht == null || regaleinsicht.IsDisposed == true)
+            if (!Controller.AuthenticationController.Adminuser)
             {
-                regaleinsicht = new Regaleinsicht();
-                regaleinsicht.Show();
+                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
+                if (regaleinsicht == null || regaleinsicht.IsDisposed == true)
+                {
+                    regaleinsicht = new Regaleinsicht();
+                    regaleinsicht.Show();
+                }
+                else
+                {
 
+                }
             }
+
+
             /*
             using (var regaleinsicht = new Regaleinsicht())
             {
@@ -92,15 +112,24 @@ namespace Lagerverwaltung.Views
 
 		private void HistorieKachel_Click(object sender, EventArgs e)
 		{
-            if (historie == null || historie.IsDisposed == true)
+            if (!Controller.AuthenticationController.Adminuser)
             {
-                historie = new Historie();
-                historie.Show();
+                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
+                if (historie == null || historie.IsDisposed == true)
+                {
+                    historie = new Historie();
+                    historie.Show();
+                }
+                else
+                {
 
+                }
             }
+
             /*
             using (var historie = new Historie())
             {
@@ -140,18 +169,36 @@ namespace Lagerverwaltung.Views
 
         private void LagertypToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var lagertyp = new LagertypForm())
+            if (!Controller.AuthenticationController.Adminuser)
             {
-                lagertyp.ShowDialog();
+                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            else
+            {
+                using (var lagertyp = new LagertypForm())
+                {
+                    lagertyp.ShowDialog();
+                }
+            }
+
         }
 
         private void RegaltypToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var regaltyp = new ArtikeltypForm())
+            if (!Controller.AuthenticationController.Adminuser)
             {
-                regaltyp.ShowDialog();
+                MetroFramework.MetroMessageBox.Show(this, "Bitte als Nutzer einloggen um diese Funktion zu nutzen", "Unzureichende Rechte!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            else
+            {
+                using (var regaltyp = new ArtikeltypForm())
+                {
+                    regaltyp.ShowDialog();
+                }
+            }
+
         }
     }
 }

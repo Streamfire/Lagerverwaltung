@@ -38,7 +38,7 @@ namespace Lagerverwaltung.DB
             var lager = HoleLager(lager_id);
 
             var query = queryfactory.Query("lager").Where("lager_id", lager_id).Delete();
-            SchreibeHistorieEintrag($"Lager ({lager_id}): {lager[0].Name} gelöscht!");
+            //SchreibeHistorieEintrag($"Lager ({lager_id}): {lager[0].Name} gelöscht!");
             OnDatabaseChanged(ModeltypEnum.LagerModel);
         }
 

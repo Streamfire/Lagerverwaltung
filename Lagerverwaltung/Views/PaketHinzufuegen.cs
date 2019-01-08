@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
+    /// <summary>
+    /// @Martin hier kommen auch Overflow und FormatExceptions vor, aber ich will hier nichts verändern, damit du den Überblick nicht verlierst. ValidateData schütz davor anscheindend nicht.
+    /// </summary>
     public partial class PaketHinzufuegen : MetroFramework.Forms.MetroForm
     {
         public PaketHinzufuegen()
