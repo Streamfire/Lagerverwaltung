@@ -44,12 +44,14 @@
             this.RegaleinsichtKachel = new MetroFramework.Controls.MetroTile();
             this.HistorieKachel = new MetroFramework.Controls.MetroTile();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.UserLoggedInLabel = new MetroFramework.Controls.MetroLabel();
             this.MenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuStrip
             // 
+            this.MenuStrip.BackColor = System.Drawing.SystemColors.Control;
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
             this.bearbeitenToolStripMenuItem,
@@ -89,14 +91,14 @@
             // lagertypToolStripMenuItem
             // 
             this.lagertypToolStripMenuItem.Name = "lagertypToolStripMenuItem";
-            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.lagertypToolStripMenuItem.Text = "Lagertyp verwalten";
             this.lagertypToolStripMenuItem.Click += new System.EventHandler(this.LagertypToolStripMenuItem_Click);
             // 
             // regaltypToolStripMenuItem
             // 
             this.regaltypToolStripMenuItem.Name = "regaltypToolStripMenuItem";
-            this.regaltypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.regaltypToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.regaltypToolStripMenuItem.Text = "Regaltyp verwalten";
             this.regaltypToolStripMenuItem.Click += new System.EventHandler(this.RegaltypToolStripMenuItem_Click);
             // 
@@ -194,11 +196,26 @@
             // 
             this.metroStyleManager1.Owner = this;
             // 
+            // UserLoggedInLabel
+            // 
+            this.UserLoggedInLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.UserLoggedInLabel.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.UserLoggedInLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.UserLoggedInLabel.Location = new System.Drawing.Point(230, 60);
+            this.UserLoggedInLabel.Name = "UserLoggedInLabel";
+            this.UserLoggedInLabel.Size = new System.Drawing.Size(200, 24);
+            this.UserLoggedInLabel.TabIndex = 9;
+            this.UserLoggedInLabel.Text = "null";
+            this.UserLoggedInLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UserLoggedInLabel.UseCustomBackColor = true;
+            this.UserLoggedInLabel.UseCustomForeColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 400);
+            this.Controls.Add(this.UserLoggedInLabel);
             this.Controls.Add(this.HistorieKachel);
             this.Controls.Add(this.RegaleinsichtKachel);
             this.Controls.Add(this.SucheKachel);
@@ -238,5 +255,6 @@
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private System.Windows.Forms.ToolStripMenuItem lagertypToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regaltypToolStripMenuItem;
+        private MetroFramework.Controls.MetroLabel UserLoggedInLabel;
     }
 }

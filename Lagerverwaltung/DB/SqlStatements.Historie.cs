@@ -31,8 +31,9 @@ namespace Lagerverwaltung.DB
             return query.Paginate<HistorieModel>(1,25);
         }
 
-        public static void SchreibeHistorieEintrag(string logtext, long user_id=1)
+        public static void SchreibeHistorieEintrag(string logtext)
         {
+            var user_id = Controller.AuthenticationController.GlobalUser.User_ID; // workaround - Übergabe als Parameter immer besser, sonst Abhängigkeit!
             var zeitstempel = System.DateTime.Now;
             queryfactory.Query("historie").Insert(new { user_id, logtext, zeitstempel });
             OnDatabaseChanged(ModeltypEnum.HistorieModel);

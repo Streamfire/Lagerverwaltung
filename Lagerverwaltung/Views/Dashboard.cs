@@ -25,6 +25,8 @@ namespace Lagerverwaltung.Views
 			InitializeComponent();
 			_adminuser = adminuser;
 
+            UserLoggedInLabel.Text = $"Eingeloggt als: {Controller.AuthenticationController.GlobalUser.Username} (ID: {Controller.AuthenticationController.GlobalUser.User_ID})";
+
             ProduktListe = Produkt.GetProdukts();
             ArtikeltypListe = Artikeltyp.GetArtikeltyps();
 		}

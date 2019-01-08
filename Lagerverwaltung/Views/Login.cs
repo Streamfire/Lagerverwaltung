@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
@@ -17,6 +18,8 @@ namespace Lagerverwaltung.Views
             if (Controller.AuthenticationController.Login(UsernameTextbox.Text, PasswordTextbox.Text)) 
 			{
                 Controller.AuthenticationController.Adminuser = true;
+                var user = DB.SqlStatements.HoleUser(username:UsernameTextbox.Text);
+                Controller.AuthenticationController.GlobalUser =user.First().Value;
                 DialogResult = DialogResult.OK;
                 Close();
 			}
@@ -32,6 +35,7 @@ namespace Lagerverwaltung.Views
 		{
             Controller.AuthenticationController.Adminuser = false;
             DialogResult = DialogResult.OK;
+            Controller.AuthenticationController.GlobalUser = new Model.UserModel();
 			Close();
 		}
 

@@ -15,6 +15,8 @@ namespace Lagerverwaltung.Controller
         /// </summary>
         public static bool Adminuser { get; set; }
 
+        public static Model.UserModel GlobalUser { get; set; }
+
         // Loads stored hash + SALT and tests if hash(pw + SALT) = stored hash
         public static bool Login(string username, string pw)
         {
