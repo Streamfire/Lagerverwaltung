@@ -91,6 +91,7 @@ namespace Lagerverwaltung.Views
                     DB.SqlStatements.UpdateRegal(((Model.RegalModel)RegalCombobox.SelectedItem).Regal_ID, name, null, null, null, null, null, null, null, null);
                     MetroFramework.MetroMessageBox.Show(this, String.Format("Das Regal wurde erfolgreich in \"{0}\" geändert!", name), "Regalname geändert!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UpdateComboboxRegal(RegalCombobox.SelectedIndex);
+                    Close();
                 }
                 else
                     MetroFramework.MetroMessageBox.Show(this, "Bitte geben Sie einen neuen Namen für das Regal ein!", "Regalname ist leer!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -129,6 +130,7 @@ namespace Lagerverwaltung.Views
                     DB.SqlStatements.LoescheRegal(regalID);
                     MetroFramework.MetroMessageBox.Show(this, String.Format("Das Regal {0} wurde erfolgreich entfernt!", regalname), "Regal entfernt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LagerCombobox_SelectedIndexChanged(null, null);
+                    Close();
                 }
             }
             else

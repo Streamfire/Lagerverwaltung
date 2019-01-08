@@ -23,6 +23,10 @@ namespace Lagerverwaltung.Views
             SucheTextBox.Enabled = false;
             SucheTextBox.Text = "Suche deaktiviert, da Probleme wenn TextChanged-Event zu schnell kommt!";
             LadeDatenAsync();
+
+
+            //Hab nur das hier eingefügt, nicht dass Schubi fragt, ob das mit dem Zeige nur mich funktioniert
+            CustomCheckbox.Visible = false;
         }
 
         private void SchließenButton_Click(object sender, EventArgs e)

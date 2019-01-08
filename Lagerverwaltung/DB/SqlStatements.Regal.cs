@@ -99,7 +99,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
-                SchreibeHistorieEintrag($"Regal ({regal_id}): {regal[0].Name} geändert!");
+                //SchreibeHistorieEintrag($"Regal ({regal_id}): {regal[0].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.RegalModel);
             }
         }
