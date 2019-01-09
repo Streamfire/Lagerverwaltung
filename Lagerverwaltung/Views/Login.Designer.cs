@@ -104,7 +104,7 @@
             this.UsernameTextbox.SelectionStart = 0;
             this.UsernameTextbox.ShortcutsEnabled = true;
             this.UsernameTextbox.Size = new System.Drawing.Size(340, 24);
-            this.UsernameTextbox.TabIndex = 21;
+            this.UsernameTextbox.TabIndex = 0;
             this.UsernameTextbox.UseSelectable = true;
             this.UsernameTextbox.WaterMark = "Nutzername";
             this.UsernameTextbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -136,7 +136,7 @@
             this.PasswordTextbox.SelectionStart = 0;
             this.PasswordTextbox.ShortcutsEnabled = true;
             this.PasswordTextbox.Size = new System.Drawing.Size(340, 24);
-            this.PasswordTextbox.TabIndex = 22;
+            this.PasswordTextbox.TabIndex = 1;
             this.PasswordTextbox.UseSelectable = true;
             this.PasswordTextbox.UseSystemPasswordChar = true;
             this.PasswordTextbox.WaterMark = "Passwort";

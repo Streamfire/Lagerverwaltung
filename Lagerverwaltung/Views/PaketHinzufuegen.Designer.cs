@@ -41,6 +41,7 @@
             this.AbbrechenButton = new MetroFramework.Controls.MetroButton();
             this.PaketHinzufuegenButton = new MetroFramework.Controls.MetroButton();
             this.AuswahlLabel = new MetroFramework.Controls.MetroLabel();
+            this.maximalDateCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.SuspendLayout();
             // 
             // GrundTextbox
@@ -142,7 +143,7 @@
             // HaltbarkeitLabel
             // 
             this.HaltbarkeitLabel.AutoSize = true;
-            this.HaltbarkeitLabel.Location = new System.Drawing.Point(23, 125);
+            this.HaltbarkeitLabel.Location = new System.Drawing.Point(23, 128);
             this.HaltbarkeitLabel.Name = "HaltbarkeitLabel";
             this.HaltbarkeitLabel.Size = new System.Drawing.Size(72, 19);
             this.HaltbarkeitLabel.TabIndex = 34;
@@ -306,11 +307,24 @@
             this.AuswahlLabel.TabIndex = 43;
             this.AuswahlLabel.Text = "[kein Produkt ausgewählt...]";
             // 
+            // maximalDateCheckbox
+            // 
+            this.maximalDateCheckbox.AutoSize = true;
+            this.maximalDateCheckbox.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.maximalDateCheckbox.Location = new System.Drawing.Point(95, 131);
+            this.maximalDateCheckbox.Name = "maximalDateCheckbox";
+            this.maximalDateCheckbox.Size = new System.Drawing.Size(69, 15);
+            this.maximalDateCheckbox.TabIndex = 44;
+            this.maximalDateCheckbox.Text = "maximal?";
+            this.maximalDateCheckbox.UseSelectable = true;
+            this.maximalDateCheckbox.CheckedChanged += new System.EventHandler(this.MaximalDateCheckbox_CheckedChanged);
+            // 
             // PaketHinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 350);
+            this.Controls.Add(this.maximalDateCheckbox);
             this.Controls.Add(this.AuswahlLabel);
             this.Controls.Add(this.AbbrechenButton);
             this.Controls.Add(this.PaketHinzufuegenButton);
@@ -346,5 +360,6 @@
         private MetroFramework.Controls.MetroButton AbbrechenButton;
         private MetroFramework.Controls.MetroButton PaketHinzufuegenButton;
         private MetroFramework.Controls.MetroLabel AuswahlLabel;
+        private MetroFramework.Controls.MetroCheckBox maximalDateCheckbox;
     }
 }

@@ -109,7 +109,7 @@ namespace Lagerverwaltung.Views
             }
             else
             {
-                MetroFramework.MetroMessageBox.Show(this, "Es wurde kein Lagertyp ausgewählt!", "Fehler beim Entfernen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MetroFramework.MetroMessageBox.Show(this, "Es wurde kein Lager ausgewählt!", "Fehler beim Entfernen des Lagers", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

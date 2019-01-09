@@ -11,6 +11,7 @@ namespace Lagerverwaltung.Views
         public PaketHinzufuegen()
         {
             InitializeComponent();
+            HaltbarkeitDatetime.MinDate = DateTime.Now;
         }
 
         public static string Auswahl { get; set; } = "";
@@ -31,6 +32,13 @@ namespace Lagerverwaltung.Views
             if (ProduktID < 0)
             {
                 MetroFramework.MetroMessageBox.Show(this, "Bitte wählen Sie ein Produkt aus!" + RegalfachID, "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(HaltbarkeitDatetime.Value == HaltbarkeitDatetime.MinDate)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Bitte ein Datum in der Zukunft auswählen!", "Haltbarkeit ungültlig!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
             if (Controller.PaketHinzufuegenController.ValidateData(BezeichungTextbox.Text, GrundTextbox.Text, HaltbarkeitDatetime.Value, HoeheTextbox.Text, BreiteTextbox.Text, LaengeTextbox.Text))
@@ -82,6 +90,18 @@ namespace Lagerverwaltung.Views
             if (Auswahl.Length != 0)
             {
                 AuswahlLabel.Text = Auswahl;
+            }
+        }
+
+        private void MaximalDateCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(HaltbarkeitDatetime.Value == HaltbarkeitDatetime.MaxDate)
+            {
+                HaltbarkeitDatetime.Value = DateTime.Now;
+            }
+            else
+            {
+                HaltbarkeitDatetime.Value = HaltbarkeitDatetime.MaxDate;
             }
         }
     }
