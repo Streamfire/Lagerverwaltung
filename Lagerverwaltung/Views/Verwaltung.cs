@@ -27,7 +27,7 @@ namespace Lagerverwaltung.Views
             DB.PaketSQL.HoleAllePakete();
             DB.ProduktSQL.HoleAlleProdukte();
 
-            UpdateForm(Model.Lager.HoleListe);
+            UpdateForm();
 		}
 
         private void PaketHinzufuegenButton_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace Lagerverwaltung.Views
 
         private void ForceCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            UpdateForm(Model.Lager.HoleListe);
+            UpdateForm();
         }
 
         private void ZurueckButton_Click(object sender, EventArgs e)

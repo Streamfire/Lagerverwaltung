@@ -46,7 +46,7 @@ namespace Lagerverwaltung.DB
 
 					//DB.LagerSQL.HoleLager(Views.Dashboard.Verwaltung.getActiveTabPageName());
 					PaketSQL.HoleAllePakete();
-					Views.Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
+					Views.Dashboard.Verwaltung.UpdateForm();
 
 					int result = cmd.ExecuteNonQuery();
 					return result == 0 ? false : true;

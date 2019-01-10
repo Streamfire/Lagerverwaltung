@@ -16,7 +16,7 @@ namespace Lagerverwaltung.Views
         /// verarbeitet die Lageliste aus dem Dash und erstellt dynamisch Tabpages, Akkordions und zusatinfo Panele
         /// </summary>
         /// <param name="lagerListe">die Lagerliste, übergeben vom Dashboard</param>
-        public void UpdateForm(IReadOnlyDictionary<ushort,Model.Lager> lagerListe)
+        public void UpdateForm()
 		{
 			//Reset Form
 			VerwaltungTabcontrol.Controls.Clear();
@@ -26,14 +26,14 @@ namespace Lagerverwaltung.Views
 			if (ForceCheckbox.Checked == true)
 			{
 				Opulos.Core.UI.Accordion.OpenOnAdd = true;
-
 			}
 			else
 			{
 				Opulos.Core.UI.Accordion.OpenOnAdd = false;
 			}
 
-			foreach (Lager l in lagerListe.Values)
+			var lagerListe = DB.SqlStatements.HoleLager();
+			foreach (LagerModel l in lagerListe.Values)
 			{
 				TabPage tp = new TabPage(l.Name);
 			
@@ -43,28 +43,36 @@ namespace Lagerverwaltung.Views
 				tp.Controls.Add(_lagerAccordion);
 
                 VerwaltungTabcontrol.TabPages.Add(tp);
-				foreach (Regal r in l.Regalliste)
+
+				var regalListe = DB.SqlStatements.HoleRegal(-1, l.Lager_ID);
+
+				foreach (RegalModel r in regalListe.Values)
 				{
 					Accordion nestedRegal = new Accordion();
 					nestedRegal.Name = r.Name;
-					nestedRegal.Tag = r.RegalID;
+					nestedRegal.Tag = r.Regal_ID;
 					
 					nestedRegal.GotFocus += OnFocusedPanel;
 					_lagerAccordion.Add(nestedRegal, r.Name);
 
-					foreach (Regalfach f in r.Regalfachliste)
+					var regalFachListe = DB.SqlStatements.HoleRegalfach(-1, r.Regal_ID);
+
+					foreach (RegalfachModel f in regalFachListe.Values)
 					{
 						Accordion nestedFach = new Accordion();
 						nestedFach.GotFocus += OnFocusedPanel;
 						nestedFach.Name = f.Name;
-						nestedFach.Tag = f.RegalfachID;
+						nestedFach.Tag = f.Regalfach_ID;
 
 						Panel infoPanel = new Panel();
 						Label name = new Label();
-						if (f.Paketliste.Count > 0)
+
+						var paketListe = DB.SqlStatements.HolePaket(-1, f.Regalfach_ID);
+
+						if (paketListe.Count > 0)
 						{
 							//im Fach ist ein Paketregistriert-> die restlichen Infos zum Paket anzeigen
-							name.Text = "Inhalt: " + f.Paketliste[0].ProduktID;
+							name.Text = "Inhalt: " + paketListe[0].Produkt_ID;
 
 							Label Menge = new Label();
 							Label Breite = new Label();
@@ -76,28 +84,28 @@ namespace Lagerverwaltung.Views
 							Label Anschaffungsgrund = new Label();
 
 							Menge.Left = 100;
-							Menge.Text = "Menge: " + f.Paketliste.Count;
+							Menge.Text = "Menge: " + paketListe.Count;
 
 							Breite.Left = 200;
-							Breite.Text = "Breite: " + f.Paketliste[0].ProduktID;
+							Breite.Text = "Breite: " + paketListe[0].Breite;
 
 							Hoehe.Left = 300;
-							Hoehe.Text = "Höhe: " + f.Paketliste[0].ProduktID;
+							Hoehe.Text = "Höhe: " + paketListe[0].Hoehe;
 
 							Laenge.Left = 400;
-							Laenge.Text = "Länge: " + f.Paketliste[0].ProduktID;
+							Laenge.Text = "Länge: " + paketListe[0].Laenge;
 
 							Haltbarkeit.Left = 500;
-							Haltbarkeit.Text = "Haltbarkeit: " + f.Paketliste[0].Haltbarkeit;
+							Haltbarkeit.Text = "Haltbarkeit: " + paketListe[0].Haltbarkeit;
 
 							Erstellt.Left = 600;
-							Erstellt.Text = "Erstellt: " + f.Paketliste[0].ErstelltAm;
+							Erstellt.Text = "Erstellt: " + paketListe[0].Erstellt_Am;
 
 							Geaendert.Left = 700;
-							Geaendert.Text = "Geaendert: " + f.Paketliste[0].GeaendertAm;
+							Geaendert.Text = "Geaendert: " + paketListe[0].Zuletzt_Geaendert;
 
 							Anschaffungsgrund.Top = 25;
-							Anschaffungsgrund.Text = "Anschaffungsgrund: " + f.Paketliste[0].Anschaffungsgrund;
+							Anschaffungsgrund.Text = "Anschaffungsgrund: " + paketListe[0].Anschaffungsgrund;
 							Anschaffungsgrund.Width = Anschaffungsgrund.Width + 400;
 
 							infoPanel.Controls.Add(name);
@@ -110,7 +118,7 @@ namespace Lagerverwaltung.Views
 							infoPanel.Controls.Add(Geaendert);
 							infoPanel.Controls.Add(Anschaffungsgrund);
 
-							nestedRegal.Add(nestedFach, f.Paketliste[0].Name + " | " + f.Paketliste[0].ProduktID);
+							nestedRegal.Add(nestedFach, paketListe[0].Name + " | " + paketListe[0].Produkt_ID);
 						}
 						else
 						{
@@ -134,10 +142,6 @@ namespace Lagerverwaltung.Views
             {
                 _lastFocusedPage = null;
             }
-
-			
-
-
 		}
 		 
 		private void OnFocusedPanel(Object sender, EventArgs e)
