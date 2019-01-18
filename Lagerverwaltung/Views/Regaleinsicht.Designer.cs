@@ -69,6 +69,7 @@
             this.RegaleinsichtGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegaleinsichtGrid.Location = new System.Drawing.Point(23, 104);
             this.RegaleinsichtGrid.Name = "RegaleinsichtGrid";
+            this.RegaleinsichtGrid.ReadOnly = true;
             this.RegaleinsichtGrid.RowHeadersVisible = false;
             this.RegaleinsichtGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.RegaleinsichtGrid.Size = new System.Drawing.Size(704, 346);

@@ -17,6 +17,20 @@ namespace Lagerverwaltung.Views
 
         private Dictionary<string, long> _regalfachIDMap;
 
+        /// <summary>
+        /// Klasse zur Zusammenfassung der Pakete aus der Datenbank in die jeweiligen Produkte 
+        /// </summary>
+        class AusgabeParameter {
+            public int _paketanzahl { get; set; }
+            public int _stueckzahlGesamt { get; set; }
+
+            public AusgabeParameter(int paketanzahl, int stueckzahlGesamt)
+            {
+                _paketanzahl = paketanzahl;
+                _stueckzahlGesamt = stueckzahlGesamt;
+            }
+        }
+
         public Regaleinsicht()
 		{
 			InitializeComponent();
@@ -177,22 +191,55 @@ namespace Lagerverwaltung.Views
                         }
                         string Ausgabe = "";
                         Ausgabe += string.Format("Fach [{0},{1}] \n", s + 1, z);
+
                         if (regalfach != null && _dictPaket != null  && _dictPaket.Keys.Count > 0) 
                         {
-                            _dictProdukt = DB.SqlStatements.HoleProdukt((_dictPaket.Values.First().Produkt_ID), "", 1); 
+                            Dictionary<long, AusgabeParameter> _dictAusgabe = new Dictionary<long, AusgabeParameter>();
+
+                            //Werte des AusgabeDictionary vorbereiten
+                            foreach (Model.PaketModel paket in _dictPaket.Values)
+                            {
+                                if(!_dictAusgabe.ContainsKey(paket.Produkt_ID))
+                                {
+                                    _dictAusgabe.Add(paket.Produkt_ID, new AusgabeParameter(1, paket.Menge));
+                                }
+                                else
+                                {
+                                    _dictAusgabe[paket.Produkt_ID]._paketanzahl++;
+                                    _dictAusgabe[paket.Produkt_ID]._stueckzahlGesamt += paket.Menge;
+                                }
+                            }
+
+                            //benötigte Produkte abrufen
+                            _dictProdukt = DB.SqlStatements.HoleProdukt(_dictAusgabe.Keys.ToArray());
+
+                            foreach (KeyValuePair<long,AusgabeParameter> parameter in _dictAusgabe)
+                            {
+                                Ausgabe += "Produkt: " + _dictProdukt[parameter.Key].Name + "\n";
+                                Ausgabe += "Anzahl Pakete: " + parameter.Value._paketanzahl + "\n";
+                                Ausgabe += "Stückzahl Gesamt: " + parameter.Value._stueckzahlGesamt + "\n\n";
+                            }
+
+                            RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
+                        }
+
+                        /*
+                        if (regalfach != null && _dictPaket != null && _dictPaket.Keys.Count > 0)
+                        {
+                            _dictProdukt = DB.SqlStatements.HoleProdukt((_dictPaket.Values.First().Produkt_ID), "", 1);
 
                             Ausgabe += "Paketmenge: " + _dictPaket.Keys.Count + "\n";
                             Ausgabe += "Produkt: " + _dictProdukt.Values.First().Name + "\n";
 
                             int gesamt = 0;
                             foreach (Model.PaketModel paket in _dictPaket.Values)
-                                gesamt += paket.Menge; 
+                                gesamt += paket.Menge;
 
                             Ausgabe += "Gesamtmenge: " + gesamt + "\n";
 
                             RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
                         }
-
+                        */
                         RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Value = Ausgabe; 
                         s++;
 
