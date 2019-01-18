@@ -223,23 +223,6 @@ namespace Lagerverwaltung.Views
                             RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
                         }
 
-                        /*
-                        if (regalfach != null && _dictPaket != null && _dictPaket.Keys.Count > 0)
-                        {
-                            _dictProdukt = DB.SqlStatements.HoleProdukt((_dictPaket.Values.First().Produkt_ID), "", 1);
-
-                            Ausgabe += "Paketmenge: " + _dictPaket.Keys.Count + "\n";
-                            Ausgabe += "Produkt: " + _dictProdukt.Values.First().Name + "\n";
-
-                            int gesamt = 0;
-                            foreach (Model.PaketModel paket in _dictPaket.Values)
-                                gesamt += paket.Menge;
-
-                            Ausgabe += "Gesamtmenge: " + gesamt + "\n";
-
-                            RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Style.BackColor = Color.LightPink;
-                        }
-                        */
                         RegaleinsichtGrid.Rows[((Model.RegalModel)RegalCombobox.SelectedItem).Zeilen - z].Cells[s].Value = Ausgabe; 
                         s++;
 
@@ -292,8 +275,8 @@ namespace Lagerverwaltung.Views
             string[] val = regalfachname.Split('-');
 
             //Alle führenden 0en entfernen (zur Sicherheit)
-            val[0].TrimStart('0');
             val[1].TrimStart('0');
+            val[2].TrimStart('0');
             try
             {
                 erg[0] = Convert.ToInt32(val[1]);

@@ -44,13 +44,12 @@ namespace Lagerverwaltung.Views
             if (LagerCombobox.SelectedIndex >= 0)
             {
                 _dictRegal = DB.SqlStatements.HoleRegal(-1, ((Model.LagerModel)LagerCombobox.SelectedItem).Lager_ID, "", -1);
-
-                if (_dictRegal.Values.Count > 0)
-                    RegalCombobox.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
+                RegalCombobox.DataSource = new BindingSource().DataSource = _dictRegal.Values.ToArray();
             }
 
             if (RegalCombobox.Items.Count <= 0 || LagerCombobox.SelectedIndex < 0)
             {
+                NameTextbox.Text = "";
                 RegalCombobox.SelectedIndex = -1;
             }
             else
@@ -86,11 +85,24 @@ namespace Lagerverwaltung.Views
             {
                 if (NameTextbox.Text.Length != 0)
                 {
+                    long regalID = ((Model.RegalModel)RegalCombobox.SelectedItem).Regal_ID;
                     string name = NameTextbox.Text;
                     name = name.Replace("-", "");
+
+                    //Regalfachname ändern
+                    _dictRegalfach = DB.SqlStatements.HoleRegalfach(-1, regalID, "", -1);
+                    foreach(Model.RegalfachModel regalfach in _dictRegalfach.Values)
+                    {
+                        string[] val = regalfach.Name.Split('-');
+                        val[0] = name;
+                        DB.SqlStatements.UpdateRegalfach(regalfach.Regalfach_ID, String.Join("-", val), null, "", null, null, null);
+                    }
+
+                    //Regalname ändern
                     DB.SqlStatements.UpdateRegal(((Model.RegalModel)RegalCombobox.SelectedItem).Regal_ID, name, null, null, null, null, null, null, null, null);
                     MetroFramework.MetroMessageBox.Show(this, String.Format("Das Regal wurde erfolgreich in \"{0}\" geändert!", name), "Regalname geändert!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UpdateComboboxRegal(RegalCombobox.SelectedIndex);
+
                 }
                 else
                     MetroFramework.MetroMessageBox.Show(this, "Bitte geben Sie einen neuen Namen für das Regal ein!", "Regalname ist leer!", MessageBoxButtons.OK, MessageBoxIcon.Information);

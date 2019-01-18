@@ -82,7 +82,7 @@ namespace Lagerverwaltung.DB
             {
                 _dict.Add("zuletzt_geaendert", zuletzt_geaendert);
                 query.Update(_dict);
-                SchreibeHistorieEintrag($"Regalfach ({regalfach_id}): {regalfach[0].Name} geändert!");
+                SchreibeHistorieEintrag($"Regalfach ({regalfach_id}): {regalfach[regalfach_id].Name} geändert!");
                 OnDatabaseChanged(ModeltypEnum.RegalfachModel);
             }
         }

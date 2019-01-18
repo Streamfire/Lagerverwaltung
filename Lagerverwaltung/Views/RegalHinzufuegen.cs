@@ -140,16 +140,6 @@ namespace Lagerverwaltung.Views
                             }
                         }
 
-                        //NL für Anzeige der Regale
-                        //TODO: Bei Anpassung der Verwaltung an die SQLStatements anpassen bzw. entfernen
-                        DB.RegalSQL.HoleRegal((int)regalID);
-                        DB.RegalfachSQL.HoleLastXRegalfach(zeilen * spalten);
-
-                        //Dringend Verwaltung mit SQL Statements ergänzen, sonst kann die Verwaltung nicht aktualisiert werden
-                        //Dashboard.Verwaltung.UpdateForm(Model.Lager.HoleListe);
-
-
-
                         //Das ist was vorher hier stand
                         //Close();
 
