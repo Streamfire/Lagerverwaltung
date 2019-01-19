@@ -8,8 +8,8 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-	public partial class Suche : Form
-	{
+	public partial class Suche : MetroFramework.Forms.MetroForm
+    {
         private ReadOnlyDictionary<ulong, Core.Suche> readonly_dict;
        
         private List<Core.Suche> _result = new List<Core.Suche>();

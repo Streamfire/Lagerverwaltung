@@ -28,11 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.textZeichnungsnummer = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridView1 = new MetroFramework.Controls.MetroGrid();
             this.tabelleLagerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleRegalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleRegalfachName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,106 +50,84 @@
             this.tabelleHaltbarkeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleAnschaffungsgrund = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabelleZeile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSuchen = new System.Windows.Forms.Button();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
-            this.textProduktname = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textPaketname = new System.Windows.Forms.TextBox();
-            this.textGewichtVon = new System.Windows.Forms.TextBox();
-            this.textPreisVon = new System.Windows.Forms.TextBox();
-            this.textErstelltVon = new System.Windows.Forms.TextBox();
-            this.textGewichtBis = new System.Windows.Forms.TextBox();
-            this.textPreisBis = new System.Windows.Forms.TextBox();
-            this.textErstelltBis = new System.Windows.Forms.TextBox();
-            this.textHoeheVon = new System.Windows.Forms.TextBox();
-            this.textHaltbarkeitBis = new System.Windows.Forms.TextBox();
-            this.textHaltbarkeitVon = new System.Windows.Forms.TextBox();
-            this.textZuletztGeaendertBis = new System.Windows.Forms.TextBox();
-            this.textZuletztGeaendertVon = new System.Windows.Forms.TextBox();
-            this.textLaengeBis = new System.Windows.Forms.TextBox();
-            this.textHoeheBis = new System.Windows.Forms.TextBox();
-            this.textBreiteVon = new System.Windows.Forms.TextBox();
-            this.textLaengeVon = new System.Windows.Forms.TextBox();
-            this.textBreiteBis = new System.Windows.Forms.TextBox();
-            this.textAnschaffungsgrund = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textRegalname = new System.Windows.Forms.TextBox();
-            this.textRegalfachname = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textProduktID = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textMengeVon = new System.Windows.Forms.TextBox();
-            this.textMengeBis = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.buttonZurücksetzen = new System.Windows.Forms.Button();
-            this.textLagerName = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.checkKompakt = new System.Windows.Forms.CheckBox();
-            this.buttonProduktliste = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.buttonSuchen = new MetroFramework.Controls.MetroButton();
+            this.buttonProduktliste = new MetroFramework.Controls.MetroButton();
+            this.buttonZurücksetzen = new MetroFramework.Controls.MetroButton();
+            this.buttonAbbrechen = new MetroFramework.Controls.MetroButton();
+            this.checkKompakt = new MetroFramework.Controls.MetroCheckBox();
+            this.textLagerName = new MetroFramework.Controls.MetroTextBox();
+            this.textRegalname = new MetroFramework.Controls.MetroTextBox();
+            this.textRegalfachname = new MetroFramework.Controls.MetroTextBox();
+            this.textProduktname = new MetroFramework.Controls.MetroTextBox();
+            this.textProduktID = new MetroFramework.Controls.MetroTextBox();
+            this.textZeichnungsnummer = new MetroFramework.Controls.MetroTextBox();
+            this.textPaketname = new MetroFramework.Controls.MetroTextBox();
+            this.textAnschaffungsgrund = new MetroFramework.Controls.MetroTextBox();
+            this.textGewichtVon = new MetroFramework.Controls.MetroTextBox();
+            this.textMengeVon = new MetroFramework.Controls.MetroTextBox();
+            this.textPreisBis = new MetroFramework.Controls.MetroTextBox();
+            this.textPreisVon = new MetroFramework.Controls.MetroTextBox();
+            this.textGewichtBis = new MetroFramework.Controls.MetroTextBox();
+            this.textHaltbarkeitBis = new MetroFramework.Controls.MetroTextBox();
+            this.textHaltbarkeitVon = new MetroFramework.Controls.MetroTextBox();
+            this.textZuletztGeaendertBis = new MetroFramework.Controls.MetroTextBox();
+            this.textZuletztGeaendertVon = new MetroFramework.Controls.MetroTextBox();
+            this.textErstelltBis = new MetroFramework.Controls.MetroTextBox();
+            this.textErstelltVon = new MetroFramework.Controls.MetroTextBox();
+            this.textMengeBis = new MetroFramework.Controls.MetroTextBox();
+            this.textHoeheVon = new MetroFramework.Controls.MetroTextBox();
+            this.textBreiteBis = new MetroFramework.Controls.MetroTextBox();
+            this.textBreiteVon = new MetroFramework.Controls.MetroTextBox();
+            this.textLaengeBis = new MetroFramework.Controls.MetroTextBox();
+            this.textLaengeVon = new MetroFramework.Controls.MetroTextBox();
+            this.textHoeheBis = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textZeichnungsnummer
-            // 
-            this.textZeichnungsnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textZeichnungsnummer.Location = new System.Drawing.Point(172, 260);
-            this.textZeichnungsnummer.Name = "textZeichnungsnummer";
-            this.textZeichnungsnummer.Size = new System.Drawing.Size(305, 24);
-            this.textZeichnungsnummer.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Suche";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 303);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 18);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Paketname:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 18);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Produktname:";
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tabelleLagerName,
@@ -171,9 +148,31 @@
             this.tabelleHaltbarkeit,
             this.tabelleAnschaffungsgrund,
             this.tabelleZeile});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView1.Location = new System.Drawing.Point(12, 388);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1211, 399);
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1204, 399);
             this.dataGridView1.TabIndex = 31;
             // 
             // tabelleLagerName
@@ -271,7 +270,7 @@
             this.tabelleProduktErstelltAm.HeaderText = "Produkt erstellt am";
             this.tabelleProduktErstelltAm.Name = "tabelleProduktErstelltAm";
             this.tabelleProduktErstelltAm.ReadOnly = true;
-            this.tabelleProduktErstelltAm.Width = 125;
+            this.tabelleProduktErstelltAm.Width = 127;
             // 
             // tabelleProduktZuletztGeaendert
             // 
@@ -279,7 +278,7 @@
             this.tabelleProduktZuletztGeaendert.HeaderText = "Produkt zuletzt geändert";
             this.tabelleProduktZuletztGeaendert.Name = "tabelleProduktZuletztGeaendert";
             this.tabelleProduktZuletztGeaendert.ReadOnly = true;
-            this.tabelleProduktZuletztGeaendert.Width = 145;
+            this.tabelleProduktZuletztGeaendert.Width = 158;
             // 
             // tabellePaketName
             // 
@@ -287,7 +286,7 @@
             this.tabellePaketName.HeaderText = "Paketname";
             this.tabellePaketName.Name = "tabellePaketName";
             this.tabellePaketName.ReadOnly = true;
-            this.tabellePaketName.Width = 190;
+            this.tabellePaketName.Width = 170;
             // 
             // tabelleMenge
             // 
@@ -303,7 +302,7 @@
             this.tabelleHaltbarkeit.HeaderText = "Haltbarkeit";
             this.tabelleHaltbarkeit.Name = "tabelleHaltbarkeit";
             this.tabelleHaltbarkeit.ReadOnly = true;
-            this.tabelleHaltbarkeit.Width = 145;
+            this.tabelleHaltbarkeit.Width = 120;
             // 
             // tabelleAnschaffungsgrund
             // 
@@ -319,512 +318,1143 @@
             this.tabelleZeile.HeaderText = "Zeile";
             this.tabelleZeile.Name = "tabelleZeile";
             this.tabelleZeile.ReadOnly = true;
+            this.tabelleZeile.Width = 80;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(18, 62);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel1.TabIndex = 60;
+            this.metroLabel1.Text = "Lager:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(18, 102);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel2.TabIndex = 61;
+            this.metroLabel2.Text = "Regalname:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(18, 142);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(104, 19);
+            this.metroLabel3.TabIndex = 62;
+            this.metroLabel3.Text = "Regalfachname:";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(18, 181);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(95, 19);
+            this.metroLabel4.TabIndex = 63;
+            this.metroLabel4.Text = "Produktname:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(18, 222);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel5.TabIndex = 64;
+            this.metroLabel5.Text = "Produkt ID:";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(18, 262);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(134, 19);
+            this.metroLabel6.TabIndex = 65;
+            this.metroLabel6.Text = "Zeichnungsnummer:";
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.Location = new System.Drawing.Point(18, 302);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel7.TabIndex = 66;
+            this.metroLabel7.Text = "Paketname:";
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.Location = new System.Drawing.Point(18, 342);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel8.TabIndex = 67;
+            this.metroLabel8.Text = "Anschaffungsgrund:";
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel9.Location = new System.Drawing.Point(539, 62);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel9.TabIndex = 68;
+            this.metroLabel9.Text = "Gewicht von";
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel10.Location = new System.Drawing.Point(559, 102);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel10.TabIndex = 69;
+            this.metroLabel10.Text = "Preis von";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel11.Location = new System.Drawing.Point(549, 142);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel11.TabIndex = 70;
+            this.metroLabel11.Text = "Menge von";
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel12.Location = new System.Drawing.Point(547, 222);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(77, 19);
+            this.metroLabel12.TabIndex = 71;
+            this.metroLabel12.Text = "Erstellt von";
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel13.Location = new System.Drawing.Point(487, 262);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(137, 19);
+            this.metroLabel13.TabIndex = 72;
+            this.metroLabel13.Text = "Zuletzt geändert von";
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel14.Location = new System.Drawing.Point(521, 302);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel14.TabIndex = 73;
+            this.metroLabel14.Text = "Haltbarkeit von";
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel15.Location = new System.Drawing.Point(764, 62);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel15.TabIndex = 74;
+            this.metroLabel15.Text = "bis";
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel16.Location = new System.Drawing.Point(764, 302);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel16.TabIndex = 75;
+            this.metroLabel16.Text = "bis";
+            // 
+            // metroLabel17
+            // 
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel17.Location = new System.Drawing.Point(764, 262);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel17.TabIndex = 76;
+            this.metroLabel17.Text = "bis";
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.AutoSize = true;
+            this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel18.Location = new System.Drawing.Point(764, 222);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel18.TabIndex = 77;
+            this.metroLabel18.Text = "bis";
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel19.Location = new System.Drawing.Point(764, 142);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel19.TabIndex = 78;
+            this.metroLabel19.Text = "bis";
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel20.Location = new System.Drawing.Point(764, 102);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel20.TabIndex = 79;
+            this.metroLabel20.Text = "bis";
+            // 
+            // metroLabel21
+            // 
+            this.metroLabel21.AutoSize = true;
+            this.metroLabel21.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel21.Location = new System.Drawing.Point(539, 185);
+            this.metroLabel21.Name = "metroLabel21";
+            this.metroLabel21.Size = new System.Drawing.Size(384, 15);
+            this.metroLabel21.TabIndex = 80;
+            this.metroLabel21.Text = "Datumseingabe als TT.MM.JJJJ (T = Tag, M = Monat, J = Jahr; z.B. 11.05.1996)";
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel22.Location = new System.Drawing.Point(943, 62);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel22.TabIndex = 81;
+            this.metroLabel22.Text = "Höhe von";
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel23.Location = new System.Drawing.Point(939, 102);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel23.TabIndex = 82;
+            this.metroLabel23.Text = "Länge von";
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel24.Location = new System.Drawing.Point(941, 142);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel24.TabIndex = 83;
+            this.metroLabel24.Text = "Breite von";
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.AutoSize = true;
+            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel25.Location = new System.Drawing.Point(1106, 142);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel25.TabIndex = 84;
+            this.metroLabel25.Text = "bis";
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel26.Location = new System.Drawing.Point(1106, 102);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel26.TabIndex = 85;
+            this.metroLabel26.Text = "bis";
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel27.Location = new System.Drawing.Point(1106, 62);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(26, 19);
+            this.metroLabel27.TabIndex = 86;
+            this.metroLabel27.Text = "bis";
             // 
             // buttonSuchen
             // 
-            this.buttonSuchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuchen.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.buttonSuchen.Location = new System.Drawing.Point(1091, 209);
             this.buttonSuchen.Name = "buttonSuchen";
             this.buttonSuchen.Size = new System.Drawing.Size(125, 46);
-            this.buttonSuchen.TabIndex = 27;
+            this.buttonSuchen.TabIndex = 87;
             this.buttonSuchen.Text = "Suchen";
-            this.buttonSuchen.UseVisualStyleBackColor = true;
+            this.buttonSuchen.UseSelectable = true;
+            this.buttonSuchen.UseStyleColors = true;
             this.buttonSuchen.Click += new System.EventHandler(this.ButtonSuchen_Click);
             // 
-            // buttonAbbrechen
-            // 
-            this.buttonAbbrechen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbbrechen.Location = new System.Drawing.Point(1091, 278);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(125, 46);
-            this.buttonAbbrechen.TabIndex = 28;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
-            // 
-            // textProduktname
-            // 
-            this.textProduktname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProduktname.Location = new System.Drawing.Point(172, 180);
-            this.textProduktname.Name = "textProduktname";
-            this.textProduktname.Size = new System.Drawing.Size(305, 24);
-            this.textProduktname.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 263);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 18);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Zeichnungsnummer:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 343);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 18);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "Anschaffungsgrund:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(534, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 18);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Gewicht von";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(763, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 18);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "bis";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(763, 103);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 18);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "bis";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(763, 143);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 18);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "bis";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(763, 303);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 18);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "bis";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(554, 103);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 18);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Preis von";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(543, 226);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 18);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Erstellt von";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(483, 263);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(141, 18);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Zuletzt geändert von";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(518, 303);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 18);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "Haltbarkeit von";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(763, 263);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(27, 18);
-            this.label15.TabIndex = 50;
-            this.label15.Text = "bis";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(940, 63);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 18);
-            this.label16.TabIndex = 53;
-            this.label16.Text = "Höhe von";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1105, 103);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(27, 18);
-            this.label17.TabIndex = 56;
-            this.label17.Text = "bis";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1105, 63);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(27, 18);
-            this.label18.TabIndex = 54;
-            this.label18.Text = "bis";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1105, 143);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(27, 18);
-            this.label19.TabIndex = 58;
-            this.label19.Text = "bis";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(936, 103);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(76, 18);
-            this.label20.TabIndex = 55;
-            this.label20.Text = "Länge von";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(938, 143);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(74, 18);
-            this.label21.TabIndex = 57;
-            this.label21.Text = "Breite von";
-            // 
-            // textPaketname
-            // 
-            this.textPaketname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPaketname.Location = new System.Drawing.Point(172, 300);
-            this.textPaketname.Name = "textPaketname";
-            this.textPaketname.Size = new System.Drawing.Size(305, 24);
-            this.textPaketname.TabIndex = 7;
-            // 
-            // textGewichtVon
-            // 
-            this.textGewichtVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textGewichtVon.Location = new System.Drawing.Point(632, 60);
-            this.textGewichtVon.Name = "textGewichtVon";
-            this.textGewichtVon.Size = new System.Drawing.Size(122, 24);
-            this.textGewichtVon.TabIndex = 9;
-            // 
-            // textPreisVon
-            // 
-            this.textPreisVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPreisVon.Location = new System.Drawing.Point(632, 100);
-            this.textPreisVon.Name = "textPreisVon";
-            this.textPreisVon.Size = new System.Drawing.Size(122, 24);
-            this.textPreisVon.TabIndex = 11;
-            // 
-            // textErstelltVon
-            // 
-            this.textErstelltVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textErstelltVon.Location = new System.Drawing.Point(632, 220);
-            this.textErstelltVon.Name = "textErstelltVon";
-            this.textErstelltVon.Size = new System.Drawing.Size(122, 24);
-            this.textErstelltVon.TabIndex = 15;
-            // 
-            // textGewichtBis
-            // 
-            this.textGewichtBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textGewichtBis.Location = new System.Drawing.Point(796, 60);
-            this.textGewichtBis.Name = "textGewichtBis";
-            this.textGewichtBis.Size = new System.Drawing.Size(122, 24);
-            this.textGewichtBis.TabIndex = 10;
-            // 
-            // textPreisBis
-            // 
-            this.textPreisBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPreisBis.Location = new System.Drawing.Point(797, 100);
-            this.textPreisBis.Name = "textPreisBis";
-            this.textPreisBis.Size = new System.Drawing.Size(122, 24);
-            this.textPreisBis.TabIndex = 12;
-            // 
-            // textErstelltBis
-            // 
-            this.textErstelltBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textErstelltBis.Location = new System.Drawing.Point(797, 220);
-            this.textErstelltBis.Name = "textErstelltBis";
-            this.textErstelltBis.Size = new System.Drawing.Size(122, 24);
-            this.textErstelltBis.TabIndex = 16;
-            // 
-            // textHoeheVon
-            // 
-            this.textHoeheVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHoeheVon.Location = new System.Drawing.Point(1018, 60);
-            this.textHoeheVon.Name = "textHoeheVon";
-            this.textHoeheVon.Size = new System.Drawing.Size(78, 24);
-            this.textHoeheVon.TabIndex = 21;
-            // 
-            // textHaltbarkeitBis
-            // 
-            this.textHaltbarkeitBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHaltbarkeitBis.Location = new System.Drawing.Point(796, 300);
-            this.textHaltbarkeitBis.Name = "textHaltbarkeitBis";
-            this.textHaltbarkeitBis.Size = new System.Drawing.Size(122, 24);
-            this.textHaltbarkeitBis.TabIndex = 20;
-            // 
-            // textHaltbarkeitVon
-            // 
-            this.textHaltbarkeitVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHaltbarkeitVon.Location = new System.Drawing.Point(632, 300);
-            this.textHaltbarkeitVon.Name = "textHaltbarkeitVon";
-            this.textHaltbarkeitVon.Size = new System.Drawing.Size(122, 24);
-            this.textHaltbarkeitVon.TabIndex = 19;
-            // 
-            // textZuletztGeaendertBis
-            // 
-            this.textZuletztGeaendertBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textZuletztGeaendertBis.Location = new System.Drawing.Point(797, 260);
-            this.textZuletztGeaendertBis.Name = "textZuletztGeaendertBis";
-            this.textZuletztGeaendertBis.Size = new System.Drawing.Size(122, 24);
-            this.textZuletztGeaendertBis.TabIndex = 18;
-            // 
-            // textZuletztGeaendertVon
-            // 
-            this.textZuletztGeaendertVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textZuletztGeaendertVon.Location = new System.Drawing.Point(632, 260);
-            this.textZuletztGeaendertVon.Name = "textZuletztGeaendertVon";
-            this.textZuletztGeaendertVon.Size = new System.Drawing.Size(122, 24);
-            this.textZuletztGeaendertVon.TabIndex = 17;
-            // 
-            // textLaengeBis
-            // 
-            this.textLaengeBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLaengeBis.Location = new System.Drawing.Point(1138, 100);
-            this.textLaengeBis.Name = "textLaengeBis";
-            this.textLaengeBis.Size = new System.Drawing.Size(78, 24);
-            this.textLaengeBis.TabIndex = 24;
-            // 
-            // textHoeheBis
-            // 
-            this.textHoeheBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHoeheBis.Location = new System.Drawing.Point(1138, 60);
-            this.textHoeheBis.Name = "textHoeheBis";
-            this.textHoeheBis.Size = new System.Drawing.Size(78, 24);
-            this.textHoeheBis.TabIndex = 22;
-            // 
-            // textBreiteVon
-            // 
-            this.textBreiteVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBreiteVon.Location = new System.Drawing.Point(1018, 140);
-            this.textBreiteVon.Name = "textBreiteVon";
-            this.textBreiteVon.Size = new System.Drawing.Size(78, 24);
-            this.textBreiteVon.TabIndex = 25;
-            // 
-            // textLaengeVon
-            // 
-            this.textLaengeVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLaengeVon.Location = new System.Drawing.Point(1018, 100);
-            this.textLaengeVon.Name = "textLaengeVon";
-            this.textLaengeVon.Size = new System.Drawing.Size(78, 24);
-            this.textLaengeVon.TabIndex = 23;
-            // 
-            // textBreiteBis
-            // 
-            this.textBreiteBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBreiteBis.Location = new System.Drawing.Point(1138, 140);
-            this.textBreiteBis.Name = "textBreiteBis";
-            this.textBreiteBis.Size = new System.Drawing.Size(78, 24);
-            this.textBreiteBis.TabIndex = 26;
-            // 
-            // textAnschaffungsgrund
-            // 
-            this.textAnschaffungsgrund.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textAnschaffungsgrund.Location = new System.Drawing.Point(172, 340);
-            this.textAnschaffungsgrund.Multiline = true;
-            this.textAnschaffungsgrund.Name = "textAnschaffungsgrund";
-            this.textAnschaffungsgrund.Size = new System.Drawing.Size(305, 24);
-            this.textAnschaffungsgrund.TabIndex = 8;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(15, 103);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 18);
-            this.label22.TabIndex = 33;
-            this.label22.Text = "Regalname:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(15, 143);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(115, 18);
-            this.label23.TabIndex = 34;
-            this.label23.Text = "Regalfachname:";
-            // 
-            // textRegalname
-            // 
-            this.textRegalname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRegalname.Location = new System.Drawing.Point(172, 100);
-            this.textRegalname.Name = "textRegalname";
-            this.textRegalname.Size = new System.Drawing.Size(305, 24);
-            this.textRegalname.TabIndex = 2;
-            // 
-            // textRegalfachname
-            // 
-            this.textRegalfachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRegalfachname.Location = new System.Drawing.Point(172, 140);
-            this.textRegalfachname.Name = "textRegalfachname";
-            this.textRegalfachname.Size = new System.Drawing.Size(305, 24);
-            this.textRegalfachname.TabIndex = 3;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(15, 223);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(82, 18);
-            this.label24.TabIndex = 36;
-            this.label24.Text = "Produkt ID:";
-            // 
-            // textProduktID
-            // 
-            this.textProduktID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProduktID.Location = new System.Drawing.Point(172, 220);
-            this.textProduktID.Name = "textProduktID";
-            this.textProduktID.Size = new System.Drawing.Size(305, 24);
-            this.textProduktID.TabIndex = 5;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(543, 143);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(81, 18);
-            this.label25.TabIndex = 44;
-            this.label25.Text = "Menge von";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(764, 223);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(27, 18);
-            this.label26.TabIndex = 48;
-            this.label26.Text = "bis";
-            // 
-            // textMengeVon
-            // 
-            this.textMengeVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMengeVon.Location = new System.Drawing.Point(632, 140);
-            this.textMengeVon.Name = "textMengeVon";
-            this.textMengeVon.Size = new System.Drawing.Size(122, 24);
-            this.textMengeVon.TabIndex = 13;
-            // 
-            // textMengeBis
-            // 
-            this.textMengeBis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMengeBis.Location = new System.Drawing.Point(797, 140);
-            this.textMengeBis.Name = "textMengeBis";
-            this.textMengeBis.Size = new System.Drawing.Size(122, 24);
-            this.textMengeBis.TabIndex = 14;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label27.Location = new System.Drawing.Point(536, 187);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(386, 13);
-            this.label27.TabIndex = 46;
-            this.label27.Text = "Datumseingabe als TT.MM.JJJJ (T = Tag, M = Monat, J = Jahr; z.B. 11.05.1996)";
+            // buttonProduktliste
+            // 
+            this.buttonProduktliste.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.buttonProduktliste.Location = new System.Drawing.Point(943, 209);
+            this.buttonProduktliste.Name = "buttonProduktliste";
+            this.buttonProduktliste.Size = new System.Drawing.Size(125, 46);
+            this.buttonProduktliste.TabIndex = 88;
+            this.buttonProduktliste.Text = "Produktliste";
+            this.buttonProduktliste.UseSelectable = true;
+            this.buttonProduktliste.UseStyleColors = true;
+            this.buttonProduktliste.Click += new System.EventHandler(this.ButtonProduktliste_Click);
             // 
             // buttonZurücksetzen
             // 
-            this.buttonZurücksetzen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZurücksetzen.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.buttonZurücksetzen.Location = new System.Drawing.Point(943, 278);
             this.buttonZurücksetzen.Name = "buttonZurücksetzen";
             this.buttonZurücksetzen.Size = new System.Drawing.Size(125, 46);
-            this.buttonZurücksetzen.TabIndex = 29;
+            this.buttonZurücksetzen.TabIndex = 89;
             this.buttonZurücksetzen.Text = "Zurücksetzen";
-            this.buttonZurücksetzen.UseVisualStyleBackColor = true;
+            this.buttonZurücksetzen.UseSelectable = true;
+            this.buttonZurücksetzen.UseStyleColors = true;
             this.buttonZurücksetzen.Click += new System.EventHandler(this.ButtonZurücksetzen_Click);
             // 
-            // textLagerName
+            // buttonAbbrechen
             // 
-            this.textLagerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLagerName.Location = new System.Drawing.Point(172, 60);
-            this.textLagerName.Name = "textLagerName";
-            this.textLagerName.Size = new System.Drawing.Size(305, 24);
-            this.textLagerName.TabIndex = 1;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(15, 63);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(49, 18);
-            this.label28.TabIndex = 32;
-            this.label28.Text = "Lager:";
+            this.buttonAbbrechen.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.buttonAbbrechen.Location = new System.Drawing.Point(1091, 278);
+            this.buttonAbbrechen.Name = "buttonAbbrechen";
+            this.buttonAbbrechen.Size = new System.Drawing.Size(125, 46);
+            this.buttonAbbrechen.TabIndex = 90;
+            this.buttonAbbrechen.Text = "Abbrechen";
+            this.buttonAbbrechen.UseSelectable = true;
+            this.buttonAbbrechen.UseStyleColors = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // checkKompakt
             // 
             this.checkKompakt.AutoSize = true;
             this.checkKompakt.Location = new System.Drawing.Point(943, 346);
             this.checkKompakt.Name = "checkKompakt";
-            this.checkKompakt.Size = new System.Drawing.Size(112, 17);
-            this.checkKompakt.TabIndex = 30;
+            this.checkKompakt.Size = new System.Drawing.Size(120, 15);
+            this.checkKompakt.TabIndex = 91;
             this.checkKompakt.Text = "Kompakte Ansicht";
-            this.checkKompakt.UseVisualStyleBackColor = true;
+            this.checkKompakt.UseSelectable = true;
+            this.checkKompakt.UseStyleColors = true;
             this.checkKompakt.CheckedChanged += new System.EventHandler(this.CheckKompakt_CheckedChanged);
             // 
-            // buttonProduktliste
+            // textLagerName
             // 
-            this.buttonProduktliste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduktliste.Location = new System.Drawing.Point(943, 209);
-            this.buttonProduktliste.Name = "buttonProduktliste";
-            this.buttonProduktliste.Size = new System.Drawing.Size(125, 46);
-            this.buttonProduktliste.TabIndex = 59;
-            this.buttonProduktliste.Text = "Produktliste";
-            this.buttonProduktliste.UseVisualStyleBackColor = true;
-            this.buttonProduktliste.Click += new System.EventHandler(this.ButtonProduktliste_Click);
+            // 
+            // 
+            // 
+            this.textLagerName.CustomButton.Image = null;
+            this.textLagerName.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textLagerName.CustomButton.Name = "";
+            this.textLagerName.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textLagerName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textLagerName.CustomButton.TabIndex = 1;
+            this.textLagerName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textLagerName.CustomButton.UseSelectable = true;
+            this.textLagerName.CustomButton.Visible = false;
+            this.textLagerName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textLagerName.Lines = new string[0];
+            this.textLagerName.Location = new System.Drawing.Point(172, 57);
+            this.textLagerName.MaxLength = 32767;
+            this.textLagerName.Name = "textLagerName";
+            this.textLagerName.PasswordChar = '\0';
+            this.textLagerName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textLagerName.SelectedText = "";
+            this.textLagerName.SelectionLength = 0;
+            this.textLagerName.SelectionStart = 0;
+            this.textLagerName.ShortcutsEnabled = true;
+            this.textLagerName.Size = new System.Drawing.Size(305, 24);
+            this.textLagerName.TabIndex = 92;
+            this.textLagerName.UseSelectable = true;
+            this.textLagerName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textLagerName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textRegalname
+            // 
+            // 
+            // 
+            // 
+            this.textRegalname.CustomButton.Image = null;
+            this.textRegalname.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textRegalname.CustomButton.Name = "";
+            this.textRegalname.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textRegalname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textRegalname.CustomButton.TabIndex = 1;
+            this.textRegalname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textRegalname.CustomButton.UseSelectable = true;
+            this.textRegalname.CustomButton.Visible = false;
+            this.textRegalname.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textRegalname.Lines = new string[0];
+            this.textRegalname.Location = new System.Drawing.Point(172, 97);
+            this.textRegalname.MaxLength = 32767;
+            this.textRegalname.Name = "textRegalname";
+            this.textRegalname.PasswordChar = '\0';
+            this.textRegalname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textRegalname.SelectedText = "";
+            this.textRegalname.SelectionLength = 0;
+            this.textRegalname.SelectionStart = 0;
+            this.textRegalname.ShortcutsEnabled = true;
+            this.textRegalname.Size = new System.Drawing.Size(305, 24);
+            this.textRegalname.TabIndex = 93;
+            this.textRegalname.UseSelectable = true;
+            this.textRegalname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textRegalname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textRegalfachname
+            // 
+            // 
+            // 
+            // 
+            this.textRegalfachname.CustomButton.Image = null;
+            this.textRegalfachname.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textRegalfachname.CustomButton.Name = "";
+            this.textRegalfachname.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textRegalfachname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textRegalfachname.CustomButton.TabIndex = 1;
+            this.textRegalfachname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textRegalfachname.CustomButton.UseSelectable = true;
+            this.textRegalfachname.CustomButton.Visible = false;
+            this.textRegalfachname.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textRegalfachname.Lines = new string[0];
+            this.textRegalfachname.Location = new System.Drawing.Point(172, 137);
+            this.textRegalfachname.MaxLength = 32767;
+            this.textRegalfachname.Name = "textRegalfachname";
+            this.textRegalfachname.PasswordChar = '\0';
+            this.textRegalfachname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textRegalfachname.SelectedText = "";
+            this.textRegalfachname.SelectionLength = 0;
+            this.textRegalfachname.SelectionStart = 0;
+            this.textRegalfachname.ShortcutsEnabled = true;
+            this.textRegalfachname.Size = new System.Drawing.Size(305, 24);
+            this.textRegalfachname.TabIndex = 94;
+            this.textRegalfachname.UseSelectable = true;
+            this.textRegalfachname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textRegalfachname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textProduktname
+            // 
+            // 
+            // 
+            // 
+            this.textProduktname.CustomButton.Image = null;
+            this.textProduktname.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textProduktname.CustomButton.Name = "";
+            this.textProduktname.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textProduktname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textProduktname.CustomButton.TabIndex = 1;
+            this.textProduktname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textProduktname.CustomButton.UseSelectable = true;
+            this.textProduktname.CustomButton.Visible = false;
+            this.textProduktname.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textProduktname.Lines = new string[0];
+            this.textProduktname.Location = new System.Drawing.Point(172, 176);
+            this.textProduktname.MaxLength = 32767;
+            this.textProduktname.Name = "textProduktname";
+            this.textProduktname.PasswordChar = '\0';
+            this.textProduktname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textProduktname.SelectedText = "";
+            this.textProduktname.SelectionLength = 0;
+            this.textProduktname.SelectionStart = 0;
+            this.textProduktname.ShortcutsEnabled = true;
+            this.textProduktname.Size = new System.Drawing.Size(305, 24);
+            this.textProduktname.TabIndex = 95;
+            this.textProduktname.UseSelectable = true;
+            this.textProduktname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textProduktname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textProduktID
+            // 
+            // 
+            // 
+            // 
+            this.textProduktID.CustomButton.Image = null;
+            this.textProduktID.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textProduktID.CustomButton.Name = "";
+            this.textProduktID.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textProduktID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textProduktID.CustomButton.TabIndex = 1;
+            this.textProduktID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textProduktID.CustomButton.UseSelectable = true;
+            this.textProduktID.CustomButton.Visible = false;
+            this.textProduktID.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textProduktID.Lines = new string[0];
+            this.textProduktID.Location = new System.Drawing.Point(172, 217);
+            this.textProduktID.MaxLength = 32767;
+            this.textProduktID.Name = "textProduktID";
+            this.textProduktID.PasswordChar = '\0';
+            this.textProduktID.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textProduktID.SelectedText = "";
+            this.textProduktID.SelectionLength = 0;
+            this.textProduktID.SelectionStart = 0;
+            this.textProduktID.ShortcutsEnabled = true;
+            this.textProduktID.Size = new System.Drawing.Size(305, 24);
+            this.textProduktID.TabIndex = 96;
+            this.textProduktID.UseSelectable = true;
+            this.textProduktID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textProduktID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textZeichnungsnummer
+            // 
+            // 
+            // 
+            // 
+            this.textZeichnungsnummer.CustomButton.Image = null;
+            this.textZeichnungsnummer.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textZeichnungsnummer.CustomButton.Name = "";
+            this.textZeichnungsnummer.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textZeichnungsnummer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textZeichnungsnummer.CustomButton.TabIndex = 1;
+            this.textZeichnungsnummer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textZeichnungsnummer.CustomButton.UseSelectable = true;
+            this.textZeichnungsnummer.CustomButton.Visible = false;
+            this.textZeichnungsnummer.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textZeichnungsnummer.Lines = new string[0];
+            this.textZeichnungsnummer.Location = new System.Drawing.Point(172, 257);
+            this.textZeichnungsnummer.MaxLength = 32767;
+            this.textZeichnungsnummer.Name = "textZeichnungsnummer";
+            this.textZeichnungsnummer.PasswordChar = '\0';
+            this.textZeichnungsnummer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textZeichnungsnummer.SelectedText = "";
+            this.textZeichnungsnummer.SelectionLength = 0;
+            this.textZeichnungsnummer.SelectionStart = 0;
+            this.textZeichnungsnummer.ShortcutsEnabled = true;
+            this.textZeichnungsnummer.Size = new System.Drawing.Size(305, 24);
+            this.textZeichnungsnummer.TabIndex = 97;
+            this.textZeichnungsnummer.UseSelectable = true;
+            this.textZeichnungsnummer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textZeichnungsnummer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textPaketname
+            // 
+            // 
+            // 
+            // 
+            this.textPaketname.CustomButton.Image = null;
+            this.textPaketname.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textPaketname.CustomButton.Name = "";
+            this.textPaketname.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textPaketname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textPaketname.CustomButton.TabIndex = 1;
+            this.textPaketname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textPaketname.CustomButton.UseSelectable = true;
+            this.textPaketname.CustomButton.Visible = false;
+            this.textPaketname.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textPaketname.Lines = new string[0];
+            this.textPaketname.Location = new System.Drawing.Point(172, 297);
+            this.textPaketname.MaxLength = 32767;
+            this.textPaketname.Name = "textPaketname";
+            this.textPaketname.PasswordChar = '\0';
+            this.textPaketname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textPaketname.SelectedText = "";
+            this.textPaketname.SelectionLength = 0;
+            this.textPaketname.SelectionStart = 0;
+            this.textPaketname.ShortcutsEnabled = true;
+            this.textPaketname.Size = new System.Drawing.Size(305, 24);
+            this.textPaketname.TabIndex = 98;
+            this.textPaketname.UseSelectable = true;
+            this.textPaketname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textPaketname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textAnschaffungsgrund
+            // 
+            // 
+            // 
+            // 
+            this.textAnschaffungsgrund.CustomButton.Image = null;
+            this.textAnschaffungsgrund.CustomButton.Location = new System.Drawing.Point(283, 2);
+            this.textAnschaffungsgrund.CustomButton.Name = "";
+            this.textAnschaffungsgrund.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textAnschaffungsgrund.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textAnschaffungsgrund.CustomButton.TabIndex = 1;
+            this.textAnschaffungsgrund.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textAnschaffungsgrund.CustomButton.UseSelectable = true;
+            this.textAnschaffungsgrund.CustomButton.Visible = false;
+            this.textAnschaffungsgrund.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textAnschaffungsgrund.Lines = new string[0];
+            this.textAnschaffungsgrund.Location = new System.Drawing.Point(172, 339);
+            this.textAnschaffungsgrund.MaxLength = 32767;
+            this.textAnschaffungsgrund.Name = "textAnschaffungsgrund";
+            this.textAnschaffungsgrund.PasswordChar = '\0';
+            this.textAnschaffungsgrund.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textAnschaffungsgrund.SelectedText = "";
+            this.textAnschaffungsgrund.SelectionLength = 0;
+            this.textAnschaffungsgrund.SelectionStart = 0;
+            this.textAnschaffungsgrund.ShortcutsEnabled = true;
+            this.textAnschaffungsgrund.Size = new System.Drawing.Size(305, 24);
+            this.textAnschaffungsgrund.TabIndex = 99;
+            this.textAnschaffungsgrund.UseSelectable = true;
+            this.textAnschaffungsgrund.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textAnschaffungsgrund.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textGewichtVon
+            // 
+            // 
+            // 
+            // 
+            this.textGewichtVon.CustomButton.Image = null;
+            this.textGewichtVon.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textGewichtVon.CustomButton.Name = "";
+            this.textGewichtVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textGewichtVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textGewichtVon.CustomButton.TabIndex = 1;
+            this.textGewichtVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textGewichtVon.CustomButton.UseSelectable = true;
+            this.textGewichtVon.CustomButton.Visible = false;
+            this.textGewichtVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textGewichtVon.Lines = new string[0];
+            this.textGewichtVon.Location = new System.Drawing.Point(632, 57);
+            this.textGewichtVon.MaxLength = 32767;
+            this.textGewichtVon.Name = "textGewichtVon";
+            this.textGewichtVon.PasswordChar = '\0';
+            this.textGewichtVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textGewichtVon.SelectedText = "";
+            this.textGewichtVon.SelectionLength = 0;
+            this.textGewichtVon.SelectionStart = 0;
+            this.textGewichtVon.ShortcutsEnabled = true;
+            this.textGewichtVon.Size = new System.Drawing.Size(122, 24);
+            this.textGewichtVon.TabIndex = 100;
+            this.textGewichtVon.UseSelectable = true;
+            this.textGewichtVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textGewichtVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textMengeVon
+            // 
+            // 
+            // 
+            // 
+            this.textMengeVon.CustomButton.Image = null;
+            this.textMengeVon.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textMengeVon.CustomButton.Name = "";
+            this.textMengeVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textMengeVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textMengeVon.CustomButton.TabIndex = 1;
+            this.textMengeVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textMengeVon.CustomButton.UseSelectable = true;
+            this.textMengeVon.CustomButton.Visible = false;
+            this.textMengeVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textMengeVon.Lines = new string[0];
+            this.textMengeVon.Location = new System.Drawing.Point(632, 137);
+            this.textMengeVon.MaxLength = 32767;
+            this.textMengeVon.Name = "textMengeVon";
+            this.textMengeVon.PasswordChar = '\0';
+            this.textMengeVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textMengeVon.SelectedText = "";
+            this.textMengeVon.SelectionLength = 0;
+            this.textMengeVon.SelectionStart = 0;
+            this.textMengeVon.ShortcutsEnabled = true;
+            this.textMengeVon.Size = new System.Drawing.Size(122, 24);
+            this.textMengeVon.TabIndex = 101;
+            this.textMengeVon.UseSelectable = true;
+            this.textMengeVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textMengeVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textPreisBis
+            // 
+            // 
+            // 
+            // 
+            this.textPreisBis.CustomButton.Image = null;
+            this.textPreisBis.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textPreisBis.CustomButton.Name = "";
+            this.textPreisBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textPreisBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textPreisBis.CustomButton.TabIndex = 1;
+            this.textPreisBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textPreisBis.CustomButton.UseSelectable = true;
+            this.textPreisBis.CustomButton.Visible = false;
+            this.textPreisBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textPreisBis.Lines = new string[0];
+            this.textPreisBis.Location = new System.Drawing.Point(796, 97);
+            this.textPreisBis.MaxLength = 32767;
+            this.textPreisBis.Name = "textPreisBis";
+            this.textPreisBis.PasswordChar = '\0';
+            this.textPreisBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textPreisBis.SelectedText = "";
+            this.textPreisBis.SelectionLength = 0;
+            this.textPreisBis.SelectionStart = 0;
+            this.textPreisBis.ShortcutsEnabled = true;
+            this.textPreisBis.Size = new System.Drawing.Size(122, 24);
+            this.textPreisBis.TabIndex = 102;
+            this.textPreisBis.UseSelectable = true;
+            this.textPreisBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textPreisBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textPreisVon
+            // 
+            // 
+            // 
+            // 
+            this.textPreisVon.CustomButton.Image = null;
+            this.textPreisVon.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textPreisVon.CustomButton.Name = "";
+            this.textPreisVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textPreisVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textPreisVon.CustomButton.TabIndex = 1;
+            this.textPreisVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textPreisVon.CustomButton.UseSelectable = true;
+            this.textPreisVon.CustomButton.Visible = false;
+            this.textPreisVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textPreisVon.Lines = new string[0];
+            this.textPreisVon.Location = new System.Drawing.Point(632, 97);
+            this.textPreisVon.MaxLength = 32767;
+            this.textPreisVon.Name = "textPreisVon";
+            this.textPreisVon.PasswordChar = '\0';
+            this.textPreisVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textPreisVon.SelectedText = "";
+            this.textPreisVon.SelectionLength = 0;
+            this.textPreisVon.SelectionStart = 0;
+            this.textPreisVon.ShortcutsEnabled = true;
+            this.textPreisVon.Size = new System.Drawing.Size(122, 24);
+            this.textPreisVon.TabIndex = 103;
+            this.textPreisVon.UseSelectable = true;
+            this.textPreisVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textPreisVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textGewichtBis
+            // 
+            // 
+            // 
+            // 
+            this.textGewichtBis.CustomButton.Image = null;
+            this.textGewichtBis.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textGewichtBis.CustomButton.Name = "";
+            this.textGewichtBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textGewichtBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textGewichtBis.CustomButton.TabIndex = 1;
+            this.textGewichtBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textGewichtBis.CustomButton.UseSelectable = true;
+            this.textGewichtBis.CustomButton.Visible = false;
+            this.textGewichtBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textGewichtBis.Lines = new string[0];
+            this.textGewichtBis.Location = new System.Drawing.Point(796, 57);
+            this.textGewichtBis.MaxLength = 32767;
+            this.textGewichtBis.Name = "textGewichtBis";
+            this.textGewichtBis.PasswordChar = '\0';
+            this.textGewichtBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textGewichtBis.SelectedText = "";
+            this.textGewichtBis.SelectionLength = 0;
+            this.textGewichtBis.SelectionStart = 0;
+            this.textGewichtBis.ShortcutsEnabled = true;
+            this.textGewichtBis.Size = new System.Drawing.Size(122, 24);
+            this.textGewichtBis.TabIndex = 104;
+            this.textGewichtBis.UseSelectable = true;
+            this.textGewichtBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textGewichtBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textHaltbarkeitBis
+            // 
+            // 
+            // 
+            // 
+            this.textHaltbarkeitBis.CustomButton.Image = null;
+            this.textHaltbarkeitBis.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textHaltbarkeitBis.CustomButton.Name = "";
+            this.textHaltbarkeitBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textHaltbarkeitBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textHaltbarkeitBis.CustomButton.TabIndex = 1;
+            this.textHaltbarkeitBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textHaltbarkeitBis.CustomButton.UseSelectable = true;
+            this.textHaltbarkeitBis.CustomButton.Visible = false;
+            this.textHaltbarkeitBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textHaltbarkeitBis.Lines = new string[0];
+            this.textHaltbarkeitBis.Location = new System.Drawing.Point(796, 297);
+            this.textHaltbarkeitBis.MaxLength = 32767;
+            this.textHaltbarkeitBis.Name = "textHaltbarkeitBis";
+            this.textHaltbarkeitBis.PasswordChar = '\0';
+            this.textHaltbarkeitBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textHaltbarkeitBis.SelectedText = "";
+            this.textHaltbarkeitBis.SelectionLength = 0;
+            this.textHaltbarkeitBis.SelectionStart = 0;
+            this.textHaltbarkeitBis.ShortcutsEnabled = true;
+            this.textHaltbarkeitBis.Size = new System.Drawing.Size(122, 24);
+            this.textHaltbarkeitBis.TabIndex = 105;
+            this.textHaltbarkeitBis.UseSelectable = true;
+            this.textHaltbarkeitBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textHaltbarkeitBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textHaltbarkeitVon
+            // 
+            // 
+            // 
+            // 
+            this.textHaltbarkeitVon.CustomButton.Image = null;
+            this.textHaltbarkeitVon.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textHaltbarkeitVon.CustomButton.Name = "";
+            this.textHaltbarkeitVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textHaltbarkeitVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textHaltbarkeitVon.CustomButton.TabIndex = 1;
+            this.textHaltbarkeitVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textHaltbarkeitVon.CustomButton.UseSelectable = true;
+            this.textHaltbarkeitVon.CustomButton.Visible = false;
+            this.textHaltbarkeitVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textHaltbarkeitVon.Lines = new string[0];
+            this.textHaltbarkeitVon.Location = new System.Drawing.Point(632, 297);
+            this.textHaltbarkeitVon.MaxLength = 32767;
+            this.textHaltbarkeitVon.Name = "textHaltbarkeitVon";
+            this.textHaltbarkeitVon.PasswordChar = '\0';
+            this.textHaltbarkeitVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textHaltbarkeitVon.SelectedText = "";
+            this.textHaltbarkeitVon.SelectionLength = 0;
+            this.textHaltbarkeitVon.SelectionStart = 0;
+            this.textHaltbarkeitVon.ShortcutsEnabled = true;
+            this.textHaltbarkeitVon.Size = new System.Drawing.Size(122, 24);
+            this.textHaltbarkeitVon.TabIndex = 106;
+            this.textHaltbarkeitVon.UseSelectable = true;
+            this.textHaltbarkeitVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textHaltbarkeitVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textZuletztGeaendertBis
+            // 
+            // 
+            // 
+            // 
+            this.textZuletztGeaendertBis.CustomButton.Image = null;
+            this.textZuletztGeaendertBis.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textZuletztGeaendertBis.CustomButton.Name = "";
+            this.textZuletztGeaendertBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textZuletztGeaendertBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textZuletztGeaendertBis.CustomButton.TabIndex = 1;
+            this.textZuletztGeaendertBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textZuletztGeaendertBis.CustomButton.UseSelectable = true;
+            this.textZuletztGeaendertBis.CustomButton.Visible = false;
+            this.textZuletztGeaendertBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textZuletztGeaendertBis.Lines = new string[0];
+            this.textZuletztGeaendertBis.Location = new System.Drawing.Point(796, 257);
+            this.textZuletztGeaendertBis.MaxLength = 32767;
+            this.textZuletztGeaendertBis.Name = "textZuletztGeaendertBis";
+            this.textZuletztGeaendertBis.PasswordChar = '\0';
+            this.textZuletztGeaendertBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textZuletztGeaendertBis.SelectedText = "";
+            this.textZuletztGeaendertBis.SelectionLength = 0;
+            this.textZuletztGeaendertBis.SelectionStart = 0;
+            this.textZuletztGeaendertBis.ShortcutsEnabled = true;
+            this.textZuletztGeaendertBis.Size = new System.Drawing.Size(122, 24);
+            this.textZuletztGeaendertBis.TabIndex = 107;
+            this.textZuletztGeaendertBis.UseSelectable = true;
+            this.textZuletztGeaendertBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textZuletztGeaendertBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textZuletztGeaendertVon
+            // 
+            // 
+            // 
+            // 
+            this.textZuletztGeaendertVon.CustomButton.Image = null;
+            this.textZuletztGeaendertVon.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textZuletztGeaendertVon.CustomButton.Name = "";
+            this.textZuletztGeaendertVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textZuletztGeaendertVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textZuletztGeaendertVon.CustomButton.TabIndex = 1;
+            this.textZuletztGeaendertVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textZuletztGeaendertVon.CustomButton.UseSelectable = true;
+            this.textZuletztGeaendertVon.CustomButton.Visible = false;
+            this.textZuletztGeaendertVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textZuletztGeaendertVon.Lines = new string[0];
+            this.textZuletztGeaendertVon.Location = new System.Drawing.Point(632, 257);
+            this.textZuletztGeaendertVon.MaxLength = 32767;
+            this.textZuletztGeaendertVon.Name = "textZuletztGeaendertVon";
+            this.textZuletztGeaendertVon.PasswordChar = '\0';
+            this.textZuletztGeaendertVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textZuletztGeaendertVon.SelectedText = "";
+            this.textZuletztGeaendertVon.SelectionLength = 0;
+            this.textZuletztGeaendertVon.SelectionStart = 0;
+            this.textZuletztGeaendertVon.ShortcutsEnabled = true;
+            this.textZuletztGeaendertVon.Size = new System.Drawing.Size(122, 24);
+            this.textZuletztGeaendertVon.TabIndex = 108;
+            this.textZuletztGeaendertVon.UseSelectable = true;
+            this.textZuletztGeaendertVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textZuletztGeaendertVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textErstelltBis
+            // 
+            // 
+            // 
+            // 
+            this.textErstelltBis.CustomButton.Image = null;
+            this.textErstelltBis.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textErstelltBis.CustomButton.Name = "";
+            this.textErstelltBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textErstelltBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textErstelltBis.CustomButton.TabIndex = 1;
+            this.textErstelltBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textErstelltBis.CustomButton.UseSelectable = true;
+            this.textErstelltBis.CustomButton.Visible = false;
+            this.textErstelltBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textErstelltBis.Lines = new string[0];
+            this.textErstelltBis.Location = new System.Drawing.Point(796, 217);
+            this.textErstelltBis.MaxLength = 32767;
+            this.textErstelltBis.Name = "textErstelltBis";
+            this.textErstelltBis.PasswordChar = '\0';
+            this.textErstelltBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textErstelltBis.SelectedText = "";
+            this.textErstelltBis.SelectionLength = 0;
+            this.textErstelltBis.SelectionStart = 0;
+            this.textErstelltBis.ShortcutsEnabled = true;
+            this.textErstelltBis.Size = new System.Drawing.Size(122, 24);
+            this.textErstelltBis.TabIndex = 109;
+            this.textErstelltBis.UseSelectable = true;
+            this.textErstelltBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textErstelltBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textErstelltVon
+            // 
+            // 
+            // 
+            // 
+            this.textErstelltVon.CustomButton.Image = null;
+            this.textErstelltVon.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textErstelltVon.CustomButton.Name = "";
+            this.textErstelltVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textErstelltVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textErstelltVon.CustomButton.TabIndex = 1;
+            this.textErstelltVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textErstelltVon.CustomButton.UseSelectable = true;
+            this.textErstelltVon.CustomButton.Visible = false;
+            this.textErstelltVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textErstelltVon.Lines = new string[0];
+            this.textErstelltVon.Location = new System.Drawing.Point(632, 217);
+            this.textErstelltVon.MaxLength = 32767;
+            this.textErstelltVon.Name = "textErstelltVon";
+            this.textErstelltVon.PasswordChar = '\0';
+            this.textErstelltVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textErstelltVon.SelectedText = "";
+            this.textErstelltVon.SelectionLength = 0;
+            this.textErstelltVon.SelectionStart = 0;
+            this.textErstelltVon.ShortcutsEnabled = true;
+            this.textErstelltVon.Size = new System.Drawing.Size(122, 24);
+            this.textErstelltVon.TabIndex = 110;
+            this.textErstelltVon.UseSelectable = true;
+            this.textErstelltVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textErstelltVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textMengeBis
+            // 
+            // 
+            // 
+            // 
+            this.textMengeBis.CustomButton.Image = null;
+            this.textMengeBis.CustomButton.Location = new System.Drawing.Point(100, 2);
+            this.textMengeBis.CustomButton.Name = "";
+            this.textMengeBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textMengeBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textMengeBis.CustomButton.TabIndex = 1;
+            this.textMengeBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textMengeBis.CustomButton.UseSelectable = true;
+            this.textMengeBis.CustomButton.Visible = false;
+            this.textMengeBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textMengeBis.Lines = new string[0];
+            this.textMengeBis.Location = new System.Drawing.Point(796, 137);
+            this.textMengeBis.MaxLength = 32767;
+            this.textMengeBis.Name = "textMengeBis";
+            this.textMengeBis.PasswordChar = '\0';
+            this.textMengeBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textMengeBis.SelectedText = "";
+            this.textMengeBis.SelectionLength = 0;
+            this.textMengeBis.SelectionStart = 0;
+            this.textMengeBis.ShortcutsEnabled = true;
+            this.textMengeBis.Size = new System.Drawing.Size(122, 24);
+            this.textMengeBis.TabIndex = 111;
+            this.textMengeBis.UseSelectable = true;
+            this.textMengeBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textMengeBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textHoeheVon
+            // 
+            // 
+            // 
+            // 
+            this.textHoeheVon.CustomButton.Image = null;
+            this.textHoeheVon.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.textHoeheVon.CustomButton.Name = "";
+            this.textHoeheVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textHoeheVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textHoeheVon.CustomButton.TabIndex = 1;
+            this.textHoeheVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textHoeheVon.CustomButton.UseSelectable = true;
+            this.textHoeheVon.CustomButton.Visible = false;
+            this.textHoeheVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textHoeheVon.Lines = new string[0];
+            this.textHoeheVon.Location = new System.Drawing.Point(1018, 57);
+            this.textHoeheVon.MaxLength = 32767;
+            this.textHoeheVon.Name = "textHoeheVon";
+            this.textHoeheVon.PasswordChar = '\0';
+            this.textHoeheVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textHoeheVon.SelectedText = "";
+            this.textHoeheVon.SelectionLength = 0;
+            this.textHoeheVon.SelectionStart = 0;
+            this.textHoeheVon.ShortcutsEnabled = true;
+            this.textHoeheVon.Size = new System.Drawing.Size(78, 24);
+            this.textHoeheVon.TabIndex = 112;
+            this.textHoeheVon.UseSelectable = true;
+            this.textHoeheVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textHoeheVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textBreiteBis
+            // 
+            // 
+            // 
+            // 
+            this.textBreiteBis.CustomButton.Image = null;
+            this.textBreiteBis.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.textBreiteBis.CustomButton.Name = "";
+            this.textBreiteBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textBreiteBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBreiteBis.CustomButton.TabIndex = 1;
+            this.textBreiteBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBreiteBis.CustomButton.UseSelectable = true;
+            this.textBreiteBis.CustomButton.Visible = false;
+            this.textBreiteBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textBreiteBis.Lines = new string[0];
+            this.textBreiteBis.Location = new System.Drawing.Point(1138, 137);
+            this.textBreiteBis.MaxLength = 32767;
+            this.textBreiteBis.Name = "textBreiteBis";
+            this.textBreiteBis.PasswordChar = '\0';
+            this.textBreiteBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBreiteBis.SelectedText = "";
+            this.textBreiteBis.SelectionLength = 0;
+            this.textBreiteBis.SelectionStart = 0;
+            this.textBreiteBis.ShortcutsEnabled = true;
+            this.textBreiteBis.Size = new System.Drawing.Size(78, 24);
+            this.textBreiteBis.TabIndex = 113;
+            this.textBreiteBis.UseSelectable = true;
+            this.textBreiteBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBreiteBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textBreiteVon
+            // 
+            // 
+            // 
+            // 
+            this.textBreiteVon.CustomButton.Image = null;
+            this.textBreiteVon.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.textBreiteVon.CustomButton.Name = "";
+            this.textBreiteVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textBreiteVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBreiteVon.CustomButton.TabIndex = 1;
+            this.textBreiteVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBreiteVon.CustomButton.UseSelectable = true;
+            this.textBreiteVon.CustomButton.Visible = false;
+            this.textBreiteVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textBreiteVon.Lines = new string[0];
+            this.textBreiteVon.Location = new System.Drawing.Point(1018, 137);
+            this.textBreiteVon.MaxLength = 32767;
+            this.textBreiteVon.Name = "textBreiteVon";
+            this.textBreiteVon.PasswordChar = '\0';
+            this.textBreiteVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBreiteVon.SelectedText = "";
+            this.textBreiteVon.SelectionLength = 0;
+            this.textBreiteVon.SelectionStart = 0;
+            this.textBreiteVon.ShortcutsEnabled = true;
+            this.textBreiteVon.Size = new System.Drawing.Size(78, 24);
+            this.textBreiteVon.TabIndex = 114;
+            this.textBreiteVon.UseSelectable = true;
+            this.textBreiteVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBreiteVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textLaengeBis
+            // 
+            // 
+            // 
+            // 
+            this.textLaengeBis.CustomButton.Image = null;
+            this.textLaengeBis.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.textLaengeBis.CustomButton.Name = "";
+            this.textLaengeBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textLaengeBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textLaengeBis.CustomButton.TabIndex = 1;
+            this.textLaengeBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textLaengeBis.CustomButton.UseSelectable = true;
+            this.textLaengeBis.CustomButton.Visible = false;
+            this.textLaengeBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textLaengeBis.Lines = new string[0];
+            this.textLaengeBis.Location = new System.Drawing.Point(1138, 97);
+            this.textLaengeBis.MaxLength = 32767;
+            this.textLaengeBis.Name = "textLaengeBis";
+            this.textLaengeBis.PasswordChar = '\0';
+            this.textLaengeBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textLaengeBis.SelectedText = "";
+            this.textLaengeBis.SelectionLength = 0;
+            this.textLaengeBis.SelectionStart = 0;
+            this.textLaengeBis.ShortcutsEnabled = true;
+            this.textLaengeBis.Size = new System.Drawing.Size(78, 24);
+            this.textLaengeBis.TabIndex = 115;
+            this.textLaengeBis.UseSelectable = true;
+            this.textLaengeBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textLaengeBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textLaengeVon
+            // 
+            // 
+            // 
+            // 
+            this.textLaengeVon.CustomButton.Image = null;
+            this.textLaengeVon.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.textLaengeVon.CustomButton.Name = "";
+            this.textLaengeVon.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textLaengeVon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textLaengeVon.CustomButton.TabIndex = 1;
+            this.textLaengeVon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textLaengeVon.CustomButton.UseSelectable = true;
+            this.textLaengeVon.CustomButton.Visible = false;
+            this.textLaengeVon.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textLaengeVon.Lines = new string[0];
+            this.textLaengeVon.Location = new System.Drawing.Point(1018, 97);
+            this.textLaengeVon.MaxLength = 32767;
+            this.textLaengeVon.Name = "textLaengeVon";
+            this.textLaengeVon.PasswordChar = '\0';
+            this.textLaengeVon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textLaengeVon.SelectedText = "";
+            this.textLaengeVon.SelectionLength = 0;
+            this.textLaengeVon.SelectionStart = 0;
+            this.textLaengeVon.ShortcutsEnabled = true;
+            this.textLaengeVon.Size = new System.Drawing.Size(78, 24);
+            this.textLaengeVon.TabIndex = 116;
+            this.textLaengeVon.UseSelectable = true;
+            this.textLaengeVon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textLaengeVon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // textHoeheBis
+            // 
+            // 
+            // 
+            // 
+            this.textHoeheBis.CustomButton.Image = null;
+            this.textHoeheBis.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.textHoeheBis.CustomButton.Name = "";
+            this.textHoeheBis.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textHoeheBis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textHoeheBis.CustomButton.TabIndex = 1;
+            this.textHoeheBis.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textHoeheBis.CustomButton.UseSelectable = true;
+            this.textHoeheBis.CustomButton.Visible = false;
+            this.textHoeheBis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.textHoeheBis.Lines = new string[0];
+            this.textHoeheBis.Location = new System.Drawing.Point(1138, 57);
+            this.textHoeheBis.MaxLength = 32767;
+            this.textHoeheBis.Name = "textHoeheBis";
+            this.textHoeheBis.PasswordChar = '\0';
+            this.textHoeheBis.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textHoeheBis.SelectedText = "";
+            this.textHoeheBis.SelectionLength = 0;
+            this.textHoeheBis.SelectionStart = 0;
+            this.textHoeheBis.ShortcutsEnabled = true;
+            this.textHoeheBis.Size = new System.Drawing.Size(78, 24);
+            this.textHoeheBis.TabIndex = 117;
+            this.textHoeheBis.UseSelectable = true;
+            this.textHoeheBis.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textHoeheBis.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Suche
             // 
@@ -832,70 +1462,67 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1254, 801);
-            this.Controls.Add(this.buttonProduktliste);
-            this.Controls.Add(this.checkKompakt);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.textLagerName);
-            this.Controls.Add(this.buttonZurücksetzen);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.textMengeVon);
-            this.Controls.Add(this.textMengeBis);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.textProduktID);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.textRegalfachname);
-            this.Controls.Add(this.textRegalname);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBreiteBis);
-            this.Controls.Add(this.textLaengeVon);
-            this.Controls.Add(this.textBreiteVon);
             this.Controls.Add(this.textHoeheBis);
+            this.Controls.Add(this.textLaengeVon);
             this.Controls.Add(this.textLaengeBis);
+            this.Controls.Add(this.textBreiteVon);
+            this.Controls.Add(this.textBreiteBis);
+            this.Controls.Add(this.textHoeheVon);
+            this.Controls.Add(this.textMengeBis);
+            this.Controls.Add(this.textErstelltVon);
+            this.Controls.Add(this.textErstelltBis);
             this.Controls.Add(this.textZuletztGeaendertVon);
             this.Controls.Add(this.textZuletztGeaendertBis);
             this.Controls.Add(this.textHaltbarkeitVon);
             this.Controls.Add(this.textHaltbarkeitBis);
-            this.Controls.Add(this.textHoeheVon);
-            this.Controls.Add(this.textErstelltBis);
-            this.Controls.Add(this.textPreisBis);
             this.Controls.Add(this.textGewichtBis);
-            this.Controls.Add(this.textErstelltVon);
             this.Controls.Add(this.textPreisVon);
+            this.Controls.Add(this.textPreisBis);
+            this.Controls.Add(this.textMengeVon);
             this.Controls.Add(this.textGewichtVon);
             this.Controls.Add(this.textAnschaffungsgrund);
             this.Controls.Add(this.textPaketname);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textProduktname);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.buttonSuchen);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textZeichnungsnummer);
-            this.DoubleBuffered = true;
+            this.Controls.Add(this.textProduktID);
+            this.Controls.Add(this.textProduktname);
+            this.Controls.Add(this.textRegalfachname);
+            this.Controls.Add(this.textRegalname);
+            this.Controls.Add(this.textLagerName);
+            this.Controls.Add(this.checkKompakt);
+            this.Controls.Add(this.buttonAbbrechen);
+            this.Controls.Add(this.buttonZurücksetzen);
+            this.Controls.Add(this.buttonProduktliste);
+            this.Controls.Add(this.buttonSuchen);
+            this.Controls.Add(this.metroLabel27);
+            this.Controls.Add(this.metroLabel26);
+            this.Controls.Add(this.metroLabel25);
+            this.Controls.Add(this.metroLabel24);
+            this.Controls.Add(this.metroLabel23);
+            this.Controls.Add(this.metroLabel22);
+            this.Controls.Add(this.metroLabel21);
+            this.Controls.Add(this.metroLabel20);
+            this.Controls.Add(this.metroLabel19);
+            this.Controls.Add(this.metroLabel18);
+            this.Controls.Add(this.metroLabel17);
+            this.Controls.Add(this.metroLabel16);
+            this.Controls.Add(this.metroLabel15);
+            this.Controls.Add(this.metroLabel14);
+            this.Controls.Add(this.metroLabel13);
+            this.Controls.Add(this.metroLabel12);
+            this.Controls.Add(this.metroLabel11);
+            this.Controls.Add(this.metroLabel10);
+            this.Controls.Add(this.metroLabel9);
+            this.Controls.Add(this.metroLabel8);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Suche";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suche";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SucheFormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -905,62 +1532,7 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.TextBox textZeichnungsnummer;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonSuchen;
-        private System.Windows.Forms.Button buttonAbbrechen;
-        private System.Windows.Forms.TextBox textProduktname;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textPaketname;
-        private System.Windows.Forms.TextBox textGewichtVon;
-        private System.Windows.Forms.TextBox textPreisVon;
-        private System.Windows.Forms.TextBox textErstelltVon;
-        private System.Windows.Forms.TextBox textGewichtBis;
-        private System.Windows.Forms.TextBox textPreisBis;
-        private System.Windows.Forms.TextBox textErstelltBis;
-        private System.Windows.Forms.TextBox textHoeheVon;
-        private System.Windows.Forms.TextBox textHaltbarkeitBis;
-        private System.Windows.Forms.TextBox textHaltbarkeitVon;
-        private System.Windows.Forms.TextBox textZuletztGeaendertBis;
-        private System.Windows.Forms.TextBox textZuletztGeaendertVon;
-        private System.Windows.Forms.TextBox textLaengeBis;
-        private System.Windows.Forms.TextBox textHoeheBis;
-        private System.Windows.Forms.TextBox textBreiteVon;
-        private System.Windows.Forms.TextBox textLaengeVon;
-        private System.Windows.Forms.TextBox textBreiteBis;
-        private System.Windows.Forms.TextBox textAnschaffungsgrund;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textRegalname;
-        private System.Windows.Forms.TextBox textRegalfachname;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textProduktID;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textMengeVon;
-        private System.Windows.Forms.TextBox textMengeBis;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button buttonZurücksetzen;
+        private MetroFramework.Controls.MetroGrid dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleLagerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleRegalName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleRegalfachName;
@@ -979,9 +1551,63 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleHaltbarkeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleAnschaffungsgrund;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelleZeile;
-        private System.Windows.Forms.TextBox textLagerName;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.CheckBox checkKompakt;
-        private System.Windows.Forms.Button buttonProduktliste;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroLabel metroLabel17;
+        private MetroFramework.Controls.MetroLabel metroLabel18;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroLabel metroLabel23;
+        private MetroFramework.Controls.MetroLabel metroLabel24;
+        private MetroFramework.Controls.MetroLabel metroLabel25;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroButton buttonSuchen;
+        private MetroFramework.Controls.MetroButton buttonProduktliste;
+        private MetroFramework.Controls.MetroButton buttonZurücksetzen;
+        private MetroFramework.Controls.MetroButton buttonAbbrechen;
+        private MetroFramework.Controls.MetroCheckBox checkKompakt;
+        private MetroFramework.Controls.MetroTextBox textLagerName;
+        private MetroFramework.Controls.MetroTextBox textRegalname;
+        private MetroFramework.Controls.MetroTextBox textRegalfachname;
+        private MetroFramework.Controls.MetroTextBox textProduktname;
+        private MetroFramework.Controls.MetroTextBox textProduktID;
+        private MetroFramework.Controls.MetroTextBox textZeichnungsnummer;
+        private MetroFramework.Controls.MetroTextBox textPaketname;
+        private MetroFramework.Controls.MetroTextBox textAnschaffungsgrund;
+        private MetroFramework.Controls.MetroTextBox textGewichtVon;
+        private MetroFramework.Controls.MetroTextBox textMengeVon;
+        private MetroFramework.Controls.MetroTextBox textPreisBis;
+        private MetroFramework.Controls.MetroTextBox textPreisVon;
+        private MetroFramework.Controls.MetroTextBox textGewichtBis;
+        private MetroFramework.Controls.MetroTextBox textHaltbarkeitBis;
+        private MetroFramework.Controls.MetroTextBox textHaltbarkeitVon;
+        private MetroFramework.Controls.MetroTextBox textZuletztGeaendertBis;
+        private MetroFramework.Controls.MetroTextBox textZuletztGeaendertVon;
+        private MetroFramework.Controls.MetroTextBox textErstelltBis;
+        private MetroFramework.Controls.MetroTextBox textErstelltVon;
+        private MetroFramework.Controls.MetroTextBox textMengeBis;
+        private MetroFramework.Controls.MetroTextBox textHoeheVon;
+        private MetroFramework.Controls.MetroTextBox textBreiteBis;
+        private MetroFramework.Controls.MetroTextBox textBreiteVon;
+        private MetroFramework.Controls.MetroTextBox textLaengeBis;
+        private MetroFramework.Controls.MetroTextBox textLaengeVon;
+        private MetroFramework.Controls.MetroTextBox textHoeheBis;
     }
 }
