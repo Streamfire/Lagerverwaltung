@@ -56,14 +56,16 @@ namespace Lagerverwaltung.Model
 			}
             _dict.Add(tmp.PaketID,tmp);
             PaketHinzugefuegt?.Invoke(this, EventArgs.Empty);
-        }
+			Views.Dashboard.Verwaltung.UpdateForm();
+		}
 
         public static bool Entfernen(ref Paket tmp)
         {
             if (_dict.Remove(tmp.PaketID))
             {
                 PaketEntfernt?.Invoke(tmp, EventArgs.Empty);
-                tmp = null;
+				Views.Dashboard.Verwaltung.UpdateForm();
+				tmp = null;
                 return true;
             }
             return false;

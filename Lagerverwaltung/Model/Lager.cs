@@ -48,14 +48,16 @@ namespace Lagerverwaltung.Model
             _nameDict.Add(tmp.Name, tmp.LagerID);
             _dict.Add(tmp.LagerID,tmp);
             LagerHinzugefuegt?.Invoke(this, EventArgs.Empty);
-        }
+			Views.Dashboard.Verwaltung.UpdateForm();
+		}
 
         public static bool Entfernen(ref Lager tmp)
         {
             if (_dict.Remove(tmp.LagerID) && _nameDict.Remove(tmp.Name))
             {
                 LagerEntfernt?.Invoke(tmp, EventArgs.Empty);
-                tmp = null;
+				Views.Dashboard.Verwaltung.UpdateForm();
+				tmp = null;
                 return true;
             }
             return false;

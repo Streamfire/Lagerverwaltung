@@ -78,14 +78,16 @@ namespace Lagerverwaltung.Model
             //_nameDict.Add(tmp.Name, tmp.RegalID);
             _dict.Add(tmp.RegalID,tmp);
             RegalHinzugefuegt?.Invoke(this, EventArgs.Empty);
-        }
+			Views.Dashboard.Verwaltung.UpdateForm();
+		}
 
         public static bool Entfernen(ref Regal tmp)
         {
             if (_dict.Remove(tmp.RegalID))
             {
                 RegalEntfernt?.Invoke(tmp, EventArgs.Empty);
-                tmp = null;
+				Views.Dashboard.Verwaltung.UpdateForm();
+				tmp = null;
                 return true;
             }
             return false;
