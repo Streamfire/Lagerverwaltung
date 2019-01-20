@@ -45,7 +45,8 @@
             // RegalLabel
             // 
             this.RegalLabel.AutoSize = true;
-            this.RegalLabel.Location = new System.Drawing.Point(24, 107);
+            this.RegalLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.RegalLabel.Location = new System.Drawing.Point(24, 117);
             this.RegalLabel.Name = "RegalLabel";
             this.RegalLabel.Size = new System.Drawing.Size(45, 19);
             this.RegalLabel.TabIndex = 12;
@@ -54,27 +55,29 @@
             // LagerLabel
             // 
             this.LagerLabel.AutoSize = true;
-            this.LagerLabel.Location = new System.Drawing.Point(23, 72);
+            this.LagerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LagerLabel.Location = new System.Drawing.Point(24, 82);
             this.LagerLabel.Name = "LagerLabel";
-            this.LagerLabel.Size = new System.Drawing.Size(45, 19);
+            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
             this.LagerLabel.TabIndex = 13;
             this.LagerLabel.Text = "Lager:";
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(23, 144);
+            this.NameLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.NameLabel.Location = new System.Drawing.Point(24, 148);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(118, 19);
+            this.NameLabel.Size = new System.Drawing.Size(120, 19);
             this.NameLabel.TabIndex = 14;
             this.NameLabel.Text = "Neuer Regalname:";
             // 
             // AendernButton
             // 
             this.AendernButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AendernButton.Location = new System.Drawing.Point(90, 204);
+            this.AendernButton.Location = new System.Drawing.Point(60, 194);
             this.AendernButton.Name = "AendernButton";
-            this.AendernButton.Size = new System.Drawing.Size(75, 23);
+            this.AendernButton.Size = new System.Drawing.Size(85, 30);
             this.AendernButton.TabIndex = 16;
             this.AendernButton.Text = "Ändern";
             this.AendernButton.UseSelectable = true;
@@ -83,9 +86,9 @@
             // EntfernenButton
             // 
             this.EntfernenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EntfernenButton.Location = new System.Drawing.Point(171, 204);
+            this.EntfernenButton.Location = new System.Drawing.Point(151, 194);
             this.EntfernenButton.Name = "EntfernenButton";
-            this.EntfernenButton.Size = new System.Drawing.Size(75, 23);
+            this.EntfernenButton.Size = new System.Drawing.Size(85, 30);
             this.EntfernenButton.TabIndex = 17;
             this.EntfernenButton.Text = "Entfernen";
             this.EntfernenButton.UseSelectable = true;
@@ -94,9 +97,9 @@
             // AbbrechenButton
             // 
             this.AbbrechenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AbbrechenButton.Location = new System.Drawing.Point(252, 204);
+            this.AbbrechenButton.Location = new System.Drawing.Point(242, 194);
             this.AbbrechenButton.Name = "AbbrechenButton";
-            this.AbbrechenButton.Size = new System.Drawing.Size(75, 23);
+            this.AbbrechenButton.Size = new System.Drawing.Size(85, 30);
             this.AbbrechenButton.TabIndex = 18;
             this.AbbrechenButton.Text = "Abbrechen";
             this.AbbrechenButton.UseSelectable = true;
@@ -140,6 +143,7 @@
             this.NameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NameTextbox.CustomButton.UseSelectable = true;
             this.NameTextbox.CustomButton.Visible = false;
+            this.NameTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.NameTextbox.Lines = new string[0];
             this.NameTextbox.Location = new System.Drawing.Point(147, 144);
             this.NameTextbox.MaxLength = 15;
@@ -164,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 250);
+            this.ClientSize = new System.Drawing.Size(347, 236);
             this.Controls.Add(this.NameTextbox);
             this.Controls.Add(this.RegalCombobox);
             this.Controls.Add(this.LagerCombobox);

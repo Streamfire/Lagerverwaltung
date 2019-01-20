@@ -55,12 +55,13 @@
             this.UsernameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.UsernameTextbox.CustomButton.UseSelectable = true;
             this.UsernameTextbox.CustomButton.Visible = false;
+            this.UsernameTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.UsernameTextbox.Lines = new string[0];
             this.UsernameTextbox.Location = new System.Drawing.Point(23, 73);
             this.UsernameTextbox.MaxLength = 32767;
             this.UsernameTextbox.Name = "UsernameTextbox";
             this.UsernameTextbox.PasswordChar = '\0';
-            this.UsernameTextbox.WaterMark = "Nutzername";
+            this.UsernameTextbox.PromptText = "Nutzername";
             this.UsernameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.UsernameTextbox.SelectedText = "";
             this.UsernameTextbox.SelectionLength = 0;
@@ -87,12 +88,13 @@
             this.VornameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.VornameTextbox.CustomButton.UseSelectable = true;
             this.VornameTextbox.CustomButton.Visible = false;
+            this.VornameTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.VornameTextbox.Lines = new string[0];
             this.VornameTextbox.Location = new System.Drawing.Point(23, 102);
             this.VornameTextbox.MaxLength = 32767;
             this.VornameTextbox.Name = "VornameTextbox";
             this.VornameTextbox.PasswordChar = '\0';
-            this.VornameTextbox.WaterMark = "Vorname";
+            this.VornameTextbox.PromptText = "Vorname";
             this.VornameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.VornameTextbox.SelectedText = "";
             this.VornameTextbox.SelectionLength = 0;
@@ -119,12 +121,13 @@
             this.NachnameTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NachnameTextbox.CustomButton.UseSelectable = true;
             this.NachnameTextbox.CustomButton.Visible = false;
+            this.NachnameTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.NachnameTextbox.Lines = new string[0];
             this.NachnameTextbox.Location = new System.Drawing.Point(23, 131);
             this.NachnameTextbox.MaxLength = 32767;
             this.NachnameTextbox.Name = "NachnameTextbox";
             this.NachnameTextbox.PasswordChar = '\0';
-            this.NachnameTextbox.WaterMark = "Nachname";
+            this.NachnameTextbox.PromptText = "Nachname";
             this.NachnameTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NachnameTextbox.SelectedText = "";
             this.NachnameTextbox.SelectionLength = 0;
@@ -151,12 +154,13 @@
             this.PasswordTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PasswordTextbox.CustomButton.UseSelectable = true;
             this.PasswordTextbox.CustomButton.Visible = false;
+            this.PasswordTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.PasswordTextbox.Lines = new string[0];
             this.PasswordTextbox.Location = new System.Drawing.Point(23, 160);
             this.PasswordTextbox.MaxLength = 32767;
             this.PasswordTextbox.Name = "PasswordTextbox";
             this.PasswordTextbox.PasswordChar = '●';
-            this.PasswordTextbox.WaterMark = "Passwort";
+            this.PasswordTextbox.PromptText = "Passwort";
             this.PasswordTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PasswordTextbox.SelectedText = "";
             this.PasswordTextbox.SelectionLength = 0;
@@ -184,12 +188,13 @@
             this.ConfirmPasswordTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.ConfirmPasswordTextbox.CustomButton.UseSelectable = true;
             this.ConfirmPasswordTextbox.CustomButton.Visible = false;
+            this.ConfirmPasswordTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.ConfirmPasswordTextbox.Lines = new string[0];
             this.ConfirmPasswordTextbox.Location = new System.Drawing.Point(23, 189);
             this.ConfirmPasswordTextbox.MaxLength = 32767;
             this.ConfirmPasswordTextbox.Name = "ConfirmPasswordTextbox";
             this.ConfirmPasswordTextbox.PasswordChar = '●';
-            this.ConfirmPasswordTextbox.WaterMark = "Passwort wiederholen";
+            this.ConfirmPasswordTextbox.PromptText = "Passwort wiederholen";
             this.ConfirmPasswordTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ConfirmPasswordTextbox.SelectedText = "";
             this.ConfirmPasswordTextbox.SelectionLength = 0;
@@ -206,9 +211,9 @@
             // NewUserButton
             // 
             this.NewUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NewUserButton.Location = new System.Drawing.Point(117, 239);
+            this.NewUserButton.Location = new System.Drawing.Point(97, 239);
             this.NewUserButton.Name = "NewUserButton";
-            this.NewUserButton.Size = new System.Drawing.Size(90, 23);
+            this.NewUserButton.Size = new System.Drawing.Size(90, 30);
             this.NewUserButton.TabIndex = 28;
             this.NewUserButton.Text = "Nutzer anlegen";
             this.NewUserButton.UseSelectable = true;
@@ -217,9 +222,9 @@
             // AbortButton
             // 
             this.AbortButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AbortButton.Location = new System.Drawing.Point(213, 239);
+            this.AbortButton.Location = new System.Drawing.Point(203, 239);
             this.AbortButton.Name = "AbortButton";
-            this.AbortButton.Size = new System.Drawing.Size(75, 23);
+            this.AbortButton.Size = new System.Drawing.Size(85, 30);
             this.AbortButton.TabIndex = 29;
             this.AbortButton.Text = "Abbrechen";
             this.AbortButton.UseSelectable = true;
@@ -244,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 275);
+            this.ClientSize = new System.Drawing.Size(308, 287);
             this.Controls.Add(this.ShowPasswordCheckbox);
             this.Controls.Add(this.AbortButton);
             this.Controls.Add(this.NewUserButton);

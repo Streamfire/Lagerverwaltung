@@ -54,9 +54,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LadeDatenLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.LadeDatenLabel.Location = new System.Drawing.Point(0, 0);
+            this.LadeDatenLabel.Location = new System.Drawing.Point(-1, 4);
             this.LadeDatenLabel.Name = "LadeDatenLabel";
-            this.LadeDatenLabel.Size = new System.Drawing.Size(656, 289);
+            this.LadeDatenLabel.Size = new System.Drawing.Size(656, 369);
             this.LadeDatenLabel.TabIndex = 6;
             this.LadeDatenLabel.Text = "Lade Daten...";
             this.LadeDatenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,9 +77,9 @@
             // 
             this.AktualisierenButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AktualisierenButton.Enabled = false;
-            this.AktualisierenButton.Location = new System.Drawing.Point(497, 92);
+            this.AktualisierenButton.Location = new System.Drawing.Point(469, 85);
             this.AktualisierenButton.Name = "AktualisierenButton";
-            this.AktualisierenButton.Size = new System.Drawing.Size(75, 23);
+            this.AktualisierenButton.Size = new System.Drawing.Size(85, 30);
             this.AktualisierenButton.TabIndex = 9;
             this.AktualisierenButton.Text = "Aktualisieren";
             this.AktualisierenButton.UseSelectable = true;
@@ -89,9 +89,9 @@
             // 
             this.LademehrButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LademehrButton.Enabled = false;
-            this.LademehrButton.Location = new System.Drawing.Point(578, 92);
+            this.LademehrButton.Location = new System.Drawing.Point(577, 85);
             this.LademehrButton.Name = "LademehrButton";
-            this.LademehrButton.Size = new System.Drawing.Size(100, 23);
+            this.LademehrButton.Size = new System.Drawing.Size(100, 30);
             this.LademehrButton.TabIndex = 10;
             this.LademehrButton.Text = "Lade mehr Daten";
             this.LademehrButton.UseSelectable = true;
@@ -111,8 +111,9 @@
             this.SucheTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.SucheTextBox.CustomButton.UseSelectable = true;
             this.SucheTextBox.CustomButton.Visible = false;
+            this.SucheTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.SucheTextBox.Lines = new string[0];
-            this.SucheTextBox.Location = new System.Drawing.Point(23, 63);
+            this.SucheTextBox.Location = new System.Drawing.Point(22, 53);
             this.SucheTextBox.MaxLength = 32767;
             this.SucheTextBox.Name = "SucheTextBox";
             this.SucheTextBox.PasswordChar = '\0';
@@ -181,7 +182,7 @@
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
             this.HistorieGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.HistorieGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.HistorieGrid.Size = new System.Drawing.Size(654, 289);
+            this.HistorieGrid.Size = new System.Drawing.Size(654, 369);
             this.HistorieGrid.TabIndex = 12;
             // 
             // metroStyleManager1
@@ -198,7 +199,7 @@
             this.PanelHelper.Controls.Add(this.LadeDatenLabel);
             this.PanelHelper.Location = new System.Drawing.Point(23, 121);
             this.PanelHelper.Name = "PanelHelper";
-            this.PanelHelper.Size = new System.Drawing.Size(655, 289);
+            this.PanelHelper.Size = new System.Drawing.Size(655, 369);
             this.PanelHelper.TabIndex = 13;
             // 
             // LadeDatenProgressspinner
@@ -216,9 +217,9 @@
             // 
             this.SchließenButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SchließenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SchließenButton.Location = new System.Drawing.Point(602, 416);
+            this.SchließenButton.Location = new System.Drawing.Point(592, 497);
             this.SchließenButton.Name = "SchließenButton";
-            this.SchließenButton.Size = new System.Drawing.Size(75, 23);
+            this.SchließenButton.Size = new System.Drawing.Size(85, 30);
             this.SchließenButton.TabIndex = 14;
             this.SchließenButton.Text = "Schließen";
             this.SchließenButton.UseSelectable = true;
@@ -228,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.ClientSize = new System.Drawing.Size(700, 530);
             this.Controls.Add(this.PanelHelper);
             this.Controls.Add(this.SchließenButton);
             this.Controls.Add(this.SucheTextBox);

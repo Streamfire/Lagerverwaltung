@@ -53,12 +53,13 @@
             this.LagerTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.LagerTextbox.CustomButton.UseSelectable = true;
             this.LagerTextbox.CustomButton.Visible = false;
+            this.LagerTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.LagerTextbox.Lines = new string[0];
             this.LagerTextbox.Location = new System.Drawing.Point(27, 73);
             this.LagerTextbox.MaxLength = 32767;
             this.LagerTextbox.Name = "LagerTextbox";
             this.LagerTextbox.PasswordChar = '\0';
-            this.LagerTextbox.WaterMark = "Lagername";
+            this.LagerTextbox.PromptText = "Lagername";
             this.LagerTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.LagerTextbox.SelectedText = "";
             this.LagerTextbox.SelectionLength = 0;
@@ -85,12 +86,13 @@
             this.StandortTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.StandortTextbox.CustomButton.UseSelectable = true;
             this.StandortTextbox.CustomButton.Visible = false;
+            this.StandortTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.StandortTextbox.Lines = new string[0];
             this.StandortTextbox.Location = new System.Drawing.Point(27, 102);
             this.StandortTextbox.MaxLength = 32767;
             this.StandortTextbox.Name = "StandortTextbox";
             this.StandortTextbox.PasswordChar = '\0';
-            this.StandortTextbox.WaterMark = "Standort";
+            this.StandortTextbox.PromptText = "Standort";
             this.StandortTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.StandortTextbox.SelectedText = "";
             this.StandortTextbox.SelectionLength = 0;
@@ -134,7 +136,7 @@
             this.BeschreibungTextbox.Multiline = true;
             this.BeschreibungTextbox.Name = "BeschreibungTextbox";
             this.BeschreibungTextbox.PasswordChar = '\0';
-            this.BeschreibungTextbox.WaterMark = "Beschreibung";
+            this.BeschreibungTextbox.PromptText = "Beschreibung";
             this.BeschreibungTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.BeschreibungTextbox.SelectedText = "";
             this.BeschreibungTextbox.SelectionLength = 0;
@@ -150,9 +152,7 @@
             // LagerHinzufuegenButton
             // 
             this.LagerHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LagerHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.LagerHinzufuegenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.LagerHinzufuegenButton.Location = new System.Drawing.Point(27, 272);
+            this.LagerHinzufuegenButton.Location = new System.Drawing.Point(27, 281);
             this.LagerHinzufuegenButton.Name = "LagerHinzufuegenButton";
             this.LagerHinzufuegenButton.Size = new System.Drawing.Size(110, 30);
             this.LagerHinzufuegenButton.TabIndex = 15;
@@ -163,11 +163,9 @@
             // AbbrechenButton
             // 
             this.AbbrechenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AbbrechenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.AbbrechenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.AbbrechenButton.Location = new System.Drawing.Point(202, 272);
+            this.AbbrechenButton.Location = new System.Drawing.Point(192, 281);
             this.AbbrechenButton.Name = "AbbrechenButton";
-            this.AbbrechenButton.Size = new System.Drawing.Size(75, 30);
+            this.AbbrechenButton.Size = new System.Drawing.Size(85, 30);
             this.AbbrechenButton.TabIndex = 16;
             this.AbbrechenButton.Text = "Abbrechen";
             this.AbbrechenButton.UseSelectable = true;
@@ -181,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 325);
+            this.ClientSize = new System.Drawing.Size(293, 328);
             this.Controls.Add(this.AbbrechenButton);
             this.Controls.Add(this.LagerHinzufuegenButton);
             this.Controls.Add(this.BeschreibungTextbox);

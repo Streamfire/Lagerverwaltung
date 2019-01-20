@@ -40,9 +40,10 @@
             // LagerLabel
             // 
             this.LagerLabel.AutoSize = true;
-            this.LagerLabel.Location = new System.Drawing.Point(23, 82);
+            this.LagerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LagerLabel.Location = new System.Drawing.Point(18, 92);
             this.LagerLabel.Name = "LagerLabel";
-            this.LagerLabel.Size = new System.Drawing.Size(104, 19);
+            this.LagerLabel.Size = new System.Drawing.Size(109, 19);
             this.LagerLabel.TabIndex = 0;
             this.LagerLabel.Text = "Lager entfernen:";
             // 
@@ -60,9 +61,9 @@
             // HinzufuegenButton
             // 
             this.HinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HinzufuegenButton.Location = new System.Drawing.Point(178, 144);
+            this.HinzufuegenButton.Location = new System.Drawing.Point(144, 137);
             this.HinzufuegenButton.Name = "HinzufuegenButton";
-            this.HinzufuegenButton.Size = new System.Drawing.Size(75, 23);
+            this.HinzufuegenButton.Size = new System.Drawing.Size(85, 30);
             this.HinzufuegenButton.TabIndex = 2;
             this.HinzufuegenButton.Text = "Entfernen";
             this.HinzufuegenButton.UseSelectable = true;
@@ -71,9 +72,9 @@
             // AbbrechenButton
             // 
             this.AbbrechenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AbbrechenButton.Location = new System.Drawing.Point(259, 144);
+            this.AbbrechenButton.Location = new System.Drawing.Point(249, 137);
             this.AbbrechenButton.Name = "AbbrechenButton";
-            this.AbbrechenButton.Size = new System.Drawing.Size(75, 23);
+            this.AbbrechenButton.Size = new System.Drawing.Size(85, 30);
             this.AbbrechenButton.TabIndex = 3;
             this.AbbrechenButton.Text = "Abbrechen";
             this.AbbrechenButton.UseSelectable = true;
@@ -87,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 190);
+            this.ClientSize = new System.Drawing.Size(350, 183);
             this.Controls.Add(this.AbbrechenButton);
             this.Controls.Add(this.HinzufuegenButton);
             this.Controls.Add(this.LagerCombobox);

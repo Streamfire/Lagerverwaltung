@@ -53,9 +53,10 @@
             // LagerLabel
             // 
             this.LagerLabel.AutoSize = true;
+            this.LagerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LagerLabel.Location = new System.Drawing.Point(18, 83);
             this.LagerLabel.Name = "LagerLabel";
-            this.LagerLabel.Size = new System.Drawing.Size(45, 19);
+            this.LagerLabel.Size = new System.Drawing.Size(46, 19);
             this.LagerLabel.TabIndex = 36;
             this.LagerLabel.Text = "Lager:";
             // 
@@ -94,6 +95,7 @@
             this.StaerkeV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.StaerkeV.CustomButton.UseSelectable = true;
             this.StaerkeV.CustomButton.Visible = false;
+            this.StaerkeV.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.StaerkeV.Lines = new string[0];
             this.StaerkeV.Location = new System.Drawing.Point(6, 19);
             this.StaerkeV.MaxLength = 32767;
@@ -126,6 +128,7 @@
             this.StaerkeH.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.StaerkeH.CustomButton.UseSelectable = true;
             this.StaerkeH.CustomButton.Visible = false;
+            this.StaerkeH.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.StaerkeH.Lines = new string[0];
             this.StaerkeH.Location = new System.Drawing.Point(6, 48);
             this.StaerkeH.MaxLength = 32767;
@@ -158,6 +161,7 @@
             this.BezeichnungTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BezeichnungTextbox.CustomButton.UseSelectable = true;
             this.BezeichnungTextbox.CustomButton.Visible = false;
+            this.BezeichnungTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.BezeichnungTextbox.Lines = new string[0];
             this.BezeichnungTextbox.Location = new System.Drawing.Point(70, 118);
             this.BezeichnungTextbox.MaxLength = 32767;
@@ -190,6 +194,7 @@
             this.ZeilenTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.ZeilenTextbox.CustomButton.UseSelectable = true;
             this.ZeilenTextbox.CustomButton.Visible = false;
+            this.ZeilenTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.ZeilenTextbox.Lines = new string[0];
             this.ZeilenTextbox.Location = new System.Drawing.Point(170, 144);
             this.ZeilenTextbox.MaxLength = 32767;
@@ -222,6 +227,7 @@
             this.SpaltenTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.SpaltenTextbox.CustomButton.UseSelectable = true;
             this.SpaltenTextbox.CustomButton.Visible = false;
+            this.SpaltenTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.SpaltenTextbox.Lines = new string[0];
             this.SpaltenTextbox.Location = new System.Drawing.Point(70, 144);
             this.SpaltenTextbox.MaxLength = 32767;
@@ -242,8 +248,6 @@
             // 
             // HinzufuegenButton
             // 
-            this.HinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.HinzufuegenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.HinzufuegenButton.Location = new System.Drawing.Point(251, 185);
             this.HinzufuegenButton.Name = "HinzufuegenButton";
             this.HinzufuegenButton.Size = new System.Drawing.Size(226, 30);
@@ -254,8 +258,6 @@
             // 
             // AbbrechenButton
             // 
-            this.AbbrechenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.AbbrechenButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.AbbrechenButton.Location = new System.Drawing.Point(251, 222);
             this.AbbrechenButton.Name = "AbbrechenButton";
             this.AbbrechenButton.Size = new System.Drawing.Size(226, 30);
@@ -278,6 +280,7 @@
             this.RegalhoeheTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.RegalhoeheTextbox.CustomButton.UseSelectable = true;
             this.RegalhoeheTextbox.CustomButton.Visible = false;
+            this.RegalhoeheTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.RegalhoeheTextbox.Lines = new string[0];
             this.RegalhoeheTextbox.Location = new System.Drawing.Point(251, 86);
             this.RegalhoeheTextbox.MaxLength = 32767;
@@ -310,6 +313,7 @@
             this.RegalbreiteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.RegalbreiteTextbox.CustomButton.UseSelectable = true;
             this.RegalbreiteTextbox.CustomButton.Visible = false;
+            this.RegalbreiteTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.RegalbreiteTextbox.Lines = new string[0];
             this.RegalbreiteTextbox.Location = new System.Drawing.Point(251, 115);
             this.RegalbreiteTextbox.MaxLength = 32767;
@@ -342,6 +346,7 @@
             this.RegallaengeTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.RegallaengeTextbox.CustomButton.UseSelectable = true;
             this.RegallaengeTextbox.CustomButton.Visible = false;
+            this.RegallaengeTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.RegallaengeTextbox.Lines = new string[0];
             this.RegallaengeTextbox.Location = new System.Drawing.Point(251, 144);
             this.RegallaengeTextbox.MaxLength = 32767;
@@ -374,6 +379,7 @@
             this.FachhoeheTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.FachhoeheTextbox.CustomButton.UseSelectable = true;
             this.FachhoeheTextbox.CustomButton.Visible = false;
+            this.FachhoeheTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.FachhoeheTextbox.Lines = new string[0];
             this.FachhoeheTextbox.Location = new System.Drawing.Point(357, 86);
             this.FachhoeheTextbox.MaxLength = 32767;
@@ -406,6 +412,7 @@
             this.FachbreiteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.FachbreiteTextbox.CustomButton.UseSelectable = true;
             this.FachbreiteTextbox.CustomButton.Visible = false;
+            this.FachbreiteTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.FachbreiteTextbox.Lines = new string[0];
             this.FachbreiteTextbox.Location = new System.Drawing.Point(357, 115);
             this.FachbreiteTextbox.MaxLength = 32767;
@@ -438,6 +445,7 @@
             this.FachlaengeTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.FachlaengeTextbox.CustomButton.UseSelectable = true;
             this.FachlaengeTextbox.CustomButton.Visible = false;
+            this.FachlaengeTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.FachlaengeTextbox.Lines = new string[0];
             this.FachlaengeTextbox.Location = new System.Drawing.Point(357, 144);
             this.FachlaengeTextbox.MaxLength = 32767;
@@ -464,7 +472,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 275);
+            this.ClientSize = new System.Drawing.Size(495, 272);
             this.Controls.Add(this.FachlaengeTextbox);
             this.Controls.Add(this.FachbreiteTextbox);
             this.Controls.Add(this.FachhoeheTextbox);

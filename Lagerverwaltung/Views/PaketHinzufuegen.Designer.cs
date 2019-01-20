@@ -58,6 +58,7 @@
             this.GrundTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.GrundTextbox.CustomButton.UseSelectable = true;
             this.GrundTextbox.CustomButton.Visible = false;
+            this.GrundTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.GrundTextbox.Lines = new string[0];
             this.GrundTextbox.Location = new System.Drawing.Point(23, 92);
             this.GrundTextbox.MaxLength = 32767;
@@ -90,6 +91,7 @@
             this.BezeichungTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BezeichungTextbox.CustomButton.UseSelectable = true;
             this.BezeichungTextbox.CustomButton.Visible = false;
+            this.BezeichungTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.BezeichungTextbox.Lines = new string[0];
             this.BezeichungTextbox.Location = new System.Drawing.Point(23, 63);
             this.BezeichungTextbox.MaxLength = 32767;
@@ -122,6 +124,7 @@
             this.AnzahlTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.AnzahlTextbox.CustomButton.UseSelectable = true;
             this.AnzahlTextbox.CustomButton.Visible = false;
+            this.AnzahlTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.AnzahlTextbox.Lines = new string[0];
             this.AnzahlTextbox.Location = new System.Drawing.Point(205, 121);
             this.AnzahlTextbox.MaxLength = 32767;
@@ -143,9 +146,10 @@
             // HaltbarkeitLabel
             // 
             this.HaltbarkeitLabel.AutoSize = true;
+            this.HaltbarkeitLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.HaltbarkeitLabel.Location = new System.Drawing.Point(23, 128);
             this.HaltbarkeitLabel.Name = "HaltbarkeitLabel";
-            this.HaltbarkeitLabel.Size = new System.Drawing.Size(72, 19);
+            this.HaltbarkeitLabel.Size = new System.Drawing.Size(76, 19);
             this.HaltbarkeitLabel.TabIndex = 34;
             this.HaltbarkeitLabel.Text = "Haltbarkeit";
             // 
@@ -161,9 +165,10 @@
             // GroesseLabel
             // 
             this.GroesseLabel.AutoSize = true;
+            this.GroesseLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.GroesseLabel.Location = new System.Drawing.Point(23, 185);
             this.GroesseLabel.Name = "GroesseLabel";
-            this.GroesseLabel.Size = new System.Drawing.Size(48, 19);
+            this.GroesseLabel.Size = new System.Drawing.Size(50, 19);
             this.GroesseLabel.TabIndex = 36;
             this.GroesseLabel.Text = "Größe:";
             // 
@@ -181,6 +186,7 @@
             this.BreiteTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BreiteTextbox.CustomButton.UseSelectable = true;
             this.BreiteTextbox.CustomButton.Visible = false;
+            this.BreiteTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.BreiteTextbox.Lines = new string[0];
             this.BreiteTextbox.Location = new System.Drawing.Point(205, 207);
             this.BreiteTextbox.MaxLength = 32767;
@@ -213,6 +219,7 @@
             this.LaengeTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.LaengeTextbox.CustomButton.UseSelectable = true;
             this.LaengeTextbox.CustomButton.Visible = false;
+            this.LaengeTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.LaengeTextbox.Lines = new string[0];
             this.LaengeTextbox.Location = new System.Drawing.Point(114, 207);
             this.LaengeTextbox.MaxLength = 32767;
@@ -245,6 +252,7 @@
             this.HoeheTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.HoeheTextbox.CustomButton.UseSelectable = true;
             this.HoeheTextbox.CustomButton.Visible = false;
+            this.HoeheTextbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.HoeheTextbox.Lines = new string[0];
             this.HoeheTextbox.Location = new System.Drawing.Point(23, 207);
             this.HoeheTextbox.MaxLength = 32767;
@@ -266,8 +274,6 @@
             // ProduktlisteButton
             // 
             this.ProduktlisteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProduktlisteButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.ProduktlisteButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.ProduktlisteButton.Location = new System.Drawing.Point(23, 236);
             this.ProduktlisteButton.Name = "ProduktlisteButton";
             this.ProduktlisteButton.Size = new System.Drawing.Size(90, 30);
@@ -279,9 +285,9 @@
             // AbbrechenButton
             // 
             this.AbbrechenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AbbrechenButton.Location = new System.Drawing.Point(190, 300);
+            this.AbbrechenButton.Location = new System.Drawing.Point(205, 296);
             this.AbbrechenButton.Name = "AbbrechenButton";
-            this.AbbrechenButton.Size = new System.Drawing.Size(100, 25);
+            this.AbbrechenButton.Size = new System.Drawing.Size(85, 30);
             this.AbbrechenButton.TabIndex = 42;
             this.AbbrechenButton.Text = "Abbrechen";
             this.AbbrechenButton.UseSelectable = true;
@@ -290,9 +296,9 @@
             // PaketHinzufuegenButton
             // 
             this.PaketHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PaketHinzufuegenButton.Location = new System.Drawing.Point(23, 300);
+            this.PaketHinzufuegenButton.Location = new System.Drawing.Point(23, 296);
             this.PaketHinzufuegenButton.Name = "PaketHinzufuegenButton";
-            this.PaketHinzufuegenButton.Size = new System.Drawing.Size(90, 25);
+            this.PaketHinzufuegenButton.Size = new System.Drawing.Size(90, 30);
             this.PaketHinzufuegenButton.TabIndex = 41;
             this.PaketHinzufuegenButton.Text = "Paket einlagern";
             this.PaketHinzufuegenButton.UseSelectable = true;
@@ -311,7 +317,7 @@
             // 
             this.maximalDateCheckbox.AutoSize = true;
             this.maximalDateCheckbox.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.maximalDateCheckbox.Location = new System.Drawing.Point(95, 131);
+            this.maximalDateCheckbox.Location = new System.Drawing.Point(105, 131);
             this.maximalDateCheckbox.Name = "maximalDateCheckbox";
             this.maximalDateCheckbox.Size = new System.Drawing.Size(69, 15);
             this.maximalDateCheckbox.TabIndex = 44;
@@ -323,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 350);
+            this.ClientSize = new System.Drawing.Size(303, 338);
             this.Controls.Add(this.maximalDateCheckbox);
             this.Controls.Add(this.AuswahlLabel);
             this.Controls.Add(this.AbbrechenButton);

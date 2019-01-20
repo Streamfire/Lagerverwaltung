@@ -259,7 +259,6 @@ namespace Lagerverwaltung.Views
             // LagerEntfernen
             // 
             this.LagerEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LagerEntfernen.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LagerEntfernen.Location = new System.Drawing.Point(899, 63);
             this.LagerEntfernen.Name = "LagerEntfernen";
             this.LagerEntfernen.Size = new System.Drawing.Size(106, 30);
@@ -271,7 +270,6 @@ namespace Lagerverwaltung.Views
             // LagerHinzufuegenButton
             // 
             this.LagerHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LagerHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LagerHinzufuegenButton.Location = new System.Drawing.Point(777, 63);
             this.LagerHinzufuegenButton.Name = "LagerHinzufuegenButton";
             this.LagerHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
@@ -283,7 +281,6 @@ namespace Lagerverwaltung.Views
             // LagerOptimierenButton
             // 
             this.LagerOptimierenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LagerOptimierenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.LagerOptimierenButton.Location = new System.Drawing.Point(657, 63);
             this.LagerOptimierenButton.Name = "LagerOptimierenButton";
             this.LagerOptimierenButton.Size = new System.Drawing.Size(114, 30);
@@ -295,7 +292,6 @@ namespace Lagerverwaltung.Views
             // RegalAnpassenButton
             // 
             this.RegalAnpassenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegalAnpassenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.RegalAnpassenButton.Location = new System.Drawing.Point(490, 63);
             this.RegalAnpassenButton.Name = "RegalAnpassenButton";
             this.RegalAnpassenButton.Size = new System.Drawing.Size(161, 30);
@@ -307,7 +303,6 @@ namespace Lagerverwaltung.Views
             // RegalHinzufuegenButton
             // 
             this.RegalHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegalHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.RegalHinzufuegenButton.Location = new System.Drawing.Point(368, 63);
             this.RegalHinzufuegenButton.Name = "RegalHinzufuegenButton";
             this.RegalHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
@@ -319,7 +314,6 @@ namespace Lagerverwaltung.Views
             // PaketUmlagernButton
             // 
             this.PaketUmlagernButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PaketUmlagernButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.PaketUmlagernButton.Location = new System.Drawing.Point(257, 63);
             this.PaketUmlagernButton.Name = "PaketUmlagernButton";
             this.PaketUmlagernButton.Size = new System.Drawing.Size(105, 30);
@@ -331,7 +325,6 @@ namespace Lagerverwaltung.Views
             // PaketEntfernenButton
             // 
             this.PaketEntfernenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PaketEntfernenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.PaketEntfernenButton.Location = new System.Drawing.Point(145, 63);
             this.PaketEntfernenButton.Name = "PaketEntfernenButton";
             this.PaketEntfernenButton.Size = new System.Drawing.Size(106, 30);
@@ -343,7 +336,6 @@ namespace Lagerverwaltung.Views
             // PaketHinzufuegenButton
             // 
             this.PaketHinzufuegenButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PaketHinzufuegenButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.PaketHinzufuegenButton.Location = new System.Drawing.Point(23, 63);
             this.PaketHinzufuegenButton.Name = "PaketHinzufuegenButton";
             this.PaketHinzufuegenButton.Size = new System.Drawing.Size(116, 30);
@@ -355,10 +347,9 @@ namespace Lagerverwaltung.Views
             // ZurueckButton
             // 
             this.ZurueckButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ZurueckButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.ZurueckButton.Location = new System.Drawing.Point(1077, 547);
+            this.ZurueckButton.Location = new System.Drawing.Point(1042, 547);
             this.ZurueckButton.Name = "ZurueckButton";
-            this.ZurueckButton.Size = new System.Drawing.Size(50, 30);
+            this.ZurueckButton.Size = new System.Drawing.Size(85, 30);
             this.ZurueckButton.TabIndex = 28;
             this.ZurueckButton.Text = "Zurück";
             this.ZurueckButton.UseSelectable = true;

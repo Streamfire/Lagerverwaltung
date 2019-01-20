@@ -46,9 +46,9 @@
             this.ZurueckButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ZurueckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ZurueckButton.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.ZurueckButton.Location = new System.Drawing.Point(652, 456);
+            this.ZurueckButton.Location = new System.Drawing.Point(642, 456);
             this.ZurueckButton.Name = "ZurueckButton";
-            this.ZurueckButton.Size = new System.Drawing.Size(75, 30);
+            this.ZurueckButton.Size = new System.Drawing.Size(85, 30);
             this.ZurueckButton.TabIndex = 11;
             this.ZurueckButton.Text = "Zurück";
             this.ZurueckButton.UseSelectable = true;
@@ -137,9 +137,9 @@
             // AktualisierenButton
             // 
             this.AktualisierenButton.Enabled = false;
-            this.AktualisierenButton.Location = new System.Drawing.Point(438, 73);
+            this.AktualisierenButton.Location = new System.Drawing.Point(450, 68);
             this.AktualisierenButton.Name = "AktualisierenButton";
-            this.AktualisierenButton.Size = new System.Drawing.Size(75, 23);
+            this.AktualisierenButton.Size = new System.Drawing.Size(85, 30);
             this.AktualisierenButton.TabIndex = 18;
             this.AktualisierenButton.Text = "Aktualisieren";
             this.AktualisierenButton.UseSelectable = true;
@@ -150,7 +150,7 @@
             this.PaketeinlagernButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PaketeinlagernButton.Location = new System.Drawing.Point(23, 453);
             this.PaketeinlagernButton.Name = "PaketeinlagernButton";
-            this.PaketeinlagernButton.Size = new System.Drawing.Size(98, 23);
+            this.PaketeinlagernButton.Size = new System.Drawing.Size(98, 30);
             this.PaketeinlagernButton.TabIndex = 19;
             this.PaketeinlagernButton.Text = "Paket einlagern";
             this.PaketeinlagernButton.UseSelectable = true;
@@ -161,7 +161,7 @@
             this.PaketauslagernButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PaketauslagernButton.Location = new System.Drawing.Point(127, 453);
             this.PaketauslagernButton.Name = "PaketauslagernButton";
-            this.PaketauslagernButton.Size = new System.Drawing.Size(98, 23);
+            this.PaketauslagernButton.Size = new System.Drawing.Size(98, 30);
             this.PaketauslagernButton.TabIndex = 20;
             this.PaketauslagernButton.Text = "Paket auslagern";
             this.PaketauslagernButton.UseSelectable = true;

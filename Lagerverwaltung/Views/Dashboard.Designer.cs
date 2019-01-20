@@ -91,15 +91,15 @@
             // lagertypToolStripMenuItem
             // 
             this.lagertypToolStripMenuItem.Name = "lagertypToolStripMenuItem";
-            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.lagertypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lagertypToolStripMenuItem.Text = "Lagertyp verwalten";
             this.lagertypToolStripMenuItem.Click += new System.EventHandler(this.LagertypToolStripMenuItem_Click);
             // 
             // regaltypToolStripMenuItem
             // 
             this.regaltypToolStripMenuItem.Name = "regaltypToolStripMenuItem";
-            this.regaltypToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.regaltypToolStripMenuItem.Text = "Regaltyp verwalten";
+            this.regaltypToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.regaltypToolStripMenuItem.Text = "Artikeltyp verwalten";
             this.regaltypToolStripMenuItem.Click += new System.EventHandler(this.RegaltypToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
@@ -113,7 +113,7 @@
             // nutzerHinzufügenToolStripMenuItem
             // 
             this.nutzerHinzufügenToolStripMenuItem.Name = "nutzerHinzufügenToolStripMenuItem";
-            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.nutzerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nutzerHinzufügenToolStripMenuItem.Text = "Nutzer hinzufügen";
             this.nutzerHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.NutzerHinzufügenToolStripMenuItem_Click);
             // 
@@ -128,7 +128,7 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.InfoToolStripMenuItem_Click);
             // 

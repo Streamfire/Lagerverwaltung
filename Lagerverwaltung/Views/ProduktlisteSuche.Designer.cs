@@ -80,7 +80,7 @@
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.Location = new System.Drawing.Point(29, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -93,7 +93,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(690, 582);
+            this.dataGridView1.Size = new System.Drawing.Size(696, 603);
             this.dataGridView1.TabIndex = 11;
             // 
             // produkt_id
@@ -139,33 +139,29 @@
             // buttonSuchen
             // 
             this.buttonSuchen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSuchen.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonSuchen.Location = new System.Drawing.Point(408, 685);
+            this.buttonSuchen.Location = new System.Drawing.Point(412, 683);
             this.buttonSuchen.Name = "buttonSuchen";
-            this.buttonSuchen.Size = new System.Drawing.Size(120, 35);
+            this.buttonSuchen.Size = new System.Drawing.Size(85, 30);
             this.buttonSuchen.TabIndex = 12;
             this.buttonSuchen.Text = "Suchen";
             this.buttonSuchen.UseSelectable = true;
-            this.buttonSuchen.UseStyleColors = true;
             this.buttonSuchen.Click += new System.EventHandler(this.buttonSuchen_Click);
             // 
             // Schliessen
             // 
-            this.Schliessen.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.Schliessen.Location = new System.Drawing.Point(599, 685);
+            this.Schliessen.Location = new System.Drawing.Point(640, 683);
             this.Schliessen.Name = "Schliessen";
-            this.Schliessen.Size = new System.Drawing.Size(120, 35);
+            this.Schliessen.Size = new System.Drawing.Size(85, 30);
             this.Schliessen.TabIndex = 13;
             this.Schliessen.Text = "Abbrechen";
             this.Schliessen.UseSelectable = true;
-            this.Schliessen.UseStyleColors = true;
             this.Schliessen.Click += new System.EventHandler(this.Schliessen_Click);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 695);
+            this.metroLabel1.Location = new System.Drawing.Point(16, 694);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(95, 19);
             this.metroLabel1.TabIndex = 14;
@@ -186,7 +182,7 @@
             this.textBoxProdukt.CustomButton.UseSelectable = true;
             this.textBoxProdukt.CustomButton.Visible = false;
             this.textBoxProdukt.Lines = new string[0];
-            this.textBoxProdukt.Location = new System.Drawing.Point(117, 694);
+            this.textBoxProdukt.Location = new System.Drawing.Point(117, 693);
             this.textBoxProdukt.MaxLength = 32767;
             this.textBoxProdukt.Name = "textBoxProdukt";
             this.textBoxProdukt.PasswordChar = '\0';
@@ -205,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 736);
+            this.ClientSize = new System.Drawing.Size(748, 731);
             this.Controls.Add(this.textBoxProdukt);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.Schliessen);

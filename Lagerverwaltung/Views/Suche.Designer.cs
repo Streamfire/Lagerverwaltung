@@ -592,62 +592,53 @@
             // 
             // buttonSuchen
             // 
-            this.buttonSuchen.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonSuchen.Location = new System.Drawing.Point(1091, 209);
+            this.buttonSuchen.Location = new System.Drawing.Point(1106, 209);
             this.buttonSuchen.Name = "buttonSuchen";
-            this.buttonSuchen.Size = new System.Drawing.Size(125, 46);
+            this.buttonSuchen.Size = new System.Drawing.Size(110, 46);
             this.buttonSuchen.TabIndex = 87;
             this.buttonSuchen.Text = "Suchen";
             this.buttonSuchen.UseSelectable = true;
-            this.buttonSuchen.UseStyleColors = true;
             this.buttonSuchen.Click += new System.EventHandler(this.ButtonSuchen_Click);
             // 
             // buttonProduktliste
             // 
-            this.buttonProduktliste.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonProduktliste.Location = new System.Drawing.Point(943, 209);
+            this.buttonProduktliste.Location = new System.Drawing.Point(986, 209);
             this.buttonProduktliste.Name = "buttonProduktliste";
-            this.buttonProduktliste.Size = new System.Drawing.Size(125, 46);
+            this.buttonProduktliste.Size = new System.Drawing.Size(110, 46);
             this.buttonProduktliste.TabIndex = 88;
             this.buttonProduktliste.Text = "Produktliste";
             this.buttonProduktliste.UseSelectable = true;
-            this.buttonProduktliste.UseStyleColors = true;
             this.buttonProduktliste.Click += new System.EventHandler(this.ButtonProduktliste_Click);
             // 
             // buttonZurücksetzen
             // 
-            this.buttonZurücksetzen.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonZurücksetzen.Location = new System.Drawing.Point(943, 278);
+            this.buttonZurücksetzen.Location = new System.Drawing.Point(986, 275);
             this.buttonZurücksetzen.Name = "buttonZurücksetzen";
-            this.buttonZurücksetzen.Size = new System.Drawing.Size(125, 46);
+            this.buttonZurücksetzen.Size = new System.Drawing.Size(110, 46);
             this.buttonZurücksetzen.TabIndex = 89;
             this.buttonZurücksetzen.Text = "Zurücksetzen";
             this.buttonZurücksetzen.UseSelectable = true;
-            this.buttonZurücksetzen.UseStyleColors = true;
             this.buttonZurücksetzen.Click += new System.EventHandler(this.ButtonZurücksetzen_Click);
             // 
             // buttonAbbrechen
             // 
-            this.buttonAbbrechen.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonAbbrechen.Location = new System.Drawing.Point(1091, 278);
+            this.buttonAbbrechen.Location = new System.Drawing.Point(1106, 278);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(125, 46);
+            this.buttonAbbrechen.Size = new System.Drawing.Size(110, 46);
             this.buttonAbbrechen.TabIndex = 90;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseSelectable = true;
-            this.buttonAbbrechen.UseStyleColors = true;
             this.buttonAbbrechen.Click += new System.EventHandler(this.ButtonAbbrechen_Click);
             // 
             // checkKompakt
             // 
             this.checkKompakt.AutoSize = true;
-            this.checkKompakt.Location = new System.Drawing.Point(943, 346);
+            this.checkKompakt.Location = new System.Drawing.Point(976, 348);
             this.checkKompakt.Name = "checkKompakt";
             this.checkKompakt.Size = new System.Drawing.Size(120, 15);
             this.checkKompakt.TabIndex = 91;
             this.checkKompakt.Text = "Kompakte Ansicht";
             this.checkKompakt.UseSelectable = true;
-            this.checkKompakt.UseStyleColors = true;
             this.checkKompakt.CheckedChanged += new System.EventHandler(this.CheckKompakt_CheckedChanged);
             // 
             // textLagerName
