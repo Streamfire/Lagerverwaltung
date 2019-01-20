@@ -86,7 +86,6 @@ namespace Lagerverwaltung.Model
             if (_dict.Remove(tmp.RegalID))
             {
                 RegalEntfernt?.Invoke(tmp, EventArgs.Empty);
-				Views.Dashboard.Verwaltung.UpdateForm();
 				tmp = null;
                 return true;
             }

@@ -132,8 +132,7 @@ namespace Lagerverwaltung.Views
 				}
 			}
 
-
-			_lastFocusedAccordion = _lagerAccordion;
+				_lastFocusedAccordion = _lagerAccordion;
             if(VerwaltungTabcontrol.TabPages.Count > 0)
             {
                 _lastFocusedPage = VerwaltungTabcontrol.TabPages[0];
@@ -143,7 +142,13 @@ namespace Lagerverwaltung.Views
                 _lastFocusedPage = null;
             }
 		}
-		 
+
+		private void DataChanged(object sender, EventArgs e)
+		{
+			UpdateForm();
+		}
+
+
 		private void OnFocusedPanel(Object sender, EventArgs e)
 		{
             //TODO: bitte ändern

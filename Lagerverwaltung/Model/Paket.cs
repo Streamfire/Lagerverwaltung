@@ -64,7 +64,6 @@ namespace Lagerverwaltung.Model
             if (_dict.Remove(tmp.PaketID))
             {
                 PaketEntfernt?.Invoke(tmp, EventArgs.Empty);
-				Views.Dashboard.Verwaltung.UpdateForm();
 				tmp = null;
                 return true;
             }

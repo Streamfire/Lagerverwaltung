@@ -27,7 +27,8 @@ namespace Lagerverwaltung.Views
             DB.PaketSQL.HoleAllePakete();
             DB.ProduktSQL.HoleAlleProdukte();
 
-            UpdateForm();
+			DB.SqlStatements.DatabaseChanged += DataChanged;
+			UpdateForm();
 		}
 
         private void PaketHinzufuegenButton_Click(object sender, EventArgs e)
