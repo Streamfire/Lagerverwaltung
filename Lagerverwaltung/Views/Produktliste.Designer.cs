@@ -28,72 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Schliessen = new System.Windows.Forms.Button();
-            this.Auswaehlen = new System.Windows.Forms.Button();
-            this.Produkt_hinzufuegen = new System.Windows.Forms.Button();
-            this.Produkt_aendern = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridView1 = new MetroFramework.Controls.MetroGrid();
             this.produkt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Produkt_hinzufuegen = new MetroFramework.Controls.MetroButton();
+            this.Button1 = new MetroFramework.Controls.MetroButton();
+            this.Auswaehlen = new MetroFramework.Controls.MetroButton();
+            this.Schliessen = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Schliessen
-            // 
-            this.Schliessen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Schliessen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Schliessen.Location = new System.Drawing.Point(599, 685);
-            this.Schliessen.Name = "Schliessen";
-            this.Schliessen.Size = new System.Drawing.Size(120, 35);
-            this.Schliessen.TabIndex = 1;
-            this.Schliessen.Text = "Abbrechen";
-            this.Schliessen.UseVisualStyleBackColor = true;
-            this.Schliessen.Click += new System.EventHandler(this.Schliessen_Click);
-            // 
-            // Auswaehlen
-            // 
-            this.Auswaehlen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Auswaehlen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Auswaehlen.Location = new System.Drawing.Point(449, 685);
-            this.Auswaehlen.Name = "Auswaehlen";
-            this.Auswaehlen.Size = new System.Drawing.Size(120, 35);
-            this.Auswaehlen.TabIndex = 2;
-            this.Auswaehlen.Text = "Auswählen";
-            this.Auswaehlen.UseVisualStyleBackColor = true;
-            this.Auswaehlen.Click += new System.EventHandler(this.Auswaehlen_Click);
-            // 
-            // Produkt_hinzufuegen
-            // 
-            this.Produkt_hinzufuegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Produkt_hinzufuegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Produkt_hinzufuegen.Location = new System.Drawing.Point(29, 685);
-            this.Produkt_hinzufuegen.Name = "Produkt_hinzufuegen";
-            this.Produkt_hinzufuegen.Size = new System.Drawing.Size(157, 35);
-            this.Produkt_hinzufuegen.TabIndex = 3;
-            this.Produkt_hinzufuegen.Text = "Produkt hinzufügen";
-            this.Produkt_hinzufuegen.UseVisualStyleBackColor = true;
-            this.Produkt_hinzufuegen.Click += new System.EventHandler(this.Produkt_hinzufuegen_Click);
-            // 
-            // Produkt_aendern
-            // 
-            this.Produkt_aendern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Produkt_aendern.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Produkt_aendern.Location = new System.Drawing.Point(209, 685);
-            this.Produkt_aendern.Name = "Produkt_aendern";
-            this.Produkt_aendern.Size = new System.Drawing.Size(175, 35);
-            this.Produkt_aendern.TabIndex = 4;
-            this.Produkt_aendern.Text = "Produkt ändern";
-            this.Produkt_aendern.UseVisualStyleBackColor = true;
-            this.Produkt_aendern.Click += new System.EventHandler(this.Button1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.produkt_id,
@@ -101,10 +68,29 @@
             this.gewicht,
             this.preis,
             this.zeichnungsnummer});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView1.Location = new System.Drawing.Point(29, 23);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(690, 637);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 6;
             // 
             // produkt_id
             // 
@@ -140,40 +126,90 @@
             // 
             // zeichnungsnummer
             // 
-            this.zeichnungsnummer.DataPropertyName = "Zeichnungsnummer";
+            this.zeichnungsnummer.DataPropertyName = "Zeichnngsnummer";
             this.zeichnungsnummer.HeaderText = "Zeichnungsnummer";
             this.zeichnungsnummer.Name = "zeichnungsnummer";
             this.zeichnungsnummer.ReadOnly = true;
             this.zeichnungsnummer.Width = 160;
+            // 
+            // Produkt_hinzufuegen
+            // 
+            this.Produkt_hinzufuegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Produkt_hinzufuegen.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Produkt_hinzufuegen.Location = new System.Drawing.Point(29, 685);
+            this.Produkt_hinzufuegen.Name = "Produkt_hinzufuegen";
+            this.Produkt_hinzufuegen.Size = new System.Drawing.Size(157, 35);
+            this.Produkt_hinzufuegen.TabIndex = 7;
+            this.Produkt_hinzufuegen.Text = "Produkt hinzufügen";
+            this.Produkt_hinzufuegen.UseSelectable = true;
+            this.Produkt_hinzufuegen.UseStyleColors = true;
+            this.Produkt_hinzufuegen.Click += new System.EventHandler(this.Produkt_hinzufuegen_Click);
+            // 
+            // Button1
+            // 
+            this.Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Button1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button1.Location = new System.Drawing.Point(209, 685);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(175, 35);
+            this.Button1.TabIndex = 8;
+            this.Button1.Text = "Produkt ändern";
+            this.Button1.UseSelectable = true;
+            this.Button1.UseStyleColors = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // Auswaehlen
+            // 
+            this.Auswaehlen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Auswaehlen.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Auswaehlen.Location = new System.Drawing.Point(449, 685);
+            this.Auswaehlen.Name = "Auswaehlen";
+            this.Auswaehlen.Size = new System.Drawing.Size(120, 35);
+            this.Auswaehlen.TabIndex = 9;
+            this.Auswaehlen.Text = "Auswählen";
+            this.Auswaehlen.UseSelectable = true;
+            this.Auswaehlen.UseStyleColors = true;
+            this.Auswaehlen.Click += new System.EventHandler(this.Auswaehlen_Click);
+            // 
+            // Schliessen
+            // 
+            this.Schliessen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Schliessen.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Schliessen.Location = new System.Drawing.Point(599, 685);
+            this.Schliessen.Name = "Schliessen";
+            this.Schliessen.Size = new System.Drawing.Size(120, 35);
+            this.Schliessen.TabIndex = 10;
+            this.Schliessen.Text = "Abbrechen";
+            this.Schliessen.UseSelectable = true;
+            this.Schliessen.UseStyleColors = true;
+            this.Schliessen.Click += new System.EventHandler(this.Schliessen_Click);
             // 
             // Produktliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 736);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Produkt_aendern);
-            this.Controls.Add(this.Produkt_hinzufuegen);
-            this.Controls.Add(this.Auswaehlen);
             this.Controls.Add(this.Schliessen);
+            this.Controls.Add(this.Auswaehlen);
+            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.Produkt_hinzufuegen);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Produktliste";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produktliste";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button Schliessen;
-        private System.Windows.Forms.Button Auswaehlen;
-        private System.Windows.Forms.Button Produkt_hinzufuegen;
-        private System.Windows.Forms.Button Produkt_aendern;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroGrid dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn produkt_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gewicht;
         private System.Windows.Forms.DataGridViewTextBoxColumn preis;
         private System.Windows.Forms.DataGridViewTextBoxColumn zeichnungsnummer;
+        private MetroFramework.Controls.MetroButton Produkt_hinzufuegen;
+        private MetroFramework.Controls.MetroButton Button1;
+        private MetroFramework.Controls.MetroButton Auswaehlen;
+        private MetroFramework.Controls.MetroButton Schliessen;
     }
 }

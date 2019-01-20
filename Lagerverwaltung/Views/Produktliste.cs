@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Lagerverwaltung.Views
 {
-    public partial class Produktliste : Form
+    public partial class Produktliste : MetroFramework.Forms.MetroForm
     {
         //private Dictionary<long, Model.ProduktModel> _dictProdukt;
         private Dictionary<long, Model.ProduktModel> _dictProdukt;
