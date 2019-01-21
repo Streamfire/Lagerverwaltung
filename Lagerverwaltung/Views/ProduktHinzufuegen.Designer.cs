@@ -58,7 +58,7 @@
             // 
             // 
             this.tb_Name.CustomButton.Image = null;
-            this.tb_Name.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Name.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.tb_Name.CustomButton.Name = "";
             this.tb_Name.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -91,7 +91,7 @@
             // 
             // 
             this.tb_Zeichnungsnummer.CustomButton.Image = null;
-            this.tb_Zeichnungsnummer.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Zeichnungsnummer.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.tb_Zeichnungsnummer.CustomButton.Name = "";
             this.tb_Zeichnungsnummer.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Zeichnungsnummer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -124,7 +124,7 @@
             // 
             // 
             this.tb_Gewicht.CustomButton.Image = null;
-            this.tb_Gewicht.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Gewicht.CustomButton.Location = new System.Drawing.Point(91, 1);
             this.tb_Gewicht.CustomButton.Name = "";
             this.tb_Gewicht.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Gewicht.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -138,7 +138,7 @@
             this.tb_Gewicht.MaxLength = 32767;
             this.tb_Gewicht.Name = "tb_Gewicht";
             this.tb_Gewicht.PasswordChar = '\0';
-            this.tb_Gewicht.PromptText = "Gewicht";
+            this.tb_Gewicht.PromptText = "Gewicht (in g)";
             this.tb_Gewicht.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tb_Gewicht.SelectedText = "";
             this.tb_Gewicht.SelectionLength = 0;
@@ -147,7 +147,7 @@
             this.tb_Gewicht.Size = new System.Drawing.Size(113, 23);
             this.tb_Gewicht.TabIndex = 30;
             this.tb_Gewicht.UseSelectable = true;
-            this.tb_Gewicht.WaterMark = "Gewicht";
+            this.tb_Gewicht.WaterMark = "Gewicht (in g)";
             this.tb_Gewicht.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tb_Gewicht.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -157,7 +157,7 @@
             // 
             // 
             this.tb_Preis.CustomButton.Image = null;
-            this.tb_Preis.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Preis.CustomButton.Location = new System.Drawing.Point(91, 1);
             this.tb_Preis.CustomButton.Name = "";
             this.tb_Preis.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Preis.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -200,7 +200,7 @@
             // 
             // 
             this.tb_Hoehe.CustomButton.Image = null;
-            this.tb_Hoehe.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Hoehe.CustomButton.Location = new System.Drawing.Point(143, 1);
             this.tb_Hoehe.CustomButton.Name = "";
             this.tb_Hoehe.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Hoehe.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -214,7 +214,7 @@
             this.tb_Hoehe.MaxLength = 32767;
             this.tb_Hoehe.Name = "tb_Hoehe";
             this.tb_Hoehe.PasswordChar = '\0';
-            this.tb_Hoehe.PromptText = "Höhe";
+            this.tb_Hoehe.PromptText = "Höhe (in mm)";
             this.tb_Hoehe.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tb_Hoehe.SelectedText = "";
             this.tb_Hoehe.SelectionLength = 0;
@@ -223,7 +223,7 @@
             this.tb_Hoehe.Size = new System.Drawing.Size(165, 23);
             this.tb_Hoehe.TabIndex = 33;
             this.tb_Hoehe.UseSelectable = true;
-            this.tb_Hoehe.WaterMark = "Höhe";
+            this.tb_Hoehe.WaterMark = "Höhe (in mm)";
             this.tb_Hoehe.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tb_Hoehe.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -233,7 +233,7 @@
             // 
             // 
             this.tb_Breite.CustomButton.Image = null;
-            this.tb_Breite.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Breite.CustomButton.Location = new System.Drawing.Point(143, 1);
             this.tb_Breite.CustomButton.Name = "";
             this.tb_Breite.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Breite.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -247,7 +247,7 @@
             this.tb_Breite.MaxLength = 32767;
             this.tb_Breite.Name = "tb_Breite";
             this.tb_Breite.PasswordChar = '\0';
-            this.tb_Breite.PromptText = "Breite";
+            this.tb_Breite.PromptText = "Breite (in mm)";
             this.tb_Breite.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tb_Breite.SelectedText = "";
             this.tb_Breite.SelectionLength = 0;
@@ -256,7 +256,7 @@
             this.tb_Breite.Size = new System.Drawing.Size(165, 23);
             this.tb_Breite.TabIndex = 34;
             this.tb_Breite.UseSelectable = true;
-            this.tb_Breite.WaterMark = "Breite";
+            this.tb_Breite.WaterMark = "Breite (in mm)";
             this.tb_Breite.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tb_Breite.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -266,7 +266,7 @@
             // 
             // 
             this.tb_Laenge.CustomButton.Image = null;
-            this.tb_Laenge.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.tb_Laenge.CustomButton.Location = new System.Drawing.Point(143, 1);
             this.tb_Laenge.CustomButton.Name = "";
             this.tb_Laenge.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Laenge.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -280,7 +280,7 @@
             this.tb_Laenge.MaxLength = 32767;
             this.tb_Laenge.Name = "tb_Laenge";
             this.tb_Laenge.PasswordChar = '\0';
-            this.tb_Laenge.PromptText = "Länge";
+            this.tb_Laenge.PromptText = "Länge (in mm)";
             this.tb_Laenge.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tb_Laenge.SelectedText = "";
             this.tb_Laenge.SelectionLength = 0;
@@ -289,7 +289,7 @@
             this.tb_Laenge.Size = new System.Drawing.Size(165, 23);
             this.tb_Laenge.TabIndex = 35;
             this.tb_Laenge.UseSelectable = true;
-            this.tb_Laenge.WaterMark = "Länge";
+            this.tb_Laenge.WaterMark = "Länge (in mm)";
             this.tb_Laenge.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tb_Laenge.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
