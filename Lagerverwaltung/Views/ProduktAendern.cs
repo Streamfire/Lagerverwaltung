@@ -29,21 +29,6 @@ namespace Lagerverwaltung.Views
             artikeltypBox.ValueMember = "artikeltyp_id";
             artikeltypBox.DisplayMember = "name";
 
-            //_artikeltypListe. = DB.SqlStatements.HoleAlleArtikeltypen();
-
-            //Dashboard.ArtikeltypListe;            
-            //TEST
-
-            //TODO:Artikeltypen aus Datenbank laden
-
-
-            //in ComboBox eintragen (eventuell auch ohne Zwischengespeicherte Liste)
-            /*
-            foreach (Model.ArtikeltypModel artikeltyp in _artikeltypListe)
-            {
-                artikeltypBox.Items.Add(artikeltyp);
-            }*/
-
             _artikeltypDict = DB.SqlStatements.HoleArtikeltyp();
 
             artikeltypBox.DataSource = _artikeltypDict.Values.ToArray();
@@ -66,20 +51,28 @@ namespace Lagerverwaltung.Views
 
         private void ButtonProduktAendern_Click(object sender, EventArgs e)
         {
-            if (Controller.ProduktHinzufuegenController.ValidateData(tb_Name.Text, tb_Zeichnungsnummer.Text, tb_Gewicht.Text, tb_Preis.Text, tb_Hoehe.Text, tb_Breite.Text, tb_Laenge.Text))
-            
+            if (String.IsNullOrWhiteSpace(tb_Name.Text) || tb_Name.Text.Length > 25)
             {
-                DB.SqlStatements.UpdateProdukt(Convert.ToInt64(produkt_id), tb_Name.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), tb_Zeichnungsnummer.Text, Convert.ToInt64(artikeltypBox.SelectedValue), Convert.ToSingle(tb_Hoehe.Text), Convert.ToSingle(tb_Breite.Text), Convert.ToSingle(tb_Laenge.Text));
-
-                ((Produktliste) Besitzer).UpdateForm();
-
-                Close();
+                MetroFramework.MetroMessageBox.Show(this, "Produktname überschreitet die zulässige Länge von 25 Zeichen!", "Fehler beim Hinzufügen des Produkts", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            //Validierung nicht erfolgreich
             else
             {
+                try
+                {
+                    DB.SqlStatements.UpdateProdukt(Convert.ToInt64(produkt_id), tb_Name.Text, Convert.ToSingle(tb_Gewicht.Text), Convert.ToSingle(tb_Preis.Text), tb_Zeichnungsnummer.Text, Convert.ToInt64(artikeltypBox.SelectedValue), Convert.ToSingle(tb_Hoehe.Text), Convert.ToSingle(tb_Breite.Text), Convert.ToSingle(tb_Laenge.Text));
 
+                    ((Produktliste)Besitzer).UpdateForm();
+
+                    Close();
+                }
+                catch (FormatException)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Falsches Eingabeformat! Bitte geben sie bei Gewicht, Preis, Höhe, Breite und Länge nur Ziffern ein!", "Fehler beim Hinzufügen des Produkts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (OverflowException)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Eingabe zu großer Zahl! Bitte geben sie bei Gewicht, Preis, Höhe, Breite und Länge nur Zahlen bis 340282300000000000000000000000000000000 ein!", "Fehler beim Hinzufügen des Produkts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
