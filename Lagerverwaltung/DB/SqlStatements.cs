@@ -8,8 +8,13 @@ namespace Lagerverwaltung.DB
     static partial class SqlStatements
     {
         private static readonly QueryFactory queryfactory;
+
+		/// <summary>
+		/// Eventhandler der alle Subscriber ueber Aenderungen an der Datenbank informiert.
+		/// </summary>
         public static event EventHandler<EventArgs> DatabaseChanged;
-        static SqlStatements()
+
+		static SqlStatements()
         {
             var conn = DatabaseFactory.GetFactory().GetConnection();
             var compiler = new PostgresCompiler();
@@ -21,6 +26,9 @@ namespace Lagerverwaltung.DB
             DatabaseChanged?.Invoke(typ, EventArgs.Empty);
         }
 
+		/// <summary>
+		/// Enumeration ueber die Modeltypen.
+		/// </summary>
         public enum ModeltypEnum
         {
             ArtikeltypModel,

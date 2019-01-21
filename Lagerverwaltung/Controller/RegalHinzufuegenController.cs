@@ -39,6 +39,20 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
+		/// <summary>
+		/// Funktion um die Regalmaßangaben zu prüfen.
+		/// </summary>
+		/// <param name="zeilen">Zeilenzahl</param>
+		/// <param name="spalten">Spaltenzahl</param>
+		/// <param name="regalH">Regalhoehe</param>
+		/// <param name="regalB">Regalbreite</param>
+		/// <param name="regalL">Regallaenge</param>
+		/// <param name="fachH">Fachhoehe</param>
+		/// <param name="fachB">Fachbreite</param>
+		/// <param name="fachL">Fachlänge</param>
+		/// <param name="wandH">Trennwandstärke Horizontal</param>
+		/// <param name="wandV">Trennwandstärke Vertikal</param>
+		/// <returns>true wenn die Groeße von Regal und Regalfächern sich nicht widersprechen</returns>
         public static bool ValidateGroesse(short zeilen, short spalten, float regalH, float regalB, float regalL, float fachH, float fachB, float fachL, float wandH, float wandV)
         {
             //mind. Anzahl Spalten/Zeilen -1 an Trennwänden
@@ -54,7 +68,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateRegalname(string eingabe)
+		/// <summary>
+		/// Funktion um den Regalnamen zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateRegalname(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -65,7 +84,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateZeilen(string eingabe)
+		/// <summary>
+		/// Funktion um die Zeilenzahl zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateZeilen(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -82,7 +106,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateSpalten(string eingabe)
+		/// <summary>
+		/// Funktion um die Spaltenzahl zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateSpalten(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -99,7 +128,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateRegalH(string eingabe)
+		/// <summary>
+		/// Funktion um die Regalhoehe zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateRegalH(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -116,7 +150,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateRegalB(string eingabe)
+		/// <summary>
+		/// Funktion um die Regalbreite zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateRegalB(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -133,7 +172,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateRegalL(string eingabe)
+		/// <summary>
+		/// Funktion um die Regallaenge zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateRegalL(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -150,7 +194,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateFachH(string eingabe)
+		/// <summary>
+		/// Funktion um die Regalhoehe zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateFachH(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -167,7 +216,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateFachB(string eingabe)
+		/// <summary>
+		/// Funktion um die Regalfachbreite zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateFachB(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -184,7 +238,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateFachL(string eingabe)
+		/// <summary>
+		/// Funktion um die Regalfachlaenge zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateFachL(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -201,7 +260,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateWandH(string eingabe)
+		/// <summary>
+		/// Funktion um die Trennwandstärke (horizontal) zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateWandH(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
@@ -218,7 +282,12 @@ namespace Lagerverwaltung.Controller
             return true;
         }
 
-        private static bool ValidateWandV(string eingabe)
+		/// <summary>
+		/// Funktion um die Trennwandstärke (vertikal) zu prüfen.
+		/// </summary>
+		/// <param name="eingabe"> der Eingabestring</param>
+		/// <returns>true wenn der Eingabestring Daten des richtigen Formats enthält.</returns>
+		private static bool ValidateWandV(string eingabe)
         {
             //Validierung auf Leeren String
             if (eingabe.Equals("")) return false;
