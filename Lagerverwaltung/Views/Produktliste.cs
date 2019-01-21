@@ -8,7 +8,6 @@ namespace Lagerverwaltung.Views
 {
     public partial class Produktliste : MetroFramework.Forms.MetroForm
     {
-        //private Dictionary<long, Model.ProduktModel> _dictProdukt;
         private Dictionary<long, Model.ProduktModel> _dictProdukt;
 
         private BindingSource source = new BindingSource();
@@ -21,57 +20,25 @@ namespace Lagerverwaltung.Views
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
 
-            /*
-            //TODO: Produkte aus DB oder SW-Liste laden
-            _produktListe = new List<Core.Produkt>
-            {
-                //TEST
-                new Core.Produkt(0, "DeWalt Schrauber", "DT71572-QZ", 0.581f, 11.99f, new DateTime(), new DateTime(), 0, 400, 600, 800),
-                new Core.Produkt(1, "Scheppach Dekupiersägeblatt-Set", "6206P", 0.200f, 19.99f, new DateTime(), new DateTime(), 0, 1000, 2000, 500),
-                new Core.Produkt(2, "Erbauer T144DP Stichsägeblatt", "7153K", 0.055f, 2.19f, new DateTime(), new DateTime(), 0, 300, 100, 100),
-                new Core.Produkt(3, "Ponal SUPER 3 Holzleim", "PN 15S 120", 0.12f, 6.89f, new DateTime(), new DateTime(), 0, 500, 500, 500)
-                
-            };
-            */
-
             UpdateForm();
-			
-      
+
         }
 		public void UpdateForm()
         {
-
             _dictProdukt = DB.SqlStatements.HoleProdukt();
-            //dataGridView1.DataSource = Model.Produkt.GetProdukts();
             dataGridView1.DataSource = _dictProdukt.Values.ToArray();
 
-            dataGridView1.Columns[2].Visible = false;
+            //dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
-            
+
+            dataGridView1.Columns[4].Visible = false;
 
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;
-            /*
-			listViewProduktliste.Items.Clear();
-            var test = Model.Produkt.GetProdukts();
 
-			foreach (Model.Produkt produkt in test)
-			{
-				dataGridView1.Items.Add(new ListViewItem(new string[] {
-					produkt.Name,
-					produkt.Gewicht.ToString(),
-					produkt.Preis.ToString(),
-					produkt.Zeichnungsnummer,
-					produkt.ErstelltAm.ToString(),
-					produkt.GeaendertAm.ToString() }));
-			}
-            if(listViewProduktliste.Items.Count>0)
-            {
-                listViewProduktliste.Items[0].Focused = true;
-                listViewProduktliste.Items[0].Selected = true;
-            }*/
+            dataGridView1.Columns[11].Visible = false;
         }
 
         private void Schliessen_Click(object sender, EventArgs e)
@@ -88,12 +55,12 @@ namespace Lagerverwaltung.Views
             }
         }
 
-		/// <summary>
-		/// Produkt ausgewählt
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void Auswaehlen_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Übergibt Produktame und Produkt-ID an PaketHinzufügen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Auswaehlen_Click(object sender, EventArgs e)
 		{
             int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
@@ -106,6 +73,11 @@ namespace Lagerverwaltung.Views
             Close();
 		}
 
+        /// <summary>
+        /// Übergibt die ausgewählten Produktdaten an ProduktÄndern
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
             int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
