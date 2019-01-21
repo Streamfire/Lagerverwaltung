@@ -179,7 +179,6 @@
             this.Controls.Add(this.LagerLabel);
             this.Controls.Add(this.RegalLabel);
             this.MinimizeBox = false;
-            this.Movable = false;
             this.Name = "RegalAendern";
             this.Resizable = false;
             this.Text = "Regal ändern oder entfernen";

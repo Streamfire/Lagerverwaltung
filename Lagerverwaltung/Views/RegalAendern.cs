@@ -115,7 +115,7 @@ namespace Lagerverwaltung.Views
         {
             if (RegalCombobox.Items.Count > 0)
             {
-                if (MetroFramework.MetroMessageBox.Show(this, String.Format("Wollen sie das ausgewählte Regal \"{0}\" wirklich entfernen?", ((Model.RegalModel)RegalCombobox.SelectedItem).Name), "Lager entfernen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MetroFramework.MetroMessageBox.Show(this, String.Format("Wollen sie das ausgewählte Regal \"{0}\" wirklich entfernen?", ((Model.RegalModel)RegalCombobox.SelectedItem).Name), "Regal entfernen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     long regalID = ((Model.RegalModel)RegalCombobox.SelectedItem).Regal_ID;
                     string regalname = ((Model.RegalModel)RegalCombobox.SelectedItem).Name;

@@ -36,7 +36,7 @@ namespace Lagerverwaltung.Views
         {
             if (LagerCombobox.SelectedItem != null)
             {
-                if (MetroFramework.MetroMessageBox.Show(this, "Wollen sie das ausgewählte Lager wirklich entfernen?", "Lager entfernen", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MetroFramework.MetroMessageBox.Show(this, "Wollen sie das ausgewählte Lager wirklich entfernen?", "Lager entfernen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     regalKeys = DB.SqlStatements.HoleRegal(-1, Convert.ToInt64(LagerCombobox.SelectedValue)).Keys.ToArray();
 
@@ -103,7 +103,7 @@ namespace Lagerverwaltung.Views
                     }
 
                     DB.SqlStatements.LoescheLager(Convert.ToInt64(LagerCombobox.SelectedValue));
-
+                    MetroFramework.MetroMessageBox.Show(this, "Das ausgewählte Lager wurde erfolgreich entfernt!" , "Lager entfernt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }

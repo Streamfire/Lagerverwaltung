@@ -211,7 +211,7 @@
             // NewUserButton
             // 
             this.NewUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NewUserButton.Location = new System.Drawing.Point(97, 239);
+            this.NewUserButton.Location = new System.Drawing.Point(95, 248);
             this.NewUserButton.Name = "NewUserButton";
             this.NewUserButton.Size = new System.Drawing.Size(90, 30);
             this.NewUserButton.TabIndex = 28;
@@ -222,7 +222,7 @@
             // AbortButton
             // 
             this.AbortButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AbortButton.Location = new System.Drawing.Point(203, 239);
+            this.AbortButton.Location = new System.Drawing.Point(203, 248);
             this.AbortButton.Name = "AbortButton";
             this.AbortButton.Size = new System.Drawing.Size(85, 30);
             this.AbortButton.TabIndex = 29;
@@ -249,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 287);
+            this.ClientSize = new System.Drawing.Size(318, 291);
             this.Controls.Add(this.ShowPasswordCheckbox);
             this.Controls.Add(this.AbortButton);
             this.Controls.Add(this.NewUserButton);
