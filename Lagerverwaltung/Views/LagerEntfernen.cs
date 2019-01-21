@@ -8,6 +8,7 @@ namespace Lagerverwaltung.Views
     public partial class LagerEntfernen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.LagerModel> _lagerDict;
+        public Form Besitzer { get; set; }
 
         private static long[] regalKeys;
         private static long[][] regalfachKeys;
@@ -104,6 +105,7 @@ namespace Lagerverwaltung.Views
 
                     DB.SqlStatements.LoescheLager(Convert.ToInt64(LagerCombobox.SelectedValue));
                     MetroFramework.MetroMessageBox.Show(this, "Das ausgewählte Lager wurde erfolgreich entfernt!" , "Lager entfernt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ((Views.Verwaltung)Besitzer).UpdateForm();
                     Close();
                 }
             }

@@ -9,6 +9,7 @@ namespace Lagerverwaltung.Views
     public partial class LagerHinzufuegen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.LagertypModel> _lagertypDict;
+        public Form Besitzer { get; set; }
 
         public LagerHinzufuegen()
         {
@@ -41,6 +42,7 @@ namespace Lagerverwaltung.Views
                 else
                 {
                     DB.SqlStatements.ErstelleLager(LagerTextbox.Text, LagertypCombobox.SelectedText, BeschreibungTextbox.Text, Convert.ToInt64(LagertypCombobox.SelectedValue));
+                    ((Views.Verwaltung)Besitzer).UpdateForm();
                     Close();
                 }
             }

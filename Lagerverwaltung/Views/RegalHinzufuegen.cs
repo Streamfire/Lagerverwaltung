@@ -9,6 +9,7 @@ namespace Lagerverwaltung.Views
     public partial class RegalHinzufuegen : MetroFramework.Forms.MetroForm
     {
         private Dictionary<long, Model.LagerModel> _dictLager;
+        public Form Besitzer { get; set; }
 
         public RegalHinzufuegen()
         {
@@ -145,6 +146,7 @@ namespace Lagerverwaltung.Views
 
                         if (success == true)
                         {
+                            ((Views.Verwaltung)Besitzer).UpdateForm();
                             Close();
                         }
 

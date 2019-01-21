@@ -11,6 +11,7 @@ namespace Lagerverwaltung.Views
         private Dictionary<long, Model.RegalModel> _dictRegal;
         private Dictionary<long, Model.RegalfachModel> _dictRegalfach;
         private Dictionary<long, Model.PaketModel> _dictPaket;
+        public Form Besitzer { get; set; }
 
         public RegalAendern()
         {
@@ -103,6 +104,8 @@ namespace Lagerverwaltung.Views
                     MetroFramework.MetroMessageBox.Show(this, String.Format("Das Regal wurde erfolgreich in \"{0}\" geändert!", name), "Regalname geändert!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UpdateComboboxRegal(RegalCombobox.SelectedIndex);
 
+                    ((Views.Verwaltung)Besitzer).UpdateForm();
+
                 }
                 else
                     MetroFramework.MetroMessageBox.Show(this, "Bitte geben Sie einen neuen Namen für das Regal ein!", "Regalname ist leer!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -141,6 +144,9 @@ namespace Lagerverwaltung.Views
                     DB.SqlStatements.LoescheRegal(regalID);
                     MetroFramework.MetroMessageBox.Show(this, String.Format("Das Regal {0} wurde erfolgreich entfernt!", regalname), "Regal entfernt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LagerCombobox_SelectedIndexChanged(null, null);
+
+
+                    ((Views.Verwaltung)Besitzer).UpdateForm();
                 }
             }
             else

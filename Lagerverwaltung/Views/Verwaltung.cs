@@ -20,7 +20,6 @@ namespace Lagerverwaltung.Views
             RegalHinzufuegenButton.Location = PaketHinzufuegenButton.Location;
             RegalAnpassenButton.Location = PaketEntfernenButton.Location;
 
-			DB.SqlStatements.DatabaseChanged += DataChanged;
 			UpdateForm();
 		}
 
@@ -53,6 +52,7 @@ namespace Lagerverwaltung.Views
         {
             using (var regalhinzufuegen = new RegalHinzufuegen())
             {
+                regalhinzufuegen.Besitzer = this;
                 regalhinzufuegen.Owner = this;
                 regalhinzufuegen.ShowDialog();
             }
@@ -67,6 +67,7 @@ namespace Lagerverwaltung.Views
         {
             using (var lagerhinzufuegen = new LagerHinzufuegen())
             {
+                lagerhinzufuegen.Besitzer = this;
                 lagerhinzufuegen.Owner = this;
                 lagerhinzufuegen.ShowDialog();
             }
@@ -76,6 +77,7 @@ namespace Lagerverwaltung.Views
         {
             using (var lagerentfernen = new LagerEntfernen())
             {
+                lagerentfernen.Besitzer = this;
                 lagerentfernen.Owner = this;
                 lagerentfernen.ShowDialog();
             }
@@ -100,6 +102,7 @@ namespace Lagerverwaltung.Views
         {
             using (var regalaendern = new RegalAendern())
             {
+                regalaendern.Besitzer = this;
                 regalaendern.Owner = this;
                 regalaendern.ShowDialog();
             }
