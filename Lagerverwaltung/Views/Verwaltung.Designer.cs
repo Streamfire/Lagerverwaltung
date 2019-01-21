@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Lagerverwaltung.Model;
 using Opulos.Core.UI;
+using System.Linq;
 
 namespace Lagerverwaltung.Views
 {
@@ -72,7 +73,7 @@ namespace Lagerverwaltung.Views
 						if (paketListe.Count > 0)
 						{
 							//im Fach ist ein Paketregistriert-> die restlichen Infos zum Paket anzeigen
-							name.Text = "Inhalt: " + paketListe[0].Produkt_ID;
+							name.Text = "Inhalt: " + paketListe.First().Value.Produkt_ID;
 
 							Label Menge = new Label();
 							Label Breite = new Label();
@@ -87,25 +88,25 @@ namespace Lagerverwaltung.Views
 							Menge.Text = "Menge: " + paketListe.Count;
 
 							Breite.Left = 200;
-							Breite.Text = "Breite: " + paketListe[0].Breite;
+							Breite.Text = "Breite: " + paketListe.First().Value.Breite;
 
 							Hoehe.Left = 300;
-							Hoehe.Text = "Höhe: " + paketListe[0].Hoehe;
+							Hoehe.Text = "Höhe: " + paketListe.First().Value.Hoehe;
 
 							Laenge.Left = 400;
-							Laenge.Text = "Länge: " + paketListe[0].Laenge;
+							Laenge.Text = "Länge: " + paketListe.First().Value.Laenge;
 
 							Haltbarkeit.Left = 500;
-							Haltbarkeit.Text = "Haltbarkeit: " + paketListe[0].Haltbarkeit;
+							Haltbarkeit.Text = "Haltbarkeit: " + paketListe.First().Value.Haltbarkeit;
 
 							Erstellt.Left = 600;
-							Erstellt.Text = "Erstellt: " + paketListe[0].Erstellt_Am;
+							Erstellt.Text = "Erstellt: " + paketListe.First().Value.Erstellt_Am;
 
 							Geaendert.Left = 700;
-							Geaendert.Text = "Geaendert: " + paketListe[0].Zuletzt_Geaendert;
+							Geaendert.Text = "Geaendert: " + paketListe.First().Value.Zuletzt_Geaendert;
 
 							Anschaffungsgrund.Top = 25;
-							Anschaffungsgrund.Text = "Anschaffungsgrund: " + paketListe[0].Anschaffungsgrund;
+							Anschaffungsgrund.Text = "Anschaffungsgrund: " + paketListe.First().Value.Anschaffungsgrund;
 							Anschaffungsgrund.Width = Anschaffungsgrund.Width + 400;
 
 							infoPanel.Controls.Add(name);
@@ -118,7 +119,7 @@ namespace Lagerverwaltung.Views
 							infoPanel.Controls.Add(Geaendert);
 							infoPanel.Controls.Add(Anschaffungsgrund);
 
-							nestedRegal.Add(nestedFach, paketListe[0].Name + " | " + paketListe[0].Produkt_ID);
+							nestedRegal.Add(nestedFach, paketListe.First().Value.Name + " | " + paketListe.First().Value.Produkt_ID);
 						}
 						else
 						{

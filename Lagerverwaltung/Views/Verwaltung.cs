@@ -20,13 +20,6 @@ namespace Lagerverwaltung.Views
             RegalHinzufuegenButton.Location = PaketHinzufuegenButton.Location;
             RegalAnpassenButton.Location = PaketEntfernenButton.Location;
 
-            // Muss unbedingt geändert werden!
-            DB.LagerSQL.HoleAlleLager();
-            DB.RegalSQL.HoleAlleRegale();
-            DB.RegalfachSQL.HoleAlleRegalfach();
-            DB.PaketSQL.HoleAllePakete();
-            DB.ProduktSQL.HoleAlleProdukte();
-
 			DB.SqlStatements.DatabaseChanged += DataChanged;
 			UpdateForm();
 		}
