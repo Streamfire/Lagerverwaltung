@@ -53,6 +53,12 @@ namespace Lagerverwaltung.Views
             string salt = Controller.AuthenticationController.Create_Salt(10);
             string newpw = Controller.AuthenticationController.GeneratePasswordHash(password,salt);
 
+            if (username.Length > 10 || vorname.Length > 20 || nachname.Length > 20 || password.Length > 40 || confirmpw.Length > 40)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Eingaben sind zu lang! Limits: Benutzername: 10 Zeichen, Name/Vorname: 20 Zeichen, Passwort: 40 Zeichen!", "Zu lange Eingaben!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 DB.SqlStatements.ErstelleUser(vorname, nachname, username, newpw, salt);
@@ -61,7 +67,7 @@ namespace Lagerverwaltung.Views
             }
             catch (Exception)
             {
-                throw;
+                MetroFramework.MetroMessageBox.Show(this, "Datenbankfehler: Eingabe(n) zu lang!", "Ungültige Eingaben!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
