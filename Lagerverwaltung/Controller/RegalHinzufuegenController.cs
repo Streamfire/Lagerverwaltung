@@ -102,6 +102,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Zeilen enthält das falsche Format: {0}", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Zeilenwert ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -123,6 +127,10 @@ namespace Lagerverwaltung.Controller
             catch (FormatException e)
             {
                 Console.WriteLine("Spalten enthält das falsche Format: {0}", e);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Spaltenwert ist zu groß: {0}", e);
             }
 
             return true;
@@ -146,6 +154,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Regalhöhe enthält das falsche Format: {0}", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Regalhöhe ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -167,6 +179,10 @@ namespace Lagerverwaltung.Controller
             catch (FormatException e)
             {
                 Console.WriteLine("Regalbreite enthält das falsche Format: {0}", e);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Regalbreite ist zu groß: {0}", e);
             }
 
             return true;
@@ -190,6 +206,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Regallänge enthält das falsche Format: {0}", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Regallänge ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -211,6 +231,10 @@ namespace Lagerverwaltung.Controller
             catch (FormatException e)
             {
                 Console.WriteLine("Regalfachhöhe enthält das falsche Format: {0}", e);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Regalfachhöhe ist zu groß: {0}", e);
             }
 
             return true;
@@ -234,6 +258,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Regalfachbreite enthält das falsche Format: {0}", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Regalfachbreite ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -255,6 +283,10 @@ namespace Lagerverwaltung.Controller
             catch (FormatException e)
             {
                 Console.WriteLine("Regalfachlänge enthält das falsche Format: {0}", e);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Regalfachlänge ist zu groß: {0}", e);
             }
 
             return true;
@@ -278,6 +310,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Horizontale Wandstärke enthält das falsche Format: {0}", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Horizontale Wandstärke ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -299,6 +335,10 @@ namespace Lagerverwaltung.Controller
             catch (FormatException e)
             {
                 Console.WriteLine("Vertikale Wandstärke enthält das falsche Format: {0}", e);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Vertikale Wandstärke ist zu groß: {0}", e);
             }
 
             return true;

@@ -85,6 +85,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Höhe enthält das falsche Format: {0}", e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Höhe ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -111,6 +115,10 @@ namespace Lagerverwaltung.Controller
             {
                 Console.WriteLine("Breite enthält das falsche Format: {0}",e);
             }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Breite ist zu groß: {0}", e);
+            }
 
             return true;
         }
@@ -136,6 +144,10 @@ namespace Lagerverwaltung.Controller
             catch (FormatException e)
             {
                 Console.WriteLine("Länge enthält das falsche Format: {0}", e);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Länge ist zu groß: {0}", e);
             }
 
             return true;

@@ -84,7 +84,7 @@ namespace Lagerverwaltung.Views
         {
             if (RegalCombobox.Items.Count > 0)
             {
-                if (NameTextbox.Text.Length != 0)
+                if (NameTextbox.Text.Length != 0 && NameTextbox.Text.Length <= 9)
                 {
                     long regalID = ((Model.RegalModel)RegalCombobox.SelectedItem).Regal_ID;
                     string name = NameTextbox.Text;

@@ -47,9 +47,15 @@ namespace Lagerverwaltung.Views
 
                 if (Besitzer.GetType().Equals(typeof(Regaleinsicht)))
                 {
-
-                    DB.SqlStatements.ErstellePaket(BezeichungTextbox.Text, RegalfachID, ProduktID, Convert.ToInt16(AnzahlTextbox.Text), HaltbarkeitDatetime.Value, GrundTextbox.Text, Convert.ToInt32(HoeheTextbox.Text), Convert.ToInt32(BreiteTextbox.Text), Convert.ToInt32(LaengeTextbox.Text));
-                    Close();
+                    try
+                    {
+                        DB.SqlStatements.ErstellePaket(BezeichungTextbox.Text, RegalfachID, ProduktID, Convert.ToInt16(AnzahlTextbox.Text), HaltbarkeitDatetime.Value, GrundTextbox.Text, Convert.ToInt32(HoeheTextbox.Text), Convert.ToInt32(BreiteTextbox.Text), Convert.ToInt32(LaengeTextbox.Text));
+                        Close();
+                    }
+                    catch (Exception)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Zu große Zahl oder falsches Format", "Fehler im Hauptfenster", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else if (Besitzer.GetType().Equals(typeof(Verwaltung)))
                 {

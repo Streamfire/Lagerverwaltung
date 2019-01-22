@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new MetroFramework.Controls.MetroGrid();
+            this.Produkt_hinzufuegen = new MetroFramework.Controls.MetroButton();
+            this.Button1 = new MetroFramework.Controls.MetroButton();
+            this.Auswaehlen = new MetroFramework.Controls.MetroButton();
+            this.Schliessen = new MetroFramework.Controls.MetroButton();
             this.produkt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gewicht = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zeichnungsnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Produkt_hinzufuegen = new MetroFramework.Controls.MetroButton();
-            this.Button1 = new MetroFramework.Controls.MetroButton();
-            this.Auswaehlen = new MetroFramework.Controls.MetroButton();
-            this.Schliessen = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,46 +96,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(689, 582);
             this.dataGridView1.TabIndex = 6;
             // 
-            // produkt_id
-            // 
-            this.produkt_id.DataPropertyName = "Produkt_ID";
-            this.produkt_id.HeaderText = "ID";
-            this.produkt_id.Name = "produkt_id";
-            this.produkt_id.ReadOnly = true;
-            this.produkt_id.Width = 60;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Produktname";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 240;
-            // 
-            // gewicht
-            // 
-            this.gewicht.DataPropertyName = "Gewicht";
-            this.gewicht.HeaderText = "Gewicht";
-            this.gewicht.Name = "gewicht";
-            this.gewicht.ReadOnly = true;
-            this.gewicht.Width = 93;
-            // 
-            // preis
-            // 
-            this.preis.DataPropertyName = "Preis";
-            this.preis.HeaderText = "Preis";
-            this.preis.Name = "preis";
-            this.preis.ReadOnly = true;
-            this.preis.Width = 93;
-            // 
-            // zeichnungsnummer
-            // 
-            this.zeichnungsnummer.DataPropertyName = "Zeichnngsnummer";
-            this.zeichnungsnummer.HeaderText = "Zeichnungsnummer";
-            this.zeichnungsnummer.Name = "zeichnungsnummer";
-            this.zeichnungsnummer.ReadOnly = true;
-            this.zeichnungsnummer.Width = 160;
-            // 
             // Produkt_hinzufuegen
             // 
             this.Produkt_hinzufuegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -180,6 +140,46 @@
             this.Schliessen.UseSelectable = true;
             this.Schliessen.Click += new System.EventHandler(this.Schliessen_Click);
             // 
+            // produkt_id
+            // 
+            this.produkt_id.DataPropertyName = "Produkt_ID";
+            this.produkt_id.HeaderText = "ID";
+            this.produkt_id.Name = "produkt_id";
+            this.produkt_id.ReadOnly = true;
+            this.produkt_id.Width = 60;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Produktname";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 240;
+            // 
+            // gewicht
+            // 
+            this.gewicht.DataPropertyName = "Gewicht";
+            this.gewicht.HeaderText = "Gewicht";
+            this.gewicht.Name = "gewicht";
+            this.gewicht.ReadOnly = true;
+            this.gewicht.Width = 93;
+            // 
+            // preis
+            // 
+            this.preis.DataPropertyName = "Preis";
+            this.preis.HeaderText = "Preis";
+            this.preis.Name = "preis";
+            this.preis.ReadOnly = true;
+            this.preis.Width = 93;
+            // 
+            // zeichnungsnummer
+            // 
+            this.zeichnungsnummer.DataPropertyName = "Zeichnungsnummer";
+            this.zeichnungsnummer.HeaderText = "Zeichnungsnummer";
+            this.zeichnungsnummer.Name = "zeichnungsnummer";
+            this.zeichnungsnummer.ReadOnly = true;
+            this.zeichnungsnummer.Width = 160;
+            // 
             // Produktliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,14 +198,14 @@
 
         #endregion
         private MetroFramework.Controls.MetroGrid dataGridView1;
+        private MetroFramework.Controls.MetroButton Produkt_hinzufuegen;
+        private MetroFramework.Controls.MetroButton Button1;
+        private MetroFramework.Controls.MetroButton Auswaehlen;
+        private MetroFramework.Controls.MetroButton Schliessen;
         private System.Windows.Forms.DataGridViewTextBoxColumn produkt_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gewicht;
         private System.Windows.Forms.DataGridViewTextBoxColumn preis;
         private System.Windows.Forms.DataGridViewTextBoxColumn zeichnungsnummer;
-        private MetroFramework.Controls.MetroButton Produkt_hinzufuegen;
-        private MetroFramework.Controls.MetroButton Button1;
-        private MetroFramework.Controls.MetroButton Auswaehlen;
-        private MetroFramework.Controls.MetroButton Schliessen;
     }
 }

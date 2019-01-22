@@ -28,17 +28,17 @@ namespace Lagerverwaltung.Views
             _dictProdukt = DB.SqlStatements.HoleProdukt();
             dataGridView1.DataSource = _dictProdukt.Values.ToArray();
 
-            //dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
 
-            dataGridView1.Columns[4].Visible = false;
+            //dataGridView1.Columns[4].Visible = false;
 
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;
 
-            dataGridView1.Columns[11].Visible = false;
+            //dataGridView1.Columns[11].Visible = false;
         }
 
         private void Schliessen_Click(object sender, EventArgs e)

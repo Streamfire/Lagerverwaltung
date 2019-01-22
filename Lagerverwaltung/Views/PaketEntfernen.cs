@@ -60,10 +60,15 @@ namespace Lagerverwaltung.Views
 
         private void ButtonAuslagern_Click(object sender, EventArgs e)
         {
-            DB.SqlStatements.LoeschePaket((long)ComboBoxPaketEntfernen.SelectedValue);
-            Close();
+            try
+            {
+                DB.SqlStatements.LoeschePaket((long)ComboBoxPaketEntfernen.SelectedValue);
+                Close();
+            }
+            catch (Exception)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Kein existierendes Paket ausgewählt", "Fehler beim Entfernen des Pakets", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-
-
     }
 }
