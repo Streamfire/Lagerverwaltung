@@ -298,43 +298,57 @@ namespace Lagerverwaltung.Views
 
         private void PaketeinlagernButton_Click(object sender, EventArgs e)
         {
-            using (var pakethinzufuegen = new PaketHinzufuegen())
+            try
             {
-                string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
+                using (var pakethinzufuegen = new PaketHinzufuegen())
+                {
+                    string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
 
-                pakethinzufuegen.Besitzer = this;
-                if (_regalfachIDMap.ContainsKey(key))
-                {
-                    pakethinzufuegen.RegalfachID = _regalfachIDMap[key];
-                    pakethinzufuegen.ShowDialog();
+                    pakethinzufuegen.Besitzer = this;
+                    if (_regalfachIDMap.ContainsKey(key))
+                    {
+                        pakethinzufuegen.RegalfachID = _regalfachIDMap[key];
+                        pakethinzufuegen.ShowDialog();
+                    }
+                    else
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
-                {
-                    MetroFramework.MetroMessageBox.Show(this,"Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
+            catch (NullReferenceException)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Es exisitiert kein Regalfach!", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void PaketauslagernButton_Click(object sender, EventArgs e)
         {
-            string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
-
-            if (_regalfachIDMap.ContainsKey(key))
+            try
             {
-                if (RegaleinsichtGrid.CurrentCell.Style.BackColor == Color.LightPink)
+                string key = RegaleinsichtGrid.CurrentCell.RowIndex.ToString() + "-" + RegaleinsichtGrid.CurrentCell.ColumnIndex.ToString();
+
+                if (_regalfachIDMap.ContainsKey(key))
                 {
-                    using (var paketentfernen = new PaketEntfernen())
+                    if (RegaleinsichtGrid.CurrentCell.Style.BackColor == Color.LightPink)
                     {
-                        paketentfernen.Owner = this;
-                        paketentfernen.RegalfachID = _regalfachIDMap[key];
-                        paketentfernen.ShowDialog();
+                        using (var paketentfernen = new PaketEntfernen())
+                        {
+                            paketentfernen.Owner = this;
+                            paketentfernen.RegalfachID = _regalfachIDMap[key];
+                            paketentfernen.ShowDialog();
+                        }
                     }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Das ausgewählte Regalfach besitzt keine Pakete", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MetroFramework.MetroMessageBox.Show(this,"Das ausgewählte Regalfach besitzt keine Pakete", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this, "Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-                MetroFramework.MetroMessageBox.Show(this,"Es wurde kein Regalfach ausgewählt", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch (NullReferenceException)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Es existiert kein Regalfach!", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void AktualisierenButton_Click(object sender, EventArgs e)
